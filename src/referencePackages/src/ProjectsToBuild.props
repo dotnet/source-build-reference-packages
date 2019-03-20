@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ItemGroup>
+    <!-- Projects in this file are generated.  Do not edit.  -->
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime/4.3.0/System.Runtime.csproj"/>  </ItemGroup>
+</Project>

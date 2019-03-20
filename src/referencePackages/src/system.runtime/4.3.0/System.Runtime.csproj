@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.0;netstandard1.2;netstandard1.3;netstandard1.5;net462</TargetFrameworks>
+    <NuspecFile>$(ArtifactsBinDir)system.runtime/4.3.0/system.runtime.nuspec</NuspecFile>
+   </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <DebugType>None</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <OutputPath>$(ArtifactsBinDir)system.runtime/4.3.0/ref/</OutputPath>
+    <IntermediateOutputPath>$(ArtifactsObjDir)system.runtime/4.3.0</IntermediateOutputPath>
+
+    <AssemblyOriginatorKeyFile>$(RepoRoot)src/referencePackages/MSFT.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign>true</PublicSign>
+
+    <SourceControlInformationFeatureSupported>false</SourceControlInformationFeatureSupported>
+    <Configuration>Release</Configuration>
+    <EnableSourceLink>false</EnableSourceLink>
+
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="**/ref/$(TargetFramework)/*.cs" />
+    <Compile Include="**/lib/$(TargetFramework)/*.cs" />
+  </ItemGroup>
+
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
+		<PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
+		<PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.2' ">
+		<PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
+		<PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+		<PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
+		<PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.5' ">
+		<PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
+		<PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
+	</ItemGroup>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net462" Version="1.0.0-alpha-5" />
+		<Reference Include="System" />
+		<Reference Include="System.ComponentModel.Composition" />
+		<Reference Include="System.Core" />
+	</ItemGroup>
+
+  
+</Project>
