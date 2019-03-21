@@ -39,8 +39,14 @@
     <PackCommandArgs>$(PackCommandArgs) /p:ArtifactsObjDir=$(ArtifactsObjDir)</PackCommandArgs>
     <PackCommandArgs>$(PackCommandArgs) /p:RepoRoot=$(RepoRoot)</PackCommandArgs>
     <!-- Don't warn on NU1603 - A package dependency specified a version that could not be found -->
+    <!-- Don't warn on NU1605 - Detected package downgrade. -->
     <!-- Don't warn on NU5125 - The 'licenseUrl' element will be deprecated. -->
-    <PackCommandArgs>$(PackCommandArgs) /nowarn:NU1603,NU5125</PackCommandArgs>
+    <!-- Don't warn on CS0109 - The member does not hide an accessible member. -->
+    <!-- Don't warn on CS0169 - The field is never used. -->
+    <!-- Don't warn on CS0618 - Type is obsolete. -->
+    <!-- Don't warn on CS0649 - The field is never assigned to. -->
+    <!-- Don't warn on CS3001, CS3002, CS3003, CS3009 - Type is not CLS-compliant. -->
+    <PackCommandArgs>$(PackCommandArgs) /nowarn:NU1603,NU1605,NU5125,CS0109,CS0169,CS0618,CS0649,CS3001,CS3002,CS3003,CS3009</PackCommandArgs>
   </PropertyGroup>
 
   <Target Name="Build" Condition="'@(ProjectsToBuild)' != ''">
