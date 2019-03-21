@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <NuspecFile>Microsoft.NETCore.Platforms.nuspec</NuspecFile>
+   </PropertyGroup>
+  <PropertyGroup>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <OutputPath>$(ArtifactsBinDir)microsoft.netcore.platforms/4.3.0/ref/</OutputPath>
+    <IntermediateOutputPath>$(ArtifactsObjDir)microsoft.netcore.platforms/4.3.0</IntermediateOutputPath>
+
+    <SourceControlInformationFeatureSupported>false</SourceControlInformationFeatureSupported>
+    <Configuration>Release</Configuration>
+    <EnableSourceLink>false</EnableSourceLink>
+
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <Target Name="CreateManifestResourceNames"/>
+</Project>
