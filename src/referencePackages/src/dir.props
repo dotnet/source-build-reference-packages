@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <!-- Common properties for all Reference Packages -->
+    <DebugType>None</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <AssemblyOriginatorKeyFile>$(RepoRoot)src/referencePackages/MSFT.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <PublicSign>true</PublicSign>
+
+    <SourceControlInformationFeatureSupported>false</SourceControlInformationFeatureSupported>
+    <Configuration>Release</Configuration>
+    <EnableSourceLink>false</EnableSourceLink>
+
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
+
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+</Project>
