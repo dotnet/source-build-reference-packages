@@ -30,6 +30,7 @@
 
   <Target Name="BuildTextOnlyPackages" BeforeTargets="Build" Condition="'@(TextOnlyProjects)' != ''">
     <Exec Command="$__DOTNET_CMD restore %(TextOnlyProjects.Identity)" />
+    <!-- Don't warn on NU5125 - The 'licenseUrl' element will be deprecated. -->
     <Exec Command="$__DOTNET_CMD pack --no-build --output $(ArtifactsPkgDir) /nowarn:NU5125 %(TextOnlyProjects.Identity)" />
   </Target>
 
@@ -37,8 +38,9 @@
     <PackCommandArgs>/p:ArtifactsBinDir=$(ArtifactsBinDir)</PackCommandArgs>
     <PackCommandArgs>$(PackCommandArgs) /p:ArtifactsObjDir=$(ArtifactsObjDir)</PackCommandArgs>
     <PackCommandArgs>$(PackCommandArgs) /p:RepoRoot=$(RepoRoot)</PackCommandArgs>
-    <PackCommandArgs>$(PackCommandArgs) /nowarn:CS0169,NU1603,NU1605,NU5125</PackCommandArgs>
-    <PackCommandArgs>$(PackCommandArgs) /p:WarningsAsErrors=</PackCommandArgs>
+    <!-- Don't warn on NU1603 - A package dependency specified a version that could not be found -->
+    <!-- Don't warn on NU5125 - The 'licenseUrl' element will be deprecated. -->
+    <PackCommandArgs>$(PackCommandArgs) /nowarn:NU1603,NU5125</PackCommandArgs>
   </PropertyGroup>
 
   <Target Name="Build" Condition="'@(ProjectsToBuild)' != ''">
