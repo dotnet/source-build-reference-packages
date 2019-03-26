@@ -7,3 +7,7 @@ This repository contains source and build scripts for source-buildable reference
 ```
 ./build.sh
 ```
+
+## License
+
+This repo is licensed with [MIT](LICENSE.txt).
