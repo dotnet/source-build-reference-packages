@@ -70,7 +70,7 @@ jobs:
     continueOnError: true
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory)
-      ArtifactName: Artifacts 
+      ArtifactName: Artifacts
       ArtifactType: Container
 
   # Clean up working directory.
