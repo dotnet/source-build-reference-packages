@@ -13,6 +13,7 @@ jobs:
     docker.agentSrc.map: -v $(Build.SourcesDirectory):/agentSrc:z
     docker.agentSrc.work: -w /agentSrc
     docker.run: docker run --rm
+    docker.root.map: -v $(rootDirectory):/root:z
     docker.src.map: -v $(rootDirectory)/source-build-reference-packages/src:/src:z
     docker.src.work: -w /src
     docker.staging.map: -v $(stagingDirectory):/staging:z
@@ -26,8 +27,9 @@ jobs:
   # Create working directory and copy source into it.
   - script: |
       $(docker.run) $(docker.root.map) $(docker.agentSrc.map) $(docker.agentSrc.work) $(imageName) bash -c '
-        mkdir -b /root/source-build-reference-pacakges/staging
+        mkdir -p /root/source-build-reference-packages/staging
         rm -rf /root/source-build-reference-packages/
+        mkdir -p /root/source-build-reference-packages/src
         cp -r . /root/source-build-reference-packages/src'
     displayName: Clean source-build-reference-packages directory and copy source from cloned directory
 
@@ -43,7 +45,7 @@ jobs:
         mkdir /staging/logs
         mkdir /staging/artifacts
         find . -iname '*.binlog' \
-          -exec cp {} /staging/logs \; \
+          -exec cp {} /staging/logs \;
         find ./artifacts/packages \
           -iname '*'  \
           -exec cp {} /staging/packages \; "
@@ -67,12 +69,12 @@ jobs:
     continueOnError: true
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory)
-      ArtifactName: Artifacts 
+      ArtifactName: Artifacts
       ArtifactType: Container
 
   # Clean up working directory.
   - script: $(docker.run) $(docker.root.map) $(imageName) bash -c 'rm -rf /root/source-build-reference-packages'
-    displayName: Clean sb directory
+    displayName: Clean working directory
     condition: always()
     continueOnError: true
 
