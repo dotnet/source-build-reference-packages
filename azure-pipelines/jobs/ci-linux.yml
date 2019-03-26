@@ -39,18 +39,6 @@ jobs:
     displayName: Build reference packages
     timeoutInMinutes: 30
 
-  # Create reference packages tarball and upload to azure storage
-  - script: |
-      $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./packageAndUpload.sh $(BUILD.BUILDNUMBER) 
-    displayName: Create reference packages tarball and upload to azure storage
-#    condition: "
-#        and(
-#            succeeded(),
-#            ne(variables['System.TeamProject'], 'public'),
-#            notin(variables['Build.Reason'], 'PullRequest')
-#        )"
-    continueOnError: true
-
   # Copy artifacts and logs to staging directory.
   - script: |
       $(docker.run) $(docker.staging.map) $(docker.src.map) $(docker.src.work) $(imageName) /bin/bash -c "
