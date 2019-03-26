@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="Directory.Build.props" />
+
+  <PropertyGroup>
+    <ArtifactsPkgDir>$(RepoRoot)artifacts/packages/</ArtifactsPkgDir>
+    <RestoreSources>
+        $(RestoreSources);
+        https://dotnetfeed.blob.core.windows.net/dotnet-tools-internal/index.json;
+    </RestoreSources>
+  </PropertyGroup>
+
+  <Target Name="Restore"/>
+
+  <Target Name="Build">
+    <PropertyGroup>
+      <TarFileName>reference-packages-$(VersionPrefix)-$(VersionSuffix).tar.gz</TarFileName>
+    </PropertyGroup>
+
+    <Exec Command="tar --numeric-owner -czf $(TarFileName) *.nupkg" WorkingDirectory="$(ArtifactsPkgDir)" />
+    <Message Importance="High" Text="Created $(ArtifactsPkgDir)$(TarFileName)" />
+  </Target>
+
+  <Import Project="Directory.Build.targets" />
+
+</Project>
