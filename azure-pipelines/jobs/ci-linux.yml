@@ -44,10 +44,11 @@ jobs:
       $(docker.run) $(docker.staging.map) $(docker.src.map) $(docker.src.work) $(imageName) /bin/bash -c "
         mkdir /staging/logs
         mkdir /staging/artifacts
+        mkdir /staging/packages
         find . -iname '*.binlog' \
-          -exec cp {} /staging/logs \;
+          -exec cp {} --parents /staging/logs \;
         find ./artifacts/packages \
-          -iname '*'  \
+          -iname '*.*'  \
           -exec cp {} /staging/packages \; "
     displayName: Copy build logs and artifacts
     condition: always()
