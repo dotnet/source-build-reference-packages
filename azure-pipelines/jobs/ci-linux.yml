@@ -28,7 +28,7 @@ jobs:
   - script: |
       $(docker.run) $(docker.root.map) $(docker.agentSrc.map) $(docker.agentSrc.work) $(imageName) bash -c '
         mkdir -p /root/source-build-reference-packages/staging
-        rm -rf /root/source-build-reference-packages/
+        rm -rf /root/source-build-reference-packages/src
         mkdir -p /root/source-build-reference-packages/src
         cp -r . /root/source-build-reference-packages/src'
     displayName: Clean source-build-reference-packages directory and copy source from cloned directory
