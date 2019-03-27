@@ -4,6 +4,8 @@
 
   <PropertyGroup>
     <ArtifactsPkgDir>$(RepoRoot)artifacts/packages/</ArtifactsPkgDir>
+    <TarballDir>$(RepoRoot)artifacts/tarball/</TarballDir>
+      <TarballFileName>$(TarballDir)reference-packages-$(VersionPrefix)-$(VersionSuffix).tar.gz</TarballFileName>
     <RestoreSources>
         $(RestoreSources);
         https://dotnetfeed.blob.core.windows.net/dotnet-tools-internal/index.json;
@@ -13,12 +15,11 @@
   <Target Name="Restore"/>
 
   <Target Name="Build">
-    <PropertyGroup>
-      <TarFileName>reference-packages-$(VersionPrefix)-$(VersionSuffix).tar.gz</TarFileName>
-    </PropertyGroup>
+    <MakeDir Directories="$(TarballDir)" />
 
-    <Exec Command="tar --numeric-owner -czf $(TarFileName) *.nupkg" WorkingDirectory="$(ArtifactsPkgDir)" />
-    <Message Importance="High" Text="Created $(ArtifactsPkgDir)$(TarFileName)" />
+    <Exec Command="tar --numeric-owner -czf $(TarballFileName) *.nupkg" WorkingDirectory="$(ArtifactsPkgDir)" />
+
+    <Message Importance="High" Text="Created $(TarballFileName)" />
   </Target>
 
   <Import Project="Directory.Build.targets" />
