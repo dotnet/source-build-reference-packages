@@ -41,7 +41,7 @@ jobs:
 
   # Create reference packages tarball and upload to azure storage
   - script: |
-      $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./packageAndUpload.sh $(BUILD.BUILDNUMBER) \
+      $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER) \
         /p:AzureAccountName=$(publish.blobStorage.account) \
         /p:ContainerName=$(publish.blobStorage.container) \
         /p:AzureAccessToken=$(publish.blobStorage.accessToken) \
