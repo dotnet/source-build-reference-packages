@@ -41,7 +41,14 @@ jobs:
 
   # Create reference packages tarball and upload to azure storage
   - script: |
-      $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./packageAndUpload.sh $(BUILD.BUILDNUMBER)
+      $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./packageAndUpload.sh $(BUILD.BUILDNUMBER) \
+        /p:AzureAccountName=$(publish.blobStorage.account) \
+        /p:ContainerName=$(publish.blobStorage.container) \
+        /p:AzureAccessToken=$(publish.blobStorage.accessToken) \
+        /p:ManifestName=$(BUILD.REPOSITORY.NAME) \
+        /p:ManifestBuildId=$(BUILD.BUILDID) \
+        /p:ManifestBranch=$(BUILD.SOURCEBRANCHNAME) \
+        /p:ManifestCommit=$(BUILD.SOURCEVERSION)
     displayName: Create reference packages tarball and upload to azure storage
     condition: "
         and(
@@ -60,9 +67,6 @@ jobs:
         mkdir /staging/tarball
         find . -iname '*.binlog' \
           -exec cp {} --parents /staging/logs \;
-        find ./artifacts/packages \
-          -iname '*.*'  \
-          -exec cp {} /staging/packages \;
         find ./artifacts/tarball \
           -iname '*.*'  \
           -exec cp {} /staging/tarball \; "

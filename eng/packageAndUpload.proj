@@ -4,24 +4,56 @@
 
   <PropertyGroup>
     <ArtifactsPkgDir>$(RepoRoot)artifacts/packages/</ArtifactsPkgDir>
+    <ArtifactsRefPkgDir>$(RepoRoot)artifacts/reference-packages/</ArtifactsRefPkgDir>
     <TarballDir>$(RepoRoot)artifacts/tarball/</TarballDir>
-      <TarballFileName>$(TarballDir)reference-packages-$(VersionPrefix)-$(VersionSuffix).tar.gz</TarballFileName>
+    <TarballFileName>$(TarballDir)reference-packages-$(VersionPrefix)-$(VersionSuffix).tar.gz</TarballFileName>
     <RestoreSources>
-        $(RestoreSources);
-        https://dotnetfeed.blob.core.windows.net/dotnet-tools-internal/index.json;
+      $(RestoreSources);
+      https://dotnetfeed.blob.core.windows.net/dotnet-tools-internal/index.json;
     </RestoreSources>
+    <CreateTargets>
+      CreateTarball;
+      CreateEmptyPackage;
+    </CreateTargets>
+    <BuildDependsOn>
+      $(CreateTargets)
+    </BuildDependsOn>
+    <BuildDependsOn Condition="'$(AzureAccessToken)' != ''">
+      $(BuildDependsOn)
+      PreparePublish;
+      PublishFilesToBlobFeed;
+    </BuildDependsOn>
   </PropertyGroup>
 
   <Target Name="Restore"/>
+  <Target Name="Build" DependsOnTargets="$(BuildDependsOn)" />
+  <Target Name="Pack" />
 
-  <Target Name="Build">
+  <Target Name="CreateTarball">
     <MakeDir Directories="$(TarballDir)" />
 
-    <Exec Command="tar --numeric-owner -czf $(TarballFileName) *.nupkg" WorkingDirectory="$(ArtifactsPkgDir)" />
+    <Exec Command="tar --numeric-owner -czf $(TarballFileName) *.nupkg" WorkingDirectory="$(ArtifactsRefPkgDir)" />
 
     <Message Importance="High" Text="Created $(TarballFileName)" />
   </Target>
 
+  <Target Name="CreateEmptyPackage">
+    <MSBuild Projects="$(RepoRoot)eng/emptyPackageProject/reference-packages.csproj" Targets="Restore;Pack" />
+  </Target>
+
+  <Target Name="PreparePublish" DependsOnTargets="$(CreateDependsOn)">
+    <PropertyGroup>
+      <ExpectedFeedUrl>https://$(AzureAccountName).blob.core.windows.net/$(ContainerName)/reference-packages/index.json</ExpectedFeedUrl>
+      <AssetManifestFilePath>$(ArtifactsRefPkgDir)manifest.xml</AssetManifestFilePath>
+      <AccountKey>$(AzureAccessToken)</AccountKey>
+    </PropertyGroup>
+    <ItemGroup>
+      <FilesToPublish Include="$(ArtifactsPkgDir)**/*.nupkg" />
+      <FilesToPublish Include="$(TarballFileName)" />
+    </ItemGroup>
+  </Target>
+
+  <Import Project="$(NuGetPackageRoot)microsoft.dotnet.build.tasks.feed\$(MicrosoftDotNetBuildTasksFeedVersion)\build\Microsoft.DotNet.Build.Tasks.Feed.targets" />
   <Import Project="Directory.Build.targets" />
 
 </Project>

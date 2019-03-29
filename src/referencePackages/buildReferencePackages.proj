@@ -7,7 +7,7 @@
     <ArtifactsBinDir>$(RepoRoot)/artifacts/bin/</ArtifactsBinDir>
     <ArtifactsObjDir>$(RepoRoot)/artifacts/obj/</ArtifactsObjDir>
     <ArtifactsLogDir>$(RepoRoot)/artifacts/log/</ArtifactsLogDir>
-    <ArtifactsPkgDir>$(RepoRoot)/artifacts/packages/</ArtifactsPkgDir>
+    <ArtifactsRefPkgDir>$(RepoRoot)/artifacts/reference-packages/</ArtifactsRefPkgDir>
   </PropertyGroup>
 
   <Import Project="$(ReferenceAssemblySourcePath)ProjectsToBuild.props" />
@@ -31,7 +31,7 @@
   <Target Name="BuildTextOnlyPackages" BeforeTargets="Build" Condition="'@(TextOnlyProjects)' != ''">
     <Exec Command="$__DOTNET_CMD restore %(TextOnlyProjects.Identity)" />
     <!-- Don't warn on NU5125 - The 'licenseUrl' element will be deprecated. -->
-    <Exec Command="$__DOTNET_CMD pack --no-build --output $(ArtifactsPkgDir) /nowarn:NU5125 %(TextOnlyProjects.Identity)" />
+    <Exec Command="$__DOTNET_CMD pack --no-build --output $(ArtifactsRefPkgDir) /nowarn:NU5125 %(TextOnlyProjects.Identity)" />
   </Target>
 
   <PropertyGroup>
@@ -44,7 +44,7 @@
   </PropertyGroup>
 
   <Target Name="Build" Condition="'@(ProjectsToBuild)' != ''">
-    <Exec Command="$__DOTNET_CMD pack --output $(ArtifactsPkgDir) %(ProjectsToBuild.Identity) /bl:$(ArtifactsLogDir)%(ProjectsToBuild.RelativeDir)%(ProjectsToBuild.Filename).binlog $(PackCommandArgs)" />
+    <Exec Command="$__DOTNET_CMD pack --output $(ArtifactsRefPkgDir) %(ProjectsToBuild.Identity) /bl:$(ArtifactsLogDir)%(ProjectsToBuild.RelativeDir)%(ProjectsToBuild.Filename).binlog $(PackCommandArgs)" />
   </Target>
 
   <Target Name="BuildError" AfterTargets="Build" Condition="'@(ProjectsToBuild)' == ''">

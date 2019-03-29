@@ -28,4 +28,4 @@ done
 
 scriptroot="$( cd -P "$( dirname "$source" )" && pwd )"
 
-"$scriptroot/eng/common/build.sh" --build --restore -bl "$buildParams" $@
+"$scriptroot/eng/common/build.sh" --build --restore --pack -bl "$buildParams" $@
