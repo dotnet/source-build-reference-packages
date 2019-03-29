@@ -62,14 +62,12 @@ jobs:
   - script: |
       $(docker.run) $(docker.staging.map) $(docker.src.map) $(docker.src.work) $(imageName) /bin/bash -c "
         mkdir /staging/logs
-        mkdir /staging/artifacts
-        mkdir /staging/packages
-        mkdir /staging/tarball
+
         find . -iname '*.binlog' \
           -exec cp {} --parents /staging/logs \;
-        find ./artifacts/tarball \
-          -iname '*.*'  \
-          -exec cp {} /staging/tarball \; "
+
+        cp ./artifacts/asset-manifests /staging/
+        cp ./artifacts/tarball /staging/"
     displayName: Copy build logs and artifacts
     condition: always()
     continueOnError: true
@@ -91,6 +89,16 @@ jobs:
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory)
       ArtifactName: Artifacts
+      ArtifactType: Container
+
+  # Publish manifest.
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Manifest
+    condition: always()
+    continueOnError: true
+    inputs:
+      PathtoPublish: $(Build.ArtifactStagingDirectory)asset-manifests/
+      ArtifactName: AssetManifests
       ArtifactType: Container
 
   # Clean up working directory.

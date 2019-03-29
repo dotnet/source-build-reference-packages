@@ -5,6 +5,7 @@
   <PropertyGroup>
     <ArtifactsPkgDir>$(RepoRoot)artifacts/packages/</ArtifactsPkgDir>
     <ArtifactsRefPkgDir>$(RepoRoot)artifacts/reference-packages/</ArtifactsRefPkgDir>
+    <ManifestDir>$(RepoRoot)artifacts/asset-manifests/</ManifestDir>
     <TarballDir>$(RepoRoot)artifacts/tarball/</TarballDir>
     <TarballFileName>$(TarballDir)reference-packages-$(VersionPrefix)-$(VersionSuffix).tar.gz</TarballFileName>
     <RestoreSources>
@@ -42,9 +43,10 @@
   </Target>
 
   <Target Name="PreparePublish" DependsOnTargets="$(CreateDependsOn)">
+    <MakeDir Directories="$(ManifestDir)" />
     <PropertyGroup>
       <ExpectedFeedUrl>https://$(AzureAccountName).blob.core.windows.net/$(ContainerName)/reference-packages/index.json</ExpectedFeedUrl>
-      <AssetManifestFilePath>$(ArtifactsRefPkgDir)manifest.xml</AssetManifestFilePath>
+      <AssetManifestFilePath>$(ManifestDir)manifest.xml</AssetManifestFilePath>
       <AccountKey>$(AzureAccessToken)</AccountKey>
     </PropertyGroup>
     <ItemGroup>
