@@ -66,8 +66,8 @@ jobs:
         find . -iname '*.binlog' \
           -exec cp {} --parents /staging/logs \;
 
-        cp ./artifacts/asset-manifests /staging/
-        cp ./artifacts/tarball /staging/"
+        cp -r ./artifacts/asset-manifests /staging/
+        cp -r ./artifacts/tarball /staging/"
     displayName: Copy build logs and artifacts
     condition: always()
     continueOnError: true
