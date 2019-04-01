@@ -97,7 +97,7 @@ jobs:
     condition: always()
     continueOnError: true
     inputs:
-      PathtoPublish: $(Build.ArtifactStagingDirectory)asset-manifests/
+      PathtoPublish: $(Build.ArtifactStagingDirectory)/asset-manifests/
       ArtifactName: AssetManifests
       ArtifactType: Container
 
