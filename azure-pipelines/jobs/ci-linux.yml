@@ -39,6 +39,18 @@ jobs:
     displayName: Build reference packages
     timeoutInMinutes: 30
 
+  # Create reference packages tarball
+  - script: |
+      $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER)
+    displayName: Create reference packages tarball
+    condition: "
+        and(
+            succeeded(),
+            eq(variables['System.TeamProject'], 'public'),
+            in(variables['Build.Reason'], 'PullRequest')
+        )"
+    continueOnError: true
+
   # Create reference packages tarball and upload to azure storage
   - script: |
       $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER) \
@@ -66,7 +78,9 @@ jobs:
         find . -iname '*.binlog' \
           -exec cp {} --parents /staging/logs \;
 
-        cp -r ./artifacts/asset-manifests /staging/
+        if [ -d ./artifacts/asset-manifests ]; then
+            cp -r ./artifacts/asset-manifests /staging/
+        fi
         cp -r ./artifacts/tarball /staging/"
     displayName: Copy build logs and artifacts
     condition: always()

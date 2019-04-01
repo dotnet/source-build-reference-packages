@@ -9,3 +9,9 @@ jobs:
     dependsOn: fedora29
     pool:
         vmImage: vs2017-win2016
+    condition: "
+        and(
+            succeeded(),
+            ne(variables['System.TeamProject'], 'public'),
+            notin(variables['Build.Reason'], 'PullRequest')
+        )"
