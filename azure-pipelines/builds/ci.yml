@@ -3,3 +3,9 @@ jobs:
   parameters:
     job: fedora29
     imageName: microsoft/dotnet-buildtools-prereqs:fedora-29-2f0798a-20181105183801
+
+- template: ../../eng/common/templates/job/publish-build-assets.yml
+  parameters:
+    dependsOn: fedora29
+    pool:
+        vmImage: vs2017-win2016
