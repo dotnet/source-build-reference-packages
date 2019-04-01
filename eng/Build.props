@@ -5,6 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectToBuild Include="$(RepoRoot)eng/publish.proj" />
+    <ProjectToBuild Include="$(RepoRoot)src/publish/publish.proj" />
   </ItemGroup>
 </Project>
