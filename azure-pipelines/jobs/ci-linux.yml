@@ -108,7 +108,12 @@ jobs:
   # Publish manifest.
   - task: PublishBuildArtifacts@1
     displayName: Publish Manifest
-    condition: always()
+    condition: "
+        and(
+            succeeded(),
+            ne(variables['System.TeamProject'], 'public'),
+            notin(variables['Build.Reason'], 'PullRequest')
+        )"
     continueOnError: true
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory)/asset-manifests/

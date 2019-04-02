@@ -12,7 +12,7 @@ fi
 OfficialBuildId=$1
 shift
 
-buildParams="/p:DotNetBuildFromSource=true /p:OfficialBuildId=$OfficialBuildId"
+buildParams="/p:OfficialBuildId=$OfficialBuildId"
 
 source="${BASH_SOURCE[0]}"
 
