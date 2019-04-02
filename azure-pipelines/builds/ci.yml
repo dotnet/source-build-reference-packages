@@ -6,7 +6,7 @@ jobs:
 
 - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
   - template: ../../eng/common/templates/job/publish-build-assets.yml
-   parameters:
-     dependsOn: fedora29
-     pool:
-       vmImage: vs2017-win2016
+    parameters:
+      dependsOn: fedora29
+      pool:
+        vmImage: vs2017-win2016
