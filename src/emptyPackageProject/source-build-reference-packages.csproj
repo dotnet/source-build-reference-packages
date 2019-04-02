@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$(RepoRoot)eng/Directory.Build.props" />
+
+  <!-- This is an empty project that exists to be published by DARC and trigger
+  dependency uptake for this repo. -->
+
+  <PropertyGroup>
+    <PackageProjectUrl>https://github.com/dotnet/source-build-reference-packages</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dotnet/source-build-reference-packages</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryCommit>0000</RepositoryCommit>
+    <RepositoryCommit Condition="'$(ManifestCommit)' != ''">$(ManifestCommit)</RepositoryCommit>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <IsPackable>true</IsPackable>
+    <IsShipping>false</IsShipping>
+  </PropertyGroup>
+
+</Project>
+

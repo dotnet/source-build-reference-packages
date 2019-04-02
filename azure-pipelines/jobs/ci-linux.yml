@@ -39,17 +39,49 @@ jobs:
     displayName: Build reference packages
     timeoutInMinutes: 30
 
+  # Create reference packages tarball
+  - script: |
+      $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER)
+    displayName: Create reference packages tarball
+    condition: "
+        and(
+            succeeded(),
+            eq(variables['System.TeamProject'], 'public'),
+            in(variables['Build.Reason'], 'PullRequest')
+        )"
+    continueOnError: true
+
+  # Create reference packages tarball and upload to azure storage
+  - script: |
+      $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER) \
+        /p:AzureAccountName=$(publish.blobStorage.account) \
+        /p:ContainerName=$(publish.blobStorage.container) \
+        /p:AzureAccessToken=$(publish.blobStorage.accessToken) \
+        /p:ManifestName=$(BUILD.REPOSITORY.NAME) \
+        /p:ManifestBuildId=$(BUILD.BUILDID) \
+        /p:ManifestBranch=$(BUILD.SOURCEBRANCHNAME) \
+        /p:ManifestCommit=$(BUILD.SOURCEVERSION)
+    displayName: Create reference packages tarball and upload to azure storage
+    condition: "
+        and(
+            succeeded(),
+            ne(variables['System.TeamProject'], 'public'),
+            notin(variables['Build.Reason'], 'PullRequest')
+        )"
+    continueOnError: true
+
   # Copy artifacts and logs to staging directory.
   - script: |
       $(docker.run) $(docker.staging.map) $(docker.src.map) $(docker.src.work) $(imageName) /bin/bash -c "
         mkdir /staging/logs
-        mkdir /staging/artifacts
-        mkdir /staging/packages
+
         find . -iname '*.binlog' \
           -exec cp {} --parents /staging/logs \;
-        find ./artifacts/packages \
-          -iname '*.*'  \
-          -exec cp {} /staging/packages \; "
+
+        if [ -d ./artifacts/asset-manifests ]; then
+            cp -r ./artifacts/asset-manifests /staging/
+        fi
+        cp -r ./artifacts/tarball /staging/"
     displayName: Copy build logs and artifacts
     condition: always()
     continueOnError: true
@@ -71,6 +103,21 @@ jobs:
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory)
       ArtifactName: Artifacts
+      ArtifactType: Container
+
+  # Publish manifest.
+  - task: PublishBuildArtifacts@1
+    displayName: Publish Manifest
+    condition: "
+        and(
+            succeeded(),
+            ne(variables['System.TeamProject'], 'public'),
+            notin(variables['Build.Reason'], 'PullRequest')
+        )"
+    continueOnError: true
+    inputs:
+      PathtoPublish: $(Build.ArtifactStagingDirectory)/asset-manifests/
+      ArtifactName: AssetManifests
       ArtifactType: Container
 
   # Clean up working directory.
