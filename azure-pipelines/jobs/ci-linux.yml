@@ -26,6 +26,7 @@ jobs:
 
   # Create working directory and copy source into it.
   - script: |
+      set -x
       $(docker.run) $(docker.root.map) $(docker.agentSrc.map) $(docker.agentSrc.work) $(imageName) bash -c '
         mkdir -p /root/source-build-reference-packages/staging
         rm -rf /root/source-build-reference-packages/src
@@ -35,12 +36,14 @@ jobs:
 
   # Build reference packages
   - script: |
+      set -x
       $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./build.sh
     displayName: Build reference packages
     timeoutInMinutes: 30
 
   # Create reference packages tarball
   - script: |
+      set -x
       $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER) --ci
     displayName: Create reference packages tarball
     condition: "
@@ -53,7 +56,8 @@ jobs:
 
   # Create reference packages tarball and upload to azure storage
   - script: |
-      $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER) --ci \ 
+      set -x
+      $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER) --ci \
         /p:AzureAccountName=$(publish.blobStorage.account) \
         /p:ContainerName=$(publish.blobStorage.container) \
         /p:AzureAccessToken=$(publish.blobStorage.accessToken) \
@@ -72,6 +76,7 @@ jobs:
 
   # Copy artifacts and logs to staging directory.
   - script: |
+      set -x
       $(docker.run) $(docker.staging.map) $(docker.src.map) $(docker.src.work) $(imageName) /bin/bash -c "
         mkdir /staging/logs
 
