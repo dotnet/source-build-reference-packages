@@ -7,7 +7,7 @@
     <ArtifactsPkgDir>$(RepoRoot)artifacts/packages/</ArtifactsPkgDir>
     <ManifestDir>$(RepoRoot)artifacts/asset-manifests/</ManifestDir>
     <TarballDir>$(RepoRoot)artifacts/tarball/</TarballDir>
-    <TarballFileName>$(TarballDir)source-build-reference-packages-$(VersionPrefix)-$(VersionSuffix).tar.gz</TarballFileName>
+    <TarballFileName>$(TarballDir)Private.SourceBuild.ReferencePackages.$(VersionPrefix)-$(VersionSuffix).tar.gz</TarballFileName>
     <RestoreSources>
       $(RestoreSources);
       https://dotnetfeed.blob.core.windows.net/dotnet-tools-internal/index.json;
@@ -41,7 +41,7 @@
 
   <Target Name="CreateEmptyPackage">
     <MSBuild 
-      Projects="$(RepoRoot)src/emptyPackageProject/source-build-reference-packages.csproj" 
+      Projects="$(RepoRoot)src/emptyPackageProject/Private.SourceBuild.ReferencePackages.csproj"
       Properties="PackageOutputPath=$(ArtifactsPkgDir)"
       Targets="Restore;Pack" />
   </Target>
