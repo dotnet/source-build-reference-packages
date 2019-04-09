@@ -23,5 +23,6 @@
 
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <WarningsAsErrors></WarningsAsErrors>
   </PropertyGroup>
 </Project>
