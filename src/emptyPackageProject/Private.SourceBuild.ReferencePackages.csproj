@@ -11,7 +11,7 @@
     <RepositoryCommit>0000</RepositoryCommit>
     <RepositoryCommit Condition="'$(ManifestCommit)' != ''">$(ManifestCommit)</RepositoryCommit>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <IsPackable>true</IsPackable>
     <IsShipping>false</IsShipping>
   </PropertyGroup>
