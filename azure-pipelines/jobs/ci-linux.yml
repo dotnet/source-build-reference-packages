@@ -27,6 +27,7 @@ jobs:
   # Create working directory and copy source into it.
   - script: |
       set -x
+      df -h
       $(docker.run) $(docker.root.map) $(docker.agentSrc.map) $(docker.agentSrc.work) $(imageName) bash -c '
         mkdir -p /root/source-build-reference-packages/staging
         rm -rf /root/source-build-reference-packages/src
@@ -37,6 +38,7 @@ jobs:
   # Build reference packages
   - script: |
       set -x
+      df -h
       $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./build.sh
     displayName: Build reference packages
     timeoutInMinutes: 30
@@ -44,6 +46,7 @@ jobs:
   # Create reference packages tarball
   - script: |
       set -x
+      df -h
       $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER) --ci
     displayName: Create reference packages tarball
     condition: "
@@ -57,6 +60,7 @@ jobs:
   # Create reference packages tarball and upload to azure storage
   - script: |
       set -x
+      df -h
       $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER) --ci \
         /p:AzureAccountName=$(publish.blobStorage.account) \
         /p:ContainerName=$(publish.blobStorage.container) \
@@ -77,6 +81,7 @@ jobs:
   # Copy artifacts and logs to staging directory.
   - script: |
       set -x
+      df -h
       $(docker.run) $(docker.staging.map) $(docker.src.map) $(docker.src.work) $(imageName) /bin/bash -c "
         mkdir /staging/logs
 
@@ -86,7 +91,9 @@ jobs:
         if [ -d ./artifacts/asset-manifests ]; then
             cp -r ./artifacts/asset-manifests /staging/
         fi
-        cp -r ./artifacts/tarball /staging/"
+        if [ -d ./artifacts/tarball ]; then
+            cp -r ./artifacts/tarball /staging/
+        fi"
     displayName: Copy build logs and artifacts
     condition: always()
     continueOnError: true
