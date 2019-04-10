@@ -5,9 +5,9 @@
   <PropertyGroup>
     <ReferenceAssemblySourcePath>$(RepoRoot)src/referencePackages/src/</ReferenceAssemblySourcePath>
     <TextOnlyProjectsSourcePath>$(RepoRoot)src/textOnlyPackages/</TextOnlyProjectsSourcePath>
-    <ArtifactsBinDir>$(RepoRoot)/artifacts/bin/</ArtifactsBinDir>
-    <ArtifactsObjDir>$(RepoRoot)/artifacts/obj/</ArtifactsObjDir>
-    <ArtifactsLogDir>$(RepoRoot)/artifacts/log/</ArtifactsLogDir>
+    <ArtifactsBinDir>$(RepoRoot)artifacts/bin/</ArtifactsBinDir>
+    <ArtifactsObjDir>$(RepoRoot)artifacts/obj/</ArtifactsObjDir>
+    <ArtifactsLogDir>$(RepoRoot)artifacts/log/</ArtifactsLogDir>
     <ArtifactsRefPkgDir>$(RepoRoot)/artifacts/reference-packages/</ArtifactsRefPkgDir>
   </PropertyGroup>
 
@@ -51,7 +51,7 @@
   </PropertyGroup>
 
   <Target Name="Build" Condition="'@(ProjectsToBuild)' != ''">
-    <Exec Command="$__DOTNET_CMD pack --output $(ArtifactsRefPkgDir) %(ProjectsToBuild.Identity) /bl:$(ArtifactsLogDir)%(ProjectsToBuild.RelativeDir)%(ProjectsToBuild.Filename).binlog $(PackCommandArgs)" />
+    <Exec Command="$__DOTNET_CMD pack --output $(ArtifactsRefPkgDir) %(ProjectsToBuild.Identity) /bl:$(ArtifactsLogDir)$([System.String]::Copy('%(ProjectsToBuild.RelativeDir)').Replace('$(ReferenceAssemblySourcePath)', ''))%(ProjectsToBuild.Filename).binlog $(PackCommandArgs)" />
   </Target>
 
   <Target Name="BuildError" AfterTargets="Build" Condition="'@(ProjectsToBuild)' == ''">
