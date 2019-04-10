@@ -1,7 +1,7 @@
 parameters:
   job: null
   pool:
-    name: Hosted Ubuntu 1604
+    name: DotNetCore-Linux
   imageName: null
 
 jobs:
