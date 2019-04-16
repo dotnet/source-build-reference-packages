@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))/dir.props" />
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.0;netstandard1.3</TargetFrameworks>
+    <TargetFrameworks>netstandard1.0</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.runtime.serialization.json/4.0.2/system.runtime.serialization.json.nuspec</NuspecFile>
    </PropertyGroup>
 

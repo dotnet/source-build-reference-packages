@@ -15,7 +15,7 @@
     <Compile Include="**/lib/$(TargetFramework)/*.cs" />
   </ItemGroup>
 
-    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
+    <ItemGroup>
         <PackageReference Include="System.Reflection" Version="4.1.0" />
         <PackageReference Include="System.Reflection.Primitives" Version="4.0.1" />
         <PackageReference Include="System.Runtime" Version="4.1.0" />
