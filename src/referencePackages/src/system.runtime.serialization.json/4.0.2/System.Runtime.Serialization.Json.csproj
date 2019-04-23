@@ -9,6 +9,9 @@
     <OutputPath>$(ArtifactsBinDir)system.runtime.serialization.json/4.0.2/ref/</OutputPath>
     <IntermediateOutputPath>$(ArtifactsObjDir)system.runtime.serialization.json/4.0.2</IntermediateOutputPath>
   </PropertyGroup>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+        <OutputPath>$(ArtifactsBinDir)system.runtime.serialization.json/4.0.2/lib/</OutputPath>
+    </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />

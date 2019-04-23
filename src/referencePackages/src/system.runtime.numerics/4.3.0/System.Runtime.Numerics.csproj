@@ -9,6 +9,9 @@
     <OutputPath>$(ArtifactsBinDir)system.runtime.numerics/4.3.0/ref/</OutputPath>
     <IntermediateOutputPath>$(ArtifactsObjDir)system.runtime.numerics/4.3.0</IntermediateOutputPath>
   </PropertyGroup>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+        <OutputPath>$(ArtifactsBinDir)system.runtime.numerics/4.3.0/lib/</OutputPath>
+    </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />

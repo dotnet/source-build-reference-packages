@@ -24,7 +24,6 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.readerwriter/4.0.11/System.Xml.ReaderWriter.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.xpath/4.0.1/System.Xml.XPath.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.xmldocument/4.0.1/System.Xml.XmlDocument.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.xpath.xmldocument/4.0.1/System.Xml.XPath.XmlDocument.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.typeextensions/4.1.0/System.Reflection.TypeExtensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.extensions/4.0.1/System.Reflection.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit.ilgeneration/4.0.1/System.Reflection.Emit.ILGeneration.csproj"/>

@@ -9,6 +9,9 @@
     <OutputPath>$(ArtifactsBinDir)system.buffers/4.3.0/ref/</OutputPath>
     <IntermediateOutputPath>$(ArtifactsObjDir)system.buffers/4.3.0</IntermediateOutputPath>
   </PropertyGroup>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.1' ">
+        <OutputPath>$(ArtifactsBinDir)system.buffers/4.3.0/lib/</OutputPath>
+    </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />

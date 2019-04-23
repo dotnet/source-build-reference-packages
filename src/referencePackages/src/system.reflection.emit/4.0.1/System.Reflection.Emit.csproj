@@ -9,6 +9,9 @@
     <OutputPath>$(ArtifactsBinDir)system.reflection.emit/4.0.1/ref/</OutputPath>
     <IntermediateOutputPath>$(ArtifactsObjDir)system.reflection.emit/4.0.1</IntermediateOutputPath>
   </PropertyGroup>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+        <OutputPath>$(ArtifactsBinDir)system.reflection.emit/4.0.1/lib/</OutputPath>
+    </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />
