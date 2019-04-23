@@ -9,6 +9,9 @@
     <OutputPath>$(ArtifactsBinDir)system.reflection.metadata/1.4.2/ref/</OutputPath>
     <IntermediateOutputPath>$(ArtifactsObjDir)system.reflection.metadata/1.4.2</IntermediateOutputPath>
   </PropertyGroup>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.1' ">
+        <OutputPath>$(ArtifactsBinDir)system.reflection.metadata/1.4.2/lib/</OutputPath>
+    </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />

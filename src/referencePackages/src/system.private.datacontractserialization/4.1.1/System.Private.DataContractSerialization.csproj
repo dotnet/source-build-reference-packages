@@ -9,6 +9,9 @@
     <OutputPath>$(ArtifactsBinDir)system.private.datacontractserialization/4.1.1/ref/</OutputPath>
     <IntermediateOutputPath>$(ArtifactsObjDir)system.private.datacontractserialization/4.1.1</IntermediateOutputPath>
   </PropertyGroup>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+        <OutputPath>$(ArtifactsBinDir)system.private.datacontractserialization/4.1.1/lib/</OutputPath>
+    </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />
