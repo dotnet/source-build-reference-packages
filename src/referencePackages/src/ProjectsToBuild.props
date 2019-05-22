@@ -97,7 +97,6 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.extensions/4.3.0/System.Reflection.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.interopservices.runtimeinformation/4.3.0/System.Runtime.InteropServices.RuntimeInformation.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.interopservices.runtimeinformation/4.0.0/System.Runtime.InteropServices.RuntimeInformation.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.5.2/System.Runtime.CompilerServices.Unsafe.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.typeextensions/4.3.0/System.Reflection.TypeExtensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.3.0/System.Buffers.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.compression/4.3.0/System.IO.Compression.csproj"/>
