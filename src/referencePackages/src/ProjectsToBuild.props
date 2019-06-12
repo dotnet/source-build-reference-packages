@@ -101,6 +101,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.extensions/4.3.0/System.Reflection.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.interopservices.runtimeinformation/4.3.0/System.Runtime.InteropServices.RuntimeInformation.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.interopservices.runtimeinformation/4.0.0/System.Runtime.InteropServices.RuntimeInformation.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.5.2/System.Runtime.CompilerServices.Unsafe.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.typeextensions/4.3.0/System.Reflection.TypeExtensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.3.0/System.Buffers.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.compression/4.3.0/System.IO.Compression.csproj"/>
@@ -168,7 +169,9 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.specialized/4.3.0/System.Collections.Specialized.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.appcontext/4.3.0/System.AppContext.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.appcontext/4.1.0/System.AppContext.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)nuget.versioning/4.4.0/NuGet.Versioning.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)nuget.versioning/4.3.0/NuGet.Versioning.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.dotnet.platformabstractions/2.0.0/Microsoft.DotNet.PlatformAbstractions.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.csharp/4.3.0/Microsoft.CSharp.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.csharp/4.0.1/Microsoft.CSharp.csproj"/>  </ItemGroup>
 </Project>
