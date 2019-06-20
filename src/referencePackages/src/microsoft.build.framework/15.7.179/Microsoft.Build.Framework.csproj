@@ -22,11 +22,13 @@
   </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+        <PackageReference Include="NETStandard.Library" Version="$(NETStandardLibraryPackageVersion)" />
         <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.1.1" />
         <PackageReference Include="System.Threading.Thread" Version="4.0.0" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
         <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.0-alpha-5" />
+        <PackageReference Include="System.Runtime" Version="4.3.0" />
         <Reference Include="System.Xaml" />
     </ItemGroup>
 
