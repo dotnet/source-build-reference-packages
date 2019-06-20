@@ -62,7 +62,16 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.tracing/4.3.0/System.Diagnostics.Tracing.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.concurrent/4.3.0/System.Collections.Concurrent.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.parallel/4.3.0/System.Threading.Tasks.Parallel.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.primitives/4.1.1/System.Runtime.Serialization.Primitives.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit.lightweight/4.0.1/System.Reflection.Emit.Lightweight.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.objectmodel/4.0.12/System.ObjectModel.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.expressions/4.1.0/System.Linq.Expressions.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.dynamic.runtime/4.0.11/System.Dynamic.Runtime.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.tracing/4.1.0/System.Diagnostics.Tracing.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.concurrent/4.0.12/System.Collections.Concurrent.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.dataflow/4.6.0/System.Threading.Tasks.Dataflow.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.overlapped/4.3.0/System.Threading.Overlapped.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.encoding.codepages/4.0.1/System.Text.Encoding.CodePages.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.principal/4.3.0/System.Security.Principal.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.claims/4.3.0/System.Security.Claims.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.win32.primitives/4.3.0/Microsoft.Win32.Primitives.csproj"/>
@@ -78,8 +87,6 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.algorithms/4.3.0/System.Security.Cryptography.Algorithms.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.x509certificates/4.3.0/System.Security.Cryptography.X509Certificates.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.primitives/4.0.0/System.Security.Cryptography.Primitives.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.tracing/4.1.0/System.Diagnostics.Tracing.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.concurrent/4.0.12/System.Collections.Concurrent.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.encoding/4.0.0/System.Security.Cryptography.Encoding.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.numerics/4.0.1/System.Runtime.Numerics.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.algorithms/4.2.0/System.Security.Cryptography.Algorithms.csproj"/>
@@ -92,8 +99,6 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.cng/4.2.0/System.Security.Cryptography.Cng.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.accesscontrol/4.3.0/System.Security.AccessControl.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.primitives/4.3.0/System.Runtime.Serialization.Primitives.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.primitives/4.1.1/System.Runtime.Serialization.Primitives.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit.lightweight/4.0.1/System.Reflection.Emit.Lightweight.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.private.datacontractserialization/4.1.1/System.Private.DataContractSerialization.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.json/4.0.2/System.Runtime.Serialization.Json.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.formatters/4.3.0/System.Runtime.Serialization.Formatters.csproj"/>
@@ -101,6 +106,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.extensions/4.3.0/System.Reflection.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.interopservices.runtimeinformation/4.3.0/System.Runtime.InteropServices.RuntimeInformation.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.interopservices.runtimeinformation/4.0.0/System.Runtime.InteropServices.RuntimeInformation.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.5.2/System.Runtime.CompilerServices.Unsafe.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.typeextensions/4.3.0/System.Reflection.TypeExtensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.3.0/System.Buffers.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.compression/4.3.0/System.IO.Compression.csproj"/>
@@ -114,7 +120,6 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit.lightweight/4.3.0/System.Reflection.Emit.Lightweight.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit/4.3.0/System.Reflection.Emit.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.objectmodel/4.3.0/System.ObjectModel.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.objectmodel/4.0.12/System.ObjectModel.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.webheadercollection/4.3.0/System.Net.WebHeaderCollection.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.webheadercollection/4.0.1/System.Net.WebHeaderCollection.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.primitives/4.3.0/System.Net.Primitives.csproj"/>
@@ -132,7 +137,6 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.http/4.3.3/System.Net.Http.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.expressions/4.3.0/System.Linq.Expressions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.queryable/4.3.0/System.Linq.Queryable.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.expressions/4.1.0/System.Linq.Expressions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.pipes/4.3.0/System.IO.Pipes.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.pipes.accesscontrol/4.3.0/System.IO.Pipes.AccessControl.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.compression.zipfile/4.3.0/System.IO.Compression.ZipFile.csproj"/>
@@ -143,7 +147,6 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.globalization.calendars/4.3.0/System.Globalization.Calendars.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.globalization.calendars/4.0.1/System.Globalization.Calendars.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.dynamic.runtime/4.3.0/System.Dynamic.Runtime.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.dynamic.runtime/4.0.11/System.Dynamic.Runtime.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.tracesource/4.3.0/System.Diagnostics.TraceSource.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.tracesource/4.0.0/System.Diagnostics.TraceSource.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.textwritertracelistener/4.0.0/System.Diagnostics.TextWriterTraceListener.csproj"/>
@@ -172,5 +175,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)nuget.versioning/4.3.0/NuGet.Versioning.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.dotnet.platformabstractions/2.0.0/Microsoft.DotNet.PlatformAbstractions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.csharp/4.3.0/Microsoft.CSharp.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.csharp/4.0.1/Microsoft.CSharp.csproj"/>  </ItemGroup>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.csharp/4.0.1/Microsoft.CSharp.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.framework/15.7.179/Microsoft.Build.Framework.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build/15.7.179/Microsoft.Build.csproj"/>  </ItemGroup>
 </Project>
