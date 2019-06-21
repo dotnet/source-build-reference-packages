@@ -50,6 +50,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.filesystem/4.3.0/System.IO.FileSystem.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.debug/4.3.0/System.Diagnostics.Debug.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.readerwriter/4.3.0/System.Xml.ReaderWriter.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.xmldocument/4.3.0/System.Xml.XmlDocument.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.tools/4.3.0/System.Diagnostics.Tools.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.xdocument/4.3.0/System.Xml.XDocument.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.tools/4.0.1/System.Diagnostics.Tools.csproj"/>
@@ -102,6 +103,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.private.datacontractserialization/4.1.1/System.Private.DataContractSerialization.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.json/4.0.2/System.Runtime.Serialization.Json.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.formatters/4.3.0/System.Runtime.Serialization.Formatters.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.loader/4.3.0/System.Runtime.Loader.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.loader/4.0.0/System.Runtime.Loader.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.extensions/4.3.0/System.Reflection.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.interopservices.runtimeinformation/4.3.0/System.Runtime.InteropServices.RuntimeInformation.csproj"/>

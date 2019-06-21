@@ -16,8 +16,11 @@
     <Compile Include="**/lib/$(TargetFramework)/*.cs" />
   </ItemGroup>
 
-    <ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
         <PackageReference Include="System.Runtime" Version="4.3.0" />
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+        <PackageReference Include="NETStandard.Library" Version="$(NETStandardLibraryPackageVersion)" />
     </ItemGroup>
 
   
