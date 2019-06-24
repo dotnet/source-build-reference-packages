@@ -101,8 +101,9 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.cng/4.3.0/System.Security.Cryptography.Cng.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.cng/4.2.0/System.Security.Cryptography.Cng.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.accesscontrol/4.3.0/System.Security.AccessControl.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.primitives/4.3.0/System.Runtime.Serialization.Primitives.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.private.datacontractserialization/4.1.1/System.Private.DataContractSerialization.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.xml/4.1.1/System.Runtime.Serialization.Xml.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.primitives/4.3.0/System.Runtime.Serialization.Primitives.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.json/4.0.2/System.Runtime.Serialization.Json.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.formatters/4.3.0/System.Runtime.Serialization.Formatters.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.loader/4.3.0/System.Runtime.Loader.csproj"/>
@@ -110,6 +111,8 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.extensions/4.3.0/System.Reflection.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.interopservices.runtimeinformation/4.3.0/System.Runtime.InteropServices.RuntimeInformation.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.interopservices.runtimeinformation/4.0.0/System.Runtime.InteropServices.RuntimeInformation.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.resources.writer/4.0.0/System.Resources.Writer.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.resources.reader/4.0.0/System.Resources.Reader.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.typeextensions/4.3.0/System.Reflection.TypeExtensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.3.0/System.Buffers.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.compression/4.3.0/System.IO.Compression.csproj"/>
@@ -140,6 +143,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.http/4.3.3/System.Net.Http.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.expressions/4.3.0/System.Linq.Expressions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.queryable/4.3.0/System.Linq.Queryable.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.parallel/4.0.1/System.Linq.Parallel.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.pipes/4.3.0/System.IO.Pipes.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.pipes.accesscontrol/4.3.0/System.IO.Pipes.AccessControl.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.compression.zipfile/4.3.0/System.IO.Compression.ZipFile.csproj"/>
@@ -179,6 +183,11 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.dotnet.platformabstractions/2.0.0/Microsoft.DotNet.PlatformAbstractions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.csharp/4.3.0/Microsoft.CSharp.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.csharp/4.0.1/Microsoft.CSharp.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.framework/15.1.548/Microsoft.Build.Framework.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.utilities.core/15.1.548/Microsoft.Build.Utilities.Core.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.framework/15.1.1012/Microsoft.Build.Framework.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.utilities.core/15.1.1012/Microsoft.Build.Utilities.Core.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.tasks.core/15.1.548/Microsoft.Build.Tasks.Core.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.framework/15.7.179/Microsoft.Build.Framework.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build/15.7.179/Microsoft.Build.csproj"/>  </ItemGroup>
 </Project>
