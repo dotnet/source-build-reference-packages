@@ -20,8 +20,8 @@ using System.Security;
 [assembly: AssemblyCompany("Microsoft Corporation")]
 [assembly: AssemblyProduct("Microsoft® .NET Framework")]
 [assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: AssemblyFileVersion("15.7.179.6572")]
-[assembly: AssemblyInformationalVersion("15.7.179.6572 built by: SOURCEBUILD")]
+[assembly: AssemblyFileVersion("15.1.548.43366")]
+[assembly: AssemblyInformationalVersion("15.1.548.43366 built by: SOURCEBUILD")]
 [assembly: CLSCompliant(true)]
 [assembly: AssemblyMetadata("", "")]
 [assembly: AssemblyVersion("15.1.0.0")]
@@ -70,7 +70,6 @@ namespace Microsoft.Build.Framework
     }
     public partial class BuildEventContext
     {
-        public const int InvalidEvaluationId = -1;
         public const int InvalidNodeId = -2;
         public const int InvalidProjectContextId = -2;
         public const int InvalidProjectInstanceId = -1;
@@ -80,9 +79,7 @@ namespace Microsoft.Build.Framework
         public BuildEventContext(int nodeId, int targetId, int projectContextId, int taskId) { }
         public BuildEventContext(int nodeId, int projectInstanceId, int projectContextId, int targetId, int taskId) { }
         public BuildEventContext(int submissionId, int nodeId, int projectInstanceId, int projectContextId, int targetId, int taskId) { }
-        public BuildEventContext(int submissionId, int nodeId, int evaluationId, int projectInstanceId, int projectContextId, int targetId, int taskId) { }
         public long BuildRequestId { get { throw null; } }
-        public int EvaluationId { get { throw null; } }
         public static Microsoft.Build.Framework.BuildEventContext Invalid { get { throw null; } }
         public int NodeId { get { throw null; } }
         public int ProjectContextId { get { throw null; } }
@@ -273,11 +270,6 @@ namespace Microsoft.Build.Framework
     {
         void Initialize(Microsoft.Build.Framework.IEventSource eventSource, int nodeCount);
     }
-    public partial interface IProjectElement
-    {
-        string ElementName { get; }
-        string OuterElement { get; }
-    }
     public partial interface ITask
     {
         Microsoft.Build.Framework.IBuildEngine BuildEngine { get; set; }
@@ -333,13 +325,11 @@ namespace Microsoft.Build.Framework
     public partial class LoggerException : System.Exception
     {
         public LoggerException() { }
-        protected LoggerException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context) { }
         public LoggerException(string message) { }
         public LoggerException(string message, System.Exception innerException) { }
         public LoggerException(string message, System.Exception innerException, string errorCode, string helpKeyword) { }
         public string ErrorCode { get { throw null; } }
         public string HelpKeyword { get { throw null; } }
-        public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context) { }
     }
     public enum LoggerVerbosity
     {
@@ -359,19 +349,6 @@ namespace Microsoft.Build.Framework
     {
         public OutputAttribute() { }
     }
-    public sealed partial class ProjectEvaluationFinishedEventArgs : Microsoft.Build.Framework.BuildStatusEventArgs
-    {
-        public ProjectEvaluationFinishedEventArgs() { }
-        public ProjectEvaluationFinishedEventArgs(string message, params object[] messageArgs) { }
-        public System.Nullable<Microsoft.Build.Framework.Profiler.ProfilerResult> ProfilerResult { get { throw null; } set { } }
-        public string ProjectFile { get { throw null; } set { } }
-    }
-    public partial class ProjectEvaluationStartedEventArgs : Microsoft.Build.Framework.BuildStatusEventArgs
-    {
-        public ProjectEvaluationStartedEventArgs() { }
-        public ProjectEvaluationStartedEventArgs(string message, params object[] messageArgs) { }
-        public string ProjectFile { get { throw null; } set { } }
-    }
     public partial class ProjectFinishedEventArgs : Microsoft.Build.Framework.BuildStatusEventArgs
     {
         protected ProjectFinishedEventArgs() { }
@@ -381,14 +358,6 @@ namespace Microsoft.Build.Framework
         public bool Succeeded { get { throw null; } }
     }
     public delegate void ProjectFinishedEventHandler(object sender, Microsoft.Build.Framework.ProjectFinishedEventArgs e);
-    public partial class ProjectImportedEventArgs : Microsoft.Build.Framework.BuildMessageEventArgs
-    {
-        public ProjectImportedEventArgs() { }
-        public ProjectImportedEventArgs(int lineNumber, int columnNumber, string message, params object[] messageArgs) { }
-        public string ImportedProjectFile { get { throw null; } set { } }
-        public bool ImportIgnored { get { throw null; } set { } }
-        public string UnexpandedProject { get { throw null; } set { } }
-    }
     public partial class ProjectStartedEventArgs : Microsoft.Build.Framework.BuildStatusEventArgs
     {
         public const int InvalidProjectId = -1;
@@ -430,57 +399,6 @@ namespace Microsoft.Build.Framework
     {
         public RunInSTAAttribute() { }
     }
-    public abstract partial class SdkLogger
-    {
-        protected SdkLogger() { }
-        public abstract void LogMessage(string message, Microsoft.Build.Framework.MessageImportance messageImportance = Microsoft.Build.Framework.MessageImportance.Low);
-    }
-    public sealed partial class SdkReference : System.IEquatable<Microsoft.Build.Framework.SdkReference>
-    {
-        public SdkReference(string name, string version, string minimumVersion) { }
-        public string MinimumVersion { get { throw null; } }
-        public string Name { get { throw null; } }
-        public string Version { get { throw null; } }
-        public bool Equals(Microsoft.Build.Framework.SdkReference other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
-        public override int GetHashCode() { throw null; }
-        public override string ToString() { throw null; }
-        public static bool TryParse(string sdk, out Microsoft.Build.Framework.SdkReference sdkReference) { throw null; }
-    }
-    public abstract partial class SdkResolver
-    {
-        protected SdkResolver() { }
-        public abstract string Name { get; }
-        public abstract int Priority { get; }
-        public abstract Microsoft.Build.Framework.SdkResult Resolve(Microsoft.Build.Framework.SdkReference sdkReference, Microsoft.Build.Framework.SdkResolverContext resolverContext, Microsoft.Build.Framework.SdkResultFactory factory);
-    }
-    public abstract partial class SdkResolverContext
-    {
-        protected SdkResolverContext() { }
-        public virtual Microsoft.Build.Framework.SdkLogger Logger { get { throw null; } protected set { } }
-        public virtual System.Version MSBuildVersion { get { throw null; } protected set { } }
-        public virtual string ProjectFilePath { get { throw null; } protected set { } }
-        public virtual string SolutionFilePath { get { throw null; } protected set { } }
-        public virtual object State { get { throw null; } set { } }
-    }
-    public abstract partial class SdkResult
-    {
-        protected SdkResult() { }
-        public bool Success { get { throw null; } protected set { } }
-    }
-    public abstract partial class SdkResultFactory
-    {
-        protected SdkResultFactory() { }
-        public abstract Microsoft.Build.Framework.SdkResult IndicateFailure(System.Collections.Generic.IEnumerable<string> errors, System.Collections.Generic.IEnumerable<string> warnings = null);
-        public abstract Microsoft.Build.Framework.SdkResult IndicateSuccess(string path, string version, System.Collections.Generic.IEnumerable<string> warnings = null);
-    }
-    public enum TargetBuiltReason
-    {
-        AfterTargets = 3,
-        BeforeTargets = 1,
-        DependsOn = 2,
-        None = 0,
-    }
     public partial class TargetFinishedEventArgs : Microsoft.Build.Framework.BuildStatusEventArgs
     {
         protected TargetFinishedEventArgs() { }
@@ -494,22 +412,11 @@ namespace Microsoft.Build.Framework
         public System.Collections.IEnumerable TargetOutputs { get { throw null; } set { } }
     }
     public delegate void TargetFinishedEventHandler(object sender, Microsoft.Build.Framework.TargetFinishedEventArgs e);
-    public partial class TargetSkippedEventArgs : Microsoft.Build.Framework.BuildMessageEventArgs
-    {
-        public TargetSkippedEventArgs() { }
-        public TargetSkippedEventArgs(string message, params object[] messageArgs) { }
-        public Microsoft.Build.Framework.TargetBuiltReason BuildReason { get { throw null; } set { } }
-        public string ParentTarget { get { throw null; } set { } }
-        public string TargetFile { get { throw null; } set { } }
-        public string TargetName { get { throw null; } set { } }
-    }
     public partial class TargetStartedEventArgs : Microsoft.Build.Framework.BuildStatusEventArgs
     {
         protected TargetStartedEventArgs() { }
         public TargetStartedEventArgs(string message, string helpKeyword, string targetName, string projectFile, string targetFile) { }
-        public TargetStartedEventArgs(string message, string helpKeyword, string targetName, string projectFile, string targetFile, string parentTarget, Microsoft.Build.Framework.TargetBuiltReason buildReason, System.DateTime eventTimestamp) { }
         public TargetStartedEventArgs(string message, string helpKeyword, string targetName, string projectFile, string targetFile, string parentTarget, System.DateTime eventTimestamp) { }
-        public Microsoft.Build.Framework.TargetBuiltReason BuildReason { get { throw null; } }
         public string ParentTarget { get { throw null; } }
         public string ProjectFile { get { throw null; } }
         public string TargetFile { get { throw null; } }
@@ -560,335 +467,4 @@ namespace Microsoft.Build.Framework
         public System.Collections.Generic.IDictionary<string, string> Properties { get { throw null; } set { } }
     }
     public delegate void TelemetryEventHandler(object sender, Microsoft.Build.Framework.TelemetryEventArgs e);
-}
-namespace Microsoft.Build.Framework.Profiler
-{
-    public partial struct EvaluationLocation
-    {
-        private object _dummy;
-        private int _dummyPrimitive;
-        public EvaluationLocation(Microsoft.Build.Framework.Profiler.EvaluationPass evaluationPass, string evaluationPassDescription, string file, System.Nullable<int> line, string elementName, string elementDescription, Microsoft.Build.Framework.Profiler.EvaluationLocationKind kind) { throw null; }
-        public EvaluationLocation(long id, System.Nullable<long> parentId, Microsoft.Build.Framework.Profiler.EvaluationPass evaluationPass, string evaluationPassDescription, string file, System.Nullable<int> line, string elementName, string elementDescription, Microsoft.Build.Framework.Profiler.EvaluationLocationKind kind) { throw null; }
-        public EvaluationLocation(System.Nullable<long> parentId, Microsoft.Build.Framework.Profiler.EvaluationPass evaluationPass, string evaluationPassDescription, string file, System.Nullable<int> line, string elementName, string elementDescription, Microsoft.Build.Framework.Profiler.EvaluationLocationKind kind) { throw null; }
-        public string ElementDescription { get { throw null; } }
-        public string ElementName { get { throw null; } }
-        public static Microsoft.Build.Framework.Profiler.EvaluationLocation EmptyLocation { get { throw null; } }
-        public Microsoft.Build.Framework.Profiler.EvaluationPass EvaluationPass { get { throw null; } }
-        public string EvaluationPassDescription { get { throw null; } }
-        public string File { get { throw null; } }
-        public long Id { get { throw null; } }
-        public bool IsEvaluationPass { get { throw null; } }
-        public Microsoft.Build.Framework.Profiler.EvaluationLocationKind Kind { get { throw null; } }
-        public System.Nullable<int> Line { get { throw null; } }
-        public System.Nullable<long> ParentId { get { throw null; } }
-        public static Microsoft.Build.Framework.Profiler.EvaluationLocation CreateLocationForAggregatedGlob() { throw null; }
-        public static Microsoft.Build.Framework.Profiler.EvaluationLocation CreateLocationForCondition(System.Nullable<long> parentId, Microsoft.Build.Framework.Profiler.EvaluationPass evaluationPass, string evaluationDescription, string file, System.Nullable<int> line, string condition) { throw null; }
-        public static Microsoft.Build.Framework.Profiler.EvaluationLocation CreateLocationForGlob(System.Nullable<long> parentId, Microsoft.Build.Framework.Profiler.EvaluationPass evaluationPass, string evaluationDescription, string file, System.Nullable<int> line, string globDescription) { throw null; }
-        public static Microsoft.Build.Framework.Profiler.EvaluationLocation CreateLocationForProject(System.Nullable<long> parentId, Microsoft.Build.Framework.Profiler.EvaluationPass evaluationPass, string evaluationDescription, string file, System.Nullable<int> line, Microsoft.Build.Framework.IProjectElement element) { throw null; }
-        public override bool Equals(object obj) { throw null; }
-        public override int GetHashCode() { throw null; }
-        public override string ToString() { throw null; }
-        public Microsoft.Build.Framework.Profiler.EvaluationLocation WithEvaluationPass(Microsoft.Build.Framework.Profiler.EvaluationPass evaluationPass, string passDescription = null) { throw null; }
-        public Microsoft.Build.Framework.Profiler.EvaluationLocation WithFile(string file) { throw null; }
-        public Microsoft.Build.Framework.Profiler.EvaluationLocation WithFileLineAndCondition(string file, System.Nullable<int> line, string condition) { throw null; }
-        public Microsoft.Build.Framework.Profiler.EvaluationLocation WithFileLineAndElement(string file, System.Nullable<int> line, Microsoft.Build.Framework.IProjectElement element) { throw null; }
-        public Microsoft.Build.Framework.Profiler.EvaluationLocation WithGlob(string globDescription) { throw null; }
-        public Microsoft.Build.Framework.Profiler.EvaluationLocation WithParentId(System.Nullable<long> parentId) { throw null; }
-    }
-    public enum EvaluationLocationKind : byte
-    {
-        Condition = (byte)1,
-        Element = (byte)0,
-        Glob = (byte)2,
-    }
-    public enum EvaluationPass : byte
-    {
-        InitialProperties = (byte)2,
-        ItemDefinitionGroups = (byte)4,
-        Items = (byte)5,
-        LazyItems = (byte)6,
-        Properties = (byte)3,
-        Targets = (byte)8,
-        TotalEvaluation = (byte)0,
-        TotalGlobbing = (byte)1,
-        UsingTasks = (byte)7,
-    }
-    public partial struct ProfiledLocation
-    {
-        private int _dummyPrimitive;
-        public ProfiledLocation(System.TimeSpan inclusiveTime, System.TimeSpan exclusiveTime, int numberOfHits) { throw null; }
-        public System.TimeSpan ExclusiveTime { get { throw null; } }
-        public System.TimeSpan InclusiveTime { get { throw null; } }
-        public int NumberOfHits { get { throw null; } }
-        public override bool Equals(object obj) { throw null; }
-        public override int GetHashCode() { throw null; }
-        public override string ToString() { throw null; }
-    }
-    public partial struct ProfilerResult
-    {
-        private object _dummy;
-        public ProfilerResult(System.Collections.Generic.IDictionary<Microsoft.Build.Framework.Profiler.EvaluationLocation, Microsoft.Build.Framework.Profiler.ProfiledLocation> profiledLocations) { throw null; }
-        public System.Collections.Generic.IReadOnlyDictionary<Microsoft.Build.Framework.Profiler.EvaluationLocation, Microsoft.Build.Framework.Profiler.ProfiledLocation> ProfiledLocations { get { throw null; } }
-        public override bool Equals(object obj) { throw null; }
-        public override int GetHashCode() { throw null; }
-    }
-}
-namespace Microsoft.Build.Framework.XamlTypes
-{
-    public sealed partial class Argument : System.ComponentModel.ISupportInitialize
-    {
-        public Argument() { }
-        public bool IsRequired { get { throw null; } set { } }
-        public string Property { get { throw null; } set { } }
-        public string Separator { get { throw null; } set { } }
-        public void BeginInit() { }
-        public void EndInit() { }
-    }
-    public abstract partial class BaseProperty : System.ComponentModel.ISupportInitialize
-    {
-        protected BaseProperty() { }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.Argument> Arguments { get { throw null; } set { } }
-        public string Category { get { throw null; } set { } }
-        public Microsoft.Build.Framework.XamlTypes.Rule ContainingRule { get { throw null; } }
-        public Microsoft.Build.Framework.XamlTypes.DataSource DataSource { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string Default { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string Description { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string DisplayName { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(false)]
-        public string F1Keyword { get { throw null; } set { } }
-        public int HelpContext { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(false)]
-        public string HelpFile { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(false)]
-        public string HelpUrl { get { throw null; } set { } }
-        public bool IncludeInCommandLine { get { throw null; } set { } }
-        public bool IsRequired { get { throw null; } set { } }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.NameValuePair> Metadata { get { throw null; } set { } }
-        public bool MultipleValuesAllowed { get { throw null; } set { } }
-        public string Name { get { throw null; } set { } }
-        public bool ReadOnly { get { throw null; } set { } }
-        public string Separator { get { throw null; } set { } }
-        public string Subcategory { get { throw null; } set { } }
-        public string Switch { get { throw null; } set { } }
-        public string SwitchPrefix { get { throw null; } set { } }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.ValueEditor> ValueEditors { get { throw null; } set { } }
-        public bool Visible { get { throw null; } set { } }
-        public virtual void BeginInit() { }
-        public virtual void EndInit() { }
-    }
-    public sealed partial class BoolProperty : Microsoft.Build.Framework.XamlTypes.BaseProperty
-    {
-        public BoolProperty() { }
-        public string ReverseSwitch { get { throw null; } set { } }
-    }
-    public sealed partial class Category : Microsoft.Build.Framework.XamlTypes.CategorySchema, System.ComponentModel.ISupportInitialize
-    {
-        public Category() { }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string Description { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string DisplayName { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string HelpString { get { throw null; } set { } }
-        public string Name { get { throw null; } set { } }
-        public string Subtype { get { throw null; } set { } }
-        public void BeginInit() { }
-        public void EndInit() { }
-    }
-    public abstract partial class CategorySchema
-    {
-        protected CategorySchema() { }
-    }
-    public sealed partial class ContentType : Microsoft.Build.Framework.XamlTypes.IProjectSchemaNode, System.ComponentModel.ISupportInitialize
-    {
-        public ContentType() { }
-        public bool DefaultContentTypeForItemType { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string DisplayName { get { throw null; } set { } }
-        [System.ObsoleteAttribute("Unused.  Use ItemType property instead.", true)]
-        public string ItemGroupName { get { throw null; } set { } }
-        public string ItemType { get { throw null; } set { } }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.NameValuePair> Metadata { get { throw null; } set { } }
-        public string Name { get { throw null; } set { } }
-        public void BeginInit() { }
-        public void EndInit() { }
-        public string GetMetadata(string metadataName) { throw null; }
-        public System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type) { throw null; }
-        public System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes() { throw null; }
-    }
-    public sealed partial class DataSource : System.ComponentModel.ISupportInitialize
-    {
-        public DataSource() { }
-        public bool HasConfigurationCondition { get { throw null; } set { } }
-        public string ItemType { get { throw null; } set { } }
-        public string Label { get { throw null; } set { } }
-        public string MSBuildTarget { get { throw null; } set { } }
-        public string PersistedName { get { throw null; } set { } }
-        public string Persistence { get { throw null; } set { } }
-        public string PersistenceStyle { get { throw null; } set { } }
-        public Microsoft.Build.Framework.XamlTypes.DefaultValueSourceLocation SourceOfDefaultValue { get { throw null; } set { } }
-        public string SourceType { get { throw null; } set { } }
-        public void BeginInit() { }
-        public void EndInit() { }
-    }
-    public enum DefaultValueSourceLocation
-    {
-        AfterContext = 1,
-        BeforeContext = 0,
-    }
-    public sealed partial class DynamicEnumProperty : Microsoft.Build.Framework.XamlTypes.BaseProperty
-    {
-        public DynamicEnumProperty() { }
-        public string EnumProvider { get { throw null; } set { } }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.NameValuePair> ProviderSettings { get { throw null; } set { } }
-    }
-    public sealed partial class EnumProperty : Microsoft.Build.Framework.XamlTypes.BaseProperty
-    {
-        public EnumProperty() { }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.EnumValue> AdmissibleValues { get { throw null; } set { } }
-        public override void EndInit() { }
-    }
-    public sealed partial class EnumValue
-    {
-        public EnumValue() { }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.Argument> Arguments { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string Description { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string DisplayName { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string HelpString { get { throw null; } set { } }
-        public bool IsDefault { get { throw null; } set { } }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.NameValuePair> Metadata { get { throw null; } set { } }
-        public string Name { get { throw null; } set { } }
-        public string Switch { get { throw null; } set { } }
-        public string SwitchPrefix { get { throw null; } set { } }
-    }
-    public sealed partial class FileExtension : Microsoft.Build.Framework.XamlTypes.IProjectSchemaNode
-    {
-        public FileExtension() { }
-        public string ContentType { get { throw null; } set { } }
-        public string Name { get { throw null; } set { } }
-        public System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type) { throw null; }
-        public System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes() { throw null; }
-    }
-    public sealed partial class IntProperty : Microsoft.Build.Framework.XamlTypes.BaseProperty
-    {
-        public IntProperty() { }
-        public System.Nullable<int> MaxValue { get { throw null; } set { } }
-        public System.Nullable<int> MinValue { get { throw null; } set { } }
-        public override void EndInit() { }
-    }
-    public partial interface IProjectSchemaNode
-    {
-        System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type);
-        System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes();
-    }
-    public sealed partial class ItemType : Microsoft.Build.Framework.XamlTypes.IProjectSchemaNode, System.ComponentModel.ISupportInitialize
-    {
-        public ItemType() { }
-        public string DefaultContentType { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string DisplayName { get { throw null; } set { } }
-        public string Name { get { throw null; } set { } }
-        public bool UpToDateCheckInput { get { throw null; } set { } }
-        public void BeginInit() { }
-        public void EndInit() { }
-        public System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type) { throw null; }
-        public System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes() { throw null; }
-    }
-    public partial class NameValuePair
-    {
-        public NameValuePair() { }
-        public string Name { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string Value { get { throw null; } set { } }
-    }
-    public sealed partial class ProjectSchemaDefinitions : Microsoft.Build.Framework.XamlTypes.IProjectSchemaNode
-    {
-        public ProjectSchemaDefinitions() { }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.IProjectSchemaNode> Nodes { get { throw null; } set { } }
-        public System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type) { throw null; }
-        public System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes() { throw null; }
-    }
-    public sealed partial class Rule : Microsoft.Build.Framework.XamlTypes.RuleSchema, Microsoft.Build.Framework.XamlTypes.IProjectSchemaNode, System.ComponentModel.ISupportInitialize
-    {
-        public Rule() { }
-        public string AdditionalInputs { get { throw null; } set { } }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.Category> Categories { get { throw null; } set { } }
-        public string CommandLine { get { throw null; } set { } }
-        public Microsoft.Build.Framework.XamlTypes.DataSource DataSource { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string Description { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string DisplayName { get { throw null; } set { } }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.Category> EvaluatedCategories { get { throw null; } }
-        public string ExecutionDescription { get { throw null; } set { } }
-        public string FileExtension { get { throw null; } set { } }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string HelpString { get { throw null; } set { } }
-        public System.Collections.Generic.Dictionary<string, object> Metadata { get { throw null; } set { } }
-        public string Name { get { throw null; } set { } }
-        public int Order { get { throw null; } set { } }
-        public string Outputs { get { throw null; } set { } }
-        public Microsoft.Build.Framework.XamlTypes.RuleOverrideMode OverrideMode { get { throw null; } set { } }
-        public string PageTemplate { get { throw null; } set { } }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.BaseProperty> Properties { get { throw null; } set { } }
-        public bool PropertyPagesHidden { get { throw null; } set { } }
-        public string Separator { get { throw null; } set { } }
-        public bool ShowOnlyRuleProperties { get { throw null; } set { } }
-        public bool SupportsFileBatching { get { throw null; } set { } }
-        public string SwitchPrefix { get { throw null; } set { } }
-        public string ToolName { get { throw null; } set { } }
-        public void BeginInit() { }
-        public void EndInit() { }
-        public System.Collections.Specialized.OrderedDictionary GetPropertiesByCategory() { throw null; }
-        public System.Collections.Generic.IList<Microsoft.Build.Framework.XamlTypes.BaseProperty> GetPropertiesInCategory(string categoryName) { throw null; }
-        public Microsoft.Build.Framework.XamlTypes.BaseProperty GetProperty(string propertyName) { throw null; }
-        public System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type) { throw null; }
-        public System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes() { throw null; }
-    }
-    public sealed partial class RuleBag : Microsoft.Build.Framework.XamlTypes.IProjectSchemaNode, System.ComponentModel.ISupportInitialize
-    {
-        public RuleBag() { }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.Rule> Rules { get { throw null; } set { } }
-        public void BeginInit() { }
-        public void EndInit() { }
-        public System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type) { throw null; }
-        public System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes() { throw null; }
-    }
-    public enum RuleOverrideMode
-    {
-        Extend = 1,
-        Replace = 0,
-    }
-    public abstract partial class RuleSchema
-    {
-        protected RuleSchema() { }
-    }
-    public sealed partial class StringListProperty : Microsoft.Build.Framework.XamlTypes.BaseProperty
-    {
-        public StringListProperty() { }
-        public string CommandLineValueSeparator { get { throw null; } set { } }
-        public string RendererValueSeparator { get { throw null; } set { } }
-        public string Subtype { get { throw null; } set { } }
-    }
-    public sealed partial class StringProperty : Microsoft.Build.Framework.XamlTypes.BaseProperty
-    {
-        public StringProperty() { }
-        public string Subtype { get { throw null; } set { } }
-    }
-    public sealed partial class ValueEditor : System.ComponentModel.ISupportInitialize
-    {
-        public ValueEditor() { }
-        [System.ComponentModel.LocalizableAttribute(true)]
-        public string DisplayName { get { throw null; } set { } }
-        public string EditorType { get { throw null; } set { } }
-        public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.NameValuePair> Metadata { get { throw null; } set { } }
-        public void BeginInit() { }
-        public void EndInit() { }
-    }
 }
