@@ -181,6 +181,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.appcontext/4.1.0/System.AppContext.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)nuget.versioning/4.4.0/NuGet.Versioning.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)nuget.versioning/4.3.0/NuGet.Versioning.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.dotnet.platformabstractions/2.1.0/Microsoft.DotNet.PlatformAbstractions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.dotnet.platformabstractions/2.0.0/Microsoft.DotNet.PlatformAbstractions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.csharp/4.3.0/Microsoft.CSharp.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.csharp/4.0.1/Microsoft.CSharp.csproj"/>
