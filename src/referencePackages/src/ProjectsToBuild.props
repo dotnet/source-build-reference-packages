@@ -55,6 +55,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.xdocument/4.3.0/System.Xml.XDocument.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.tools/4.0.1/System.Diagnostics.Tools.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.xdocument/4.0.11/System.Xml.XDocument.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.timer/4.3.0/System.Threading.Timer.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.timer/4.0.1/System.Threading.Timer.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.threadpool/4.3.0/System.Threading.ThreadPool.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.threadpool/4.0.10/System.Threading.ThreadPool.csproj"/>
@@ -183,11 +184,14 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.dotnet.platformabstractions/2.0.0/Microsoft.DotNet.PlatformAbstractions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.csharp/4.3.0/Microsoft.CSharp.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.csharp/4.0.1/Microsoft.CSharp.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.encoding.codepages/4.4.0/System.Text.Encoding.CodePages.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.framework/15.7.179/Microsoft.Build.Framework.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.utilities.core/15.7.179/Microsoft.Build.Utilities.Core.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.framework/15.1.548/Microsoft.Build.Framework.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.utilities.core/15.1.548/Microsoft.Build.Utilities.Core.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.framework/15.1.1012/Microsoft.Build.Framework.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.utilities.core/15.1.1012/Microsoft.Build.Utilities.Core.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.tasks.core/15.7.179/Microsoft.Build.Tasks.Core.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.tasks.core/15.1.548/Microsoft.Build.Tasks.Core.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.framework/15.7.179/Microsoft.Build.Framework.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build/15.7.179/Microsoft.Build.csproj"/>  </ItemGroup>
 </Project>
