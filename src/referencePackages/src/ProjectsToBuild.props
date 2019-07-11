@@ -127,6 +127,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit.lightweight/4.3.0/System.Reflection.Emit.Lightweight.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit/4.3.0/System.Reflection.Emit.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.objectmodel/4.3.0/System.ObjectModel.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.numerics.vectors/4.4.0/System.Numerics.Vectors.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.webheadercollection/4.3.0/System.Net.WebHeaderCollection.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.webheadercollection/4.0.1/System.Net.WebHeaderCollection.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.primitives/4.3.0/System.Net.Primitives.csproj"/>
@@ -142,6 +143,9 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.http/4.1.0/System.Net.Http.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.requests/4.0.11/System.Net.Requests.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.http/4.3.3/System.Net.Http.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.4.0/System.Buffers.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.memory/4.5.2/System.Memory.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.memory/4.5.1/System.Memory.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.expressions/4.3.0/System.Linq.Expressions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.queryable/4.3.0/System.Linq.Queryable.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.parallel/4.0.1/System.Linq.Parallel.csproj"/>
