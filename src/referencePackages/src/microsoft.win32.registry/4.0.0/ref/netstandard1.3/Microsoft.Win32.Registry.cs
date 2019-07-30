@@ -121,7 +121,7 @@ namespace Microsoft.Win32.SafeHandles
 {
     public sealed partial class SafeRegistryHandle : System.Runtime.InteropServices.SafeHandle
     {
-        public SafeRegistryHandle(System.IntPtr preexistingHandle, bool ownsHandle) : base(preexistingHandle, ownsHandle) { }
+        public SafeRegistryHandle(System.IntPtr preexistingHandle, bool ownsHandle) : base (default(System.IntPtr), default(bool)) { }
         public override bool IsInvalid { get { throw null; } }
         protected override bool ReleaseHandle() { throw null; }
     }

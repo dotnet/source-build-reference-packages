@@ -36,7 +36,7 @@ namespace System.Security.Cryptography
         protected Aes() { }
         public override System.Security.Cryptography.KeySizes[] LegalBlockSizes { get { throw null; } }
         public override System.Security.Cryptography.KeySizes[] LegalKeySizes { get { throw null; } }
-        public static new System.Security.Cryptography.Aes Create() { throw null; }
+        public static System.Security.Cryptography.Aes Create() { throw null; }
     }
     public abstract partial class DeriveBytes : System.IDisposable
     {
@@ -100,7 +100,7 @@ namespace System.Security.Cryptography
     public abstract partial class ECDsa : System.Security.Cryptography.AsymmetricAlgorithm
     {
         protected ECDsa() { }
-        public static new System.Security.Cryptography.ECDsa Create() { throw null; }
+        public static System.Security.Cryptography.ECDsa Create() { throw null; }
         public static System.Security.Cryptography.ECDsa Create(System.Security.Cryptography.ECCurve curve) { throw null; }
         public static System.Security.Cryptography.ECDsa Create(System.Security.Cryptography.ECParameters parameters) { throw null; }
         public virtual System.Security.Cryptography.ECParameters ExportExplicitParameters(bool includePrivateParameters) { throw null; }
@@ -199,7 +199,7 @@ namespace System.Security.Cryptography
     public abstract partial class MD5 : System.Security.Cryptography.HashAlgorithm
     {
         protected MD5() { }
-        public static new System.Security.Cryptography.MD5 Create() { throw null; }
+        public static System.Security.Cryptography.MD5 Create() { throw null; }
     }
     public abstract partial class RandomNumberGenerator : System.IDisposable
     {
@@ -225,7 +225,7 @@ namespace System.Security.Cryptography
     public abstract partial class RSA : System.Security.Cryptography.AsymmetricAlgorithm
     {
         protected RSA() { }
-        public static new System.Security.Cryptography.RSA Create() { throw null; }
+        public static System.Security.Cryptography.RSA Create() { throw null; }
         public abstract byte[] Decrypt(byte[] data, System.Security.Cryptography.RSAEncryptionPadding padding);
         public abstract byte[] Encrypt(byte[] data, System.Security.Cryptography.RSAEncryptionPadding padding);
         public abstract System.Security.Cryptography.RSAParameters ExportParameters(bool includePrivateParameters);
@@ -296,22 +296,22 @@ namespace System.Security.Cryptography
     public abstract partial class SHA1 : System.Security.Cryptography.HashAlgorithm
     {
         protected SHA1() { }
-        public static new System.Security.Cryptography.SHA1 Create() { throw null; }
+        public static System.Security.Cryptography.SHA1 Create() { throw null; }
     }
     public abstract partial class SHA256 : System.Security.Cryptography.HashAlgorithm
     {
         protected SHA256() { }
-        public static new System.Security.Cryptography.SHA256 Create() { throw null; }
+        public static System.Security.Cryptography.SHA256 Create() { throw null; }
     }
     public abstract partial class SHA384 : System.Security.Cryptography.HashAlgorithm
     {
         protected SHA384() { }
-        public static new System.Security.Cryptography.SHA384 Create() { throw null; }
+        public static System.Security.Cryptography.SHA384 Create() { throw null; }
     }
     public abstract partial class SHA512 : System.Security.Cryptography.HashAlgorithm
     {
         protected SHA512() { }
-        public static new System.Security.Cryptography.SHA512 Create() { throw null; }
+        public static System.Security.Cryptography.SHA512 Create() { throw null; }
     }
     public abstract partial class TripleDES : System.Security.Cryptography.SymmetricAlgorithm
     {
@@ -319,7 +319,7 @@ namespace System.Security.Cryptography
         public override byte[] Key { get { throw null; } set { } }
         public override System.Security.Cryptography.KeySizes[] LegalBlockSizes { get { throw null; } }
         public override System.Security.Cryptography.KeySizes[] LegalKeySizes { get { throw null; } }
-        public static new System.Security.Cryptography.TripleDES Create() { throw null; }
+        public static System.Security.Cryptography.TripleDES Create() { throw null; }
         public static bool IsWeakKey(byte[] rgbKey) { throw null; }
     }
 }

@@ -33,7 +33,7 @@ namespace Microsoft.Win32.SafeHandles
 {
     public sealed partial class SafePipeHandle : System.Runtime.InteropServices.SafeHandle
     {
-        public SafePipeHandle(System.IntPtr preexistingHandle, bool ownsHandle) : base(preexistingHandle, ownsHandle) { }
+        public SafePipeHandle(System.IntPtr preexistingHandle, bool ownsHandle) : base (default(System.IntPtr), default(bool)) { }
         public override bool IsInvalid { get { throw null; } }
         protected override bool ReleaseHandle() { throw null; }
     }
