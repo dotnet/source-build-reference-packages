@@ -33,7 +33,7 @@ namespace Microsoft.Win32.SafeHandles
 {
     public sealed partial class SafeX509ChainHandle : System.Runtime.InteropServices.SafeHandle
     {
-        internal SafeX509ChainHandle() : base(default(System.IntPtr), default(bool)) { }
+        internal SafeX509ChainHandle() : base (default(System.IntPtr), default(bool)) { }
         public override bool IsInvalid { get { throw null; } }
         protected override bool ReleaseHandle() { throw null; }
     }

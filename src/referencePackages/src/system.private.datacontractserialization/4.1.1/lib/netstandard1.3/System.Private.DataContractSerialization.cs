@@ -252,7 +252,7 @@ namespace System.Xml
         protected XmlDictionaryReader() { }
         public virtual bool CanCanonicalize { get { throw null; } }
         public virtual System.Xml.XmlDictionaryReaderQuotas Quotas { get { throw null; } }
-        public virtual new void Close() { }
+        public virtual void Close() { }
         public static System.Xml.XmlDictionaryReader CreateBinaryReader(byte[] buffer, int offset, int count, System.Xml.IXmlDictionary dictionary, System.Xml.XmlDictionaryReaderQuotas quotas) { throw null; }
         public static System.Xml.XmlDictionaryReader CreateBinaryReader(byte[] buffer, int offset, int count, System.Xml.IXmlDictionary dictionary, System.Xml.XmlDictionaryReaderQuotas quotas, System.Xml.XmlBinaryReaderSession session) { throw null; }
         public static System.Xml.XmlDictionaryReader CreateBinaryReader(byte[] buffer, int offset, int count, System.Xml.XmlDictionaryReaderQuotas quotas) { throw null; }
@@ -326,7 +326,7 @@ namespace System.Xml
         public virtual byte[] ReadElementContentAsBase64() { throw null; }
         public virtual byte[] ReadElementContentAsBinHex() { throw null; }
         public override bool ReadElementContentAsBoolean() { throw null; }
-        public virtual new System.DateTime ReadElementContentAsDateTime() { throw null; }
+        public virtual System.DateTime ReadElementContentAsDateTime() { throw null; }
         public override decimal ReadElementContentAsDecimal() { throw null; }
         public override double ReadElementContentAsDouble() { throw null; }
         public override float ReadElementContentAsFloat() { throw null; }
@@ -400,7 +400,7 @@ namespace System.Xml
     {
         protected XmlDictionaryWriter() { }
         public virtual bool CanCanonicalize { get { throw null; } }
-        public virtual new void Close() { }
+        public virtual void Close() { }
         public static System.Xml.XmlDictionaryWriter CreateBinaryWriter(System.IO.Stream stream) { throw null; }
         public static System.Xml.XmlDictionaryWriter CreateBinaryWriter(System.IO.Stream stream, System.Xml.IXmlDictionary dictionary) { throw null; }
         public static System.Xml.XmlDictionaryWriter CreateBinaryWriter(System.IO.Stream stream, System.Xml.IXmlDictionary dictionary, System.Xml.XmlBinaryWriterSession session) { throw null; }

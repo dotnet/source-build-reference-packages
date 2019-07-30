@@ -39,7 +39,6 @@ namespace System.Runtime.CompilerServices
     public partial struct AsyncValueTaskMethodBuilder<TResult>
     {
         private TResult _result;
-        private object _dummy;
         private int _dummyPrimitive;
         public System.Threading.Tasks.ValueTask<TResult> Task { get { throw null; } }
         public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : System.Runtime.CompilerServices.INotifyCompletion where TStateMachine : System.Runtime.CompilerServices.IAsyncStateMachine { }

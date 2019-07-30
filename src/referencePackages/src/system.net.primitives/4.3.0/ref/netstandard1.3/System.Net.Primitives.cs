@@ -450,8 +450,8 @@ namespace System.Security.Authentication.ExtendedProtection
 {
     public abstract partial class ChannelBinding : System.Runtime.InteropServices.SafeHandle
     {
-        protected ChannelBinding() : base(default(System.IntPtr), default(bool)) { }
-        protected ChannelBinding(bool ownsHandle) : base(default(System.IntPtr), ownsHandle) { }
+        protected ChannelBinding() : base (default(System.IntPtr), default(bool)) { }
+        protected ChannelBinding(bool ownsHandle) : base (default(System.IntPtr), default(bool)) { }
         public abstract int Size { get; }
     }
     public enum ChannelBindingKind

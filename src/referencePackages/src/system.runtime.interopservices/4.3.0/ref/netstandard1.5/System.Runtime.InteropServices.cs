@@ -528,7 +528,7 @@ namespace System.Runtime.InteropServices
     }
     public abstract partial class SafeBuffer : System.Runtime.InteropServices.SafeHandle
     {
-        protected SafeBuffer(bool ownsHandle) : base(default(System.IntPtr), ownsHandle) { }
+        protected SafeBuffer(bool ownsHandle) : base (default(System.IntPtr), default(bool)) { }
         [System.CLSCompliantAttribute(false)]
         public ulong ByteLength { get { throw null; } }
         public override bool IsInvalid { get { throw null; } }

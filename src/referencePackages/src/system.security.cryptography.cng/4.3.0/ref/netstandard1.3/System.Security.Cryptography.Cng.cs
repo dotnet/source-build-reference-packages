@@ -33,7 +33,7 @@ namespace Microsoft.Win32.SafeHandles
 {
     public abstract partial class SafeNCryptHandle : System.Runtime.InteropServices.SafeHandle
     {
-        protected SafeNCryptHandle() : base(default(System.IntPtr), default(bool)) { }
+        protected SafeNCryptHandle() : base (default(System.IntPtr), default(bool)) { }
         public override bool IsInvalid { get { throw null; } }
         protected override bool ReleaseHandle() { throw null; }
         protected abstract bool ReleaseNativeHandle();

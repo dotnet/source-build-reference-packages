@@ -601,7 +601,7 @@ namespace Microsoft.Build.Tasks
     }
     public partial class TaskLoggingHelperExtension : Microsoft.Build.Utilities.TaskLoggingHelper
     {
-        public TaskLoggingHelperExtension(Microsoft.Build.Framework.ITask taskInstance, System.Resources.ResourceManager primaryResources, System.Resources.ResourceManager sharedResources, string helpKeywordPrefix) : base(taskInstance) { }
+        public TaskLoggingHelperExtension(Microsoft.Build.Framework.ITask taskInstance, System.Resources.ResourceManager primaryResources, System.Resources.ResourceManager sharedResources, string helpKeywordPrefix) : base (default(Microsoft.Build.Framework.ITask)) { }
         public System.Resources.ResourceManager TaskSharedResources { get { throw null; } set { } }
         public override string FormatResourceString(string resourceName, params object[] args) { throw null; }
     }
