@@ -96,6 +96,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.numerics/4.0.1/System.Runtime.Numerics.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.algorithms/4.2.0/System.Security.Cryptography.Algorithms.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.x509certificates/4.1.0/System.Security.Cryptography.X509Certificates.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.openssl/4.5.1/System.Security.Cryptography.OpenSsl.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.openssl/4.3.0/System.Security.Cryptography.OpenSsl.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.openssl/4.0.0/System.Security.Cryptography.OpenSsl.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.csp/4.3.0/System.Security.Cryptography.Csp.csproj"/>
@@ -146,6 +147,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.4.0/System.Buffers.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.expressions/4.3.0/System.Linq.Expressions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.numerics.vectors/4.4.0/System.Numerics.Vectors.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.numerics.vectors/4.5.0/System.Numerics.Vectors.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.queryable/4.3.0/System.Linq.Queryable.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.parallel/4.0.1/System.Linq.Parallel.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.pipes/4.3.0/System.IO.Pipes.csproj"/>
@@ -209,5 +211,6 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.memory/4.5.1/System.Memory.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.cng/4.5.0/System.Security.Cryptography.Cng.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/4.5.0/System.Security.Cryptography.Pkcs.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/4.5.2/System.Security.Cryptography.Pkcs.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.openssl/4.5.0/System.Security.Cryptography.OpenSsl.csproj"/>  </ItemGroup>
 </Project>
