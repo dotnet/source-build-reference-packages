@@ -31,10 +31,12 @@ using System.Security;
 
 namespace System
 {
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field, Inherited=false)]
     public sealed partial class NonSerializedAttribute : System.Attribute
     {
         public NonSerializedAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Delegate | System.AttributeTargets.Enum | System.AttributeTargets.Struct, Inherited=false)]
     public sealed partial class SerializableAttribute : System.Attribute
     {
         public SerializableAttribute() { }

@@ -536,6 +536,7 @@ namespace System.Xml.Serialization
         void ReadXml(System.Xml.XmlReader reader);
         void WriteXml(System.Xml.XmlWriter writer);
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Interface | System.AttributeTargets.Struct)]
     public sealed partial class XmlSchemaProviderAttribute : System.Attribute
     {
         public XmlSchemaProviderAttribute(string methodName) { }

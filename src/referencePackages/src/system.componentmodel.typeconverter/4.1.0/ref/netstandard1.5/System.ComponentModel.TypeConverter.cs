@@ -554,6 +554,7 @@ namespace System.ComponentModel
             public System.Collections.IEnumerator GetEnumerator() { throw null; }
         }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.All)]
     public sealed partial class TypeConverterAttribute : System.Attribute
     {
         public static readonly System.ComponentModel.TypeConverterAttribute Default;

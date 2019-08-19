@@ -191,6 +191,7 @@ namespace System.ComponentModel
         protected System.Exception GetConvertFromException(object value) { throw null; }
         protected System.Exception GetConvertToException(object value, System.Type destinationType) { throw null; }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.All)]
     public sealed partial class TypeConverterAttribute : System.Attribute
     {
         public TypeConverterAttribute(string typeName) { }

@@ -313,6 +313,7 @@ namespace System.Runtime.CompilerServices
         public T Update { get { throw null; } }
         public static System.Runtime.CompilerServices.CallSite<T> Create(System.Runtime.CompilerServices.CallSiteBinder binder) { throw null; }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue | System.AttributeTargets.Struct)]
     public sealed partial class DynamicAttribute : System.Attribute
     {
         public DynamicAttribute() { }

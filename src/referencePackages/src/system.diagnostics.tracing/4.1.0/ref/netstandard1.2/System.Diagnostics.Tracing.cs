@@ -31,6 +31,7 @@ using System.Security;
 
 namespace System.Diagnostics.Tracing
 {
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method)]
     public sealed partial class EventAttribute : System.Attribute
     {
         public EventAttribute(int eventId) { }
@@ -151,6 +152,7 @@ namespace System.Diagnostics.Tracing
             public int Size { get { throw null; } set { } }
         }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class)]
     public sealed partial class EventSourceAttribute : System.Attribute
     {
         public EventSourceAttribute() { }
@@ -183,6 +185,7 @@ namespace System.Diagnostics.Tracing
         public System.Diagnostics.Tracing.EventTask Task { get { throw null; } }
         public byte Version { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method)]
     public sealed partial class NonEventAttribute : System.Attribute
     {
         public NonEventAttribute() { }

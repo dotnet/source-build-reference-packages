@@ -39,6 +39,7 @@ namespace System.Diagnostics.Tracing
         None = 0,
         Recursive = 4,
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method)]
     public sealed partial class EventAttribute : System.Attribute
     {
         public EventAttribute(int eventId) { }
@@ -76,11 +77,13 @@ namespace System.Diagnostics.Tracing
         public bool DisableEvent(int eventId) { throw null; }
         public bool EnableEvent(int eventId) { throw null; }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Struct, Inherited=false)]
     public partial class EventDataAttribute : System.Attribute
     {
         public EventDataAttribute() { }
         public string Name { get { throw null; } set { } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Property)]
     public partial class EventFieldAttribute : System.Attribute
     {
         public EventFieldAttribute() { }
@@ -102,6 +105,7 @@ namespace System.Diagnostics.Tracing
     {
         None = 0,
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Property)]
     public partial class EventIgnoreAttribute : System.Attribute
     {
         public EventIgnoreAttribute() { }
@@ -229,6 +233,7 @@ namespace System.Diagnostics.Tracing
             public int Size { get { throw null; } set { } }
         }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class)]
     public sealed partial class EventSourceAttribute : System.Attribute
     {
         public EventSourceAttribute() { }
@@ -286,6 +291,7 @@ namespace System.Diagnostics.Tracing
         public System.Diagnostics.Tracing.EventTask Task { get { throw null; } }
         public byte Version { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method)]
     public sealed partial class NonEventAttribute : System.Attribute
     {
         public NonEventAttribute() { }
