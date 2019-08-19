@@ -37,10 +37,12 @@ namespace System.Xml.Serialization
         void ReadXml(System.Xml.XmlReader reader);
         void WriteXml(System.Xml.XmlWriter writer);
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue, AllowMultiple=false)]
     public partial class XmlAnyAttributeAttribute : System.Attribute
     {
         public XmlAnyAttributeAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue, AllowMultiple=true)]
     public partial class XmlAnyElementAttribute : System.Attribute
     {
         public XmlAnyElementAttribute() { }
@@ -76,6 +78,7 @@ namespace System.Xml.Serialization
         void System.Collections.IList.Insert(int index, object value) { }
         void System.Collections.IList.Remove(object value) { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue, AllowMultiple=false)]
     public partial class XmlArrayAttribute : System.Attribute
     {
         public XmlArrayAttribute() { }
@@ -86,6 +89,7 @@ namespace System.Xml.Serialization
         public string Namespace { get { throw null; } set { } }
         public int Order { get { throw null; } set { } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue, AllowMultiple=true)]
     public partial class XmlArrayItemAttribute : System.Attribute
     {
         public XmlArrayItemAttribute() { }
@@ -126,6 +130,7 @@ namespace System.Xml.Serialization
         void System.Collections.IList.Insert(int index, object value) { }
         void System.Collections.IList.Remove(object value) { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue)]
     public partial class XmlAttributeAttribute : System.Attribute
     {
         public XmlAttributeAttribute() { }
@@ -164,12 +169,14 @@ namespace System.Xml.Serialization
         public System.Xml.Serialization.XmlTextAttribute XmlText { get { throw null; } set { } }
         public System.Xml.Serialization.XmlTypeAttribute XmlType { get { throw null; } set { } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue, AllowMultiple=false)]
     public partial class XmlChoiceIdentifierAttribute : System.Attribute
     {
         public XmlChoiceIdentifierAttribute() { }
         public XmlChoiceIdentifierAttribute(string name) { }
         public string MemberName { get { throw null; } set { } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue, AllowMultiple=true)]
     public partial class XmlElementAttribute : System.Attribute
     {
         public XmlElementAttribute() { }
@@ -210,25 +217,30 @@ namespace System.Xml.Serialization
         void System.Collections.IList.Insert(int index, object value) { }
         void System.Collections.IList.Remove(object value) { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field)]
     public partial class XmlEnumAttribute : System.Attribute
     {
         public XmlEnumAttribute() { }
         public XmlEnumAttribute(string name) { }
         public string Name { get { throw null; } set { } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue)]
     public partial class XmlIgnoreAttribute : System.Attribute
     {
         public XmlIgnoreAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Interface | System.AttributeTargets.Method | System.AttributeTargets.Struct, AllowMultiple=true)]
     public partial class XmlIncludeAttribute : System.Attribute
     {
         public XmlIncludeAttribute(System.Type type) { }
         public System.Type Type { get { throw null; } set { } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue, AllowMultiple=false)]
     public partial class XmlNamespaceDeclarationsAttribute : System.Attribute
     {
         public XmlNamespaceDeclarationsAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Enum | System.AttributeTargets.Interface | System.AttributeTargets.ReturnValue | System.AttributeTargets.Struct)]
     public partial class XmlRootAttribute : System.Attribute
     {
         public XmlRootAttribute() { }
@@ -238,6 +250,7 @@ namespace System.Xml.Serialization
         public bool IsNullable { get { throw null; } set { } }
         public string Namespace { get { throw null; } set { } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Interface | System.AttributeTargets.Struct)]
     public sealed partial class XmlSchemaProviderAttribute : System.Attribute
     {
         public XmlSchemaProviderAttribute(string methodName) { }
@@ -274,6 +287,7 @@ namespace System.Xml.Serialization
         public void Add(string prefix, string ns) { }
         public System.Xml.XmlQualifiedName[] ToArray() { throw null; }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue)]
     public partial class XmlTextAttribute : System.Attribute
     {
         public XmlTextAttribute() { }
@@ -281,6 +295,7 @@ namespace System.Xml.Serialization
         public string DataType { get { throw null; } set { } }
         public System.Type Type { get { throw null; } set { } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Enum | System.AttributeTargets.Interface | System.AttributeTargets.Struct)]
     public partial class XmlTypeAttribute : System.Attribute
     {
         public XmlTypeAttribute() { }

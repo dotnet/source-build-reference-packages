@@ -57,19 +57,23 @@ namespace System.Diagnostics.Contracts
         public static T Result<T>() { throw null; }
         public static T ValueAtReturn<T>(out T value) { throw null; }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method, AllowMultiple=false)]
     public sealed partial class ContractAbbreviatorAttribute : System.Attribute
     {
         public ContractAbbreviatorAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method, AllowMultiple=false)]
     public sealed partial class ContractArgumentValidatorAttribute : System.Attribute
     {
         public ContractArgumentValidatorAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Delegate | System.AttributeTargets.Interface, AllowMultiple=false, Inherited=false)]
     public sealed partial class ContractClassAttribute : System.Attribute
     {
         public ContractClassAttribute(System.Type typeContainingContracts) { }
         public System.Type TypeContainingContracts { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class, AllowMultiple=false, Inherited=false)]
     public sealed partial class ContractClassForAttribute : System.Attribute
     {
         public ContractClassForAttribute(System.Type typeContractsAreFor) { }
@@ -96,10 +100,12 @@ namespace System.Diagnostics.Contracts
         PostconditionOnException = 2,
         Precondition = 0,
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method, AllowMultiple=false, Inherited=false)]
     public sealed partial class ContractInvariantMethodAttribute : System.Attribute
     {
         public ContractInvariantMethodAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.All, AllowMultiple=true, Inherited=false)]
     public sealed partial class ContractOptionAttribute : System.Attribute
     {
         public ContractOptionAttribute(string category, string setting, bool enabled) { }
@@ -109,24 +115,29 @@ namespace System.Diagnostics.Contracts
         public string Setting { get { throw null; } }
         public string Value { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field)]
     public sealed partial class ContractPublicPropertyNameAttribute : System.Attribute
     {
         public ContractPublicPropertyNameAttribute(string name) { }
         public string Name { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly)]
     public sealed partial class ContractReferenceAssemblyAttribute : System.Attribute
     {
         public ContractReferenceAssemblyAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method | System.AttributeTargets.Property, AllowMultiple=false, Inherited=true)]
     public sealed partial class ContractRuntimeIgnoredAttribute : System.Attribute
     {
         public ContractRuntimeIgnoredAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Constructor | System.AttributeTargets.Method | System.AttributeTargets.Property | System.AttributeTargets.Struct)]
     public sealed partial class ContractVerificationAttribute : System.Attribute
     {
         public ContractVerificationAttribute(bool value) { }
         public bool Value { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Constructor | System.AttributeTargets.Delegate | System.AttributeTargets.Event | System.AttributeTargets.Method | System.AttributeTargets.Parameter | System.AttributeTargets.Property, AllowMultiple=false, Inherited=true)]
     public sealed partial class PureAttribute : System.Attribute
     {
         public PureAttribute() { }

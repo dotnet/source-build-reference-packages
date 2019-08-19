@@ -318,6 +318,7 @@ namespace Microsoft.Build.Framework
         public LazyFormattedBuildEventArgs(string message, string helpKeyword, string senderName, System.DateTime eventTimestamp, params object[] messageArgs) { }
         public override string Message { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class, AllowMultiple=false, Inherited=true)]
     public sealed partial class LoadInSeparateAppDomainAttribute : System.Attribute
     {
         public LoadInSeparateAppDomainAttribute() { }
@@ -347,6 +348,7 @@ namespace Microsoft.Build.Framework
         Low = 2,
         Normal = 1,
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Property, AllowMultiple=false, Inherited=false)]
     public sealed partial class OutputAttribute : System.Attribute
     {
         public OutputAttribute() { }
@@ -384,19 +386,23 @@ namespace Microsoft.Build.Framework
         AppDomain = 1,
         Build = 0,
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Property, AllowMultiple=false, Inherited=false)]
     public sealed partial class RequiredAttribute : System.Attribute
     {
         public RequiredAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class, AllowMultiple=false, Inherited=false)]
     public sealed partial class RequiredRuntimeAttribute : System.Attribute
     {
         public RequiredRuntimeAttribute(string runtimeVersion) { }
         public string RuntimeVersion { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class, AllowMultiple=false, Inherited=false)]
     public sealed partial class RunInMTAAttribute : System.Attribute
     {
         public RunInMTAAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class, AllowMultiple=false, Inherited=false)]
     public sealed partial class RunInSTAAttribute : System.Attribute
     {
         public RunInSTAAttribute() { }

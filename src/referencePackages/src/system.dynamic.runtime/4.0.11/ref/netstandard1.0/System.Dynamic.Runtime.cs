@@ -320,6 +320,7 @@ namespace System.Runtime.CompilerServices
         public bool TryGetValue(TKey key, out TValue value) { throw null; }
         public delegate TValue CreateValueCallback(TKey key);
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.Property | System.AttributeTargets.ReturnValue | System.AttributeTargets.Struct)]
     public sealed partial class DynamicAttribute : System.Attribute
     {
         public DynamicAttribute() { }

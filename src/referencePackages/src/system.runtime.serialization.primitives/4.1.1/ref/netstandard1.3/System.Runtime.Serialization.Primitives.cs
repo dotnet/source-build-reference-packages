@@ -31,6 +31,7 @@ using System.Security;
 
 namespace System.Runtime.Serialization
 {
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Struct, Inherited=false, AllowMultiple=false)]
     public sealed partial class CollectionDataContractAttribute : System.Attribute
     {
         public CollectionDataContractAttribute() { }
@@ -47,12 +48,14 @@ namespace System.Runtime.Serialization
         public string Namespace { get { throw null; } set { } }
         public string ValueName { get { throw null; } set { } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly | System.AttributeTargets.Module, Inherited=false, AllowMultiple=true)]
     public sealed partial class ContractNamespaceAttribute : System.Attribute
     {
         public ContractNamespaceAttribute(string contractNamespace) { }
         public string ClrNamespace { get { throw null; } set { } }
         public string ContractNamespace { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Enum | System.AttributeTargets.Struct, Inherited=false, AllowMultiple=false)]
     public sealed partial class DataContractAttribute : System.Attribute
     {
         public DataContractAttribute() { }
@@ -63,6 +66,7 @@ namespace System.Runtime.Serialization
         public string Name { get { throw null; } set { } }
         public string Namespace { get { throw null; } set { } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Property, Inherited=false, AllowMultiple=false)]
     public sealed partial class DataMemberAttribute : System.Attribute
     {
         public DataMemberAttribute() { }
@@ -72,12 +76,14 @@ namespace System.Runtime.Serialization
         public string Name { get { throw null; } set { } }
         public int Order { get { throw null; } set { } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field, Inherited=false, AllowMultiple=false)]
     public sealed partial class EnumMemberAttribute : System.Attribute
     {
         public EnumMemberAttribute() { }
         public bool IsValueSetExplicitly { get { throw null; } }
         public string Value { get { throw null; } set { } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Property, Inherited=false, AllowMultiple=false)]
     public sealed partial class IgnoreDataMemberAttribute : System.Attribute
     {
         public IgnoreDataMemberAttribute() { }
@@ -94,6 +100,7 @@ namespace System.Runtime.Serialization
         object GetObjectToSerialize(object obj, System.Type targetType);
         System.Type GetSurrogateType(System.Type type);
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Struct, Inherited=true, AllowMultiple=true)]
     public sealed partial class KnownTypeAttribute : System.Attribute
     {
         public KnownTypeAttribute(string methodName) { }
@@ -101,18 +108,22 @@ namespace System.Runtime.Serialization
         public string MethodName { get { throw null; } }
         public System.Type Type { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method, Inherited=false)]
     public sealed partial class OnDeserializedAttribute : System.Attribute
     {
         public OnDeserializedAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method, Inherited=false)]
     public sealed partial class OnDeserializingAttribute : System.Attribute
     {
         public OnDeserializingAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method, Inherited=false)]
     public sealed partial class OnSerializedAttribute : System.Attribute
     {
         public OnSerializedAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method, Inherited=false)]
     public sealed partial class OnSerializingAttribute : System.Attribute
     {
         public OnSerializingAttribute() { }

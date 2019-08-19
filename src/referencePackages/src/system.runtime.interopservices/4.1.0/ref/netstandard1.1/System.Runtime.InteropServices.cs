@@ -65,6 +65,7 @@ namespace System.Runtime.InteropServices
         public static bool operator ==(System.Runtime.InteropServices.ArrayWithOffset a, System.Runtime.InteropServices.ArrayWithOffset b) { throw null; }
         public static bool operator !=(System.Runtime.InteropServices.ArrayWithOffset a, System.Runtime.InteropServices.ArrayWithOffset b) { throw null; }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Interface | System.AttributeTargets.Struct, Inherited=false)]
     public sealed partial class BestFitMappingAttribute : System.Attribute
     {
         public bool ThrowOnUnmappableChar;
@@ -84,6 +85,7 @@ namespace System.Runtime.InteropServices
         ThisCall = 4,
         Winapi = 1,
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly | System.AttributeTargets.Class, Inherited=false)]
     public sealed partial class ClassInterfaceAttribute : System.Attribute
     {
         public ClassInterfaceAttribute(short classInterfaceType) { }
@@ -96,6 +98,7 @@ namespace System.Runtime.InteropServices
         AutoDual = 2,
         None = 0,
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Interface, Inherited=false)]
     public sealed partial class CoClassAttribute : System.Attribute
     {
         public CoClassAttribute(System.Type coClass) { }
@@ -110,11 +113,13 @@ namespace System.Runtime.InteropServices
         public override void AddEventHandler(object target, System.Delegate handler) { }
         public override void RemoveEventHandler(object target, System.Delegate handler) { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class, Inherited=false)]
     public sealed partial class ComDefaultInterfaceAttribute : System.Attribute
     {
         public ComDefaultInterfaceAttribute(System.Type defaultInterface) { }
         public System.Type Value { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Interface, Inherited=false)]
     public sealed partial class ComEventInterfaceAttribute : System.Attribute
     {
         public ComEventInterfaceAttribute(System.Type SourceInterface, System.Type EventProvider) { }
@@ -133,6 +138,7 @@ namespace System.Runtime.InteropServices
         public COMException(string message, System.Exception inner) { }
         public COMException(string message, int errorCode) { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Interface, Inherited=false)]
     public sealed partial class ComImportAttribute : System.Attribute
     {
         public ComImportAttribute() { }
@@ -150,6 +156,7 @@ namespace System.Runtime.InteropServices
         PropGet = 1,
         PropSet = 2,
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class, Inherited=true)]
     public sealed partial class ComSourceInterfacesAttribute : System.Attribute
     {
         public ComSourceInterfacesAttribute(string sourceInterfaces) { }
@@ -189,16 +196,19 @@ namespace System.Runtime.InteropServices
         Handled = 0,
         NotHandled = 1,
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Module, Inherited=false)]
     public sealed partial class DefaultCharSetAttribute : System.Attribute
     {
         public DefaultCharSetAttribute(System.Runtime.InteropServices.CharSet charSet) { }
         public System.Runtime.InteropServices.CharSet CharSet { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly | System.AttributeTargets.Method, AllowMultiple=false)]
     public sealed partial class DefaultDllImportSearchPathsAttribute : System.Attribute
     {
         public DefaultDllImportSearchPathsAttribute(System.Runtime.InteropServices.DllImportSearchPath paths) { }
         public System.Runtime.InteropServices.DllImportSearchPath Paths { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Parameter)]
     public sealed partial class DefaultParameterValueAttribute : System.Attribute
     {
         public DefaultParameterValueAttribute(object value) { }
@@ -209,11 +219,13 @@ namespace System.Runtime.InteropServices
         public DispatchWrapper(object obj) { }
         public object WrappedObject { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Event | System.AttributeTargets.Field | System.AttributeTargets.Method | System.AttributeTargets.Property, Inherited=false)]
     public sealed partial class DispIdAttribute : System.Attribute
     {
         public DispIdAttribute(int dispId) { }
         public int Value { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method, Inherited=false)]
     public sealed partial class DllImportAttribute : System.Attribute
     {
         public bool BestFitMapping;
@@ -269,6 +281,7 @@ namespace System.Runtime.InteropServices
         Weak = 0,
         WeakTrackResurrection = 1,
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Delegate | System.AttributeTargets.Enum | System.AttributeTargets.Interface | System.AttributeTargets.Struct, Inherited=false)]
     public sealed partial class GuidAttribute : System.Attribute
     {
         public GuidAttribute(string guid) { }
@@ -293,10 +306,12 @@ namespace System.Runtime.InteropServices
     {
         System.Runtime.InteropServices.CustomQueryInterfaceResult GetInterface(ref System.Guid iid, out System.IntPtr ppv);
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Parameter, Inherited=false)]
     public sealed partial class InAttribute : System.Attribute
     {
         public InAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Interface, Inherited=false)]
     public sealed partial class InterfaceTypeAttribute : System.Attribute
     {
         public InterfaceTypeAttribute(short interfaceType) { }
@@ -430,6 +445,7 @@ namespace System.Runtime.InteropServices
         public static void ZeroFreeGlobalAllocAnsi(System.IntPtr s) { }
         public static void ZeroFreeGlobalAllocUnicode(System.IntPtr s) { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Parameter | System.AttributeTargets.ReturnValue, Inherited=false)]
     public sealed partial class MarshalAsAttribute : System.Attribute
     {
         public System.Runtime.InteropServices.UnmanagedType ArraySubType;
@@ -451,10 +467,12 @@ namespace System.Runtime.InteropServices
         public MarshalDirectiveException(string message) { }
         public MarshalDirectiveException(string message, System.Exception inner) { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Parameter, Inherited=false)]
     public sealed partial class OptionalAttribute : System.Attribute
     {
         public OptionalAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method, Inherited=false)]
     public sealed partial class PreserveSigAttribute : System.Attribute
     {
         public PreserveSigAttribute() { }
@@ -518,6 +536,7 @@ namespace System.Runtime.InteropServices
         public SEHException(string message, System.Exception inner) { }
         public virtual bool CanResume() { throw null; }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Delegate | System.AttributeTargets.Enum | System.AttributeTargets.Interface | System.AttributeTargets.Struct, AllowMultiple=false, Inherited=false)]
     public sealed partial class TypeIdentifierAttribute : System.Attribute
     {
         public TypeIdentifierAttribute() { }
@@ -530,6 +549,7 @@ namespace System.Runtime.InteropServices
         public UnknownWrapper(object obj) { }
         public object WrappedObject { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Delegate, AllowMultiple=false, Inherited=false)]
     public sealed partial class UnmanagedFunctionPointerAttribute : System.Attribute
     {
         public bool BestFitMapping;

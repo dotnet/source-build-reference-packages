@@ -31,6 +31,7 @@ using System.Security;
 
 namespace System.CodeDom.Compiler
 {
+    [System.AttributeUsageAttribute(System.AttributeTargets.All, Inherited=false, AllowMultiple=false)]
     public sealed partial class GeneratedCodeAttribute : System.Attribute
     {
         public GeneratedCodeAttribute(string tool, string version) { }
@@ -40,6 +41,7 @@ namespace System.CodeDom.Compiler
 }
 namespace System.Diagnostics.CodeAnalysis
 {
+    [System.AttributeUsageAttribute(System.AttributeTargets.All, Inherited=false, AllowMultiple=true)]
     public sealed partial class SuppressMessageAttribute : System.Attribute
     {
         public SuppressMessageAttribute(string category, string checkId) { }

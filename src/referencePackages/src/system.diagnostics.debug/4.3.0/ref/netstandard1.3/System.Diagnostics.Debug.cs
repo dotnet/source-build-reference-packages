@@ -63,6 +63,7 @@ namespace System.Diagnostics
         public static void Break() { }
         public static bool Launch() { throw null; }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Field | System.AttributeTargets.Property, AllowMultiple=false)]
     public sealed partial class DebuggerBrowsableAttribute : System.Attribute
     {
         public DebuggerBrowsableAttribute(System.Diagnostics.DebuggerBrowsableState state) { }
@@ -74,6 +75,7 @@ namespace System.Diagnostics
         Never = 0,
         RootHidden = 3,
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Delegate | System.AttributeTargets.Enum | System.AttributeTargets.Field | System.AttributeTargets.Property | System.AttributeTargets.Struct, AllowMultiple=true)]
     public sealed partial class DebuggerDisplayAttribute : System.Attribute
     {
         public DebuggerDisplayAttribute(string value) { }
@@ -83,18 +85,22 @@ namespace System.Diagnostics
         public string Type { get { throw null; } set { } }
         public string Value { get { throw null; } }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Constructor | System.AttributeTargets.Method | System.AttributeTargets.Property, Inherited=false)]
     public sealed partial class DebuggerHiddenAttribute : System.Attribute
     {
         public DebuggerHiddenAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Constructor | System.AttributeTargets.Method | System.AttributeTargets.Property | System.AttributeTargets.Struct, Inherited=false)]
     public sealed partial class DebuggerNonUserCodeAttribute : System.Attribute
     {
         public DebuggerNonUserCodeAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Class | System.AttributeTargets.Constructor | System.AttributeTargets.Method | System.AttributeTargets.Struct, Inherited=false)]
     public sealed partial class DebuggerStepThroughAttribute : System.Attribute
     {
         public DebuggerStepThroughAttribute() { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly | System.AttributeTargets.Class | System.AttributeTargets.Struct, AllowMultiple=true)]
     public sealed partial class DebuggerTypeProxyAttribute : System.Attribute
     {
         public DebuggerTypeProxyAttribute(string typeName) { }

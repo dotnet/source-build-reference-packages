@@ -37,6 +37,7 @@ namespace System.Resources
         public MissingManifestResourceException(string message) { }
         public MissingManifestResourceException(string message, System.Exception inner) { }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly, AllowMultiple=false)]
     public sealed partial class NeutralResourcesLanguageAttribute : System.Attribute
     {
         public NeutralResourcesLanguageAttribute(string cultureName) { }
@@ -49,6 +50,7 @@ namespace System.Resources
         public string GetString(string name) { throw null; }
         public virtual string GetString(string name, System.Globalization.CultureInfo culture) { throw null; }
     }
+    [System.AttributeUsageAttribute(System.AttributeTargets.Assembly, AllowMultiple=false)]
     public sealed partial class SatelliteContractVersionAttribute : System.Attribute
     {
         public SatelliteContractVersionAttribute(string version) { }
