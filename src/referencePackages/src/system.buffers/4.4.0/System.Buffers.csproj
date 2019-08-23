@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.1;netstandard2.0</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.buffers/4.4.0/system.buffers.nuspec</NuspecFile>
+    <AssemblyOriginatorKeyFile>$(KeyFileDir)Open.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
 
   <PropertyGroup>

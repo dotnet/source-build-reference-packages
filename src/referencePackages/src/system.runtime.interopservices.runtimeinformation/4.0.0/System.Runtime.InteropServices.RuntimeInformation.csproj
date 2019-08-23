@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.1;net45</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.runtime.interopservices.runtimeinformation/4.0.0/system.runtime.interopservices.runtimeinformation.nuspec</NuspecFile>
+    <AssemblyOriginatorKeyFile>$(KeyFileDir)MSFT.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
 
   <PropertyGroup>

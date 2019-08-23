@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.3;netstandard1.4;netstandard1.6;net46;net461;net462</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.security.cryptography.cng/4.2.0/system.security.cryptography.cng.nuspec</NuspecFile>
+    <AssemblyOriginatorKeyFile>$(KeyFileDir)MSFT.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
 
   <PropertyGroup>
