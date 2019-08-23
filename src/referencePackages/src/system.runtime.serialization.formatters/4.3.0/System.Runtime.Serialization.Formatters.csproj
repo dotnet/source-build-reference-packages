@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.3;net46;netstandard1.4</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.runtime.serialization.formatters/4.3.0/system.runtime.serialization.formatters.nuspec</NuspecFile>
+    <AssemblyOriginatorKeyFile>$(KeyFileDir)MSFT.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
 
   <PropertyGroup>

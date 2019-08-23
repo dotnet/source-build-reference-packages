@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.0;netstandard1.1</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.threading.tasks.dataflow/4.6.0/system.threading.tasks.dataflow.nuspec</NuspecFile>
+    <AssemblyOriginatorKeyFile>$(KeyFileDir)MSFT.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
 
   <PropertyGroup>
