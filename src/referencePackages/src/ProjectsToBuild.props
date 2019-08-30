@@ -212,6 +212,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build/15.7.179/Microsoft.Build.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.memory/4.5.2/System.Memory.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.memory/4.5.1/System.Memory.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.memory/4.5.3/System.Memory.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.cng/4.5.0/System.Security.Cryptography.Cng.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/4.5.0/System.Security.Cryptography.Pkcs.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/4.5.2/System.Security.Cryptography.Pkcs.csproj"/>
