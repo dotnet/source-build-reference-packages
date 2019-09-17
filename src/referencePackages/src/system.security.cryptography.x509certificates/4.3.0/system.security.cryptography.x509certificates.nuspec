@@ -7,7 +7,7 @@
     <authors>Microsoft</authors>
     <owners>microsoft,dotnetframework</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <licenseUrl>http://go.microsoft.com/fwlink/?LinkId=329770</licenseUrl>
+    <licenseUrl>https://microsoft.mit-license.org/</licenseUrl>
     <projectUrl>https://dot.net/</projectUrl>
     <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
     <description>Provides types for reading, exporting and verifying Authenticode X.509 v3 certificates. These certificates are signed with a private key that uniquely and positively identifies the holder of the certificate.
