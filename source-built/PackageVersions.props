@@ -2,5 +2,6 @@
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <NETStandardLibraryPackageVersion>2.1.0-dev.19272.1</NETStandardLibraryPackageVersion>
+	    <MicrosoftNETSdkIL>3.0.0-preview9.19421.2</MicrosoftNETSdkIL>
     </PropertyGroup>
 </Project> 

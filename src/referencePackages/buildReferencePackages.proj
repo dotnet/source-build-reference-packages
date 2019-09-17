@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(RepoRoot)src/dir.props" />
+  <Import Project="$(RepoRoot)source-built/PackageVersions.props" />
+
+  <PackageReference Include="MicrosoftNETSdkIL" Version="3.0.0-preview9.19421.2"/>
 
   <PropertyGroup>
     <ReferenceAssemblySourcePath>$(RepoRoot)src/referencePackages/src/</ReferenceAssemblySourcePath>
     <TextOnlyProjectsSourcePath>$(RepoRoot)src/textOnlyPackages/</TextOnlyProjectsSourcePath>
+    <TargetingPacksPath>$(RepoRoot)src/targetingPackages/</TargetingPacksPath>
+    <TargetingPacksDLLPath>$(TargetingPacksPath)DLL/microsoft.targetingpack.netframework.v4.7.2/1.0.0/lib/net472/</TargetingPacksDLLPath>
     <ArtifactsBinDir>$(RepoRoot)artifacts/bin/</ArtifactsBinDir>
     <ArtifactsObjDir>$(RepoRoot)artifacts/obj/</ArtifactsObjDir>
     <ArtifactsLogDir>$(RepoRoot)artifacts/log/</ArtifactsLogDir>
     <ArtifactsRefPkgDir>$(RepoRoot)/artifacts/reference-packages/</ArtifactsRefPkgDir>
+    <!--Ilasm hardcoded path. Needs to be changed with something in sb-ref-packages repo -->
+    <IlasmToolPathSB>/MountedPath/source-build/Tools/source-built/coreclr-tools/</IlasmToolPathSB>
   </PropertyGroup>
 
   <Import Project="$(ReferenceAssemblySourcePath)ProjectsToBuild.props" />
@@ -17,6 +24,9 @@
     <NuspecsToCopy Include="$(ReferenceAssemblySourcePath)**/*.nuspec" />
     <DummyFilesToCopy Include="$(ReferenceAssemblySourcePath)**/_._" />
     <TextOnlyProjects Include="$(TextOnlyProjectsSourcePath)**/*.csproj" />
+    <TargetingPacksSrc Include="$(TargetingPacksPath)**/*.txt" />
+    <TargetingPacksProjects Include="$(TargetingPacksPath)**/*.csproj" />
+    <TargetingPacksNuspec Include="$(TargetingPacksPath)**/*.nuspec" />   
   </ItemGroup>
 
   <Target Name="CopyNuspecFiles" BeforeTargets="Build" Condition="'@(NuspecsToCopy)' != ''">
@@ -29,6 +39,18 @@
     <Message Importance="High" Text="Copy DummyFiles Complete."/>
   </Target>
 
+  <Target Name="BuildTargettingPacks" BeforeTargets="Build" Condition="'@(TargetingPacksSrc)' != ''">
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Building TargetingPacks assemblies." />
+    <MakeDir Directories= "$(TargetingPacksDLLPath) " />
+    <Exec Command="$(IlasmToolPathSB)ilasm %(TargetingPacksSrc.Identity) -dll -quiet -nologo -output=$(TargetingPacksDLLPath)%(TargetingPacksSrc.Filename).dll" />
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done building TargetingPacks assemblies." />
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Packing targeting Packs only ." />
+    <Exec Command="$__DOTNET_CMD restore %(TargetingPacksProjects.Identity)"/>
+    <Exec Command="$__DOTNET_CMD pack --no-build --output $(ArtifactsRefPkgDir) /nowarn:NU5125 %(TargetingPacksProjects.Identity)"/>
+    <Message Importance="High" Text="Exec Command=$__DOTNET_CMD pack --no-build --output $(ArtifactsRefPkgDir) /nowarn:NU5125 %(TargetingPacksProjects.Identity)" />
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Packing targeting Packs Done" />
+  </Target>
+  
   <Target Name="BuildTextOnlyPackages" BeforeTargets="Build" Condition="'@(TextOnlyProjects)' != ''">
     <Exec Command="$__DOTNET_CMD restore %(TextOnlyProjects.Identity)" />
     <!-- Don't warn on NU5125 - The 'licenseUrl' element will be deprecated. -->
