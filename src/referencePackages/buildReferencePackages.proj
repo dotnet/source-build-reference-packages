@@ -3,8 +3,6 @@
   <Import Project="$(RepoRoot)src/dir.props" />
   <Import Project="$(RepoRoot)source-built/PackageVersions.props" />
 
-  <PackageReference Include="MicrosoftNETSdkIL" Version="3.0.0-preview9.19421.2"/>
-
   <PropertyGroup>
     <ReferenceAssemblySourcePath>$(RepoRoot)src/referencePackages/src/</ReferenceAssemblySourcePath>
     <TextOnlyProjectsSourcePath>$(RepoRoot)src/textOnlyPackages/</TextOnlyProjectsSourcePath>
@@ -15,16 +13,17 @@
     <ArtifactsLogDir>$(RepoRoot)artifacts/log/</ArtifactsLogDir>
     <ArtifactsRefPkgDir>$(RepoRoot)/artifacts/reference-packages/</ArtifactsRefPkgDir>
     <!--Ilasm hardcoded path. Needs to be changed with something in sb-ref-packages repo -->
-    <IlasmToolPathSB>/MountedPath/source-build/Tools/source-built/coreclr-tools/</IlasmToolPathSB>
+    <!--IlasmToolPathSB>/MountedPath/source-build/Tools/source-built/coreclr-tools/</IlasmToolPathSB-->
   </PropertyGroup>
 
   <Import Project="$(ReferenceAssemblySourcePath)ProjectsToBuild.props" />
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Sdk.IL" Version="3.0.0-preview9.19421.2" />
     <NuspecsToCopy Include="$(ReferenceAssemblySourcePath)**/*.nuspec" />
     <DummyFilesToCopy Include="$(ReferenceAssemblySourcePath)**/_._" />
     <TextOnlyProjects Include="$(TextOnlyProjectsSourcePath)**/*.csproj" />
-    <TargetingPacksSrc Include="$(TargetingPacksPath)**/*.txt" />
+    <TargetingPacksSrc Include="$(TargetingPacksPath)**/*.il" />
     <TargetingPacksProjects Include="$(TargetingPacksPath)**/*.csproj" />
     <TargetingPacksNuspec Include="$(TargetingPacksPath)**/*.nuspec" />   
   </ItemGroup>
@@ -42,7 +41,8 @@
   <Target Name="BuildTargettingPacks" BeforeTargets="Build" Condition="'@(TargetingPacksSrc)' != ''">
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Building TargetingPacks assemblies." />
     <MakeDir Directories= "$(TargetingPacksDLLPath) " />
-    <Exec Command="$(IlasmToolPathSB)ilasm %(TargetingPacksSrc.Identity) -dll -quiet -nologo -output=$(TargetingPacksDLLPath)%(TargetingPacksSrc.Filename).dll" />
+    <!--Exec Command="ilasm %(TargetingPacksSrc.Identity) -dll -quiet -nologo -output=$(TargetingPacksDLLPath)%(TargetingPacksSrc.Filename).dll" /-->
+    <MSBuild Projects="buildIl.ilproj" Targets="Build" StopOnFirstFailure="true" />
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done building TargetingPacks assemblies." />
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Packing targeting Packs only ." />
     <Exec Command="$__DOTNET_CMD restore %(TargetingPacksProjects.Identity)"/>
