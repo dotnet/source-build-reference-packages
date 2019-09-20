@@ -21,7 +21,6 @@
   <Import Project="$(ReferenceAssemblySourcePath)ProjectsToBuild.props" />
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.NET.Sdk.IL" Version="3.0.0-preview9.19421.2" />
     <NuspecsToCopy Include="$(ReferenceAssemblySourcePath)**/*.nuspec" />
     <DummyFilesToCopy Include="$(ReferenceAssemblySourcePath)**/_._" />
     <TextOnlyProjects Include="$(TextOnlyProjectsSourcePath)**/*.csproj" />
