@@ -7,13 +7,15 @@
     <ReferenceAssemblySourcePath>$(RepoRoot)src/referencePackages/src/</ReferenceAssemblySourcePath>
     <TextOnlyProjectsSourcePath>$(RepoRoot)src/textOnlyPackages/</TextOnlyProjectsSourcePath>
     <TargetingPacksPath>$(RepoRoot)src/targetingPackages/</TargetingPacksPath>
-    <TargetingPacksDLLPath>$(TargetingPacksPath)DLL/microsoft.targetingpack.netframework.v4.7.2/1.0.0/lib/net472/</TargetingPacksDLLPath>
+    <TargetingPacksDLLPath>$(TargetingPacksPath)DLL/</TargetingPacksDLLPath>
     <ArtifactsBinDir>$(RepoRoot)artifacts/bin/</ArtifactsBinDir>
     <ArtifactsObjDir>$(RepoRoot)artifacts/obj/</ArtifactsObjDir>
     <ArtifactsLogDir>$(RepoRoot)artifacts/log/</ArtifactsLogDir>
-    <ArtifactsRefPkgDir>$(RepoRoot)/artifacts/reference-packages/</ArtifactsRefPkgDir>
+    <ArtifactsRefPkgDir>$(RepoRoot)artifacts/reference-packages/</ArtifactsRefPkgDir>
+    <ArtifactsTFMPackTemp>$(RepoRoot)artifacts/TFMPack/DLL/</ArtifactsTFMPackTemp>
+    <Artifacts472DLLLib>$(ArtifactsTFMPackTemp)microsoft.targetingpack.netframework.v4.7.2/1.0.0/lib/net472/</Artifacts472DLLLib>
     <!--Ilasm hardcoded path. Needs to be changed with something in sb-ref-packages repo -->
-    <!--IlasmToolPathSB>/MountedPath/source-build/Tools/source-built/coreclr-tools/</IlasmToolPathSB-->
+    <IlasmToolPathSB>$(RepoRoot)/source-built/coreclr-tools/</IlasmToolPathSB>
   </PropertyGroup>
 
   <Import Project="$(ReferenceAssemblySourcePath)ProjectsToBuild.props" />
@@ -24,9 +26,15 @@
     <DummyFilesToCopy Include="$(ReferenceAssemblySourcePath)**/_._" />
     <TextOnlyProjects Include="$(TextOnlyProjectsSourcePath)**/*.csproj" />
     <TargetingPacksSrc Include="$(TargetingPacksPath)**/*.il" />
-    <TargetingPacksProjects Include="$(TargetingPacksPath)**/*.csproj" />
     <TargetingPacksNuspec Include="$(TargetingPacksPath)**/*.nuspec" />   
+    <TFMDLLFiles Include="$(TargetingPacksDLLPath)**/*.*" />
   </ItemGroup>
+
+  <Target Name="CopyTFMDLLStructure" BeforeTargets="BuildTargetingPacks" Condition="'@(TFMDLLFiles)' != ''">
+
+    <Copy SourceFiles="@(TFMDLLFiles)" DestinationFiles="@(TFMDLLFiles->'$(ArtifactsTFMPackTemp)%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Importance="High" Text="Copy TFMDLLFiles Complete."/>
+  </Target>
 
   <Target Name="CopyNuspecFiles" BeforeTargets="Build" Condition="'@(NuspecsToCopy)' != ''">
     <Copy SourceFiles="@(NuspecsToCopy)" DestinationFiles="@(NuspecsToCopy->'$(ArtifactsBinDir)%(RecursiveDir)%(Filename)%(Extension)')" />
@@ -38,17 +46,22 @@
     <Message Importance="High" Text="Copy DummyFiles Complete."/>
   </Target>
 
-  <Target Name="BuildTargettingPacks" BeforeTargets="Build" Condition="'@(TargetingPacksSrc)' != ''">
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Building TargetingPacks assemblies." />
-    <MakeDir Directories= "$(TargetingPacksDLLPath) " />
-    <!--Exec Command="ilasm %(TargetingPacksSrc.Identity) -dll -quiet -nologo -output=$(TargetingPacksDLLPath)%(TargetingPacksSrc.Filename).dll" /-->
-    <MSBuild Projects="buildIl.ilproj" Targets="Build" StopOnFirstFailure="true" />
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done building TargetingPacks assemblies." />
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Packing targeting Packs only ." />
-    <Exec Command="$__DOTNET_CMD restore %(TargetingPacksProjects.Identity)"/>
-    <Exec Command="$__DOTNET_CMD pack --no-build --output $(ArtifactsRefPkgDir) /nowarn:NU5125 %(TargetingPacksProjects.Identity)"/>
-    <Message Importance="High" Text="Exec Command=$__DOTNET_CMD pack --no-build --output $(ArtifactsRefPkgDir) /nowarn:NU5125 %(TargetingPacksProjects.Identity)" />
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Packing targeting Packs Done" />
+  <Target Name="AssembleTargetingPacks" BeforeTargets="Build" Condition="'@(TargetingPacksSrc)' != ''">
+
+    <MakeDir Directories= "$(Artifacts472DLLLib) " />
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
+    <Exec Command="$(IlasmToolPathSB)ilasm %(TargetingPacksSrc.Identity) -dll -quiet -nologo -output=$(Artifacts472DLLLib)%(TargetingPacksSrc.Filename).dll" />
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done assembling TargetingPacks src." />
+  </Target>
+
+  <Target Name="BuildTargetingPacks" AfterTargets="AssembleTargetingPacks,CopyTFMDLLStructure" BeforeTargets="Build">
+    <ItemGroup>
+      <TargetingPacksProjects Include="$(ArtifactsTFMPackTemp)**/*.csproj" />
+    </ItemGroup>
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm::ss::ff'))] %(TargetingPacksProjects.Identity) Building TargetingPacks" />
+    <Exec Command="$__DOTNET_CMD restore %(TargetingPacksProjects.Identity)" />
+    <Exec Command="$__DOTNET_CMD pack --no-build --output $(ArtifactsRefPkgDir) /nowarn:NU5125 %(TargetingPacksProjects.Identity)" />
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm::ss::ff'))] Done Building TargetingPacks" />
   </Target>
   
   <Target Name="BuildTextOnlyPackages" BeforeTargets="Build" Condition="'@(TextOnlyProjects)' != ''">
