@@ -7,7 +7,7 @@
     <ReferenceAssemblySourcePath>$(RepoRoot)src/referencePackages/src/</ReferenceAssemblySourcePath>
     <TextOnlyProjectsSourcePath>$(RepoRoot)src/textOnlyPackages/</TextOnlyProjectsSourcePath>
     <TargetingPacksPath>$(RepoRoot)src/targetingPackages/src/</TargetingPacksPath>
-    <TargetingPacksDLLPath>$(TargetingPacksPath)DLL/</TargetingPacksDLLPath>
+    <TargetingPacksDLLPath>(RepoRoot)src/targetingPackages/DLL/</TargetingPacksDLLPath>
     <ArtifactsBinDir>$(RepoRoot)artifacts/bin/</ArtifactsBinDir>
     <ArtifactsObjDir>$(RepoRoot)artifacts/obj/</ArtifactsObjDir>
     <ArtifactsLogDir>$(RepoRoot)artifacts/log/</ArtifactsLogDir>
