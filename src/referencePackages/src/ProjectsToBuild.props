@@ -68,6 +68,15 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.extensions/4.5.3/System.Threading.Tasks.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.extensions/4.5.2/System.Threading.Tasks.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.extensions/4.5.1/System.Threading.Tasks.Extensions.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.typeextensions/4.3.0/System.Reflection.TypeExtensions.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.extensions/4.3.0/System.Reflection.Extensions.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit.ilgeneration/4.3.0/System.Reflection.Emit.ILGeneration.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit.lightweight/4.3.0/System.Reflection.Emit.Lightweight.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit/4.3.0/System.Reflection.Emit.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.objectmodel/4.3.0/System.ObjectModel.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq/4.3.0/System.Linq.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.expressions/4.3.0/System.Linq.Expressions.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.dynamic.runtime/4.3.0/System.Dynamic.Runtime.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.primitives/4.1.1/System.Runtime.Serialization.Primitives.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit.lightweight/4.0.1/System.Reflection.Emit.Lightweight.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.objectmodel/4.0.12/System.ObjectModel.csproj"/>
@@ -87,7 +96,6 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.win32.primitives/4.0.1/Microsoft.Win32.Primitives.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.principal.windows/4.0.0/System.Security.Principal.Windows.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.primitives/4.3.0/System.Security.Cryptography.Primitives.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq/4.3.0/System.Linq.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.encoding/4.3.0/System.Security.Cryptography.Encoding.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.numerics/4.3.0/System.Runtime.Numerics.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.algorithms/4.3.0/System.Security.Cryptography.Algorithms.csproj"/>
@@ -113,12 +121,10 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.serialization.formatters/4.3.0/System.Runtime.Serialization.Formatters.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.loader/4.3.0/System.Runtime.Loader.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.loader/4.0.0/System.Runtime.Loader.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.extensions/4.3.0/System.Reflection.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.interopservices.runtimeinformation/4.3.0/System.Runtime.InteropServices.RuntimeInformation.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.interopservices.runtimeinformation/4.0.0/System.Runtime.InteropServices.RuntimeInformation.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.resources.writer/4.0.0/System.Resources.Writer.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.resources.reader/4.0.0/System.Resources.Reader.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.typeextensions/4.3.0/System.Reflection.TypeExtensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.3.0/System.Buffers.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.compression/4.3.0/System.IO.Compression.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.immutable/1.3.1/System.Collections.Immutable.csproj"/>
@@ -127,13 +133,11 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.metadata/1.4.1/System.Reflection.Metadata.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.immutable/1.2.0/System.Collections.Immutable.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.metadata/1.3.0/System.Reflection.Metadata.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit.ilgeneration/4.3.0/System.Reflection.Emit.ILGeneration.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit.lightweight/4.3.0/System.Reflection.Emit.Lightweight.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.emit/4.3.0/System.Reflection.Emit.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.objectmodel/4.3.0/System.ObjectModel.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.webheadercollection/4.3.0/System.Net.WebHeaderCollection.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.webheadercollection/4.0.1/System.Net.WebHeaderCollection.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.primitives/4.3.0/System.Net.Primitives.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.numerics.vectors/4.4.0/System.Numerics.Vectors.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.numerics.vectors/4.5.0/System.Numerics.Vectors.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.sockets/4.3.0/System.Net.Sockets.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.primitives/4.0.11/System.Net.Primitives.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.sockets/4.1.0/System.Net.Sockets.csproj"/>
@@ -146,10 +150,8 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.http/4.1.0/System.Net.Http.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.requests/4.0.11/System.Net.Requests.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.http/4.3.3/System.Net.Http.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.dataflow/4.9.0/System.Threading.Tasks.Dataflow.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.4.0/System.Buffers.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.expressions/4.3.0/System.Linq.Expressions.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.numerics.vectors/4.4.0/System.Numerics.Vectors.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.numerics.vectors/4.5.0/System.Numerics.Vectors.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.queryable/4.3.0/System.Linq.Queryable.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.parallel/4.0.1/System.Linq.Parallel.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.pipes/4.3.0/System.IO.Pipes.csproj"/>
@@ -161,7 +163,6 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.globalization.extensions/4.0.1/System.Globalization.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.globalization.calendars/4.3.0/System.Globalization.Calendars.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.globalization.calendars/4.0.1/System.Globalization.Calendars.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.dynamic.runtime/4.3.0/System.Dynamic.Runtime.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.tracesource/4.3.0/System.Diagnostics.TraceSource.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.tracesource/4.0.0/System.Diagnostics.TraceSource.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.textwritertracelistener/4.0.0/System.Diagnostics.TextWriterTraceListener.csproj"/>
@@ -216,6 +217,5 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.cng/4.5.0/System.Security.Cryptography.Cng.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/4.5.0/System.Security.Cryptography.Pkcs.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/4.5.2/System.Security.Cryptography.Pkcs.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.openssl/4.5.0/System.Security.Cryptography.OpenSsl.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.dataflow/4.9.0/System.Threading.Tasks.Dataflow.csproj"/>  </ItemGroup>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.openssl/4.5.0/System.Security.Cryptography.OpenSsl.csproj"/>  </ItemGroup>
 </Project>
