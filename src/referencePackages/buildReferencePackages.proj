@@ -29,7 +29,7 @@
     <TFMDLLFiles Include="$(TargetingPacksDLLPath)**/*.*" />
   </ItemGroup>
 
-  <Target Name="CopyTFMDLLStructure" BeforeTargets="BuildTargetingPacks" Condition="'@(TFMDLLFiles)' != ''">
+  <Target Name="CopyTFMDLLStructure" BeforeTargets="BuildTargetingPacks" Condition="'@(TFMDLLFiles)' != '' and '$(SkipTargetingPacks)' != 'true' ">
 
     <Copy SourceFiles="@(TFMDLLFiles)" DestinationFiles="@(TFMDLLFiles->'$(ArtifactsTFMPackTemp)%(RecursiveDir)%(Filename)%(Extension)')" />
     <Message Importance="High" Text="Copy TFMDLLFiles Complete."/>
@@ -45,7 +45,7 @@
     <Message Importance="High" Text="Copy DummyFiles Complete."/>
   </Target>
 
-  <Target Name="AssembleTargetingPacks" BeforeTargets="Build" Condition="'@(TargetingPacksSrc)' != ''">
+  <Target Name="AssembleTargetingPacks" BeforeTargets="Build" Condition="'@(TargetingPacksSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
 
     <MakeDir Directories= "$(Artifacts472DLLLib) " />
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
@@ -53,7 +53,7 @@
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done assembling TargetingPacks src." />
   </Target>
 
-  <Target Name="BuildTargetingPacks" AfterTargets="AssembleTargetingPacks,CopyTFMDLLStructure" BeforeTargets="Build">
+  <Target Name="BuildTargetingPacks" AfterTargets="AssembleTargetingPacks,CopyTFMDLLStructure" BeforeTargets="Build" Condition=" '$(SkipTargetingPacks)' != 'true' ">
     <ItemGroup>
       <TargetingPacksProjects Include="$(ArtifactsTFMPackTemp)**/*.csproj" />
     </ItemGroup>
