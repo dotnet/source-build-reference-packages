@@ -22,8 +22,6 @@
   <Import Project="$(ReferenceAssemblySourcePath)ProjectsToBuild.props" />
 
   <ItemGroup>
-    <NuspecsToCopy Include="$(ReferenceAssemblySourcePath)**/*.nuspec" />
-    <DummyFilesToCopy Include="$(ReferenceAssemblySourcePath)**/_._" />
     <TextOnlyProjects Include="$(TextOnlyProjectsSourcePath)**/*.csproj" />
     <TargetingPacksSrc Include="$(TargetingPacksPath)**/*.il" />
     <TargetingPacksNuspec Include="$(TargetingPacksPath)**/*.nuspec" />   
@@ -31,23 +29,22 @@
     <ILsrcPathFiles Include="$(ILsrcPath)**/*.*" />
   </ItemGroup>
 
-  <Target Name="CopyTFMDLLStructure" BeforeTargets="BuildTargetingPacks" Condition="'@(ILsrcPathFiles)' != '' and '$(SkipTargetingPacks)' != 'true' ">
-    <Message Importance="High" Text="@(ILsrcPathFiles->'$(ArtifactsTFMPackTemp)%(RecursiveDir)%(Filename)%(Extension)')"/>
+  <Target Name="BuildTFMDLLStructure" BeforeTargets="BuildTargetingPacks" Condition="'@(ILsrcPathFiles)' != '' and '$(SkipTargetingPacks)' != 'true' ">
+    <Message Importance="High" Text="Copy all tfm files." />
     <Copy SourceFiles="@(ILsrcPathFiles)" DestinationFiles="@(ILsrcPathFiles->'$(ArtifactsTFMPackTemp)%(RecursiveDir)%(Filename)%(Extension)')" />
-    <Message Importance="High" Text="Copy TFMDLLFiles Complete." />
+    <Message Importance="High" Text="Copy all tfm Complete." />
+
+    <ItemGroup>
+      <ArtifactsILFiles Include="$(ArtifactsTFMPackTemp)**/*.il" />
+    </ItemGroup>
+    
+    <Message Importance="High" Text="%(ArtifactsILFiles.Identity)" />
+    <Delete Files="%(ArtifactsILFiles.Identity)" />
+    <Message Importance="High" Text="Removal of IL files complete." />
+    <Message Importance="High" Text="Done Building DLL structure." />
   </Target>
 
-  <Target Name="CopyNuspecFiles" BeforeTargets="Build" Condition="'@(NuspecsToCopy)' != ''">
-    <!--Copy SourceFiles="@(NuspecsToCopy)" DestinationFiles="@(NuspecsToCopy->'$(ArtifactsBinDir)%(RecursiveDir)%(Filename)%(Extension)')" />
-    <Message Importance="High" Text="Copy Nuspecs Complete."/-->
-  </Target>
-
-  <Target Name="CopyDummyFiles" BeforeTargets="Build" Condition="'@(DummyFilesToCopy)' != ''">
-    <!--Copy SourceFiles="@(DummyFilesToCopy)" DestinationFiles="@(DummyFilesToCopy->'$(ArtifactsBinDir)%(RecursiveDir)%(Filename)%(Extension)')" />
-    <Message Importance="High" Text="Copy DummyFiles Complete."/-->
-  </Target>
-
-  <Target Name="AssembleTargetingPacks" BeforeTargets="Build" Condition="'@(TargetingPacksSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
+  <Target Name="AssembleTargetingPacks" BeforeTargets="Build" AfterTargets="BuildTFMDLLStructure" Condition="'@(TargetingPacksSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
 
     <!--MakeDir Directories= "$(Artifacts472DLLLib) " />
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
