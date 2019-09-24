@@ -1,4 +1,4 @@
-!#/usr/bin/env bash
+#!/usr/bin/env bash
 
 __scriptpath=$(cd "$(dirname "$0")"; pwd -P)
 __log_path="$__scriptpath/artifacts/log"
