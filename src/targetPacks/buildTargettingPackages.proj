@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(RepoRoot)src/dir.props" />
+  <Import Project="$(RepoRoot)source-built/PackageVersions.props" />
+
+  <PropertyGroup>
+    <ILsrcPath>$(RepoRoot)/src/targetPacks/ILsrc/</ILsrcPath>
+    <ReferenceAssemblySourcePath>$(RepoRoot)src/referencePackages/src/</ReferenceAssemblySourcePath>
+    <TextOnlyProjectsSourcePath>$(RepoRoot)src/textOnlyPackages/</TextOnlyProjectsSourcePath>
+    <ArtifactsBinDir>$(RepoRoot)artifacts/bin/</ArtifactsBinDir>
+    <ArtifactsObjDir>$(RepoRoot)artifacts/obj/</ArtifactsObjDir>
+    <ArtifactsLogDir>$(RepoRoot)artifacts/log/</ArtifactsLogDir>
+    <ArtifactsRefPkgDir>$(RepoRoot)artifacts/reference-packages/</ArtifactsRefPkgDir>
+    <ArtifactsTFMPackTemp>$(RepoRoot)artifacts/TFMPack/</ArtifactsTFMPackTemp>
+    <IlasmToolPathSB>$(RepoRoot)/source-built/coreclr-tools/</IlasmToolPathSB>
+  </PropertyGroup>
+
+  <Import Project="$(ReferenceAssemblySourcePath)ProjectsToBuild.props" />
+
+  <ItemGroup>
+    <TextOnlyProjects Include="$(TextOnlyProjectsSourcePath)**/*.csproj" />
+    <TargetingPacksSrc Include="$(ILsrcPath)**/*.il" />
+    <ILsrcPathFiles Include="$(ILsrcPath)**/*.*" />
+  </ItemGroup>
+
+  <Target Name="BuildTFMDLLStructure" BeforeTargets="BuildTargetingPacks" Condition="'@(ILsrcPathFiles)' != '' and '$(SkipTargetingPacks)' != 'true' ">
+    <Message Importance="High" Text="Copy all tfm files." />
+    <Copy SourceFiles="@(ILsrcPathFiles)" DestinationFiles="@(ILsrcPathFiles->'$(ArtifactsTFMPackTemp)%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Importance="High" Text="Copy all tfm Complete." />
+
+    <ItemGroup>
+      <ArtifactsILFiles Include="$(ArtifactsTFMPackTemp)**/*.il" />
+    </ItemGroup>
+    
+    <Message Importance="High" Text="Remove IL files" />
+    <Delete Files="%(ArtifactsILFiles.Identity)" />
+    <Message Importance="High" Text="Removal of IL files complete." />
+    <Message Importance="High" Text="Done Building DLL structure." />
+  </Target>
+
+  <Target Name="AssembleTargetingPacks" BeforeTargets="BuildTargetingPacks" AfterTargets="BuildTFMDLLStructure" Condition="'@(TargetingPacksSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
+    <Exec Command="$(IlasmToolPathSB)ilasm %(TargetingPacksSrc.Identity) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)%(RecursiveDir)%(TargetingPacksSrc.Filename).dll" />
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done assembling TargetingPacks src." />
+  </Target>
+
+  <Target Name="BuildTargetingPacks" AfterTargets="AssembleTargetingPacks,CopyTFMDLLStructure" BeforeTargets="Build" Condition=" '$(SkipTargetingPacks)' != 'true' ">
+    <ItemGroup>
+      <TargetingPacksProjects Include="$(ArtifactsTFMPackTemp)**/*.csproj" />
+    </ItemGroup>
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm::ss::ff'))] %(TargetingPacksProjects.Identity) Building TargetingPacks" />
+    <!--Exec Command="$__DOTNET_CMD restore %(TargetingPacksProjects.Identity)" />
+    <Exec Command="$__DOTNET_CMD pack no-build output $(ArtifactsRefPkgDir) /nowarn:NU5125 %(TargetingPacksProjects.Identity)" /-->
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm::ss::ff'))] Done Building TargetingPacks" />
+  </Target>
+  
+  <PropertyGroup>
+    <PackCommandArgs>/p:ArtifactsBinDir=$(ArtifactsBinDir)</PackCommandArgs>
+    <PackCommandArgs>$(PackCommandArgs) /p:ArtifactsObjDir=$(ArtifactsObjDir)</PackCommandArgs>
+    <PackCommandArgs>$(PackCommandArgs) /p:RepoRoot=$(RepoRoot)</PackCommandArgs>
+    <!-- Don't warn on NU1603 - A package dependency specified a version that could not be found -->
+    <!-- Don't warn on NU1605 - Detected package downgrade. -->
+    <!-- Don't warn on NU5125 - The 'licenseUrl' element will be deprecated. -->
+    <!-- Don't warn on CS0109 - The member does not hide an accessible member. -->
+    <!-- Don't warn on CS0169 - The field is never used. -->
+    <!-- Don't warn on CS0618 - Type is obsolete. -->
+    <!-- Don't warn on CS0649 - The field is never assigned to. -->
+    <!-- Don't warn on CS3001, CS3002, CS3003, CS3009 - Type is not CLS-compliant. -->
+    <PackCommandArgs>$(PackCommandArgs) /nowarn:NU1603,NU1605,NU5125,CS0109,CS0169,CS0618,CS0649,CS3001,CS3002,CS3003,CS3009</PackCommandArgs>
+  </PropertyGroup>
+
+  <Target Name="Build" Condition="'@(ProjectsToBuild)' != ''">
+    <!--Exec Command="$__DOTNET_CMD pack output $(ArtifactsRefPkgDir) %(ProjectsToBuild.Identity) /bl:$(ArtifactsLogDir)$([System.String]::Copy('%(ProjectsToBuild.RelativeDir)').Replace('$(ReferenceAssemblySourcePath)', ''))%(ProjectsToBuild.Filename).binlog $(PackCommandArgs)" /-->
+  </Target>
+
+  <Target Name="BuildError" AfterTargets="Build" Condition="'@(ProjectsToBuild)' == ''">
+    <Message Importance="High" Text="ERROR:  No projects to build.  Call 'generate' first." />
+  </Target>
+</Project>
