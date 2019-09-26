@@ -22,27 +22,22 @@
   </ItemGroup>
 
   <Target Name="BuildTFMDLLStructure" BeforeTargets="AssembleTargetPacks" Condition="'@(ILsrcPathFiles)' != '' and '$(SkipTargetingPacks)' != 'true' ">
-    <Message Importance="High" Text="Copy all tfm files." />
-    <Copy SourceFiles="@(ILsrcPathFiles)" DestinationFiles="@(ILsrcPathFiles->'$(ArtifactsTFMPackTemp)%(RecursiveDir)%(Filename)%(Extension)')" />
-    <Message Importance="High" Text="Copy all tfm Complete." />
-
     <ItemGroup>
-      <ArtifactsILFiles Include="$(ArtifactsTFMPackTemp)**/*.il" />
+      <StructureFiles Include="@(ILsrcPathFiles)" Exclude="@(TargetingPacksSrc)" />
     </ItemGroup>
-    
-    <Message Importance="High" Text="Remove IL files" />
-    <Delete Files="%(ArtifactsILFiles.Identity)" />
-    <Message Importance="High" Text="Removal of IL files complete." />
-    <Message Importance="High" Text="Done Building DLL structure." />
+    <Message Importance="High" Text="Copy all tfm files." />
+    <Copy SourceFiles="@(StructureFiles)" DestinationFiles="@(StructureFiles->'$(ArtifactsTFMPackTemp)%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Importance="High" Text="Copy all tfm Complete." />
   </Target>
 
   <Target Name="AssembleTargetPacks" BeforeTargets="Build" AfterTargets="BuildTFMDLLStructure" Condition="'@(TargetingPacksSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
+    <MakeDir Directories="@(TargetingPacksSrc->'$(ArtifactsTFMPackTemp)%(RecursiveDir)')" />
     <Exec Command="$(IlasmToolPathSB)ilasm %(TargetingPacksSrc.Identity) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)%(RecursiveDir)%(TargetingPacksSrc.Filename).dll" />
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done assembling TargetPacks src." />
   </Target>
 
-  <Target Name="Build" AfterTargets="AssembleTargetPacks" Condition=" '$(SkipTargetingPacks)' != 'true' ">
+  <Target Name="Build" AfterTargets="AssembleTargetPacks" Condition=" '$(SkipTargetingPacks)' != 'true'" >
     <ItemGroup>
       <TargetingPacksProjects Include="$(ArtifactsTFMPackTemp)**/*.csproj" />
     </ItemGroup>
