@@ -18,6 +18,16 @@
     <TextOnlyProjects Include="$(TextOnlyProjectsSourcePath)**/*.csproj" />
   </ItemGroup>
   
+  <Target Name="CopyNuspecFiles" BeforeTargets="Build" Condition="'@(NuspecsToCopy)' != ''">
+    <Copy SourceFiles="@(NuspecsToCopy)" DestinationFiles="@(NuspecsToCopy->'$(ArtifactsBinDir)%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Importance="High" Text="Copy Nuspecs Complete."/>
+  </Target>
+
+  <Target Name="CopyDummyFiles" BeforeTargets="Build" Condition="'@(DummyFilesToCopy)' != ''">
+    <Copy SourceFiles="@(DummyFilesToCopy)" DestinationFiles="@(DummyFilesToCopy->'$(ArtifactsBinDir)%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Importance="High" Text="Copy DummyFiles Complete."/>
+  </Target>
+
   <Target Name="BuildTextOnlyPackages" BeforeTargets="Build" Condition="'@(TextOnlyProjects)' != ''">
     <Exec Command="$__DOTNET_CMD restore %(TextOnlyProjects.Identity)" />
     <!-- Don't warn on NU5125 - The 'licenseUrl' element will be deprecated. -->
