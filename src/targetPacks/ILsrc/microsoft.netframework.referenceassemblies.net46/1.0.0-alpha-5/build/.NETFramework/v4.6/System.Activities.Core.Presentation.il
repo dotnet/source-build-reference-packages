@@ -646,16 +646,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Activities.Core.Presentation.g.resources
-{
-  // Offset: 0x00000000 Length: 0x0004638A
-  // WARNING: managed resource file System.Activities.Core.Presentation.g.resources created
-}
-.mresource /*28000002*/ public System.Activities.Core.Presentation.SR.resources
-{
-  // Offset: 0x00046390 Length: 0x00002312
-  // WARNING: managed resource file System.Activities.Core.Presentation.SR.resources created
-}
 .module System.Activities.Core.Presentation.dll
 // MVID: {71190ff1-c742-432f-a021-434a7f31fdb5}
 .imagebase 0x50190000

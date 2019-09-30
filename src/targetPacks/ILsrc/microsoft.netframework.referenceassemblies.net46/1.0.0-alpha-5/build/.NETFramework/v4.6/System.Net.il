@@ -674,11 +674,6 @@
 {
   .assembly extern System /*23000002*/ 
 }
-.mresource /*28000001*/ public System.Net.resources
-{
-  // Offset: 0x00000000 Length: 0x000033D0
-  // WARNING: managed resource file System.Net.resources created
-}
 .module System.Net.dll
 // MVID: {1585fade-58b5-453a-8ebb-39159f0ec73f}
 .custom /*0C000002:0A000018*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000039*/::.ctor() /* 0A000018 */ = ( 01 00 00 00 ) 

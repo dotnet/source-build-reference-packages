@@ -435,31 +435,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Data.Entity.Design.resources
-{
-  // Offset: 0x00000000 Length: 0x00004FCD
-  // WARNING: managed resource file System.Data.Entity.Design.resources created
-}
-.mresource /*28000002*/ public TemplateCodeGenerators.CSharpCodeGenTemplate.cs
-{
-  // Offset: 0x00004FD8 Length: 0x00028D29
-  // WARNING: managed resource file TemplateCodeGenerators.CSharpCodeGenTemplate.cs created
-}
-.mresource /*28000003*/ public 'TemplateCodeGenerators.CSharpCodeGenTemplateV5.0.cs'
-{
-  // Offset: 0x0002DD08 Length: 0x00029FB4
-  // WARNING: managed resource file 'TemplateCodeGenerators.CSharpCodeGenTemplateV5.0.cs' created
-}
-.mresource /*28000004*/ public TemplateCodeGenerators.VBCodeGenTemplate.vb
-{
-  // Offset: 0x00057CC0 Length: 0x00030AC5
-  // WARNING: managed resource file TemplateCodeGenerators.VBCodeGenTemplate.vb created
-}
-.mresource /*28000005*/ public 'TemplateCodeGenerators.VBCodeGenTemplateV5.0.vb'
-{
-  // Offset: 0x00088790 Length: 0x00031D24
-  // WARNING: managed resource file 'TemplateCodeGenerators.VBCodeGenTemplateV5.0.vb' created
-}
 .module System.Data.Entity.Design.dll
 // MVID: {2a212d56-81f3-454b-8049-72ec85b63263}
 .imagebase 0x60ce0000

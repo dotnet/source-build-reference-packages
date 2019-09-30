@@ -421,11 +421,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public Microsoft.Build.Tasks.Xaml.SR.resources
-{
-  // Offset: 0x00000000 Length: 0x00001D8C
-  // WARNING: managed resource file Microsoft.Build.Tasks.Xaml.SR.resources created
-}
 .module XamlBuildTask.dll
 // MVID: {ec81efb9-45bb-4db9-9a05-65a4b5365d42}
 .imagebase 0x53e60000

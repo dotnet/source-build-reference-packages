@@ -385,11 +385,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public CustomMarshalers.resources
-{
-  // Offset: 0x00000000 Length: 0x00000722
-  // WARNING: managed resource file CustomMarshalers.resources created
-}
 .module CustomMarshalers.dll
 // MVID: {a5297f27-504d-4c23-a90d-47af262e292a}
 .imagebase 0x10000000
@@ -402,97 +397,21 @@
 
 // ================== GLOBAL FIELDS ==========================
 
-.field /*04000001*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IDispatchEx at D_00008110
-.field /*04000002*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) GUID_NULL at D_000080E0
-.field /*04000003*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IEnumVARIANT at D_00008100
-.field /*04000004*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IUnknown at D_000080F0
-.field /*04000005*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostManualEvent at D_000082D0
-.field /*04000006*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICorConfiguration at D_000084C0
-.field /*04000007*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostIoCompletionManager at D_00008290
-.field /*04000008*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostAutoEvent at D_000082C0
-.field /*04000009*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRReferenceAssemblyEnum at D_00008430
-.field /*0400000A*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRRuntimeHost at D_00008390
-.field /*0400000B*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostSyncManager at D_000082A0
-.field /*0400000C*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostThreadpoolManager at D_00008270
-.field /*0400000D*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRAssemblyIdentityManager at D_000083F0
-.field /*0400000E*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostControl at D_00008480
-.field /*0400000F*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostGCManager at D_00008360
-.field /*04000010*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IObjectHandle at D_00008180
-.field /*04000011*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostCrst at D_000082B0
-.field /*04000012*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) CLSID_TypeNameFactory at D_00008140
-.field /*04000013*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRHostBindingPolicyManager at D_00008450
-.field /*04000014*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRProbingAssemblyEnum at D_00008440
-.field /*04000015*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostSecurityManager at D_000083D0
-.field /*04000016*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICatalogServices at D_000081B0
-.field /*04000017*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) CLSID_ComCallUnmarshalV4 at D_00008170
-.field /*04000018*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRErrorReportingManager at D_00008340
-.field /*04000019*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRGCManager2 at D_00008330
-.field /*0400001A*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IApartmentCallback at D_000081A0
-.field /*0400001B*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IManagedObject at D_00008190
-.field /*0400001C*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostSemaphore at D_000082E0
-.field /*0400001D*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostTaskManager at D_00008260
-.field /*0400001E*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLROnEventManager at D_00008380
-.field /*0400001F*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IDebuggerInfo at D_000084B0
-.field /*04000020*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ITypeNameBuilder at D_00008460
-.field /*04000021*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRTask2 at D_00008230
-.field /*04000022*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) LIBID_mscoree at D_00008120
-.field /*04000023*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICorThreadpool at D_000081D0
-.field /*04000024*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRSyncManager at D_000082F0
-.field /*04000025*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICorRuntimeHost at D_000081C0
-.field /*04000026*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostSecurityContext at D_000083E0
-.field /*04000027*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRTask at D_00008220
-.field /*04000028*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ITypeName at D_00008410
-.field /*04000029*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRDomainManager at D_00008400
-.field /*0400002A*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostPolicyManager at D_00008350
-.field /*0400002B*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) CLSID_ComCallUnmarshal at D_00008160
-.field /*0400002C*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) CLSID_CorRuntimeHost at D_00008130
-.field /*0400002D*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRPolicyManager at D_00008310
-.field /*0400002E*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostMemoryNeededCallback at D_000081F0
-.field /*0400002F*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRHostProtectionManager at D_000083A0
-.field /*04000030*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostMemoryManager at D_00008210
-.field /*04000031*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRMemoryNotificationCallback at D_000084D0
-.field /*04000032*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRAppDomainResourceMonitor at D_00008300
-.field /*04000033*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) CLSID_CLRRuntimeHost at D_00008150
-.field /*04000034*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRDebugManager at D_000081E0
-.field /*04000035*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostMalloc at D_00008200
-.field /*04000036*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRTaskManager at D_00008250
-.field /*04000037*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostAssemblyManager at D_000083C0
-.field /*04000038*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRIoCompletionManager at D_00008280
-.field /*04000039*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IDebuggerThreadControl at D_000084A0
-.field /*0400003A*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRAssemblyReferenceList at D_00008420
-.field /*0400003B*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostAssemblyStore at D_000083B0
-.field /*0400003C*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRGCManager at D_00008320
-.field /*0400003D*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IHostTask at D_00008240
-.field /*0400003E*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_IActionOnCLREvent at D_00008370
-.field /*0400003F*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ITypeNameFactory at D_00008470
-.field /*04000040*/ static assembly valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) IID_ICLRControl at D_00008490
-.field /*04000041*/ static assembly valuetype __s_GUID/*01000003*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) _GUID_90f1a06e_7712_4762_86b5_7a5eba6bdb02 at D_000084E0
-.field /*04000042*/ static assembly valuetype __s_GUID/*01000003*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) _GUID_cb2f6722_ab3a_11d2_9c40_00c04fa30a3e at D_00008524
-.field /*04000043*/ static assembly valuetype '<CppImplementationDetails>'.$ArrayType$$$BY00Q6MPBXXZ/*01000004*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) '?A0x834519a6.__xc_mp_z' at D_000080CC
 .field /*04000044*/ static assembly int32 '?Uninitialized@CurrentDomain@<CrtImplementationDetails>@@$$Q2HA'
 .custom /*0C000061:0A000013*/ instance void [mscorlib/*23000001*/]System.Runtime.CompilerServices.FixedAddressValueTypeAttribute/*01000035*/::.ctor() /* 0A000013 */ = ( 01 00 00 00 ) 
 .field /*04000045*/ static assembly method void *() '?A0x834519a6.?Uninitialized$initializer$@CurrentDomain@<CrtImplementationDetails>@@$$Q2P6MXXZA' at D_000080AC
-.field /*04000046*/ static assembly valuetype '<CppImplementationDetails>'.$ArrayType$$$BY00Q6MPBXXZ/*01000004*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) '?A0x834519a6.__xi_vt_a' at D_000080D0
-.field /*04000047*/ static assembly valuetype '<CrtImplementationDetails>'.Progress/*01000005*//State/*01000006*/ '?InitializedPerAppDomain@CurrentDomain@<CrtImplementationDetails>@@$$Q2W4State@Progress@2@A'
 .custom /*0C000065:0A000013*/ instance void [mscorlib/*23000001*/]System.Runtime.CompilerServices.FixedAddressValueTypeAttribute/*01000035*/::.ctor() /* 0A000013 */ = ( 01 00 00 00 ) 
 .field /*04000048*/ static assembly method void *() '?A0x834519a6.?InitializedPerAppDomain$initializer$@CurrentDomain@<CrtImplementationDetails>@@$$Q2P6MXXZA' at D_000080C0
 .field /*04000049*/ static assembly bool '?IsDefaultDomain@CurrentDomain@<CrtImplementationDetails>@@$$Q2_NA'
 .custom /*0C000069:0A000013*/ instance void [mscorlib/*23000001*/]System.Runtime.CompilerServices.FixedAddressValueTypeAttribute/*01000035*/::.ctor() /* 0A000013 */ = ( 01 00 00 00 ) 
 .field /*0400004A*/ static assembly method void *() '?A0x834519a6.?IsDefaultDomain$initializer$@CurrentDomain@<CrtImplementationDetails>@@$$Q2P6MXXZA' at D_000080B0
-.field /*0400004B*/ static assembly valuetype '<CppImplementationDetails>'.$ArrayType$$$BY00Q6MPBXXZ/*01000004*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) '?A0x834519a6.__xc_ma_a' at D_000080A4
-.field /*0400004C*/ static assembly valuetype '<CrtImplementationDetails>'.Progress/*01000005*//State/*01000006*/ '?InitializedNative@CurrentDomain@<CrtImplementationDetails>@@$$Q2W4State@Progress@2@A'
 .custom /*0C000072:0A000013*/ instance void [mscorlib/*23000001*/]System.Runtime.CompilerServices.FixedAddressValueTypeAttribute/*01000035*/::.ctor() /* 0A000013 */ = ( 01 00 00 00 ) 
 .field /*0400004D*/ static assembly method void *() '?A0x834519a6.?InitializedNative$initializer$@CurrentDomain@<CrtImplementationDetails>@@$$Q2P6MXXZA' at D_000080B8
 .field /*0400004E*/ static assembly int32 '?Initialized@CurrentDomain@<CrtImplementationDetails>@@$$Q2HA'
 .custom /*0C000077:0A000013*/ instance void [mscorlib/*23000001*/]System.Runtime.CompilerServices.FixedAddressValueTypeAttribute/*01000035*/::.ctor() /* 0A000013 */ = ( 01 00 00 00 ) 
 .field /*0400004F*/ static assembly method void *() '?A0x834519a6.?Initialized$initializer$@CurrentDomain@<CrtImplementationDetails>@@$$Q2P6MXXZA' at D_000080A8
-.field /*04000050*/ static assembly valuetype '<CppImplementationDetails>'.$ArrayType$$$BY00Q6MPBXXZ/*01000004*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) '?A0x834519a6.__xc_ma_z' at D_000080C4
-.field /*04000051*/ static assembly valuetype '<CrtImplementationDetails>'.Progress/*01000005*//State/*01000006*/ '?InitializedVtables@CurrentDomain@<CrtImplementationDetails>@@$$Q2W4State@Progress@2@A'
 .custom /*0C00007D:0A000013*/ instance void [mscorlib/*23000001*/]System.Runtime.CompilerServices.FixedAddressValueTypeAttribute/*01000035*/::.ctor() /* 0A000013 */ = ( 01 00 00 00 ) 
 .field /*04000052*/ static assembly method void *() '?A0x834519a6.?InitializedVtables$initializer$@CurrentDomain@<CrtImplementationDetails>@@$$Q2P6MXXZA' at D_000080B4
-.field /*04000053*/ static assembly valuetype '<CppImplementationDetails>'.$ArrayType$$$BY00Q6MPBXXZ/*01000004*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) '?A0x834519a6.__xi_vt_z' at D_000080D4
-.field /*04000054*/ static assembly valuetype __s_GUID/*01000003*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) _GUID_cb2f6723_ab3a_11d2_9c40_00c04fa30a3e at D_00008514
-.field /*04000055*/ static assembly valuetype '<CrtImplementationDetails>'.Progress/*01000005*//State/*01000006*/ '?InitializedPerProcess@CurrentDomain@<CrtImplementationDetails>@@$$Q2W4State@Progress@2@A'
 .custom /*0C000088:0A000013*/ instance void [mscorlib/*23000001*/]System.Runtime.CompilerServices.FixedAddressValueTypeAttribute/*01000035*/::.ctor() /* 0A000013 */ = ( 01 00 00 00 ) 
 .field /*04000056*/ static assembly method void *() '?A0x834519a6.?InitializedPerProcess$initializer$@CurrentDomain@<CrtImplementationDetails>@@$$Q2P6MXXZA' at D_000080BC
 .field /*04000057*/ static assembly bool '?InitializedPerProcess@DefaultDomain@<CrtImplementationDetails>@@2_NA'
@@ -501,14 +420,10 @@
 .field /*0400005A*/ static assembly int32 '?Count@AllDomains@<CrtImplementationDetails>@@2HA'
 .field /*0400005B*/ static assembly uint32 modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) '?ProcessAttach@NativeDll@<CrtImplementationDetails>@@0IB' at D_00008504
 .field /*0400005C*/ static assembly uint32 modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) '?ThreadAttach@NativeDll@<CrtImplementationDetails>@@0IB' at D_00008508
-.field /*0400005D*/ static assembly valuetype '<CrtImplementationDetails>'.TriBool/*01000007*//State/*01000008*/ '?hasNative@DefaultDomain@<CrtImplementationDetails>@@0W4State@TriBool@2@A'
 .field /*0400005E*/ static assembly uint32 modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) '?ProcessDetach@NativeDll@<CrtImplementationDetails>@@0IB' at D_00008500
 .field /*0400005F*/ static assembly uint32 modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) '?ThreadDetach@NativeDll@<CrtImplementationDetails>@@0IB' at D_0000850C
 .field /*04000060*/ static assembly uint32 modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) '?ProcessVerifier@NativeDll@<CrtImplementationDetails>@@0IB' at D_00008510
-.field /*04000061*/ static assembly valuetype '<CrtImplementationDetails>'.TriBool/*01000007*//State/*01000008*/ '?hasPerProcess@DefaultDomain@<CrtImplementationDetails>@@0W4State@TriBool@2@A'
 .field /*04000062*/ static assembly bool '?InitializedNativeFromCCTOR@DefaultDomain@<CrtImplementationDetails>@@2_NA'
-.field /*04000063*/ static assembly valuetype '<CppImplementationDetails>'.$ArrayType$$$BY00Q6MPBXXZ/*01000004*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) '?A0x834519a6.__xc_mp_a' at D_000080C8
-.field /*04000064*/ static assembly valuetype __s_GUID/*01000003*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) _GUID_90f1a06c_7712_4762_86b5_7a5eba6bdb02 at D_000084F0
 .field /*04000065*/ public static int32** '__unep@?DoNothing@DefaultDomain@<CrtImplementationDetails>@@$$FCGJPAX@Z' at D_00008534
 .field /*04000066*/ public static int32** '__unep@?_UninitializeDefaultDomain@LanguageSupport@<CrtImplementationDetails>@@$$FCGJPAX@Z' at D_00008538
 .field /*04000067*/ static assembly uint32 __exit_list_size_app_domain
@@ -524,11 +439,6 @@
 .custom /*0C000093:0A000013*/ instance void [mscorlib/*23000001*/]System.Runtime.CompilerServices.FixedAddressValueTypeAttribute/*01000035*/::.ctor() /* 0A000013 */ = ( 01 00 00 00 ) 
 .field /*0400006E*/ static assembly int32 '?_ref_count@AtExitLock@<CrtImplementationDetails>@@$$Q0HA'
 .custom /*0C000094:0A000013*/ instance void [mscorlib/*23000001*/]System.Runtime.CompilerServices.FixedAddressValueTypeAttribute/*01000035*/::.ctor() /* 0A000013 */ = ( 01 00 00 00 ) 
-.field /*0400006F*/ static assembly valuetype '<CppImplementationDetails>'.$ArrayType$$$BY0A@P6AXXZ/*01000009*/ __xc_z at D_00008090
-.field /*04000070*/ static assembly valuetype '<CppImplementationDetails>'.$ArrayType$$$BY0A@P6AXXZ/*01000009*/ __xc_a at D_0000808C
-.field /*04000071*/ static assembly valuetype '<CppImplementationDetails>'.$ArrayType$$$BY0A@P6AHXZ/*0100000A*/ __xi_a at D_00008094
-.field /*04000072*/ static assembly valuetype __enative_startup_state/*0100000C*/ modreq([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsVolatile/*0100000B*/) __native_startup_state
-.field /*04000073*/ static assembly valuetype '<CppImplementationDetails>'.$ArrayType$$$BY0A@P6AHXZ/*0100000A*/ __xi_z at D_000080A0
 .field /*04000074*/ static assembly void* modreq([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsVolatile/*0100000B*/) modreq([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsVolatile/*0100000B*/) __native_startup_lock
 .field /*04000075*/ static assembly uint32 modreq([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsVolatile/*0100000B*/) __native_dllmain_reason
 
@@ -544,39 +454,6 @@
   .permissionset linkcheck
              = {class 'System.Security.Permissions.SecurityPermissionAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' = {property enum class 'System.Security.Permissions.SecurityPermissionFlag, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' 'Flags' = int32(2)}}
 }
-.method /*06000002*/ public static pinvokeimpl("oleaut32" winapi) 
-        void  VariantInit(valuetype tagVARIANT/*0100000D*/* pvarg) cil managed preservesig
-// SIG: 00 01 01 0F 11 35
-{
-  .permissionset linkcheck
-             = {class 'System.Security.Permissions.SecurityPermissionAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' = {property enum class 'System.Security.Permissions.SecurityPermissionFlag, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' 'Flags' = int32(2)}}
-}
-.method /*06000003*/ public static pinvokeimpl("oleaut32" winapi) 
-        int32 modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsLong/*0100000E*/) 
-        VariantClear(valuetype tagVARIANT/*0100000D*/* pvarg) cil managed preservesig
-// SIG: 00 01 20 39 08 0F 11 35
-{
-  .permissionset linkcheck
-             = {class 'System.Security.Permissions.SecurityPermissionAttribute, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' = {property enum class 'System.Security.Permissions.SecurityPermissionFlag, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089' 'Flags' = int32(2)}}
-}
-.method /*06000004*/ assembly static int32 modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvCdecl/*0100000F*/) 
-        IsEqualGUID(valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/)* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsImplicitlyDereferenced/*01000010*/) rguid1,
-                    valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/)* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsImplicitlyDereferenced/*01000010*/) rguid2) cil managed
-// SIG: 00 02 20 3D 08 20 41 0F 20 05 11 09 20 41 0F 20 05 11 09
-{
-  // Method begins at RVA 0x2050
-  // Code size       0 (0x0)
-} // end of global method IsEqualGUID
-
-.method /*06000005*/ assembly static bool modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvCdecl/*0100000F*/) 
-        marshal( unsigned int8) 
-        '=='(valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/)* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsImplicitlyDereferenced/*01000010*/) guidOne,
-             valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/)* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsImplicitlyDereferenced/*01000010*/) guidOther) cil managed
-// SIG: 00 02 20 3D 02 20 41 0F 20 05 11 09 20 41 0F 20 05 11 09
-{
-  // Method begins at RVA 0x2051
-  // Code size       0 (0x0)
-} // end of global method '=='
 
 .method /*06000006*/ assembly static bool modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvCdecl/*0100000F*/) 
         marshal( unsigned int8) 
@@ -647,32 +524,6 @@
   // Method begins at RVA 0x2059
   // Code size       0 (0x0)
 } // end of global method '<CrtImplementationDetails>.RegisterModuleUninitializer'
-
-.method /*0600000E*/ assembly static valuetype [mscorlib/*23000001*/]System.Guid/*01000013*/ 
-        '<CrtImplementationDetails>.FromGUID'(valuetype _GUID/*01000002*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/)* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsImplicitlyDereferenced/*01000010*/) guid) cil managed
-// SIG: 00 01 11 4D 20 41 0F 20 05 11 09
-{
-  .custom /*0C000013:0A000014*/ instance void [mscorlib/*23000001*/]System.Security.SecuritySafeCriticalAttribute/*01000036*/::.ctor() /* 0A000014 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x205c
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.FromGUID'
-
-.method /*0600000F*/ assembly static int32 modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsLong/*0100000E*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvCdecl/*0100000F*/) 
-        __get_default_appdomain(valuetype IUnknown/*01000014*/** ppUnk) cil managed
-// SIG: 00 01 20 3D 20 39 08 0F 0F 11 51
-{
-  .custom /*0C000014:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x2068
-  // Code size       0 (0x0)
-} // end of global method __get_default_appdomain
-
-.method /*06000010*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvCdecl/*0100000F*/) 
-        __release_appdomain(valuetype IUnknown/*01000014*/* ppUnk) cil managed
-// SIG: 00 01 20 3D 01 0F 11 51
-{
-  // Method begins at RVA 0x2069
-  // Code size       0 (0x0)
-} // end of global method __release_appdomain
 
 .method /*06000011*/ assembly static class [mscorlib/*23000001*/]System.AppDomain/*01000015*/ 
         '<CrtImplementationDetails>.GetDefaultDomain'() cil managed
@@ -774,192 +625,6 @@
   // Code size       0 (0x0)
 } // end of global method '?A0x834519a6.??__E?IsDefaultDomain@CurrentDomain@<CrtImplementationDetails>@@$$Q2_NA@@YMXXZ'
 
-.method /*0600001C*/ assembly static void 
-        '?A0x834519a6.??__E?InitializedVtables@CurrentDomain@<CrtImplementationDetails>@@$$Q2W4State@Progress@2@A@@YMXXZ'() cil managed
-// SIG: 00 00 01
-{
-  // Method begins at RVA 0x2075
-  // Code size       0 (0x0)
-} // end of global method '?A0x834519a6.??__E?InitializedVtables@CurrentDomain@<CrtImplementationDetails>@@$$Q2W4State@Progress@2@A@@YMXXZ'
-
-.method /*0600001D*/ assembly static void 
-        '?A0x834519a6.??__E?InitializedNative@CurrentDomain@<CrtImplementationDetails>@@$$Q2W4State@Progress@2@A@@YMXXZ'() cil managed
-// SIG: 00 00 01
-{
-  // Method begins at RVA 0x2076
-  // Code size       0 (0x0)
-} // end of global method '?A0x834519a6.??__E?InitializedNative@CurrentDomain@<CrtImplementationDetails>@@$$Q2W4State@Progress@2@A@@YMXXZ'
-
-.method /*0600001E*/ assembly static void 
-        '?A0x834519a6.??__E?InitializedPerProcess@CurrentDomain@<CrtImplementationDetails>@@$$Q2W4State@Progress@2@A@@YMXXZ'() cil managed
-// SIG: 00 00 01
-{
-  // Method begins at RVA 0x2077
-  // Code size       0 (0x0)
-} // end of global method '?A0x834519a6.??__E?InitializedPerProcess@CurrentDomain@<CrtImplementationDetails>@@$$Q2W4State@Progress@2@A@@YMXXZ'
-
-.method /*0600001F*/ assembly static void 
-        '?A0x834519a6.??__E?InitializedPerAppDomain@CurrentDomain@<CrtImplementationDetails>@@$$Q2W4State@Progress@2@A@@YMXXZ'() cil managed
-// SIG: 00 00 01
-{
-  // Method begins at RVA 0x2078
-  // Code size       0 (0x0)
-} // end of global method '?A0x834519a6.??__E?InitializedPerAppDomain@CurrentDomain@<CrtImplementationDetails>@@$$Q2W4State@Progress@2@A@@YMXXZ'
-
-.method /*06000020*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvThiscall/*01000017*/) 
-        '<CrtImplementationDetails>.LanguageSupport.InitializeVtables'(valuetype '<CrtImplementationDetails>'.LanguageSupport/*01000018*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 20 5D 01 20 05 20 05 0F 11 61
-{
-  .custom /*0C00001C:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  .custom /*0C00001D:0A000016*/ instance void [mscorlib/*23000001*/]System.Diagnostics.DebuggerStepThroughAttribute/*01000038*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x2079
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.InitializeVtables'
-
-.method /*06000021*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvThiscall/*01000017*/) 
-        '<CrtImplementationDetails>.LanguageSupport.InitializeDefaultAppDomain'(valuetype '<CrtImplementationDetails>'.LanguageSupport/*01000018*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 20 5D 01 20 05 20 05 0F 11 61
-{
-  .custom /*0C00001E:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x207a
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.InitializeDefaultAppDomain'
-
-.method /*06000022*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvThiscall/*01000017*/) 
-        '<CrtImplementationDetails>.LanguageSupport.InitializeNative'(valuetype '<CrtImplementationDetails>'.LanguageSupport/*01000018*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 20 5D 01 20 05 20 05 0F 11 61
-{
-  .custom /*0C00001F:0A000016*/ instance void [mscorlib/*23000001*/]System.Diagnostics.DebuggerStepThroughAttribute/*01000038*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 
-  .custom /*0C000020:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x207b
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.InitializeNative'
-
-.method /*06000023*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvThiscall/*01000017*/) 
-        '<CrtImplementationDetails>.LanguageSupport.InitializePerProcess'(valuetype '<CrtImplementationDetails>'.LanguageSupport/*01000018*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 20 5D 01 20 05 20 05 0F 11 61
-{
-  .custom /*0C000021:0A000016*/ instance void [mscorlib/*23000001*/]System.Diagnostics.DebuggerStepThroughAttribute/*01000038*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 
-  .custom /*0C000022:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x207c
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.InitializePerProcess'
-
-.method /*06000024*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvThiscall/*01000017*/) 
-        '<CrtImplementationDetails>.LanguageSupport.InitializePerAppDomain'(valuetype '<CrtImplementationDetails>'.LanguageSupport/*01000018*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 20 5D 01 20 05 20 05 0F 11 61
-{
-  .custom /*0C000023:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  .custom /*0C000024:0A000016*/ instance void [mscorlib/*23000001*/]System.Diagnostics.DebuggerStepThroughAttribute/*01000038*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x207d
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.InitializePerAppDomain'
-
-.method /*06000025*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvThiscall/*01000017*/) 
-        '<CrtImplementationDetails>.LanguageSupport.InitializeUninitializer'(valuetype '<CrtImplementationDetails>'.LanguageSupport/*01000018*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 20 5D 01 20 05 20 05 0F 11 61
-{
-  .custom /*0C000025:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  .custom /*0C000026:0A000016*/ instance void [mscorlib/*23000001*/]System.Diagnostics.DebuggerStepThroughAttribute/*01000038*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x207e
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.InitializeUninitializer'
-
-.method /*06000026*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvThiscall/*01000017*/) 
-        '<CrtImplementationDetails>.LanguageSupport._Initialize'(valuetype '<CrtImplementationDetails>'.LanguageSupport/*01000018*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 20 5D 01 20 05 20 05 0F 11 61
-{
-  .custom /*0C000027:0A000016*/ instance void [mscorlib/*23000001*/]System.Diagnostics.DebuggerStepThroughAttribute/*01000038*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 
-  .custom /*0C000028:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  .custom /*0C000029:0A000017*/ instance void [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.ReliabilityContractAttribute/*01000039*/::.ctor(valuetype [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.Consistency/*0100003A*/,
-                                                                                                                                                        valuetype [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.Cer/*0100003B*/) /* 0A000017 */ = ( 01 00 03 00 00 00 02 00 00 00 00 00 ) 
-  // Method begins at RVA 0x207f
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport._Initialize'
-
-.method /*06000027*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvCdecl/*0100000F*/) 
-        '<CrtImplementationDetails>.LanguageSupport.UninitializeAppDomain'() cil managed
-// SIG: 00 00 20 3D 01
-{
-  .custom /*0C00002A:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x2080
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.UninitializeAppDomain'
-
-.method /*06000028*/ assembly static int32 modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsLong/*0100000E*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvStdcall/*01000016*/) 
-        '<CrtImplementationDetails>.LanguageSupport._UninitializeDefaultDomain'(void* cookie) cil managed
-// SIG: 00 01 20 59 20 39 08 0F 01
-{
-  .custom /*0C00002B:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x2081
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport._UninitializeDefaultDomain'
-
-.method /*06000029*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvCdecl/*0100000F*/) 
-        '<CrtImplementationDetails>.LanguageSupport.UninitializeDefaultDomain'() cil managed
-// SIG: 00 00 20 3D 01
-{
-  .custom /*0C00002C:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x2082
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.UninitializeDefaultDomain'
-
-.method /*0600002A*/ assembly static void 
-        '<CrtImplementationDetails>.LanguageSupport.DomainUnload'(object source,
-                                                                  class [mscorlib/*23000001*/]System.EventArgs/*0100001A*/ arguments) cil managed
-// SIG: 00 02 01 1C 12 69
-{
-  .custom /*0C00002D:0A000017*/ instance void [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.ReliabilityContractAttribute/*01000039*/::.ctor(valuetype [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.Consistency/*0100003A*/,
-                                                                                                                                                        valuetype [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.Cer/*0100003B*/) /* 0A000017 */ = ( 01 00 03 00 00 00 02 00 00 00 00 00 ) 
-  .custom /*0C00002E:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  .custom /*0C00002F:0A000018*/ instance void [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.PrePrepareMethodAttribute/*0100003C*/::.ctor() /* 0A000018 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x2083
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.DomainUnload'
-
-.method /*0600002B*/ assembly static void 
-        '<CrtImplementationDetails>.LanguageSupport.Cleanup'(valuetype '<CrtImplementationDetails>'.LanguageSupport/*01000018*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0,
-                                                             class [mscorlib/*23000001*/]System.Exception/*01000011*/ innerException) cil managed
-// SIG: 00 02 01 20 05 20 05 0F 11 61 12 45
-{
-  .custom /*0C000030:0A000017*/ instance void [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.ReliabilityContractAttribute/*01000039*/::.ctor(valuetype [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.Consistency/*0100003A*/,
-                                                                                                                                                        valuetype [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.Cer/*0100003B*/) /* 0A000017 */ = ( 01 00 03 00 00 00 02 00 00 00 00 00 ) 
-  .custom /*0C000031:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  .custom /*0C000032:0A000016*/ instance void [mscorlib/*23000001*/]System.Diagnostics.DebuggerStepThroughAttribute/*01000038*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x2084
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.Cleanup'
-
-.method /*0600002C*/ assembly static valuetype '<CrtImplementationDetails>'.LanguageSupport/*01000018*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvThiscall/*01000017*/) 
-        '<CrtImplementationDetails>.LanguageSupport.{ctor}'(valuetype '<CrtImplementationDetails>'.LanguageSupport/*01000018*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 20 5D 0F 11 61 20 05 20 05 0F 11 61
-{
-  .custom /*0C000033:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x2085
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.{ctor}'
-
-.method /*0600002D*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvThiscall/*01000017*/) 
-        '<CrtImplementationDetails>.LanguageSupport.{dtor}'(valuetype '<CrtImplementationDetails>'.LanguageSupport/*01000018*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 20 5D 01 20 05 20 05 0F 11 61
-{
-  .custom /*0C000034:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x2086
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.{dtor}'
-
-.method /*0600002E*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvThiscall/*01000017*/) 
-        '<CrtImplementationDetails>.LanguageSupport.Initialize'(valuetype '<CrtImplementationDetails>'.LanguageSupport/*01000018*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 20 5D 01 20 05 20 05 0F 11 61
-{
-  .custom /*0C000035:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  .custom /*0C000036:0A000017*/ instance void [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.ReliabilityContractAttribute/*01000039*/::.ctor(valuetype [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.Consistency/*0100003A*/,
-                                                                                                                                                        valuetype [mscorlib/*23000001*/]System.Runtime.ConstrainedExecution.Cer/*0100003B*/) /* 0A000017 */ = ( 01 00 03 00 00 00 02 00 00 00 00 00 ) 
-  .custom /*0C000037:0A000016*/ instance void [mscorlib/*23000001*/]System.Diagnostics.DebuggerStepThroughAttribute/*01000038*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x2087
-  // Code size       0 (0x0)
-} // end of global method '<CrtImplementationDetails>.LanguageSupport.Initialize'
-
 .method /*0600002F*/ assembly specialname rtspecialname static 
         void  .cctor() cil managed
 // SIG: 00 00 01
@@ -969,46 +634,6 @@
   // Method begins at RVA 0x2088
   // Code size       0 (0x0)
 } // end of global method .cctor
-
-.method /*06000030*/ assembly static valuetype 'gcroot<System::String ^>'/*0100001B*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvThiscall/*01000017*/) 
-        'gcroot<System::String ^>.{ctor}'(valuetype 'gcroot<System::String ^>'/*0100001B*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 20 5D 0F 11 6D 20 05 20 05 0F 11 6D
-{
-  .custom /*0C00003A:0A000014*/ instance void [mscorlib/*23000001*/]System.Security.SecuritySafeCriticalAttribute/*01000036*/::.ctor() /* 0A000014 */ = ( 01 00 00 00 ) 
-  .custom /*0C00003B:0A000016*/ instance void [mscorlib/*23000001*/]System.Diagnostics.DebuggerStepThroughAttribute/*01000038*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x2089
-  // Code size       0 (0x0)
-} // end of global method 'gcroot<System::String ^>.{ctor}'
-
-.method /*06000031*/ assembly static void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvThiscall/*01000017*/) 
-        'gcroot<System::String ^>.{dtor}'(valuetype 'gcroot<System::String ^>'/*0100001B*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 20 5D 01 20 05 20 05 0F 11 6D
-{
-  .custom /*0C00003C:0A000016*/ instance void [mscorlib/*23000001*/]System.Diagnostics.DebuggerStepThroughAttribute/*01000038*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 
-  .custom /*0C00003D:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x208a
-  // Code size       0 (0x0)
-} // end of global method 'gcroot<System::String ^>.{dtor}'
-
-.method /*06000032*/ assembly static valuetype 'gcroot<System::String ^>'/*0100001B*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsImplicitlyDereferenced/*01000010*/) 
-        'gcroot<System::String ^>.='(valuetype 'gcroot<System::String ^>'/*0100001B*/* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0,
-                                     string t) cil managed
-// SIG: 00 02 20 41 0F 11 6D 20 05 20 05 0F 11 6D 0E
-{
-  .custom /*0C00003E:0A000016*/ instance void [mscorlib/*23000001*/]System.Diagnostics.DebuggerStepThroughAttribute/*01000038*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 
-  .custom /*0C00003F:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.SecurityCriticalAttribute/*01000037*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x208b
-  // Code size       0 (0x0)
-} // end of global method 'gcroot<System::String ^>.='
-
-.method /*06000033*/ assembly static string 
-        'gcroot<System::String ^>..P$AAVString@System@@'(valuetype 'gcroot<System::String ^>'/*0100001B*/ modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/)* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsConst/*01000001*/) A_0) cil managed
-// SIG: 00 01 0E 20 05 20 05 0F 20 05 11 6D
-{
-  .custom /*0C000040:0A000014*/ instance void [mscorlib/*23000001*/]System.Security.SecuritySafeCriticalAttribute/*01000036*/::.ctor() /* 0A000014 */ = ( 01 00 00 00 ) 
-  // Method begins at RVA 0x208c
-  // Code size       0 (0x0)
-} // end of global method 'gcroot<System::String ^>..P$AAVString@System@@'
 
 .method /*06000034*/ assembly static class [mscorlib/*23000001*/]System.ValueType/*0100001E*/ modopt([mscorlib/*23000001*/]System.Runtime.InteropServices.GCHandle/*0100001D*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsBoxed/*0100001C*/) 
         '<CrtImplementationDetails>.AtExitLock._handle'() cil managed
@@ -1363,63 +988,6 @@
   // Method begins at RVA 0x20ab
   // Code size       0 (0x0)
 } // end of global method ___CxxCallUnwindVecDtor
-
-.method /*06000055*/ assembly static pinvokeimpl( lasterr stdcall) 
-        void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvStdcall/*01000016*/) 
-        VariantInit(valuetype tagVARIANT/*0100000D*/* A_0) native unmanaged preservesig
-// SIG: 00 01 20 59 01 0F 11 35
-{
-  .custom /*0C000087:0A00001A*/ instance void [mscorlib/*23000001*/]System.Security.SuppressUnmanagedCodeSecurityAttribute/*0100003E*/::.ctor() /* 0A00001A */ = ( 01 00 00 00 ) 
-}
-.method /*06000056*/ assembly static pinvokeimpl( lasterr stdcall) 
-        int32 modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsLong/*0100000E*/) modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvStdcall/*01000016*/) 
-        VariantClear(valuetype tagVARIANT/*0100000D*/* A_0) native unmanaged preservesig
-// SIG: 00 01 20 59 20 39 08 0F 11 35
-{
-  .custom /*0C000089:0A00001A*/ instance void [mscorlib/*23000001*/]System.Security.SuppressUnmanagedCodeSecurityAttribute/*0100003E*/::.ctor() /* 0A00001A */ = ( 01 00 00 00 ) 
-}
-.method /*06000057*/ assembly static pinvokeimpl( cdecl) 
-        void* modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvCdecl/*0100000F*/) 
-        _getFiberPtrId() native unmanaged preservesig
-// SIG: 00 00 20 3D 0F 01
-{
-  .custom /*0C00008A:0A00001A*/ instance void [mscorlib/*23000001*/]System.Security.SuppressUnmanagedCodeSecurityAttribute/*0100003E*/::.ctor() /* 0A00001A */ = ( 01 00 00 00 ) 
-}
-.method /*06000058*/ assembly static pinvokeimpl( lasterr cdecl) 
-        void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvCdecl/*0100000F*/) 
-        _amsg_exit(int32 A_0) native unmanaged preservesig
-// SIG: 00 01 20 3D 01 08
-{
-  .custom /*0C00008B:0A00001A*/ instance void [mscorlib/*23000001*/]System.Security.SuppressUnmanagedCodeSecurityAttribute/*0100003E*/::.ctor() /* 0A00001A */ = ( 01 00 00 00 ) 
-}
-.method /*06000059*/ assembly static pinvokeimpl( cdecl) 
-        void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvCdecl/*0100000F*/) 
-        __security_init_cookie() native unmanaged preservesig
-// SIG: 00 00 20 3D 01
-{
-  .custom /*0C00008C:0A00001A*/ instance void [mscorlib/*23000001*/]System.Security.SuppressUnmanagedCodeSecurityAttribute/*0100003E*/::.ctor() /* 0A00001A */ = ( 01 00 00 00 ) 
-}
-.method /*0600005A*/ assembly static pinvokeimpl( lasterr stdcall) 
-        void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvStdcall/*01000016*/) 
-        Sleep(uint32 modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.IsLong/*0100000E*/) A_0) native unmanaged preservesig
-// SIG: 00 01 20 59 01 20 39 09
-{
-  .custom /*0C00008D:0A00001A*/ instance void [mscorlib/*23000001*/]System.Security.SuppressUnmanagedCodeSecurityAttribute/*0100003E*/::.ctor() /* 0A00001A */ = ( 01 00 00 00 ) 
-}
-.method /*0600005B*/ assembly static pinvokeimpl( lasterr cdecl) 
-        void modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvCdecl/*0100000F*/) 
-        _cexit() native unmanaged preservesig
-// SIG: 00 00 20 3D 01
-{
-  .custom /*0C00008E:0A00001A*/ instance void [mscorlib/*23000001*/]System.Security.SuppressUnmanagedCodeSecurityAttribute/*0100003E*/::.ctor() /* 0A00001A */ = ( 01 00 00 00 ) 
-}
-.method /*0600005C*/ assembly static pinvokeimpl( lasterr cdecl) 
-        int32 modopt([mscorlib/*23000001*/]System.Runtime.CompilerServices.CallConvCdecl/*0100000F*/) 
-        __FrameUnwindFilter(valuetype _EXCEPTION_POINTERS/*01000020*/* A_0) native unmanaged preservesig
-// SIG: 00 01 20 3D 08 0F 11 80 81
-{
-  .custom /*0C00008F:0A00001A*/ instance void [mscorlib/*23000001*/]System.Security.SuppressUnmanagedCodeSecurityAttribute/*0100003E*/::.ctor() /* 0A00001A */ = ( 01 00 00 00 ) 
-}
 
 // =============================================================
 

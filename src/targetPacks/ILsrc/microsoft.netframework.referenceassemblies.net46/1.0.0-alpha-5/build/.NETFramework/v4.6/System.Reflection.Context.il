@@ -367,11 +367,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Reflection.Context.resources
-{
-  // Offset: 0x00000000 Length: 0x00000A26
-  // WARNING: managed resource file System.Reflection.Context.resources created
-}
 .module System.Reflection.Context.dll
 // MVID: {a3884b05-6818-452b-8c4f-b73a5f02c726}
 .imagebase 0x10000000

@@ -743,11 +743,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Workflow.Runtime.ExecutionStringManager.resources
-{
-  // Offset: 0x00000000 Length: 0x00006321
-  // WARNING: managed resource file System.Workflow.Runtime.ExecutionStringManager.resources created
-}
 .module System.Workflow.Runtime.dll
 // MVID: {389f790e-4ea9-4240-8ad7-20427deab0fb}
 .imagebase 0x53b50000

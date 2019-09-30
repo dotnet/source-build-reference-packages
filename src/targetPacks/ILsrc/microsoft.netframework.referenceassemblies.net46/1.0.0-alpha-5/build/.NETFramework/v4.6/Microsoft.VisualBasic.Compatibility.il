@@ -484,51 +484,6 @@
   .hash algorithm 0x00008004
   .ver 10:0:0:0
 }
-.mresource /*28000001*/ public Microsoft.VisualBasic.Compatibility.resources
-{
-  // Offset: 0x00000000 Length: 0x00001441
-  // WARNING: managed resource file Microsoft.VisualBasic.Compatibility.resources created
-}
-.mresource /*28000002*/ public Microsoft.VisualBasic.Compatibility.VB6.DirDrive00.ico
-{
-  // Offset: 0x00001448 Length: 0x0000013E
-  // WARNING: managed resource file Microsoft.VisualBasic.Compatibility.VB6.DirDrive00.ico created
-}
-.mresource /*28000003*/ public Microsoft.VisualBasic.Compatibility.VB6.DirDrive01.ico
-{
-  // Offset: 0x00001590 Length: 0x0000013E
-  // WARNING: managed resource file Microsoft.VisualBasic.Compatibility.VB6.DirDrive01.ico created
-}
-.mresource /*28000004*/ public Microsoft.VisualBasic.Compatibility.VB6.DirDrive02.ico
-{
-  // Offset: 0x000016D8 Length: 0x0000013E
-  // WARNING: managed resource file Microsoft.VisualBasic.Compatibility.VB6.DirDrive02.ico created
-}
-.mresource /*28000005*/ public Microsoft.VisualBasic.Compatibility.VB6.DirDrive03.ico
-{
-  // Offset: 0x00001820 Length: 0x0000013E
-  // WARNING: managed resource file Microsoft.VisualBasic.Compatibility.VB6.DirDrive03.ico created
-}
-.mresource /*28000006*/ public Microsoft.VisualBasic.Compatibility.VB6.DirDrive04.ico
-{
-  // Offset: 0x00001968 Length: 0x0000013E
-  // WARNING: managed resource file Microsoft.VisualBasic.Compatibility.VB6.DirDrive04.ico created
-}
-.mresource /*28000007*/ public Microsoft.VisualBasic.Compatibility.VB6.DirDrive05.ico
-{
-  // Offset: 0x00001AB0 Length: 0x0000013E
-  // WARNING: managed resource file Microsoft.VisualBasic.Compatibility.VB6.DirDrive05.ico created
-}
-.mresource /*28000008*/ public Microsoft.VisualBasic.Compatibility.VB6.DirDrive06.ico
-{
-  // Offset: 0x00001BF8 Length: 0x0000013E
-  // WARNING: managed resource file Microsoft.VisualBasic.Compatibility.VB6.DirDrive06.ico created
-}
-.mresource /*28000009*/ public Microsoft.VisualBasic.Compatibility.VB6.DirDrive07.ico
-{
-  // Offset: 0x00001D40 Length: 0x0000013E
-  // WARNING: managed resource file Microsoft.VisualBasic.Compatibility.VB6.DirDrive07.ico created
-}
 .module Microsoft.VisualBasic.Compatibility.dll
 // MVID: {9a3a773e-e217-4838-adb0-08ea6fe06af3}
 .imagebase 0x5c000000

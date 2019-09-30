@@ -354,11 +354,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public PresentationFramework.Royale.g.resources
-{
-  // Offset: 0x00000000 Length: 0x0001E5FE
-  // WARNING: managed resource file PresentationFramework.Royale.g.resources created
-}
 .module PresentationFramework.Royale.dll
 // MVID: {fa6e1170-302e-473c-8e10-39f6e84fc302}
 .custom /*0C000001:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*0100002C*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 

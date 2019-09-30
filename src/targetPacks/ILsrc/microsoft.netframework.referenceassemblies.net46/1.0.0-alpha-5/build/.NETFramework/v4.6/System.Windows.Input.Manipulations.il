@@ -341,11 +341,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Windows.Input.Manipulations.Resources.resources
-{
-  // Offset: 0x00000000 Length: 0x00000691
-  // WARNING: managed resource file System.Windows.Input.Manipulations.Resources.resources created
-}
 .module System.Windows.Input.Manipulations.dll
 // MVID: {10a2ccda-3694-43fd-8434-935e1f902c7b}
 .custom /*0C000001:0A000016*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*0100001E*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 

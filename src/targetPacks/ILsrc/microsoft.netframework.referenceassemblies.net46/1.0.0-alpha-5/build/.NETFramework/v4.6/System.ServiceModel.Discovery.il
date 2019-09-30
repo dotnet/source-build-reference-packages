@@ -656,16 +656,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.ServiceModel.Discovery.SR.resources
-{
-  // Offset: 0x00000000 Length: 0x00003D41
-  // WARNING: managed resource file System.ServiceModel.Discovery.SR.resources created
-}
-.mresource /*28000002*/ public System.ServiceModel.Discovery.TD.resources
-{
-  // Offset: 0x00003D48 Length: 0x00001185
-  // WARNING: managed resource file System.ServiceModel.Discovery.TD.resources created
-}
 .module System.ServiceModel.Discovery.dll
 // MVID: {a01e3327-7779-443f-8eee-32f5abd4bc74}
 .imagebase 0x53180000

@@ -556,11 +556,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public Microsoft.Internal.Strings.resources
-{
-  // Offset: 0x00000000 Length: 0x00005470
-  // WARNING: managed resource file Microsoft.Internal.Strings.resources created
-}
 .module System.ComponentModel.Composition.dll
 // MVID: {bcb8227a-a4c6-4df4-ae33-d9eeb326830d}
 .imagebase 0x651a0000

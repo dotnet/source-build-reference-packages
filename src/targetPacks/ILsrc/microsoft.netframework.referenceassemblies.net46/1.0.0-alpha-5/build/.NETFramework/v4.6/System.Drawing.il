@@ -590,26 +590,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Drawing.Res.resources
-{
-  // Offset: 0x00000000 Length: 0x000028B1
-  // WARNING: managed resource file System.Drawing.Res.resources created
-}
-.mresource /*28000002*/ public System.Drawing.DefaultComponent.bmp
-{
-  // Offset: 0x000028B8 Length: 0x00000338
-  // WARNING: managed resource file System.Drawing.DefaultComponent.bmp created
-}
-.mresource /*28000003*/ public System.Drawing.Printing.PrintDocument.bmp
-{
-  // Offset: 0x00002BF8 Length: 0x00000338
-  // WARNING: managed resource file System.Drawing.Printing.PrintDocument.bmp created
-}
-.mresource /*28000004*/ public System.Drawing.ShieldIcon.ico
-{
-  // Offset: 0x00002F38 Length: 0x0000627E
-  // WARNING: managed resource file System.Drawing.ShieldIcon.ico created
-}
 .module System.Drawing.dll
 // MVID: {da40114f-9828-40c6-ba5e-22fd735df82d}
 .custom /*0C000001:0A000021*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*0100004E*/::.ctor() /* 0A000021 */ = ( 01 00 00 00 ) 

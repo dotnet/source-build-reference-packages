@@ -409,21 +409,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Configuration.Install.resources
-{
-  // Offset: 0x00000000 Length: 0x00003379
-  // WARNING: managed resource file System.Configuration.Install.resources created
-}
-.mresource /*28000002*/ public System.Config.SettingsTab.bmp
-{
-  // Offset: 0x00003380 Length: 0x000000F6
-  // WARNING: managed resource file System.Config.SettingsTab.bmp created
-}
-.mresource /*28000003*/ public System.Config.XmlSettingsStore.bmp
-{
-  // Offset: 0x00003480 Length: 0x000000F6
-  // WARNING: managed resource file System.Config.XmlSettingsStore.bmp created
-}
 .module System.Configuration.Install.dll
 // MVID: {bf726fcb-2d3d-4b8c-b8e9-d154e9a0a829}
 .imagebase 0x10000000

@@ -961,61 +961,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Design.resources
-{
-  // Offset: 0x00000000 Length: 0x0000069E
-  // WARNING: managed resource file System.Design.resources created
-}
-.mresource /*28000002*/ public Microsoft.Build.Tasks.Strings.resources
-{
-  // Offset: 0x000006A8 Length: 0x00019A6C
-  // WARNING: managed resource file Microsoft.Build.Tasks.Strings.resources created
-}
-.mresource /*28000003*/ public Microsoft.Build.Tasks.Deployment.ManifestUtilities.Strings.resources
-{
-  // Offset: 0x0001A118 Length: 0x00000955
-  // WARNING: managed resource file Microsoft.Build.Tasks.Deployment.ManifestUtilities.Strings.resources created
-}
-.mresource /*28000004*/ public Microsoft.Build.Tasks.Strings.shared.resources
-{
-  // Offset: 0x0001AA78 Length: 0x00001E61
-  // WARNING: managed resource file Microsoft.Build.Tasks.Strings.shared.resources created
-}
-.mresource /*28000005*/ public Microsoft.Build.Tasks.Deployment.ManifestUtilities.manifest.xml
-{
-  // Offset: 0x0001C8E0 Length: 0x000001F9
-  // WARNING: managed resource file Microsoft.Build.Tasks.Deployment.ManifestUtilities.manifest.xml created
-}
-.mresource /*28000006*/ public Microsoft.Build.Tasks.Deployment.ManifestUtilities.merge.xsl
-{
-  // Offset: 0x0001CAE0 Length: 0x00002407
-  // WARNING: managed resource file Microsoft.Build.Tasks.Deployment.ManifestUtilities.merge.xsl created
-}
-.mresource /*28000007*/ public Microsoft.Build.Tasks.Deployment.ManifestUtilities.read2.xsl
-{
-  // Offset: 0x0001EEF0 Length: 0x00005CC9
-  // WARNING: managed resource file Microsoft.Build.Tasks.Deployment.ManifestUtilities.read2.xsl created
-}
-.mresource /*28000008*/ public Microsoft.Build.Tasks.Deployment.ManifestUtilities.trustinfo2.xsl
-{
-  // Offset: 0x00024BC0 Length: 0x00000394
-  // WARNING: managed resource file Microsoft.Build.Tasks.Deployment.ManifestUtilities.trustinfo2.xsl created
-}
-.mresource /*28000009*/ public Microsoft.Build.Tasks.Deployment.ManifestUtilities.write2.xsl
-{
-  // Offset: 0x00024F58 Length: 0x0000434F
-  // WARNING: managed resource file Microsoft.Build.Tasks.Deployment.ManifestUtilities.write2.xsl created
-}
-.mresource /*2800000A*/ public Microsoft.Build.Tasks.Deployment.ManifestUtilities.write3.xsl
-{
-  // Offset: 0x000292B0 Length: 0x00004351
-  // WARNING: managed resource file Microsoft.Build.Tasks.Deployment.ManifestUtilities.write3.xsl created
-}
-.mresource /*2800000B*/ public Microsoft.Build.Tasks.Deployment.Bootstrapper.xmltoconfig.xsl
-{
-  // Offset: 0x0002D608 Length: 0x00000B44
-  // WARNING: managed resource file Microsoft.Build.Tasks.Deployment.Bootstrapper.xmltoconfig.xsl created
-}
 .module 'Microsoft.Build.Tasks.v4.0.dll'
 // MVID: {bdb485a1-bbd8-421e-9514-670039c9a5cb}
 .custom /*0C000002:0A000034*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*010000A4*/::.ctor() /* 0A000034 */ = ( 01 00 00 00 ) 

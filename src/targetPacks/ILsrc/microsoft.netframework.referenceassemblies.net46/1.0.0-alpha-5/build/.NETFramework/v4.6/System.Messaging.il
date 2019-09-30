@@ -462,31 +462,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Messaging.resources
-{
-  // Offset: 0x00000000 Length: 0x000071CE
-  // WARNING: managed resource file System.Messaging.resources created
-}
-.mresource /*28000002*/ public System.Messaging.Design.QueuePathDialog.resources
-{
-  // Offset: 0x000071D8 Length: 0x00007A5D
-  // WARNING: managed resource file System.Messaging.Design.QueuePathDialog.resources created
-}
-.mresource /*28000003*/ public System.Messaging.Machine.bmp
-{
-  // Offset: 0x0000EC40 Length: 0x00000338
-  // WARNING: managed resource file System.Messaging.Machine.bmp created
-}
-.mresource /*28000004*/ public System.Messaging.PublicQueue.bmp
-{
-  // Offset: 0x0000EF80 Length: 0x00000338
-  // WARNING: managed resource file System.Messaging.PublicQueue.bmp created
-}
-.mresource /*28000005*/ public System.Messaging.MessageQueue.bmp
-{
-  // Offset: 0x0000F2C0 Length: 0x00000338
-  // WARNING: managed resource file System.Messaging.MessageQueue.bmp created
-}
 .module System.Messaging.dll
 // MVID: {d737dd3d-6043-46fb-a1ee-9da4a54a0e5d}
 .custom /*0C000001:0A000016*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000045*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 

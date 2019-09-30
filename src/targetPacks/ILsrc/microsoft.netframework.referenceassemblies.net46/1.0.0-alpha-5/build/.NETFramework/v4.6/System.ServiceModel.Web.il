@@ -760,16 +760,6 @@
 {
   .assembly extern System.ServiceModel /*23000003*/ 
 }
-.mresource /*28000001*/ public System.ServiceModel.SR2.resources
-{
-  // Offset: 0x00000000 Length: 0x00008879
-  // WARNING: managed resource file System.ServiceModel.SR2.resources created
-}
-.mresource /*28000002*/ public System.ServiceModel.Web.Diagnostics.Application.TD.resources
-{
-  // Offset: 0x00008880 Length: 0x00000192
-  // WARNING: managed resource file System.ServiceModel.Web.Diagnostics.Application.TD.resources created
-}
 .module System.ServiceModel.Web.dll
 // MVID: {1b43d145-d97f-4476-8d86-c59fa461d4b8}
 .custom /*0C000001:0A000023*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*010000B7*/::.ctor() /* 0A000023 */ = ( 01 00 00 00 ) 

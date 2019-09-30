@@ -833,16 +833,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public ReachExceptionStringTable.resources
-{
-  // Offset: 0x00000000 Length: 0x00002842
-  // WARNING: managed resource file ReachExceptionStringTable.resources created
-}
-.mresource /*28000002*/ public System.Printing.resources
-{
-  // Offset: 0x00002848 Length: 0x00003234
-  // WARNING: managed resource file System.Printing.resources created
-}
 .module ReachFramework.dll
 // MVID: {a7df4c13-db0c-4902-90d8-ed54385bf789}
 .custom /*0C000001:0A00002A*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*010000A9*/::.ctor() /* 0A00002A */ = ( 01 00 00 00 ) 

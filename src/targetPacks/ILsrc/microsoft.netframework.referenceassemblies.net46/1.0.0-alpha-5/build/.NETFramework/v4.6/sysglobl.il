@@ -377,11 +377,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public sysglobl.resources
-{
-  // Offset: 0x00000000 Length: 0x00001971
-  // WARNING: managed resource file sysglobl.resources created
-}
 .module sysglobl.dll
 // MVID: {95a6cb82-7375-47c4-803c-70f0d636b7dd}
 .imagebase 0x10000000

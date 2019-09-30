@@ -420,26 +420,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Web.UI.Design.WebControls.resources
-{
-  // Offset: 0x00000000 Length: 0x0000295D
-  // WARNING: managed resource file System.Web.UI.Design.WebControls.resources created
-}
-.mresource /*28000002*/ public System.Web.UI.Design.WebControls.Properties.Resources.resources
-{
-  // Offset: 0x00002968 Length: 0x0000322E
-  // WARNING: managed resource file System.Web.UI.Design.WebControls.Properties.Resources.resources created
-}
-.mresource /*28000003*/ public System.Web.UI.Design.WebControls.EntityDataSourceWizard.bmp
-{
-  // Offset: 0x00005BA0 Length: 0x00003038
-  // WARNING: managed resource file System.Web.UI.Design.WebControls.EntityDataSourceWizard.bmp created
-}
-.mresource /*28000004*/ public 'System.Web.UI.Design.WebControls.EntityDataSourceWizard.VisualStudio.11.0.bmp'
-{
-  // Offset: 0x00008BE0 Length: 0x00003038
-  // WARNING: managed resource file 'System.Web.UI.Design.WebControls.EntityDataSourceWizard.VisualStudio.11.0.bmp' created
-}
 .module System.Web.Entity.Design.dll
 // MVID: {9fca7143-100d-4279-8b9f-2839d1dbdb96}
 .imagebase 0x641c0000

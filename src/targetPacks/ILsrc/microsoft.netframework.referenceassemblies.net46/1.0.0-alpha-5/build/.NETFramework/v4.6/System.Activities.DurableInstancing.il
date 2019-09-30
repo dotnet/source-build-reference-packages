@@ -433,16 +433,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Activities.DurableInstancing.SR.resources
-{
-  // Offset: 0x00000000 Length: 0x00001280
-  // WARNING: managed resource file System.Activities.DurableInstancing.SR.resources created
-}
-.mresource /*28000002*/ public System.Activities.DurableInstancing.TD.resources
-{
-  // Offset: 0x00001288 Length: 0x000007D2
-  // WARNING: managed resource file System.Activities.DurableInstancing.TD.resources created
-}
 .module System.Activities.DurableInstancing.dll
 // MVID: {8d5d4fa9-6de1-46b3-9976-353548bfe2eb}
 .custom /*0C000001:0A000017*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000024*/::.ctor() /* 0A000017 */ = ( 01 00 00 00 ) 

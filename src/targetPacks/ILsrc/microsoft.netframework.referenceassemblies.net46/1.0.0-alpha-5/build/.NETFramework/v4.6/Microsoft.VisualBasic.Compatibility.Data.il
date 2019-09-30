@@ -475,11 +475,6 @@
   .hash algorithm 0x00008004
   .ver 10:0:0:0
 }
-.mresource /*28000001*/ public Microsoft.VisualBasic.Compatibility.Data.resources
-{
-  // Offset: 0x00000000 Length: 0x00001328
-  // WARNING: managed resource file Microsoft.VisualBasic.Compatibility.Data.resources created
-}
 .module Microsoft.VisualBasic.Compatibility.Data.dll
 // MVID: {0ff01a6a-603b-45e0-acf3-8ff410e6b91b}
 .imagebase 0x5c000000

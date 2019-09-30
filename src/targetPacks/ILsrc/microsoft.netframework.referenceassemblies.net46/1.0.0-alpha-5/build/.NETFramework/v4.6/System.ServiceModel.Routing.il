@@ -452,16 +452,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.ServiceModel.Routing.SR.resources
-{
-  // Offset: 0x00000000 Length: 0x00000AC0
-  // WARNING: managed resource file System.ServiceModel.Routing.SR.resources created
-}
-.mresource /*28000002*/ public System.ServiceModel.Routing.TD.resources
-{
-  // Offset: 0x00000AC8 Length: 0x0000107B
-  // WARNING: managed resource file System.ServiceModel.Routing.TD.resources created
-}
 .module System.ServiceModel.Routing.dll
 // MVID: {092c3066-d2a7-47b8-9527-65885a0abea8}
 .imagebase 0x53320000

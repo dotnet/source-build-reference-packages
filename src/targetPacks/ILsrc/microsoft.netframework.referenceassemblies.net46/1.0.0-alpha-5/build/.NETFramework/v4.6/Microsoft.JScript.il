@@ -617,11 +617,6 @@
   .hash algorithm 0x00008004
   .ver 10:0:0:0
 }
-.mresource /*28000001*/ public microsoft.jscript.resources
-{
-  // Offset: 0x00000000 Length: 0x00006761
-  // WARNING: managed resource file microsoft.jscript.resources created
-}
 .module Microsoft.JScript.dll
 // MVID: {c6e1984a-ca59-44b7-9587-a1e6793fa5aa}
 .imagebase 0x5e620000

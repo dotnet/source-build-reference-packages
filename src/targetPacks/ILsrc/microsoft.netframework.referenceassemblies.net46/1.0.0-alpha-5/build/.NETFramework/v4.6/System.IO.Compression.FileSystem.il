@@ -371,11 +371,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.IO.Compression.FileSystem.resources
-{
-  // Offset: 0x00000000 Length: 0x000001E2
-  // WARNING: managed resource file System.IO.Compression.FileSystem.resources created
-}
 .module System.IO.Compression.FileSystem.dll
 // MVID: {674314a4-4d17-44d7-9df8-430b2d91eda0}
 .imagebase 0x10000000

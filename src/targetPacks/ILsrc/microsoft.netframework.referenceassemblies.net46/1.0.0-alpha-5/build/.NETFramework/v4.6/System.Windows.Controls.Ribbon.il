@@ -489,16 +489,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Windows.Controls.Ribbon.g.resources
-{
-  // Offset: 0x00000000 Length: 0x0004D239
-  // WARNING: managed resource file System.Windows.Controls.Ribbon.g.resources created
-}
-.mresource /*28000002*/ public ExceptionStringTable.resources
-{
-  // Offset: 0x0004D240 Length: 0x00000DC2
-  // WARNING: managed resource file ExceptionStringTable.resources created
-}
 .module System.Windows.Controls.Ribbon.dll
 // MVID: {06ba848d-0eb8-4f24-b674-a198d82cb3b2}
 .imagebase 0x10000000

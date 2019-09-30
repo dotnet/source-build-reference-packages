@@ -664,16 +664,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.ServiceModel.Activities.SR.resources
-{
-  // Offset: 0x00000000 Length: 0x000093CE
-  // WARNING: managed resource file System.ServiceModel.Activities.SR.resources created
-}
-.mresource /*28000002*/ public System.ServiceModel.Activities.TD.resources
-{
-  // Offset: 0x000093D8 Length: 0x00000CB5
-  // WARNING: managed resource file System.ServiceModel.Activities.TD.resources created
-}
 .module System.ServiceModel.Activities.dll
 // MVID: {7d9fe720-8e11-4034-9339-d76e133d54d5}
 .imagebase 0x52f60000

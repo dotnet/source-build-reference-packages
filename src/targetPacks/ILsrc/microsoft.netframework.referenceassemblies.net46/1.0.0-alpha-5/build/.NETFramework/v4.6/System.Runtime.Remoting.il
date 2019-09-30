@@ -427,11 +427,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Runtime.Remoting.resources
-{
-  // Offset: 0x00000000 Length: 0x00003DE0
-  // WARNING: managed resource file System.Runtime.Remoting.resources created
-}
 .module System.Runtime.Remoting.dll
 // MVID: {4e7e16c8-8110-48ae-b518-eb87791557da}
 .custom /*0C000001:0A000016*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000045*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 

@@ -381,16 +381,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public ExceptionStringTable.resources
-{
-  // Offset: 0x00000000 Length: 0x000001BC
-  // WARNING: managed resource file ExceptionStringTable.resources created
-}
-.mresource /*28000002*/ public StringTable.resources
-{
-  // Offset: 0x000001C0 Length: 0x00000C79
-  // WARNING: managed resource file StringTable.resources created
-}
 .module UIAutomationTypes.dll
 // MVID: {0cfd6a83-5ea2-4400-a76a-958302919838}
 .custom /*0C000001:0A000016*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000024*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 

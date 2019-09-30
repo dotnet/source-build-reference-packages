@@ -521,36 +521,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Web.Resources.DynamicDataResources.resources
-{
-  // Offset: 0x00000000 Length: 0x00004925
-  // WARNING: managed resource file System.Web.Resources.DynamicDataResources.resources created
-}
-.mresource /*28000002*/ public System.Web.DynamicData.DynamicControl.bmp
-{
-  // Offset: 0x00004930 Length: 0x00000338
-  // WARNING: managed resource file System.Web.DynamicData.DynamicControl.bmp created
-}
-.mresource /*28000003*/ public System.Web.DynamicData.DynamicDataManager.bmp
-{
-  // Offset: 0x00004C70 Length: 0x00000338
-  // WARNING: managed resource file System.Web.DynamicData.DynamicDataManager.bmp created
-}
-.mresource /*28000004*/ public System.Web.DynamicData.DynamicEntity.bmp
-{
-  // Offset: 0x00004FB0 Length: 0x00000338
-  // WARNING: managed resource file System.Web.DynamicData.DynamicEntity.bmp created
-}
-.mresource /*28000005*/ public System.Web.DynamicData.DynamicHyperLink.bmp
-{
-  // Offset: 0x000052F0 Length: 0x00000336
-  // WARNING: managed resource file System.Web.DynamicData.DynamicHyperLink.bmp created
-}
-.mresource /*28000006*/ public System.Web.DynamicData.DynamicValidator.bmp
-{
-  // Offset: 0x00005630 Length: 0x00000336
-  // WARNING: managed resource file System.Web.DynamicData.DynamicValidator.bmp created
-}
 .module System.Web.DynamicData.dll
 // MVID: {f3a30915-1b6c-479d-9bbf-7e2004741061}
 .imagebase 0x64100000

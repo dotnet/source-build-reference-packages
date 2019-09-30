@@ -424,11 +424,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.ComponentModel.Composition.Registration.Strings.resources
-{
-  // Offset: 0x00000000 Length: 0x00000BFE
-  // WARNING: managed resource file System.ComponentModel.Composition.Registration.Strings.resources created
-}
 .module System.ComponentModel.Composition.Registration.dll
 // MVID: {3382d984-80a4-454c-a3e5-6425853215ed}
 .imagebase 0x10000000

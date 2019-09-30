@@ -360,11 +360,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Runtime.Caching.Resources.R.resources
-{
-  // Offset: 0x00000000 Length: 0x00000AC1
-  // WARNING: managed resource file System.Runtime.Caching.Resources.R.resources created
-}
 .module System.Runtime.Caching.dll
 // MVID: {509defb4-7572-4564-a52f-b6ae4771da4b}
 .imagebase 0x64be0000

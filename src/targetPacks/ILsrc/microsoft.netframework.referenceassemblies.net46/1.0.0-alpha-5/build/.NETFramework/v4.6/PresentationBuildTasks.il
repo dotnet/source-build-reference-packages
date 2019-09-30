@@ -346,11 +346,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public MessageStringTable.resources
-{
-  // Offset: 0x00000000 Length: 0x0000884C
-  // WARNING: managed resource file MessageStringTable.resources created
-}
 .module PresentationBuildTasks.dll
 // MVID: {30d9ea9b-634d-4b40-9c9e-22fefa3ebb48}
 .custom /*0C000001:0A000013*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000018*/::.ctor() /* 0A000013 */ = ( 01 00 00 00 ) 

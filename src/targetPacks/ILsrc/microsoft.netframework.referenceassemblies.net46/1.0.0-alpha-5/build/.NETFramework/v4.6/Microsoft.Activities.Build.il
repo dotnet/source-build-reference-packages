@@ -415,11 +415,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public Microsoft.Activities.Build.SR.resources
-{
-  // Offset: 0x00000000 Length: 0x00000D0A
-  // WARNING: managed resource file Microsoft.Activities.Build.SR.resources created
-}
 .module Microsoft.Activities.Build.dll
 // MVID: {e79bb786-bbff-40c9-954c-80ce574e4d8a}
 .custom /*0C000001:0A000014*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*0100001C*/::.ctor() /* 0A000014 */ = ( 01 00 00 00 ) 

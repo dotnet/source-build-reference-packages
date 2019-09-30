@@ -767,21 +767,6 @@
 {
   .assembly extern mscorlib /*23000001*/ 
 }
-.mresource /*28000001*/ public System.Core.resources
-{
-  // Offset: 0x00000000 Length: 0x0000873C
-  // WARNING: managed resource file System.Core.resources created
-}
-.mresource /*28000002*/ public System.Linq.resources
-{
-  // Offset: 0x00008740 Length: 0x00002DBB
-  // WARNING: managed resource file System.Linq.resources created
-}
-.mresource /*28000003*/ public System.Linq.Expressions.resources
-{
-  // Offset: 0x0000B500 Length: 0x00005D97
-  // WARNING: managed resource file System.Linq.Expressions.resources created
-}
 .module System.Core.dll
 // MVID: {6c0fd19e-ac38-4542-88b0-861b4a071189}
 .custom /*0C000001:0A000045*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*0100008B*/::.ctor() /* 0A000045 */ = ( 01 00 00 00 ) 

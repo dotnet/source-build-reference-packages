@@ -397,11 +397,6 @@
 {
   .assembly extern System /*23000002*/ 
 }
-.mresource /*28000001*/ public System.IO.Compression.Messages.resources
-{
-  // Offset: 0x00000000 Length: 0x00001319
-  // WARNING: managed resource file System.IO.Compression.Messages.resources created
-}
 .module System.IO.Compression.dll
 // MVID: {1235e05d-4cc8-47d9-a62a-7708d9c0fd08}
 .imagebase 0x10000000

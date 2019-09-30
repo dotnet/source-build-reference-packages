@@ -492,11 +492,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Net.Http.SR.resources
-{
-  // Offset: 0x00000000 Length: 0x00001DE8
-  // WARNING: managed resource file System.Net.Http.SR.resources created
-}
 .module System.Net.Http.dll
 // MVID: {99816983-325a-4d19-979f-0818259c142b}
 .custom /*0C000001:0A000022*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*0100004A*/::.ctor() /* 0A000022 */ = ( 01 00 00 00 ) 

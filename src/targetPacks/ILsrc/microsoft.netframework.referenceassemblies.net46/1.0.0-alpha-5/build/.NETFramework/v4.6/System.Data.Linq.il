@@ -779,21 +779,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Data.Linq.resources
-{
-  // Offset: 0x00000000 Length: 0x00002592
-  // WARNING: managed resource file System.Data.Linq.resources created
-}
-.mresource /*28000002*/ public System.Data.Linq.Mapping.resources
-{
-  // Offset: 0x00002598 Length: 0x00001C90
-  // WARNING: managed resource file System.Data.Linq.Mapping.resources created
-}
-.mresource /*28000003*/ public System.Data.Linq.SqlClient.resources
-{
-  // Offset: 0x00004230 Length: 0x00005106
-  // WARNING: managed resource file System.Data.Linq.SqlClient.resources created
-}
 .module System.Data.Linq.dll
 // MVID: {618bc13c-54c2-41bb-af2b-294cb50727fb}
 .imagebase 0x61da0000

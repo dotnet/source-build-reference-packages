@@ -649,11 +649,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Printing.resources
-{
-  // Offset: 0x00000000 Length: 0x00003234
-  // WARNING: managed resource file System.Printing.resources created
-}
 .module System.Printing.dll
 // MVID: {baaea43d-26bc-47c2-959a-63444b186058}
 .imagebase 0x10000000

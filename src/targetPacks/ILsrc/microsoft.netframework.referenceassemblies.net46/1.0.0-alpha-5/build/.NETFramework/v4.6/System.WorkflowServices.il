@@ -719,51 +719,6 @@
 {
   .assembly extern System.ServiceModel /*23000007*/ 
 }
-.mresource /*28000001*/ public ImageResources.resources
-{
-  // Offset: 0x00000000 Length: 0x0000869E
-  // WARNING: managed resource file ImageResources.resources created
-}
-.mresource /*28000002*/ public System.ServiceModel.SR2.resources
-{
-  // Offset: 0x000086A8 Length: 0x000077E3
-  // WARNING: managed resource file System.ServiceModel.SR2.resources created
-}
-.mresource /*28000003*/ public System.Workflow.Activities.Design.OperationPickerDialog.resources
-{
-  // Offset: 0x0000FE90 Length: 0x00003383
-  // WARNING: managed resource file System.Workflow.Activities.Design.OperationPickerDialog.resources created
-}
-.mresource /*28000004*/ public System.Workflow.Activities.Design.ServiceOperationDetailViewControl.resources
-{
-  // Offset: 0x00013218 Length: 0x0000517F
-  // WARNING: managed resource file System.Workflow.Activities.Design.ServiceOperationDetailViewControl.resources created
-}
-.mresource /*28000005*/ public System.Workflow.Activities.Design.ServiceContractDetailViewControl.resources
-{
-  // Offset: 0x000183A0 Length: 0x00000DFA
-  // WARNING: managed resource file System.Workflow.Activities.Design.ServiceContractDetailViewControl.resources created
-}
-.mresource /*28000006*/ public System.Workflow.Activities.Design.ServiceContractViewControl.resources
-{
-  // Offset: 0x000191A0 Length: 0x0000129E
-  // WARNING: managed resource file System.Workflow.Activities.Design.ServiceContractViewControl.resources created
-}
-.mresource /*28000007*/ public System.Workflow.Activities.Design.ServiceOperationViewControl.resources
-{
-  // Offset: 0x0001A448 Length: 0x00001967
-  // WARNING: managed resource file System.Workflow.Activities.Design.ServiceOperationViewControl.resources created
-}
-.mresource /*28000008*/ public System.Workflow.Activities.Design.Resources.ReceiveActivity.png
-{
-  // Offset: 0x0001BDB8 Length: 0x00000C61
-  // WARNING: managed resource file System.Workflow.Activities.Design.Resources.ReceiveActivity.png created
-}
-.mresource /*28000009*/ public System.Workflow.Activities.Design.Resources.SendActivity.png
-{
-  // Offset: 0x0001CA20 Length: 0x00000C69
-  // WARNING: managed resource file System.Workflow.Activities.Design.Resources.SendActivity.png created
-}
 .module System.WorkflowServices.dll
 // MVID: {ca581d25-f711-4fdb-b1c4-9ec238421d58}
 .imagebase 0x53cc0000

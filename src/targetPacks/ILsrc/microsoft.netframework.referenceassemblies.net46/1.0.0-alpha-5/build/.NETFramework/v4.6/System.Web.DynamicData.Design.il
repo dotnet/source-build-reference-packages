@@ -379,11 +379,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Web.Resources.DynamicDataDesignResources.resources
-{
-  // Offset: 0x00000000 Length: 0x00000281
-  // WARNING: managed resource file System.Web.Resources.DynamicDataDesignResources.resources created
-}
 .module System.Web.DynamicData.Design.dll
 // MVID: {841825d2-bfad-4413-8ff2-08b4bc254ab5}
 .imagebase 0x640e0000

@@ -402,16 +402,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public Microsoft.CSharp.RuntimeBinder.Errors.resources
-{
-  // Offset: 0x00000000 Length: 0x00003DF2
-  // WARNING: managed resource file Microsoft.CSharp.RuntimeBinder.Errors.resources created
-}
-.mresource /*28000002*/ public Microsoft.CSharp.RuntimeBinder.resources
-{
-  // Offset: 0x00003DF8 Length: 0x00000918
-  // WARNING: managed resource file Microsoft.CSharp.RuntimeBinder.resources created
-}
 .module Microsoft.CSharp.dll
 // MVID: {f2f0202b-994f-4daa-a4bc-00ed9ed2a6c8}
 .imagebase 0x10000000

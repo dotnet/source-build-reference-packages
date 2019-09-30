@@ -519,66 +519,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Web.Resources.Design.AtlasWebDesign.resources
-{
-  // Offset: 0x00000000 Length: 0x00005139
-  // WARNING: managed resource file System.Web.Resources.Design.AtlasWebDesign.resources created
-}
-.mresource /*28000002*/ public System.Web.UI.Design.Util.StringCollectionEditor.resources
-{
-  // Offset: 0x00005140 Length: 0x000029FB
-  // WARNING: managed resource file System.Web.UI.Design.Util.StringCollectionEditor.resources created
-}
-.mresource /*28000003*/ public System.Web.Resources.Design.SortDown.ico
-{
-  // Offset: 0x00007B40 Length: 0x0000057E
-  // WARNING: managed resource file System.Web.Resources.Design.SortDown.ico created
-}
-.mresource /*28000004*/ public System.Web.Resources.Design.SortUp.ico
-{
-  // Offset: 0x000080C8 Length: 0x0000057E
-  // WARNING: managed resource file System.Web.Resources.Design.SortUp.ico created
-}
-.mresource /*28000005*/ public System.Web.Resources.Design.Delete.ico
-{
-  // Offset: 0x00008650 Length: 0x00000BEE
-  // WARNING: managed resource file System.Web.Resources.Design.Delete.ico created
-}
-.mresource /*28000006*/ public System.Web.UI.Design.WebControls.SortDown.ico
-{
-  // Offset: 0x00009248 Length: 0x0000057E
-  // WARNING: managed resource file System.Web.UI.Design.WebControls.SortDown.ico created
-}
-.mresource /*28000007*/ public System.Web.UI.Design.WebControls.SortUp.ico
-{
-  // Offset: 0x000097D0 Length: 0x0000057E
-  // WARNING: managed resource file System.Web.UI.Design.WebControls.SortUp.ico created
-}
-.mresource /*28000008*/ public System.Web.UI.Design.WebControls.Delete.ico
-{
-  // Offset: 0x00009D58 Length: 0x00000BEE
-  // WARNING: managed resource file System.Web.UI.Design.WebControls.Delete.ico created
-}
-.mresource /*28000009*/ public System.Web.Resources.Design.FieldNodes.bmp
-{
-  // Offset: 0x0000A950 Length: 0x00000C38
-  // WARNING: managed resource file System.Web.Resources.Design.FieldNodes.bmp created
-}
-.mresource /*2800000A*/ public System.Web.Resources.Design.LinqDataSourceWizard.bmp
-{
-  // Offset: 0x0000B590 Length: 0x00003038
-  // WARNING: managed resource file System.Web.Resources.Design.LinqDataSourceWizard.bmp created
-}
-.mresource /*2800000B*/ public System.Web.UI.Design.WebControls.FieldNodes.bmp
-{
-  // Offset: 0x0000E5D0 Length: 0x00000C38
-  // WARNING: managed resource file System.Web.UI.Design.WebControls.FieldNodes.bmp created
-}
-.mresource /*2800000C*/ public System.Web.UI.Design.WebControls.LinqDataSourceWizard.bmp
-{
-  // Offset: 0x0000F210 Length: 0x00003038
-  // WARNING: managed resource file System.Web.UI.Design.WebControls.LinqDataSourceWizard.bmp created
-}
 .module System.Web.Extensions.Design.dll
 // MVID: {e92d3ce6-18db-4437-b6ab-7cc9d3c1d7cb}
 .imagebase 0x62060000

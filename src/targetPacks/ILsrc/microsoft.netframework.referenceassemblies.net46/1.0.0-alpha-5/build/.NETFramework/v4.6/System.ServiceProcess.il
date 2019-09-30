@@ -409,21 +409,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.ServiceProcess.resources
-{
-  // Offset: 0x00000000 Length: 0x00002A6A
-  // WARNING: managed resource file System.ServiceProcess.resources created
-}
-.mresource /*28000002*/ public System.ServiceProcess.Design.ServiceInstallerDialog.resources
-{
-  // Offset: 0x00002A70 Length: 0x000039E6
-  // WARNING: managed resource file System.ServiceProcess.Design.ServiceInstallerDialog.resources created
-}
-.mresource /*28000003*/ public System.ServiceProcess.ServiceController.bmp
-{
-  // Offset: 0x00006460 Length: 0x00000338
-  // WARNING: managed resource file System.ServiceProcess.ServiceController.bmp created
-}
 .module System.ServiceProcess.dll
 // MVID: {7e6e67bb-6a32-4075-99ed-408341e5d3cb}
 .custom /*0C000001:0A000014*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000030*/::.ctor() /* 0A000014 */ = ( 01 00 00 00 ) 

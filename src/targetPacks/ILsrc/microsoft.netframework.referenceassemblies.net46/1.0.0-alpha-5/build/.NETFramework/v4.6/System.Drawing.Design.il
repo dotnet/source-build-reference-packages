@@ -404,16 +404,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Drawing.Design.resources
-{
-  // Offset: 0x00000000 Length: 0x000009AF
-  // WARNING: managed resource file System.Drawing.Design.resources created
-}
-.mresource /*28000002*/ public System.Drawing.Design.colordlg.data
-{
-  // Offset: 0x000009B8 Length: 0x00000384
-  // WARNING: managed resource file System.Drawing.Design.colordlg.data created
-}
 .module System.Drawing.Design.dll
 // MVID: {2125bbe2-27d9-4b14-b561-7a01e6685b51}
 .imagebase 0x63b80000

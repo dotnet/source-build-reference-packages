@@ -426,11 +426,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Xml.Linq.resources
-{
-  // Offset: 0x00000000 Length: 0x000010C9
-  // WARNING: managed resource file System.Xml.Linq.resources created
-}
 .module System.Xml.Linq.dll
 // MVID: {15014ac7-36f1-40b7-aabe-e389392e1dd6}
 .imagebase 0x61fa0000

@@ -531,11 +531,6 @@
 .file /*26000001*/ System.EnterpriseServices.Wrapper.dll
     .hash = (77 73 42 88 68 E6 AA 2E 26 0B 6F 42 34 4D F7 F0   // wsB.h...&.oB4M..
              36 1C DC 42 )                                     // 6..B
-.mresource /*28000001*/ public System.EnterpriseServices.resources
-{
-  // Offset: 0x00000000 Length: 0x00004530
-  // WARNING: managed resource file System.EnterpriseServices.resources created
-}
 .module System.EnterpriseServices.dll
 // MVID: {30a48eb1-2925-4348-ad08-74d6ccd37db7}
 .custom /*0C000001:0A00001A*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000034*/::.ctor() /* 0A00001A */ = ( 01 00 00 00 ) 

@@ -342,11 +342,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public ExceptionStringTable.resources
-{
-  // Offset: 0x00000000 Length: 0x00000111
-  // WARNING: managed resource file ExceptionStringTable.resources created
-}
 .module System.Windows.Presentation.dll
 // MVID: {fa743ed8-c81a-41e1-9ae4-f4f7fa4c5d7c}
 .custom /*0C000004:0A000017*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000023*/::.ctor() /* 0A000017 */ = ( 01 00 00 00 ) 

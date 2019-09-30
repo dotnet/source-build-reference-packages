@@ -352,11 +352,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public PresentationFramework.Classic.g.resources
-{
-  // Offset: 0x00000000 Length: 0x0001B658
-  // WARNING: managed resource file PresentationFramework.Classic.g.resources created
-}
 .module PresentationFramework.Classic.dll
 // MVID: {d8528f3b-90c4-4a42-a2c3-f6a28ccba70b}
 .custom /*0C000001:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*0100002A*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 

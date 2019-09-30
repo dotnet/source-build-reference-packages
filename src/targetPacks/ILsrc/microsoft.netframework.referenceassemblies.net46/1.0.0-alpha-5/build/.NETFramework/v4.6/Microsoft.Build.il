@@ -1189,16 +1189,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public Microsoft.Build.Resources.Strings.resources
-{
-  // Offset: 0x00000000 Length: 0x0000DFCB
-  // WARNING: managed resource file Microsoft.Build.Resources.Strings.resources created
-}
-.mresource /*28000002*/ public Microsoft.Build.Resources.Strings.shared.resources
-{
-  // Offset: 0x0000DFD0 Length: 0x00001E61
-  // WARNING: managed resource file Microsoft.Build.Resources.Strings.shared.resources created
-}
 .module Microsoft.Build.dll
 // MVID: {0d6b30fc-75ab-47cc-9690-d19af0bf6864}
 .custom /*0C000001:0A000092*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*010000C7*/::.ctor() /* 0A000092 */ = ( 01 00 00 00 ) 

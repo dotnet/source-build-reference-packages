@@ -789,16 +789,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Runtime.Serialization.resources
-{
-  // Offset: 0x00000000 Length: 0x0001585C
-  // WARNING: managed resource file System.Runtime.Serialization.resources created
-}
-.mresource /*28000002*/ public System.Runtime.Serialization.Diagnostics.Application.TD.resources
-{
-  // Offset: 0x00015860 Length: 0x0000073C
-  // WARNING: managed resource file System.Runtime.Serialization.Diagnostics.Application.TD.resources created
-}
 .module System.Runtime.Serialization.dll
 // MVID: {30b5e23a-6e25-400e-808b-9b5a54761d6c}
 .custom /*0C000001:0A000021*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*0100009F*/::.ctor() /* 0A000021 */ = ( 01 00 00 00 ) 

@@ -459,11 +459,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public Microsoft.Build.Conversion.Strings.resources
-{
-  // Offset: 0x00000000 Length: 0x00000A0C
-  // WARNING: managed resource file Microsoft.Build.Conversion.Strings.resources created
-}
 .module 'Microsoft.Build.Conversion.v4.0.dll'
 // MVID: {f55b29c2-44c1-443c-bd0e-3b0ba7c2d804}
 .imagebase 0x5c000000

@@ -381,11 +381,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public SoapFormatter.resources
-{
-  // Offset: 0x00000000 Length: 0x00001C76
-  // WARNING: managed resource file SoapFormatter.resources created
-}
 .module System.Runtime.Serialization.Formatters.Soap.dll
 // MVID: {a02964e0-a115-4009-a9b1-3e8ba0e0716a}
 .imagebase 0x64cc0000

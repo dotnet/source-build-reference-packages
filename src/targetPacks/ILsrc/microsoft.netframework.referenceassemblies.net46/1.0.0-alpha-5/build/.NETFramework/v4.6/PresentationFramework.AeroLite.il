@@ -352,11 +352,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public PresentationFramework.AeroLite.g.resources
-{
-  // Offset: 0x00000000 Length: 0x0001D245
-  // WARNING: managed resource file PresentationFramework.AeroLite.g.resources created
-}
 .module PresentationFramework.AeroLite.dll
 // MVID: {4eaf8258-f050-4ec4-a4d7-33fcf28776bb}
 .custom /*0C000001:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*0100002B*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 

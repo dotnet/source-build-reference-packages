@@ -1355,26 +1355,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Activities.Presentation.g.resources
-{
-  // Offset: 0x00000000 Length: 0x000B0F29
-  // WARNING: managed resource file System.Activities.Presentation.g.resources created
-}
-.mresource /*28000002*/ public System.Activities.Presentation.Microsoft.Activities.Presentation.SharedSR.resources
-{
-  // Offset: 0x000B0F30 Length: 0x000001B3
-  // WARNING: managed resource file System.Activities.Presentation.Microsoft.Activities.Presentation.SharedSR.resources created
-}
-.mresource /*28000003*/ public System.Activities.Presentation.SR.resources
-{
-  // Offset: 0x000B10E8 Length: 0x00003EA4
-  // WARNING: managed resource file System.Activities.Presentation.SR.resources created
-}
-.mresource /*28000004*/ public System.Activities.Presentation.Properties.Resources.resources
-{
-  // Offset: 0x000B4F90 Length: 0x00002A20
-  // WARNING: managed resource file System.Activities.Presentation.Properties.Resources.resources created
-}
 .module System.Activities.Presentation.dll
 // MVID: {d1b6e818-5238-4d87-8e6d-dc988635550a}
 .imagebase 0x50850000

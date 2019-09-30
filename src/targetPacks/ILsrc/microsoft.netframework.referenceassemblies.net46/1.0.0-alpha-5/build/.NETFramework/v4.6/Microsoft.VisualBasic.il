@@ -551,21 +551,6 @@
   .hash algorithm 0x00008004
   .ver 10:0:0:0
 }
-.mresource /*28000001*/ public Microsoft.VisualBasic.MyServices.Internal.ProgressDialog.resources
-{
-  // Offset: 0x00000000 Length: 0x00001185
-  // WARNING: managed resource file Microsoft.VisualBasic.MyServices.Internal.ProgressDialog.resources created
-}
-.mresource /*28000002*/ public Microsoft.VisualBasic.CompilerServices.VBInputBox.resources
-{
-  // Offset: 0x00001190 Length: 0x000010E2
-  // WARNING: managed resource file Microsoft.VisualBasic.CompilerServices.VBInputBox.resources created
-}
-.mresource /*28000003*/ public Microsoft.VisualBasic.resources
-{
-  // Offset: 0x00002278 Length: 0x00007FAD
-  // WARNING: managed resource file Microsoft.VisualBasic.resources created
-}
 .module Microsoft.VisualBasic.dll
 // MVID: {db6ab8ea-d1e5-4724-9b18-14c232b0b0ea}
 .imagebase 0x5e430000

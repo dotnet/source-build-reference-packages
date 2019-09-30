@@ -610,11 +610,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Web.Services.resources
-{
-  // Offset: 0x00000000 Length: 0x0000FFD4
-  // WARNING: managed resource file System.Web.Services.resources created
-}
 .module System.Web.Services.dll
 // MVID: {57ff73a0-a46a-458a-9daf-23afcc19c482}
 .imagebase 0x64a10000

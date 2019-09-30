@@ -1169,16 +1169,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.IdentityModel.resources
-{
-  // Offset: 0x00000000 Length: 0x00018D03
-  // WARNING: managed resource file System.IdentityModel.resources created
-}
-.mresource /*28000002*/ public System.IdentityModel.Diagnostics.Application.TD.resources
-{
-  // Offset: 0x00018D08 Length: 0x000002F2
-  // WARNING: managed resource file System.IdentityModel.Diagnostics.Application.TD.resources created
-}
 .module System.IdentityModel.dll
 // MVID: {ecf5e87b-d2a9-413d-a2ae-1d08e8e25569}
 .custom /*0C000001:0A000023*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*010000A3*/::.ctor() /* 0A000023 */ = ( 01 00 00 00 ) 

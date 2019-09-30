@@ -459,11 +459,6 @@
 {
   .assembly extern System /*23000002*/ 
 }
-.mresource /*28000001*/ public ExceptionStringTable.resources
-{
-  // Offset: 0x00000000 Length: 0x0000BB7A
-  // WARNING: managed resource file ExceptionStringTable.resources created
-}
 .module System.Xaml.dll
 // MVID: {5f0c35e0-1b0b-4b41-b21e-127c461002c7}
 .custom /*0C000001:0A000018*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000048*/::.ctor() /* 0A000018 */ = ( 01 00 00 00 ) 

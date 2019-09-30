@@ -842,11 +842,6 @@
 {
   .assembly extern System.ServiceModel.Internals /*23000003*/ 
 }
-.mresource /*28000001*/ public System.Runtime.SRCore.resources
-{
-  // Offset: 0x00000000 Length: 0x000071B0
-  // WARNING: managed resource file System.Runtime.SRCore.resources created
-}
 .module System.Runtime.DurableInstancing.dll
 // MVID: {7d096617-9ab2-448e-8dad-d2f42aee36b0}
 .custom /*0C000001:0A000019*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000039*/::.ctor() /* 0A000019 */ = ( 01 00 00 00 ) 

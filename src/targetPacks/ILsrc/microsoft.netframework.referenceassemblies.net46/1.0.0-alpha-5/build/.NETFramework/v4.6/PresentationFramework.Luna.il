@@ -355,11 +355,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public PresentationFramework.Luna.g.resources
-{
-  // Offset: 0x00000000 Length: 0x0005BD2E
-  // WARNING: managed resource file PresentationFramework.Luna.g.resources created
-}
 .module PresentationFramework.Luna.dll
 // MVID: {15286726-daaf-4ddb-9b48-30cf8d9d2551}
 .custom /*0C000001:0A000015*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*0100002C*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 

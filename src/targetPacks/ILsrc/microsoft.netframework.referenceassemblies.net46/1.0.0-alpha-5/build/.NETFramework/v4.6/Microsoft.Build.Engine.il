@@ -834,16 +834,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public Microsoft.Build.Engine.Resources.Strings.resources
-{
-  // Offset: 0x00000000 Length: 0x0000AFEF
-  // WARNING: managed resource file Microsoft.Build.Engine.Resources.Strings.resources created
-}
-.mresource /*28000002*/ public Microsoft.Build.Engine.Resources.Strings.shared.resources
-{
-  // Offset: 0x0000AFF8 Length: 0x00001447
-  // WARNING: managed resource file Microsoft.Build.Engine.Resources.Strings.shared.resources created
-}
 .module Microsoft.Build.Engine.dll
 // MVID: {70b21f46-df53-4936-84a7-f02d92d130bf}
 .imagebase 0x5c000000

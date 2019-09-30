@@ -548,21 +548,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.DirectoryServices.resources
-{
-  // Offset: 0x00000000 Length: 0x000063F8
-  // WARNING: managed resource file System.DirectoryServices.resources created
-}
-.mresource /*28000002*/ public System.DirectoryServices.DirectoryEntry.bmp
-{
-  // Offset: 0x00006400 Length: 0x00000338
-  // WARNING: managed resource file System.DirectoryServices.DirectoryEntry.bmp created
-}
-.mresource /*28000003*/ public System.DirectoryServices.DirectorySearcher.bmp
-{
-  // Offset: 0x00006740 Length: 0x00000338
-  // WARNING: managed resource file System.DirectoryServices.DirectorySearcher.bmp created
-}
 .module System.DirectoryServices.dll
 // MVID: {c030a5b3-d76a-48a4-9872-2fe04cb5c6b2}
 .custom /*0C000001:0A00002D*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*0100004C*/::.ctor() /* 0A00002D */ = ( 01 00 00 00 ) 

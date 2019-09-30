@@ -442,31 +442,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Data.OracleClient.resources
-{
-  // Offset: 0x00000000 Length: 0x00005ED9
-  // WARNING: managed resource file System.Data.OracleClient.resources created
-}
-.mresource /*28000002*/ public System.Data.OracleClient.OracleConnection.bmp
-{
-  // Offset: 0x00005EE0 Length: 0x000000F6
-  // WARNING: managed resource file System.Data.OracleClient.OracleConnection.bmp created
-}
-.mresource /*28000003*/ public System.Data.OracleClient.OracleCommand.bmp
-{
-  // Offset: 0x00005FE0 Length: 0x000000F6
-  // WARNING: managed resource file System.Data.OracleClient.OracleCommand.bmp created
-}
-.mresource /*28000004*/ public System.Data.OracleClient.OracleDataAdapter.bmp
-{
-  // Offset: 0x000060E0 Length: 0x000000F6
-  // WARNING: managed resource file System.Data.OracleClient.OracleDataAdapter.bmp created
-}
-.mresource /*28000005*/ public System.Data.OracleClient.OracleMetaData.xml
-{
-  // Offset: 0x000061E0 Length: 0x00010CEF
-  // WARNING: managed resource file System.Data.OracleClient.OracleMetaData.xml created
-}
 .module System.Data.OracleClient.dll
 // MVID: {b3968002-4adc-4d6e-9d99-766d1f3d8a60}
 .custom /*0C000001:0A00001E*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000061*/::.ctor() /* 0A00001E */ = ( 01 00 00 00 ) 

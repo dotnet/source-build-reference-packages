@@ -380,11 +380,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public System.Numerics.resources
-{
-  // Offset: 0x00000000 Length: 0x000008A5
-  // WARNING: managed resource file System.Numerics.resources created
-}
 .module System.Numerics.dll
 // MVID: {cd105053-b736-42db-aaf2-11106610633d}
 .custom /*0C000001:0A000016*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000022*/::.ctor() /* 0A000016 */ = ( 01 00 00 00 ) 

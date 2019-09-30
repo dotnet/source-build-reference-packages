@@ -428,11 +428,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public Resources.resources
-{
-  // Offset: 0x00000000 Length: 0x00003422
-  // WARNING: managed resource file Resources.resources created
-}
 .module System.Transactions.dll
 // MVID: {235f4ac5-bbf2-44c4-ab80-fbba53335591}
 .imagebase 0x10000000

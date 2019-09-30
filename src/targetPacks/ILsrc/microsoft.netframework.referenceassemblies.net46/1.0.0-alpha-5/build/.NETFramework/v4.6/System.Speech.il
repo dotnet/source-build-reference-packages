@@ -475,46 +475,6 @@
   .hash algorithm 0x00008004
   .ver 4:0:0:0
 }
-.mresource /*28000001*/ public ExceptionStringTable.resources
-{
-  // Offset: 0x00000000 Length: 0x0000A810
-  // WARNING: managed resource file ExceptionStringTable.resources created
-}
-.mresource /*28000002*/ public upstable_enu.upsmap
-{
-  // Offset: 0x0000A818 Length: 0x00000CAC
-  // WARNING: managed resource file upstable_enu.upsmap created
-}
-.mresource /*28000003*/ public upstable_chs.upsmap
-{
-  // Offset: 0x0000B4C8 Length: 0x0001CFEE
-  // WARNING: managed resource file upstable_chs.upsmap created
-}
-.mresource /*28000004*/ public upstable_cht.upsmap
-{
-  // Offset: 0x000284C0 Length: 0x00002314
-  // WARNING: managed resource file upstable_cht.upsmap created
-}
-.mresource /*28000005*/ public upstable_deu.upsmap
-{
-  // Offset: 0x0002A7D8 Length: 0x000011A0
-  // WARNING: managed resource file upstable_deu.upsmap created
-}
-.mresource /*28000006*/ public upstable_esp.upsmap
-{
-  // Offset: 0x0002B980 Length: 0x000012AE
-  // WARNING: managed resource file upstable_esp.upsmap created
-}
-.mresource /*28000007*/ public upstable_fra.upsmap
-{
-  // Offset: 0x0002CC38 Length: 0x00000F22
-  // WARNING: managed resource file upstable_fra.upsmap created
-}
-.mresource /*28000008*/ public upstable_jpn.upsmap
-{
-  // Offset: 0x0002DB60 Length: 0x00002BCE
-  // WARNING: managed resource file upstable_jpn.upsmap created
-}
 .module System.Speech.dll
 // MVID: {f2eb2e6d-25ad-4d72-bbbf-fe0b37f72ba3}
 .custom /*0C000001:0A000021*/ instance void [mscorlib/*23000001*/]System.Security.UnverifiableCodeAttribute/*01000034*/::.ctor() /* 0A000021 */ = ( 01 00 00 00 ) 
