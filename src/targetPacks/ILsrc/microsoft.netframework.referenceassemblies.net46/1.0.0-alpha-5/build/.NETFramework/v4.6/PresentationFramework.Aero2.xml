@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>PresentationFramework.Aero2</name>
+  </assembly>
+  <members>
+    <member name="P:Microsoft.Windows.Themes.ButtonChrome.Background">
+      <summary>Gets or sets the brush used to fill the background of the <see cref="T:System.Windows.Controls.Button" />.  </summary>
+      <returns>The brush used to fill the background of the <see cref="T:System.Windows.Controls.Button" />.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ButtonChrome.BackgroundProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.Background" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.Background" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ButtonChrome.RoundCorners">
+      <summary>Gets or sets a value indicating whether the <see cref="T:System.Windows.Controls.Button" /> has round corners.  </summary>
+      <returns>true if the <see cref="T:System.Windows.Controls.Button" /> has round corners; otherwise false.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ButtonChrome.RoundCornersProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.RoundCorners" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.RoundCorners" /> dependency property.</returns>
+    </member>
+    <member name="T:Microsoft.Windows.Themes.PlatformCulture">
+      <summary>Provides culture-specific information used by the Microsoft .NET Framework system themes.</summary>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.PlatformCulture.FlowDirection">
+      <summary>Gets a value that specifies whether the primary text advance direction shall be left-to-right, right-to-left, or top-to-bottom.</summary>
+      <returns>One of the enumeration values.</returns>
+    </member>
+    <member name="T:Microsoft.Windows.Themes.ProgressBarHighlightConverter">
+      <summary>Creates a <see cref="T:System.Windows.Media.DrawingBrush" /> used to draw the highlighting for the <see cref="T:System.Windows.Controls.ProgressBar" />.</summary>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.ProgressBarHighlightConverter.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Windows.Themes.ProgressBarHighlightConverter" /> class.</summary>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.ProgressBarHighlightConverter.Convert(System.Object[],System.Type,System.Object,System.Globalization.CultureInfo)">
+      <summary>Creates the <see cref="T:System.Windows.Media.DrawingBrush" />.</summary>
+      <returns>The created <see cref="T:System.Windows.Media.DrawingBrush" />. </returns>
+      <param name="values">The <see cref="T:System.Windows.Media.Brush" /> used for the <see cref="P:System.Windows.Controls.Control.Foreground" /> of the <see cref="T:System.Windows.Controls.ProgressBar" />, the <see cref="T:System.Double" /> defining the <see cref="P:System.Windows.FrameworkElement.Width" />, and the <see cref="T:System.Double" /> defining the <see cref="P:System.Windows.FrameworkElement.Height" />. </param>
+      <param name="targetType">This parameter is not used.</param>
+      <param name="parameter">This parameter is not used.</param>
+      <param name="culture">This parameter is not used.</param>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.ProgressBarHighlightConverter.ConvertBack(System.Object,System.Type[],System.Object,System.Globalization.CultureInfo)">
+      <summary>Not implemented.</summary>
+      <returns>null.</returns>
+      <param name="value">This parameter is not used.</param>
+      <param name="targetTypes">This parameter is not used.</param>
+      <param name="parameter">This parameter is not used.</param>
+      <param name="culture">This parameter is not used.</param>
+    </member>
+    <member name="T:Microsoft.Windows.Themes.ScrollChrome">
+      <summary>Creates the theme-specific look for Microsoft .NET Framework <see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> elements.</summary>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.ScrollChrome.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Windows.Themes.ScrollChrome" /> class.    </summary>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.ScrollChrome.GetScrollGlyph(System.Windows.DependencyObject)">
+      <summary>Gets the <see cref="T:Microsoft.Windows.Themes.ScrollGlyph" /> for the specified object.    </summary>
+      <returns>One of the enumeration values.   </returns>
+      <param name="element">The dependency object to which the <see cref="T:Microsoft.Windows.Themes.ScrollGlyph" /> is attached.   </param>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ScrollChrome.RenderMouseOver">
+      <summary>Gets or sets a value indicating whether the <see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> appears as if the mouse is over it.  </summary>
+      <returns>true if the <see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> appears as if the mouse is over it; otherwise false.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollChrome.RenderMouseOverProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.ScrollChrome.RenderMouseOver" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.ScrollChrome.RenderMouseOver" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ScrollChrome.RenderPressed">
+      <summary>Gets or sets a value indicating whether the <see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> appears pressed.</summary>
+      <returns>true if the <see cref="T:System.Windows.Controls.Primitives.ScrollBar" /> appears pressed; otherwise false.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollChrome.RenderPressedProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.ScrollChrome.RenderPressed" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.ScrollChrome.RenderPressed" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ScrollChrome.ScrollGlyph">
+      <summary>Gets or sets the color of the <see cref="T:Microsoft.Windows.Themes.ScrollGlyph" /> for the <see cref="T:Microsoft.Windows.Themes.ScrollChrome" />. </summary>
+      <returns>A value in the enumeration.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollChrome.ScrollGlyphProperty">
+      <summary>Identifies the <see cref="T:Microsoft.Windows.Themes.ScrollGlyph" /> attached property.   </summary>
+      <returns>The <see cref="T:Microsoft.Windows.Themes.ScrollGlyph" /> attached property identifier. </returns>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.ScrollChrome.SetScrollGlyph(System.Windows.DependencyObject,Microsoft.Windows.Themes.ScrollGlyph)">
+      <summary>Sets the <see cref="T:Microsoft.Windows.Themes.ScrollGlyph" /> on the specified object.</summary>
+      <param name="element">The dependency object to which the <see cref="T:Microsoft.Windows.Themes.ScrollGlyph" /> is attached.   </param>
+      <param name="value">One of the enumeration values.   </param>
+    </member>
+    <member name="T:Microsoft.Windows.Themes.ScrollGlyph">
+      <summary>Describes the glyphs used to represent the <see cref="T:System.Windows.Controls.Primitives.Thumb" />.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.DownArrow">
+      <summary>An arrow glyph pointing down.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.HorizontalGripper">
+      <summary> horizontal gripper glyph.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.LeftArrow">
+      <summary>An arrow glyph pointing to the left.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.None">
+      <summary>No glyph is used. </summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.RightArrow">
+      <summary>An arrow glyph pointing to the right.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.UpArrow">
+      <summary>An arrow glyph pointing up.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.VerticalGripper">
+      <summary>A vertical gripper glyph.</summary>
+    </member>
+  </members>
+</doc>
