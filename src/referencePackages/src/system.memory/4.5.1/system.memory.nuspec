@@ -30,65 +30,65 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <dependencies>
       <group targetFramework="MonoAndroid1.0">
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework="MonoTouch1.0">
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework=".NETFramework4.5">
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework=".NETFramework4.6.1">
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
         <dependency id="System.Numerics.Vectors" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework=".NETCoreApp2.0">
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework=".NETCoreApp2.1" />
       <group targetFramework=".NETStandard1.1">
         <dependency id="NETStandard.Library" version="1.6.1" />
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework=".NETStandard2.0">
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
         <dependency id="System.Numerics.Vectors" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework=".NETPortable4.5-Profile111">
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework="UAP10.0.16299">
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework="Windows8.0">
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework="WindowsPhoneApp8.1">
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework="Xamarin.iOS1.0">
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework="Xamarin.Mac2.0">
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework="Xamarin.TVOS1.0">
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
       <group targetFramework="Xamarin.WatchOS1.0">
         <dependency id="System.Buffers" version="4.4.0" exclude="Compile" />
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.0" exclude="Compile" />
+        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.2" exclude="Compile" />
       </group>
     </dependencies>
   </metadata>
