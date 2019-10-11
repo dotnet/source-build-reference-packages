@@ -232,5 +232,6 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.cng/4.5.0/System.Security.Cryptography.Cng.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/4.5.0/System.Security.Cryptography.Pkcs.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/4.5.2/System.Security.Cryptography.Pkcs.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.openssl/4.5.0/System.Security.Cryptography.OpenSsl.csproj"/>  </ItemGroup>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.openssl/4.5.0/System.Security.Cryptography.OpenSsl.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.valuetuple/4.4.0/System.ValueTuple.csproj"/>  </ItemGroup>
 </Project>
