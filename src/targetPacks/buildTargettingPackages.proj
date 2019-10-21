@@ -19,11 +19,12 @@
     <TextOnlyProjects Include="$(TextOnlyProjectsSourcePath)**/*.csproj" />
     <TargetingPacksSrc Include="$(ILsrcPath)**/*.il" />
     <ILsrcPathFiles Include="$(ILsrcPath)**/*.*" />
+    <ProjFiles Include="$(ILsrcPath)**/*.proj" />
   </ItemGroup>
 
   <Target Name="BuildTFMDLLStructure" BeforeTargets="AssembleTargetPacks" Condition="'@(ILsrcPathFiles)' != '' and '$(SkipTargetingPacks)' != 'true' ">
     <ItemGroup>
-      <StructureFiles Include="@(ILsrcPathFiles)" Exclude="@(TargetingPacksSrc)" />
+      <StructureFiles Include="@(ILsrcPathFiles)" Exclude="@(TargetingPacksSrc);@(ProjFiles)" />
     </ItemGroup>
     <Message Importance="High" Text="Copy all tfm files." />
     <Copy SourceFiles="@(StructureFiles)" DestinationFiles="@(StructureFiles->'$(ArtifactsTFMPackTemp)%(RecursiveDir)%(Filename)%(Extension)')" />
@@ -31,10 +32,7 @@
   </Target>
 
   <Target Name="AssembleTargetPacks" BeforeTargets="Build" AfterTargets="BuildTFMDLLStructure" Condition="'@(TargetingPacksSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
-    <MakeDir Directories="@(TargetingPacksSrc->'$(ArtifactsTFMPackTemp)%(RecursiveDir)')" />
-    <Exec Command="$(IlasmToolPathSB)ilasm %(TargetingPacksSrc.Identity) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)%(RecursiveDir)%(TargetingPacksSrc.Filename).dll" />
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done assembling TargetPacks src." />
+    <MSBuild Projects="@(ProjFiles)" BuildInParallel="true"/>
   </Target>
 
   <Target Name="Build" AfterTargets="AssembleTargetPacks" Condition=" '$(SkipTargetingPacks)' != 'true'" >
