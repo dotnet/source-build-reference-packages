@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <BuildInParallel Condition="'$(BuildInParallel)' == ''">true</BuildInParallel>
-    <ArtifactsTFMPackTemp>$(RepoRoot)artifacts/TFMPack/</ArtifactsTFMPackTemp>
-    <IlasmToolPathSB>$(RepoRoot)/source-built/coreclr-tools/</IlasmToolPathSB>
-  </PropertyGroup>
   <ItemGroup>
     <TargetingPackSrc Include="../**/*.il" />
   </ItemGroup>
   <Target Name="AssembleTargetPack" BeforeTargets="Build" AfterTargets="BuildTFMDLLStructure" Condition="'@(TargetingPackSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
+    <PropertyGroup>
+      <BuildInParallel Condition="'$(BuildInParallel)' == ''">true</BuildInParallel>
+      <ArtifactsTFMPackTemp>$(RepoRoot)artifacts/TFMPack/</ArtifactsTFMPackTemp>
+      <IlasmToolPathSB>$(RepoRoot)/source-built/coreclr-tools/</IlasmToolPathSB>
+    </PropertyGroup>
+
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
     <MakeDir Directories="@(TargetingPackSrc->'$(ArtifactsTFMPackTemp)%(RecursiveDir)')" />
     <Message Importance="High" Text = "Exec Command=$(IlasmToolPathSB)ilasm %(TargetingPackSrc.Identity) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)%(RecursiveDir)%(TargetingPackSrc.Filename).dll" />
