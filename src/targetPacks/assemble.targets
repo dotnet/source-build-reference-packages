@@ -3,7 +3,7 @@
   <ItemGroup>
     <TargetingPackSrc Include="$(MSBuildProjectDirectory)/**/*.il" />
   </ItemGroup>
-  <Target Name="AssembleTargetPack" BeforeTargets="Build" AfterTargets="BuildTFMDLLStructure" Condition="'@(TargetingPackSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
+  <Target Name="AssembleTargetPack" Condition="'@(TargetingPackSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
     <PropertyGroup>
       <BuildInParallel Condition="'$(BuildInParallel)' == ''">true</BuildInParallel>
       <ArtifactsTFMPackTemp>$(RepoRoot)artifacts/TFMPack/</ArtifactsTFMPackTemp>
