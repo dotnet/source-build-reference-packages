@@ -13,7 +13,7 @@
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
     <MakeDir Directories="@(TargetingPackSrc->'$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(RecursiveDir)')" />
     <Message Importance="High" Text = "Exec Command=$(IlasmToolPathSB)ilasm %(TargetingPackSrc.Identity) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(RecursiveDir)%(TargetingPackSrc.Filename).dll" />
-    <Exec Command="$(IlasmToolPathSB)ilasm %(TargetingPackSrc.Identity) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(RecursiveDir)%(TargetingPackSrc.Filename).dll" />
+    <Exec Command="$(IlasmToolPathSB)ilasm %(TargetingPackSrc.Identity) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(RecursiveDir)%(TargetingPackSrc.Filename).dll" IgnoreStandardErrorWarningFormat="true"/>
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done assembling TargetPacks src." />
   </Target>
 </Project>
