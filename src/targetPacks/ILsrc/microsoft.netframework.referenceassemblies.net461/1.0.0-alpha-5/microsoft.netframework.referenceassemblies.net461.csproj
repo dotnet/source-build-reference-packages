@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <OutputPath>$(ArtifactsBinDir)microsoft.netframework.referenceassemblies.net461/1.0.0/</OutputPath>
-    <BaseIntermediateOutputPath>$(ArtifactsObjDir)microsoft.netframework.referenceassemblies.net461/1.0.0/</BaseIntermediateOutputPath>
+    <OutputPath>$(ArtifactsBinDir)microsoft.netframework.referenceassemblies.net461/1.0.0-alpha-5/</OutputPath>
+    <BaseIntermediateOutputPath>$(ArtifactsObjDir)microsoft.netframework.referenceassemblies.net461/1.0.0-alpha-5/</BaseIntermediateOutputPath>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
     <NuspecFile>microsoft.netframework.referenceassemblies.net461.nuspec</NuspecFile>
