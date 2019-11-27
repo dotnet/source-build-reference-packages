@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputPath>$(ArtifactsBinDir)Microsoft.AspNetCore.App.Ref/3.0.1/</OutputPath>
+    <BaseIntermediateOutputPath>$(ArtifactsObjDir)Microsoft.AspNetCore.App.Ref/3.0.1/</BaseIntermediateOutputPath>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NuspecFile>Microsoft.AspNetCore.App.Ref.nuspec</NuspecFile>
+   </PropertyGroup>
+</Project>
