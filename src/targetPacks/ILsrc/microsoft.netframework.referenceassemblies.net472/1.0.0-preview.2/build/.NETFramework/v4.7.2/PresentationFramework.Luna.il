@@ -523,7 +523,7 @@
 
   .method /*06000012*/ family hidebysig virtual 
           instance valuetype [WindowsBase/*23000003*/]System.Windows.Size/*01000008*/ 
-          MeasureOverride(valuetype [WindowsBase/*23000003*/]System.Windows.Size/*01000008*/ constraint) cil managed
+          MeasureOverride(valuetype [WindowsBase/*23000003*/]System.Windows.Size/*01000008*/ 'constraint') cil managed
   // SIG: 20 01 11 21 11 21
   {
     // Method begins at RVA 0x2061
