@@ -350,7 +350,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000009    //  ILONLY
-// Image base: 0x00007F4DE40FF000
+// Image base: 0x00007FB32CD8C000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -645,6 +645,8 @@
     .custom /*0C000059:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
     .custom /*0C00005A:0A000011*/ instance void [System.Runtime/*23000001*/]System.Diagnostics.ConditionalAttribute/*01000017*/::.ctor(string) /* 0A000011 */ = ( 01 00 0E 43 4F 4E 54 52 41 43 54 53 5F 46 55 4C   // ...CONTRACTS_FUL
                                                                                                                                                                   4C 00 00 )                                        // L..
+    .param constraint   TException/*2A000001*/ , [System.Runtime/*23000001*/]System.Exception/*01000015*/
+      .custom /*0C000013:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
     // Method begins at RVA 0x20b4
     // Code size       1 (0x1)
     .maxstack  8
@@ -659,6 +661,8 @@
     .custom /*0C00005C:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
     .custom /*0C00005D:0A000011*/ instance void [System.Runtime/*23000001*/]System.Diagnostics.ConditionalAttribute/*01000017*/::.ctor(string) /* 0A000011 */ = ( 01 00 0E 43 4F 4E 54 52 41 43 54 53 5F 46 55 4C   // ...CONTRACTS_FUL
                                                                                                                                                                   4C 00 00 )                                        // L..
+    .param constraint   TException/*2A000002*/ , [System.Runtime/*23000001*/]System.Exception/*01000015*/
+      .custom /*0C000016:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
     .param [2]/*08000017*/ 
     .custom /*0C000065:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
     // Method begins at RVA 0x20b6
@@ -686,7 +690,7 @@
   // SIG: 10 01 02 02 15 12 69 01 1E 00 15 12 65 01 1E 00
   {
     .param type T /*2A000003*/ 
-    .custom /*0C00001A:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00001A:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
     // Method begins at RVA 0x20bb
     // Code size       2 (0x2)
     .maxstack  8
@@ -713,7 +717,7 @@
   // SIG: 10 01 02 02 15 12 69 01 1E 00 15 12 65 01 1E 00
   {
     .param type T /*2A000004*/ 
-    .custom /*0C00001F:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00001F:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
     // Method begins at RVA 0x20c1
     // Code size       2 (0x2)
     .maxstack  8
@@ -752,7 +756,7 @@
   // SIG: 10 01 01 1E 00 1E 00
   {
     .param type T /*2A000005*/ 
-    .custom /*0C000024:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C000024:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
     // Method begins at RVA 0x20c8
     // Code size       2 (0x2)
     .maxstack  8
@@ -791,6 +795,8 @@
   // SIG: 10 01 01 01 02
   {
     .custom /*0C00006B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
+    .param constraint   TException/*2A000006*/ , [System.Runtime/*23000001*/]System.Exception/*01000015*/
+      .custom /*0C00001B:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
     // Method begins at RVA 0x20cf
     // Code size       1 (0x1)
     .maxstack  8
@@ -803,6 +809,8 @@
   // SIG: 10 01 02 01 02 0E
   {
     .custom /*0C00006C:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
+    .param constraint   TException/*2A000007*/ , [System.Runtime/*23000001*/]System.Exception/*01000015*/
+      .custom /*0C000020:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
     .param [2]/*0800002B*/ 
     .custom /*0C00006D:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
     // Method begins at RVA 0x20d1
@@ -816,7 +824,7 @@
   // SIG: 10 01 00 1E 00
   {
     .param type T /*2A000008*/ 
-    .custom /*0C00002B:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00002B:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
     // Method begins at RVA 0x20d3
     // Code size       2 (0x2)
     .maxstack  8
@@ -829,7 +837,7 @@
   // SIG: 10 01 01 1E 00 10 1E 00
   {
     .param type T /*2A000009*/ 
-    .custom /*0C00002E:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00002E:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
     // Method begins at RVA 0x20d6
     // Code size       2 (0x2)
     .maxstack  8

@@ -405,7 +405,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000009    //  ILONLY
-// Image base: 0x00007F31A82A6000
+// Image base: 0x00007F1A142B0000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -1028,7 +1028,7 @@
     .custom /*0C000095:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .custom /*0C000096:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
     .param type T /*2A00001A*/ 
-    .custom /*0C00007B:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00007B:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param [1]/*08000047*/ 
     .custom /*0C0000E8:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x20f3
@@ -1046,7 +1046,7 @@
     .custom /*0C000099:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .custom /*0C00009A:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
     .param type T /*2A00001B*/ 
-    .custom /*0C00007F:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00007F:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param [1]/*08000049*/ 
     .custom /*0C0000EC:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x20f6
@@ -1065,9 +1065,9 @@
     .custom /*0C00009C:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .custom /*0C00009D:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
     .param type T /*2A00001C*/ 
-    .custom /*0C000083:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C000083:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param type TComparer /*2A00001D*/ 
-    .custom /*0C000087:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+      .custom /*0C000087:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
     .param [1]/*0800004B*/ 
     .custom /*0C0000F1:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x20f9
@@ -1085,9 +1085,9 @@
     .custom /*0C0000A0:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .custom /*0C0000A1:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
     .param type T /*2A00001E*/ 
-    .custom /*0C00008A:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00008A:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param type TComparable /*2A00001F*/ 
-    .custom /*0C00008D:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+      .custom /*0C00008D:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
     .param [1]/*0800004E*/ 
     .custom /*0C0000F8:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x20fc
@@ -1106,9 +1106,9 @@
     .custom /*0C0000A3:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .custom /*0C0000A4:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
     .param type T /*2A000020*/ 
-    .custom /*0C000093:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C000093:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param type TComparer /*2A000021*/ 
-    .custom /*0C000098:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+      .custom /*0C000098:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
     .param [1]/*08000050*/ 
     .custom /*0C0000FB:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x20ff
@@ -1126,9 +1126,9 @@
     .custom /*0C0000A5:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .custom /*0C0000A6:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
     .param type T /*2A000022*/ 
-    .custom /*0C00009B:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00009B:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param type TComparable /*2A000023*/ 
-    .custom /*0C00009F:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+      .custom /*0C00009F:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
     .param [1]/*08000053*/ 
     .custom /*0C0000FF:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x2102
@@ -1383,7 +1383,9 @@
     .custom /*0C0000C4:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .custom /*0C0000C5:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
     .param type T /*2A00002C*/ 
-    .custom /*0C0000B4:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+      .custom /*0C0000B4:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+    .param constraint   T/*2A00002C*/ , class [System.Runtime/*23000001*/]System.IEquatable`1/*01000023*/<!!T>/*1B000003*/
+      .custom /*0C00004B:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
     .param [1]/*08000077*/ 
     .custom /*0C00013C:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x2130
@@ -1440,7 +1442,9 @@
     .custom /*0C0000CB:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .custom /*0C0000CC:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
     .param type T /*2A00002F*/ 
-    .custom /*0C0000BA:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+      .custom /*0C0000BA:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+    .param constraint   T/*2A00002F*/ , class [System.Runtime/*23000001*/]System.IEquatable`1/*01000023*/<!!T>/*1B000003*/
+      .custom /*0C000058:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
     .param [1]/*08000080*/ 
     .custom /*0C00014D:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x2139
@@ -1591,7 +1595,9 @@
     .custom /*0C0000DD:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .custom /*0C0000DE:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
     .param type T /*2A000036*/ 
-    .custom /*0C0000C7:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+      .custom /*0C0000C7:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+    .param constraint   T/*2A000036*/ , class [System.Runtime/*23000001*/]System.IEquatable`1/*01000023*/<!!T>/*1B000003*/
+      .custom /*0C000071:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
     .param [1]/*08000095*/ 
     .custom /*0C000166:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x2154
@@ -1648,7 +1654,9 @@
     .custom /*0C0000E2:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .custom /*0C0000E3:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
     .param type T /*2A000039*/ 
-    .custom /*0C0000CE:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+      .custom /*0C0000CE:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+    .param constraint   T/*2A000039*/ , class [System.Runtime/*23000001*/]System.IEquatable`1/*01000023*/<!!T>/*1B000003*/
+      .custom /*0C00007C:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
     .param [1]/*0800009E*/ 
     .custom /*0C000173:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x215d
@@ -1820,6 +1828,8 @@
   // SIG: 10 01 02 08 15 11 79 01 1E 00 15 11 79 01 1E 00
   {
     .custom /*0C0000F9:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
+    .param constraint   T/*2A000043*/ , class [System.Runtime/*23000001*/]System.IComparable`1/*01000020*/<!!T>/*1B000002*/
+      .custom /*0C00008E:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 01 00 00 ) 
     .param [1]/*080000B5*/ 
     .custom /*0C00018D:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     .param [2]/*080000B6*/ 
@@ -1837,6 +1847,8 @@
   // SIG: 10 01 02 08 15 11 7D 01 1E 00 15 11 79 01 1E 00
   {
     .custom /*0C0000FA:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
+    .param constraint   T/*2A000044*/ , class [System.Runtime/*23000001*/]System.IComparable`1/*01000020*/<!!T>/*1B000002*/
+      .custom /*0C000094:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 01 00 00 ) 
     .param [1]/*080000B7*/ 
     .custom /*0C00018F:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     .param [2]/*080000B8*/ 
@@ -2967,7 +2979,7 @@
   {
     .custom /*0C000165:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .param type T /*2A00006B*/ 
-    .custom /*0C000124:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C000124:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param [0]/*0800013F*/ 
     .custom /*0C000206:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x224c
@@ -2985,7 +2997,7 @@
   {
     .custom /*0C000167:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .param type T /*2A00006C*/ 
-    .custom /*0C000126:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C000126:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param [0]/*08000142*/ 
     .custom /*0C00020A:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x224f
@@ -3001,7 +3013,7 @@
   {
     .custom /*0C000168:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .param type T /*2A00006D*/ 
-    .custom /*0C000128:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C000128:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param [1]/*08000145*/ 
     .custom /*0C00020C:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x2252
@@ -3017,7 +3029,7 @@
   {
     .custom /*0C000169:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .param type T /*2A00006E*/ 
-    .custom /*0C00012A:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00012A:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param [1]/*08000146*/ 
     .custom /*0C00020D:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x2255
@@ -3045,7 +3057,7 @@
   {
     .custom /*0C00016B:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .param type T /*2A000070*/ 
-    .custom /*0C00012D:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00012D:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param [1]/*08000148*/ 
     .custom /*0C00020F:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x225b
@@ -3079,7 +3091,9 @@
   {
     .custom /*0C00016F:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 02 00 00 ) 
     .param type TManager /*2A000073*/ 
-    .custom /*0C000133:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+      .custom /*0C000133:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+    .param constraint   TManager/*2A000073*/ , class [System.Runtime/*23000001*/]System.Buffers.MemoryManager`1/*0100002E*/<!!T>/*1B000005*/
+      .custom /*0C0000E6:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 01 00 00 ) 
     .param [1]/*0800014B*/ 
     .custom /*0C000215:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     .param [2]/*0800014C*/ 
@@ -3100,7 +3114,9 @@
   {
     .custom /*0C000171:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 02 00 00 ) 
     .param type TManager /*2A000075*/ 
-    .custom /*0C000138:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+      .custom /*0C000138:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
+    .param constraint   TManager/*2A000075*/ , class [System.Runtime/*23000001*/]System.Buffers.MemoryManager`1/*0100002E*/<!!T>/*1B000005*/
+      .custom /*0C0000E9:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 01 00 00 ) 
     .param [1]/*0800014D*/ 
     .custom /*0C000217:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     .param [2]/*0800014E*/ 
@@ -3233,7 +3249,7 @@
   {
     .custom /*0C000177:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 00 00 00 ) 
     .param type T /*2A00007C*/ 
-    .custom /*0C000144:06000002*/ instance void System.Runtime.CompilerServices.IsUnmanagedAttribute/*02000003*/::.ctor() /* 06000002 */ = ( 01 00 00 00 ) 
+      .custom /*0C000144:06000002*/ instance void System.Runtime.CompilerServices.IsUnmanagedAttribute/*02000003*/::.ctor() /* 06000002 */ = ( 01 00 00 00 ) 
     // Method begins at RVA 0x227b
     // Code size       2 (0x2)
     .maxstack  8
@@ -3250,7 +3266,7 @@
   .interfaceimpl type class System.Buffers.IBufferWriter`1/*0200000E*/<!T>/*1B000007*/
   .custom /*0C00001B:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
   .param type T /*2A000001*/ 
-  .custom /*0C000017:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C000017:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
   .method /*060000A6*/ public hidebysig specialname rtspecialname 
           instance void  .ctor() cil managed
   // SIG: 20 00 01
@@ -3460,7 +3476,7 @@
     .custom /*0C000188:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .custom /*0C000189:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
     .param type T /*2A00007F*/ 
-    .custom /*0C00014B:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00014B:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param [1]/*08000172*/ 
     .custom /*0C000240:0A000014*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000025*/::.ctor() /* 0A000014 */ = ( 01 00 00 00 ) 
     .custom /*0C000241:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
@@ -3479,7 +3495,7 @@
     .custom /*0C00018A:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 01 00 00 ) 
     .custom /*0C00018B:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
     .param type T /*2A000080*/ 
-    .custom /*0C00014E:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00014E:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .param [2]/*08000174*/ 
     .custom /*0C000242:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
     // Method begins at RVA 0x22af
@@ -3533,7 +3549,7 @@
   .interfaceimpl type [System.Runtime/*23000001*/]System.IDisposable/*01000032*/
   .custom /*0C00001F:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
   .param type T /*2A000006*/ 
-  .custom /*0C00002D:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C00002D:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
   .method /*060000B8*/ family hidebysig specialname rtspecialname 
           instance void  .ctor() cil managed
   // SIG: 20 00 01
@@ -3606,7 +3622,7 @@
        extends [System.Runtime/*23000001*/]System.Object/*01000018*/
 {
   .param type T /*2A000008*/ 
-  .custom /*0C000034:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C000034:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
   .method /*060000BE*/ family hidebysig specialname rtspecialname 
           instance void  .ctor() cil managed
   // SIG: 20 00 01
@@ -3720,13 +3736,13 @@
   .custom /*0C00005C:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 00 00 00 ) 
   .custom /*0C00005D:0A000014*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000025*/::.ctor() /* 0A000014 */ = ( 01 00 00 00 ) 
   .param type T /*2A00000A*/ 
-  .custom /*0C00003D:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C00003D:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
   .class /*02000019*/ sequential ansi sealed nested public beforefieldinit Enumerator<T>
          extends [System.Runtime/*23000001*/]System.ValueType/*01000026*/
   {
     .custom /*0C000076:06000005*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000005*/::.ctor(uint8) /* 06000005 */ = ( 01 00 00 00 00 ) 
     .param type T /*2A000011*/ 
-    .custom /*0C00005F:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
+      .custom /*0C00005F:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8) /* 06000003 */ = ( 01 00 02 00 00 ) 
     .field /*0400000F*/ private object _dummy
     .method /*06000170*/ public hidebysig specialname rtspecialname 
             instance void  .ctor([in] valuetype System.Buffers.ReadOnlySequence`1/*02000011*/<!T>& sequence) cil managed
@@ -4234,7 +4250,9 @@
                                                                                                                                                69 6F 6E 20 6F 66 20 79 6F 75 72 20 63 6F 6D 70   // ion of your comp
                                                                                                                                                69 6C 65 72 2E 01 00 00 )                         // iler....
   .param type T /*2A00000D*/ 
-  .custom /*0C00004A:06000002*/ instance void System.Runtime.CompilerServices.IsUnmanagedAttribute/*02000003*/::.ctor() /* 06000002 */ = ( 01 00 00 00 ) 
+    .custom /*0C00004A:06000002*/ instance void System.Runtime.CompilerServices.IsUnmanagedAttribute/*02000003*/::.ctor() /* 06000002 */ = ( 01 00 00 00 ) 
+  .param constraint   T/*2A00000D*/ , class [System.Runtime/*23000001*/]System.IEquatable`1/*01000023*/<!T>/*1B000008*/
+    .custom /*0C00001C:06000004*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000004*/::.ctor(uint8[]) /* 06000004 */ = ( 01 00 02 00 00 00 01 00 00 00 ) 
   .field /*0400000A*/ private object _dummy
   .field /*0400000B*/ private int32 _dummyPrimitive
   .method /*060000E4*/ public hidebysig specialname rtspecialname 
