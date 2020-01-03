@@ -1,12 +1,23 @@
-jobs:
-- template: ../jobs/ci-linux.yml
-  parameters:
-    job: fedora29
-    imageName: microsoft/dotnet-buildtools-prereqs:fedora-29-2f0798a-20181105183801
-
-- ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
-  - template: ../../eng/common/templates/job/publish-build-assets.yml
+stages:
+- stage: build
+  displayName: Build
+  jobs:
+  - template: ../jobs/ci-linux.yml
+    variables:
+      _DotNetArtifactsCategory: .NETCore
     parameters:
-      dependsOn: fedora29
-      pool:
-        vmImage: vs2017-win2016
+      job: fedora29
+      imageName: microsoft/dotnet-buildtools-prereqs:fedora-29-2f0798a-20181105183801
+
+  - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+    - template: ../../eng/common/templates/job/publish-build-assets.yml
+      parameters:
+        dependsOn: fedora29
+        publishUsingPipelines: true
+        pool:
+          vmImage: vs2017-win2016
+  
+  - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
+    - template: eng\common\templates\post-build\post-build.yml
+      parameters:
+        enableSourceLinkValidation: false

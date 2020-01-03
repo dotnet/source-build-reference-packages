@@ -63,8 +63,10 @@ jobs:
       df -h
       $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER) --ci \
         /p:AzureAccountName=$(publish.blobStorage.account) \
-        /p:ContainerName=$(publish.blobStorage.container) \
         /p:AzureAccessToken=$(publish.blobStorage.accessToken) \
+        /p:ContainerName=$(publish.blobStorage.container) \
+        /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines)
+        /p:DotNetArtifactsCategory=$(_DotNetArtifactsCategory)
         /p:ManifestName=$(BUILD.REPOSITORY.NAME) \
         /p:ManifestBuildId=$(BUILD.BUILDID) \
         /p:ManifestBranch=$(BUILD.SOURCEBRANCHNAME) \
