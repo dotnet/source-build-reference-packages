@@ -20,6 +20,7 @@ jobs:
     imageName: ${{ parameters.imageName }}
     rootDirectory: $(Build.SourcesDirectory)/..
     stagingDirectory: $(rootDirectory)/source-build-reference-packages/staging
+    _DotNetArtifactsCategory: .NETCore
 
   steps:
   - template: ../steps/docker-cleanup-linux.yml
