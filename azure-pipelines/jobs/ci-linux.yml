@@ -21,6 +21,7 @@ jobs:
     rootDirectory: $(Build.SourcesDirectory)/..
     stagingDirectory: $(rootDirectory)/source-build-reference-packages/staging
     _DotNetArtifactsCategory: .NETCore
+    _PublishUsingPipelines: true
 
   steps:
   - template: ../steps/docker-cleanup-linux.yml
