@@ -66,8 +66,8 @@ jobs:
         /p:AzureAccountName=$(publish.blobStorage.account) \
         /p:AzureAccessToken=$(publish.blobStorage.accessToken) \
         /p:ContainerName=$(publish.blobStorage.container) \
-        /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines)
-        /p:DotNetArtifactsCategory=$(_DotNetArtifactsCategory)
+        /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines) \
+        /p:DotNetArtifactsCategory=$(_DotNetArtifactsCategory) \
         /p:ManifestName=$(BUILD.REPOSITORY.NAME) \
         /p:ManifestBuildId=$(BUILD.BUILDID) \
         /p:ManifestBranch=$(BUILD.SOURCEBRANCHNAME) \
