@@ -117,7 +117,7 @@ jobs:
     continueOnError: true
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory)
-      ArtifactName: Artifacts
+      ArtifactName: BlobArtifacts
       ArtifactType: Container
 
   # Publish manifest.
