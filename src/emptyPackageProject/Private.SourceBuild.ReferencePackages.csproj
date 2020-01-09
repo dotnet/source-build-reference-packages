@@ -12,6 +12,7 @@
     <RepositoryCommit Condition="'$(ManifestCommit)' != ''">$(ManifestCommit)</RepositoryCommit>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <iconUrl>https://go.microsoft.com/fwlink/?linkid=825694</iconUrl>
     <IsPackable>true</IsPackable>
     <IsShipping>false</IsShipping>
   </PropertyGroup>
