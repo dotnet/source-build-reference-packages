@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" />
+  <Import Project="$(RepoRoot)eng/Directory.Build.props" />
 
   <!-- This is an empty project that exists to be published by DARC and trigger
   dependency uptake for this repo. -->
@@ -11,14 +11,16 @@
     <RepositoryCommit>0000</RepositoryCommit>
     <RepositoryCommit Condition="'$(ManifestCommit)' != ''">$(ManifestCommit)</RepositoryCommit>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/Microsoft/msbuild/master/branding/MSBuild-NuGet-Icon.png</PackageIconUrl>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
     <IsPackable>true</IsPackable>
     <IsShipping>false</IsShipping>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(CopyrightNetFoundation)' != ''">
-    <Copyright>$(CopyrightNetFoundation)</Copyright>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-  </PropertyGroup>
+
+  <ItemGroup>
+      <None Include="icon.png" Pack="true" PackagePath=""/>
+  </ItemGroup>
+
 </Project>
 
