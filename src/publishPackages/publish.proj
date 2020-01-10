@@ -7,6 +7,7 @@
     <ArtifactsPkgDir>$(RepoRoot)artifacts/packages/</ArtifactsPkgDir>
     <ManifestDir>$(RepoRoot)artifacts/asset-manifests/</ManifestDir>
     <TarballDir>$(RepoRoot)artifacts/tarball/</TarballDir>
+    <ManifestName>source-build-reference-packages</ManifestName>
     <RestoreSources>
       $(RestoreSources);
       https://dotnetfeed.blob.core.windows.net/dotnet-tools-internal/index.json;
