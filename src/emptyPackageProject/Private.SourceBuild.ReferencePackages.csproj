@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="$(RepoRoot)eng/Directory.Build.props" />
+  <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" />
 
   <!-- This is an empty project that exists to be published by DARC and trigger
   dependency uptake for this repo. -->
@@ -16,6 +16,9 @@
     <IsPackable>true</IsPackable>
     <IsShipping>false</IsShipping>
   </PropertyGroup>
-
+  <PropertyGroup Condition="'$(CopyrightNetFoundation)' != ''">
+    <Copyright>$(CopyrightNetFoundation)</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
 </Project>
 
