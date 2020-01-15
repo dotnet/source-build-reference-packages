@@ -60,22 +60,42 @@
     </PropertyGroup>
   </Target>
 
-  <Target Name="PreparePublishPackages" DependsOnTargets="PreparePublish" BeforeTargets="PublishPackagesToBlobFeed">
+  <Target Name="PreparePublishPackages" DependsOnTargets="PreparePublish">
     <PropertyGroup>
       <AssetManifestFilePath>$(ManifestDir)reference-packages-nupkg-manifest.xml</AssetManifestFilePath>
     </PropertyGroup>
     <ItemGroup>
       <PackagesToPublish Include="$(ArtifactsPkgDir)**/*.nupkg" />
     </ItemGroup>
+    <PushToAzureDevOpsArtifacts
+      ItemsToPush="@(PackagesToPublish)"
+      ManifestBuildData="Location=$(ExpectedFeedUrl)"
+      ManifestRepoUri="$(BUILD_REPOSITORY_URI)"
+      ManifestBranch="$(BUILD_SOURCEBRANCH)"
+      ManifestBuildId="$(BUILD_BUILDNUMBER)"
+      ManifestCommit="$(BUILD_SOURCEVERSION)"
+      IsStableBuild="$(IsStableBuild)"
+      AssetManifestPath="$(AssetManifestFilePath)"
+      AssetsTemporaryDirectory="$(ArtifactsTempWorkDir)" />
   </Target>
 
-  <Target Name="PreparePublishFiles" DependsOnTargets="PreparePublish;GetTarballFileName" BeforeTargets="PublishFilesToBlobFeed">
+  <Target Name="PreparePublishFiles" DependsOnTargets="PreparePublish;GetTarballFileName">
     <PropertyGroup>
       <AssetManifestFilePath>$(ManifestDir)reference-packages-tar-manifest.xml</AssetManifestFilePath>
     </PropertyGroup>
     <ItemGroup>
       <FilesToPublish Include="$(TarballFileName)" />
     </ItemGroup>
+    <PushToAzureDevOpsArtifacts
+      ItemsToPush="@(FilesToPublish)"
+      ManifestBuildData="Location=$(ExpectedFeedUrl)"
+      ManifestRepoUri="$(BUILD_REPOSITORY_URI)"
+      ManifestBranch="$(BUILD_SOURCEBRANCH)"
+      ManifestBuildId="$(BUILD_BUILDNUMBER)"
+      ManifestCommit="$(BUILD_SOURCEVERSION)"
+      IsStableBuild="$(IsStableBuild)"
+      AssetManifestPath="$(AssetManifestFilePath)"
+      AssetsTemporaryDirectory="$(ArtifactsTempWorkDir)" />
   </Target>
 
 
