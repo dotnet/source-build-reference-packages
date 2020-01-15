@@ -22,8 +22,6 @@
     <BuildDependsOn Condition="'$(AzureAccessToken)' != ''">
       $(BuildDependsOn)
       PreparePublish;
-      PublishPackagesToBlobFeed;
-      PublishFilesToBlobFeed;
     </BuildDependsOn>
   </PropertyGroup>
 
