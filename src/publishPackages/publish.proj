@@ -70,10 +70,10 @@
     <PushToAzureDevOpsArtifacts
       ItemsToPush="@(PackagesToPublish)"
       ManifestBuildData="Location=$(ExpectedFeedUrl)"
-      ManifestRepoUri="$(BUILD_REPOSITORY_URI)"
-      ManifestBranch="$(BUILD_SOURCEBRANCH)"
-      ManifestBuildId="$(BUILD_BUILDNUMBER)"
-      ManifestCommit="$(BUILD_SOURCEVERSION)"
+      ManifestRepoUri="$(ManifestName)"
+      ManifestBranch="$(ManifestBranch)"
+      ManifestBuildId="$(ManifestBuildId)"
+      ManifestCommit="$(ManifestCommit)"
       IsStableBuild="$(IsStableBuild)"
       AssetManifestPath="$(AssetManifestFilePath)"
       AssetsTemporaryDirectory="$(ArtifactsTempWorkDir)" />
@@ -89,10 +89,10 @@
     <PushToAzureDevOpsArtifacts
       ItemsToPush="@(FilesToPublish)"
       ManifestBuildData="Location=$(ExpectedFeedUrl)"
-      ManifestRepoUri="$(BUILD_REPOSITORY_URI)"
-      ManifestBranch="$(BUILD_SOURCEBRANCH)"
-      ManifestBuildId="$(BUILD_BUILDNUMBER)"
-      ManifestCommit="$(BUILD_SOURCEVERSION)"
+      ManifestRepoUri="$(ManifestName)"
+      ManifestBranch="$(ManifestBranch)"
+      ManifestBuildId="$(ManifestBuildId)"
+      ManifestCommit="$(ManifestCommit)"
       IsStableBuild="$(IsStableBuild)"
       AssetManifestPath="$(AssetManifestFilePath)"
       AssetsTemporaryDirectory="$(ArtifactsTempWorkDir)" />
