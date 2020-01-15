@@ -3,6 +3,6 @@
 
   <PropertyGroup>
     <ArtifactsRefPkgDir>$(RepoRoot)artifacts/reference-packages/</ArtifactsRefPkgDir>
-    <ArtifactsTempWorkDir>$(RepoRoot)artifacts/tmp/</ArtifactsRefPkgDir>
+    <ArtifactsTempWorkDir>$(RepoRoot)artifacts/tmp/</ArtifactsTempWorkDir>
   </PropertyGroup>
 </Project>
