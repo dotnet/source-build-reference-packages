@@ -100,7 +100,6 @@
 
 
 
-  <Import Project="$(NuGetPackageRoot)microsoft.dotnet.build.tasks.feed\$(MicrosoftDotNetBuildTasksFeedVersion)\build\Microsoft.DotNet.Build.Tasks.Feed.targets" />
   <Import Project="$(RepoRoot)eng/Directory.Build.targets" />
 
 </Project>
