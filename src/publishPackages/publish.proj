@@ -23,6 +23,8 @@
     <BuildDependsOn Condition="'$(AzureAccessToken)' != ''">
       $(BuildDependsOn)
       PreparePublish;
+      PreparePublishPackages;
+      PreparePublishFiles;
     </BuildDependsOn>
   </PropertyGroup>
 
