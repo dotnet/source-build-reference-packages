@@ -6,6 +6,7 @@
   <PropertyGroup>
     <ArtifactsPkgDir>$(RepoRoot)artifacts/packages/</ArtifactsPkgDir>
     <ManifestDir>$(RepoRoot)artifacts/asset-manifests/</ManifestDir>
+    <ArtifactsTempWorkDir>$(RepoRoot)artifacts/tmp/</ArtifactsTempWorkDir>
     <TarballDir>$(RepoRoot)artifacts/tarball/</TarballDir>
     <ManifestName>source-build-reference-packages</ManifestName>
     <RestoreSources>
@@ -52,6 +53,7 @@
 
   <Target Name="PreparePublish" DependsOnTargets="$(CreateDependsOn)">
     <MakeDir Directories="$(ManifestDir)" />
+    <MakeDir Directories="$(ArtifactsTempWorkDir)" />
     <PropertyGroup>
       <ExpectedFeedUrl>https://$(AzureAccountName).blob.core.windows.net/$(ContainerName)/index.json</ExpectedFeedUrl>
       <AccountKey>$(AzureAccessToken)</AccountKey>
@@ -75,6 +77,16 @@
       IsStableBuild="$(IsStableBuild)"
       AssetManifestPath="$(AssetManifestFilePath)"
       AssetsTemporaryDirectory="$(ArtifactsTempWorkDir)" />
+
+    <!-- Copy the generated manifest to the build's artifacts -->
+    <Copy
+      SourceFiles="$(AssetManifestPath)"
+      DestinationFolder="$(TempWorkingDirectory)\$(AssetManifestFileName)" />
+
+    <Message
+      Text="##vso[artifact.upload containerfolder=AssetManifests;artifactname=AssetManifests]$(TempWorkingDirectory)/$(AssetManifestFileName)"
+      Importance="high" />
+
   </Target>
 
   <Target Name="PreparePublishFiles" DependsOnTargets="PreparePublish;GetTarballFileName">
@@ -94,6 +106,16 @@
       IsStableBuild="$(IsStableBuild)"
       AssetManifestPath="$(AssetManifestFilePath)"
       AssetsTemporaryDirectory="$(ArtifactsTempWorkDir)" />
+
+    <!-- Copy the generated manifest to the build's artifacts -->
+    <Copy
+      SourceFiles="$(AssetManifestPath)"
+      DestinationFolder="$(TempWorkingDirectory)\$(AssetManifestFileName)" />
+
+    <Message
+      Text="##vso[artifact.upload containerfolder=AssetManifests;artifactname=AssetManifests]$(TempWorkingDirectory)/$(AssetManifestFileName)"
+      Importance="high" />
+
   </Target>
 
 
