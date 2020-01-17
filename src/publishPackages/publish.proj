@@ -7,7 +7,6 @@
   <PropertyGroup>
     <ArtifactsPkgDir>$(RepoRoot)artifacts/packages/</ArtifactsPkgDir>
     <ManifestDir>$(RepoRoot)artifacts/asset-manifests/</ManifestDir>
-    <ArtifactsTempWorkDir>$(RepoRoot)artifacts/tmp/</ArtifactsTempWorkDir>
     <TarballDir>$(RepoRoot)artifacts/tarball/</TarballDir>
     <ManifestName>source-build-reference-packages</ManifestName>
     <RestoreSources>
@@ -73,6 +72,7 @@
     <ItemGroup>
       <PackagesToPublish Include="$(ArtifactsPkgDir)**/*.nupkg" />
     </ItemGroup>
+    <MakeDir Directories="$(TempWorkingDirectory)"/>
     <PushToAzureDevOpsArtifacts
       ItemsToPush="@(PackagesToPublish)"
       ManifestBuildData="Location=$(ExpectedFeedUrl)"
@@ -82,7 +82,7 @@
       ManifestCommit="$(ManifestCommit)"
       IsStableBuild="$(IsStableBuild)"
       AssetManifestPath="$(AssetManifestFilePath)"
-      AssetsTemporaryDirectory="$(ArtifactsTempWorkDir)" />
+      AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
 
     <!-- Copy the generated manifest to the build's artifacts -->
     <Copy
@@ -105,6 +105,7 @@
     <ItemGroup>
       <FilesToPublish Include="$(TarballFileName)" />
     </ItemGroup>
+    <MakeDir Directories="$(TempWorkingDirectory)"/>
     <PushToAzureDevOpsArtifacts
       ItemsToPush="@(FilesToPublish)"
       ManifestBuildData="Location=$(ExpectedFeedUrl)"
@@ -114,7 +115,7 @@
       ManifestCommit="$(ManifestCommit)"
       IsStableBuild="$(IsStableBuild)"
       AssetManifestPath="$(AssetManifestFilePath)"
-      AssetsTemporaryDirectory="$(ArtifactsTempWorkDir)" />
+      AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
 
     <!-- Copy the generated manifest to the build's artifacts -->
     <Copy
