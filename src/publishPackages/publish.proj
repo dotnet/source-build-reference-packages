@@ -34,7 +34,7 @@
 
   <Target Name="GetTarballFileName">
     <PropertyGroup>
-      <TarballFileName>$(TarballDir)Private.SourceBuild.ReferencePackages.$(VersionPrefix)-$(VersionSuffix).tar.gz</TarballFileName>
+      <TarballFileName>$(TarballDir)Private.SourceBuild.ReferencePackages.$(VersionPrefix)-$(VersionSuffix).tar.gz.nupkg</TarballFileName>
     </PropertyGroup>
   </Target>
 
