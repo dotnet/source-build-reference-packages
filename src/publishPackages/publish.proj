@@ -81,7 +81,8 @@
       ManifestBuildId="$(ManifestBuildId)"
       ManifestCommit="$(ManifestCommit)"
       IsStableBuild="$(IsStableBuild)"
-      AssetManifestPath="$(AssetManifestFilePath)" />
+      AssetManifestPath="$(AssetManifestFilePath)"
+      AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
 
     <!-- Copy the generated manifest to the build's artifacts -->
     <Copy
@@ -113,7 +114,8 @@
       ManifestBuildId="$(ManifestBuildId)"
       ManifestCommit="$(ManifestCommit)"
       IsStableBuild="$(IsStableBuild)"
-      AssetManifestPath="$(AssetManifestFilePath)" />
+      AssetManifestPath="$(AssetManifestFilePath)"
+      AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
 
     <!-- Copy the generated manifest to the build's artifacts -->
     <Copy
