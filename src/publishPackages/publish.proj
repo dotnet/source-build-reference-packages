@@ -34,7 +34,7 @@
 
   <Target Name="GetTarballFileName">
     <PropertyGroup>
-      <TarballFileName>$(TarballDir)Private.SourceBuild.ReferencePackages.$(VersionPrefix)-$(VersionSuffix).tar.gz.nupkg</TarballFileName>
+      <TarballFileName>$(TarballDir)Private.SourceBuild.ReferencePackages.$(VersionPrefix)-$(VersionSuffix).tar.gz</TarballFileName>
     </PropertyGroup>
   </Target>
 
@@ -95,7 +95,7 @@
 
   </Target>
 
-  <Target Name="PreparePublishFiles" DependsOnTargets="PreparePublish;GetTarballFileName">
+  <!-- <Target Name="PreparePublishFiles" DependsOnTargets="PreparePublish;GetTarballFileName">
     <PropertyGroup>
       <AssetManifestFilename>reference-packages-tar-manifest.xml</AssetManifestFilename>
       <AssetManifestFilePath>$(ManifestDir)$(AssetManifestFileName)</AssetManifestFilePath>
@@ -126,7 +126,7 @@
       Text="##vso[artifact.upload containerfolder=AssetManifests;artifactname=AssetManifests]$(TempWorkingDirectory)/$(AssetManifestFileName)"
       Importance="high" />
 
-  </Target>
+  </Target> -->
 
 
   <Import Project="$(NuGetPackageRoot)microsoft.dotnet.build.tasks.feed\$(MicrosoftDotNetBuildTasksFeedVersion)\build\Microsoft.DotNet.Build.Tasks.Feed.targets" />
