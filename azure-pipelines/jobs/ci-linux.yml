@@ -71,7 +71,8 @@ jobs:
         /p:ManifestName=source-build-reference-packages \
         /p:ManifestBuildId=$(BUILD.BUILDID) \
         /p:ManifestBranch=$(BUILD.SOURCEBRANCHNAME) \
-        /p:ManifestCommit=$(BUILD.SOURCEVERSION)
+        /p:ManifestCommit=$(BUILD.SOURCEVERSION) \
+        /v:d
     displayName: Create reference packages tarball and upload to azure storage
     condition: "
         and(
