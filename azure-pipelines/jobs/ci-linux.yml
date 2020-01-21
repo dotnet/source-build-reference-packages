@@ -62,7 +62,8 @@ jobs:
   - script: |
       set -x
       df -h
-      $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER) --ci \
+      pushd $(rootDirectory)/source-build-reference-packages/src
+      ./publish.sh $(BUILD.BUILDNUMBER) --ci \
         /p:AzureAccountName=$(publish.blobStorage.account) \
         /p:AzureAccessToken=$(publish.blobStorage.accessToken) \
         /p:ContainerName=$(publish.blobStorage.container) \
@@ -71,8 +72,8 @@ jobs:
         /p:ManifestName=source-build-reference-packages \
         /p:ManifestBuildId=$(BUILD.BUILDID) \
         /p:ManifestBranch=$(BUILD.SOURCEBRANCHNAME) \
-        /p:ManifestCommit=$(BUILD.SOURCEVERSION) \
-        /v:d
+        /p:ManifestCommit=$(BUILD.SOURCEVERSION)
+      popd
     displayName: Create reference packages tarball and upload to azure storage
     condition: "
         and(
