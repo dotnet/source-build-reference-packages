@@ -81,7 +81,7 @@
       ManifestBranch="$(ManifestBranch)"
       ManifestBuildId="$(ManifestBuildId)"
       ManifestCommit="$(ManifestCommit)"
-      IsStableBuild="$(IsStableBuild)"
+      IsStableBuild="True"
       AssetManifestPath="$(AssetManifestFilePath)"
       AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
 
@@ -107,7 +107,7 @@
       <FilesToPublish Include="$(TarballFileName)" />
     </ItemGroup>
     <MakeDir Directories="$(TempWorkingDirectory)"/>
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] DB1 -- :: Files to Publish @(FilesToPublish) " />
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] DB2 -- :: Files to Publish @(FilesToPublish) " />
     <PushToAzureDevOpsArtifacts
       ItemsToPush="@(FilesToPublish)"
       ManifestBuildData="Location=$(ExpectedFeedUrl)"
@@ -115,7 +115,8 @@
       ManifestBranch="$(ManifestBranch)"
       ManifestBuildId="$(ManifestBuildId)"
       ManifestCommit="$(ManifestCommit)"
-      IsStableBuild="$(IsStableBuild)"
+      PublishFlatContainer="True"
+      IsStableBuild="True"
       AssetManifestPath="$(AssetManifestFilePath)"
       AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
 
