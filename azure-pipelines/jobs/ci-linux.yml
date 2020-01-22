@@ -58,7 +58,6 @@ jobs:
         )"
     continueOnError: true
 
-  - ${{ if ne(parameters.container, '') }}:
     # Files may be owned by root because builds don't set user ID. Later build steps run 'find' in
     # the source tree, which fails due to permissions in the 'NetCore*-Int-Pool' queues. This step
     # prevents the failure by using chown to clean up our source tree.
@@ -67,12 +66,11 @@ jobs:
         docker run --rm \
           -v "$(Agent.BuildDirectory):/root/build" \
           -w /root/build \
-          ${{ parameters.container }} \
           bash -c "chown -R $(id -u):$(id -g) *"
       displayName: Update file ownership from root to build agent account
       continueOnError: true
       condition: succeededOrFailed()
-      
+
   # Create reference packages tarball and upload to azure storage
   - script: |
       set -x
