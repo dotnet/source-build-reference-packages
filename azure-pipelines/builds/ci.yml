@@ -23,3 +23,5 @@ stages:
   - template: ../../eng/common/templates/post-build/post-build.yml
     parameters:
       enableSourceLinkValidation: false
+      enableSigningValidation: false
+      enableNugetValidation: false
