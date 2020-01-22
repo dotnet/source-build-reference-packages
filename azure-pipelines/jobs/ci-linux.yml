@@ -132,22 +132,7 @@ jobs:
     continueOnError: true
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory)
-      ArtifactName: PackageArtifacts
-      ArtifactType: Container
-
-  # Publish manifest.
-  - task: PublishBuildArtifacts@1
-    displayName: Publish Manifest
-    condition: "
-        and(
-            succeeded(),
-            ne(variables['System.TeamProject'], 'public'),
-            notin(variables['Build.Reason'], 'PullRequest')
-        )"
-    continueOnError: true
-    inputs:
-      PathtoPublish: $(Build.ArtifactStagingDirectory)/asset-manifests/
-      ArtifactName: AssetManifests
+      ArtifactName: All_Artifacts
       ArtifactType: Container
 
   # Clean up working directory.

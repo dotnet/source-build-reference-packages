@@ -81,7 +81,7 @@
       ManifestBranch="$(ManifestBranch)"
       ManifestBuildId="$(ManifestBuildId)"
       ManifestCommit="$(ManifestCommit)"
-      IsStableBuild="True"
+      IsStableBuild="false"
       AssetManifestPath="$(AssetManifestFilePath)"
       AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
 
@@ -115,8 +115,8 @@
       ManifestBranch="$(ManifestBranch)"
       ManifestBuildId="$(ManifestBuildId)"
       ManifestCommit="$(ManifestCommit)"
-      PublishFlatContainer="True"
-      IsStableBuild="True"
+      PublishFlatContainer="true"
+      IsStableBuild="false"
       AssetManifestPath="$(AssetManifestFilePath)"
       AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
 
