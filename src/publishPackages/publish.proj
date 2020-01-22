@@ -67,7 +67,7 @@
       <AssetManifestFilename>reference-packages-nupkg-manifest.xml</AssetManifestFilename>
       <AssetManifestFilePath>$(ManifestDir)$(AssetManifestFileName)</AssetManifestFilePath>
       <!-- Create a temporary directory to store the generated asset manifest by the task -->
-      <TempWorkingDirectory>$(ArtifactsDir)\..\AssetsTmpDir\$([System.Guid]::NewGuid())</TempWorkingDirectory>
+      <TempWorkingDirectory>$(ArtifactsDir)AssetsTmpDir\$([System.Guid]::NewGuid())</TempWorkingDirectory>
     </PropertyGroup>
     <ItemGroup>
       <PackagesToPublish Include="$(ArtifactsPkgDir)**/*.nupkg" />
@@ -101,7 +101,7 @@
       <AssetManifestFilename>reference-packages-tar-manifest.xml</AssetManifestFilename>
       <AssetManifestFilePath>$(ManifestDir)$(AssetManifestFileName)</AssetManifestFilePath>
       <!-- Create a temporary directory to store the generated asset manifest by the task -->
-      <TempWorkingDirectory>$(ArtifactsDir)\..\AssetsTmpDir\$([System.Guid]::NewGuid())</TempWorkingDirectory>
+      <TempWorkingDirectory>$(ArtifactsDir)AssetsTmpDir\$([System.Guid]::NewGuid())</TempWorkingDirectory>
     </PropertyGroup>
     <ItemGroup>
       <FilesToPublish Include="$(TarballFileName)" />
