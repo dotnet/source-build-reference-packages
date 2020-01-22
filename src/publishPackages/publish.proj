@@ -34,16 +34,17 @@
 
   <Target Name="GetTarballFileName">
     <PropertyGroup>
-      <TarballFileName>$(TarballDir)Private.SourceBuild.ReferencePackages.$(VersionPrefix)-$(VersionSuffix).tar.gz</TarballFileName>
+      <TarballFileName>Private.SourceBuild.ReferencePackages.$(VersionPrefix)-$(VersionSuffix).tar.gz</TarballFileName>
+      <TarballFilePath>$(TarballDir)$(TarballFileName)</TarballFilePath>
     </PropertyGroup>
   </Target>
 
   <Target Name="CreateTarball" DependsOnTargets="GetTarballFileName" >
     <MakeDir Directories="$(TarballDir)" />
 
-    <Exec Command="tar --numeric-owner -czf $(TarballFileName) *.nupkg" WorkingDirectory="$(ArtifactsRefPkgDir)" />
+    <Exec Command="tar --numeric-owner -czf $(TarballFilePath) *.nupkg" WorkingDirectory="$(ArtifactsRefPkgDir)" />
 
-    <Message Importance="High" Text="Created $(TarballFileName)" />
+    <Message Importance="High" Text="Created $(TarballFilePath)" />
   </Target>
 
   <Target Name="CreateEmptyPackage">
@@ -104,7 +105,7 @@
       <TempWorkingDirectory>$(ArtifactsDir)AssetsTmpDir/$([System.Guid]::NewGuid())/</TempWorkingDirectory>
     </PropertyGroup>
     <ItemGroup>
-      <FilesToPublish Include="$(TarballFileName)" />
+      <FilesToPublish Include="$(TarballFilePath)" RelativeBlobPath="assets/$(TarballFileName)" />
     </ItemGroup>
     <MakeDir Directories="$(TempWorkingDirectory)"/>
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] DB2 -- :: Files to Publish @(FilesToPublish) " />
