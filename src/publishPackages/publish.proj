@@ -87,7 +87,7 @@
 
     <!-- Copy the generated manifest to the build's artifacts -->
     <Copy
-      SourceFiles="$(AssetManifestPath)"
+      SourceFiles="$(AssetManifestFilePath)"
       DestinationFolder="$(TempWorkingDirectory)$(AssetManifestFileName)" />
 
     <Message
@@ -122,7 +122,7 @@
 
     <!-- Copy the generated manifest to the build's artifacts -->
     <Copy
-      SourceFiles="$(AssetManifestPath)"
+      SourceFiles="$(AssetManifestFilePath)"
       DestinationFolder="$(TempWorkingDirectory)$(AssetManifestFileName)" />
 
     <Message
