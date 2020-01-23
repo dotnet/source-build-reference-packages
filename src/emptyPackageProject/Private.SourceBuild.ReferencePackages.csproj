@@ -12,7 +12,6 @@
     <RepositoryCommit Condition="'$(ManifestCommit)' != ''">$(ManifestCommit)</RepositoryCommit>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageIconUrl>https://raw.githubusercontent.com/Microsoft/msbuild/master/branding/MSBuild-NuGet-Icon.png</PackageIconUrl>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <IsPackable>true</IsPackable>
     <IsShipping>false</IsShipping>

@@ -74,7 +74,6 @@
       <PackagesToPublish Include="$(ArtifactsPkgDir)**/*.nupkg" />
     </ItemGroup>
     <MakeDir Directories="$(TempWorkingDirectory)"/>
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] DB1 -- :: Files to Publish @(PackagesToPublish) " />
     <PushToAzureDevOpsArtifacts
       ItemsToPush="@(PackagesToPublish)"
       ManifestBuildData="Location=$(ExpectedFeedUrl)"
@@ -108,7 +107,6 @@
       <FilesToPublish Include="$(TarballFilePath)" RelativeBlobPath="assets/$(TarballFileName)" />
     </ItemGroup>
     <MakeDir Directories="$(TempWorkingDirectory)"/>
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] DB2 -- :: Files to Publish @(FilesToPublish) " />
     <PushToAzureDevOpsArtifacts
       ItemsToPush="@(FilesToPublish)"
       ManifestBuildData="Location=$(ExpectedFeedUrl)"
