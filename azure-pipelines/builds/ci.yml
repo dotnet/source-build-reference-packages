@@ -1,6 +1,6 @@
 variables:
 - name: _DotNetArtifactsCategory
-  value: .NETCore
+  value: EXPERIMENTAL
 
 stages:
 - stage: build
