@@ -57,9 +57,6 @@
   <Target Name="PreparePublish" DependsOnTargets="$(CreateDependsOn)">
     <MakeDir Directories="$(ManifestDir)" />
     <MakeDir Directories="$(ArtifactsTempWorkDir)" />
-    <PropertyGroup>
-      <ExpectedFeedUrl>https://$(AzureAccountName).blob.core.windows.net/$(ContainerName)/index.json</ExpectedFeedUrl>
-    </PropertyGroup>
     <!-- Include other build data attributes : (Src) https://github.com/dotnet/arcade/blob/master/src/Microsoft.DotNet.Arcade.Sdk/tools/Publish.proj#L167 -->
     <ItemGroup>
       <NewManifestBuildData Include="InitialAssetsLocation=$(SYSTEM_TEAMFOUNDATIONCOLLECTIONURI)$(SYSTEM_TEAMPROJECT)/_apis/build/builds/$(BUILD_BUILDID)/artifacts" />
