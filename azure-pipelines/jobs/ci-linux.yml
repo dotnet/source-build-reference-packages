@@ -57,7 +57,7 @@ jobs:
             in(variables['Build.Reason'], 'PullRequest')
         )"
     continueOnError: true
-
+  # Below step's sourced from : https://github.com/dotnet/runtime/blob/4e72737a8ec246297bce916ad747e4a2fb1265ac/eng/pipelines/installer/jobs/base-job.yml#L455-L468
   # Files may be owned by root because builds don't set user ID. Later build steps run 'find' in
   # the source tree, which fails due to permissions in the 'NetCore*-Int-Pool' queues. This step
   # prevents the failure by using chown to clean up our source tree.
@@ -86,7 +86,7 @@ jobs:
         /p:ManifestBuildId=$(BUILD.BUILDID) \
         /p:ManifestBranch=$(BUILD.SOURCEBRANCHNAME) \
         /p:ManifestCommit=$(BUILD.SOURCEVERSION)
-      popd
+      cd ..
     displayName: Create reference packages tarball and upload to azure storage
     condition: "
         and(

@@ -20,7 +20,7 @@
     <BuildDependsOn>
       $(CreateTargets)
     </BuildDependsOn>
-    <BuildDependsOn Condition="'$(AzureAccessToken)' != ''">
+    <BuildDependsOn>
       $(BuildDependsOn)
       PreparePublish;
       PreparePublishPackages;
@@ -59,7 +59,6 @@
     <MakeDir Directories="$(ArtifactsTempWorkDir)" />
     <PropertyGroup>
       <ExpectedFeedUrl>https://$(AzureAccountName).blob.core.windows.net/$(ContainerName)/index.json</ExpectedFeedUrl>
-      <AccountKey>$(AzureAccessToken)</AccountKey>
     </PropertyGroup>
     <!-- Include other build data attributes : (Src) https://github.com/dotnet/arcade/blob/master/src/Microsoft.DotNet.Arcade.Sdk/tools/Publish.proj#L167 -->
     <ItemGroup>
