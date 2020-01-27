@@ -82,11 +82,10 @@ jobs:
         /p:ContainerName=$(publish.blobStorage.container) \
         /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines) \
         /p:DotNetArtifactsCategory=$(_DotNetArtifactsCategory) \
-        /p:ManifestName=$(BUILD.REPOSITORY.NAME) \
+        /p:ManifestName=source-build-reference-packages \
         /p:ManifestBuildId=$(BUILD.BUILDID) \
         /p:ManifestBranch=$(BUILD.SOURCEBRANCHNAME) \
         /p:ManifestCommit=$(BUILD.SOURCEVERSION)
-      cd ..
     displayName: Create reference packages tarball and upload to azure storage
     condition: "
         and(
