@@ -99,10 +99,6 @@
       AssetManifestPath="$(AssetManifestFilePath)"
       AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
 
-    <Message
-      Text="##vso[artifact.upload containerfolder=AssetManifests;artifactname=AssetManifests]$(TempWorkingDirectory)$(AssetManifestFileName)"
-      Importance="high" />
-
   </Target>
 
   <Target Name="PreparePublishFiles" DependsOnTargets="PreparePublish;GetTarballFileName">
@@ -127,10 +123,6 @@
       IsStableBuild="false"
       AssetManifestPath="$(AssetManifestFilePath)"
       AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
-
-    <Message
-      Text="##vso[artifact.upload containerfolder=AssetManifests;artifactname=AssetManifests]$(TempWorkingDirectory)$(AssetManifestFileName)"
-      Importance="high" />
 
   </Target>
 
