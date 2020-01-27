@@ -61,6 +61,21 @@
       <ExpectedFeedUrl>https://$(AzureAccountName).blob.core.windows.net/$(ContainerName)/index.json</ExpectedFeedUrl>
       <AccountKey>$(AzureAccessToken)</AccountKey>
     </PropertyGroup>
+    <ItemGroup>
+      <NewManifestBuildData Include="AzureDevOpsBuildId=$(BUILD_BUILDID)" />
+      <NewManifestBuildData Include="AzureDevOpsBuildDefinitionId=$(SYSTEM_DEFINITIONID)" />
+      <NewManifestBuildData Include="AzureDevOpsAccount=$(AzureAccountName)" />
+      <NewManifestBuildData Include="AzureDevOpsProject=$(SYSTEM_TEAMPROJECT)" />
+      <NewManifestBuildData Include="AzureDevOpsBuildNumber=$(ManifestBuildId)" />
+      <NewManifestBuildData Include="AzureDevOpsRepository=$(ManifestName)" />
+      <NewManifestBuildData Include="AzureDevOpsBranch=$(ManifestBranch)" />
+      <NewManifestBuildData Include="Location=$(ExpectedFeedUrl)" />
+      <!-- 
+        Adding this just to not fail the validation when creating the manifest. 
+        TODO: Should be removed once PublishingUsingPipelines is the default.
+      -->
+      <NewManifestBuildData Include="Location=$(AzureFeedUrl)" />
+    </ItemGroup>
   </Target>
 
   <Target Name="PreparePublishPackages" DependsOnTargets="PreparePublish">
@@ -76,7 +91,7 @@
     <MakeDir Directories="$(TempWorkingDirectory)"/>
     <PushToAzureDevOpsArtifacts
       ItemsToPush="@(PackagesToPublish)"
-      ManifestBuildData="Location=$(ExpectedFeedUrl)"
+      ManifestBuildData="@(NewManifestBuildData)"
       ManifestRepoUri="$(ManifestName)"
       ManifestBranch="$(ManifestBranch)"
       ManifestBuildId="$(ManifestBuildId)"
@@ -109,7 +124,7 @@
     <MakeDir Directories="$(TempWorkingDirectory)"/>
     <PushToAzureDevOpsArtifacts
       ItemsToPush="@(FilesToPublish)"
-      ManifestBuildData="Location=$(ExpectedFeedUrl)"
+      ManifestBuildData="@(NewManifestBuildData)"
       ManifestRepoUri="$(ManifestName)"
       ManifestBranch="$(ManifestBranch)"
       ManifestBuildId="$(ManifestBuildId)"

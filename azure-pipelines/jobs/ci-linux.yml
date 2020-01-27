@@ -82,7 +82,7 @@ jobs:
         /p:ContainerName=$(publish.blobStorage.container) \
         /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines) \
         /p:DotNetArtifactsCategory=$(_DotNetArtifactsCategory) \
-        /p:ManifestName=source-build-reference-packages \
+        /p:ManifestName=$(BUILD.REPOSITORY.NAME) \
         /p:ManifestBuildId=$(BUILD.BUILDID) \
         /p:ManifestBranch=$(BUILD.SOURCEBRANCHNAME) \
         /p:ManifestCommit=$(BUILD.SOURCEVERSION)
