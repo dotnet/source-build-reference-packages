@@ -69,7 +69,6 @@
       <NewManifestBuildData Include="AzureDevOpsBuildNumber=$(ManifestBuildId)" />
       <NewManifestBuildData Include="AzureDevOpsRepository=$(ManifestName)" />
       <NewManifestBuildData Include="AzureDevOpsBranch=$(ManifestBranch)" />
-      <NewManifestBuildData Include="Location=$(ExpectedFeedUrl)" />
       <!-- 
         Adding this just to not fail the validation when creating the manifest. 
         TODO: Should be removed once PublishingUsingPipelines is the default.
