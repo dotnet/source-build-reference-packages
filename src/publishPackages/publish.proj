@@ -97,7 +97,7 @@
       AssetManifestPath="$(AssetManifestFilePath)"
       AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
   
-      <!-- Copy the generated manifest to the build's artifacts -->
+    <!-- Copy the generated manifest to the build's artifacts -->
     <Copy
       SourceFiles="$(AssetManifestFilePath)"
       DestinationFolder="$(TempWorkingDirectory)$(AssetManifestFileName)" />
@@ -132,6 +132,14 @@
       AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
   </Target>
 
+  <!-- Copy the generated manifest to the build's artifacts -->
+  <Copy
+    SourceFiles="$(AssetManifestFilePath)"
+    DestinationFolder="$(TempWorkingDirectory)$(AssetManifestFileName)" />
+
+  <Message
+    Text="##vso[artifact.upload containerfolder=AssetManifests;artifactname=AssetManifests]$(TempWorkingDirectory)$(AssetManifestFileName)"
+      Importance="high" />
 
   <Import Project="$(NuGetPackageRoot)microsoft.dotnet.build.tasks.feed/$(MicrosoftDotNetBuildTasksFeedVersion)/build/Microsoft.DotNet.Build.Tasks.Feed.targets" />
   <Import Project="$(RepoRoot)eng/Directory.Build.targets" />
