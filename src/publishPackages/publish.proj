@@ -65,7 +65,7 @@
       <NewManifestBuildData Include="AzureDevOpsAccount=$(AzureAccountName)" />
       <NewManifestBuildData Include="AzureDevOpsProject=$(SYSTEM_TEAMPROJECT)" />
       <NewManifestBuildData Include="AzureDevOpsBuildNumber=$(ManifestBuildId)" />
-      <NewManifestBuildData Include="AzureDevOpsRepository=$(ManifestName)" />
+      <NewManifestBuildData Include="AzureDevOpsRepository=$(BUILD_REPOSITORY_URI)" />
       <NewManifestBuildData Include="AzureDevOpsBranch=$(ManifestBranch)" />
       <!-- 
         Adding this just to not fail the validation when creating the manifest. 
