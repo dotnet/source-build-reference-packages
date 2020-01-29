@@ -71,7 +71,7 @@
       <NewManifestBuildData Include="AzureDevOpsBuildDefinitionId=$(SYSTEM_DEFINITIONID)" />
       <NewManifestBuildData Include="AzureDevOpsAccount=$(AzureDevOpsAccount)" />
       <NewManifestBuildData Include="AzureDevOpsProject=$(SYSTEM_TEAMPROJECT)" />
-      <NewManifestBuildData Include="AzureDevOpsBuildNumber=$(ManifestBuildId)" />
+      <NewManifestBuildData Include="AzureDevOpsBuildNumber=$(BUILD_BUILDNUMBER)" />
       <NewManifestBuildData Include="AzureDevOpsRepository=$(BUILD_REPOSITORY_URI)" />
       <NewManifestBuildData Include="AzureDevOpsBranch=$(ManifestBranch)" />
       <!-- 
