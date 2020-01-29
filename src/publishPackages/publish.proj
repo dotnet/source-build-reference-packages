@@ -58,11 +58,21 @@
     <MakeDir Directories="$(ManifestDir)" />
     <MakeDir Directories="$(ArtifactsTempWorkDir)" />
     <!-- Include other build data attributes : (Src) https://github.com/dotnet/arcade/blob/master/src/Microsoft.DotNet.Arcade.Sdk/tools/Publish.proj#L167 -->
+    <PropertyGroup>
+      <CollectionUri>$(SYSTEM_TEAMFOUNDATIONCOLLECTIONURI)</CollectionUri>
+      
+			<!-- When we have dev.azure.com/<account>/ -->
+      <AzureDevOpsAccount Condition="$(CollectionUri.IndexOf('dev.azure.com')) >= 0">$(CollectionUri.Split('/')[3])</AzureDevOpsAccount>
+		
+			<!-- When we have <account>.visualstudio.com -->
+      <AzureDevOpsAccount Condition="$(CollectionUri.IndexOf('visualstudio.com')) >= 0">$(CollectionUri.Split('.')[0].Split('/')[2])</AzureDevOpsAccount>
+
+    </PropertyGroup>
     <ItemGroup>
       <NewManifestBuildData Include="InitialAssetsLocation=$(SYSTEM_TEAMFOUNDATIONCOLLECTIONURI)$(SYSTEM_TEAMPROJECT)/_apis/build/builds/$(BUILD_BUILDID)/artifacts" />
       <NewManifestBuildData Include="AzureDevOpsBuildId=$(BUILD_BUILDID)" />
       <NewManifestBuildData Include="AzureDevOpsBuildDefinitionId=$(SYSTEM_DEFINITIONID)" />
-      <NewManifestBuildData Include="AzureDevOpsAccount=$(AzureAccountName)" />
+      <NewManifestBuildData Include="AzureDevOpsAccount=$(AzureDevOpsAccount)" />
       <NewManifestBuildData Include="AzureDevOpsProject=$(SYSTEM_TEAMPROJECT)" />
       <NewManifestBuildData Include="AzureDevOpsBuildNumber=$(ManifestBuildId)" />
       <NewManifestBuildData Include="AzureDevOpsRepository=$(BUILD_REPOSITORY_URI)" />
