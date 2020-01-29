@@ -63,9 +63,6 @@
       
 			<!-- When we have dev.azure.com/<account>/ -->
       <AzureDevOpsAccount Condition="$(CollectionUri.IndexOf('dev.azure.com')) >= 0">$(CollectionUri.Split('/')[3])</AzureDevOpsAccount>
-		
-			<!-- When we have <account>.visualstudio.com -->
-      <AzureDevOpsAccount Condition="$(CollectionUri.IndexOf('visualstudio.com')) >= 0">$(CollectionUri.Split('.')[0].Split('/')[2])</AzureDevOpsAccount>
 
     </PropertyGroup>
     <ItemGroup>
