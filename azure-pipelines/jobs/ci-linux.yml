@@ -75,7 +75,7 @@ jobs:
   - script: |
       set -x
       df -h
-      pushd $(rootDirectory)/source-build-reference-packages/src
+      cd "$(rootDirectory)/source-build-reference-packages/src"
       ./publish.sh $(BUILD.BUILDNUMBER) --ci \
         /p:AzureAccountName=$(publish.blobStorage.account) \
         /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines) \
