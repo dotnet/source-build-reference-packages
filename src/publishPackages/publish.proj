@@ -2,11 +2,13 @@
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(RepoRoot)eng/Directory.Build.props" />
   <Import Project="$(RepoRoot)src/dir.props" />
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
 
   <PropertyGroup>
     <ArtifactsPkgDir>$(RepoRoot)artifacts/packages/</ArtifactsPkgDir>
     <ManifestDir>$(RepoRoot)artifacts/asset-manifests/</ManifestDir>
     <TarballDir>$(RepoRoot)artifacts/tarball/</TarballDir>
+    <ManifestName>source-build-reference-packages</ManifestName>
     <RestoreSources>
       $(RestoreSources);
       https://dotnetfeed.blob.core.windows.net/dotnet-tools-internal/index.json;
@@ -18,11 +20,11 @@
     <BuildDependsOn>
       $(CreateTargets)
     </BuildDependsOn>
-    <BuildDependsOn Condition="'$(AzureAccessToken)' != ''">
+    <BuildDependsOn>
       $(BuildDependsOn)
       PreparePublish;
-      PublishPackagesToBlobFeed;
-      PublishFilesToBlobFeed;
+      PreparePublishPackages;
+      PreparePublishFiles;
     </BuildDependsOn>
   </PropertyGroup>
 
@@ -32,16 +34,17 @@
 
   <Target Name="GetTarballFileName">
     <PropertyGroup>
-      <TarballFileName>$(TarballDir)Private.SourceBuild.ReferencePackages.$(VersionPrefix)-$(VersionSuffix).tar.gz</TarballFileName>
+      <TarballFileName>Private.SourceBuild.ReferencePackages.$(VersionPrefix)-$(VersionSuffix).tar.gz</TarballFileName>
+      <TarballFilePath>$(TarballDir)$(TarballFileName)</TarballFilePath>
     </PropertyGroup>
   </Target>
 
   <Target Name="CreateTarball" DependsOnTargets="GetTarballFileName" >
     <MakeDir Directories="$(TarballDir)" />
 
-    <Exec Command="tar --numeric-owner -czf $(TarballFileName) *.nupkg" WorkingDirectory="$(ArtifactsRefPkgDir)" />
+    <Exec Command="tar --numeric-owner -czf $(TarballFilePath) *.nupkg" WorkingDirectory="$(ArtifactsRefPkgDir)" />
 
-    <Message Importance="High" Text="Created $(TarballFileName)" />
+    <Message Importance="High" Text="Created $(TarballFilePath)" />
   </Target>
 
   <Target Name="CreateEmptyPackage">
@@ -53,33 +56,102 @@
 
   <Target Name="PreparePublish" DependsOnTargets="$(CreateDependsOn)">
     <MakeDir Directories="$(ManifestDir)" />
+    <MakeDir Directories="$(ArtifactsTempWorkDir)" />
+    <!-- Include other build data attributes : (Src) https://github.com/dotnet/arcade/blob/master/src/Microsoft.DotNet.Arcade.Sdk/tools/Publish.proj#L167 -->
     <PropertyGroup>
-      <ExpectedFeedUrl>https://$(AzureAccountName).blob.core.windows.net/$(ContainerName)/index.json</ExpectedFeedUrl>
-      <AccountKey>$(AzureAccessToken)</AccountKey>
+      <CollectionUri>$(SYSTEM_TEAMFOUNDATIONCOLLECTIONURI)</CollectionUri>
+      
+			<!-- When we have dev.azure.com/<account>/ -->
+      <AzureDevOpsAccount Condition="$(CollectionUri.IndexOf('dev.azure.com')) >= 0">$(CollectionUri.Split('/')[3])</AzureDevOpsAccount>
+
     </PropertyGroup>
+    <ItemGroup>
+      <NewManifestBuildData Include="InitialAssetsLocation=$(SYSTEM_TEAMFOUNDATIONCOLLECTIONURI)$(SYSTEM_TEAMPROJECT)/_apis/build/builds/$(BUILD_BUILDID)/artifacts" />
+      <NewManifestBuildData Include="AzureDevOpsBuildId=$(BUILD_BUILDID)" />
+      <NewManifestBuildData Include="AzureDevOpsBuildDefinitionId=$(SYSTEM_DEFINITIONID)" />
+      <NewManifestBuildData Include="AzureDevOpsAccount=$(AzureDevOpsAccount)" />
+      <NewManifestBuildData Include="AzureDevOpsProject=$(SYSTEM_TEAMPROJECT)" />
+      <NewManifestBuildData Include="AzureDevOpsBuildNumber=$(BUILD_BUILDNUMBER)" />
+      <NewManifestBuildData Include="AzureDevOpsRepository=$(BUILD_REPOSITORY_URI)" />
+      <NewManifestBuildData Include="AzureDevOpsBranch=$(ManifestBranch)" />
+      <!-- 
+        Adding this just to not fail the validation when creating the manifest. 
+        TODO: Should be removed once PublishingUsingPipelines is the default.
+      -->
+      <NewManifestBuildData Include="Location=$(AzureFeedUrl)" />
+    </ItemGroup>
   </Target>
 
-  <Target Name="PreparePublishPackages" DependsOnTargets="PreparePublish" BeforeTargets="PublishPackagesToBlobFeed">
+  <Target Name="PreparePublishPackages" DependsOnTargets="PreparePublish">
     <PropertyGroup>
-      <AssetManifestFilePath>$(ManifestDir)reference-packages-nupkg-manifest.xml</AssetManifestFilePath>
+      <AssetManifestFilename>reference-packages-nupkg-manifest.xml</AssetManifestFilename>
+      <AssetManifestFilePath>$(ManifestDir)$(AssetManifestFileName)</AssetManifestFilePath>
+      <!-- Create a temporary directory to store the generated asset manifest by the task -->
+      <TempWorkingDirectory>$(ArtifactsDir)AssetsTmpDir\$([System.Guid]::NewGuid())/</TempWorkingDirectory>
     </PropertyGroup>
     <ItemGroup>
       <PackagesToPublish Include="$(ArtifactsPkgDir)**/*.nupkg" />
     </ItemGroup>
+    <MakeDir Directories="$(TempWorkingDirectory)"/>
+    <PushToAzureDevOpsArtifacts
+      ItemsToPush="@(PackagesToPublish)"
+      ManifestBuildData="@(NewManifestBuildData)"
+      ManifestRepoUri="$(ManifestName)"
+      ManifestBranch="$(ManifestBranch)"
+      ManifestBuildId="$(ManifestBuildId)"
+      ManifestCommit="$(ManifestCommit)"
+      IsStableBuild="false"
+      AssetManifestPath="$(AssetManifestFilePath)"
+      AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
+  
+    <!-- Copy the generated manifest to the build's artifacts -->
+    <Copy
+      SourceFiles="$(AssetManifestFilePath)"
+      DestinationFolder="$(TempWorkingDirectory)$(AssetManifestFileName)" />
+
+    <Message
+      Text="##vso[artifact.upload containerfolder=AssetManifests;artifactname=AssetManifests]$(TempWorkingDirectory)$(AssetManifestFileName)"
+      Importance="high" />
+
   </Target>
 
-  <Target Name="PreparePublishFiles" DependsOnTargets="PreparePublish;GetTarballFileName" BeforeTargets="PublishFilesToBlobFeed">
+  <Target Name="PreparePublishFiles" DependsOnTargets="PreparePublish;GetTarballFileName">
     <PropertyGroup>
-      <AssetManifestFilePath>$(ManifestDir)reference-packages-tar-manifest.xml</AssetManifestFilePath>
+      <AssetManifestFilename>reference-packages-tar-manifest.xml</AssetManifestFilename>
+      <AssetManifestFilePath>$(ManifestDir)$(AssetManifestFileName)</AssetManifestFilePath>
+      <!-- Create a temporary directory to store the generated asset manifest by the task -->
+      <TempWorkingDirectory>$(ArtifactsDir)AssetsTmpDir/$([System.Guid]::NewGuid())/</TempWorkingDirectory>
     </PropertyGroup>
     <ItemGroup>
-      <FilesToPublish Include="$(TarballFileName)" />
+      <FilesToPublish Include="$(TarballFilePath)" RelativeBlobPath="assets/$(TarballFileName)" />
     </ItemGroup>
+    <MakeDir Directories="$(TempWorkingDirectory)"/>
+    <PushToAzureDevOpsArtifacts
+      ItemsToPush="@(FilesToPublish)"
+      ManifestBuildData="@(NewManifestBuildData)"
+      ManifestRepoUri="$(ManifestName)"
+      ManifestBranch="$(ManifestBranch)"
+      ManifestBuildId="$(ManifestBuildId)"
+      ManifestCommit="$(ManifestCommit)"
+      PublishFlatContainer="true"
+      IsStableBuild="false"
+      AssetManifestPath="$(AssetManifestFilePath)"
+      AssetsTemporaryDirectory="$(TempWorkingDirectory)" />
+
+    <!-- Copy the generated manifest to the build's artifacts -->
+    <Copy
+      SourceFiles="$(AssetManifestFilePath)"
+      DestinationFolder="$(TempWorkingDirectory)$(AssetManifestFileName)" />
+
+    <Message
+      Text="##vso[artifact.upload containerfolder=AssetManifests;artifactname=AssetManifests]$(TempWorkingDirectory)$(AssetManifestFileName)"
+        Importance="high" />
+
   </Target>
 
 
 
-  <Import Project="$(NuGetPackageRoot)microsoft.dotnet.build.tasks.feed\$(MicrosoftDotNetBuildTasksFeedVersion)\build\Microsoft.DotNet.Build.Tasks.Feed.targets" />
+  <Import Project="$(NuGetPackageRoot)microsoft.dotnet.build.tasks.feed/$(MicrosoftDotNetBuildTasksFeedVersion)/build/Microsoft.DotNet.Build.Tasks.Feed.targets" />
   <Import Project="$(RepoRoot)eng/Directory.Build.targets" />
 
 </Project>

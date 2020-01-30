@@ -20,6 +20,7 @@ jobs:
     imageName: ${{ parameters.imageName }}
     rootDirectory: $(Build.SourcesDirectory)/..
     stagingDirectory: $(rootDirectory)/source-build-reference-packages/staging
+    _PublishUsingPipelines: true
 
   steps:
   - template: ../steps/docker-cleanup-linux.yml
@@ -56,16 +57,28 @@ jobs:
             in(variables['Build.Reason'], 'PullRequest')
         )"
     continueOnError: true
+  # Below step's sourced from : https://github.com/dotnet/runtime/blob/4e72737a8ec246297bce916ad747e4a2fb1265ac/eng/pipelines/installer/jobs/base-job.yml#L455-L468
+  # Files may be owned by root because builds don't set user ID. Later build steps run 'find' in
+  # the source tree, which fails due to permissions in the 'NetCore*-Int-Pool' queues. This step
+  # prevents the failure by using chown to clean up our source tree.
+  - script: |
+      set -x
+      docker run --rm \
+        -v "$(Agent.BuildDirectory):/root/build" \
+        -w /root/build \
+        bash -c "chown -R $(id -u):$(id -g) *"
+    displayName: Update file ownership from root to build agent account
+    continueOnError: true
+    condition: succeededOrFailed()
 
   # Create reference packages tarball and upload to azure storage
   - script: |
       set -x
       df -h
-      $(docker.run) $(docker.src.map) $(docker.src.work) $(imageName) ./publish.sh $(BUILD.BUILDNUMBER) --ci \
-        /p:AzureAccountName=$(publish.blobStorage.account) \
-        /p:ContainerName=$(publish.blobStorage.container) \
-        /p:AzureAccessToken=$(publish.blobStorage.accessToken) \
-        /p:ManifestName=$(BUILD.REPOSITORY.NAME) \
+      cd "$(rootDirectory)/source-build-reference-packages/src"
+      ./publish.sh $(BUILD.BUILDNUMBER) --ci \
+        /p:DotNetPublishUsingPipelines=$(_PublishUsingPipelines) \
+        /p:DotNetArtifactsCategory=$(_DotNetArtifactsCategory) \
         /p:ManifestBuildId=$(BUILD.BUILDID) \
         /p:ManifestBranch=$(BUILD.SOURCEBRANCHNAME) \
         /p:ManifestCommit=$(BUILD.SOURCEVERSION)
@@ -114,22 +127,7 @@ jobs:
     continueOnError: true
     inputs:
       PathtoPublish: $(Build.ArtifactStagingDirectory)
-      ArtifactName: Artifacts
-      ArtifactType: Container
-
-  # Publish manifest.
-  - task: PublishBuildArtifacts@1
-    displayName: Publish Manifest
-    condition: "
-        and(
-            succeeded(),
-            ne(variables['System.TeamProject'], 'public'),
-            notin(variables['Build.Reason'], 'PullRequest')
-        )"
-    continueOnError: true
-    inputs:
-      PathtoPublish: $(Build.ArtifactStagingDirectory)/asset-manifests/
-      ArtifactName: AssetManifests
+      ArtifactName: All_Artifacts
       ArtifactType: Container
 
   # Clean up working directory.

@@ -11,10 +11,14 @@
     <RepositoryCommit>0000</RepositoryCommit>
     <RepositoryCommit Condition="'$(ManifestCommit)' != ''">$(ManifestCommit)</RepositoryCommit>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageIcon>icon.png</PackageIcon>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <IsPackable>true</IsPackable>
     <IsShipping>false</IsShipping>
   </PropertyGroup>
 
-</Project>
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
 
+</Project>
