@@ -56,7 +56,7 @@ jobs:
             eq(variables['System.TeamProject'], 'public'),
             in(variables['Build.Reason'], 'PullRequest')
         )"
-    continueOnError: true
+    continueOnError: false
   # Below step's sourced from : https://github.com/dotnet/runtime/blob/4e72737a8ec246297bce916ad747e4a2fb1265ac/eng/pipelines/installer/jobs/base-job.yml#L455-L468
   # Files may be owned by root because builds don't set user ID. Later build steps run 'find' in
   # the source tree, which fails due to permissions in the 'NetCore*-Int-Pool' queues. This step
@@ -89,7 +89,7 @@ jobs:
             ne(variables['System.TeamProject'], 'public'),
             notin(variables['Build.Reason'], 'PullRequest')
         )"
-    continueOnError: true
+    continueOnError: false
 
   # Copy artifacts and logs to staging directory.
   - script: |
