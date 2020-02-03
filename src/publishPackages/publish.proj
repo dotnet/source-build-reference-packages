@@ -117,7 +117,7 @@
 
   <Target Name="PreparePublishFiles" DependsOnTargets="PreparePublish;GetTarballFileName">
     <PropertyGroup>
-      <ManifestBuildId>reference-packages-tar-manifest.xml</AssetManifestFilename>
+      <AssetManifestFilename>reference-packages-tar-manifest.xml</AssetManifestFilename>
       <AssetManifestFilePath>$(ManifestDir)$(AssetManifestFileName)</AssetManifestFilePath>
       <!-- Create a temporary directory to store the generated asset manifest by the task -->
       <TempWorkingDirectory>$(ArtifactsDir)AssetsTmpDir/$([System.Guid]::NewGuid())/</TempWorkingDirectory>
