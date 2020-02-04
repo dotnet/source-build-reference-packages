@@ -11,14 +11,14 @@ usage() {
 }
 
 function abspath() {
-  # $1 : relative filename
-  parentdir=$(dirname "$1")
+    # $1 : relative filename
+    parentdir=$(dirname "$1")
 
-  if [ -d "$1" ]; then
-      echo "$(cd "$1" && pwd)"
-  elif [ -d "${parentdir}" ]; then
-    echo "$(cd "${parentdir}" && pwd)/$(basename "$1")"
-  fi
+    if [ -d "$1" ]; then
+        (cd "$1" && pwd)
+    elif [ -d "${parentdir}" ]; then
+        echo "$(cd "${parentdir}" && pwd)/$(basename "$1")"
+    fi
 }
 
 __scriptpath=$(cd "$(dirname "$0")"; pwd -P)
@@ -32,7 +32,7 @@ while :; do
         break
     fi
 
-    lowerI="$(echo $1 | awk '{print tolower($0)}')"
+    lowerI="$(echo "$1" | awk '{print tolower($0)}')"
     case $lowerI in
         --with-sdk)
             CUSTOM_SDK_DIR="$2"
@@ -42,6 +42,7 @@ while :; do
             if [ ! -x "$CUSTOM_SDK_DIR/dotnet" ]; then
                 echo "Custom SDK '$CUSTOM_SDK_DIR/dotnet' not found or not executable"
             fi
+            CUSTOM_SDK_DIR="$(abspath "$CUSTOM_SDK_DIR")"
             shift
             ;;
         --with-packages)
@@ -53,7 +54,7 @@ while :; do
             CUSTOM_SOURCE_BUILT_PACKAGES="$(abspath "$CUSTOM_SOURCE_BUILT_PACKAGES")"
             shift
             ;;
-        -?|-h|--help)
+        "-?"|-h|--help)
             usage
             exit 0
             ;;
@@ -68,9 +69,9 @@ while :; do
 done
 
 if [ -n "${CUSTOM_SDK_DIR}" ]; then
-    rm -rf $__scriptpath/.dotnet
+    rm -rf "$__scriptpath/.dotnet"
     # TODO we could use ln -s to save space/time, if we never need to write to this directory
-    cp -a "${CUSTOM_SDK_DIR}" $__scriptpath/.dotnet
+    cp -a "${CUSTOM_SDK_DIR}" "$__scriptpath/.dotnet"
     sdk_version="$(basename "$(find "${CUSTOM_SDK_DIR}/sdk" -maxdepth 1 -type d -printf "%p\n" | sort -rn | head -1)")"
     echo "Found SDK version $sdk_version in ${CUSTOM_SDK_DIR}"
     sed -i -e "s|\"dotnet\" *: *\".*\"|\"dotnet\": \"$sdk_version\"|" global.json
@@ -79,9 +80,7 @@ fi
 
 if [ -n "${CUSTOM_SOURCE_BUILT_PACKAGES}" ]; then
     mkdir -p source-built
-    pushd source-built
-    tar xf "${CUSTOM_SOURCE_BUILT_PACKAGES}"
-    popd
+    (cd source-built && tar xf "${CUSTOM_SOURCE_BUILT_PACKAGES}")
 fi
 
 # Use Arcade script to initialize dotnet cli only
@@ -93,5 +92,5 @@ __SDK_PATH="$DOTNET_INSTALL_DIR/sdk/$_ReadGlobalVersion"
 
 export RepoRoot="$__scriptpath/"
 
-$__DOTNET_CMD $__SDK_PATH/MSBuild.dll $__scriptpath/src/targetPacks/buildTargettingPackages.proj /m /bl:"$__log_path/BuildTargettingPackages.binlog" $@
-$__DOTNET_CMD $__SDK_PATH/MSBuild.dll $__scriptpath/src/referencePackages/buildReferencePackages.proj /bl:"$__log_path/BuildReferencePackages.binlog" $@
+$__DOTNET_CMD "$__SDK_PATH/MSBuild.dll" "$__scriptpath/src/targetPacks/buildTargettingPackages.proj" /m /bl:"$__log_path/BuildTargettingPackages.binlog" "$@"
+$__DOTNET_CMD "$__SDK_PATH/MSBuild.dll" "$__scriptpath/src/referencePackages/buildReferencePackages.proj" /bl:"$__log_path/BuildReferencePackages.binlog" "$@"
