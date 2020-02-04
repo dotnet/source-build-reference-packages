@@ -20,7 +20,7 @@
     <BuildDependsOn>
       $(CreateTargets)
     </BuildDependsOn>
-    <BuildDependsOn>
+    <BuildDependsOn Condition="'$(ManifestCommit)' != ''">
       $(BuildDependsOn)
       PreparePublish;
       PreparePublishPackages;
