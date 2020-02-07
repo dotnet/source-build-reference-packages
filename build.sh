@@ -79,8 +79,8 @@ fi
 
 
 if [ -n "${CUSTOM_SOURCE_BUILT_PACKAGES}" ]; then
-    mkdir -p source-built
-    (cd source-built && tar xf "${CUSTOM_SOURCE_BUILT_PACKAGES}")
+    mkdir -p artifacts/source-built
+    (cd artifacts/source-built && tar xf "${CUSTOM_SOURCE_BUILT_PACKAGES}")
 fi
 
 # Use Arcade script to initialize dotnet cli only
@@ -92,5 +92,8 @@ __SDK_PATH="$DOTNET_INSTALL_DIR/sdk/$_ReadGlobalVersion"
 
 export RepoRoot="$__scriptpath/"
 
+if [ ! -n "${CUSTOM_SOURCE_BUILT_PACKAGES}" ]; then
+    $__DOTNET_CMD "$__SDK_PATH/MSBuild.dll" "$__scriptpath/src/setupSourceBuiltArtifacts.proj" /m /bl:"$__log_path/SetupSourceBuiltArtifacts.binlog" "$@"
+fi
 $__DOTNET_CMD "$__SDK_PATH/MSBuild.dll" "$__scriptpath/src/targetPacks/buildTargettingPackages.proj" /m /bl:"$__log_path/BuildTargettingPackages.binlog" "$@"
 $__DOTNET_CMD "$__SDK_PATH/MSBuild.dll" "$__scriptpath/src/referencePackages/buildReferencePackages.proj" /bl:"$__log_path/BuildReferencePackages.binlog" "$@"

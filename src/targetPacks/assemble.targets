@@ -7,12 +7,13 @@
     <PropertyGroup>
       <BuildInParallel Condition="'$(BuildInParallel)' == ''">true</BuildInParallel>
       <ArtifactsTFMPackTemp>$(RepoRoot)artifacts/TFMPack/</ArtifactsTFMPackTemp>
-      <IlasmToolPathSB>$(RepoRoot)/source-built/coreclr-tools/</IlasmToolPathSB>
+      <IlasmToolPathSB>$(RepoRoot)/artifacts/source-built/coreclr-tools/</IlasmToolPathSB>
     </PropertyGroup>
 
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
     <MakeDir Directories="@(TargetingPackSrc->'$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(RecursiveDir)')" />
-    <Exec Command="$(IlasmToolPathSB)ilasm %(TargetingPackSrc.Identity) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(RecursiveDir)%(TargetingPackSrc.Filename).dll" IgnoreStandardErrorWarningFormat="true"/>
+    <!-- Note: Hack below to not fill up build logs.  Ilasm produces warning on validly disassembled il src.  The awk below eats just that warning -->
+    <Exec Command="$(IlasmToolPathSB)ilasm %(TargetingPackSrc.Identity) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(RecursiveDir)%(TargetingPackSrc.Filename).dll |&amp; awk '!/warning : Method has no body/'" IgnoreStandardErrorWarningFormat="true"/>
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done assembling TargetPacks src." />
   </Target>
 </Project>
