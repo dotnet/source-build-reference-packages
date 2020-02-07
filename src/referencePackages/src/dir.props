@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
-  <Import Project="$(RepoRoot)source-built/PackageVersions.props" />
+  <Import Project="$(RepoRoot)artifacts/source-built/PackageVersions.props" />
   <PropertyGroup>
     <!-- Common properties for all Reference Packages -->
     <DebugType>None</DebugType>

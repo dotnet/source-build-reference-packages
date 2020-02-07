@@ -3,5 +3,9 @@
 
   <PropertyGroup>
     <ArtifactsRefPkgDir>$(RepoRoot)artifacts/reference-packages/</ArtifactsRefPkgDir>
+    <SourceBuiltDir>$(RepoRoot)artifacts/source-built/</SourceBuiltDir>
+    <SourceBuiltArtifactsTarballDownloadDir>$(RepoRoot)artifacts/downloads/</SourceBuiltArtifactsTarballDownloadDir>
+    <SourceBuiltArtifactsTarballName>Private.SourceBuilt.Artifacts</SourceBuiltArtifactsTarballName>
+    <SourceBuiltArtifactsTarballUrl>https://dotnetcli.blob.core.windows.net/source-built-artifacts/assets/</SourceBuiltArtifactsTarballUrl>
   </PropertyGroup>
 </Project>
