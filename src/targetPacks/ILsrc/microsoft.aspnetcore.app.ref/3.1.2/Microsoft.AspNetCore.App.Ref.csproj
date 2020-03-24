@@ -5,6 +5,6 @@
     <BaseIntermediateOutputPath>$(ArtifactsObjDir)microsoft.netcore.app/3.1.2/</BaseIntermediateOutputPath>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
-    <NuspecFile>Microsoft.NETCore.App.nuspec</NuspecFile>
+    <NuspecFile>Microsoft.NETCore.App.Ref.nuspec</NuspecFile>
    </PropertyGroup>
 </Project>
