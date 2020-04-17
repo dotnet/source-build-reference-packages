@@ -153,6 +153,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.http/4.3.3/System.Net.Http.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.dataflow/4.9.0/System.Threading.Tasks.Dataflow.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.4.0/System.Buffers.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.http/4.3.2/System.Net.Http.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.queryable/4.3.0/System.Linq.Queryable.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.linq.parallel/4.0.1/System.Linq.Parallel.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.pipes/4.3.0/System.IO.Pipes.csproj"/>
