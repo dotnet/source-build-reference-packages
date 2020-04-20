@@ -86,6 +86,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.concurrent/4.0.12/System.Collections.Concurrent.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.dataflow/4.6.0/System.Threading.Tasks.Dataflow.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.overlapped/4.3.0/System.Threading.Overlapped.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.encoding.codepages/4.3.0/System.Text.Encoding.CodePages.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.encoding.codepages/4.0.1/System.Text.Encoding.CodePages.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.principal/4.3.0/System.Security.Principal.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.claims/4.3.0/System.Security.Claims.csproj"/>
