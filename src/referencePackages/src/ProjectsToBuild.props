@@ -192,6 +192,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.componentmodel.typeconverter/4.1.0/System.ComponentModel.TypeConverter.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.componentmodel.eventbasedasync/4.0.11/System.ComponentModel.EventBasedAsync.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.codedom/4.4.0/System.CodeDom.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.5.1/System.Buffers.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.5.0/System.Buffers.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.appcontext/4.3.0/System.AppContext.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.appcontext/4.1.0/System.AppContext.csproj"/>
