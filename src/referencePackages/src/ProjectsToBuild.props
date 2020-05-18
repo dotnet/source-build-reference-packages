@@ -64,6 +64,8 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.tracing/4.3.0/System.Diagnostics.Tracing.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.concurrent/4.3.0/System.Collections.Concurrent.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.parallel/4.3.0/System.Threading.Tasks.Parallel.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.5.3/System.Runtime.CompilerServices.Unsafe.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.extensions/4.5.4/System.Threading.Tasks.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.5.2/System.Runtime.CompilerServices.Unsafe.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.extensions/4.5.3/System.Threading.Tasks.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.threading.tasks.extensions/4.5.2/System.Threading.Tasks.Extensions.csproj"/>
@@ -193,9 +195,11 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.componentmodel.eventbasedasync/4.0.11/System.ComponentModel.EventBasedAsync.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.codedom/4.4.0/System.CodeDom.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.5.1/System.Buffers.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.memory/4.5.4/System.Memory.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.buffers/4.5.0/System.Buffers.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.appcontext/4.3.0/System.AppContext.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.appcontext/4.1.0/System.AppContext.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.pipelines/4.7.0/System.IO.Pipelines.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.immutable/1.4.0/System.Collections.Immutable.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.immutable/1.5.0/System.Collections.Immutable.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.metadata/1.5.0/System.Reflection.Metadata.csproj"/>
@@ -237,5 +241,9 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/4.5.0/System.Security.Cryptography.Pkcs.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/4.5.2/System.Security.Cryptography.Pkcs.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.openssl/4.5.0/System.Security.Cryptography.OpenSsl.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.valuetuple/4.4.0/System.ValueTuple.csproj"/>  </ItemGroup>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.valuetuple/4.4.0/System.ValueTuple.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.7.1/System.Runtime.CompilerServices.Unsafe.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.7.0/System.Runtime.CompilerServices.Unsafe.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.immutable/1.7.1/System.Collections.Immutable.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.metadata/1.8.1/System.Reflection.Metadata.csproj"/>  </ItemGroup>
 </Project>
