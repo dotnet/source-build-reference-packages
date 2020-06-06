@@ -23,4 +23,8 @@ This package was built from the source code at https://github.com/aspnet/AspNetC
     </packageTypes>
     <repository type="git" url="https://github.com/aspnet/AspNetCore" commit="e81033e094d4663ffd227bb4aed30b76b0631e6d" />
   </metadata>
+  <files>
+    <file src="*/**" target="/" exclude="obj/**/*.*" />
+    <file src="*" target="/" />
+  </files>
 </package>
