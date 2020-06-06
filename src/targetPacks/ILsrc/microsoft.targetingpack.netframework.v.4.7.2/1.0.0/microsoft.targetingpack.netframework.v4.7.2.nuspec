@@ -16,4 +16,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <copyright>© Microsoft Corporation.  All rights reserved.</copyright>
     <serviceable>true</serviceable>
   </metadata>
+  <files>
+    <file src="*/**" target="/" exclude="obj/**/*.*" />
+  </files>
 </package>
