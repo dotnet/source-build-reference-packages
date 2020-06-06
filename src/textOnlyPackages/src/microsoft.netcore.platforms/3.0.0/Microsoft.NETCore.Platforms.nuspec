@@ -17,4 +17,8 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
     <serviceable>true</serviceable>
     <repository type="Git" url="git://github.com/dotnet/corefx" commit="4ac4c0367003fe3973a3648eb0715ddb0e3bbcea" />
   </metadata>
+  <files>
+    <file src="*/**" target="/" exclude="obj/**/*.*" />
+    <file src="*" target="/" />
+  </files>
 </package>

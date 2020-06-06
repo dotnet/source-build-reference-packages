@@ -16,4 +16,8 @@
       <packageType name="MSBuildSdk" />
     </packageTypes>
   </metadata>
+  <files>
+    <file src="*/**" target="/" exclude="obj/**/*.*" />
+    <file src="*" target="/" />
+  </files>
 </package>
