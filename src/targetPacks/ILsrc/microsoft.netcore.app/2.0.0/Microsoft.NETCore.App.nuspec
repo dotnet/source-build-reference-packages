@@ -114,4 +114,8 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </group>
     </dependencies>
   </metadata>
+  <files>
+    <file src="*/**" target="/" exclude="obj/**/*.*" />
+    <file src="*" target="/" />
+  </files>
 </package>
