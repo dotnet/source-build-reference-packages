@@ -1,10 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <RestoreUsingNuGetTargets>false</RestoreUsingNuGetTargets>
-  </PropertyGroup>
+<Project>
 
   <ItemGroup>
-    <ProjectToBuild Include="$(RepoRoot)src/publishPackages/publish.proj" />
+    <TargetingPackageProject Include="$(RepoRoot)src\targetPacks\ILsrc\**\*.csproj" />
+    <ProjectToBuild Include="@(TargetingPackageProject)" />
+
+    <TextOnlyPackageProject Include="$(RepoRoot)src\textOnlyPackages\src\**\*.csproj" />
+    <ProjectToBuild Include="@(TextOnlyPackageProject)" />
+
+    <ReferencePackageProject Include="$(RepoRoot)src\referencePackages\src\**\*.csproj" />
+    <ProjectToBuild Include="@(ReferencePackageProject)" />
   </ItemGroup>
+
+  <!--
+    Adding new projects is somewhat copy-paste heavy and may result in project name overlaps. Catch
+    that early, as it may cause binclash otherwise.
+  -->
+  <Target Name="EnsureUniqueProjectNames"
+          BeforeTargets="Execute">
+    <ItemGroup>
+      <ProjectToBuildName Include="@(ProjectToBuild -> '%(Filename)%(Extension)')" />
+      <DistinctProjectToBuildName Include="@(ProjectToBuildName->Distinct())" />
+    </ItemGroup>
+
+    <Error
+      Condition="@(ProjectToBuildName->Count()) != @(DistinctProjectToBuildName->Count())"
+      Text="A project name is duplicated. Every project name must be distinct to have separate output directories." />
+  </Target>
+
 </Project>
