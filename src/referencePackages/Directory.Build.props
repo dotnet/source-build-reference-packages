@@ -22,7 +22,6 @@
     <DebugSymbols>false</DebugSymbols>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 
-    <AssemblyOriginatorKeyFile>$(RepoRoot)src/referencePackages/MSFT.snk</AssemblyOriginatorKeyFile>
     <KeyFileDir>$(RepoRoot)src/referencePackages/snk/</KeyFileDir>
     <SignAssembly>true</SignAssembly>
     <PublicSign>true</PublicSign>
