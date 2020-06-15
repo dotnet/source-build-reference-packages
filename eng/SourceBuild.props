@@ -1,0 +1,7 @@
+<Project>
+
+  <PropertyGroup>
+    <GitHubRepositoryName>source-build-reference-packages</GitHubRepositoryName>
+  </PropertyGroup>
+
+</Project>
