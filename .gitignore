@@ -24,6 +24,7 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 .dotnet
+.packages/
 
 # Cross building rootfs
 cross/rootfs/
