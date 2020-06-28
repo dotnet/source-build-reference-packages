@@ -245,5 +245,8 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.7.1/System.Runtime.CompilerServices.Unsafe.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.7.0/System.Runtime.CompilerServices.Unsafe.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.immutable/1.7.1/System.Collections.Immutable.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.metadata/1.8.1/System.Reflection.Metadata.csproj"/>  </ItemGroup>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.metadata/1.8.1/System.Reflection.Metadata.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.xpath.xdocument/4.3.0/System.Xml.XPath.XDocument.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.xpath/4.3.0/System.Xml.XPath.csproj"/>
+  </ItemGroup>
 </Project>
