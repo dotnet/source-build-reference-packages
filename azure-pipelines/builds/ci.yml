@@ -8,13 +8,13 @@ stages:
   jobs:
   - template: ../jobs/ci-linux.yml
     parameters:
-      job: fedora29
-      imageName: microsoft/dotnet-buildtools-prereqs:fedora-29-2f0798a-20181105183801
+      job: fedora30
+      imageName: microsoft/dotnet-buildtools-prereqs:fedora-30-38e0f29-20191126135223
 
   - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
     - template: ../../eng/common/templates/job/publish-build-assets.yml
       parameters:
-        dependsOn: fedora29
+        dependsOn: fedora30
         publishUsingPipelines: true
         pool:
           vmImage: vs2017-win2016
