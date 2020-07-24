@@ -9,7 +9,7 @@ stages:
   - template: ../jobs/ci-linux.yml
     parameters:
       job: fedora32
-      imageName: microsoft/dotnet-buildtools-prereqs:fedora-32-20200512010618-163ed2a
+      imageName: mcr.microsoft.com/dotnet-buildtools/prereqs:fedora-32-20200512010618-163ed2a
 
   - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
     - template: ../../eng/common/templates/job/publish-build-assets.yml
