@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.3;net45</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)microsoft.dotnet.platformabstractions/2.0.0/microsoft.dotnet.platformabstractions.nuspec</NuspecFile>
-    <AssemblyOriginatorKeyFile>$(KeyFileDir)AspNetCore.snk</AssemblyOriginatorKeyFile>
+    <StrongNameKeyId>MicrosoftAspNetCore</StrongNameKeyId>
    </PropertyGroup>
 
   <PropertyGroup>
