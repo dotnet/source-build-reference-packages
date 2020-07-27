@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.codedom/4.4.0/system.codedom.nuspec</NuspecFile>
-    <AssemblyOriginatorKeyFile>$(KeyFileDir)Open.snk</AssemblyOriginatorKeyFile>
+    <StrongNameKeyId>Open</StrongNameKeyId>
    </PropertyGroup>
 
   <PropertyGroup>

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.1;netstandard1.3;net45;net46</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.diagnostics.diagnosticsource/4.4.0/system.diagnostics.diagnosticsource.nuspec</NuspecFile>
-    <AssemblyOriginatorKeyFile>$(KeyFileDir)Open.snk</AssemblyOriginatorKeyFile>
+    <StrongNameKeyId>Open</StrongNameKeyId>
    </PropertyGroup>
 
   <PropertyGroup>
