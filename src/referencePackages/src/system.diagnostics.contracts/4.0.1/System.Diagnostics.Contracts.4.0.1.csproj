@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.0</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.diagnostics.contracts/4.0.1/system.diagnostics.contracts.nuspec</NuspecFile>
-    <AssemblyOriginatorKeyFile>$(KeyFileDir)MSFT.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
 
   <PropertyGroup>

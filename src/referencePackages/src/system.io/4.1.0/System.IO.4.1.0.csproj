@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.0;netstandard1.3;netstandard1.5;net462</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.io/4.1.0/system.io.nuspec</NuspecFile>
-    <AssemblyOriginatorKeyFile>$(KeyFileDir)MSFT.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
 
   <PropertyGroup>

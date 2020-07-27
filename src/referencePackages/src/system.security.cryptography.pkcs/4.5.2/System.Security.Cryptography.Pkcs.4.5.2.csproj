@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.3;netstandard2.0;net46;net461</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.security.cryptography.pkcs/4.5.2/system.security.cryptography.pkcs.nuspec</NuspecFile>
-    <AssemblyOriginatorKeyFile>$(KeyFileDir)MSFT.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
 
   <PropertyGroup>
