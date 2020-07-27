@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.0;net45</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)nuget.versioning/4.4.0/nuget.versioning.nuspec</NuspecFile>
-    <AssemblyOriginatorKeyFile>$(KeyFileDir)35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
+    <StrongNameKeyId>MicrosoftShared</StrongNameKeyId>
    </PropertyGroup>
 
   <PropertyGroup>
