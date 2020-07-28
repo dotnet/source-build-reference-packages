@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net461;net47;netstandard1.0</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.valuetuple/4.4.0/system.valuetuple.nuspec</NuspecFile>
-    <AssemblyOriginatorKeyFile>$(KeyFileDir)Open.snk</AssemblyOriginatorKeyFile>
+    <StrongNameKeyId>Open</StrongNameKeyId>
    </PropertyGroup>
 
   <PropertyGroup>

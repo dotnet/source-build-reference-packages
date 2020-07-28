@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.3;netstandard1.6;net451</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)microsoft.extensions.dependencymodel/2.1.0/microsoft.extensions.dependencymodel.nuspec</NuspecFile>
-    <AssemblyOriginatorKeyFile>$(KeyFileDir)AspNetCore.snk</AssemblyOriginatorKeyFile>
+    <StrongNameKeyId>MicrosoftAspNetCore</StrongNameKeyId>
    </PropertyGroup>
 
   <PropertyGroup>

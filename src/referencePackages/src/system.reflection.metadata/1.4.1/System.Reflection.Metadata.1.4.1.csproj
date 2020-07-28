@@ -3,7 +3,6 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.1</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.reflection.metadata/1.4.1/system.reflection.metadata.nuspec</NuspecFile>
-    <AssemblyOriginatorKeyFile>$(KeyFileDir)MSFT.snk</AssemblyOriginatorKeyFile>
    </PropertyGroup>
 
   <PropertyGroup>
