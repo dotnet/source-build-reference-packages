@@ -5,19 +5,42 @@
   -->
 
   <PropertyGroup>
-    <SourceBuildArtifactsDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsDir)', 'source-build'))</SourceBuildArtifactsDir>
-    <CurrentRepoSourceBuildArtifactsDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsDir)', 'source-build', 'self'))</CurrentRepoSourceBuildArtifactsDir>
-    <CurrentRepoSourceBuildArtifactsPackagesDir>$([MSBuild]::NormalizeDirectory('$(CurrentRepoSourceBuildArtifactsDir)', 'packages', '$(Configuration)'))</CurrentRepoSourceBuildArtifactsPackagesDir>
+    <SourceBuildOutputDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsDir)', 'source-build'))</SourceBuildOutputDir>
+    <SourceBuildSelfDir>$([MSBuild]::NormalizeDirectory('$(SourceBuildOutputDir)', 'self'))</SourceBuildSelfDir>
+    <CurrentRepoSourceBuildArtifactsDir>$([MSBuild]::NormalizeDirectory('$(SourceBuildSelfDir)', 'artifacts'))</CurrentRepoSourceBuildArtifactsDir>
+    <CurrentRepoSourceBuildSourceDir>$([MSBuild]::NormalizeDirectory('$(SourceBuildSelfDir)', 'src'))</CurrentRepoSourceBuildSourceDir>
+    <CurrentRepoSourceBuildPackageCache>$([MSBuild]::NormalizeDirectory('$(SourceBuildSelfDir)', 'package-cache'))</CurrentRepoSourceBuildPackageCache>
 
+    <CurrentRepoSourceBuildArtifactsPackagesDir>$([MSBuild]::NormalizeDirectory('$(CurrentRepoSourceBuildArtifactsDir)', 'packages', '$(Configuration)'))</CurrentRepoSourceBuildArtifactsPackagesDir>
     <CurrentRepoSourceBuildBinlogFile>$([MSBuild]::NormalizePath('$(CurrentRepoSourceBuildArtifactsDir)', 'sourcebuild.binlog'))</CurrentRepoSourceBuildBinlogFile>
+
+    <InnerSourceBuildRepoRoot Condition="'$(InnerSourceBuildRepoRoot)' == ''">$(CurrentRepoSourceBuildSourceDir)</InnerSourceBuildRepoRoot>
+
+    <CleanInnerSourceBuildRepoRoot Condition="'$(CleanInnerSourceBuildRepoRoot)' == ''">true</CleanInnerSourceBuildRepoRoot>
   </PropertyGroup>
+
+  <Target Name="BuildSourceBuildTasks"
+          Condition="
+            '$(FromSource)' == 'true' and
+            '$(InnerBuildFromSource)' == 'true'"
+          BeforeTargets="Execute">
+    <ItemGroup>
+      <BuildTargets Include="Restore;Build" />
+    </ItemGroup>
+
+    <MSBuild
+      Projects="$(MSBuildThisFileDirectory)..\tasks\source-build-tasks.csproj"
+      Targets="%(BuildTargets.Identity)"
+      Properties="__ToolInitPhase=%(BuildTargets.Identity)"/>
+  </Target>
 
   <Target Name="BuildUpstreamRepos"
           Condition="
             '$(FromSource)' == 'true' and
             '$(InnerBuildFromSource)' != 'true' and
             '$(BuildUpstreamRepos)' == 'true'">
-    <!-- TODO: Clone upstream repos and build them, or download intermediate nupkgs to use. -->
+    <!-- TODO: Clone upstream repos and build them. -->
+    <Error Text="NotImplemented" />
   </Target>
 
   <!--
@@ -31,11 +54,64 @@
       <InnerBuildArgs>$(InnerBuildArgs) /p:InnerBuildFromSource=true</InnerBuildArgs>
       <!-- Set DotNetBuildFromSource to avoid publishing. -->
       <InnerBuildArgs>$(InnerBuildArgs) /p:DotNetBuildFromSource=true</InnerBuildArgs>
+      <!-- Use a fresh clone of the repo so that source-build modifications are isolated. -->
+      <InnerBuildArgs>$(InnerBuildArgs) /p:RepoRoot=$(InnerSourceBuildRepoRoot)</InnerBuildArgs>
       <!-- Override the artifacts dir to cleanly separate the inner build from outer build. -->
       <InnerBuildArgs>$(InnerBuildArgs) /p:ArtifactsDir=$(CurrentRepoSourceBuildArtifactsDir)</InnerBuildArgs>
       <!-- Set a custom binlog location to avoid clashing over the currenly specified file. -->
       <InnerBuildArgs>$(InnerBuildArgs) /bl:$(CurrentRepoSourceBuildBinlogFile)</InnerBuildArgs>
+
+      <!-- Work around issue where local clone may cause failure using non-origin remote fallback: https://github.com/dotnet/sourcelink/issues/629 -->
+      <InnerBuildArgs>$(InnerBuildArgs) /p:EnableSourceControlManagerQueries=false</InnerBuildArgs>
+      <InnerBuildArgs>$(InnerBuildArgs) /p:EnableSourceLink=false</InnerBuildArgs>
+      <InnerBuildArgs>$(InnerBuildArgs) /p:DeterministicSourcePaths=false</InnerBuildArgs>
     </PropertyGroup>
+
+    <ItemGroup>
+      <!-- Override package cache to separate source-built packages from upstream. -->
+      <InnerBuildEnv Include="NUGET_PACKAGES=$(CurrentRepoSourceBuildPackageCache)" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="CleanInnerSourceBuildRepoRoot"
+          Condition="'$(CleanInnerSourceBuildRepoRoot)' == 'true'">
+    <RemoveDir Directories="$(InnerSourceBuildRepoRoot)" />
+  </Target>
+
+  <!--
+    Clone the repo to a new location. Source-build targets will change the source dynamically.
+    Creating a fresh clone avoids overwriting existing work or making subtle changes that might
+    accidentally get added to the user's existing work via a 'git add .'. Since the clone also has
+    access to the git data, this also makes it easy to see what changes the source-build infra has
+    made, for diagnosis or exploratory purposes.
+  -->
+  <Target Name="PrepareInnerSourceBuildRepoRoot"
+          DependsOnTargets="CleanInnerSourceBuildRepoRoot">
+    <Exec
+      Command="
+        set -xeuo pipefail
+        # Copy over changes that haven't been committed, for dev inner loop.
+        stashCommit=%24(git stash create)
+        git clone --no-checkout . &quot;$(InnerSourceBuildRepoRoot)&quot;
+        cd &quot;$(InnerSourceBuildRepoRoot)&quot;
+        # If no changes were stashed, stashCommit is empty, and this becomes simple checkout.
+        git checkout %24stashCommit"
+      WorkingDirectory="$(RepoRoot)" />
+
+    <!--
+      An alternative to "git clone" would be to use a "git worktree". Potential benefits:
+      * This has more integration with the user's normal repo. If they make ad-hoc changes in the
+        worktree, it is easy to cherry-pick onto the developer's "real" branch.
+      * A worktree uses a '.git' file rather than a full '.git' directory, which might have storage
+        implications. (However, a local clone's '.git' directory uses hard links to save space/time,
+        so it's not certain that this affects performance at all.)
+
+      Downside of worktrees:
+      * Some configuration is set up in '.git/worktrees' which may be difficult to coordinate
+        properly. In particular, if the user is already using worktrees for their own purposes, we
+        would have to be careful that running source-build in one worktree doesn't interfere with
+        source-build in the other worktree.
+    -->
   </Target>
 
   <Target Name="ExecuteWithSourceBuiltTooling"
@@ -54,7 +130,8 @@
     when the inner build is actually happening. Hooking BeforeTargets on
     ExecuteWithSourceBuiltTooling would run unconditionally.
   -->
-  <Target Name="ExecuteInnerSourceBuild">
+  <Target Name="ExecuteInnerSourceBuild"
+          DependsOnTargets="PrepareInnerSourceBuildRepoRoot">
     <PropertyGroup>
       <!-- Prevent any projects from building in the outside build: they would use prebuilts. -->
       <PreventPrebuiltBuild>true</PreventPrebuiltBuild>
@@ -69,7 +146,7 @@
 
     <Exec
       Command="$(BaseInnerSourceBuildCommand) $(InnerBuildArgs)"
-      WorkingDirectory="$(ProjectDirectory)"
+      WorkingDirectory="$(InnerSourceBuildRepoRoot)"
       EnvironmentVariables="@(InnerBuildEnv)"
       IgnoreStandardErrorWarningFormat="true" />
   </Target>
