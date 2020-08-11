@@ -30,7 +30,7 @@ stages:
       - job: sourcebuild_linux_x64
         workspace:
           clean: all
-        container: microsoft/dotnet-buildtools-prereqs:fedora-29-2f0798a-20181105183801
+        container: mcr.microsoft.com/dotnet-buildtools/prereqs:fedora-32-20200512010618-163ed2a
         variables:
         - name: _BuildConfig
           value: Release
