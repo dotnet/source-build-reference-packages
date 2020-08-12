@@ -27,8 +27,8 @@
             PackSourceBuildIntermediateNupkg;
             PackSourceBuildTarball"
           Condition="
-            '$(FromSource)' == 'true' and
-            '$(InnerBuildFromSource)' != 'true'"
+            '$(ArcadeBuildFromSource)' == 'true' and
+            '$(ArcadeInnerBuildFromSource)' != 'true'"
           BeforeTargets="Execute" />
 
   <!--
@@ -43,16 +43,16 @@
   -->
   <Target Name="HookExecuteInnerSourceBuild"
           Condition="
-            '$(FromSource)' == 'true' and
-            '$(InnerBuildFromSource)' == 'true'"
+            '$(ArcadeBuildFromSource)' == 'true' and
+            '$(ArcadeInnerBuildFromSource)' == 'true'"
           DependsOnTargets="ExecuteInnerSourceBuild"
           BeforeTargets="Execute"/>
 
   <!-- Build source-build tasks. Needs to complete before SourceBuildArcadeTools.targets. -->
   <Target Name="BuildSourceBuildTasks"
           Condition="
-            '$(FromSource)' == 'true' and
-            '$(InnerBuildFromSource)' == 'true'"
+            '$(ArcadeBuildFromSource)' == 'true' and
+            '$(ArcadeInnerBuildFromSource)' == 'true'"
           BeforeTargets="Execute">
     <ItemGroup>
       <BuildTargets Include="Restore;Build" />
@@ -91,7 +91,7 @@
   <Target Name="GetSourceBuildCommandConfiguration">
     <PropertyGroup>
       <!-- Track that this is the inner build to prevent infinite recursion. -->
-      <InnerBuildArgs>$(InnerBuildArgs) /p:InnerBuildFromSource=true</InnerBuildArgs>
+      <InnerBuildArgs>$(InnerBuildArgs) /p:ArcadeInnerBuildFromSource=true</InnerBuildArgs>
       <!-- Set DotNetBuildFromSource to avoid publishing. -->
       <InnerBuildArgs>$(InnerBuildArgs) /p:DotNetBuildFromSource=true</InnerBuildArgs>
       <!-- Use a fresh clone of the repo so that source-build modifications are isolated. -->

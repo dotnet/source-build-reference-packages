@@ -5,8 +5,8 @@
 
   <Target Name="CollectSourceBuildIntermediateNupkgDependencies"
           Condition="
-            '$(FromSource)' == 'true' and
-            '$(InnerBuildFromSource)' == 'true'"
+            '$(ArcadeBuildFromSource)' == 'true' and
+            '$(ArcadeInnerBuildFromSource)' == 'true'"
           BeforeTargets="CollectPackageReferences">
     <ReadSourceBuildIntNupkgDependencies
       VersionDetailsXmlFile="$([MSBuild]::NormalizePath('$(RepositoryEngineeringDir)', 'Version.Details.xml'))">
@@ -29,8 +29,8 @@
 
   <Target Name="SetUpSourceBuildIntermediateNupkgCache"
           Condition="
-            '$(FromSource)' == 'true' and
-            '$(InnerBuildFromSource)' == 'true' and
+            '$(ArcadeBuildFromSource)' == 'true' and
+            '$(ArcadeInnerBuildFromSource)' == 'true' and
             '@(SourceBuildIntNupkgReference)' != ''"
           AfterTargets="Restore">
     <PropertyGroup>
