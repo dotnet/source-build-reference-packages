@@ -1,5 +1,0 @@
-<Project>
-
-  <Import Project="Microsoft.DotNet.Arcade.Sdk/tools/SourceBuildArcadeTools.targets" Condition="'$(ArcadeBuildFromSource)' == 'true'" />
-
-</Project>
