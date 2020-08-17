@@ -27,6 +27,4 @@
       Text="A project name is duplicated. Every project name must be distinct to have separate output directories." />
   </Target>
 
-  <Import Project="Microsoft.DotNet.Arcade.Sdk/tools/SourceBuildArcade.targets" Condition="'$(ArcadeBuildFromSource)' == 'true'" />
-
 </Project>
