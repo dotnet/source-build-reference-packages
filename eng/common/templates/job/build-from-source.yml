@@ -20,16 +20,10 @@ jobs:
           fedora32:
             containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:fedora-32-20200512010618-163ed2a
             jobNameSuffix: _fedora32
-          - ${{ if ne(parameters.managedOnly, 'true') }}:
-            centos71:
-              containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:centos-7-3e800f1-20190501005343
-              jobNameSuffix: _centos71
-            debian9:
-              containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:debian-stretch-d61254f-20190807161114
-              jobNameSuffix: _debian9
-            ubuntu1804:
-              containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:ubuntu-18.04-f90bc20-20180320154721
-              jobNameSuffix: _ubuntu1804
+          centos71:
+            containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:centos-7-3e800f1-20190501005343
+            jobNameSuffix: _centos71
+            condition: eq(parameters.managedOnly, 'false')
       displayName: ${{ parameters.jobNamePrefix }}$( variables['jobNameSuffix'] )
       workspace:
         clean: all
