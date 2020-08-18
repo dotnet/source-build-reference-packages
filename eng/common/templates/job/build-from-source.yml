@@ -19,12 +19,10 @@ jobs:
         matrix:
           fedora32:
             containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:fedora-32-20200512010618-163ed2a
-            jobNameSuffix: _fedora32
           centos71:
             containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:centos-7-3e800f1-20190501005343
-            jobNameSuffix: _centos71
             condition: eq(parameters.managedOnly, 'false')
-      displayName: ${{ parameters.jobNamePrefix }}$( variables['jobNameSuffix'] )
+      displayName: ${{ parameters.jobNamePrefix }}
       workspace:
         clean: all
       container: $[ variables['containerResource'] ]
