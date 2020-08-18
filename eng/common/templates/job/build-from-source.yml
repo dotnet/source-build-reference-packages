@@ -1,7 +1,7 @@
 parameters:
-  jobNamePrefix: 'sourcebuild'      # Override for prefix for job names
-  managedOnly: 'false'              # Specifies whether source is managed only. If so, one build platform is sufficient
-  prebuiltCheck: 'true'             # Specifies whether to enforce prebuilt checking and fail if new prebuilts are introduced
+  jobNamePrefix: 'sourcebuild'    # Override for prefix for job names
+  managedOnly: false              # Specifies whether source is managed only. If so, one build platform is sufficient
+  prebuiltCheck: true             # Specifies whether to enforce prebuilt checking and fail if new prebuilts are introduced
 
 jobs:
 - template: /eng/common/templates/jobs/jobs.yml
@@ -21,7 +21,7 @@ jobs:
             containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:fedora-32-20200512010618-163ed2a
           centos71:
             containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:centos-7-3e800f1-20190501005343
-            condition: eq(parameters.managedOnly, 'false')
+            condition: eq(parameters.managedOnly, false)
       displayName: ${{ parameters.jobNamePrefix }}
       workspace:
         clean: all

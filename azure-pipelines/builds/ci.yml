@@ -18,3 +18,5 @@ stages:
   displayName: Build
   jobs:
   - template: /eng/common/templates/job/build-from-source.yml
+    parameters:
+      managedOnly: true
