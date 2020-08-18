@@ -17,11 +17,9 @@ jobs:
     - job: sourcebuild
       strategy:
         matrix:
-          fedora32:
-            containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:fedora-32-20200512010618-163ed2a
-          centos71:
-            containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:centos-7-3e800f1-20190501005343
-            condition: eq(parameters.managedOnly, false)
+          fedora32: { containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:fedora-32-20200512010618-163ed2a }
+          centos71: { containerResource: mcr.microsoft.com/dotnet-buildtools/prereqs:centos-7-3e800f1-20190501005343,
+                      condition: eq(parameters.managedOnly, false) }
       displayName: ${{ parameters.jobNamePrefix }}
       workspace:
         clean: all
