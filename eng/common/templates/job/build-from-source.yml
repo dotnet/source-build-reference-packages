@@ -16,6 +16,10 @@ jobs:
     jobs:
     - job: sourcebuild
       strategy:
+        ${{ if eq(parameters.managedOnly, 'true') }}:
+          matrix:
+            fedora32: { containerResource: 'mcr.microsoft.com/dotnet-buildtools/prereqs:fedora-32-20200512010618-163ed2a' }
+        ${{ if eq(parameters.managedOnly, 'false') }}:
           matrix:
             fedora32: { containerResource: 'mcr.microsoft.com/dotnet-buildtools/prereqs:fedora-32-20200512010618-163ed2a' }
             centos71: { containerResource: 'mcr.microsoft.com/dotnet-buildtools/prereqs:centos-7-3e800f1-20190501005343' }
