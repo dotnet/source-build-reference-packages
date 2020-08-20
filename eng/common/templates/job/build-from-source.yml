@@ -26,7 +26,7 @@ jobs:
       displayName: ${{ parameters.jobNamePrefix }}
       workspace:
         clean: all
-      container: ${{ variables.containerResource }}
+      container: $[ variables.containerResource ]
       variables:
       - name: _BuildConfig
         value: Release
