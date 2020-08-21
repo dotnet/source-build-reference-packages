@@ -7,15 +7,15 @@ steps:
       df -h
 
       # Setup build arguments
-      _config="Release"
-      _internalBuildArgs=""
+      _BuildConfig="Release"
+      _InternalBuildArgs=""
       echo "Build Reason: [$BUILD_REASON]"
       echo "Team Project: [$SYSTEM_TEAMPROJECT]"
       if [[ "$BUILD_REASON" != "PullRequest" && "$SYSTEM_TEAMPROJECT" != "public" ]]; then
-        _internalBuildArgs = "/p:DotNetPublishUsingPipelines=true /p:OfficialBuildId=$(BUILD.BUILDNUMBER)"
+        _InternalBuildArgs="/p:DotNetPublishUsingPipelines=true /p:OfficialBuildId=$(BUILD.BUILDNUMBER)"
       fi
       if [[ "${{ parameters.portableOnly }}" == "true" ]]; then
-        _internalBuildArgs = "$_internalBuildArgs /p:ArcadeBuildPortable=true"
+        _InternalBuildArgs="$_InternalBuildArgs /p:ArcadeBuildPortable=true"
       fi
       
       ./build.sh --ci \
