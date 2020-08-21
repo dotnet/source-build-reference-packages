@@ -5,6 +5,7 @@ steps:
   - script: |
       # Setup AzDo BuildConfig
       echo "##vso[task.setvariable variable=_BuildConfig]Release"
+    displayName: Setup AzDo BuildConfig
 
   - script: |
       set -x
