@@ -18,11 +18,11 @@ steps:
         _InternalBuildArgs="$_InternalBuildArgs /p:ArcadeBuildPortable=true"
       fi
       
-      ./build.sh --ci \
-        --configuration $(_BuildConfig) \
+      echo ./build.sh --ci \
+        --configuration $_BuildConfig \
         --restore --build --pack --publish \
-        $(_InternalBuildArgs) \
-        /p:ArcadeBuildFromSource=true
+        $_InternalBuildArgs \
+        /p:ArcadeBuildFromSource=true > build.log
     displayName: Build
 
       # Upload build logs for diagnosis.
