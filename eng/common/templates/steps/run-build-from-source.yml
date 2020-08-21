@@ -18,12 +18,11 @@ steps:
         _internalBuildArgs = "$_internalBuildArgs /p:ArcadeBuildPortable=true"
       fi
       
-      cat /etc/os-release
-      sw_vers
-      echo "Internal Build Args: [$(_InternalBuildArgs)]"
-      echo "Build Config: [$(_BuildConfig)]"
-      echo "Job Name: [$AGENT_JOBNAME]"
-      echo 
+      ./build.sh --ci \
+        --configuration $(_BuildConfig) \
+        --restore --build --pack --publish \
+        $(_InternalBuildArgs) \
+        /p:ArcadeBuildFromSource=true
     displayName: Build
 
       # Upload build logs for diagnosis.
