@@ -1,0 +1,48 @@
+parameters:
+  portableOnly: 'false'
+
+steps:
+  - script: |
+      set -x
+      df -h
+
+      # Setup build arguments
+      _config="Release"
+      _internalBuildArgs=""
+      echo "Build Reason: [$BUILD_REASON]"
+      echo "Team Project: [$SYSTEM_TEAMPROJECT]"
+      if [[ "$BUILD_REASON" != "PullRequest" && "$SYSTEM_TEAMPROJECT" != "public" ]]; then
+        _internalBuildArgs = "/p:DotNetPublishUsingPipelines=true /p:OfficialBuildId=$(BUILD.BUILDNUMBER)"
+      fi
+      if [[ "${{ parameters.portableOnly }}" == "true" ]]; then
+        _internalBuildArgs = "$_internalBuildArgs /p:ArcadeBuildPortable=true"
+      fi
+      
+      cat /etc/os-release
+      sw_vers
+      echo "Internal Build Args: [$(_InternalBuildArgs)]"
+      echo "Build Config: [$(_BuildConfig)]"
+      echo "Job Name: [$AGENT_JOBNAME]"
+      echo 
+    displayName: Build
+
+        # Upload build logs for diagnosis.
+    - task: CopyFiles@2
+      displayName: Prepare BuildLogs staging directory
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)'
+        Contents: |
+          **/*.log
+          **/*.binlog
+        TargetFolder: '$(Build.StagingDirectory)/BuildLogs'
+        CleanTargetFolder: true
+      continueOnError: true
+      condition: succeededOrFailed()
+
+    - task: PublishPipelineArtifact@1
+      displayName: Publish BuildLogs
+      inputs:
+        targetPath: '$(Build.StagingDirectory)/BuildLogs'
+        artifactName: BuildLogs_$(Agent.JobName)
+      continueOnError: true
+      condition: succeededOrFailed()
