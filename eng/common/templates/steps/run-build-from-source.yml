@@ -24,7 +24,7 @@ steps:
         --configuration $(_BuildConfig) \
         --restore --build --pack --publish \
         $_InternalBuildArgs \
-        /p:ArcadeBuildFromSource=true > build.log
+        /p:ArcadeBuildFromSource=true
     displayName: Build
 
       # Upload build logs for diagnosis.
