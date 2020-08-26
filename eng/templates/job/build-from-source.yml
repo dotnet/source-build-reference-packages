@@ -1,0 +1,96 @@
+parameters:
+  # Specifies the prefix for source-build jobs added to pipeline. Use this if disambiguation is necessary.
+  jobNamePrefix: 'sourcebuild'
+
+  # Specifies that the repo only builds managed components. This indicates that output is not RID-specific 
+  # and only one build job is required. A linux x64 machine will be used, but the build must continue to 
+  # work on all supported platforms equally.
+  managedOnly: false
+  
+  # Specifies that the repo has native components that can link to platform-provided libraries.
+  #   - The job passes /p:ArcadeBuildNonPortable=true to the build to enable non-portable behavior.
+  #   - The job passes a platform-specific TargetRid MSBuild property.
+  #   - Setting this parameter adds additional platform-specific "non-portable" build jobs.
+  includeNonPortable: false
+  
+  # Specifies whether prebuilt checks are enforced. When true, if prebuilts are introduced, the build job will fail.
+  prebuiltCheck: true
+
+  # Defines the platforms on which to run each build job
+  platforms:
+
+  # Always run centos71 portable build
+  - name: 'centos71_portable'
+    include: 'always'
+    jobProperties:
+      container: 'mcr.microsoft.com/dotnet-buildtools/prereqs:centos-7-3e800f1-20190501005343'
+  
+  # If managedOnly is false, run a macOS portable build
+  - name: 'macOS_portable'
+    include: 'notManaged'
+    jobProperties:
+      pool:
+        name: Hosted macOS
+
+  # Non-portable platforms
+  - name: 'centos71'
+    include: 'nonPortable'
+    targetRID: 'centos.7-x64'
+    jobProperties:
+      container: 'mcr.microsoft.com/dotnet-buildtools/prereqs:centos-7-3e800f1-20190501005343'
+
+  - name: 'centos8'
+    include: 'nonPortable'
+    targetRID: 'centos.8-x64'
+    jobProperties:
+      container: 'mcr.microsoft.com/dotnet-buildtools/prereqs:centos-8-daa5116-20200325130212'
+
+  - name: 'debian9'
+    include: 'nonPortable'
+    targetRID: 'debian.9-x64'
+    jobProperties:
+      container: 'mcr.microsoft.com/dotnet-buildtools/prereqs:debian-stretch-d61254f-20190807161114'
+
+  - name: 'fedora30'
+    include: 'nonPortable'
+    targetRID: 'fedora.30-x64'
+    jobProperties:
+      container: 'mcr.microsoft.com/dotnet-buildtools/prereqs:fedora-30-38e0f29-20191126135223'
+
+  - name: 'fedora32'
+    include: 'nonPortable'
+    targetRID: 'fedora.32-x64'
+    jobProperties:
+      container: 'mcr.microsoft.com/dotnet-buildtools/prereqs:fedora-32-20200512010618-163ed2a'
+
+  - name: 'macOS'
+    include: 'nonPortable'
+    targetRID: 'osx.10.14-x64'
+    jobProperties:
+      pool:
+        name: Hosted macOS
+
+  - name: 'ubuntu1804'
+    include: 'nonPortable'
+    targetRID: 'ubuntu.18.04-x64'
+    jobProperties:
+      container: 'mcr.microsoft.com/dotnet-buildtools/prereqs:ubuntu-18.04-f90bc20-20180320154721'
+
+jobs:
+
+- ${{ each platform in parameters.platforms }}:
+  - ${{ if or( eq(platform.include,'always'), and( eq(platform.include, 'notManaged'), eq(parameters.managedOnly, false)), and( eq(platform.include, 'nonPortable'), eq(parameters.includeNonPortable, true))) }}:
+    - job: ${{ parameters.jobNamePrefix }}_${{ platform.name }}
+      ${{ each property in platform.jobProperties }}:
+        ${{ property.key }}: ${{ property.value }}
+      workspace:
+        clean: all
+      steps:
+      - template: ../steps/run-build-from-source.yml
+        parameters:
+          ${{ if eq(platform.include, 'nonPortable') }}:
+            includeNonPortable: true
+          ${{ if ne(platform.include, 'nonPortable') }}:
+            includeNonPortable: false
+          ${{ if ne(platform.targetRID, '') }}:
+            targetRID: ${{ platform.targetRID }}
