@@ -26,9 +26,8 @@ stages:
         publish:
           artifacts: true
           manifests: true
-      jobs:
-      - template: /eng/templates/job/build-from-source.yml
-        parameters:
+      runBuildFromSource: true
+      buildFromSourceParameters:
           managedOnly: true
 
 # Based on - https://github.com/dotnet/arcade/blob/9b3f304c7bc9fd4d11be9ca0b466b83e98d2a191/Documentation/CorePackages/Publishing.md#moving-away-from-the-legacy-pushtoblobfeed-task

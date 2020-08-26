@@ -24,6 +24,13 @@ parameters:
   #           if 'true', the build won't run any of the internal only steps, even if it is running in non-public projects.
   runAsPublic: false
 
+  # Optional: Should run the build-from-source jobs to build repo from source
+  runBuildFromSource: false
+
+  # Optional: Parameters for build-from-source template.
+  #           Options are: jobNamePrefix, managedOnly, includeNonPortable & prebuiltCheck
+  buildFromSourceParameters: []
+
 # Internal resources (telemetry, microbuild) can only be accessed from non-public projects,
 # and some (Microbuild) should only be applied to non-PR cases for internal builds.
 
@@ -42,6 +49,12 @@ jobs:
           ${{ property.key }}: ${{ property.value }}
 
       name: ${{ job.job }}
+
+- ${{ if eq(parameters.runBuildFromSource, true) }}:
+  - template: /eng/templates/job/build-from-source.yml
+    parameters:
+      ${{ each parameter in parameters.buildFromSourceParameters }}:
+        ${{ parameter.key }}: ${{ parameter.value }}
 
 - ${{ if and(eq(parameters.runAsPublic, 'false'), ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
   - ${{ if or(eq(parameters.enablePublishBuildAssets, true), eq(parameters.artifacts.publish.manifests, 'true'), ne(parameters.artifacts.publish.manifests, '')) }}:
