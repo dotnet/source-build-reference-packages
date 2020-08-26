@@ -18,13 +18,13 @@ stages:
   displayName: Build
   jobs:
   - template: /eng/common/templates/jobs/jobs.yml
-      parameters:
+    parameters:
       enablePublishUsingPipelines: true
-      enablePublishBuildArtifacts: true	
-      enablePublishBuildAssets: true	
-      artifacts:	
-        publish:	
-          artifacts: true	
+      enablePublishBuildArtifacts: true
+      enablePublishBuildAssets: true
+      artifacts:
+        publish:
+          artifacts: true
           manifests: true
       jobs:
       - template: /eng/templates/job/build-from-source.yml
