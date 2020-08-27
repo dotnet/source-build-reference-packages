@@ -68,6 +68,8 @@ jobs:
         - ${{ if eq(parameters.publishBuildAssetsDependsOn, '') }}:
           - ${{ each job in parameters.jobs }}:
             - ${{ job.job }}
+        - ${{ if eq(parameters.runBuildFromSource, true) }}:
+          - Build_From_Source_Main
         pool:
           vmImage: vs2017-win2016
         runAsPublic: ${{ parameters.runAsPublic }}
