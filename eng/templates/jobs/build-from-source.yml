@@ -1,6 +1,6 @@
 parameters:
   # Specifies the prefix for source-build jobs added to pipeline. Use this if disambiguation is necessary.
-  jobNamePrefix: 'Build_From_Source'
+  jobNamePrefix: 'Source_Build'
 
   # Specifies that the repo only builds managed components. This indicates that output is not RID-specific 
   # and only one build job is required. A linux x64 machine will be used, but the build must continue to 
@@ -14,6 +14,9 @@ parameters:
   
   # Specifies whether prebuilt checks are enforced. When true, if prebuilts are introduced, the build job will fail.
   prebuiltCheck: true
+
+  # Specifies the build script to invoke to perform the build in the repo
+  buildScript: './build.sh'
 
   # Defines the platforms on which to run each build job
   # Note: This parameter is not expected to be set by the consumer of this template
@@ -69,18 +72,18 @@ parameters:
       container: 'mcr.microsoft.com/dotnet-buildtools/prereqs:ubuntu-18.04-f90bc20-20180320154721'
 
 jobs:
-- job: Build_From_Source_Main
-  displayName: Build From Source Main
+- job: Source_Build_Complete
+  displayName: Source-Build Complete
   pool: server
   dependsOn:
   - ${{ each platform in parameters.platforms }}:
     - ${{ if or(eq(platform.include, 'always'), eq(parameters.managedOnly, false)) }}:
-      - ${{ parameters.jobNamePrefix }}_${{ platform.name }}  
+      - ${{ parameters.jobNamePrefix }}_${{ platform.name }}
 
 - ${{ each platform in parameters.platforms }}:
   - ${{ if or(eq(platform.include, 'always'), eq(parameters.managedOnly, false)) }}:
     - job: ${{ parameters.jobNamePrefix }}_${{ platform.name }}
-      displayName: Build From Source (${{ platform.name }})
+      displayName: Source-Build (${{ platform.name }})
       ${{ each property in platform.jobProperties }}:
         ${{ property.key }}: ${{ property.value }}
       workspace:
@@ -92,7 +95,7 @@ jobs:
       - name: _InternalBuildArgs
         value: ''
       - name: _NonPortableBuildArgs
-        value: ''        
+        value: ''
       - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
         - name: _InternalBuildArgs
           value: >-
@@ -108,7 +111,7 @@ jobs:
       - script: |
           set -x
           df -h
-          ./build.sh --ci \
+          ${{ parameters.buildScript }} --ci \
             --configuration $(_BuildConfig) \
             --restore --build --pack --publish \
             $(_InternalBuildArgs) \
