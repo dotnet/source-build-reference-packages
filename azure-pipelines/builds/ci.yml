@@ -17,7 +17,7 @@ stages:
 - stage: build
   displayName: Build
   jobs:
-  - template: /eng/common/templates/jobs/jobs.yml
+  - template: /eng/templates/jobs/jobs.yml
     parameters:
       enablePublishUsingPipelines: true
       enablePublishBuildArtifacts: true
