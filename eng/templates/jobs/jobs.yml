@@ -69,7 +69,7 @@ jobs:
           - ${{ each job in parameters.jobs }}:
             - ${{ job.job }}
         - ${{ if eq(parameters.runSourceBuild, true) }}:
-          - Build_From_Source_Main
+          - Source_Build_Complete
         pool:
           vmImage: vs2017-win2016
         runAsPublic: ${{ parameters.runAsPublic }}
