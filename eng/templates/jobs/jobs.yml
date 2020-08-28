@@ -36,7 +36,7 @@ parameters:
 
 jobs:
 - ${{ each job in parameters.jobs }}:
-  - template: ../job/job.yml
+  - template: /eng/common/templates/job/job.yml
     parameters: 
       # pass along parameters
       ${{ each parameter in parameters }}:
@@ -58,7 +58,7 @@ jobs:
 
 - ${{ if and(eq(parameters.runAsPublic, 'false'), ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
   - ${{ if or(eq(parameters.enablePublishBuildAssets, true), eq(parameters.artifacts.publish.manifests, 'true'), ne(parameters.artifacts.publish.manifests, '')) }}:
-    - template: ../job/publish-build-assets.yml
+    - template: /eng/common/templates/job/publish-build-assets.yml
       parameters:
         continueOnError: ${{ parameters.continueOnError }}
         dependsOn:
@@ -77,7 +77,7 @@ jobs:
         enablePublishBuildArtifacts: ${{ parameters.enablePublishBuildArtifacts }}
 
   - ${{ if eq(parameters.graphFileGeneration.enabled, true) }}:
-    - template: ../job/generate-graph-files.yml
+    - template: /eng/common/templates/job/generate-graph-files.yml
       parameters:
         continueOnError: ${{ parameters.continueOnError }}
         includeToolset: ${{ parameters.graphFileGeneration.includeToolset }}
