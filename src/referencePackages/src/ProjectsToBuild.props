@@ -248,5 +248,13 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.metadata/1.8.1/System.Reflection.Metadata.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.xpath/4.3.0/System.Xml.XPath.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.xml.xpath.xdocument/4.3.0/System.Xml.XPath.XDocument.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.principal.windows/4.7.0/System.Security.Principal.Windows.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.accesscontrol/4.7.0/System.Security.AccessControl.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.permissions/4.7.0/System.Security.Permissions.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.valuetuple/4.5.0/System.ValueTuple.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.framework/16.6.0/Microsoft.Build.Framework.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build.utilities.core/16.6.0/Microsoft.Build.Utilities.Core.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.encoding.codepages/4.5.1/System.Text.Encoding.CodePages.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.build/16.6.0/Microsoft.Build.csproj"/>
   </ItemGroup>
 </Project>
