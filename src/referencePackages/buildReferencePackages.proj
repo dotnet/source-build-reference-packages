@@ -17,6 +17,7 @@
   <ItemGroup>
     <NuspecsToCopy Include="$(ReferenceAssemblySourcePath)**/*.nuspec" />
     <DummyFilesToCopy Include="$(ReferenceAssemblySourcePath)**/_._" />
+    <IconFilesToCopy Include="$(ReferenceAssemblySourcePath)**/*.png" />
     <TextOnlyProjects Include="$(TextOnlyProjectsSourcePath)**/*.csproj" />
   </ItemGroup>
   
@@ -28,6 +29,11 @@
   <Target Name="CopyDummyFiles" BeforeTargets="Build" Condition="'@(DummyFilesToCopy)' != ''">
     <Copy SourceFiles="@(DummyFilesToCopy)" DestinationFiles="@(DummyFilesToCopy->'$(ArtifactsBinDir)%(RecursiveDir)%(Filename)%(Extension)')" />
     <Message Importance="High" Text="Copy DummyFiles Complete."/>
+  </Target>
+
+  <Target Name="CopyIconFiles" BeforeTargets="Build" Condition="'@(IconFilesToCopy)' != ''">
+    <Copy SourceFiles="@(IconFilesToCopy)" DestinationFiles="@(IconFilesToCopy->'$(ArtifactsBinDir)%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Importance="High" Text="Copy Icon Files Complete."/>
   </Target>
 
   <Target Name="BuildTextOnlyPackages" BeforeTargets="Build" Condition="'@(TextOnlyProjects)' != ''">
