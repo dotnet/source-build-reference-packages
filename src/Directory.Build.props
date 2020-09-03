@@ -4,7 +4,6 @@
   <PropertyGroup Condition="'$(CopyrightNetFoundation)' != ''">
     <Copyright>$(CopyrightNetFoundation)</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <IconFileDir>$(RepoRoot)src/icons/</IconFileDir>
   </PropertyGroup>
 
   <PropertyGroup>
