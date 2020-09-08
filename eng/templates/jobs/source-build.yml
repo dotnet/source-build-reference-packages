@@ -11,9 +11,6 @@ parameters:
   #     - The job passes /p:ArcadeBuildNonPortable=true to the build to enable non-portable behavior.
   #     - The job passes a platform-specific TargetRid MSBuild property.
   managedOnly: false
-  
-  # Specifies whether prebuilt checks are enforced. When true, if prebuilts are introduced, the build job will fail.
-  prebuiltCheck: true
 
   # Specifies the build script to invoke to perform the build in the repo
   buildScript: './build.sh'
