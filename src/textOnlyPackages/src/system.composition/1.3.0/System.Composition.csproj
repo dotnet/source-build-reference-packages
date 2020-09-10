@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <OutputPath>$(ArtifactsBinDir)microsoft.composition/1.3.0/</OutputPath>
+    <BaseIntermediateOutputPath>$(ArtifactsObjDir)microsoft.composition/1.3.0/</BaseIntermediateOutputPath>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NuspecFile>Microsoft.Composition.nuspec</NuspecFile>
+   </PropertyGroup>
+</Project>
+
