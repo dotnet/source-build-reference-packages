@@ -92,38 +92,24 @@
       DestinationFiles="@(StaticAssetFile -> '%(Destination)')" />
   </Target>
 
-  <Target Name="FindNuspecFileItem">
+  <!--
+    Instead of using the nuspec specified by a static property, use one that we find dynamically. In
+    this case, the project file has already statically set the nuspec property to some other value,
+    which takes priority over Directory.Build.props, so we override it dynamically in this target.
+
+    This target is also a nice place to enforce that we do actually have a nuspec.
+  -->
+  <Target Name="SetManualPackTaskInputs"
+          BeforeTargets="_CalculateInputsOutputsForPack;GenerateNuspec">
     <ItemGroup>
       <NuspecFile Include="*.nuspec" />
     </ItemGroup>
 
     <Error Condition="@(NuspecFile->Count()) != 1" Text="Expected exactly one nuspec file." />
-  </Target>
 
-  <!--
-    Instead of using the nuspec inside the directory, use the one that we copied to a temp
-    directory. Normally this would be done by setting the NuspecFile property statically. However,
-    in this case, the project file already sets it to some other value, which takes priority over
-    Directory.Build.props. We also don't want to modify the project files too much, for branch
-    merging and general noise reduction.
-
-    This target is also a nice place to enforce that we do actually have a nuspec.
-  -->
-  <Target Name="SetManualPackTaskInputs"
-          Condition="'$(PackNuspecInPlace)' != 'true'"
-          DependsOnTargets="FindNuspecFileItem"
-          BeforeTargets="_CalculateInputsOutputsForPack;GenerateNuspec">
     <PropertyGroup>
       <NuspecFile>$(TFMPackTempOutputDir)@(NuspecFile)</NuspecFile>
-    </PropertyGroup>
-  </Target>
-
-  <Target Name="SetManualPackTaskInputsInPlace"
-          Condition="'$(PackNuspecInPlace)' == 'true'"
-          DependsOnTargets="FindNuspecFileItem"
-          BeforeTargets="_CalculateInputsOutputsForPack;GenerateNuspec">
-    <PropertyGroup>
-      <NuspecFile>@(NuspecFile)</NuspecFile>
+      <NuspecFile Condition="'$(PackNuspecInPlace)' == 'true'">@(NuspecFile)</NuspecFile>
     </PropertyGroup>
   </Target>
 
