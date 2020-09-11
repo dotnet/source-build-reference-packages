@@ -92,6 +92,14 @@
       DestinationFiles="@(StaticAssetFile -> '%(Destination)')" />
   </Target>
 
+  <Target Name="FindNuspecFileItem">
+    <ItemGroup>
+      <NuspecFile Include="*.nuspec" />
+    </ItemGroup>
+
+    <Error Condition="@(NuspecFile->Count()) != 1" Text="Expected exactly one nuspec file." />
+  </Target>
+
   <!--
     Instead of using the nuspec inside the directory, use the one that we copied to a temp
     directory. Normally this would be done by setting the NuspecFile property statically. However,
@@ -103,15 +111,19 @@
   -->
   <Target Name="SetManualPackTaskInputs"
           Condition="'$(PackNuspecInPlace)' != 'true'"
+          DependsOnTargets="FindNuspecFileItem"
           BeforeTargets="_CalculateInputsOutputsForPack;GenerateNuspec">
-    <ItemGroup>
-      <NuspecFile Include="*.nuspec" />
-    </ItemGroup>
-
-    <Error Condition="@(NuspecFile->Count()) != 1" Text="Expected exactly one nuspec file." />
-
     <PropertyGroup>
       <NuspecFile>$(TFMPackTempOutputDir)@(NuspecFile)</NuspecFile>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="SetManualPackTaskInputsInPlace"
+          Condition="'$(PackNuspecInPlace)' == 'true'"
+          DependsOnTargets="FindNuspecFileItem"
+          BeforeTargets="_CalculateInputsOutputsForPack;GenerateNuspec">
+    <PropertyGroup>
+      <NuspecFile>@(NuspecFile)</NuspecFile>
     </PropertyGroup>
   </Target>
 
