@@ -3,7 +3,7 @@
   <Import Project="$([MSBuild]::GetPathOfFileAbove(Directory.Build.props, $(MSBuildThisFileDirectory)..))" />
 
   <PropertyGroup>
-    <AssemblyName>System.Runtime.CompilerServices.Unsafe</AssemblyName>
+    <AssemblyName>Microsoft.Bcl.AsyncInterfaces</AssemblyName>
   </PropertyGroup>
 
 </Project>
