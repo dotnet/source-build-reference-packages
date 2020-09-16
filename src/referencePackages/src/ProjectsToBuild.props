@@ -265,5 +265,14 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.accesscontrol/4.5.0/System.Security.AccessControl.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.pipes.accesscontrol/4.5.1/System.IO.Pipes.AccessControl.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.resources.extensions/4.6.0/System.Resources.Extensions.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.bcl.asyncinterfaces/1.0.0/Microsoft.Bcl.AsyncInterfaces.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.bcl.asyncinterfaces/1.1.0/Microsoft.Bcl.AsyncInterfaces.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.6.0/System.Runtime.CompilerServices.Unsafe.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.7.0/System.Runtime.CompilerServices.Unsafe.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.encodings.web/4.6.0/System.Text.Encodings.Web.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.encodings.web/4.7.0/System.Text.Encodings.Web.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.json/4.6.0/System.Text.Json.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.json/4.7.0/System.Text.Json.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.json/4.7.1/System.Text.Json.csproj"/>
   </ItemGroup>
 </Project>
