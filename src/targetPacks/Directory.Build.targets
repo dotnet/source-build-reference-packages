@@ -52,12 +52,8 @@
 
   <Target Name="BuildIlFile"
           DependsOnTargets="ResolveIlToolPaths">
-    <!--
-      Note: Use awk as hack below to not fill up build logs. Ilasm produces warning on validly
-      disassembled il src. The awk expression eats just that warning.
-    -->
     <Exec
-      Command="set -o pipefail;$(IlasmDir)ilasm $(IlFile) -dll -quiet -nologo -output=$(OutputFile) |&amp; awk '!/warning : Method has no body/'"
+      Command="$(MSBuildThisFileDirectory)build-il.sh $(IlasmDir) $(IlFile) $(OutputFile)"
       IgnoreStandardErrorWarningFormat="true"
       CustomErrorRegularExpression=": error : " />
   </Target>
