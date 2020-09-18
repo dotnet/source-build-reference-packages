@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <GitHubRepositoryName>source-build-reference-packages</GitHubRepositoryName>
+    <SourceBuildManagedOnly>true</SourceBuildManagedOnly>
   </PropertyGroup>
 
 </Project>
