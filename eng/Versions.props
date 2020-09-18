@@ -1,5 +1,4 @@
 <Project>
-
   <PropertyGroup>
     <MajorVersion>6</MajorVersion>
     <MinorVersion>0</MinorVersion>
@@ -9,10 +8,8 @@
     <!-- Opt-out repo features -->
     <UsingToolXliff>false</UsingToolXliff>
   </PropertyGroup>
-
   <PropertyGroup>
     <MicrosoftNETCoreILAsmVersion>5.0.0-preview.4.20202.18</MicrosoftNETCoreILAsmVersion>
     <MicrosoftNETCoreILDAsmVersion>5.0.0-preview.4.20202.18</MicrosoftNETCoreILDAsmVersion>
   </PropertyGroup>
-
 </Project>
