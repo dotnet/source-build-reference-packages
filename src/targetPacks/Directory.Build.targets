@@ -19,7 +19,7 @@
       set -e
       destination=&quot;%(TargetingPackSrcRequiringConstraintPatch.DestinationFile)&quot;
       mkdir -p &quot;${destination%/*}&quot;
-      sed &quot;s/ constraint\(\([,)]\)\|%24\)/ 'constraint'\2/g&quot; &quot;%(TargetingPackSrcRequiringConstraintPatch.FullPath)&quot; > &quot;$destination&quot;" />
+      sed -E &quot;s/ constraint(([,)])|%24)/ 'constraint'\2/g&quot; &quot;%(TargetingPackSrcRequiringConstraintPatch.FullPath)&quot; > &quot;$destination&quot;" />
 
     <ItemGroup>
       <TargetingPackSrc
