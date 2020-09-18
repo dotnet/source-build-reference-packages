@@ -6,23 +6,27 @@ parameters:
   # necessary. This also changes the ID of 'Source_Build_Complete'.
   jobNamePrefix: 'Source_Build'
 
-  # A container to use. Runs in docker.
-  container: ''
-
-  # A pool to use. Runs directly on an agent.
-  pool: null
-
-  # A list of job properties to inject at the top level. Only 'container' and 'pool' are expected so
-  # far (so we provided shortcut parameters for those in particular), but this is left in for
-  # potential extensibility.
-  jobProperties: {}
-
   # Specifies the build script to invoke to perform the build in the repo. The default should work
   # for typical Arcade repositories, but this is customizable for difficult situations.
   buildScript: './build.sh'
 
-  # Defines the platforms on which to run each build job. By default, runs one job on a linux-x64
-  # machine, suitable for managed-only repositories.
+  # Defines the platforms on which to run build jobs. By default, one job on a linux-x64 machine,
+  # suitable for managed-only repositories. This is an array of objects with these properties:
+  #
+  # name: ''
+  #   The name of the job, included in the ID.
+  # targetRID: ''
+  #   The name of the target RID to use, instead of the one auto-detected by Arcade.
+  # nonPortable: false
+  #   Enables non-portable mode. This means a more specific RID (e.g. fedora.32-x64 rather than
+  #   linux-x64), and compiling against distro-provided packages rather than portable ones.
+  # container: ''
+  #   A container to use. Runs in docker.
+  # pool: {}
+  #   A pool to use. Runs directly on an agent.
+  # jobProperties: {}
+  #   A list of job properties to inject at the top level, for potential extensibility beyond
+  #   container and pool.
   platforms:
   - name: 'Managed'
     container: 'mcr.microsoft.com/dotnet-buildtools/prereqs:centos-7-3e800f1-20190501005343'
