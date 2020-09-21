@@ -53,6 +53,7 @@ jobs:
 - ${{ if eq(parameters.runSourceBuild, true) }}:
   - template: /eng/templates/jobs/source-build.yml
     parameters:
+      allCompletedJobId: Source_Build_Complete
       ${{ each parameter in parameters.sourceBuildParameters }}:
         ${{ parameter.key }}: ${{ parameter.value }}
 
