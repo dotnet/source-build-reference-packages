@@ -1,107 +1,48 @@
 parameters:
-  # This template adds arcade-powered source-build to CI. The template produces a server job with a
-  # default ID 'Source_Build_Complete' to put in a dependency list if necessary.
+  # This template adds arcade-powered source-build to CI. A job is created for each platform, as
+  # well as an optional server job that completes when all platform jobs complete.
 
-  # Specifies the prefix for source-build jobs added to pipeline. Use this if disambiguation is
-  # necessary. This also changes the ID of 'Source_Build_Complete'.
+  # The name of the "join" job for all source-build platforms. If set to empty string, the job is
+  # not included. Existing repo pipelines can use this job depend on all source-build jobs
+  # completing without maintaining a separate list of every single job ID: just depend on this one
+  # server job. By default, not included. Recommended name if used: 'Source_Build_Complete'.
+  allCompletedJobId: ''
+
+  # See eng/common/templates/job/source-build.yml
   jobNamePrefix: 'Source_Build'
 
-  # Specifies the build script to invoke to perform the build in the repo. The default should work
-  # for typical Arcade repositories, but this is customizable for difficult situations.
-  buildScript: './build.sh'
-
-  # Defines the platforms on which to run build jobs. By default, one job on a linux-x64 machine,
-  # suitable for managed-only repositories. This is an array of objects with these properties:
-  #
-  # name: ''
-  #   The name of the job, included in the ID.
-  # targetRID: ''
-  #   The name of the target RID to use, instead of the one auto-detected by Arcade.
-  # nonPortable: false
-  #   Enables non-portable mode. This means a more specific RID (e.g. fedora.32-x64 rather than
-  #   linux-x64), and compiling against distro-provided packages rather than portable ones.
-  # container: ''
-  #   A container to use. Runs in docker.
-  # pool: {}
-  #   A pool to use. Runs directly on an agent.
-  # jobProperties: {}
-  #   A list of job properties to inject at the top level, for potential extensibility beyond
-  #   container and pool.
-  platforms:
-  - name: 'Managed'
+  # If changed to true, causes this template to include the default platform for a managed-only
+  # repo. The exact Docker image used for this build will be provided by Arcade. This has some risk,
+  # but since the repo is supposed to be managed-only, the risk should be very low.
+  includeDefaultManagedPlatform: false
+  defaultManagedPlatform:
+    name: 'Managed'
     container: 'mcr.microsoft.com/dotnet-buildtools/prereqs:centos-7-3e800f1-20190501005343'
+
+  # Defines the platforms on which to run build jobs. One job is created for each platform, and the
+  # object in this array is sent to the job template as 'platform'.
+  platforms: []
 
 jobs:
 
-- job: ${{ parameters.jobNamePrefix }}_Complete
-  displayName: Source-Build Complete
-  pool: server
-  dependsOn:
-  - ${{ each platform in parameters.platforms }}:
-    - ${{ parameters.jobNamePrefix }}_${{ platform.name }}
+- ${{ if ne(parameters.allCompletedJobId, '') }}:
+  - job: ${{ parameters.allCompletedJobId }}
+    displayName: Source-Build Complete
+    pool: server
+    dependsOn:
+    - ${{ each platform in parameters.platforms }}:
+      - ${{ parameters.jobNamePrefix }}_${{ platform.name }}
+    - ${{ if eq(parameters.includeDefaultManagedPlatform, true) }}:
+      - ${{ parameters.jobNamePrefix }}_${{ parameters.defaultManagedPlatform.name }}
 
 - ${{ each platform in parameters.platforms }}:
-  - job: ${{ parameters.jobNamePrefix }}_${{ platform.name }}
-    displayName: Source-Build (${{ platform.name }})
+  - template: /eng/templates/job/source-build.yml
+    parameters:
+      jobNamePrefix: ${{ parameters.jobNamePrefix }}
+      platform: ${{ platform }}
 
-    ${{ each property in platform.jobProperties }}:
-      ${{ property.key }}: ${{ property.value }}
-
-    ${{ if ne(platform.container, '') }}:
-      container: ${{ platform.container }}
-    ${{ if ne(platform.pool, '') }}:
-      pool: ${{ platform.pool }}
-
-    workspace:
-      clean: all
-
-    variables:
-    - name: _BuildConfig
-      value: Release
-    - name: _InternalBuildArgs
-      value: ''
-    - name: _TargetRidArgs
-      value: ''
-    - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
-      - name: _InternalBuildArgs
-        value: >-
-          /p:DotNetPublishUsingPipelines=true
-          /p:OfficialBuildId=$(BUILD.BUILDNUMBER)
-    - ${{ if ne(platform.targetRID, '') }}:
-      - name: _TargetRidArgs
-        value: /p:TargetRid=${{ platform.targetRID }}
-
-    steps:
-    - script: |
-        set -x
-        df -h
-        ${{ parameters.buildScript }} --ci \
-          --configuration $(_BuildConfig) \
-          --restore --build --pack --publish \
-          $(_InternalBuildArgs) \
-          $(_TargetRidArgs) \
-          /p:SourceBuildNonPortable=${{ platform.nonPortable }} \
-          /p:ArcadeBuildFromSource=true
-      displayName: Build
-
-    # Upload build logs for diagnosis.
-    - task: CopyFiles@2
-      displayName: Prepare BuildLogs staging directory
-      inputs:
-        SourceFolder: '$(Build.SourcesDirectory)'
-        Contents: |
-          **/*.log
-          **/*.binlog
-          artifacts/source-build/self/prebuilt-report/**
-        TargetFolder: '$(Build.StagingDirectory)/BuildLogs'
-        CleanTargetFolder: true
-      continueOnError: true
-      condition: succeededOrFailed()
-
-    - task: PublishPipelineArtifact@1
-      displayName: Publish BuildLogs
-      inputs:
-        targetPath: '$(Build.StagingDirectory)/BuildLogs'
-        artifactName: BuildLogs_SourceBuild_${{ platform.name }}_Attempt$(System.JobAttempt)
-      continueOnError: true
-      condition: succeededOrFailed()
+- ${{ if eq(parameters.includeDefaultManagedPlatform, true) }}:
+  - template: /eng/templates/job/source-build.yml
+    parameters:
+      jobNamePrefix: ${{ parameters.jobNamePrefix }}
+      platform: ${{ parameters.defaultManagedPlatform }}
