@@ -8,7 +8,7 @@ parameters:
   # server job. By default, not included. Recommended name if used: 'Source_Build_Complete'.
   allCompletedJobId: ''
 
-  # See eng/common/templates/job/source-build.yml
+  # See /eng/common/templates/job/source-build.yml
   jobNamePrefix: 'Source_Build'
 
   # If changed to true, causes this template to include the default platform for a managed-only
@@ -36,13 +36,13 @@ jobs:
       - ${{ parameters.jobNamePrefix }}_${{ parameters.defaultManagedPlatform.name }}
 
 - ${{ each platform in parameters.platforms }}:
-  - template: /eng/templates/job/source-build.yml
+  - template: /eng/common/templates/job/source-build.yml
     parameters:
       jobNamePrefix: ${{ parameters.jobNamePrefix }}
       platform: ${{ platform }}
 
 - ${{ if eq(parameters.includeDefaultManagedPlatform, true) }}:
-  - template: /eng/templates/job/source-build.yml
+  - template: /eng/common/templates/job/source-build.yml
     parameters:
       jobNamePrefix: ${{ parameters.jobNamePrefix }}
       platform: ${{ parameters.defaultManagedPlatform }}

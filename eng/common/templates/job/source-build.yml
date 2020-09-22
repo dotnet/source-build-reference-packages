@@ -44,6 +44,6 @@ jobs:
     clean: all
 
   steps:
-  - template: /eng/templates/steps/source-build.yml
+  - template: /eng/common/templates/steps/source-build.yml
     parameters:
       platform: ${{ parameters.platform }}
