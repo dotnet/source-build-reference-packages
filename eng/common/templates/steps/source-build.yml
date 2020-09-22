@@ -13,7 +13,7 @@ parameters:
   platform: {}
 
 steps:
-# Run the build. Avoid requiring job variables, to keep reuse simple.
+# Build. Keep it self-contained for simple reusability. (No source-build-specific job variables.)
 - script: |
     set -x
     df -h
