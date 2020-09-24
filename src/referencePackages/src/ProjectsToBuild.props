@@ -270,5 +270,8 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.json/4.6.0/System.Text.Json.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.json/4.7.0/System.Text.Json.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.json/4.7.1/System.Text.Json.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.principal.windows/4.5.0/System.Security.Principal.Windows.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.accesscontrol/4.5.0/System.Security.AccessControl.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.pipes.accesscontrol/4.5.1/System.IO.Pipes.AccessControl.csproj"/>
   </ItemGroup>
 </Project>
