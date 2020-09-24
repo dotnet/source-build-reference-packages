@@ -273,5 +273,6 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.principal.windows/4.5.0/System.Security.Principal.Windows.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.accesscontrol/4.5.0/System.Security.AccessControl.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.pipes.accesscontrol/4.5.1/System.IO.Pipes.AccessControl.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.resources.extensions/4.6.0/System.Resources.Extensions.csproj"/>
   </ItemGroup>
 </Project>
