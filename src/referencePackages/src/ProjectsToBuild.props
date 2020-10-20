@@ -274,5 +274,20 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.json/4.6.0/System.Text.Json.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.json/4.7.0/System.Text.Json.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.json/4.7.1/System.Text.Json.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.win32.registry/4.7.0/Microsoft.Win32.Registry.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.diagnosticsource/4.7.0/System.Diagnostics.DiagnosticSource.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.data.common/4.3.0/System.Data.Common.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.net.nameresolution/4.3.0/System.Net.NameResolution.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.typeextensions/4.7.0/System.Reflection.TypeExtensions.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.encoding.codepages/4.7.0/System.Text.Encoding.CodePages.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.data.sqlclient/4.8.1/System.Data.SqlClient.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.contracts/4.3.0/System.Diagnostics.Contracts.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.unmanagedmemorystream/4.3.0/System.IO.UnmanagedMemoryStream.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.memorymappedfiles/4.3.0/System.IO.MemoryMappedFiles.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime/4.3.1/System.Runtime.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.immutable/1.6.0/System.Collections.Immutable.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.collections.immutable/1.7.0/System.Collections.Immutable.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.metadata/1.7.0/System.Reflection.Metadata.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.metadata/1.8.0/System.Reflection.Metadata.csproj"/>
   </ItemGroup>
 </Project>

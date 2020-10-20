@@ -15,7 +15,6 @@
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />
     <Compile Include="**/lib/$(TargetFramework)/*.cs" />
   </ItemGroup>
-
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
         <PackageReference Include="Microsoft.Win32.Primitives" Version="4.3.0" />
         <PackageReference Include="System.Collections" Version="4.3.0" />
@@ -43,5 +42,4 @@
         <Reference Include="System" />
     </ItemGroup>
 
-  
 </Project>

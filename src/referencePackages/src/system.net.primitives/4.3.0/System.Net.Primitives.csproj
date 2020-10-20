@@ -15,7 +15,6 @@
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />
     <Compile Include="**/lib/$(TargetFramework)/*.cs" />
   </ItemGroup>
-
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
         <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
         <PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
@@ -33,5 +32,4 @@
         <PackageReference Include="System.Runtime.Handles" Version="4.3.0" />
     </ItemGroup>
 
-  
 </Project>

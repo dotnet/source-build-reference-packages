@@ -15,7 +15,6 @@
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />
     <Compile Include="**/lib/$(TargetFramework)/*.cs" />
   </ItemGroup>
-
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
         <PackageReference Include="NETStandard.Library" Version="$(NETStandardLibraryPackageVersion)" />
         <PackageReference Include="System.Security.Principal.Windows" Version="4.7.0" />
@@ -34,5 +33,4 @@
         <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net461" Version="1.0.0-alpha-5" />
     </ItemGroup>
 
-  
 </Project>
