@@ -1,10 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))/dir.props" />
+
   <PropertyGroup>
     <TargetFrameworks>netstandard1.0</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.resources.resourcemanager/4.3.0/system.resources.resourcemanager.nuspec</NuspecFile>
     <AssemblyOriginatorKeyFile>$(KeyFileDir)MSFT.snk</AssemblyOriginatorKeyFile>
-   </PropertyGroup>
+  </PropertyGroup>
 
   <PropertyGroup>
     <OutputPath>$(ArtifactsBinDir)system.resources.resourcemanager/4.3.0/ref/</OutputPath>
@@ -15,12 +16,13 @@
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />
     <Compile Include="**/lib/$(TargetFramework)/*.cs" />
   </ItemGroup>
-    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
-        <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
-        <PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
-        <PackageReference Include="System.Globalization" Version="4.3.0" />
-        <PackageReference Include="System.Reflection" Version="4.3.0" />
-        <PackageReference Include="System.Runtime" Version="4.3.0" />
-    </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
+    <PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
+    <PackageReference Include="System.Globalization" Version="4.3.0" />
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+  </ItemGroup>
 
 </Project>
