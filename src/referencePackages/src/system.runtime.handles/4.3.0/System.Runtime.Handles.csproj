@@ -1,10 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))/dir.props" />
+
   <PropertyGroup>
     <TargetFrameworks>netstandard1.3</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.runtime.handles/4.3.0/system.runtime.handles.nuspec</NuspecFile>
     <AssemblyOriginatorKeyFile>$(KeyFileDir)MSFT.snk</AssemblyOriginatorKeyFile>
-   </PropertyGroup>
+  </PropertyGroup>
 
   <PropertyGroup>
     <OutputPath>$(ArtifactsBinDir)system.runtime.handles/4.3.0/ref/</OutputPath>
@@ -16,11 +17,10 @@
     <Compile Include="**/lib/$(TargetFramework)/*.cs" />
   </ItemGroup>
 
-    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-        <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
-        <PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
-        <PackageReference Include="System.Runtime" Version="4.3.0" />
-    </ItemGroup>
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
+    <PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+  </ItemGroup>
 
-  
 </Project>
