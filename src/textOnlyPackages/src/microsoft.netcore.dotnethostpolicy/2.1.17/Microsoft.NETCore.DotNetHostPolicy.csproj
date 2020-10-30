@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <OutputPath>$(ArtifactsBinDir)microsoft.netcore.dotnethostpolicy/2.1.17/</OutputPath>
+    <BaseIntermediateOutputPath>$(ArtifactsObjDir)microsoft.netcore.dotnethostpolicy/2.1.17/</BaseIntermediateOutputPath>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NuspecFile>Microsoft.NETCore.DotNetHostPolicy.nuspec</NuspecFile>
+   </PropertyGroup>
+</Project>
