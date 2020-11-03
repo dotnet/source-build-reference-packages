@@ -1,0 +1,64 @@
+{
+  "runtimes": {
+    "linux-arm": {
+      "Microsoft.NETCore.DotNetHostPolicy": {
+        "runtime.linux-arm.Microsoft.NETCore.DotNetHostPolicy": "2.1.17"
+      }
+    },
+    "linux-arm64": {
+      "Microsoft.NETCore.DotNetHostPolicy": {
+        "runtime.linux-arm64.Microsoft.NETCore.DotNetHostPolicy": "2.1.17"
+      }
+    },
+    "linux-musl-x64": {
+      "Microsoft.NETCore.DotNetHostPolicy": {
+        "runtime.linux-musl-x64.Microsoft.NETCore.DotNetHostPolicy": "2.1.17"
+      }
+    },
+    "linux-x64": {
+      "Microsoft.NETCore.DotNetHostPolicy": {
+        "runtime.linux-x64.Microsoft.NETCore.DotNetHostPolicy": "2.1.17"
+      }
+    },
+    "osx-x64": {
+      "Microsoft.NETCore.DotNetHostPolicy": {
+        "runtime.osx-x64.Microsoft.NETCore.DotNetHostPolicy": "2.1.17"
+      }
+    },
+    "rhel.6-x64": {
+      "Microsoft.NETCore.DotNetHostPolicy": {
+        "runtime.rhel.6-x64.Microsoft.NETCore.DotNetHostPolicy": "2.1.17"
+      }
+    },
+    "tizen.4.0.0-armel": {
+      "Microsoft.NETCore.DotNetHostPolicy": {
+        "runtime.tizen.4.0.0-armel.Microsoft.NETCore.DotNetHostPolicy": "2.1.17"
+      }
+    },
+    "tizen.5.0.0-armel": {
+      "Microsoft.NETCore.DotNetHostPolicy": {
+        "runtime.tizen.5.0.0-armel.Microsoft.NETCore.DotNetHostPolicy": "2.1.17"
+      }
+    },
+    "win-arm": {
+      "Microsoft.NETCore.DotNetHostPolicy": {
+        "runtime.win-arm.Microsoft.NETCore.DotNetHostPolicy": "2.1.17"
+      }
+    },
+    "win-arm64": {
+      "Microsoft.NETCore.DotNetHostPolicy": {
+        "runtime.win-arm64.Microsoft.NETCore.DotNetHostPolicy": "2.1.17"
+      }
+    },
+    "win-x64": {
+      "Microsoft.NETCore.DotNetHostPolicy": {
+        "runtime.win-x64.Microsoft.NETCore.DotNetHostPolicy": "2.1.17"
+      }
+    },
+    "win-x86": {
+      "Microsoft.NETCore.DotNetHostPolicy": {
+        "runtime.win-x86.Microsoft.NETCore.DotNetHostPolicy": "2.1.17"
+      }
+    }
+  }
+}
