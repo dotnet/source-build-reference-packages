@@ -267,6 +267,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.resources.extensions/4.6.0/System.Resources.Extensions.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.bcl.asyncinterfaces/1.0.0/Microsoft.Bcl.AsyncInterfaces.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.bcl.asyncinterfaces/1.1.0/Microsoft.Bcl.AsyncInterfaces.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.bcl.asyncinterfaces/1.1.1/Microsoft.Bcl.AsyncInterfaces.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.6.0/System.Runtime.CompilerServices.Unsafe.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/4.7.0/System.Runtime.CompilerServices.Unsafe.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.encodings.web/4.6.0/System.Text.Encodings.Web.csproj"/>
