@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <OutputPath>$(ArtifactsBinDir)microsoft.build.traversal/2.0.34/</OutputPath>
+    <BaseIntermediateOutputPath>$(ArtifactsObjDir)microsoft.build.traversal/2.0.34/</BaseIntermediateOutputPath>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NuspecFile>Microsoft.Build.Traversal.nuspec</NuspecFile>
+   </PropertyGroup>
+</Project>
