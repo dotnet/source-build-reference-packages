@@ -14033,7 +14033,7 @@
 
     .method /*060016BC*/ family hidebysig virtual 
             instance valuetype [WindowsBase/*23000005*/]System.Windows.Size/*0100001C*/ 
-            MeasureOverride(valuetype [WindowsBase/*23000005*/]System.Windows.Size/*0100001C*/ constraint) cil managed
+            MeasureOverride(valuetype [WindowsBase/*23000005*/]System.Windows.Size/*0100001C*/ 'constraint') cil managed
     // SIG: 20 01 11 71 11 71
     {
       // Method begins at RVA 0x3591
@@ -40662,7 +40662,7 @@
 
   .method /*06000CA1*/ family hidebysig virtual 
           instance valuetype [WindowsBase/*23000005*/]System.Windows.Size/*0100001C*/ 
-          MeasureOverride(valuetype [WindowsBase/*23000005*/]System.Windows.Size/*0100001C*/ constraint) cil managed
+          MeasureOverride(valuetype [WindowsBase/*23000005*/]System.Windows.Size/*0100001C*/ 'constraint') cil managed
   // SIG: 20 01 11 71 11 71
   {
     // Method begins at RVA 0x2c38
@@ -47584,7 +47584,7 @@
 
   .method /*06000EE9*/ family hidebysig virtual 
           instance valuetype [WindowsBase/*23000005*/]System.Windows.Size/*0100001C*/ 
-          MeasureOverride(valuetype [WindowsBase/*23000005*/]System.Windows.Size/*0100001C*/ constraint) cil managed
+          MeasureOverride(valuetype [WindowsBase/*23000005*/]System.Windows.Size/*0100001C*/ 'constraint') cil managed
   // SIG: 20 01 11 71 11 71
   {
     // Method begins at RVA 0x2e5d
