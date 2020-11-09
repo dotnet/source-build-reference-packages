@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <OutputPath>$(ArtifactsBinDir)microsoft.dotnet.web.spa.projecttemplates/3.0.1/</OutputPath>
+    <BaseIntermediateOutputPath>$(ArtifactsObjDir)microsoft.dotnet.web.spa.projecttemplates/3.0.1/</BaseIntermediateOutputPath>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NuspecFile>Microsoft.DotNet.Web.Spa.ProjectTemplates.nuspec</NuspecFile>
+   </PropertyGroup>
+</Project>
