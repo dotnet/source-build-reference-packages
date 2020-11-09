@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties">
+  <dc:creator>Microsoft</dc:creator>
+  <dc:description>Single Page Application templates for ASP.NET Core
+
+To install the templates in this package, run 'dotnet new --install Microsoft.DotNet.Web.Spa.ProjectTemplates.3.0::3.0.1'.
+    
+
+This package was built from the source code at https://github.com/aspnet/AspNetCore/tree/22dedcb2f0de59022e0383e1f05c9caffc708522</dc:description>
+  <dc:identifier>Microsoft.DotNet.Web.Spa.ProjectTemplates.3.0</dc:identifier>
+  <version>3.0.1</version>
+  <keywords>aspnet templates spa</keywords>
+  <lastModifiedBy>NuGet.Build.Tasks.Pack, Version=5.3.0.4, Culture=neutral, PublicKeyToken=31bf3856ad364e35;Microsoft Windows NT 10.0.17763.0;.NET Framework 4.7.2</lastModifiedBy>
+</coreProperties>
