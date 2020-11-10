@@ -18,7 +18,7 @@
     <NuspecsToCopy Include="$(ReferenceAssemblySourcePath)**/*.nuspec" />
     <DummyFilesToCopy Include="$(ReferenceAssemblySourcePath)**/_._" />
     <IconFilesToCopy Include="$(ReferenceAssemblySourcePath)**/*.png" />
-    <TextOnlyProjects Include="$(TextOnlyProjectsSourcePath)**/*.csproj" />
+    <TextOnlyProjects Include="$(TextOnlyProjectsSourcePath)src/*/*/*.csproj" />
   </ItemGroup>
   
   <Target Name="CopyNuspecFiles" BeforeTargets="Build" Condition="'@(NuspecsToCopy)' != ''">
