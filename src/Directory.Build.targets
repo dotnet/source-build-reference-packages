@@ -110,6 +110,7 @@
     <PropertyGroup>
       <NuspecFile>$(TFMPackTempOutputDir)@(NuspecFile)</NuspecFile>
       <NuspecFile Condition="'$(PackNuspecInPlace)' == 'true'">@(NuspecFile)</NuspecFile>
+      <NoDefaultExcludes>true</NoDefaultExcludes>
     </PropertyGroup>
   </Target>
 
