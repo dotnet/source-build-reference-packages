@@ -789,7 +789,7 @@
   } // end of method ConstraintCollection::remove_CollectionChanged
 
   .method /*06000010*/ public hidebysig instance void 
-          Add(class System.Data.Constraint/*02000007*/ 'constraint') cil managed
+          Add(class System.Data.Constraint/*02000007*/ constraint) cil managed
   // SIG: 20 01 01 12 1C
   {
     // Method begins at RVA 0x205b
@@ -861,7 +861,7 @@
   } // end of method ConstraintCollection::AddRange
 
   .method /*06000016*/ public hidebysig instance bool 
-          CanRemove(class System.Data.Constraint/*02000007*/ 'constraint') cil managed
+          CanRemove(class System.Data.Constraint/*02000007*/ constraint) cil managed
   // SIG: 20 01 02 12 1C
   {
     // Method begins at RVA 0x2058
@@ -904,7 +904,7 @@
   } // end of method ConstraintCollection::CopyTo
 
   .method /*0600001A*/ public hidebysig instance int32 
-          IndexOf(class System.Data.Constraint/*02000007*/ 'constraint') cil managed
+          IndexOf(class System.Data.Constraint/*02000007*/ constraint) cil managed
   // SIG: 20 01 08 12 1C
   {
     // Method begins at RVA 0x2058
@@ -926,7 +926,7 @@
   } // end of method ConstraintCollection::IndexOf
 
   .method /*0600001C*/ public hidebysig instance void 
-          Remove(class System.Data.Constraint/*02000007*/ 'constraint') cil managed
+          Remove(class System.Data.Constraint/*02000007*/ constraint) cil managed
   // SIG: 20 01 01 12 1C
   {
     // Method begins at RVA 0x205b

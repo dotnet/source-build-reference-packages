@@ -609,7 +609,7 @@
        extends [Microsoft.AspNetCore.Mvc.Core/*23000004*/]Microsoft.AspNetCore.Mvc.ActionConstraints.HttpMethodActionConstraint/*01000023*/
 {
   .method /*0600000A*/ public hidebysig specialname rtspecialname 
-          instance void  .ctor(class [Microsoft.AspNetCore.Mvc.Core/*23000004*/]Microsoft.AspNetCore.Mvc.ActionConstraints.HttpMethodActionConstraint/*01000023*/ 'constraint') cil managed
+          instance void  .ctor(class [Microsoft.AspNetCore.Mvc.Core/*23000004*/]Microsoft.AspNetCore.Mvc.ActionConstraints.HttpMethodActionConstraint/*01000023*/ constraint) cil managed
   // SIG: 20 01 01 12 80 8D
   {
     // Method begins at RVA 0x2074

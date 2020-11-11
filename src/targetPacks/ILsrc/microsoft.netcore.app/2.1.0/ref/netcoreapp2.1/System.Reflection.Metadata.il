@@ -23569,7 +23569,7 @@
 
   .method /*0600059C*/ public hidebysig instance valuetype System.Reflection.Metadata.GenericParameterConstraintHandle/*02000056*/ 
           AddGenericParameterConstraint(valuetype System.Reflection.Metadata.GenericParameterHandle/*02000058*/ genericParameter,
-                                        valuetype System.Reflection.Metadata.EntityHandle/*02000047*/ 'constraint') cil managed
+                                        valuetype System.Reflection.Metadata.EntityHandle/*02000047*/ constraint) cil managed
   // SIG: 20 02 11 81 58 11 81 60 11 81 1C
   {
     // Method begins at RVA 0x2050

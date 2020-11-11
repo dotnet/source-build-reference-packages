@@ -4880,7 +4880,7 @@
           class Microsoft.AspNetCore.Components.Routing.RouteConstraint/*02000034*/ 
           Parse(string template,
                 string segment,
-                string 'constraint') cil managed
+                string constraint) cil managed
   // SIG: 00 03 12 80 D0 0E 0E 0E
   {
     // Method begins at RVA 0x23db

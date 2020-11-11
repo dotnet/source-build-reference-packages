@@ -5593,7 +5593,7 @@
   } // end of method ImportDefinition::.ctor
 
   .method /*060001B7*/ public hidebysig specialname rtspecialname 
-          instance void  .ctor(class [System.Core/*23000003*/]System.Linq.Expressions.Expression`1/*01000023*/<class [mscorlib/*23000001*/]System.Func`2/*01000024*/<class System.ComponentModel.Composition.Primitives.ExportDefinition/*02000018*/,bool>> 'constraint',
+          instance void  .ctor(class [System.Core/*23000003*/]System.Linq.Expressions.Expression`1/*01000023*/<class [mscorlib/*23000001*/]System.Func`2/*01000024*/<class System.ComponentModel.Composition.Primitives.ExportDefinition/*02000018*/,bool>> constraint,
                                string contractName,
                                valuetype System.ComponentModel.Composition.Primitives.ImportCardinality/*02000076*/ cardinality,
                                bool isRecomposable,
@@ -5605,7 +5605,7 @@
   } // end of method ImportDefinition::.ctor
 
   .method /*060001B8*/ public hidebysig specialname rtspecialname 
-          instance void  .ctor(class [System.Core/*23000003*/]System.Linq.Expressions.Expression`1/*01000023*/<class [mscorlib/*23000001*/]System.Func`2/*01000024*/<class System.ComponentModel.Composition.Primitives.ExportDefinition/*02000018*/,bool>> 'constraint',
+          instance void  .ctor(class [System.Core/*23000003*/]System.Linq.Expressions.Expression`1/*01000023*/<class [mscorlib/*23000001*/]System.Func`2/*01000024*/<class System.ComponentModel.Composition.Primitives.ExportDefinition/*02000018*/,bool>> constraint,
                                string contractName,
                                valuetype System.ComponentModel.Composition.Primitives.ImportCardinality/*02000076*/ cardinality,
                                bool isRecomposable,
