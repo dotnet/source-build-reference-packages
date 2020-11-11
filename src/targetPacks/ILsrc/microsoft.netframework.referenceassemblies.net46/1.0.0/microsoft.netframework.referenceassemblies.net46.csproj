@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputPath>$(ArtifactsBinDir)microsoft.netframework.referenceassemblies.net46/1.0.0/</OutputPath>
+    <BaseIntermediateOutputPath>$(ArtifactsObjDir)microsoft.netframework.referenceassemblies.net46/1.0.0/</BaseIntermediateOutputPath>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NuspecFile>microsoft.netframework.referenceassemblies.net46.nuspec</NuspecFile>
+   </PropertyGroup>
+</Project>
