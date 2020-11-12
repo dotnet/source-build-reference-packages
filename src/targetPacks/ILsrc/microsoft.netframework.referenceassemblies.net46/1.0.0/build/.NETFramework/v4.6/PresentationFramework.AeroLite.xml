@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>PresentationFramework.AeroLite</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Windows.Themes.DataGridHeaderBorder">
+      <summary>Creates the theme specific-look for headers in .NET Framework 4.5 <see cref="T:System.Windows.Controls.DataGrid" />.</summary>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.DataGridHeaderBorder.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Windows.Themes.DataGridHeaderBorder" /> class. </summary>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.DataGridHeaderBorder.IsClickable">
+      <summary>Gets or sets a value that indicates whether the header is clickable.</summary>
+      <returns>true if the header clickable; otherwise, false. The registered default is true. For more information about what can influence the value, see <see cref="T:System.Windows.DependencyProperty" />.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.DataGridHeaderBorder.IsClickableProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.IsClickable" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.IsClickable" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.DataGridHeaderBorder.IsHovered">
+      <summary>Gets or sets a value that indicates whether the header appears as if the mouse pointer is moved over it.</summary>
+      <returns>true if the header appears as if the mouse pointer is moved over it; otherwise, false. The registered default is false. For more information about what can influence the value, see <see cref="T:System.Windows.DependencyProperty" />.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.DataGridHeaderBorder.IsHoveredProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.IsHovered" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.IsHovered" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.DataGridHeaderBorder.IsPressed">
+      <summary>Gets or sets a value that indicates whether the header appears pressed.</summary>
+      <returns>true if the header appears pressed; otherwise, false. The registered default is false. For more information about what can influence the value, see <see cref="T:System.Windows.DependencyProperty" />.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.DataGridHeaderBorder.IsPressedProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.IsPressed" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.IsPressed" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.DataGridHeaderBorder.IsSelected">
+      <summary>Gets or sets a value that indicates whether the header appears selected.</summary>
+      <returns>true if the header appears selected; otherwise, false. The registered default is false. For more information about what can influence the value, see <see cref="T:System.Windows.DependencyProperty" />.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.DataGridHeaderBorder.IsSelectedProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.IsSelected" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.IsSelected" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.DataGridHeaderBorder.Orientation">
+      <summary>Gets or sets whether the header renders in the vertical direction, as a column header, or horizontal direction, as a row header.</summary>
+      <returns>One of the enumeration values that indicates which direction the header renders. The registered default is <see cref="F:System.Windows.Controls.Orientation.Vertical" />. For more information about what can influence the value, see <see cref="T:System.Windows.DependencyProperty" />.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.DataGridHeaderBorder.OrientationProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.Orientation" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.Orientation" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.DataGridHeaderBorder.SeparatorBrush">
+      <summary>Gets or sets the brush that draws the separation between headers.</summary>
+      <returns>The brush that draws the separation between headers. The registered default is null. For more information about what can influence the value, see <see cref="T:System.Windows.DependencyProperty" />.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.DataGridHeaderBorder.SeparatorBrushProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.SeparatorBrush" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.SeparatorBrush" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.DataGridHeaderBorder.SeparatorVisibility">
+      <summary>Gets or sets the value that indicates whether the separation between headers is visible.</summary>
+      <returns>One of the enumeration values that indicates whether the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.SeparatorBrush" /> is visible. The registered default is <see cref="F:System.Windows.Visibility.Visible" />. For more information about what can influence the value, see <see cref="T:System.Windows.DependencyProperty" />.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.DataGridHeaderBorder.SeparatorVisibilityProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.SeparatorVisibility" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.SeparatorVisibility" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.DataGridHeaderBorder.SortDirection">
+      <summary>Gets or sets the header sort direction.</summary>
+      <returns>One of the enumeration values that indicates which direction the column is sorted. The registered default is null. For more information about what can influence the value, see <see cref="T:System.Windows.DependencyProperty" />.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.DataGridHeaderBorder.SortDirectionProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.SortDirection" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.SortDirection" /> dependency property.</returns>
+    </member>
+  </members>
+</doc>

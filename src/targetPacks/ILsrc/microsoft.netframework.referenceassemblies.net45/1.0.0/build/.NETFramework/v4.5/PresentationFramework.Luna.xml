@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>PresentationFramework.Luna</name>
+  </assembly>
+  <members>
+    <member name="P:Microsoft.Windows.Themes.ButtonChrome.ThemeColor">
+      <summary>Gets or sets the theme color.  </summary>
+      <returns>A value in the enumeration.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ButtonChrome.ThemeColorProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.ThemeColor" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.ThemeColor" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.DataGridHeaderBorder.ThemeColor">
+      <summary>Gets or sets the header theme color.</summary>
+      <returns>Represents possible color variants for the Microsoft themes. </returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.DataGridHeaderBorder.ThemeColorProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.ThemeColor" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.DataGridHeaderBorder.ThemeColor" /> dependency property.</returns>
+    </member>
+    <member name="T:Microsoft.Windows.Themes.PlatformCulture">
+      <summary>Provides culture-specific information used by the Microsoft .NET Framework system themes.</summary>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.PlatformCulture.FlowDirection">
+      <summary>Gets a value that specifies whether the primary text advance direction shall be left-to-right, right-to-left, or top-to-bottom.</summary>
+      <returns>One of the enumeration values.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ScrollChrome.ThemeColor">
+      <summary>Gets or sets the color of the theme. </summary>
+      <returns>A value in the enumeration.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollChrome.ThemeColorProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.ScrollChrome.ThemeColor" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.ScrollChrome.ThemeColor" /> dependency property.</returns>
+    </member>
+    <member name="T:Microsoft.Windows.Themes.ScrollGlyph">
+      <summary>Describes the glyphs used to represent the <see cref="T:System.Windows.Controls.Primitives.Thumb" />.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.None">
+      <summary>No glyph is used. </summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.LeftArrow">
+      <summary>An arrow glyph pointing to the left.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.RightArrow">
+      <summary>An arrow glyph pointing to the right.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.UpArrow">
+      <summary>An arrow glyph pointing up.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.DownArrow">
+      <summary>An arrow glyph pointing down.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.VerticalGripper">
+      <summary>A vertical gripper glyph.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ScrollGlyph.HorizontalGripper">
+      <summary> horizontal gripper glyph.</summary>
+    </member>
+    <member name="T:Microsoft.Windows.Themes.SystemDropShadowChrome">
+      <summary>Creates a theme specific look for drop shadow effects.</summary>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.SystemDropShadowChrome.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Windows.Themes.SystemDropShadowChrome" /> class.</summary>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.SystemDropShadowChrome.Color">
+      <summary>Gets or sets the color used by the drop shadow.  </summary>
+      <returns>The color.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.SystemDropShadowChrome.ColorProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.SystemDropShadowChrome.Color" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.SystemDropShadowChrome.Color" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.SystemDropShadowChrome.CornerRadius">
+      <summary>Gets or sets the radii of a rectangle's corners.  </summary>
+      <returns>The radii of a rectangle's corners.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.SystemDropShadowChrome.CornerRadiusProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.SystemDropShadowChrome.CornerRadius" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.SystemDropShadowChrome.CornerRadius" /> dependency property.</returns>
+    </member>
+    <member name="T:Microsoft.Windows.Themes.ThemeColor">
+      <summary>Represents possible color variants for the Microsoft themes. </summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ThemeColor.NormalColor">
+      <summary>Used by the Luna, Aero, and Classic themes; the localized color name is Blue.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ThemeColor.Homestead">
+      <summary>Used by the Luna theme; the localized color name is Olive.</summary>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ThemeColor.Metallic">
+      <summary>Used by the Luna theme; the localized color name is Sliver.</summary>
+    </member>
+  </members>
+</doc>
