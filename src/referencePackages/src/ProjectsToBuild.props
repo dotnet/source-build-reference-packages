@@ -291,7 +291,5 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.reflection.metadata/1.8.0/System.Reflection.Metadata.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.algorithms/4.3.1/System.Security.Cryptography.Algorithms.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.protecteddata/4.4.0/System.Security.Cryptography.ProtectedData.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.drawing.common/4.7.0/System.Drawing.Common.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.win32.systemevents/4.7.0/Microsoft.Win32.SystemEvents.csproj"/>
   </ItemGroup>
 </Project>
