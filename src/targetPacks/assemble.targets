@@ -57,14 +57,14 @@
   <Target Name="PatchIl"
           BeforeTargets="AssembleTargetPack"
           Condition="'@(TargetingPackSrcRequiringConstraintPatch)' != ''">
+    <PropertyGroup>
+      <PatchedILSrcTemp>$(RepoRoot)artifacts/patchedILSrc/</PatchedILSrcTemp>
+    </PropertyGroup>
     <ItemGroup>
       <TargetingPackSrcRequiringConstraintPatch
         DestinationFile="$(PatchedILSrcTemp)$(MSBuildProjectName)/%(RecursiveDir)%(Filename).patched%(Extension)"
         RelativeOutputAssemblyFile="%(RecursiveDir)%(Filename).dll" />
     </ItemGroup>
-    <PropertyGroup>
-      <PatchedILSrcTemp>$(RepoRoot)artifacts/patchedILSrc/</PatchedILSrcTemp>
-    </PropertyGroup>
 
     <!--
       Wrap constraint in single quotes in certain circumstances to avoid using reserved token.
