@@ -66,20 +66,23 @@ namespace Microsoft.VisualStudio.Setup.Configuration
     public partial interface ISetupConfiguration2 : Microsoft.VisualStudio.Setup.Configuration.ISetupConfiguration
     {
         Microsoft.VisualStudio.Setup.Configuration.ISetupInstance GetInstanceForCurrentProcess();
-        void _VtblGap1_1() { }
+        // Remove default interface implementation: not supported in net472.
+        void _VtblGap1_1();
     }
     [System.Runtime.InteropServices.TypeIdentifierAttribute]
     public partial interface ISetupInstance
     {
         string GetInstallationVersion();
         string GetInstanceId();
-        void _VtblGap1_3() { }
+        // Remove default interface implementation: not supported in net472.
+        void _VtblGap1_3();
     }
     [System.Runtime.InteropServices.TypeIdentifierAttribute]
     public partial interface ISetupInstanceCatalog
     {
         bool IsPrerelease();
-        void _VtblGap1_1() { }
+        // Remove default interface implementation: not supported in net472.
+        void _VtblGap1_1();
     }
     [System.Runtime.InteropServices.CoClassAttribute(typeof(object))]
     [System.Runtime.InteropServices.TypeIdentifierAttribute]
