@@ -11,20 +11,23 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security;
 
-[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: AllowPartiallyTrustedCallers]
-[assembly: ReferenceAssembly]
-[assembly: AssemblyTitle("microsoft.dotnet.templateLocator")]
-[assembly: AssemblyDescription("microsoft.dotnet.templateLocator")]
-[assembly: AssemblyDefaultAlias("microsoft.dotnet.templateLocator")]
-[assembly: AssemblyCompany("Microsoft Corporation")]
-[assembly: AssemblyProduct("Microsoft® .NET Framework")]
-[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: AssemblyFileVersion("5.1.20.42119")]
-[assembly: AssemblyInformationalVersion("5.1.20.42119 built by: SOURCEBUILD")]
-[assembly: CLSCompliant(true)]
-[assembly: AssemblyMetadata("", "")]
-[assembly: AssemblyVersion("5.0.100.0")]
+// Manual modification: remove assembly attributes in all but one source file.
+// These source files end up in one assembly **unlike the Microsoft package** so
+// we have to pick a "main" assembly.
+// [assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+// [assembly: AllowPartiallyTrustedCallers]
+// [assembly: ReferenceAssembly]
+// [assembly: AssemblyTitle("microsoft.dotnet.templateLocator")]
+// [assembly: AssemblyDescription("microsoft.dotnet.templateLocator")]
+// [assembly: AssemblyDefaultAlias("microsoft.dotnet.templateLocator")]
+// [assembly: AssemblyCompany("Microsoft Corporation")]
+// [assembly: AssemblyProduct("Microsoft® .NET Framework")]
+// [assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+// [assembly: AssemblyFileVersion("5.1.20.42119")]
+// [assembly: AssemblyInformationalVersion("5.1.20.42119 built by: SOURCEBUILD")]
+// [assembly: CLSCompliant(true)]
+// [assembly: AssemblyMetadata("", "")]
+// [assembly: AssemblyVersion("5.0.100.0")]
 
 
 
