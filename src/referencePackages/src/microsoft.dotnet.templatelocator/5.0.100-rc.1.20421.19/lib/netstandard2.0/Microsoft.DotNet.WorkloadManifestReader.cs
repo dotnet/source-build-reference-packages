@@ -37,8 +37,7 @@ namespace Microsoft.NET.Sdk.WorkloadManifestReader
     public partial class WorkloadManifest
     {
         public WorkloadManifest() { }
-        [System.Runtime.CompilerServices.TupleElementNamesAttribute(new string[]{ "version", "kind"})]
-        public System.Collections.Generic.Dictionary<string, System.ValueTuple<string, string>> SdkPackDetail { get { throw null; } set { } }
+        public System.Collections.Generic.Dictionary<string, (string version, string kind)> SdkPackDetail { get { throw null; } set { } }
         public System.Collections.Generic.Dictionary<string, System.Collections.Generic.List<string>> Workloads { get { throw null; } set { } }
         public static Microsoft.NET.Sdk.WorkloadManifestReader.WorkloadManifest LoadFromFolder(string manifestFolder) { throw null; }
         public static Microsoft.NET.Sdk.WorkloadManifestReader.WorkloadManifest Merge(System.Collections.Generic.IEnumerable<Microsoft.NET.Sdk.WorkloadManifestReader.WorkloadManifest> manifests) { throw null; }
