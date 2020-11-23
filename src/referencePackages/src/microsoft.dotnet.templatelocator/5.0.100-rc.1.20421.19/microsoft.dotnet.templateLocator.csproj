@@ -12,23 +12,11 @@
     <IntermediateOutputPath>$(ArtifactsObjDir)microsoft.dotnet.templatelocator/5.0.100-rc.1.20421.19</IntermediateOutputPath>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <OutputPath>$(ArtifactsBinDir)microsoft.dotnet.templatelocator/5.0.100-rc.1.20421.19/lib/</OutputPath>
+  <PropertyGroup>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <OutputPath>$(ArtifactsBinDir)microsoft.dotnet.templatelocator/5.0.100-rc.1.20421.19/lib/</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <OutputPath>$(ArtifactsBinDir)microsoft.dotnet.templatelocator/5.0.100-rc.1.20421.19/lib/</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net472' ">
-    <OutputPath>$(ArtifactsBinDir)microsoft.dotnet.templatelocator/5.0.100-rc.1.20421.19/lib/</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net472' ">
     <OutputPath>$(ArtifactsBinDir)microsoft.dotnet.templatelocator/5.0.100-rc.1.20421.19/lib/</OutputPath>
   </PropertyGroup>
 
@@ -43,22 +31,6 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <PackageReference Include="NETStandard.Library" Version="$(NETStandardLibraryPackageVersion)" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="NETStandard.Library" Version="$(NETStandardLibraryPackageVersion)" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="NETStandard.Library" Version="$(NETStandardLibraryPackageVersion)" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.0-alpha-5" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.0-alpha-5" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
