@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <TargetingPackSrc Include="$(MSBuildProjectDirectory)/**/*.il" />
+      <!--
+        Files that may need the 'constraint' token fixed before they can be assembled. They were
+        decompiled with a 3.1 ildasm not compatible with 5.0 ilasm. In some cases the fix is not
+        necessary for a given IL filename in a certain TFM, but is necessary for a file with the
+        same name in a different TFM. The patch doesn't take a particularly long time, so prefer
+        keeping this list simple.
+      -->
+      <TargetingPackSrcRequiringConstraintPatch
+        Include="
+          $(MSBuildProjectDirectory)\**\Microsoft.AspNetCore.Components.il;
+          $(MSBuildProjectDirectory)\**\Microsoft.AspNetCore.Mvc.Cors.il;
+          $(MSBuildProjectDirectory)\**\Microsoft.AspNetCore.Routing.il;
+          $(MSBuildProjectDirectory)\**\netstandard.il;
+          $(MSBuildProjectDirectory)\**\presentationframework.*.il;
+          $(MSBuildProjectDirectory)\**\PresentationFramework.*.il;
+          $(MSBuildProjectDirectory)\**\PresentationFramework.il;
+          $(MSBuildProjectDirectory)\**\System.Activities.Presentation.il;
+          $(MSBuildProjectDirectory)\**\System.ComponentModel.Composition.il;
+          $(MSBuildProjectDirectory)\**\System.Data.Common.il;
+          $(MSBuildProjectDirectory)\**\System.Data.Entity.il;
+          $(MSBuildProjectDirectory)\**\System.Data.il;
+          $(MSBuildProjectDirectory)\**\System.Design.il;
+          $(MSBuildProjectDirectory)\**\System.Reflection.Metadata.il;
+          $(MSBuildProjectDirectory)\**\System.Web.il;
+          $(MSBuildProjectDirectory)\**\System.Xml.il;
+          $(MSBuildProjectDirectory)\**\System.XML.il;
+          $(MSBuildProjectDirectory)\**\WindowsFormsIntegration.il" />
+
+      <!-- Find all IL. Leave out IL that needs to be patched before being built. -->
+      <TargetingPackSrc
+        Include="$(MSBuildProjectDirectory)\**\*.il"
+        Exclude="@(TargetingPackSrcRequiringConstraintPatch)" />
+
   </ItemGroup>
+
   <Target Name="AssembleTargetPack" Condition="'@(TargetingPackSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
+    <ItemGroup>
+      <TargetingPackSrc
+        RelativeOutputAssemblyFile="%(RecursiveDir)%(Filename).dll" />
+    </ItemGroup>
     <PropertyGroup>
       <BuildInParallel Condition="'$(BuildInParallel)' == ''">true</BuildInParallel>
       <ArtifactsTFMPackTemp>$(RepoRoot)artifacts/TFMPack/</ArtifactsTFMPackTemp>
@@ -13,7 +50,39 @@
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
     <MakeDir Directories="@(TargetingPackSrc->'$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(RecursiveDir)')" />
     <!-- Note: Hack below to not fill up build logs.  Ilasm produces warning on validly disassembled il src.  The awk below eats just that warning -->
-    <Exec Command="set -o pipefail;$(IlasmToolPathSB)ilasm %(TargetingPackSrc.Identity) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(RecursiveDir)%(TargetingPackSrc.Filename).dll |&amp; awk '!/warning : Method has no body/'" IgnoreStandardErrorWarningFormat="true"/>
+    <Exec Command="set -o pipefail;$(IlasmToolPathSB)ilasm %(TargetingPackSrc.Identity) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(TargetingPackSrc.RelativeOutputAssemblyFile) |&amp; awk '!/warning : Method has no body/'" IgnoreStandardErrorWarningFormat="true"/>
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done assembling TargetPacks src." />
   </Target>
+
+  <Target Name="PatchIl"
+          BeforeTargets="AssembleTargetPack"
+          Condition="'@(TargetingPackSrcRequiringConstraintPatch)' != ''">
+    <ItemGroup>
+      <TargetingPackSrcRequiringConstraintPatch
+        DestinationFile="$(PatchedILSrcTemp)$(MSBuildProjectName)/%(RecursiveDir)%(Filename).patched%(Extension)"
+        RelativeOutputAssemblyFile="%(RecursiveDir)%(Filename).dll" />
+    </ItemGroup>
+    <PropertyGroup>
+      <PatchedILSrcTemp>$(RepoRoot)artifacts/patchedILSrc/</PatchedILSrcTemp>
+    </PropertyGroup>
+
+    <!--
+      Wrap constraint in single quotes in certain circumstances to avoid using reserved token.
+      Function param:
+        " constraint," => " 'constraint',"
+        " constraint)" => " 'constraint')"
+        " constraint"(eol) => " 'constraint'"(eol) (%24 is $ escaped in hex)
+    -->
+    <Exec Command="
+      set -e
+      destination=&quot;%(TargetingPackSrcRequiringConstraintPatch.DestinationFile)&quot;
+      mkdir -p &quot;${destination%/*}&quot;
+      sed -E &quot;s/ constraint(([,)])|%24)/ 'constraint'\2/g&quot; &quot;%(TargetingPackSrcRequiringConstraintPatch.FullPath)&quot; > &quot;$destination&quot;" />
+
+    <ItemGroup>
+      <TargetingPackSrc
+        Include="@(TargetingPackSrcRequiringConstraintPatch->'%(DestinationFile)')" />
+    </ItemGroup>
+  </Target>
+
 </Project>
