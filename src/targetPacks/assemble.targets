@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
   <ItemGroup>
       <!--
         Files that may need the 'constraint' token fixed before they can be assembled. They were
@@ -33,38 +34,29 @@
       <TargetingPackSrc
         Include="$(MSBuildProjectDirectory)\**\*.il"
         Exclude="@(TargetingPackSrcRequiringConstraintPatch)" />
-
   </ItemGroup>
 
-  <Target Name="AssembleTargetPack" Condition="'@(TargetingPackSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
+  <Target Name="GetProjectSrc"
+          BeforeTargets="PatchIl">
+    <PropertyGroup>
+      <PatchedILSrcTemp>$(RepoRoot)artifacts/patchedILSrc/</PatchedILSrcTemp>
+    </PropertyGroup>
     <ItemGroup>
       <TargetingPackSrc
+        ILSrcFile="%(FullPath)"
         RelativeOutputAssemblyFile="%(RecursiveDir)%(Filename).dll" />
+      <TargetingPackSrcRequiringConstraintPatch
+        ILSrcFile="$(PatchedILSrcTemp)$(MSBuildProjectName)/%(RecursiveDir)%(Filename).patched%(Extension)"
+        RelativeOutputAssemblyFile="%(RecursiveDir)%(Filename).dll"
+        DestinationFile="$(PatchedILSrcTemp)$(MSBuildProjectName)/%(RecursiveDir)%(Filename).patched%(Extension)" />
+      <AllSrc
+        Include="@(TargetingPackSrc);@(TargetingPackSrcRequiringConstraintPatch)" />
     </ItemGroup>
-    <PropertyGroup>
-      <BuildInParallel Condition="'$(BuildInParallel)' == ''">true</BuildInParallel>
-      <ArtifactsTFMPackTemp>$(RepoRoot)artifacts/TFMPack/</ArtifactsTFMPackTemp>
-      <IlasmToolPathSB>$(RepoRoot)/artifacts/source-built/coreclr-tools/</IlasmToolPathSB>
-    </PropertyGroup>
-
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
-    <MakeDir Directories="@(TargetingPackSrc->'$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(RecursiveDir)')" />
-    <!-- Note: Hack below to not fill up build logs.  Ilasm produces warning on validly disassembled il src.  The awk below eats just that warning -->
-    <Exec Command="set -o pipefail;$(IlasmToolPathSB)ilasm %(TargetingPackSrc.Identity) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(TargetingPackSrc.RelativeOutputAssemblyFile) |&amp; awk '!/warning : Method has no body/'" IgnoreStandardErrorWarningFormat="true"/>
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done assembling TargetPacks src." />
   </Target>
 
   <Target Name="PatchIl"
           BeforeTargets="AssembleTargetPack"
           Condition="'@(TargetingPackSrcRequiringConstraintPatch)' != ''">
-    <PropertyGroup>
-      <PatchedILSrcTemp>$(RepoRoot)artifacts/patchedILSrc/</PatchedILSrcTemp>
-    </PropertyGroup>
-    <ItemGroup>
-      <TargetingPackSrcRequiringConstraintPatch
-        DestinationFile="$(PatchedILSrcTemp)$(MSBuildProjectName)/%(RecursiveDir)%(Filename).patched%(Extension)"
-        RelativeOutputAssemblyFile="%(RecursiveDir)%(Filename).dll" />
-    </ItemGroup>
 
     <!--
       Wrap constraint in single quotes in certain circumstances to avoid using reserved token.
@@ -75,14 +67,26 @@
     -->
     <Exec Command="
       set -e
-      destination=&quot;%(TargetingPackSrcRequiringConstraintPatch.DestinationFile)&quot;
+      destination=&quot;%(TargetingPackSrcRequiringConstraintPatch.ILSrcFile)&quot;
       mkdir -p &quot;${destination%/*}&quot;
       sed -E &quot;s/ constraint(([,)])|%24)/ 'constraint'\2/g&quot; &quot;%(TargetingPackSrcRequiringConstraintPatch.FullPath)&quot; > &quot;$destination&quot;" />
 
-    <ItemGroup>
-      <TargetingPackSrc
-        Include="@(TargetingPackSrcRequiringConstraintPatch->'%(DestinationFile)')" />
-    </ItemGroup>
+  </Target>
+
+  <Target Name="AssembleTargetPack"
+          Condition="'@(TargetingPackSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
+
+    <PropertyGroup>
+      <BuildInParallel Condition="'$(BuildInParallel)' == ''">true</BuildInParallel>
+      <ArtifactsTFMPackTemp>$(RepoRoot)artifacts/TFMPack/</ArtifactsTFMPackTemp>
+      <IlasmToolPathSB>$(RepoRoot)/artifacts/source-built/coreclr-tools/</IlasmToolPathSB>
+    </PropertyGroup>
+
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
+    <MakeDir Directories="@(AllSrc->'$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(RecursiveDir)')" />
+    <!-- Note: Hack below to not fill up build logs.  Ilasm produces warning on validly disassembled il src.  The awk below eats just that warning -->
+    <Exec Command="set -o pipefail;$(IlasmToolPathSB)ilasm %(AllSrc.ILSrcFile) -dll -quiet -nologo -output=$(ArtifactsTFMPackTemp)$(MSBuildProjectName)/%(AllSrc.RelativeOutputAssemblyFile) |&amp; awk '!/warning : Method has no body/'" IgnoreStandardErrorWarningFormat="true"/>
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Done assembling TargetPacks src." />
   </Target>
 
 </Project>

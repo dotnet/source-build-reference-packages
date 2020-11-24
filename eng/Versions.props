@@ -7,7 +7,7 @@
     <PreReleaseVersionLabel>beta</PreReleaseVersionLabel>
     <!-- Opt-out repo features -->
     <UsingToolXliff>false</UsingToolXliff>
-    <PrivateSourceBuiltArtifactsPackageVersion>0.1.0-5.0.100-bootstrap.15</PrivateSourceBuiltArtifactsPackageVersion>
+    <PrivateSourceBuiltArtifactsPackageVersion>0.1.0-5.0.100-896680-20201123.1</PrivateSourceBuiltArtifactsPackageVersion>
   </PropertyGroup>
   <PropertyGroup>
     <RestoreSources>
