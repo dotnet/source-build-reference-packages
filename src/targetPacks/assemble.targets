@@ -74,7 +74,9 @@
   </Target>
 
   <Target Name="AssembleTargetPack"
-          Condition="'@(TargetingPackSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
+          Condition="'@(TargetingPackSrcNotRequiringConstraintPatch)' != '' 
+                      and '@(TargetingPackSrcRequiringConstraintPatch)' != '' 
+                      and '$(SkipTargetingPacks)' != 'true' ">
 
     <PropertyGroup>
       <BuildInParallel Condition="'$(BuildInParallel)' == ''">true</BuildInParallel>
