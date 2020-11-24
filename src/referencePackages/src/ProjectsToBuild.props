@@ -294,5 +294,10 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.win32.systemevents/4.7.0/Microsoft.Win32.SystemEvents.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.dotnet.templatelocator/5.0.100-rc.1.20421.19/Microsoft.DotNet.TemplateLocator.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.drawing.common/4.7.0/System.Drawing.Common.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.componentmodel.annotations/4.7.0/System.ComponentModel.Annotations.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.cng/4.7.0/System.Security.Cryptography.Cng.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/4.7.0/System.Security.Cryptography.Pkcs.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.xml/4.7.0/System.Security.Cryptography.Xml.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.windows.extensions/4.7.0/System.Windows.Extensions.csproj"/>
   </ItemGroup>
 </Project>
