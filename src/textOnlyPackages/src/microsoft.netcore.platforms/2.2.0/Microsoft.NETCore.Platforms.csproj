@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <OutputPath>$(ArtifactsBinDir)microsoft.netcore.platforms/2.2.0/</OutputPath>
+    <BaseIntermediateOutputPath>$(ArtifactsObjDir)microsoft.netcore.platforms/2.2.0/</BaseIntermediateOutputPath>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NuspecFile>Microsoft.NETCore.Platforms.nuspec</NuspecFile>
+   </PropertyGroup>
+</Project>

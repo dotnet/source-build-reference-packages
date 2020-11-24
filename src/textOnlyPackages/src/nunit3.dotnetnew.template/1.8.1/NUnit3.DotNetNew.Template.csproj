@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <OutputPath>$(ArtifactsBinDir)nunit3.dotnetnew.template/1.8.1/</OutputPath>
+    <BaseIntermediateOutputPath>$(ArtifactsObjDir)nunit3.dotnetnew.template./1.8.1/</BaseIntermediateOutputPath>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NuspecFile>NUnit3.DotNetNew.Template.nuspec</NuspecFile>
+   </PropertyGroup>
+</Project>
