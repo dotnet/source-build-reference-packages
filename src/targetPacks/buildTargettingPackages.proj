@@ -32,7 +32,7 @@
   </Target>
 
   <Target Name="AssembleTargetPacks" BeforeTargets="Build" AfterTargets="BuildTFMDLLStructure" Condition="'@(TargetingPacksSrc)' != '' and '$(SkipTargetingPacks)' != 'true' ">
-    <MSBuild Projects="@(ProjFiles)" Targets="AssembleTargetPack" BuildInParallel="true"/>
+    <MSBuild Projects="@(ProjFiles)" BuildInParallel="true"/>
   </Target>
 
   <Target Name="Build" AfterTargets="AssembleTargetPacks" Condition=" '$(SkipTargetingPacks)' != 'true'" >
