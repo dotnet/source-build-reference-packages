@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.DotNet.Common.ItemTemplates</id>
+    <version>1.0.2-beta3</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm</licenseUrl>
+    <projectUrl>https://github.com/dotnet/templating</projectUrl>
+    <description>Common File Templates for Microsoft Template Engine</description>
+    <language>en-US</language>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+  </metadata>
+</package>
