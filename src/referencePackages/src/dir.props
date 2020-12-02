@@ -26,5 +26,10 @@
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <WarningsAsErrors></WarningsAsErrors>
+    <!--
+      NETStandard.Library is no longer built in 5.0, so the version does not exist in
+      PackageVersions.props.  Setting to latest version built in sbrp.
+    -->
+    <NETStandardLibraryPackageVersion>2.0.3</NETStandardLibraryPackageVersion>
   </PropertyGroup>
 </Project>

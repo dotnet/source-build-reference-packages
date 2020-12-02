@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.AspNetCore.App.Ref</id>
+    <version>5.0.0-rc.1.20451.17</version>
+    <authors>Microsoft</authors>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>Icon.png</icon>
+    <projectUrl>https://asp.net/</projectUrl>
+    <description>Provides a default set of APIs for building an ASP.NET Core application. Contains reference assemblies, documentation, and other design-time assets.
+
+This package is an internal implementation of the .NET Core SDK and is not meant to be used as a normal PackageReference.
+
+This package was built from the source code at https://github.com/dotnet/aspnetcore/tree/ecdcc752d4639061c2c49727ee77a1039bbbca22</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>aspnetcore targeting-pack</tags>
+    <serviceable>true</serviceable>
+    <packageTypes>
+      <packageType name="DotnetPlatform" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/dotnet/aspnetcore" commit="ecdcc752d4639061c2c49727ee77a1039bbbca22" />
+  </metadata>
+  <files>
+    <file src="*/**" target="/" exclude="obj/**/*.*;**/Debug/**/*.*" />
+    <file src="*" target="/" exclude="*.csproj" />
+  </files>
+</package>
