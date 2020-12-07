@@ -1,10 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <OutputPath>$(ArtifactsBinDir)Microsoft.AspNetCore.App.Ref/3.1.0/</OutputPath>
-    <BaseIntermediateOutputPath>$(ArtifactsObjDir)Microsoft.AspNetCore.App.Ref/3.1.0/</BaseIntermediateOutputPath>
+    <ProjectNameToLower>$(MSBuildProjectName.ToLowerInvariant())</ProjectNameToLower>
+    <Version>$([System.IO.Path]::GetFileName('$(MSBuildProjectDirectory)'))</Version>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <OutputPath>$(ArtifactsBinDir)$(ProjectNameToLower)/$(Version)/</OutputPath>
+    <BaseIntermediateOutputPath>$(ArtifactsObjDir)$(ProjectNameToLower)/$(Version)/</BaseIntermediateOutputPath>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
-    <NuspecFile>microsoft.aspnetcore.app.ref.nuspec</NuspecFile>
+    <NuspecFile>$(ProjectNameToLower).nuspec</NuspecFile>
    </PropertyGroup>
 </Project>
