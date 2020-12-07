@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties">
+  <dc:creator>Microsoft</dc:creator>
+  <dc:description>Provides a default set of APIs for building an ASP.NET Core application. Contains reference assemblies, documentation, and other design-time assets.
+
+This package is an internal implementation of the .NET Core SDK and is not meant to be used as a normal PackageReference.
+
+This package was built from the source code at https://github.com/aspnet/AspNetCore/tree/c75b3f7a2fb9fe21fd96c93c070fdfa88a2fbe97</dc:description>
+  <dc:identifier>Microsoft.AspNetCore.App.Ref</dc:identifier>
+  <version>3.1.8</version>
+  <keywords>aspnetcore targeting-pack</keywords>
+  <lastModifiedBy>NuGet.Build.Tasks.Pack, Version=5.4.0.2, Culture=neutral, PublicKeyToken=31bf3856ad364e35;Microsoft Windows NT 10.0.17763.0;.NET Framework 4.7.2</lastModifiedBy>
+</coreProperties>
