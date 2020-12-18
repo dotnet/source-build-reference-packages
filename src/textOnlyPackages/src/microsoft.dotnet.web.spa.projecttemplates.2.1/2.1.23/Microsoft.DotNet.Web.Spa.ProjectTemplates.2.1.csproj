@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectNameToLower>$(MSBuildProjectName.ToLowerInvariant())</ProjectNameToLower>
+    <Version>$([System.IO.Path]::GetFileName('$(MSBuildProjectDirectory)'))</Version>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <OutputPath>$(ArtifactsBinDir)$(ProjectNameToLower)/$(Version)/</OutputPath>
+    <BaseIntermediateOutputPath>$(ArtifactsObjDir)$(ProjectNameToLower)/$(Version)/</BaseIntermediateOutputPath>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <NuspecFile>$(ProjectNameToLower).nuspec</NuspecFile>
+   </PropertyGroup>
+</Project>
