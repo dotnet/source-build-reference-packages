@@ -67,7 +67,8 @@ namespace System.Runtime.CompilerServices
         public unsafe static void* Subtract<T>(void* source, int elementOffset) { throw null; }
         public static ref T Subtract<T>(ref T source, int elementOffset) { throw null; }
         public static ref T Subtract<T>(ref T source, System.IntPtr elementOffset) { throw null; }
-        public static ref T Unbox<T>(object box) where T : System.ValueType { throw null; }
+        // Manual fixup on next line. Was "where T : ValueType", which is invalid. https://github.com/dotnet/arcade/issues/6719
+        public static ref T Unbox<T>(object box) where T : struct { throw null; }
         public static void WriteUnaligned<T>(ref byte destination, T value) { }
         public unsafe static void WriteUnaligned<T>(void* destination, T value) { }
         public unsafe static void Write<T>(void* destination, T value) { }
