@@ -41,7 +41,8 @@ namespace System.Runtime.CompilerServices
         public unsafe static void* AsPointer<T>(ref T value) { throw null; }
         public unsafe static ref T AsRef<T>(void* source) { throw null; }
         public static ref T AsRef<T>(in T source) { throw null; }
-        public static [System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute("o")]T As<T>(object o) where T : class { throw null; }
+        // Manual fixup on next line. Attribute was in wrong place and not marked "return:". https://github.com/dotnet/arcade/issues/6718
+        [return: System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute("o")] public static T As<T>(object o) where T : class { throw null; }
         public static ref TTo As<TFrom, TTo>(ref TFrom source) { throw null; }
         public static System.IntPtr ByteOffset<T>([System.Diagnostics.CodeAnalysis.AllowNullAttribute]ref T origin, [System.Diagnostics.CodeAnalysis.AllowNullAttribute]ref T target) { throw null; }
         public static void CopyBlock(ref byte destination, ref byte source, uint byteCount) { }
