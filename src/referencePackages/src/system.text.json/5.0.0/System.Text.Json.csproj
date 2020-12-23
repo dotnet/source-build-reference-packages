@@ -5,6 +5,7 @@
     <TargetFrameworks>netstandard2.0;netcoreapp3.0;net461</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.text.json/5.0.0/system.text.json.nuspec</NuspecFile>
     <AssemblyOriginatorKeyFile>$(KeyFileDir)Open.snk</AssemblyOriginatorKeyFile>
+    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
   <PropertyGroup>
