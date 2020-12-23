@@ -308,8 +308,8 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.extensions.dependencyinjection/5.0.0/Microsoft.Extensions.DependencyInjection.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.composition.attributedmodel/5.0.0/System.Composition.AttributedModel.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.composition.convention/5.0.0/System.Composition.Convention.csproj"/>
-    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.composition.hosting/5.0.0/System.Composition.Hosting.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.composition.runtime/5.0.0/System.Composition.Runtime.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.composition.hosting/5.0.0/System.Composition.Hosting.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.composition.typedparts/5.0.0/System.Composition.TypedParts.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.diagnosticsource/5.0.0/System.Diagnostics.DiagnosticSource.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.encodings.web/5.0.0/System.Text.Encodings.Web.csproj"/>
