@@ -299,5 +299,20 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/4.7.0/System.Security.Cryptography.Pkcs.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.xml/4.7.0/System.Security.Cryptography.Xml.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.windows.extensions/4.7.0/System.Windows.Extensions.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.runtime.compilerservices.unsafe/5.0.0/System.Runtime.CompilerServices.Unsafe.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.cng/5.0.0/System.Security.Cryptography.Cng.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.security.cryptography.pkcs/5.0.0/System.Security.Cryptography.Pkcs.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.io.pipelines/5.0.0/System.IO.Pipelines.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.bcl.asyncinterfaces/5.0.0/Microsoft.Bcl.AsyncInterfaces.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.extensions.dependencyinjection.abstractions/5.0.0/Microsoft.Extensions.DependencyInjection.Abstractions.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.extensions.dependencyinjection/5.0.0/Microsoft.Extensions.DependencyInjection.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.composition.attributedmodel/5.0.0/System.Composition.AttributedModel.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.composition.convention/5.0.0/System.Composition.Convention.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.composition.runtime/5.0.0/System.Composition.Runtime.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.composition.hosting/5.0.0/System.Composition.Hosting.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.composition.typedparts/5.0.0/System.Composition.TypedParts.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.diagnosticsource/5.0.0/System.Diagnostics.DiagnosticSource.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.encodings.web/5.0.0/System.Text.Encodings.Web.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.json/5.0.0/System.Text.Json.csproj"/>
   </ItemGroup>
 </Project>
