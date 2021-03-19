@@ -2,18 +2,14 @@ trigger:
   batch: true
   branches:
     include:
-    - master
     - main
     - release/*
-    - dev/source-build-5.0
 
 pr:
   branches:
     include:
-    - master
     - main
     - release/*
-    - dev/source-build-5.0
 
 stages:
 - stage: build
