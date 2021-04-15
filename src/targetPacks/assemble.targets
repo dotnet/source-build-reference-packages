@@ -79,9 +79,10 @@
                       and '$(SkipTargetingPacks)' != 'true' ">
 
     <PropertyGroup>
+      <BuildArchitecture>$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture.ToString().ToLowerInvariant())</BuildArchitecture>
       <BuildInParallel Condition="'$(BuildInParallel)' == ''">true</BuildInParallel>
       <ArtifactsTFMPackTemp>$(RepoRoot)artifacts/TFMPack/</ArtifactsTFMPackTemp>
-      <IlasmToolPathSB>$(RepoRoot)/artifacts/source-built/coreclr-tools/</IlasmToolPathSB>
+      <IlasmToolPathSB>$(RepoRoot)/artifacts/source-built/coreclr-tools/$(BuildArchitecture)/</IlasmToolPathSB>
     </PropertyGroup>
 
     <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Assemble TargetingPacks src." />
