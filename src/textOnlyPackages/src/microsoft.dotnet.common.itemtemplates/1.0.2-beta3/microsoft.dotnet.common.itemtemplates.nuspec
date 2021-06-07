@@ -6,7 +6,7 @@
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <licenseUrl>https://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm</licenseUrl>
+    <licenseUrl>https://microsoft.mit-license.org/</licenseUrl>
     <projectUrl>https://github.com/dotnet/templating</projectUrl>
     <description>Common File Templates for Microsoft Template Engine</description>
     <language>en-US</language>
