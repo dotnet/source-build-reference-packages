@@ -4,6 +4,7 @@
   <Import Project="$(RepoRoot)artifacts/source-built/PackageVersions.props" />
 
   <PropertyGroup>
+    <BuildArchitecture>$([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture.ToString().ToLowerInvariant())</BuildArchitecture>
     <ILsrcPath>$(RepoRoot)/src/targetPacks/ILsrc/</ILsrcPath>
     <ReferenceAssemblySourcePath>$(RepoRoot)src/referencePackages/src/</ReferenceAssemblySourcePath>
     <TextOnlyProjectsSourcePath>$(RepoRoot)src/textOnlyPackages/</TextOnlyProjectsSourcePath>
@@ -12,7 +13,7 @@
     <ArtifactsLogDir>$(RepoRoot)artifacts/log/</ArtifactsLogDir>
     <ArtifactsRefPkgDir>$(RepoRoot)artifacts/reference-packages/</ArtifactsRefPkgDir>
     <ArtifactsTFMPackTemp>$(RepoRoot)artifacts/TFMPack/</ArtifactsTFMPackTemp>
-    <IlasmToolPathSB>$(RepoRoot)/artifacts/source-built/coreclr-tools/</IlasmToolPathSB>
+    <IlasmToolPathSB>$(RepoRoot)/artifacts/source-built/coreclr-tools/$(BuildArchitecture)/</IlasmToolPathSB>
   </PropertyGroup>
 
   <ItemGroup>
