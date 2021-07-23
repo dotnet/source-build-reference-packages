@@ -9,7 +9,7 @@
     <UsingToolXliff>false</UsingToolXliff>
   </PropertyGroup>
   <PropertyGroup>
-    <MicrosoftNETCoreILAsmVersion>5.0.0-preview.4.20202.18</MicrosoftNETCoreILAsmVersion>
-    <MicrosoftNETCoreILDAsmVersion>5.0.0-preview.4.20202.18</MicrosoftNETCoreILDAsmVersion>
+    <MicrosoftNETCoreILAsmVersion>6.0.0-preview.6.21352.12</MicrosoftNETCoreILAsmVersion>
+    <MicrosoftNETCoreILDAsmVersion>6.0.0-preview.6.21352.12</MicrosoftNETCoreILDAsmVersion>
   </PropertyGroup>
 </Project>
