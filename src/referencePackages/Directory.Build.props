@@ -86,6 +86,7 @@
     <NoWarn>$(NoWarn);NU5131</NoWarn>
     <!-- Disable NU5048: continue to use deprecated 'PackageIconUrl'/'iconUrl' for now. -->
     <NoWarn>$(NoWarn);NU5048</NoWarn>
-  </PropertyGroup>
+    <!-- Disable NETSDK1138: Some package build with out of support target frameworks -->
+    <NoWarn>$(NoWarn);NETSDK1138</NoWarn>  </PropertyGroup>
 
 </Project>
