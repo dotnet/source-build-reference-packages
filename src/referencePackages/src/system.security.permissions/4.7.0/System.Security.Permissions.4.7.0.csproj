@@ -2,7 +2,7 @@
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))/dir.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.0;net461</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.security.permissions/4.7.0/system.security.permissions.nuspec</NuspecFile>
     <StrongNameKeyId>Open</StrongNameKeyId>
   </PropertyGroup>
@@ -10,6 +10,7 @@
   <PropertyGroup>
     <OutputPath>$(ArtifactsBinDir)system.security.permissions/4.7.0/ref/</OutputPath>
     <IntermediateOutputPath>$(ArtifactsObjDir)system.security.permissions/4.7.0</IntermediateOutputPath>
+    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,8 +19,12 @@
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />
     <PackageReference Include="System.Security.AccessControl" Version="4.7.0" />
+  </ItemGroup>
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
+    <PackageReference Include="System.Security.AccessControl" Version="4.7.0" />
+    <PackageReference Include="System.Windows.Extensions" Version="4.7.0" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
