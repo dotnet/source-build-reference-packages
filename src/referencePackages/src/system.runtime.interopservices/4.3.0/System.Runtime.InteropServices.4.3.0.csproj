@@ -2,7 +2,7 @@
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))/dir.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.1;netstandard1.2;netstandard1.3;netstandard1.5;net462</TargetFrameworks>
+    <TargetFrameworks>netstandard1.1;netstandard1.2;netstandard1.3;netstandard1.5;netcoreapp1.1;net462</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.runtime.interopservices/4.3.0/system.runtime.interopservices.nuspec</NuspecFile>
   </PropertyGroup>
 
@@ -42,6 +42,15 @@
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.5' ">
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
+    <PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Handles" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
     <PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
     <PackageReference Include="System.Reflection" Version="4.3.0" />
