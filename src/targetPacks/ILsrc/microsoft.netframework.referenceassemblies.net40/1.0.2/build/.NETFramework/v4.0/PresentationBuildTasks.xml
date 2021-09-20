@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>PresentationBuildTasks</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Build.Tasks.Windows.FileClassifier">
+      <summary>Implements the FileClassifer task. Use the FileClassifer element in your project file to create and execute this task. For usage and parameter information, see FileClassifier Task.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.Windows.FileClassifier.#ctor"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.FileClassifier.CLREmbeddedResource"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.FileClassifier.CLRResourceFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.FileClassifier.CLRSatelliteEmbeddedResource"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.FileClassifier.Culture"></member>
+    <member name="M:Microsoft.Build.Tasks.Windows.FileClassifier.Execute"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.FileClassifier.MainEmbeddedFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.FileClassifier.OutputType"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.FileClassifier.SatelliteEmbeddedFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.FileClassifier.SourceFiles"></member>
+    <member name="T:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly">
+      <summary>Implements the GenerateTemporaryTargetAssembly task. Use the GenerateTemporaryTargetAssembly element in your project file to create and execute this task. For usage and parameter information, see GenerateTemporaryTargetAssembly Task.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.#ctor"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.AssemblyName"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.CompileTargetName"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.CompileTypeName"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.CurrentProject"></member>
+    <member name="M:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.Execute"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.GeneratedCodeFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.IntermediateOutputPath"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.MSBuildBinPath"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.ReferencePath"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.GenerateTemporaryTargetAssembly.ReferencePathTypeName"></member>
+    <member name="T:Microsoft.Build.Tasks.Windows.GetWinFXPath">
+      <summary>Implements the GetWinFXPath task. Use the GetWinFXPath element in your project file to create and execute this task. For usage and parameter information, see GetWinFXPath Task.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.Windows.GetWinFXPath.#ctor"></member>
+    <member name="M:Microsoft.Build.Tasks.Windows.GetWinFXPath.Execute"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.GetWinFXPath.WinFXNativePath"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.GetWinFXPath.WinFXPath"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.GetWinFXPath.WinFXWowPath"></member>
+    <member name="T:Microsoft.Build.Tasks.Windows.MarkupCompilePass1">
+      <summary>Implements the MarkupCompilePass1 task. Use the MarkupCompilePass1 element in your project file to create and execute this task. For usage and parameter information, see MarkupCompilePass1 Task.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.#ctor"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.AllGeneratedFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.AlwaysCompileMarkupFilesInSeparateDomain"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.ApplicationMarkup"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.AssembliesGeneratedDuringBuild"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.AssemblyName"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.AssemblyPublicKeyToken"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.AssemblyVersion"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.ContentFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.DefineConstants"></member>
+    <member name="M:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.Execute"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.ExtraBuildControlFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.GeneratedBamlFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.GeneratedCodeFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.GeneratedLocalizationFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.HostInBrowser"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.KnownReferencePaths"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.Language"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.LanguageSourceExtension"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.LocalizationDirectivesToLocFile"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.OutputPath"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.OutputType"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.PageMarkup"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.References"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.RequirePass2ForMainAssembly"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.RequirePass2ForSatelliteAssembly"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.RootNamespace"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.SourceCodeFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.SplashScreen">
+      <summary>The task that corresponds to the splash screen image to be displayed before application initialization.</summary>
+      <returns>The task that corresponds to the splash screen image.</returns>
+    </member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.UICulture"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass1.XamlDebuggingInformation"></member>
+    <member name="T:Microsoft.Build.Tasks.Windows.MarkupCompilePass2">
+      <summary>Implements the MarkupCompilePass2 task. Use the MarkupCompilePass2 element in your project file to create and execute this task. For usage and parameter information, see MarkupCompilePass2 Task.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.#ctor"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.AlwaysCompileMarkupFilesInSeparateDomain"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.AssembliesGeneratedDuringBuild"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.AssemblyName"></member>
+    <member name="M:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.Execute"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.GeneratedBaml"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.KnownReferencePaths"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.Language"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.LocalizationDirectivesToLocFile"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.OutputPath"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.OutputType"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.References"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.RootNamespace"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MarkupCompilePass2.XamlDebuggingInformation"></member>
+    <member name="T:Microsoft.Build.Tasks.Windows.MergeLocalizationDirectives">
+      <summary>Implements the MergeLocalizationDirectives task. Use the MergeLocalizationDirectives element in your project file to create and execute this task. For usage and parameter information, see MergeLocalizationDirectives Task.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.Windows.MergeLocalizationDirectives.#ctor"></member>
+    <member name="M:Microsoft.Build.Tasks.Windows.MergeLocalizationDirectives.Execute"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MergeLocalizationDirectives.GeneratedLocalizationFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.MergeLocalizationDirectives.OutputFile"></member>
+    <member name="T:Microsoft.Build.Tasks.Windows.ResourcesGenerator">
+      <summary>Implements the ResourcesGenerator task. Use the ResourcesGenerator element in your project file to create and execute this task. For usage and parameter information, see ResourcesGenerator Task.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.Windows.ResourcesGenerator.#ctor"></member>
+    <member name="M:Microsoft.Build.Tasks.Windows.ResourcesGenerator.Execute"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.ResourcesGenerator.OutputPath"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.ResourcesGenerator.OutputResourcesFile"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.ResourcesGenerator.ResourceFiles"></member>
+    <member name="T:Microsoft.Build.Tasks.Windows.UidManager">
+      <summary>Implements the UidManager task. Use the UidManager element in your project file to create and execute this task. For usage and parameter information, see UidManager Task.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.Windows.UidManager.#ctor"></member>
+    <member name="M:Microsoft.Build.Tasks.Windows.UidManager.Execute"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.UidManager.IntermediateDirectory"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.UidManager.MarkupFiles"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.UidManager.Task"></member>
+    <member name="T:Microsoft.Build.Tasks.Windows.UpdateManifestForBrowserApplication">
+      <summary>Implements the UpdateManifestForBrowserApplication task. Use the UpdateManifestForBrowserApplication element in your project file to create and execute this task. For usage and parameter information, see UpdateManifestForBrowserApplication Task.</summary>
+    </member>
+    <member name="M:Microsoft.Build.Tasks.Windows.UpdateManifestForBrowserApplication.#ctor"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.UpdateManifestForBrowserApplication.ApplicationManifest"></member>
+    <member name="M:Microsoft.Build.Tasks.Windows.UpdateManifestForBrowserApplication.Execute"></member>
+    <member name="P:Microsoft.Build.Tasks.Windows.UpdateManifestForBrowserApplication.HostInBrowser"></member>
+  </members>
+</doc>
