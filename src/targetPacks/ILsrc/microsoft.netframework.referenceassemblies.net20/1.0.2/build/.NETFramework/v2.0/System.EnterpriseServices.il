@@ -487,7 +487,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x0000000b    //  ILONLY 32BITREQUIRED
-// Image base: 0x00007F065BDBD000
+// Image base: 0x00007FD1A2F9F000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -4664,7 +4664,16 @@
     // Method begins at RVA 0x2188
     // Code size       0 (0x0)
   } // end of method GenerateMetadata::GenerateMetaData
-}
+
+  .method /*0600015D*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x2194
+    // Code size       0 (0x0)
+  } // end of method GenerateMetadata::.ctor
+
+} // end of class System.EnterpriseServices.Internal.GenerateMetadata
 
 .class /*02000057*/ interface public abstract auto ansi System.EnterpriseServices.Internal.IClrObjectFactory
 {
