@@ -379,7 +379,7 @@
 .stackreserve 0x00100000
 .subsystem 0x0003       // WINDOWS_CUI
 .corflags 0x00000009    //  ILONLY
-// Image base: 0x00007F590984C000
+// Image base: 0x00007FF7C0036000
 
 
 // =============== CLASS MEMBERS DECLARATION ===================
@@ -516,7 +516,87 @@
                                                                                                                                                                2D 34 34 46 33 2D 42 42 46 42 2D 36 35 45 33 36   // -44F3-BBFB-65E36
                                                                                                                                                                35 35 42 30 39 36 45 00 00 )                      // 55B096E..
   .custom /*0C00001A:0A000001*/ instance void [mscorlib/*23000001*/]System.Runtime.InteropServices.ComVisibleAttribute/*01000007*/::.ctor(bool) /* 0A000001 */ = ( 01 00 01 00 00 ) 
-} 
+  .method /*0600000F*/ public hidebysig newslot virtual final 
+          instance void  DisplayAspNetConfigSettings(string machineName,
+                                                     string site,
+                                                     string virtualDirectory,
+                                                     string siteName,
+                                                     string location,
+                                                     int32 processID,
+                                                     [out] string& exception) cil managed
+  // SIG: 20 07 01 0E 0E 0E 0E 0E 08 10 0E
+  {
+    // Method begins at RVA 0x2050
+    // Code size       0 (0x0)
+  } // end of method AspNetManagementUtility::DisplayAspNetConfigSettings
+
+  .method /*06000010*/ public hidebysig newslot virtual final 
+          instance void  AcquireVersionList([out] string& versionList,
+                                            int32 versionFirst) cil managed
+  // SIG: 20 02 01 10 0E 08
+  {
+    // Method begins at RVA 0x2051
+    // Code size       0 (0x0)
+  } // end of method AspNetManagementUtility::AcquireVersionList
+
+  .method /*06000011*/ public hidebysig newslot virtual final 
+          instance void  ReadFileDates(string filename,
+                                       [out] string& creationDate,
+                                       [out] string& modifiedDate,
+                                       [out] string& lastAccessDate) cil managed
+  // SIG: 20 04 01 0E 10 0E 10 0E 10 0E
+  {
+    // Method begins at RVA 0x2052
+    // Code size       0 (0x0)
+  } // end of method AspNetManagementUtility::ReadFileDates
+
+  .method /*06000012*/ public hidebysig newslot virtual final 
+          instance void  IsRemoteConfigured([out] int32& isRemoteConfigured) cil managed
+  // SIG: 20 01 01 10 08
+  {
+    // Method begins at RVA 0x2053
+    // Code size       0 (0x0)
+  } // end of method AspNetManagementUtility::IsRemoteConfigured
+
+  .method /*06000013*/ public hidebysig newslot virtual final 
+          instance void  PathIsDirectory([in] string  marshal( lpwstr) filename,
+                                         [out] int32& result) cil managed
+  // SIG: 20 02 01 0E 10 08
+  {
+    // Method begins at RVA 0x2054
+    // Code size       0 (0x0)
+  } // end of method AspNetManagementUtility::PathIsDirectory
+
+  .method /*06000014*/ public hidebysig newslot virtual final 
+          instance void  ChangeScriptMap(string keyPath,
+                                         string dllInstall,
+                                         int32 'flags') cil managed
+  // SIG: 20 03 01 0E 0E 08
+  {
+    // Method begins at RVA 0x2055
+    // Code size       0 (0x0)
+  } // end of method AspNetManagementUtility::ChangeScriptMap
+
+  .method /*06000015*/ public hidebysig newslot virtual final 
+          instance void  RegisterAsnetMmcAssembly(int32 doReg,
+                                                  string typeName,
+                                                  string binaryDirectory,
+                                                  [out] native int& exception) cil managed
+  // SIG: 20 04 01 08 0E 0E 10 18
+  {
+    // Method begins at RVA 0x2056
+    // Code size       0 (0x0)
+  } // end of method AspNetManagementUtility::RegisterAsnetMmcAssembly
+
+  .method /*06000016*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x2057
+    // Code size       0 (0x0)
+  } // end of method AspNetManagementUtility::.ctor
+
+} // end of class Microsoft.Aspnet.Snapin.AspNetManagementUtility
 
 .class /*02000005*/ interface public abstract auto ansi import Microsoft.Aspnet.Snapin.IDataObject
 {
