@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>PresentationFramework.Royale</name>
+  </assembly>
+  <members>
+    <member name="T:Microsoft.Windows.Themes.ButtonChrome">
+      <summary>Creates the theme-specific look for Microsoft .NET Framework <see cref="T:System.Windows.Controls.Button" /> elements.</summary>
+    </member>
+    <member name="M:Microsoft.Windows.Themes.ButtonChrome.#ctor">
+      <summary>Initializes a new instance of the <see cref="T:Microsoft.Windows.Themes.ButtonChrome" /> class.</summary>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ButtonChrome.BorderBrush">
+      <summary>Gets or sets the brush used to draw the outer border of the <see cref="T:System.Windows.Controls.Button" />.  </summary>
+      <returns>The brush used to draw the outer border of the <see cref="T:System.Windows.Controls.Button" />.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ButtonChrome.BorderBrushProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.BorderBrush" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.BorderBrush" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ButtonChrome.Fill">
+      <summary>Gets or sets the brush used to draw the color inside the <see cref="T:System.Windows.Controls.Button" />.  </summary>
+      <returns>The brush.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ButtonChrome.FillProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.Fill" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.Fill" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ButtonChrome.RenderDefaulted">
+      <summary>Gets or sets a value indicating whether the <see cref="T:System.Windows.Controls.Button" /> has the appearance of the default button on the form.  </summary>
+      <returns>true if the <see cref="T:System.Windows.Controls.Button" /> has the appearance of the default button; otherwise false.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ButtonChrome.RenderDefaultedProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.RenderDefaulted" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.RenderDefaulted" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ButtonChrome.RenderMouseOver">
+      <summary>Gets or sets a value indicating whether the <see cref="T:System.Windows.Controls.Button" /> appears as if the mouse is over it.  </summary>
+      <returns>true if the <see cref="T:System.Windows.Controls.Button" /> appears as if the mouse is over it; otherwise false.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ButtonChrome.RenderMouseOverProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.RenderMouseOver" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.RenderMouseOver" /> dependency property.</returns>
+    </member>
+    <member name="P:Microsoft.Windows.Themes.ButtonChrome.RenderPressed">
+      <summary>Gets or sets a value indicating whether the <see cref="T:System.Windows.Controls.Button" /> appears pressed.  </summary>
+      <returns>true if the <see cref="T:System.Windows.Controls.Button" /> appears pressed; otherwise false.</returns>
+    </member>
+    <member name="F:Microsoft.Windows.Themes.ButtonChrome.RenderPressedProperty">
+      <summary>Identifies the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.RenderPressed" /> dependency property.</summary>
+      <returns>The identifier for the <see cref="P:Microsoft.Windows.Themes.ButtonChrome.RenderPressed" /> dependency property.</returns>
+    </member>
+  </members>
+</doc>
