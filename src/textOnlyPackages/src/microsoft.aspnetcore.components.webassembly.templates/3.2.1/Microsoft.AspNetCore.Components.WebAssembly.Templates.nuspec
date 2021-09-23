@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.AspNetCore.Components.WebAssembly.Templates</id>
+    <version>3.2.1</version>
+    <authors>Microsoft</authors>
+    <owners>Microsoft</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>
+    <icon>Icon.png</icon>
+    <projectUrl>https://asp.net/</projectUrl>
+    <description>Templates for ASP.NET Core Blazor WebAssembly projects.
+
+To install the templates in this package, run 'dotnet new --install Microsoft.AspNetCore.Components.WebAssembly.Templates::3.2.1'.
+    
+
+This package was built from the source code at https://github.com/aspnet/AspNetCore/tree/62c098bc170f50feca15916e81cb7f321ffc52ff</description>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>aspnet templates blazor spa</tags>
+    <serviceable>true</serviceable>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+    <repository type="git" url="https://github.com/aspnet/AspNetCore" commit="62c098bc170f50feca15916e81cb7f321ffc52ff" />
+  </metadata>
+</package>

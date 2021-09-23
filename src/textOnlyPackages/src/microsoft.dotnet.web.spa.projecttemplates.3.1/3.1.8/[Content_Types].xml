@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+  <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml" />
+  <Default Extension="psmdcp" ContentType="application/vnd.openxmlformats-package.core-properties+xml" />
+  <Default Extension="png" ContentType="application/octet" />
+  <Default Extension="gitignore" ContentType="application/octet" />
+  <Default Extension="db" ContentType="application/octet" />
+  <Default Extension="json" ContentType="application/octet" />
+  <Default Extension="csproj" ContentType="application/octet" />
+  <Default Extension="cs" ContentType="application/octet" />
+  <Default Extension="editorconfig" ContentType="application/octet" />
+  <Default Extension="md" ContentType="application/octet" />
+  <Default Extension="js" ContentType="application/octet" />
+  <Default Extension="ts" ContentType="application/octet" />
+  <Default Extension="html" ContentType="application/octet" />
+  <Default Extension="css" ContentType="application/octet" />
+  <Default Extension="gitkeep" ContentType="application/octet" />
+  <Default Extension="cshtml" ContentType="application/octet" />
+  <Default Extension="ico" ContentType="application/octet" />
+  <Default Extension="tsx" ContentType="application/octet" />
+  <Default Extension="nuspec" ContentType="application/octet" />
+  <Override PartName="/content/Angular-CSharp/ClientApp/browserslist" ContentType="application/octet" />
+</Types>
