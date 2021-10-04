@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties">
+  <dc:creator>Microsoft</dc:creator>
+  <dc:description>Templates for ASP.NET Core Blazor WebAssembly projects.
+
+To install the templates in this package, run 'dotnet new --install Microsoft.AspNetCore.Components.WebAssembly.Templates::3.2.1'.
+    
+
+This package was built from the source code at https://github.com/aspnet/AspNetCore/tree/62c098bc170f50feca15916e81cb7f321ffc52ff</dc:description>
+  <dc:identifier>Microsoft.AspNetCore.Components.WebAssembly.Templates</dc:identifier>
+  <version>3.2.1</version>
+  <keywords>aspnet templates blazor spa</keywords>
+  <lastModifiedBy>NuGet.Build.Tasks.Pack, Version=5.4.0.2, Culture=neutral, PublicKeyToken=31bf3856ad364e35;Microsoft Windows NT 10.0.17763.0;.NET Framework 4.7.2</lastModifiedBy>
+</coreProperties>

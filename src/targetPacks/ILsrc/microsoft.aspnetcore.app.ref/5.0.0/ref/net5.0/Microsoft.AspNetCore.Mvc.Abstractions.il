@@ -1,0 +1,13541 @@
+
+//  Microsoft (R) .NET IL Disassembler.  Version 5.0.0
+
+
+// ----- DOS Header:
+// Magic:                      0x5a4d
+// Bytes on last page:         0x0090
+// Pages in file:              0x0003
+// Relocations:                0x0000
+// Size of header (paragraphs):0x0004
+// Min extra paragraphs:       0x0000
+// Max extra paragraphs:       0xffff
+// Initial (relative) SS:      0x0000
+// Initial SP:                 0x00b8
+// Checksum:                   0x0000
+// Initial IP:                 0x0000
+// Initial (relative) CS:      0x0000
+// File addr. of reloc table:  0x0040
+// Overlay number:             0x0000
+// OEM identifier:             0x0000
+// OEM info:                   0x0000
+// File addr. of COFF header:  0x0080
+// ----- COFF/PE Headers:
+// Signature:                  0x00004550
+// ----- COFF Header:
+// Machine:                    0x014c
+// Number of sections:         0x0004
+// Time-date stamp:            0xa67563a2
+// Ptr to symbol table:        0x00000000
+// Number of symbols:          0x00000000
+// Size of optional header:    0x00e0
+// Characteristics:            0x2022
+// ----- PE Optional Header (32 bit):
+// Magic:                          0x010b
+// Major linker version:           0x30
+// Minor linker version:           0x00
+// Size of code:                   0x0000f400
+// Size of init.data:              0x00000c00
+// Size of uninit.data:            0x00000000
+// Addr. of entry point:           0x000132e2
+// Base of code:                   0x00004000
+// Base of data:                   0x00002000
+// Image base:                     0x10000000
+// Section alignment:              0x00002000
+// File alignment:                 0x00000200
+// Major OS version:               0x0004
+// Minor OS version:               0x0000
+// Major image version:            0x0000
+// Minor image version:            0x0000
+// Major subsystem version:        0x0004
+// Minor subsystem version:        0x0000
+// Size of image:                  0x00018000
+// Size of headers:                0x00000400
+// Checksum:                       0x0001dedf
+// Subsystem:                      0x0003
+// DLL characteristics:            0x8560
+// Size of stack reserve:          0x00100000
+// Size of stack commit:           0x00001000
+// Size of heap reserve:           0x00100000
+// Size of heap commit:            0x00001000
+// Loader flags:                   0x00000000
+// Directories:                    0x00000010
+// 0x00000000 [0x00000000] address [size] of Export Directory:          
+// 0x00013290 [0x0000004f] address [size] of Import Directory:          
+// 0x00014000 [0x000006a0] address [size] of Resource Directory:        
+// 0x00000000 [0x00000000] address [size] of Exception Directory:       
+// 0x00010400 [0x00002388] address [size] of Security Directory:        
+// 0x00016000 [0x0000000c] address [size] of Base Relocation Table:     
+// 0x00013274 [0x0000001c] address [size] of Debug Directory:           
+// 0x00000000 [0x00000000] address [size] of Architecture Specific:     
+// 0x00000000 [0x00000000] address [size] of Global Pointer:            
+// 0x00000000 [0x00000000] address [size] of TLS Directory:             
+// 0x00000000 [0x00000000] address [size] of Load Config Directory:     
+// 0x00000000 [0x00000000] address [size] of Bound Import Directory:    
+// 0x00004000 [0x00000008] address [size] of Import Address Table:      
+// 0x00000000 [0x00000000] address [size] of Delay Load IAT:            
+// 0x00004008 [0x00000048] address [size] of CLR Header:                
+
+
+// Image sections:
+//              .mvid
+//              0x00000010 Virtual Size
+//              0x00002000 Virtual Address
+//              0x00000200 Size of Raw Data
+//              0x00000400 Pointer to Raw Data
+//              0x00000000 Pointer to Relocations
+//              0x00000000 Pointer to Linenumbers
+//                  0x0000 Number of Relocations
+//                  0x0000 Number of Linenumbers
+//              0x42000040 Characteristics
+//                         CNT_INITIALIZED_DATA
+//                         MEM_DISCARDABLE
+//                         MEM_READ
+
+//              .text
+//              0x0000f2e8 Virtual Size
+//              0x00004000 Virtual Address
+//              0x0000f400 Size of Raw Data
+//              0x00000600 Pointer to Raw Data
+//              0x00000000 Pointer to Relocations
+//              0x00000000 Pointer to Linenumbers
+//                  0x0000 Number of Relocations
+//                  0x0000 Number of Linenumbers
+//              0x60000020 Characteristics
+//                         CNT_CODE
+//                         MEM_EXECUTE
+//                         MEM_READ
+
+//              .rsrc
+//              0x000006a0 Virtual Size
+//              0x00014000 Virtual Address
+//              0x00000800 Size of Raw Data
+//              0x0000fa00 Pointer to Raw Data
+//              0x00000000 Pointer to Relocations
+//              0x00000000 Pointer to Linenumbers
+//                  0x0000 Number of Relocations
+//                  0x0000 Number of Linenumbers
+//              0x40000040 Characteristics
+//                         CNT_INITIALIZED_DATA
+//                         MEM_READ
+
+//              .reloc
+//              0x0000000c Virtual Size
+//              0x00016000 Virtual Address
+//              0x00000200 Size of Raw Data
+//              0x00010200 Pointer to Raw Data
+//              0x00000000 Pointer to Relocations
+//              0x00000000 Pointer to Linenumbers
+//                  0x0000 Number of Relocations
+//                  0x0000 Number of Linenumbers
+//              0x42000040 Characteristics
+//                         CNT_INITIALIZED_DATA
+//                         MEM_DISCARDABLE
+//                         MEM_READ
+
+// Base Relocation Table
+//              0x00013000 Page RVA
+//              0x0000000c Block Size
+//              0x00000002 Number of Entries
+//              Entry 1: Type 0x3 Offset 0x000002e4
+//              Entry 2: Type 0x0 Offset 0x00000000
+
+// Import Address Table
+//     DLL : mscoree.dll
+//              0x00004000 Import Address Table
+//              0x000132d2 Import Name Table
+//              0          Time Date Stamp
+//              0          Index of First Forwarder Reference
+//
+//              0x0000  _CorDllMain
+
+// Delay Load Import Address Table
+// No data.
+
+// Entry point code:
+//FF 25 00 40 00 10 
+
+
+// ----- CLR Header:
+// Header size:                        0x00000048
+// Major runtime version:              0x0002
+// Minor runtime version:              0x0005
+// 0x00004054 [0x0000f1a0] address [size] of Metadata Directory:        
+// Flags:                              0x00000009
+// Entry point token:                  0x00000000
+// 0x00000000 [0x00000000] address [size] of Resources Directory:       
+// 0x000131f4 [0x00000080] address [size] of Strong Name Signature:     
+// 0x00000000 [0x00000000] address [size] of CodeManager Table:         
+// 0x00000000 [0x00000000] address [size] of VTableFixups Directory:    
+// 0x00000000 [0x00000000] address [size] of Export Address Table:      
+// 0x00000000 [0x00000000] address [size] of Precompile Header:         
+
+// Metadata Header
+//    Storage Signature:
+//              0x424a5342 Signature
+//                  0x0001 Major Version
+//                  0x0001 Minor Version
+//              0x00000000 Extra Data Offset
+//              0x0000000c Version String Length
+//              'v4.0.30319' Version String
+//    Storage Header:
+//                    0x00 Flags
+//                  0x0005 Number of Streams
+//    Stream 1:
+//              0x0000006c Offset
+//              0x00007160 Size
+//              '#~' Name
+//    Stream 2:
+//              0x000071cc Offset
+//              0x00004004 Size
+//              '#Strings' Name
+//    Stream 3:
+//              0x0000b1d0 Offset
+//              0x00000004 Size
+//              '#US' Name
+//    Stream 4:
+//              0x0000b1d4 Offset
+//              0x00000010 Size
+//              '#GUID' Name
+//    Stream 5:
+//              0x0000b1e4 Offset
+//              0x00003fbc Size
+//              '#Blob' Name
+
+//    Metadata Stream Header:
+//              0x00000000 Reserved
+//                    0x02 Major
+//                    0x00 Minor
+//                    0x00 Heaps
+//                    0x01 Rid
+//      0x000016090ba01f57 MaskValid
+//      0x000016003301fa00 Sorted
+
+// Code Manager Table:
+//  default
+
+
+// Export Address Table Jumps:
+// No data.
+
+// File size            : 75656
+// PE header size       : 1024 (536 used)    ( 1.35%)
+// PE additional info   : 10991             (14.53%)
+// Num.of PE sections   : 4
+// CLR header size     : 72                 ( 0.10%)
+// CLR meta-data size  : 61856              (81.76%)
+// CLR additional info : 128                ( 0.17%)
+// CLR method headers  : 650                ( 0.86%)
+// Managed code         : 1300              ( 1.72%)
+// Data                 : 3072              ( 4.06%)
+// Unaccounted          : -3437             (-4.54%)
+
+// Num.of PE sections   : 4
+//   .mvid    - 512
+//   .text    - 62464
+//   .rsrc    - 2048
+//   .reloc   - 512
+
+// CLR meta-data size  : 61856
+//   Module        -    1 (10 bytes)
+//   TypeDef       -  147 (2058 bytes)    48 interfaces, 0 explicit layout
+//   TypeRef       -   77 (462 bytes)
+//   MethodDef     -  806 (11284 bytes)   144 abstract, 0 native, 650 bodies
+//   FieldDef      -   80 (480 bytes)     15 constant
+//   MemberRef     -   38 (228 bytes)
+//   ParamDef      -  514 (3084 bytes)
+//   MethodImpl    -   20 (120 bytes)
+//   Constant      -   17 (102 bytes)
+//   CustomAttribute-  842 (5052 bytes)
+//   InterfaceImpl -   56 (224 bytes)
+//   PropertyMap   -   86 (344 bytes)
+//   Property      -  362 (2172 bytes)
+//   MethodSemantic-  497 (2982 bytes)
+//   TypeSpec      -   22 (44 bytes)
+//   Assembly      -    1 (22 bytes)
+//   AssemblyRef   -    6 (120 bytes)
+//   NestedClass   -   17 (68 bytes)
+//   GenericParam  -    6 (48 bytes)
+//   GenericParamConstraint-    3 (12 bytes)
+//   Strings       - 16385 bytes
+//   Blobs         - 16316 bytes
+//   UserStrings   -     4 bytes
+//   Guids         -    16 bytes
+//   Uncategorized -   219 bytes
+
+// CLR additional info : 128
+
+// CLR method headers : 650
+//   Num.of method bodies  - 650
+//   Num.of fat headers    - 0
+//   Num.of tiny headers   - 650
+
+// Managed code : 1300
+//   Ave method size - 2
+// Classes defined in this module:
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// Class EmbeddedAttribute              (auto) (ansi) (sealed) 
+// Class NullableAttribute              (auto) (ansi) (sealed) 
+// Class NullableContextAttribute       (auto) (ansi) (sealed) 
+// Class ClosedGenericMatcher           (abstract) (auto) (ansi) (sealed) 
+// Class ActionContext                  (public) (auto) (ansi) 
+// Interface IActionResult                  (public) (abstract) (auto) (ansi) 
+// Interface IUrlHelper                     (public) (abstract) (auto) (ansi) 
+// Class AttributeRouteInfo             (public) (auto) (ansi) 
+// Class UrlActionContext               (public) (auto) (ansi) 
+// Class UrlRouteContext                (public) (auto) (ansi) 
+// Class BindingInfo                    (public) (auto) (ansi) 
+// Class BindingSource                  (public) (auto) (ansi) 
+// Class CompositeBindingSource         (public) (auto) (ansi) 
+// Class EmptyBodyBehavior              (public) (auto) (ansi) (sealed) 
+// Class EnumGroupAndName               (public) (sequential) (ansi) (sealed) 
+// Interface IConfigureEmptyBodyBehavior    (abstract) (auto) (ansi) 
+// Interface IBinderTypeProviderMetadata    (public) (abstract) (auto) (ansi) 
+// Interface IBindingSourceMetadata         (public) (abstract) (auto) (ansi) 
+// Interface IModelBinder                   (public) (abstract) (auto) (ansi) 
+// Interface IModelBinderProvider           (public) (abstract) (auto) (ansi) 
+// Interface IModelMetadataProvider         (public) (abstract) (auto) (ansi) 
+// Interface IModelNameProvider             (public) (abstract) (auto) (ansi) 
+// Interface IPropertyFilterProvider        (public) (abstract) (auto) (ansi) 
+// Interface IRequestPredicateProvider      (public) (abstract) (auto) (ansi) 
+// Interface IValueProvider                 (public) (abstract) (auto) (ansi) 
+// Interface IValueProviderFactory          (public) (abstract) (auto) (ansi) 
+// Class ModelBinderProviderContext     (public) (abstract) (auto) (ansi) 
+// Class ModelBindingContext            (public) (abstract) (auto) (ansi) 
+// Class ModelBindingResult             (public) (sequential) (ansi) (sealed) 
+// Class ModelError                     (public) (auto) (ansi) 
+// Class ModelErrorCollection           (public) (auto) (ansi) 
+// Class ModelMetadata                  (public) (abstract) (auto) (ansi) 
+// Class ModelMetadataProvider          (public) (abstract) (auto) (ansi) 
+// Class ModelPropertyCollection        (public) (auto) (ansi) 
+// Class ModelStateDictionary           (public) (auto) (ansi) 
+// Class ModelStateEntry                (public) (abstract) (auto) (ansi) 
+// Class ModelValidationState           (public) (auto) (ansi) (sealed) 
+// Class TooManyModelErrorsException    (public) (auto) (ansi) 
+// Class ValueProviderException         (public) (auto) (ansi) (sealed) 
+// Class ValueProviderFactoryContext    (public) (auto) (ansi) 
+// Class ValueProviderResult            (public) (sequential) (ansi) (sealed) 
+// Class ClientModelValidationContext   (public) (auto) (ansi) 
+// Class ClientValidatorItem            (public) (auto) (ansi) 
+// Class ClientValidatorProviderContext (public) (auto) (ansi) 
+// Interface IClientModelValidator          (public) (abstract) (auto) (ansi) 
+// Interface IClientModelValidatorProvider  (public) (abstract) (auto) (ansi) 
+// Interface IModelValidator                (public) (abstract) (auto) (ansi) 
+// Interface IModelValidatorProvider        (public) (abstract) (auto) (ansi) 
+// Interface IPropertyValidationFilter      (public) (abstract) (auto) (ansi) 
+// Interface IValidationStrategy            (public) (abstract) (auto) (ansi) 
+// Class ModelValidationContext         (public) (auto) (ansi) 
+// Class ModelValidationContextBase     (public) (auto) (ansi) 
+// Class ModelValidationResult          (public) (auto) (ansi) 
+// Class ModelValidatorProviderContext  (public) (auto) (ansi) 
+// Class ValidationEntry                (public) (sequential) (ansi) (sealed) 
+// Class ValidationStateDictionary      (public) (auto) (ansi) 
+// Class ValidationStateEntry           (public) (auto) (ansi) 
+// Class ValidatorItem                  (public) (auto) (ansi) 
+// Class ModelBindingMessageProvider    (public) (abstract) (auto) (ansi) 
+// Class ModelMetadataIdentity          (public) (sequential) (ansi) (sealed) 
+// Class ModelMetadataKind              (public) (auto) (ansi) (sealed) 
+// Class FormatterCollection`1          (public) (auto) (ansi) 
+// Interface IInputFormatter                (public) (abstract) (auto) (ansi) 
+// Interface IInputFormatterExceptionPolicy (public) (abstract) (auto) (ansi) 
+// Class InputFormatterContext          (public) (auto) (ansi) 
+// Class InputFormatterException        (public) (auto) (ansi) 
+// Class InputFormatterExceptionPolicy  (public) (auto) (ansi) (sealed) 
+// Class InputFormatterResult           (public) (auto) (ansi) 
+// Interface IOutputFormatter               (public) (abstract) (auto) (ansi) 
+// Class OutputFormatterCanWriteContext (public) (abstract) (auto) (ansi) 
+// Class OutputFormatterWriteContext    (public) (auto) (ansi) 
+// Class ActionExecutedContext          (public) (auto) (ansi) 
+// Class ActionExecutingContext         (public) (auto) (ansi) 
+// Class ActionExecutionDelegate        (public) (auto) (ansi) (sealed) 
+// Class AuthorizationFilterContext     (public) (auto) (ansi) 
+// Class ExceptionContext               (public) (auto) (ansi) 
+// Class FilterContext                  (public) (abstract) (auto) (ansi) 
+// Class FilterDescriptor               (public) (auto) (ansi) 
+// Class FilterItem                     (public) (auto) (ansi) 
+// Class FilterProviderContext          (public) (auto) (ansi) 
+// Interface IActionFilter                  (public) (abstract) (auto) (ansi) 
+// Interface IAlwaysRunResultFilter         (public) (abstract) (auto) (ansi) 
+// Interface IAsyncActionFilter             (public) (abstract) (auto) (ansi) 
+// Interface IAsyncAlwaysRunResultFilter    (public) (abstract) (auto) (ansi) 
+// Interface IAsyncAuthorizationFilter      (public) (abstract) (auto) (ansi) 
+// Interface IAsyncExceptionFilter          (public) (abstract) (auto) (ansi) 
+// Interface IAsyncResourceFilter           (public) (abstract) (auto) (ansi) 
+// Interface IAsyncResultFilter             (public) (abstract) (auto) (ansi) 
+// Interface IAuthorizationFilter           (public) (abstract) (auto) (ansi) 
+// Interface IExceptionFilter               (public) (abstract) (auto) (ansi) 
+// Interface IFilterContainer               (public) (abstract) (auto) (ansi) 
+// Interface IFilterFactory                 (public) (abstract) (auto) (ansi) 
+// Interface IFilterMetadata                (public) (abstract) (auto) (ansi) 
+// Interface IFilterProvider                (public) (abstract) (auto) (ansi) 
+// Interface IOrderedFilter                 (public) (abstract) (auto) (ansi) 
+// Interface IResourceFilter                (public) (abstract) (auto) (ansi) 
+// Interface IResultFilter                  (public) (abstract) (auto) (ansi) 
+// Class ResourceExecutedContext        (public) (auto) (ansi) 
+// Class ResourceExecutingContext       (public) (auto) (ansi) 
+// Class ResourceExecutionDelegate      (public) (auto) (ansi) (sealed) 
+// Class ResultExecutedContext          (public) (auto) (ansi) 
+// Class ResultExecutingContext         (public) (auto) (ansi) 
+// Class ResultExecutionDelegate        (public) (auto) (ansi) (sealed) 
+// Interface IAllowAnonymousFilter          (public) (abstract) (auto) (ansi) 
+// Class ApiDescription                 (public) (auto) (ansi) 
+// Class ApiDescriptionProviderContext  (public) (auto) (ansi) 
+// Class ApiParameterDescription        (public) (auto) (ansi) 
+// Class ApiParameterRouteInfo          (public) (auto) (ansi) 
+// Class ApiRequestFormat               (public) (auto) (ansi) 
+// Class ApiResponseFormat              (public) (auto) (ansi) 
+// Class ApiResponseType                (public) (auto) (ansi) 
+// Interface IApiDescriptionProvider        (public) (abstract) (auto) (ansi) 
+// Class ActionConstraintContext        (public) (auto) (ansi) 
+// Class ActionConstraintItem           (public) (auto) (ansi) 
+// Class ActionConstraintProviderContext (public) (auto) (ansi) 
+// Class ActionSelectorCandidate        (public) (sequential) (ansi) (sealed) 
+// Interface IActionConstraint              (public) (abstract) (auto) (ansi) 
+// Interface IActionConstraintFactory       (public) (abstract) (auto) (ansi) 
+// Interface IActionConstraintMetadata      (public) (abstract) (auto) (ansi) 
+// Interface IActionConstraintProvider      (public) (abstract) (auto) (ansi) 
+// Class ActionDescriptor               (public) (auto) (ansi) 
+// Class ActionDescriptorExtensions     (public) (abstract) (auto) (ansi) (sealed) 
+// Class ActionDescriptorProviderContext (public) (auto) (ansi) 
+// Class ActionInvokerProviderContext   (public) (auto) (ansi) 
+// Interface IActionDescriptorProvider      (public) (abstract) (auto) (ansi) 
+// Interface IActionInvoker                 (public) (abstract) (auto) (ansi) 
+// Interface IActionInvokerProvider         (public) (abstract) (auto) (ansi) 
+// Class ParameterDescriptor            (public) (auto) (ansi) 
+// Class Resources                      (abstract) (auto) (ansi) (sealed) 
+// Class CompositePropertyFilterProvider (auto) (ansi) (nested private) 
+// Class <>c                            (auto) (ansi) (sealed) (nested private) 
+// Class <>c__DisplayClass1_0           (auto) (ansi) (sealed) (nested private) 
+// Class NestedScope                    (sequential) (ansi) (sealed) (nested public) 
+// Class <>c__DisplayClass30_0          (auto) (ansi) (sealed) (nested private) 
+// Class <>c__DisplayClass147_0         (auto) (ansi) (sealed) (nested private) 
+// Class MatchResult                    (sequential) (ansi) (sealed) (nested private) 
+// Class Delimiter                      (auto) (ansi) (sealed) (nested private) 
+// Class ModelStateNode                 (auto) (ansi) (nested private) 
+// Class PrefixEnumerable               (sequential) (ansi) (sealed) (nested public) 
+// Class Enumerator                     (sequential) (ansi) (sealed) (nested public) 
+// Class KeyEnumerable                  (sequential) (ansi) (sealed) (nested public) 
+// Class KeyEnumerator                  (sequential) (ansi) (sealed) (nested public) 
+// Class ValueEnumerable                (sequential) (ansi) (sealed) (nested public) 
+// Class ValueEnumerator                (sequential) (ansi) (sealed) (nested public) 
+// Class <>c__DisplayClass4_0           (auto) (ansi) (sealed) (nested private) 
+// Class <>c                            (auto) (ansi) (sealed) (nested private) 
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+// Metadata version: v4.0.30319
+.assembly extern /*23000001*/ System.Runtime
+{
+  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
+  .ver 5:0:0:0
+}
+.assembly extern /*23000002*/ Microsoft.AspNetCore.Http.Abstractions
+{
+  .publickeytoken = (AD B9 79 38 29 DD AE 60 )                         // ..y8)..`
+  .ver 5:0:0:0
+}
+.assembly extern /*23000003*/ Microsoft.AspNetCore.Routing.Abstractions
+{
+  .publickeytoken = (AD B9 79 38 29 DD AE 60 )                         // ..y8)..`
+  .ver 5:0:0:0
+}
+.assembly extern /*23000004*/ System.ComponentModel
+{
+  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
+  .ver 5:0:0:0
+}
+.assembly extern /*23000005*/ Microsoft.Extensions.Primitives
+{
+  .publickeytoken = (AD B9 79 38 29 DD AE 60 )                         // ..y8)..`
+  .ver 5:0:0:0
+}
+.assembly extern /*23000006*/ System.Collections
+{
+  .publickeytoken = (B0 3F 5F 7F 11 D5 0A 3A )                         // .?_....:
+  .ver 5:0:0:0
+}
+.assembly /*20000001*/ Microsoft.AspNetCore.Mvc.Abstractions
+{
+  .custom /*0C000003:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
+  .custom /*0C000004:0A000002*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilationRelaxationsAttribute/*01000002*/::.ctor(int32) /* 0A000002 */ = ( 01 00 08 00 00 00 00 00 ) 
+  .custom /*0C000005:0A000003*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.RuntimeCompatibilityAttribute/*01000003*/::.ctor() /* 0A000003 */ = ( 01 00 01 00 54 02 16 57 72 61 70 4E 6F 6E 45 78   // ....T..WrapNonEx
+                                                                                                                                                                                63 65 70 74 69 6F 6E 54 68 72 6F 77 73 01 )       // ceptionThrows.
+
+  // --- The following custom attribute is added automatically, do not uncomment -------
+  //  .custom /*0C000006:0A000004*/ instance void [System.Runtime/*23000001*/]System.Diagnostics.DebuggableAttribute/*01000004*/::.ctor(valuetype [System.Runtime/*23000001*/]System.Diagnostics.DebuggableAttribute/*01000004*//DebuggingModes/*01000005*/) /* 0A000004 */ = ( 01 00 02 00 00 00 00 00 ) 
+
+  .custom /*0C000007:0A000005*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ReferenceAssemblyAttribute/*01000006*/::.ctor() /* 0A000005 */ = ( 01 00 00 00 ) 
+  .custom /*0C000008:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 64 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...dMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2C 20 50 75   // pNetCore.Mvc, Pu
+                                                                                                                                                                                    62 6C 69 63 4B 65 79 3D 30 30 32 34 30 30 30 30   // blicKey=00240000
+                                                                                                                                                                                    30 34 38 30 30 30 30 30 39 34 30 30 30 30 30 30   // 0480000094000000
+                                                                                                                                                                                    30 36 30 32 30 30 30 30 30 30 32 34 30 30 30 30   // 0602000000240000
+                                                                                                                                                                                    35 32 35 33 34 31 33 31 30 30 30 34 30 30 30 30   // 5253413100040000
+                                                                                                                                                                                    30 31 30 30 30 31 30 30 66 33 33 61 32 39 30 34   // 01000100f33a2904
+                                                                                                                                                                                    34 66 61 39 64 37 34 30 63 39 62 33 32 31 33 61   // 4fa9d740c9b3213a
+                                                                                                                                                                                    39 33 65 35 37 63 38 34 62 34 37 32 63 38 34 65   // 93e57c84b472c84e
+                                                                                                                                                                                    30 62 38 61 30 65 31 61 65 34 38 65 36 37 61 39   // 0b8a0e1ae48e67a9
+                                                                                                                                                                                    66 38 66 36 64 65 39 64 35 66 37 66 33 64 35 32   // f8f6de9d5f7f3d52
+                                                                                                                                                                                    61 63 32 33 65 34 38 61 63 35 31 38 30 31 66 31   // ac23e48ac51801f1
+                                                                                                                                                                                    64 63 39 35 30 61 62 65 39 30 31 64 61 33 34 64   // dc950abe901da34d
+                                                                                                                                                                                    32 61 39 65 33 62 61 61 64 62 31 34 31 61 31 37   // 2a9e3baadb141a17
+                                                                                                                                                                                    63 37 37 65 66 33 63 35 36 35 64 64 35 65 65 35   // c77ef3c565dd5ee5
+                                                                                                                                                                                    30 35 34 62 39 31 63 66 36 33 62 62 33 63 36 61   // 054b91cf63bb3c6a
+                                                                                                                                                                                    62 38 33 66 37 32 61 62 33 61 61 66 65 39 33 64   // b83f72ab3aafe93d
+                                                                                                                                                                                    30 66 63 33 63 32 33 34 38 62 37 36 34 66 61 66   // 0fc3c2348b764faf
+                                                                                                                                                                                    62 30 62 31 63 30 37 33 33 64 65 35 31 34 35 39   // b0b1c0733de51459
+                                                                                                                                                                                    61 65 61 62 34 36 35 38 30 33 38 34 62 66 39 64   // aeab46580384bf9d
+                                                                                                                                                                                    37 34 63 34 65 32 38 31 36 34 62 37 63 64 65 32   // 74c4e28164b7cde2
+                                                                                                                                                                                    34 37 66 38 39 31 62 61 30 37 38 39 31 63 39 64   // 47f891ba07891c9d
+                                                                                                                                                                                    38 37 32 61 64 32 62 62 00 00 )                   // 872ad2bb..
+  .custom /*0C000009:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 70 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...pMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 41 70 69   // pNetCore.Mvc.Api
+                                                                                                                                                                                    45 78 70 6C 6F 72 65 72 2C 20 50 75 62 6C 69 63   // Explorer, Public
+                                                                                                                                                                                    4B 65 79 3D 30 30 32 34 30 30 30 30 30 34 38 30   // Key=002400000480
+                                                                                                                                                                                    30 30 30 30 39 34 30 30 30 30 30 30 30 36 30 32   // 0000940000000602
+                                                                                                                                                                                    30 30 30 30 30 30 32 34 30 30 30 30 35 32 35 33   // 0000002400005253
+                                                                                                                                                                                    34 31 33 31 30 30 30 34 30 30 30 30 30 31 30 30   // 4131000400000100
+                                                                                                                                                                                    30 31 30 30 66 33 33 61 32 39 30 34 34 66 61 39   // 0100f33a29044fa9
+                                                                                                                                                                                    64 37 34 30 63 39 62 33 32 31 33 61 39 33 65 35   // d740c9b3213a93e5
+                                                                                                                                                                                    37 63 38 34 62 34 37 32 63 38 34 65 30 62 38 61   // 7c84b472c84e0b8a
+                                                                                                                                                                                    30 65 31 61 65 34 38 65 36 37 61 39 66 38 66 36   // 0e1ae48e67a9f8f6
+                                                                                                                                                                                    64 65 39 64 35 66 37 66 33 64 35 32 61 63 32 33   // de9d5f7f3d52ac23
+                                                                                                                                                                                    65 34 38 61 63 35 31 38 30 31 66 31 64 63 39 35   // e48ac51801f1dc95
+                                                                                                                                                                                    30 61 62 65 39 30 31 64 61 33 34 64 32 61 39 65   // 0abe901da34d2a9e
+                                                                                                                                                                                    33 62 61 61 64 62 31 34 31 61 31 37 63 37 37 65   // 3baadb141a17c77e
+                                                                                                                                                                                    66 33 63 35 36 35 64 64 35 65 65 35 30 35 34 62   // f3c565dd5ee5054b
+                                                                                                                                                                                    39 31 63 66 36 33 62 62 33 63 36 61 62 38 33 66   // 91cf63bb3c6ab83f
+                                                                                                                                                                                    37 32 61 62 33 61 61 66 65 39 33 64 30 66 63 33   // 72ab3aafe93d0fc3
+                                                                                                                                                                                    63 32 33 34 38 62 37 36 34 66 61 66 62 30 62 31   // c2348b764fafb0b1
+                                                                                                                                                                                    63 30 37 33 33 64 65 35 31 34 35 39 61 65 61 62   // c0733de51459aeab
+                                                                                                                                                                                    34 36 35 38 30 33 38 34 62 66 39 64 37 34 63 34   // 46580384bf9d74c4
+                                                                                                                                                                                    65 32 38 31 36 34 62 37 63 64 65 32 34 37 66 38   // e28164b7cde247f8
+                                                                                                                                                                                    39 31 62 61 30 37 38 39 31 63 39 64 38 37 32 61   // 91ba07891c9d872a
+                                                                                                                                                                                    64 32 62 62 00 00 )                               // d2bb..
+  .custom /*0C00000A:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 69 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...iMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 43 6F 72   // pNetCore.Mvc.Cor
+                                                                                                                                                                                    65 2C 20 50 75 62 6C 69 63 4B 65 79 3D 30 30 32   // e, PublicKey=002
+                                                                                                                                                                                    34 30 30 30 30 30 34 38 30 30 30 30 30 39 34 30   // 4000004800000940
+                                                                                                                                                                                    30 30 30 30 30 30 36 30 32 30 30 30 30 30 30 32   // 0000006020000002
+                                                                                                                                                                                    34 30 30 30 30 35 32 35 33 34 31 33 31 30 30 30   // 4000052534131000
+                                                                                                                                                                                    34 30 30 30 30 30 31 30 30 30 31 30 30 66 33 33   // 4000001000100f33
+                                                                                                                                                                                    61 32 39 30 34 34 66 61 39 64 37 34 30 63 39 62   // a29044fa9d740c9b
+                                                                                                                                                                                    33 32 31 33 61 39 33 65 35 37 63 38 34 62 34 37   // 3213a93e57c84b47
+                                                                                                                                                                                    32 63 38 34 65 30 62 38 61 30 65 31 61 65 34 38   // 2c84e0b8a0e1ae48
+                                                                                                                                                                                    65 36 37 61 39 66 38 66 36 64 65 39 64 35 66 37   // e67a9f8f6de9d5f7
+                                                                                                                                                                                    66 33 64 35 32 61 63 32 33 65 34 38 61 63 35 31   // f3d52ac23e48ac51
+                                                                                                                                                                                    38 30 31 66 31 64 63 39 35 30 61 62 65 39 30 31   // 801f1dc950abe901
+                                                                                                                                                                                    64 61 33 34 64 32 61 39 65 33 62 61 61 64 62 31   // da34d2a9e3baadb1
+                                                                                                                                                                                    34 31 61 31 37 63 37 37 65 66 33 63 35 36 35 64   // 41a17c77ef3c565d
+                                                                                                                                                                                    64 35 65 65 35 30 35 34 62 39 31 63 66 36 33 62   // d5ee5054b91cf63b
+                                                                                                                                                                                    62 33 63 36 61 62 38 33 66 37 32 61 62 33 61 61   // b3c6ab83f72ab3aa
+                                                                                                                                                                                    66 65 39 33 64 30 66 63 33 63 32 33 34 38 62 37   // fe93d0fc3c2348b7
+                                                                                                                                                                                    36 34 66 61 66 62 30 62 31 63 30 37 33 33 64 65   // 64fafb0b1c0733de
+                                                                                                                                                                                    35 31 34 35 39 61 65 61 62 34 36 35 38 30 33 38   // 51459aeab4658038
+                                                                                                                                                                                    34 62 66 39 64 37 34 63 34 65 32 38 31 36 34 62   // 4bf9d74c4e28164b
+                                                                                                                                                                                    37 63 64 65 32 34 37 66 38 39 31 62 61 30 37 38   // 7cde247f891ba078
+                                                                                                                                                                                    39 31 63 39 64 38 37 32 61 64 32 62 62 00 00 )    // 91c9d872ad2bb..
+  .custom /*0C00000B:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 69 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...iMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 43 6F 72   // pNetCore.Mvc.Cor
+                                                                                                                                                                                    73 2C 20 50 75 62 6C 69 63 4B 65 79 3D 30 30 32   // s, PublicKey=002
+                                                                                                                                                                                    34 30 30 30 30 30 34 38 30 30 30 30 30 39 34 30   // 4000004800000940
+                                                                                                                                                                                    30 30 30 30 30 30 36 30 32 30 30 30 30 30 30 32   // 0000006020000002
+                                                                                                                                                                                    34 30 30 30 30 35 32 35 33 34 31 33 31 30 30 30   // 4000052534131000
+                                                                                                                                                                                    34 30 30 30 30 30 31 30 30 30 31 30 30 66 33 33   // 4000001000100f33
+                                                                                                                                                                                    61 32 39 30 34 34 66 61 39 64 37 34 30 63 39 62   // a29044fa9d740c9b
+                                                                                                                                                                                    33 32 31 33 61 39 33 65 35 37 63 38 34 62 34 37   // 3213a93e57c84b47
+                                                                                                                                                                                    32 63 38 34 65 30 62 38 61 30 65 31 61 65 34 38   // 2c84e0b8a0e1ae48
+                                                                                                                                                                                    65 36 37 61 39 66 38 66 36 64 65 39 64 35 66 37   // e67a9f8f6de9d5f7
+                                                                                                                                                                                    66 33 64 35 32 61 63 32 33 65 34 38 61 63 35 31   // f3d52ac23e48ac51
+                                                                                                                                                                                    38 30 31 66 31 64 63 39 35 30 61 62 65 39 30 31   // 801f1dc950abe901
+                                                                                                                                                                                    64 61 33 34 64 32 61 39 65 33 62 61 61 64 62 31   // da34d2a9e3baadb1
+                                                                                                                                                                                    34 31 61 31 37 63 37 37 65 66 33 63 35 36 35 64   // 41a17c77ef3c565d
+                                                                                                                                                                                    64 35 65 65 35 30 35 34 62 39 31 63 66 36 33 62   // d5ee5054b91cf63b
+                                                                                                                                                                                    62 33 63 36 61 62 38 33 66 37 32 61 62 33 61 61   // b3c6ab83f72ab3aa
+                                                                                                                                                                                    66 65 39 33 64 30 66 63 33 63 32 33 34 38 62 37   // fe93d0fc3c2348b7
+                                                                                                                                                                                    36 34 66 61 66 62 30 62 31 63 30 37 33 33 64 65   // 64fafb0b1c0733de
+                                                                                                                                                                                    35 31 34 35 39 61 65 61 62 34 36 35 38 30 33 38   // 51459aeab4658038
+                                                                                                                                                                                    34 62 66 39 64 37 34 63 34 65 32 38 31 36 34 62   // 4bf9d74c4e28164b
+                                                                                                                                                                                    37 63 64 65 32 34 37 66 38 39 31 62 61 30 37 38   // 7cde247f891ba078
+                                                                                                                                                                                    39 31 63 39 64 38 37 32 61 64 32 62 62 00 00 )    // 91c9d872ad2bb..
+  .custom /*0C00000C:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 74 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...tMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 44 61 74   // pNetCore.Mvc.Dat
+                                                                                                                                                                                    61 41 6E 6E 6F 74 61 74 69 6F 6E 73 2C 20 50 75   // aAnnotations, Pu
+                                                                                                                                                                                    62 6C 69 63 4B 65 79 3D 30 30 32 34 30 30 30 30   // blicKey=00240000
+                                                                                                                                                                                    30 34 38 30 30 30 30 30 39 34 30 30 30 30 30 30   // 0480000094000000
+                                                                                                                                                                                    30 36 30 32 30 30 30 30 30 30 32 34 30 30 30 30   // 0602000000240000
+                                                                                                                                                                                    35 32 35 33 34 31 33 31 30 30 30 34 30 30 30 30   // 5253413100040000
+                                                                                                                                                                                    30 31 30 30 30 31 30 30 66 33 33 61 32 39 30 34   // 01000100f33a2904
+                                                                                                                                                                                    34 66 61 39 64 37 34 30 63 39 62 33 32 31 33 61   // 4fa9d740c9b3213a
+                                                                                                                                                                                    39 33 65 35 37 63 38 34 62 34 37 32 63 38 34 65   // 93e57c84b472c84e
+                                                                                                                                                                                    30 62 38 61 30 65 31 61 65 34 38 65 36 37 61 39   // 0b8a0e1ae48e67a9
+                                                                                                                                                                                    66 38 66 36 64 65 39 64 35 66 37 66 33 64 35 32   // f8f6de9d5f7f3d52
+                                                                                                                                                                                    61 63 32 33 65 34 38 61 63 35 31 38 30 31 66 31   // ac23e48ac51801f1
+                                                                                                                                                                                    64 63 39 35 30 61 62 65 39 30 31 64 61 33 34 64   // dc950abe901da34d
+                                                                                                                                                                                    32 61 39 65 33 62 61 61 64 62 31 34 31 61 31 37   // 2a9e3baadb141a17
+                                                                                                                                                                                    63 37 37 65 66 33 63 35 36 35 64 64 35 65 65 35   // c77ef3c565dd5ee5
+                                                                                                                                                                                    30 35 34 62 39 31 63 66 36 33 62 62 33 63 36 61   // 054b91cf63bb3c6a
+                                                                                                                                                                                    62 38 33 66 37 32 61 62 33 61 61 66 65 39 33 64   // b83f72ab3aafe93d
+                                                                                                                                                                                    30 66 63 33 63 32 33 34 38 62 37 36 34 66 61 66   // 0fc3c2348b764faf
+                                                                                                                                                                                    62 30 62 31 63 30 37 33 33 64 65 35 31 34 35 39   // b0b1c0733de51459
+                                                                                                                                                                                    61 65 61 62 34 36 35 38 30 33 38 34 62 66 39 64   // aeab46580384bf9d
+                                                                                                                                                                                    37 34 63 34 65 32 38 31 36 34 62 37 63 64 65 32   // 74c4e28164b7cde2
+                                                                                                                                                                                    34 37 66 38 39 31 62 61 30 37 38 39 31 63 39 64   // 47f891ba07891c9d
+                                                                                                                                                                                    38 37 32 61 64 32 62 62 00 00 )                   // 872ad2bb..
+  .custom /*0C00000D:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 73 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...sMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 46 6F 72   // pNetCore.Mvc.For
+                                                                                                                                                                                    6D 61 74 74 65 72 73 2E 58 6D 6C 2C 20 50 75 62   // matters.Xml, Pub
+                                                                                                                                                                                    6C 69 63 4B 65 79 3D 30 30 32 34 30 30 30 30 30   // licKey=002400000
+                                                                                                                                                                                    34 38 30 30 30 30 30 39 34 30 30 30 30 30 30 30   // 4800000940000000
+                                                                                                                                                                                    36 30 32 30 30 30 30 30 30 32 34 30 30 30 30 35   // 6020000002400005
+                                                                                                                                                                                    32 35 33 34 31 33 31 30 30 30 34 30 30 30 30 30   // 2534131000400000
+                                                                                                                                                                                    31 30 30 30 31 30 30 66 33 33 61 32 39 30 34 34   // 1000100f33a29044
+                                                                                                                                                                                    66 61 39 64 37 34 30 63 39 62 33 32 31 33 61 39   // fa9d740c9b3213a9
+                                                                                                                                                                                    33 65 35 37 63 38 34 62 34 37 32 63 38 34 65 30   // 3e57c84b472c84e0
+                                                                                                                                                                                    62 38 61 30 65 31 61 65 34 38 65 36 37 61 39 66   // b8a0e1ae48e67a9f
+                                                                                                                                                                                    38 66 36 64 65 39 64 35 66 37 66 33 64 35 32 61   // 8f6de9d5f7f3d52a
+                                                                                                                                                                                    63 32 33 65 34 38 61 63 35 31 38 30 31 66 31 64   // c23e48ac51801f1d
+                                                                                                                                                                                    63 39 35 30 61 62 65 39 30 31 64 61 33 34 64 32   // c950abe901da34d2
+                                                                                                                                                                                    61 39 65 33 62 61 61 64 62 31 34 31 61 31 37 63   // a9e3baadb141a17c
+                                                                                                                                                                                    37 37 65 66 33 63 35 36 35 64 64 35 65 65 35 30   // 77ef3c565dd5ee50
+                                                                                                                                                                                    35 34 62 39 31 63 66 36 33 62 62 33 63 36 61 62   // 54b91cf63bb3c6ab
+                                                                                                                                                                                    38 33 66 37 32 61 62 33 61 61 66 65 39 33 64 30   // 83f72ab3aafe93d0
+                                                                                                                                                                                    66 63 33 63 32 33 34 38 62 37 36 34 66 61 66 62   // fc3c2348b764fafb
+                                                                                                                                                                                    30 62 31 63 30 37 33 33 64 65 35 31 34 35 39 61   // 0b1c0733de51459a
+                                                                                                                                                                                    65 61 62 34 36 35 38 30 33 38 34 62 66 39 64 37   // eab46580384bf9d7
+                                                                                                                                                                                    34 63 34 65 32 38 31 36 34 62 37 63 64 65 32 34   // 4c4e28164b7cde24
+                                                                                                                                                                                    37 66 38 39 31 62 61 30 37 38 39 31 63 39 64 38   // 7f891ba07891c9d8
+                                                                                                                                                                                    37 32 61 64 32 62 62 00 00 )                      // 72ad2bb..
+  .custom /*0C00000E:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 71 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...qMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 4C 6F 63   // pNetCore.Mvc.Loc
+                                                                                                                                                                                    61 6C 69 7A 61 74 69 6F 6E 2C 20 50 75 62 6C 69   // alization, Publi
+                                                                                                                                                                                    63 4B 65 79 3D 30 30 32 34 30 30 30 30 30 34 38   // cKey=00240000048
+                                                                                                                                                                                    30 30 30 30 30 39 34 30 30 30 30 30 30 30 36 30   // 0000094000000060
+                                                                                                                                                                                    32 30 30 30 30 30 30 32 34 30 30 30 30 35 32 35   // 2000000240000525
+                                                                                                                                                                                    33 34 31 33 31 30 30 30 34 30 30 30 30 30 31 30   // 3413100040000010
+                                                                                                                                                                                    30 30 31 30 30 66 33 33 61 32 39 30 34 34 66 61   // 00100f33a29044fa
+                                                                                                                                                                                    39 64 37 34 30 63 39 62 33 32 31 33 61 39 33 65   // 9d740c9b3213a93e
+                                                                                                                                                                                    35 37 63 38 34 62 34 37 32 63 38 34 65 30 62 38   // 57c84b472c84e0b8
+                                                                                                                                                                                    61 30 65 31 61 65 34 38 65 36 37 61 39 66 38 66   // a0e1ae48e67a9f8f
+                                                                                                                                                                                    36 64 65 39 64 35 66 37 66 33 64 35 32 61 63 32   // 6de9d5f7f3d52ac2
+                                                                                                                                                                                    33 65 34 38 61 63 35 31 38 30 31 66 31 64 63 39   // 3e48ac51801f1dc9
+                                                                                                                                                                                    35 30 61 62 65 39 30 31 64 61 33 34 64 32 61 39   // 50abe901da34d2a9
+                                                                                                                                                                                    65 33 62 61 61 64 62 31 34 31 61 31 37 63 37 37   // e3baadb141a17c77
+                                                                                                                                                                                    65 66 33 63 35 36 35 64 64 35 65 65 35 30 35 34   // ef3c565dd5ee5054
+                                                                                                                                                                                    62 39 31 63 66 36 33 62 62 33 63 36 61 62 38 33   // b91cf63bb3c6ab83
+                                                                                                                                                                                    66 37 32 61 62 33 61 61 66 65 39 33 64 30 66 63   // f72ab3aafe93d0fc
+                                                                                                                                                                                    33 63 32 33 34 38 62 37 36 34 66 61 66 62 30 62   // 3c2348b764fafb0b
+                                                                                                                                                                                    31 63 30 37 33 33 64 65 35 31 34 35 39 61 65 61   // 1c0733de51459aea
+                                                                                                                                                                                    62 34 36 35 38 30 33 38 34 62 66 39 64 37 34 63   // b46580384bf9d74c
+                                                                                                                                                                                    34 65 32 38 31 36 34 62 37 63 64 65 32 34 37 66   // 4e28164b7cde247f
+                                                                                                                                                                                    38 39 31 62 61 30 37 38 39 31 63 39 64 38 37 32   // 891ba07891c9d872
+                                                                                                                                                                                    61 64 32 62 62 00 00 )                            // ad2bb..
+  .custom /*0C00000F:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 6A 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...jMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 52 61 7A   // pNetCore.Mvc.Raz
+                                                                                                                                                                                    6F 72 2C 20 50 75 62 6C 69 63 4B 65 79 3D 30 30   // or, PublicKey=00
+                                                                                                                                                                                    32 34 30 30 30 30 30 34 38 30 30 30 30 30 39 34   // 2400000480000094
+                                                                                                                                                                                    30 30 30 30 30 30 30 36 30 32 30 30 30 30 30 30   // 0000000602000000
+                                                                                                                                                                                    32 34 30 30 30 30 35 32 35 33 34 31 33 31 30 30   // 2400005253413100
+                                                                                                                                                                                    30 34 30 30 30 30 30 31 30 30 30 31 30 30 66 33   // 04000001000100f3
+                                                                                                                                                                                    33 61 32 39 30 34 34 66 61 39 64 37 34 30 63 39   // 3a29044fa9d740c9
+                                                                                                                                                                                    62 33 32 31 33 61 39 33 65 35 37 63 38 34 62 34   // b3213a93e57c84b4
+                                                                                                                                                                                    37 32 63 38 34 65 30 62 38 61 30 65 31 61 65 34   // 72c84e0b8a0e1ae4
+                                                                                                                                                                                    38 65 36 37 61 39 66 38 66 36 64 65 39 64 35 66   // 8e67a9f8f6de9d5f
+                                                                                                                                                                                    37 66 33 64 35 32 61 63 32 33 65 34 38 61 63 35   // 7f3d52ac23e48ac5
+                                                                                                                                                                                    31 38 30 31 66 31 64 63 39 35 30 61 62 65 39 30   // 1801f1dc950abe90
+                                                                                                                                                                                    31 64 61 33 34 64 32 61 39 65 33 62 61 61 64 62   // 1da34d2a9e3baadb
+                                                                                                                                                                                    31 34 31 61 31 37 63 37 37 65 66 33 63 35 36 35   // 141a17c77ef3c565
+                                                                                                                                                                                    64 64 35 65 65 35 30 35 34 62 39 31 63 66 36 33   // dd5ee5054b91cf63
+                                                                                                                                                                                    62 62 33 63 36 61 62 38 33 66 37 32 61 62 33 61   // bb3c6ab83f72ab3a
+                                                                                                                                                                                    61 66 65 39 33 64 30 66 63 33 63 32 33 34 38 62   // afe93d0fc3c2348b
+                                                                                                                                                                                    37 36 34 66 61 66 62 30 62 31 63 30 37 33 33 64   // 764fafb0b1c0733d
+                                                                                                                                                                                    65 35 31 34 35 39 61 65 61 62 34 36 35 38 30 33   // e51459aeab465803
+                                                                                                                                                                                    38 34 62 66 39 64 37 34 63 34 65 32 38 31 36 34   // 84bf9d74c4e28164
+                                                                                                                                                                                    62 37 63 64 65 32 34 37 66 38 39 31 62 61 30 37   // b7cde247f891ba07
+                                                                                                                                                                                    38 39 31 63 39 64 38 37 32 61 64 32 62 62 00 00 ) // 891c9d872ad2bb..
+  .custom /*0C000010:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 6F 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...oMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 52 61 7A   // pNetCore.Mvc.Raz
+                                                                                                                                                                                    6F 72 50 61 67 65 73 2C 20 50 75 62 6C 69 63 4B   // orPages, PublicK
+                                                                                                                                                                                    65 79 3D 30 30 32 34 30 30 30 30 30 34 38 30 30   // ey=0024000004800
+                                                                                                                                                                                    30 30 30 39 34 30 30 30 30 30 30 30 36 30 32 30   // 0009400000006020
+                                                                                                                                                                                    30 30 30 30 30 32 34 30 30 30 30 35 32 35 33 34   // 0000024000052534
+                                                                                                                                                                                    31 33 31 30 30 30 34 30 30 30 30 30 31 30 30 30   // 1310004000001000
+                                                                                                                                                                                    31 30 30 66 33 33 61 32 39 30 34 34 66 61 39 64   // 100f33a29044fa9d
+                                                                                                                                                                                    37 34 30 63 39 62 33 32 31 33 61 39 33 65 35 37   // 740c9b3213a93e57
+                                                                                                                                                                                    63 38 34 62 34 37 32 63 38 34 65 30 62 38 61 30   // c84b472c84e0b8a0
+                                                                                                                                                                                    65 31 61 65 34 38 65 36 37 61 39 66 38 66 36 64   // e1ae48e67a9f8f6d
+                                                                                                                                                                                    65 39 64 35 66 37 66 33 64 35 32 61 63 32 33 65   // e9d5f7f3d52ac23e
+                                                                                                                                                                                    34 38 61 63 35 31 38 30 31 66 31 64 63 39 35 30   // 48ac51801f1dc950
+                                                                                                                                                                                    61 62 65 39 30 31 64 61 33 34 64 32 61 39 65 33   // abe901da34d2a9e3
+                                                                                                                                                                                    62 61 61 64 62 31 34 31 61 31 37 63 37 37 65 66   // baadb141a17c77ef
+                                                                                                                                                                                    33 63 35 36 35 64 64 35 65 65 35 30 35 34 62 39   // 3c565dd5ee5054b9
+                                                                                                                                                                                    31 63 66 36 33 62 62 33 63 36 61 62 38 33 66 37   // 1cf63bb3c6ab83f7
+                                                                                                                                                                                    32 61 62 33 61 61 66 65 39 33 64 30 66 63 33 63   // 2ab3aafe93d0fc3c
+                                                                                                                                                                                    32 33 34 38 62 37 36 34 66 61 66 62 30 62 31 63   // 2348b764fafb0b1c
+                                                                                                                                                                                    30 37 33 33 64 65 35 31 34 35 39 61 65 61 62 34   // 0733de51459aeab4
+                                                                                                                                                                                    36 35 38 30 33 38 34 62 66 39 64 37 34 63 34 65   // 6580384bf9d74c4e
+                                                                                                                                                                                    32 38 31 36 34 62 37 63 64 65 32 34 37 66 38 39   // 28164b7cde247f89
+                                                                                                                                                                                    31 62 61 30 37 38 39 31 63 39 64 38 37 32 61 64   // 1ba07891c9d872ad
+                                                                                                                                                                                    32 62 62 00 00 )                                  // 2bb..
+  .custom /*0C000011:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 6F 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...oMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 54 61 67   // pNetCore.Mvc.Tag
+                                                                                                                                                                                    48 65 6C 70 65 72 73 2C 20 50 75 62 6C 69 63 4B   // Helpers, PublicK
+                                                                                                                                                                                    65 79 3D 30 30 32 34 30 30 30 30 30 34 38 30 30   // ey=0024000004800
+                                                                                                                                                                                    30 30 30 39 34 30 30 30 30 30 30 30 36 30 32 30   // 0009400000006020
+                                                                                                                                                                                    30 30 30 30 30 32 34 30 30 30 30 35 32 35 33 34   // 0000024000052534
+                                                                                                                                                                                    31 33 31 30 30 30 34 30 30 30 30 30 31 30 30 30   // 1310004000001000
+                                                                                                                                                                                    31 30 30 66 33 33 61 32 39 30 34 34 66 61 39 64   // 100f33a29044fa9d
+                                                                                                                                                                                    37 34 30 63 39 62 33 32 31 33 61 39 33 65 35 37   // 740c9b3213a93e57
+                                                                                                                                                                                    63 38 34 62 34 37 32 63 38 34 65 30 62 38 61 30   // c84b472c84e0b8a0
+                                                                                                                                                                                    65 31 61 65 34 38 65 36 37 61 39 66 38 66 36 64   // e1ae48e67a9f8f6d
+                                                                                                                                                                                    65 39 64 35 66 37 66 33 64 35 32 61 63 32 33 65   // e9d5f7f3d52ac23e
+                                                                                                                                                                                    34 38 61 63 35 31 38 30 31 66 31 64 63 39 35 30   // 48ac51801f1dc950
+                                                                                                                                                                                    61 62 65 39 30 31 64 61 33 34 64 32 61 39 65 33   // abe901da34d2a9e3
+                                                                                                                                                                                    62 61 61 64 62 31 34 31 61 31 37 63 37 37 65 66   // baadb141a17c77ef
+                                                                                                                                                                                    33 63 35 36 35 64 64 35 65 65 35 30 35 34 62 39   // 3c565dd5ee5054b9
+                                                                                                                                                                                    31 63 66 36 33 62 62 33 63 36 61 62 38 33 66 37   // 1cf63bb3c6ab83f7
+                                                                                                                                                                                    32 61 62 33 61 61 66 65 39 33 64 30 66 63 33 63   // 2ab3aafe93d0fc3c
+                                                                                                                                                                                    32 33 34 38 62 37 36 34 66 61 66 62 30 62 31 63   // 2348b764fafb0b1c
+                                                                                                                                                                                    30 37 33 33 64 65 35 31 34 35 39 61 65 61 62 34   // 0733de51459aeab4
+                                                                                                                                                                                    36 35 38 30 33 38 34 62 66 39 64 37 34 63 34 65   // 6580384bf9d74c4e
+                                                                                                                                                                                    32 38 31 36 34 62 37 63 64 65 32 34 37 66 38 39   // 28164b7cde247f89
+                                                                                                                                                                                    31 62 61 30 37 38 39 31 63 39 64 38 37 32 61 64   // 1ba07891c9d872ad
+                                                                                                                                                                                    32 62 62 00 00 )                                  // 2bb..
+  .custom /*0C000012:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 6C 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...lMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 54 65 73   // pNetCore.Mvc.Tes
+                                                                                                                                                                                    74 69 6E 67 2C 20 50 75 62 6C 69 63 4B 65 79 3D   // ting, PublicKey=
+                                                                                                                                                                                    30 30 32 34 30 30 30 30 30 34 38 30 30 30 30 30   // 0024000004800000
+                                                                                                                                                                                    39 34 30 30 30 30 30 30 30 36 30 32 30 30 30 30   // 9400000006020000
+                                                                                                                                                                                    30 30 32 34 30 30 30 30 35 32 35 33 34 31 33 31   // 0024000052534131
+                                                                                                                                                                                    30 30 30 34 30 30 30 30 30 31 30 30 30 31 30 30   // 0004000001000100
+                                                                                                                                                                                    66 33 33 61 32 39 30 34 34 66 61 39 64 37 34 30   // f33a29044fa9d740
+                                                                                                                                                                                    63 39 62 33 32 31 33 61 39 33 65 35 37 63 38 34   // c9b3213a93e57c84
+                                                                                                                                                                                    62 34 37 32 63 38 34 65 30 62 38 61 30 65 31 61   // b472c84e0b8a0e1a
+                                                                                                                                                                                    65 34 38 65 36 37 61 39 66 38 66 36 64 65 39 64   // e48e67a9f8f6de9d
+                                                                                                                                                                                    35 66 37 66 33 64 35 32 61 63 32 33 65 34 38 61   // 5f7f3d52ac23e48a
+                                                                                                                                                                                    63 35 31 38 30 31 66 31 64 63 39 35 30 61 62 65   // c51801f1dc950abe
+                                                                                                                                                                                    39 30 31 64 61 33 34 64 32 61 39 65 33 62 61 61   // 901da34d2a9e3baa
+                                                                                                                                                                                    64 62 31 34 31 61 31 37 63 37 37 65 66 33 63 35   // db141a17c77ef3c5
+                                                                                                                                                                                    36 35 64 64 35 65 65 35 30 35 34 62 39 31 63 66   // 65dd5ee5054b91cf
+                                                                                                                                                                                    36 33 62 62 33 63 36 61 62 38 33 66 37 32 61 62   // 63bb3c6ab83f72ab
+                                                                                                                                                                                    33 61 61 66 65 39 33 64 30 66 63 33 63 32 33 34   // 3aafe93d0fc3c234
+                                                                                                                                                                                    38 62 37 36 34 66 61 66 62 30 62 31 63 30 37 33   // 8b764fafb0b1c073
+                                                                                                                                                                                    33 64 65 35 31 34 35 39 61 65 61 62 34 36 35 38   // 3de51459aeab4658
+                                                                                                                                                                                    30 33 38 34 62 66 39 64 37 34 63 34 65 32 38 31   // 0384bf9d74c4e281
+                                                                                                                                                                                    36 34 62 37 63 64 65 32 34 37 66 38 39 31 62 61   // 64b7cde247f891ba
+                                                                                                                                                                                    30 37 38 39 31 63 39 64 38 37 32 61 64 32 62 62   // 07891c9d872ad2bb
+                                                                                                                                                                                    00 00 ) 
+  .custom /*0C000013:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 71 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...qMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 56 69 65   // pNetCore.Mvc.Vie
+                                                                                                                                                                                    77 46 65 61 74 75 72 65 73 2C 20 50 75 62 6C 69   // wFeatures, Publi
+                                                                                                                                                                                    63 4B 65 79 3D 30 30 32 34 30 30 30 30 30 34 38   // cKey=00240000048
+                                                                                                                                                                                    30 30 30 30 30 39 34 30 30 30 30 30 30 30 36 30   // 0000094000000060
+                                                                                                                                                                                    32 30 30 30 30 30 30 32 34 30 30 30 30 35 32 35   // 2000000240000525
+                                                                                                                                                                                    33 34 31 33 31 30 30 30 34 30 30 30 30 30 31 30   // 3413100040000010
+                                                                                                                                                                                    30 30 31 30 30 66 33 33 61 32 39 30 34 34 66 61   // 00100f33a29044fa
+                                                                                                                                                                                    39 64 37 34 30 63 39 62 33 32 31 33 61 39 33 65   // 9d740c9b3213a93e
+                                                                                                                                                                                    35 37 63 38 34 62 34 37 32 63 38 34 65 30 62 38   // 57c84b472c84e0b8
+                                                                                                                                                                                    61 30 65 31 61 65 34 38 65 36 37 61 39 66 38 66   // a0e1ae48e67a9f8f
+                                                                                                                                                                                    36 64 65 39 64 35 66 37 66 33 64 35 32 61 63 32   // 6de9d5f7f3d52ac2
+                                                                                                                                                                                    33 65 34 38 61 63 35 31 38 30 31 66 31 64 63 39   // 3e48ac51801f1dc9
+                                                                                                                                                                                    35 30 61 62 65 39 30 31 64 61 33 34 64 32 61 39   // 50abe901da34d2a9
+                                                                                                                                                                                    65 33 62 61 61 64 62 31 34 31 61 31 37 63 37 37   // e3baadb141a17c77
+                                                                                                                                                                                    65 66 33 63 35 36 35 64 64 35 65 65 35 30 35 34   // ef3c565dd5ee5054
+                                                                                                                                                                                    62 39 31 63 66 36 33 62 62 33 63 36 61 62 38 33   // b91cf63bb3c6ab83
+                                                                                                                                                                                    66 37 32 61 62 33 61 61 66 65 39 33 64 30 66 63   // f72ab3aafe93d0fc
+                                                                                                                                                                                    33 63 32 33 34 38 62 37 36 34 66 61 66 62 30 62   // 3c2348b764fafb0b
+                                                                                                                                                                                    31 63 30 37 33 33 64 65 35 31 34 35 39 61 65 61   // 1c0733de51459aea
+                                                                                                                                                                                    62 34 36 35 38 30 33 38 34 62 66 39 64 37 34 63   // b46580384bf9d74c
+                                                                                                                                                                                    34 65 32 38 31 36 34 62 37 63 64 65 32 34 37 66   // 4e28164b7cde247f
+                                                                                                                                                                                    38 39 31 62 61 30 37 38 39 31 63 39 64 38 37 32   // 891ba07891c9d872
+                                                                                                                                                                                    61 64 32 62 62 00 00 )                            // ad2bb..
+  .custom /*0C000014:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 76 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...vMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 41 62 73   // pNetCore.Mvc.Abs
+                                                                                                                                                                                    74 72 61 63 74 69 6F 6E 73 2E 54 65 73 74 2C 20   // tractions.Test, 
+                                                                                                                                                                                    50 75 62 6C 69 63 4B 65 79 3D 30 30 32 34 30 30   // PublicKey=002400
+                                                                                                                                                                                    30 30 30 34 38 30 30 30 30 30 39 34 30 30 30 30   // 0004800000940000
+                                                                                                                                                                                    30 30 30 36 30 32 30 30 30 30 30 30 32 34 30 30   // 0006020000002400
+                                                                                                                                                                                    30 30 35 32 35 33 34 31 33 31 30 30 30 34 30 30   // 0052534131000400
+                                                                                                                                                                                    30 30 30 31 30 30 30 31 30 30 66 33 33 61 32 39   // 0001000100f33a29
+                                                                                                                                                                                    30 34 34 66 61 39 64 37 34 30 63 39 62 33 32 31   // 044fa9d740c9b321
+                                                                                                                                                                                    33 61 39 33 65 35 37 63 38 34 62 34 37 32 63 38   // 3a93e57c84b472c8
+                                                                                                                                                                                    34 65 30 62 38 61 30 65 31 61 65 34 38 65 36 37   // 4e0b8a0e1ae48e67
+                                                                                                                                                                                    61 39 66 38 66 36 64 65 39 64 35 66 37 66 33 64   // a9f8f6de9d5f7f3d
+                                                                                                                                                                                    35 32 61 63 32 33 65 34 38 61 63 35 31 38 30 31   // 52ac23e48ac51801
+                                                                                                                                                                                    66 31 64 63 39 35 30 61 62 65 39 30 31 64 61 33   // f1dc950abe901da3
+                                                                                                                                                                                    34 64 32 61 39 65 33 62 61 61 64 62 31 34 31 61   // 4d2a9e3baadb141a
+                                                                                                                                                                                    31 37 63 37 37 65 66 33 63 35 36 35 64 64 35 65   // 17c77ef3c565dd5e
+                                                                                                                                                                                    65 35 30 35 34 62 39 31 63 66 36 33 62 62 33 63   // e5054b91cf63bb3c
+                                                                                                                                                                                    36 61 62 38 33 66 37 32 61 62 33 61 61 66 65 39   // 6ab83f72ab3aafe9
+                                                                                                                                                                                    33 64 30 66 63 33 63 32 33 34 38 62 37 36 34 66   // 3d0fc3c2348b764f
+                                                                                                                                                                                    61 66 62 30 62 31 63 30 37 33 33 64 65 35 31 34   // afb0b1c0733de514
+                                                                                                                                                                                    35 39 61 65 61 62 34 36 35 38 30 33 38 34 62 66   // 59aeab46580384bf
+                                                                                                                                                                                    39 64 37 34 63 34 65 32 38 31 36 34 62 37 63 64   // 9d74c4e28164b7cd
+                                                                                                                                                                                    65 32 34 37 66 38 39 31 62 61 30 37 38 39 31 63   // e247f891ba07891c
+                                                                                                                                                                                    39 64 38 37 32 61 64 32 62 62 00 00 )             // 9d872ad2bb..
+  .custom /*0C000015:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 75 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...uMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 41 70 69   // pNetCore.Mvc.Api
+                                                                                                                                                                                    45 78 70 6C 6F 72 65 72 2E 54 65 73 74 2C 20 50   // Explorer.Test, P
+                                                                                                                                                                                    75 62 6C 69 63 4B 65 79 3D 30 30 32 34 30 30 30   // ublicKey=0024000
+                                                                                                                                                                                    30 30 34 38 30 30 30 30 30 39 34 30 30 30 30 30   // 0048000009400000
+                                                                                                                                                                                    30 30 36 30 32 30 30 30 30 30 30 32 34 30 30 30   // 0060200000024000
+                                                                                                                                                                                    30 35 32 35 33 34 31 33 31 30 30 30 34 30 30 30   // 0525341310004000
+                                                                                                                                                                                    30 30 31 30 30 30 31 30 30 66 33 33 61 32 39 30   // 001000100f33a290
+                                                                                                                                                                                    34 34 66 61 39 64 37 34 30 63 39 62 33 32 31 33   // 44fa9d740c9b3213
+                                                                                                                                                                                    61 39 33 65 35 37 63 38 34 62 34 37 32 63 38 34   // a93e57c84b472c84
+                                                                                                                                                                                    65 30 62 38 61 30 65 31 61 65 34 38 65 36 37 61   // e0b8a0e1ae48e67a
+                                                                                                                                                                                    39 66 38 66 36 64 65 39 64 35 66 37 66 33 64 35   // 9f8f6de9d5f7f3d5
+                                                                                                                                                                                    32 61 63 32 33 65 34 38 61 63 35 31 38 30 31 66   // 2ac23e48ac51801f
+                                                                                                                                                                                    31 64 63 39 35 30 61 62 65 39 30 31 64 61 33 34   // 1dc950abe901da34
+                                                                                                                                                                                    64 32 61 39 65 33 62 61 61 64 62 31 34 31 61 31   // d2a9e3baadb141a1
+                                                                                                                                                                                    37 63 37 37 65 66 33 63 35 36 35 64 64 35 65 65   // 7c77ef3c565dd5ee
+                                                                                                                                                                                    35 30 35 34 62 39 31 63 66 36 33 62 62 33 63 36   // 5054b91cf63bb3c6
+                                                                                                                                                                                    61 62 38 33 66 37 32 61 62 33 61 61 66 65 39 33   // ab83f72ab3aafe93
+                                                                                                                                                                                    64 30 66 63 33 63 32 33 34 38 62 37 36 34 66 61   // d0fc3c2348b764fa
+                                                                                                                                                                                    66 62 30 62 31 63 30 37 33 33 64 65 35 31 34 35   // fb0b1c0733de5145
+                                                                                                                                                                                    39 61 65 61 62 34 36 35 38 30 33 38 34 62 66 39   // 9aeab46580384bf9
+                                                                                                                                                                                    64 37 34 63 34 65 32 38 31 36 34 62 37 63 64 65   // d74c4e28164b7cde
+                                                                                                                                                                                    32 34 37 66 38 39 31 62 61 30 37 38 39 31 63 39   // 247f891ba07891c9
+                                                                                                                                                                                    64 38 37 32 61 64 32 62 62 00 00 )                // d872ad2bb..
+  .custom /*0C000016:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 6E 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...nMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 43 6F 72   // pNetCore.Mvc.Cor
+                                                                                                                                                                                    65 2E 54 65 73 74 2C 20 50 75 62 6C 69 63 4B 65   // e.Test, PublicKe
+                                                                                                                                                                                    79 3D 30 30 32 34 30 30 30 30 30 34 38 30 30 30   // y=00240000048000
+                                                                                                                                                                                    30 30 39 34 30 30 30 30 30 30 30 36 30 32 30 30   // 0094000000060200
+                                                                                                                                                                                    30 30 30 30 32 34 30 30 30 30 35 32 35 33 34 31   // 0000240000525341
+                                                                                                                                                                                    33 31 30 30 30 34 30 30 30 30 30 31 30 30 30 31   // 3100040000010001
+                                                                                                                                                                                    30 30 66 33 33 61 32 39 30 34 34 66 61 39 64 37   // 00f33a29044fa9d7
+                                                                                                                                                                                    34 30 63 39 62 33 32 31 33 61 39 33 65 35 37 63   // 40c9b3213a93e57c
+                                                                                                                                                                                    38 34 62 34 37 32 63 38 34 65 30 62 38 61 30 65   // 84b472c84e0b8a0e
+                                                                                                                                                                                    31 61 65 34 38 65 36 37 61 39 66 38 66 36 64 65   // 1ae48e67a9f8f6de
+                                                                                                                                                                                    39 64 35 66 37 66 33 64 35 32 61 63 32 33 65 34   // 9d5f7f3d52ac23e4
+                                                                                                                                                                                    38 61 63 35 31 38 30 31 66 31 64 63 39 35 30 61   // 8ac51801f1dc950a
+                                                                                                                                                                                    62 65 39 30 31 64 61 33 34 64 32 61 39 65 33 62   // be901da34d2a9e3b
+                                                                                                                                                                                    61 61 64 62 31 34 31 61 31 37 63 37 37 65 66 33   // aadb141a17c77ef3
+                                                                                                                                                                                    63 35 36 35 64 64 35 65 65 35 30 35 34 62 39 31   // c565dd5ee5054b91
+                                                                                                                                                                                    63 66 36 33 62 62 33 63 36 61 62 38 33 66 37 32   // cf63bb3c6ab83f72
+                                                                                                                                                                                    61 62 33 61 61 66 65 39 33 64 30 66 63 33 63 32   // ab3aafe93d0fc3c2
+                                                                                                                                                                                    33 34 38 62 37 36 34 66 61 66 62 30 62 31 63 30   // 348b764fafb0b1c0
+                                                                                                                                                                                    37 33 33 64 65 35 31 34 35 39 61 65 61 62 34 36   // 733de51459aeab46
+                                                                                                                                                                                    35 38 30 33 38 34 62 66 39 64 37 34 63 34 65 32   // 580384bf9d74c4e2
+                                                                                                                                                                                    38 31 36 34 62 37 63 64 65 32 34 37 66 38 39 31   // 8164b7cde247f891
+                                                                                                                                                                                    62 61 30 37 38 39 31 63 39 64 38 37 32 61 64 32   // ba07891c9d872ad2
+                                                                                                                                                                                    62 62 00 00 )                                     // bb..
+  .custom /*0C000017:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 74 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...tMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 43 6F 72   // pNetCore.Mvc.Cor
+                                                                                                                                                                                    65 2E 54 65 73 74 43 6F 6D 6D 6F 6E 2C 20 50 75   // e.TestCommon, Pu
+                                                                                                                                                                                    62 6C 69 63 4B 65 79 3D 30 30 32 34 30 30 30 30   // blicKey=00240000
+                                                                                                                                                                                    30 34 38 30 30 30 30 30 39 34 30 30 30 30 30 30   // 0480000094000000
+                                                                                                                                                                                    30 36 30 32 30 30 30 30 30 30 32 34 30 30 30 30   // 0602000000240000
+                                                                                                                                                                                    35 32 35 33 34 31 33 31 30 30 30 34 30 30 30 30   // 5253413100040000
+                                                                                                                                                                                    30 31 30 30 30 31 30 30 66 33 33 61 32 39 30 34   // 01000100f33a2904
+                                                                                                                                                                                    34 66 61 39 64 37 34 30 63 39 62 33 32 31 33 61   // 4fa9d740c9b3213a
+                                                                                                                                                                                    39 33 65 35 37 63 38 34 62 34 37 32 63 38 34 65   // 93e57c84b472c84e
+                                                                                                                                                                                    30 62 38 61 30 65 31 61 65 34 38 65 36 37 61 39   // 0b8a0e1ae48e67a9
+                                                                                                                                                                                    66 38 66 36 64 65 39 64 35 66 37 66 33 64 35 32   // f8f6de9d5f7f3d52
+                                                                                                                                                                                    61 63 32 33 65 34 38 61 63 35 31 38 30 31 66 31   // ac23e48ac51801f1
+                                                                                                                                                                                    64 63 39 35 30 61 62 65 39 30 31 64 61 33 34 64   // dc950abe901da34d
+                                                                                                                                                                                    32 61 39 65 33 62 61 61 64 62 31 34 31 61 31 37   // 2a9e3baadb141a17
+                                                                                                                                                                                    63 37 37 65 66 33 63 35 36 35 64 64 35 65 65 35   // c77ef3c565dd5ee5
+                                                                                                                                                                                    30 35 34 62 39 31 63 66 36 33 62 62 33 63 36 61   // 054b91cf63bb3c6a
+                                                                                                                                                                                    62 38 33 66 37 32 61 62 33 61 61 66 65 39 33 64   // b83f72ab3aafe93d
+                                                                                                                                                                                    30 66 63 33 63 32 33 34 38 62 37 36 34 66 61 66   // 0fc3c2348b764faf
+                                                                                                                                                                                    62 30 62 31 63 30 37 33 33 64 65 35 31 34 35 39   // b0b1c0733de51459
+                                                                                                                                                                                    61 65 61 62 34 36 35 38 30 33 38 34 62 66 39 64   // aeab46580384bf9d
+                                                                                                                                                                                    37 34 63 34 65 32 38 31 36 34 62 37 63 64 65 32   // 74c4e28164b7cde2
+                                                                                                                                                                                    34 37 66 38 39 31 62 61 30 37 38 39 31 63 39 64   // 47f891ba07891c9d
+                                                                                                                                                                                    38 37 32 61 64 32 62 62 00 00 )                   // 872ad2bb..
+  .custom /*0C000018:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 6E 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...nMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 43 6F 72   // pNetCore.Mvc.Cor
+                                                                                                                                                                                    73 2E 54 65 73 74 2C 20 50 75 62 6C 69 63 4B 65   // s.Test, PublicKe
+                                                                                                                                                                                    79 3D 30 30 32 34 30 30 30 30 30 34 38 30 30 30   // y=00240000048000
+                                                                                                                                                                                    30 30 39 34 30 30 30 30 30 30 30 36 30 32 30 30   // 0094000000060200
+                                                                                                                                                                                    30 30 30 30 32 34 30 30 30 30 35 32 35 33 34 31   // 0000240000525341
+                                                                                                                                                                                    33 31 30 30 30 34 30 30 30 30 30 31 30 30 30 31   // 3100040000010001
+                                                                                                                                                                                    30 30 66 33 33 61 32 39 30 34 34 66 61 39 64 37   // 00f33a29044fa9d7
+                                                                                                                                                                                    34 30 63 39 62 33 32 31 33 61 39 33 65 35 37 63   // 40c9b3213a93e57c
+                                                                                                                                                                                    38 34 62 34 37 32 63 38 34 65 30 62 38 61 30 65   // 84b472c84e0b8a0e
+                                                                                                                                                                                    31 61 65 34 38 65 36 37 61 39 66 38 66 36 64 65   // 1ae48e67a9f8f6de
+                                                                                                                                                                                    39 64 35 66 37 66 33 64 35 32 61 63 32 33 65 34   // 9d5f7f3d52ac23e4
+                                                                                                                                                                                    38 61 63 35 31 38 30 31 66 31 64 63 39 35 30 61   // 8ac51801f1dc950a
+                                                                                                                                                                                    62 65 39 30 31 64 61 33 34 64 32 61 39 65 33 62   // be901da34d2a9e3b
+                                                                                                                                                                                    61 61 64 62 31 34 31 61 31 37 63 37 37 65 66 33   // aadb141a17c77ef3
+                                                                                                                                                                                    63 35 36 35 64 64 35 65 65 35 30 35 34 62 39 31   // c565dd5ee5054b91
+                                                                                                                                                                                    63 66 36 33 62 62 33 63 36 61 62 38 33 66 37 32   // cf63bb3c6ab83f72
+                                                                                                                                                                                    61 62 33 61 61 66 65 39 33 64 30 66 63 33 63 32   // ab3aafe93d0fc3c2
+                                                                                                                                                                                    33 34 38 62 37 36 34 66 61 66 62 30 62 31 63 30   // 348b764fafb0b1c0
+                                                                                                                                                                                    37 33 33 64 65 35 31 34 35 39 61 65 61 62 34 36   // 733de51459aeab46
+                                                                                                                                                                                    35 38 30 33 38 34 62 66 39 64 37 34 63 34 65 32   // 580384bf9d74c4e2
+                                                                                                                                                                                    38 31 36 34 62 37 63 64 65 32 34 37 66 38 39 31   // 8164b7cde247f891
+                                                                                                                                                                                    62 61 30 37 38 39 31 63 39 64 38 37 32 61 64 32   // ba07891c9d872ad2
+                                                                                                                                                                                    62 62 00 00 )                                     // bb..
+  .custom /*0C000019:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 79 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...yMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 44 61 74   // pNetCore.Mvc.Dat
+                                                                                                                                                                                    61 41 6E 6E 6F 74 61 74 69 6F 6E 73 2E 54 65 73   // aAnnotations.Tes
+                                                                                                                                                                                    74 2C 20 50 75 62 6C 69 63 4B 65 79 3D 30 30 32   // t, PublicKey=002
+                                                                                                                                                                                    34 30 30 30 30 30 34 38 30 30 30 30 30 39 34 30   // 4000004800000940
+                                                                                                                                                                                    30 30 30 30 30 30 36 30 32 30 30 30 30 30 30 32   // 0000006020000002
+                                                                                                                                                                                    34 30 30 30 30 35 32 35 33 34 31 33 31 30 30 30   // 4000052534131000
+                                                                                                                                                                                    34 30 30 30 30 30 31 30 30 30 31 30 30 66 33 33   // 4000001000100f33
+                                                                                                                                                                                    61 32 39 30 34 34 66 61 39 64 37 34 30 63 39 62   // a29044fa9d740c9b
+                                                                                                                                                                                    33 32 31 33 61 39 33 65 35 37 63 38 34 62 34 37   // 3213a93e57c84b47
+                                                                                                                                                                                    32 63 38 34 65 30 62 38 61 30 65 31 61 65 34 38   // 2c84e0b8a0e1ae48
+                                                                                                                                                                                    65 36 37 61 39 66 38 66 36 64 65 39 64 35 66 37   // e67a9f8f6de9d5f7
+                                                                                                                                                                                    66 33 64 35 32 61 63 32 33 65 34 38 61 63 35 31   // f3d52ac23e48ac51
+                                                                                                                                                                                    38 30 31 66 31 64 63 39 35 30 61 62 65 39 30 31   // 801f1dc950abe901
+                                                                                                                                                                                    64 61 33 34 64 32 61 39 65 33 62 61 61 64 62 31   // da34d2a9e3baadb1
+                                                                                                                                                                                    34 31 61 31 37 63 37 37 65 66 33 63 35 36 35 64   // 41a17c77ef3c565d
+                                                                                                                                                                                    64 35 65 65 35 30 35 34 62 39 31 63 66 36 33 62   // d5ee5054b91cf63b
+                                                                                                                                                                                    62 33 63 36 61 62 38 33 66 37 32 61 62 33 61 61   // b3c6ab83f72ab3aa
+                                                                                                                                                                                    66 65 39 33 64 30 66 63 33 63 32 33 34 38 62 37   // fe93d0fc3c2348b7
+                                                                                                                                                                                    36 34 66 61 66 62 30 62 31 63 30 37 33 33 64 65   // 64fafb0b1c0733de
+                                                                                                                                                                                    35 31 34 35 39 61 65 61 62 34 36 35 38 30 33 38   // 51459aeab4658038
+                                                                                                                                                                                    34 62 66 39 64 37 34 63 34 65 32 38 31 36 34 62   // 4bf9d74c4e28164b
+                                                                                                                                                                                    37 63 64 65 32 34 37 66 38 39 31 62 61 30 37 38   // 7cde247f891ba078
+                                                                                                                                                                                    39 31 63 39 64 38 37 32 61 64 32 62 62 00 00 )    // 91c9d872ad2bb..
+  .custom /*0C00001A:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 78 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...xMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 46 6F 72   // pNetCore.Mvc.For
+                                                                                                                                                                                    6D 61 74 74 65 72 73 2E 58 6D 6C 2E 54 65 73 74   // matters.Xml.Test
+                                                                                                                                                                                    2C 20 50 75 62 6C 69 63 4B 65 79 3D 30 30 32 34   // , PublicKey=0024
+                                                                                                                                                                                    30 30 30 30 30 34 38 30 30 30 30 30 39 34 30 30   // 0000048000009400
+                                                                                                                                                                                    30 30 30 30 30 36 30 32 30 30 30 30 30 30 32 34   // 0000060200000024
+                                                                                                                                                                                    30 30 30 30 35 32 35 33 34 31 33 31 30 30 30 34   // 0000525341310004
+                                                                                                                                                                                    30 30 30 30 30 31 30 30 30 31 30 30 66 33 33 61   // 000001000100f33a
+                                                                                                                                                                                    32 39 30 34 34 66 61 39 64 37 34 30 63 39 62 33   // 29044fa9d740c9b3
+                                                                                                                                                                                    32 31 33 61 39 33 65 35 37 63 38 34 62 34 37 32   // 213a93e57c84b472
+                                                                                                                                                                                    63 38 34 65 30 62 38 61 30 65 31 61 65 34 38 65   // c84e0b8a0e1ae48e
+                                                                                                                                                                                    36 37 61 39 66 38 66 36 64 65 39 64 35 66 37 66   // 67a9f8f6de9d5f7f
+                                                                                                                                                                                    33 64 35 32 61 63 32 33 65 34 38 61 63 35 31 38   // 3d52ac23e48ac518
+                                                                                                                                                                                    30 31 66 31 64 63 39 35 30 61 62 65 39 30 31 64   // 01f1dc950abe901d
+                                                                                                                                                                                    61 33 34 64 32 61 39 65 33 62 61 61 64 62 31 34   // a34d2a9e3baadb14
+                                                                                                                                                                                    31 61 31 37 63 37 37 65 66 33 63 35 36 35 64 64   // 1a17c77ef3c565dd
+                                                                                                                                                                                    35 65 65 35 30 35 34 62 39 31 63 66 36 33 62 62   // 5ee5054b91cf63bb
+                                                                                                                                                                                    33 63 36 61 62 38 33 66 37 32 61 62 33 61 61 66   // 3c6ab83f72ab3aaf
+                                                                                                                                                                                    65 39 33 64 30 66 63 33 63 32 33 34 38 62 37 36   // e93d0fc3c2348b76
+                                                                                                                                                                                    34 66 61 66 62 30 62 31 63 30 37 33 33 64 65 35   // 4fafb0b1c0733de5
+                                                                                                                                                                                    31 34 35 39 61 65 61 62 34 36 35 38 30 33 38 34   // 1459aeab46580384
+                                                                                                                                                                                    62 66 39 64 37 34 63 34 65 32 38 31 36 34 62 37   // bf9d74c4e28164b7
+                                                                                                                                                                                    63 64 65 32 34 37 66 38 39 31 62 61 30 37 38 39   // cde247f891ba0789
+                                                                                                                                                                                    31 63 39 64 38 37 32 61 64 32 62 62 00 00 )       // 1c9d872ad2bb..
+  .custom /*0C00001B:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 75 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...uMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 49 6E 74   // pNetCore.Mvc.Int
+                                                                                                                                                                                    65 67 72 61 74 69 6F 6E 54 65 73 74 73 2C 20 50   // egrationTests, P
+                                                                                                                                                                                    75 62 6C 69 63 4B 65 79 3D 30 30 32 34 30 30 30   // ublicKey=0024000
+                                                                                                                                                                                    30 30 34 38 30 30 30 30 30 39 34 30 30 30 30 30   // 0048000009400000
+                                                                                                                                                                                    30 30 36 30 32 30 30 30 30 30 30 32 34 30 30 30   // 0060200000024000
+                                                                                                                                                                                    30 35 32 35 33 34 31 33 31 30 30 30 34 30 30 30   // 0525341310004000
+                                                                                                                                                                                    30 30 31 30 30 30 31 30 30 66 33 33 61 32 39 30   // 001000100f33a290
+                                                                                                                                                                                    34 34 66 61 39 64 37 34 30 63 39 62 33 32 31 33   // 44fa9d740c9b3213
+                                                                                                                                                                                    61 39 33 65 35 37 63 38 34 62 34 37 32 63 38 34   // a93e57c84b472c84
+                                                                                                                                                                                    65 30 62 38 61 30 65 31 61 65 34 38 65 36 37 61   // e0b8a0e1ae48e67a
+                                                                                                                                                                                    39 66 38 66 36 64 65 39 64 35 66 37 66 33 64 35   // 9f8f6de9d5f7f3d5
+                                                                                                                                                                                    32 61 63 32 33 65 34 38 61 63 35 31 38 30 31 66   // 2ac23e48ac51801f
+                                                                                                                                                                                    31 64 63 39 35 30 61 62 65 39 30 31 64 61 33 34   // 1dc950abe901da34
+                                                                                                                                                                                    64 32 61 39 65 33 62 61 61 64 62 31 34 31 61 31   // d2a9e3baadb141a1
+                                                                                                                                                                                    37 63 37 37 65 66 33 63 35 36 35 64 64 35 65 65   // 7c77ef3c565dd5ee
+                                                                                                                                                                                    35 30 35 34 62 39 31 63 66 36 33 62 62 33 63 36   // 5054b91cf63bb3c6
+                                                                                                                                                                                    61 62 38 33 66 37 32 61 62 33 61 61 66 65 39 33   // ab83f72ab3aafe93
+                                                                                                                                                                                    64 30 66 63 33 63 32 33 34 38 62 37 36 34 66 61   // d0fc3c2348b764fa
+                                                                                                                                                                                    66 62 30 62 31 63 30 37 33 33 64 65 35 31 34 35   // fb0b1c0733de5145
+                                                                                                                                                                                    39 61 65 61 62 34 36 35 38 30 33 38 34 62 66 39   // 9aeab46580384bf9
+                                                                                                                                                                                    64 37 34 63 34 65 32 38 31 36 34 62 37 63 64 65   // d74c4e28164b7cde
+                                                                                                                                                                                    32 34 37 66 38 39 31 62 61 30 37 38 39 31 63 39   // 247f891ba07891c9
+                                                                                                                                                                                    64 38 37 32 61 64 32 62 62 00 00 )                // d872ad2bb..
+  .custom /*0C00001C:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 76 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...vMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 4C 6F 63   // pNetCore.Mvc.Loc
+                                                                                                                                                                                    61 6C 69 7A 61 74 69 6F 6E 2E 54 65 73 74 2C 20   // alization.Test, 
+                                                                                                                                                                                    50 75 62 6C 69 63 4B 65 79 3D 30 30 32 34 30 30   // PublicKey=002400
+                                                                                                                                                                                    30 30 30 34 38 30 30 30 30 30 39 34 30 30 30 30   // 0004800000940000
+                                                                                                                                                                                    30 30 30 36 30 32 30 30 30 30 30 30 32 34 30 30   // 0006020000002400
+                                                                                                                                                                                    30 30 35 32 35 33 34 31 33 31 30 30 30 34 30 30   // 0052534131000400
+                                                                                                                                                                                    30 30 30 31 30 30 30 31 30 30 66 33 33 61 32 39   // 0001000100f33a29
+                                                                                                                                                                                    30 34 34 66 61 39 64 37 34 30 63 39 62 33 32 31   // 044fa9d740c9b321
+                                                                                                                                                                                    33 61 39 33 65 35 37 63 38 34 62 34 37 32 63 38   // 3a93e57c84b472c8
+                                                                                                                                                                                    34 65 30 62 38 61 30 65 31 61 65 34 38 65 36 37   // 4e0b8a0e1ae48e67
+                                                                                                                                                                                    61 39 66 38 66 36 64 65 39 64 35 66 37 66 33 64   // a9f8f6de9d5f7f3d
+                                                                                                                                                                                    35 32 61 63 32 33 65 34 38 61 63 35 31 38 30 31   // 52ac23e48ac51801
+                                                                                                                                                                                    66 31 64 63 39 35 30 61 62 65 39 30 31 64 61 33   // f1dc950abe901da3
+                                                                                                                                                                                    34 64 32 61 39 65 33 62 61 61 64 62 31 34 31 61   // 4d2a9e3baadb141a
+                                                                                                                                                                                    31 37 63 37 37 65 66 33 63 35 36 35 64 64 35 65   // 17c77ef3c565dd5e
+                                                                                                                                                                                    65 35 30 35 34 62 39 31 63 66 36 33 62 62 33 63   // e5054b91cf63bb3c
+                                                                                                                                                                                    36 61 62 38 33 66 37 32 61 62 33 61 61 66 65 39   // 6ab83f72ab3aafe9
+                                                                                                                                                                                    33 64 30 66 63 33 63 32 33 34 38 62 37 36 34 66   // 3d0fc3c2348b764f
+                                                                                                                                                                                    61 66 62 30 62 31 63 30 37 33 33 64 65 35 31 34   // afb0b1c0733de514
+                                                                                                                                                                                    35 39 61 65 61 62 34 36 35 38 30 33 38 34 62 66   // 59aeab46580384bf
+                                                                                                                                                                                    39 64 37 34 63 34 65 32 38 31 36 34 62 37 63 64   // 9d74c4e28164b7cd
+                                                                                                                                                                                    65 32 34 37 66 38 39 31 62 61 30 37 38 39 31 63   // e247f891ba07891c
+                                                                                                                                                                                    39 64 38 37 32 61 64 32 62 62 00 00 )             // 9d872ad2bb..
+  .custom /*0C00001D:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 6F 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...oMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 52 61 7A   // pNetCore.Mvc.Raz
+                                                                                                                                                                                    6F 72 2E 54 65 73 74 2C 20 50 75 62 6C 69 63 4B   // or.Test, PublicK
+                                                                                                                                                                                    65 79 3D 30 30 32 34 30 30 30 30 30 34 38 30 30   // ey=0024000004800
+                                                                                                                                                                                    30 30 30 39 34 30 30 30 30 30 30 30 36 30 32 30   // 0009400000006020
+                                                                                                                                                                                    30 30 30 30 30 32 34 30 30 30 30 35 32 35 33 34   // 0000024000052534
+                                                                                                                                                                                    31 33 31 30 30 30 34 30 30 30 30 30 31 30 30 30   // 1310004000001000
+                                                                                                                                                                                    31 30 30 66 33 33 61 32 39 30 34 34 66 61 39 64   // 100f33a29044fa9d
+                                                                                                                                                                                    37 34 30 63 39 62 33 32 31 33 61 39 33 65 35 37   // 740c9b3213a93e57
+                                                                                                                                                                                    63 38 34 62 34 37 32 63 38 34 65 30 62 38 61 30   // c84b472c84e0b8a0
+                                                                                                                                                                                    65 31 61 65 34 38 65 36 37 61 39 66 38 66 36 64   // e1ae48e67a9f8f6d
+                                                                                                                                                                                    65 39 64 35 66 37 66 33 64 35 32 61 63 32 33 65   // e9d5f7f3d52ac23e
+                                                                                                                                                                                    34 38 61 63 35 31 38 30 31 66 31 64 63 39 35 30   // 48ac51801f1dc950
+                                                                                                                                                                                    61 62 65 39 30 31 64 61 33 34 64 32 61 39 65 33   // abe901da34d2a9e3
+                                                                                                                                                                                    62 61 61 64 62 31 34 31 61 31 37 63 37 37 65 66   // baadb141a17c77ef
+                                                                                                                                                                                    33 63 35 36 35 64 64 35 65 65 35 30 35 34 62 39   // 3c565dd5ee5054b9
+                                                                                                                                                                                    31 63 66 36 33 62 62 33 63 36 61 62 38 33 66 37   // 1cf63bb3c6ab83f7
+                                                                                                                                                                                    32 61 62 33 61 61 66 65 39 33 64 30 66 63 33 63   // 2ab3aafe93d0fc3c
+                                                                                                                                                                                    32 33 34 38 62 37 36 34 66 61 66 62 30 62 31 63   // 2348b764fafb0b1c
+                                                                                                                                                                                    30 37 33 33 64 65 35 31 34 35 39 61 65 61 62 34   // 0733de51459aeab4
+                                                                                                                                                                                    36 35 38 30 33 38 34 62 66 39 64 37 34 63 34 65   // 6580384bf9d74c4e
+                                                                                                                                                                                    32 38 31 36 34 62 37 63 64 65 32 34 37 66 38 39   // 28164b7cde247f89
+                                                                                                                                                                                    31 62 61 30 37 38 39 31 63 39 64 38 37 32 61 64   // 1ba07891c9d872ad
+                                                                                                                                                                                    32 62 62 00 00 )                                  // 2bb..
+  .custom /*0C00001E:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 74 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...tMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 52 61 7A   // pNetCore.Mvc.Raz
+                                                                                                                                                                                    6F 72 50 61 67 65 73 2E 54 65 73 74 2C 20 50 75   // orPages.Test, Pu
+                                                                                                                                                                                    62 6C 69 63 4B 65 79 3D 30 30 32 34 30 30 30 30   // blicKey=00240000
+                                                                                                                                                                                    30 34 38 30 30 30 30 30 39 34 30 30 30 30 30 30   // 0480000094000000
+                                                                                                                                                                                    30 36 30 32 30 30 30 30 30 30 32 34 30 30 30 30   // 0602000000240000
+                                                                                                                                                                                    35 32 35 33 34 31 33 31 30 30 30 34 30 30 30 30   // 5253413100040000
+                                                                                                                                                                                    30 31 30 30 30 31 30 30 66 33 33 61 32 39 30 34   // 01000100f33a2904
+                                                                                                                                                                                    34 66 61 39 64 37 34 30 63 39 62 33 32 31 33 61   // 4fa9d740c9b3213a
+                                                                                                                                                                                    39 33 65 35 37 63 38 34 62 34 37 32 63 38 34 65   // 93e57c84b472c84e
+                                                                                                                                                                                    30 62 38 61 30 65 31 61 65 34 38 65 36 37 61 39   // 0b8a0e1ae48e67a9
+                                                                                                                                                                                    66 38 66 36 64 65 39 64 35 66 37 66 33 64 35 32   // f8f6de9d5f7f3d52
+                                                                                                                                                                                    61 63 32 33 65 34 38 61 63 35 31 38 30 31 66 31   // ac23e48ac51801f1
+                                                                                                                                                                                    64 63 39 35 30 61 62 65 39 30 31 64 61 33 34 64   // dc950abe901da34d
+                                                                                                                                                                                    32 61 39 65 33 62 61 61 64 62 31 34 31 61 31 37   // 2a9e3baadb141a17
+                                                                                                                                                                                    63 37 37 65 66 33 63 35 36 35 64 64 35 65 65 35   // c77ef3c565dd5ee5
+                                                                                                                                                                                    30 35 34 62 39 31 63 66 36 33 62 62 33 63 36 61   // 054b91cf63bb3c6a
+                                                                                                                                                                                    62 38 33 66 37 32 61 62 33 61 61 66 65 39 33 64   // b83f72ab3aafe93d
+                                                                                                                                                                                    30 66 63 33 63 32 33 34 38 62 37 36 34 66 61 66   // 0fc3c2348b764faf
+                                                                                                                                                                                    62 30 62 31 63 30 37 33 33 64 65 35 31 34 35 39   // b0b1c0733de51459
+                                                                                                                                                                                    61 65 61 62 34 36 35 38 30 33 38 34 62 66 39 64   // aeab46580384bf9d
+                                                                                                                                                                                    37 34 63 34 65 32 38 31 36 34 62 37 63 64 65 32   // 74c4e28164b7cde2
+                                                                                                                                                                                    34 37 66 38 39 31 62 61 30 37 38 39 31 63 39 64   // 47f891ba07891c9d
+                                                                                                                                                                                    38 37 32 61 64 32 62 62 00 00 )                   // 872ad2bb..
+  .custom /*0C00001F:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 74 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...tMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 54 61 67   // pNetCore.Mvc.Tag
+                                                                                                                                                                                    48 65 6C 70 65 72 73 2E 54 65 73 74 2C 20 50 75   // Helpers.Test, Pu
+                                                                                                                                                                                    62 6C 69 63 4B 65 79 3D 30 30 32 34 30 30 30 30   // blicKey=00240000
+                                                                                                                                                                                    30 34 38 30 30 30 30 30 39 34 30 30 30 30 30 30   // 0480000094000000
+                                                                                                                                                                                    30 36 30 32 30 30 30 30 30 30 32 34 30 30 30 30   // 0602000000240000
+                                                                                                                                                                                    35 32 35 33 34 31 33 31 30 30 30 34 30 30 30 30   // 5253413100040000
+                                                                                                                                                                                    30 31 30 30 30 31 30 30 66 33 33 61 32 39 30 34   // 01000100f33a2904
+                                                                                                                                                                                    34 66 61 39 64 37 34 30 63 39 62 33 32 31 33 61   // 4fa9d740c9b3213a
+                                                                                                                                                                                    39 33 65 35 37 63 38 34 62 34 37 32 63 38 34 65   // 93e57c84b472c84e
+                                                                                                                                                                                    30 62 38 61 30 65 31 61 65 34 38 65 36 37 61 39   // 0b8a0e1ae48e67a9
+                                                                                                                                                                                    66 38 66 36 64 65 39 64 35 66 37 66 33 64 35 32   // f8f6de9d5f7f3d52
+                                                                                                                                                                                    61 63 32 33 65 34 38 61 63 35 31 38 30 31 66 31   // ac23e48ac51801f1
+                                                                                                                                                                                    64 63 39 35 30 61 62 65 39 30 31 64 61 33 34 64   // dc950abe901da34d
+                                                                                                                                                                                    32 61 39 65 33 62 61 61 64 62 31 34 31 61 31 37   // 2a9e3baadb141a17
+                                                                                                                                                                                    63 37 37 65 66 33 63 35 36 35 64 64 35 65 65 35   // c77ef3c565dd5ee5
+                                                                                                                                                                                    30 35 34 62 39 31 63 66 36 33 62 62 33 63 36 61   // 054b91cf63bb3c6a
+                                                                                                                                                                                    62 38 33 66 37 32 61 62 33 61 61 66 65 39 33 64   // b83f72ab3aafe93d
+                                                                                                                                                                                    30 66 63 33 63 32 33 34 38 62 37 36 34 66 61 66   // 0fc3c2348b764faf
+                                                                                                                                                                                    62 30 62 31 63 30 37 33 33 64 65 35 31 34 35 39   // b0b1c0733de51459
+                                                                                                                                                                                    61 65 61 62 34 36 35 38 30 33 38 34 62 66 39 64   // aeab46580384bf9d
+                                                                                                                                                                                    37 34 63 34 65 32 38 31 36 34 62 37 63 64 65 32   // 74c4e28164b7cde2
+                                                                                                                                                                                    34 37 66 38 39 31 62 61 30 37 38 39 31 63 39 64   // 47f891ba07891c9d
+                                                                                                                                                                                    38 37 32 61 64 32 62 62 00 00 )                   // 872ad2bb..
+  .custom /*0C000020:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 69 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...iMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 54 65 73   // pNetCore.Mvc.Tes
+                                                                                                                                                                                    74 2C 20 50 75 62 6C 69 63 4B 65 79 3D 30 30 32   // t, PublicKey=002
+                                                                                                                                                                                    34 30 30 30 30 30 34 38 30 30 30 30 30 39 34 30   // 4000004800000940
+                                                                                                                                                                                    30 30 30 30 30 30 36 30 32 30 30 30 30 30 30 32   // 0000006020000002
+                                                                                                                                                                                    34 30 30 30 30 35 32 35 33 34 31 33 31 30 30 30   // 4000052534131000
+                                                                                                                                                                                    34 30 30 30 30 30 31 30 30 30 31 30 30 66 33 33   // 4000001000100f33
+                                                                                                                                                                                    61 32 39 30 34 34 66 61 39 64 37 34 30 63 39 62   // a29044fa9d740c9b
+                                                                                                                                                                                    33 32 31 33 61 39 33 65 35 37 63 38 34 62 34 37   // 3213a93e57c84b47
+                                                                                                                                                                                    32 63 38 34 65 30 62 38 61 30 65 31 61 65 34 38   // 2c84e0b8a0e1ae48
+                                                                                                                                                                                    65 36 37 61 39 66 38 66 36 64 65 39 64 35 66 37   // e67a9f8f6de9d5f7
+                                                                                                                                                                                    66 33 64 35 32 61 63 32 33 65 34 38 61 63 35 31   // f3d52ac23e48ac51
+                                                                                                                                                                                    38 30 31 66 31 64 63 39 35 30 61 62 65 39 30 31   // 801f1dc950abe901
+                                                                                                                                                                                    64 61 33 34 64 32 61 39 65 33 62 61 61 64 62 31   // da34d2a9e3baadb1
+                                                                                                                                                                                    34 31 61 31 37 63 37 37 65 66 33 63 35 36 35 64   // 41a17c77ef3c565d
+                                                                                                                                                                                    64 35 65 65 35 30 35 34 62 39 31 63 66 36 33 62   // d5ee5054b91cf63b
+                                                                                                                                                                                    62 33 63 36 61 62 38 33 66 37 32 61 62 33 61 61   // b3c6ab83f72ab3aa
+                                                                                                                                                                                    66 65 39 33 64 30 66 63 33 63 32 33 34 38 62 37   // fe93d0fc3c2348b7
+                                                                                                                                                                                    36 34 66 61 66 62 30 62 31 63 30 37 33 33 64 65   // 64fafb0b1c0733de
+                                                                                                                                                                                    35 31 34 35 39 61 65 61 62 34 36 35 38 30 33 38   // 51459aeab4658038
+                                                                                                                                                                                    34 62 66 39 64 37 34 63 34 65 32 38 31 36 34 62   // 4bf9d74c4e28164b
+                                                                                                                                                                                    37 63 64 65 32 34 37 66 38 39 31 62 61 30 37 38   // 7cde247f891ba078
+                                                                                                                                                                                    39 31 63 39 64 38 37 32 61 64 32 62 62 00 00 )    // 91c9d872ad2bb..
+  .custom /*0C000021:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 76 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...vMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 56 69 65   // pNetCore.Mvc.Vie
+                                                                                                                                                                                    77 46 65 61 74 75 72 65 73 2E 54 65 73 74 2C 20   // wFeatures.Test, 
+                                                                                                                                                                                    50 75 62 6C 69 63 4B 65 79 3D 30 30 32 34 30 30   // PublicKey=002400
+                                                                                                                                                                                    30 30 30 34 38 30 30 30 30 30 39 34 30 30 30 30   // 0004800000940000
+                                                                                                                                                                                    30 30 30 36 30 32 30 30 30 30 30 30 32 34 30 30   // 0006020000002400
+                                                                                                                                                                                    30 30 35 32 35 33 34 31 33 31 30 30 30 34 30 30   // 0052534131000400
+                                                                                                                                                                                    30 30 30 31 30 30 30 31 30 30 66 33 33 61 32 39   // 0001000100f33a29
+                                                                                                                                                                                    30 34 34 66 61 39 64 37 34 30 63 39 62 33 32 31   // 044fa9d740c9b321
+                                                                                                                                                                                    33 61 39 33 65 35 37 63 38 34 62 34 37 32 63 38   // 3a93e57c84b472c8
+                                                                                                                                                                                    34 65 30 62 38 61 30 65 31 61 65 34 38 65 36 37   // 4e0b8a0e1ae48e67
+                                                                                                                                                                                    61 39 66 38 66 36 64 65 39 64 35 66 37 66 33 64   // a9f8f6de9d5f7f3d
+                                                                                                                                                                                    35 32 61 63 32 33 65 34 38 61 63 35 31 38 30 31   // 52ac23e48ac51801
+                                                                                                                                                                                    66 31 64 63 39 35 30 61 62 65 39 30 31 64 61 33   // f1dc950abe901da3
+                                                                                                                                                                                    34 64 32 61 39 65 33 62 61 61 64 62 31 34 31 61   // 4d2a9e3baadb141a
+                                                                                                                                                                                    31 37 63 37 37 65 66 33 63 35 36 35 64 64 35 65   // 17c77ef3c565dd5e
+                                                                                                                                                                                    65 35 30 35 34 62 39 31 63 66 36 33 62 62 33 63   // e5054b91cf63bb3c
+                                                                                                                                                                                    36 61 62 38 33 66 37 32 61 62 33 61 61 66 65 39   // 6ab83f72ab3aafe9
+                                                                                                                                                                                    33 64 30 66 63 33 63 32 33 34 38 62 37 36 34 66   // 3d0fc3c2348b764f
+                                                                                                                                                                                    61 66 62 30 62 31 63 30 37 33 33 64 65 35 31 34   // afb0b1c0733de514
+                                                                                                                                                                                    35 39 61 65 61 62 34 36 35 38 30 33 38 34 62 66   // 59aeab46580384bf
+                                                                                                                                                                                    39 64 37 34 63 34 65 32 38 31 36 34 62 37 63 64   // 9d74c4e28164b7cd
+                                                                                                                                                                                    65 32 34 37 66 38 39 31 62 61 30 37 38 39 31 63   // e247f891ba07891c
+                                                                                                                                                                                    39 64 38 37 32 61 64 32 62 62 00 00 )             // 9d872ad2bb..
+  .custom /*0C000022:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 75 4D 69 63 72 6F 73 6F 66 74 2E 41 73   // ...uMicrosoft.As
+                                                                                                                                                                                    70 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 56 69 65   // pNetCore.Mvc.Vie
+                                                                                                                                                                                    77 73 2E 54 65 73 74 43 6F 6D 6D 6F 6E 2C 20 50   // ws.TestCommon, P
+                                                                                                                                                                                    75 62 6C 69 63 4B 65 79 3D 30 30 32 34 30 30 30   // ublicKey=0024000
+                                                                                                                                                                                    30 30 34 38 30 30 30 30 30 39 34 30 30 30 30 30   // 0048000009400000
+                                                                                                                                                                                    30 30 36 30 32 30 30 30 30 30 30 32 34 30 30 30   // 0060200000024000
+                                                                                                                                                                                    30 35 32 35 33 34 31 33 31 30 30 30 34 30 30 30   // 0525341310004000
+                                                                                                                                                                                    30 30 31 30 30 30 31 30 30 66 33 33 61 32 39 30   // 001000100f33a290
+                                                                                                                                                                                    34 34 66 61 39 64 37 34 30 63 39 62 33 32 31 33   // 44fa9d740c9b3213
+                                                                                                                                                                                    61 39 33 65 35 37 63 38 34 62 34 37 32 63 38 34   // a93e57c84b472c84
+                                                                                                                                                                                    65 30 62 38 61 30 65 31 61 65 34 38 65 36 37 61   // e0b8a0e1ae48e67a
+                                                                                                                                                                                    39 66 38 66 36 64 65 39 64 35 66 37 66 33 64 35   // 9f8f6de9d5f7f3d5
+                                                                                                                                                                                    32 61 63 32 33 65 34 38 61 63 35 31 38 30 31 66   // 2ac23e48ac51801f
+                                                                                                                                                                                    31 64 63 39 35 30 61 62 65 39 30 31 64 61 33 34   // 1dc950abe901da34
+                                                                                                                                                                                    64 32 61 39 65 33 62 61 61 64 62 31 34 31 61 31   // d2a9e3baadb141a1
+                                                                                                                                                                                    37 63 37 37 65 66 33 63 35 36 35 64 64 35 65 65   // 7c77ef3c565dd5ee
+                                                                                                                                                                                    35 30 35 34 62 39 31 63 66 36 33 62 62 33 63 36   // 5054b91cf63bb3c6
+                                                                                                                                                                                    61 62 38 33 66 37 32 61 62 33 61 61 66 65 39 33   // ab83f72ab3aafe93
+                                                                                                                                                                                    64 30 66 63 33 63 32 33 34 38 62 37 36 34 66 61   // d0fc3c2348b764fa
+                                                                                                                                                                                    66 62 30 62 31 63 30 37 33 33 64 65 35 31 34 35   // fb0b1c0733de5145
+                                                                                                                                                                                    39 61 65 61 62 34 36 35 38 30 33 38 34 62 66 39   // 9aeab46580384bf9
+                                                                                                                                                                                    64 37 34 63 34 65 32 38 31 36 34 62 37 63 64 65   // d74c4e28164b7cde
+                                                                                                                                                                                    32 34 37 66 38 39 31 62 61 30 37 38 39 31 63 39   // 247f891ba07891c9
+                                                                                                                                                                                    64 38 37 32 61 64 32 62 62 00 00 )                // d872ad2bb..
+  .custom /*0C000023:0A000006*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.InternalsVisibleToAttribute/*01000007*/::.ctor(string) /* 0A000006 */ = ( 01 00 81 64 44 79 6E 61 6D 69 63 50 72 6F 78 79   // ...dDynamicProxy
+                                                                                                                                                                                    47 65 6E 41 73 73 65 6D 62 6C 79 32 2C 20 50 75   // GenAssembly2, Pu
+                                                                                                                                                                                    62 6C 69 63 4B 65 79 3D 30 30 32 34 30 30 30 30   // blicKey=00240000
+                                                                                                                                                                                    30 34 38 30 30 30 30 30 39 34 30 30 30 30 30 30   // 0480000094000000
+                                                                                                                                                                                    30 36 30 32 30 30 30 30 30 30 32 34 30 30 30 30   // 0602000000240000
+                                                                                                                                                                                    35 32 35 33 34 31 33 31 30 30 30 34 30 30 30 30   // 5253413100040000
+                                                                                                                                                                                    30 31 30 30 30 31 30 30 63 35 34 37 63 61 63 33   // 01000100c547cac3
+                                                                                                                                                                                    37 61 62 64 39 39 63 38 64 62 32 32 35 65 66 32   // 7abd99c8db225ef2
+                                                                                                                                                                                    66 36 63 38 61 33 36 30 32 66 33 62 33 36 30 36   // f6c8a3602f3b3606
+                                                                                                                                                                                    63 63 39 38 39 31 36 30 35 64 30 32 62 61 61 35   // cc9891605d02baa5
+                                                                                                                                                                                    36 31 30 34 66 34 63 66 63 30 37 33 34 61 61 33   // 6104f4cfc0734aa3
+                                                                                                                                                                                    39 62 39 33 62 66 37 38 35 32 66 37 64 39 32 36   // 9b93bf7852f7d926
+                                                                                                                                                                                    36 36 35 34 37 35 33 63 63 32 39 37 65 37 64 32   // 6654753cc297e7d2
+                                                                                                                                                                                    65 64 66 65 30 62 61 63 31 63 64 63 66 39 66 37   // edfe0bac1cdcf9f7
+                                                                                                                                                                                    31 37 32 34 31 35 35 30 65 30 61 37 62 31 39 31   // 17241550e0a7b191
+                                                                                                                                                                                    31 39 35 62 37 36 36 37 62 62 34 66 36 34 62 63   // 195b7667bb4f64bc
+                                                                                                                                                                                    62 38 65 32 31 32 31 33 38 30 66 64 31 64 39 64   // b8e2121380fd1d9d
+                                                                                                                                                                                    34 36 61 64 32 64 39 32 64 32 64 31 35 36 30 35   // 46ad2d92d2d15605
+                                                                                                                                                                                    30 39 33 39 32 34 63 63 65 61 66 37 34 63 34 38   // 093924cceaf74c48
+                                                                                                                                                                                    36 31 65 66 66 36 32 61 62 66 36 39 62 39 32 39   // 61eff62abf69b929
+                                                                                                                                                                                    31 65 64 30 61 33 34 30 65 31 31 33 62 65 31 31   // 1ed0a340e113be11
+                                                                                                                                                                                    65 36 61 37 64 33 31 31 33 65 39 32 34 38 34 63   // e6a7d3113e92484c
+                                                                                                                                                                                    66 37 30 34 35 63 63 37 00 00 )                   // f7045cc7..
+  .custom /*0C000024:0A000007*/ instance void [System.Runtime/*23000001*/]System.Runtime.Versioning.TargetFrameworkAttribute/*01000008*/::.ctor(string) /* 0A000007 */ = ( 01 00 18 2E 4E 45 54 43 6F 72 65 41 70 70 2C 56   // ....NETCoreApp,V
+                                                                                                                                                                           65 72 73 69 6F 6E 3D 76 35 2E 30 01 00 54 0E 14   // ersion=v5.0..T..
+                                                                                                                                                                           46 72 61 6D 65 77 6F 72 6B 44 69 73 70 6C 61 79   // FrameworkDisplay
+                                                                                                                                                                           4E 61 6D 65 00 )                                  // Name.
+  .custom /*0C000025:0A000008*/ instance void [System.Runtime/*23000001*/]System.Reflection.AssemblyMetadataAttribute/*01000009*/::.ctor(string,
+                                                                                                                                         string) /* 0A000008 */ = ( 01 00 0A 43 6F 6D 6D 69 74 48 61 73 68 28 33 37   // ...CommitHash(37
+                                                                                                                                                                    31 61 32 36 66 30 37 62 32 33 61 64 37 37 63 36   // 1a26f07b23ad77c6
+                                                                                                                                                                    33 36 33 33 32 63 32 64 66 63 30 63 62 64 31 64   // 36332c2dfc0cbd1d
+                                                                                                                                                                    38 31 33 37 62 61 00 00 )                         // 8137ba..
+  .custom /*0C000026:0A000008*/ instance void [System.Runtime/*23000001*/]System.Reflection.AssemblyMetadataAttribute/*01000009*/::.ctor(string,
+                                                                                                                                         string) /* 0A000008 */ = ( 01 00 0F 53 6F 75 72 63 65 43 6F 6D 6D 69 74 55   // ...SourceCommitU
+                                                                                                                                                                    72 6C 52 68 74 74 70 73 3A 2F 2F 67 69 74 68 75   // rlRhttps://githu
+                                                                                                                                                                    62 2E 63 6F 6D 2F 64 6F 74 6E 65 74 2F 61 73 70   // b.com/dotnet/asp
+                                                                                                                                                                    6E 65 74 63 6F 72 65 2F 74 72 65 65 2F 33 37 31   // netcore/tree/371
+                                                                                                                                                                    61 32 36 66 30 37 62 32 33 61 64 37 37 63 36 33   // a26f07b23ad77c63
+                                                                                                                                                                    36 33 33 32 63 32 64 66 63 30 63 62 64 31 64 38   // 6332c2dfc0cbd1d8
+                                                                                                                                                                    31 33 37 62 61 00 00 )                            // 137ba..
+  .custom /*0C000027:0A000008*/ instance void [System.Runtime/*23000001*/]System.Reflection.AssemblyMetadataAttribute/*01000009*/::.ctor(string,
+                                                                                                                                         string) /* 0A000008 */ = ( 01 00 0B 53 65 72 76 69 63 65 61 62 6C 65 04 54   // ...Serviceable.T
+                                                                                                                                                                    72 75 65 00 00 )                                  // rue..
+  .custom /*0C000028:0A000009*/ instance void [System.Runtime/*23000001*/]System.Reflection.AssemblyCompanyAttribute/*0100000A*/::.ctor(string) /* 0A000009 */ = ( 01 00 15 4D 69 63 72 6F 73 6F 66 74 20 43 6F 72   // ...Microsoft Cor
+                                                                                                                                                                   70 6F 72 61 74 69 6F 6E 00 00 )                   // poration..
+  .custom /*0C000029:0A00000A*/ instance void [System.Runtime/*23000001*/]System.Reflection.AssemblyConfigurationAttribute/*0100000B*/::.ctor(string) /* 0A00000A */ = ( 01 00 07 52 65 6C 65 61 73 65 00 00 )             // ...Release..
+  .custom /*0C00002A:0A00000B*/ instance void [System.Runtime/*23000001*/]System.Reflection.AssemblyCopyrightAttribute/*0100000C*/::.ctor(string) /* 0A00000B */ = ( 01 00 2E C2 A9 20 4D 69 63 72 6F 73 6F 66 74 20   // ..... Microsoft 
+                                                                                                                                                                     43 6F 72 70 6F 72 61 74 69 6F 6E 2E 20 41 6C 6C   // Corporation. All
+                                                                                                                                                                     20 72 69 67 68 74 73 20 72 65 73 65 72 76 65 64   //  rights reserved
+                                                                                                                                                                     2E 00 00 )                                        // ...
+  .custom /*0C00002B:0A00000C*/ instance void [System.Runtime/*23000001*/]System.Reflection.AssemblyDescriptionAttribute/*0100000D*/::.ctor(string) /* 0A00000C */ = ( 01 00 80 EA 41 53 50 2E 4E 45 54 20 43 6F 72 65   // ....ASP.NET Core
+                                                                                                                                                                       20 4D 56 43 20 61 62 73 74 72 61 63 74 69 6F 6E   //  MVC abstraction
+                                                                                                                                                                       73 20 61 6E 64 20 69 6E 74 65 72 66 61 63 65 73   // s and interfaces
+                                                                                                                                                                       20 66 6F 72 20 61 63 74 69 6F 6E 20 69 6E 76 6F   //  for action invo
+                                                                                                                                                                       63 61 74 69 6F 6E 20 61 6E 64 20 64 69 73 70 61   // cation and dispa
+                                                                                                                                                                       74 63 68 69 6E 67 2C 20 61 75 74 68 6F 72 69 7A   // tching, authoriz
+                                                                                                                                                                       61 74 69 6F 6E 2C 20 61 63 74 69 6F 6E 20 66 69   // ation, action fi
+                                                                                                                                                                       6C 74 65 72 73 2C 20 66 6F 72 6D 61 74 74 65 72   // lters, formatter
+                                                                                                                                                                       73 2C 20 6D 6F 64 65 6C 20 62 69 6E 64 69 6E 67   // s, model binding
+                                                                                                                                                                       2C 20 72 6F 75 74 69 6E 67 2C 20 76 61 6C 69 64   // , routing, valid
+                                                                                                                                                                       61 74 69 6F 6E 2C 20 61 6E 64 20 6D 6F 72 65 2E   // ation, and more.
+                                                                                                                                                                       0D 0A 43 6F 6D 6D 6F 6E 6C 79 20 75 73 65 64 20   // ..Commonly used 
+                                                                                                                                                                       74 79 70 65 73 3A 0D 0A 4D 69 63 72 6F 73 6F 66   // types:..Microsof
+                                                                                                                                                                       74 2E 41 73 70 4E 65 74 43 6F 72 65 2E 4D 76 63   // t.AspNetCore.Mvc
+                                                                                                                                                                       2E 49 41 63 74 69 6F 6E 52 65 73 75 6C 74 00 00 ) // .IActionResult..
+  .custom /*0C00002C:0A00000D*/ instance void [System.Runtime/*23000001*/]System.Reflection.AssemblyFileVersionAttribute/*0100000E*/::.ctor(string) /* 0A00000D */ = ( 01 00 0C 35 2E 30 2E 32 30 2E 35 32 36 30 35 00   // ...5.0.20.52605.
+                                                                                                                                                                       00 ) 
+  .custom /*0C00002D:0A00000E*/ instance void [System.Runtime/*23000001*/]System.Reflection.AssemblyInformationalVersionAttribute/*0100000F*/::.ctor(string) /* 0A00000E */ = ( 01 00 2E 35 2E 30 2E 30 2B 33 37 31 61 32 36 66   // ...5.0.0+371a26f
+                                                                                                                                                                                30 37 62 32 33 61 64 37 37 63 36 33 36 33 33 32   // 07b23ad77c636332
+                                                                                                                                                                                63 32 64 66 63 30 63 62 64 31 64 38 31 33 37 62   // c2dfc0cbd1d8137b
+                                                                                                                                                                                61 00 00 )                                        // a..
+  .custom /*0C00002E:0A00000F*/ instance void [System.Runtime/*23000001*/]System.Reflection.AssemblyProductAttribute/*01000010*/::.ctor(string) /* 0A00000F */ = ( 01 00 16 4D 69 63 72 6F 73 6F 66 74 20 41 53 50   // ...Microsoft ASP
+                                                                                                                                                                   2E 4E 45 54 20 43 6F 72 65 00 00 )                // .NET Core..
+  .custom /*0C00002F:0A000010*/ instance void [System.Runtime/*23000001*/]System.Reflection.AssemblyTitleAttribute/*01000011*/::.ctor(string) /* 0A000010 */ = ( 01 00 25 4D 69 63 72 6F 73 6F 66 74 2E 41 73 70   // ..%Microsoft.Asp
+                                                                                                                                                                 4E 65 74 43 6F 72 65 2E 4D 76 63 2E 41 62 73 74   // NetCore.Mvc.Abst
+                                                                                                                                                                 72 61 63 74 69 6F 6E 73 00 00 )                   // ractions..
+  .custom /*0C000030:0A000008*/ instance void [System.Runtime/*23000001*/]System.Reflection.AssemblyMetadataAttribute/*01000009*/::.ctor(string,
+                                                                                                                                         string) /* 0A000008 */ = ( 01 00 0D 52 65 70 6F 73 69 74 6F 72 79 55 72 6C   // ...RepositoryUrl
+                                                                                                                                                                    24 68 74 74 70 73 3A 2F 2F 67 69 74 68 75 62 2E   // $https://github.
+                                                                                                                                                                    63 6F 6D 2F 64 6F 74 6E 65 74 2F 61 73 70 6E 65   // com/dotnet/aspne
+                                                                                                                                                                    74 63 6F 72 65 00 00 )                            // tcore..
+  .custom /*0C000031:0A000011*/ instance void [System.Runtime/*23000001*/]System.Resources.NeutralResourcesLanguageAttribute/*01000012*/::.ctor(string) /* 0A000011 */ = ( 01 00 05 65 6E 2D 55 53 00 00 )                   // ...en-US..
+  .publickey = (00 24 00 00 04 80 00 00 94 00 00 00 06 02 00 00   // .$..............
+                00 24 00 00 52 53 41 31 00 04 00 00 01 00 01 00   // .$..RSA1........
+                F3 3A 29 04 4F A9 D7 40 C9 B3 21 3A 93 E5 7C 84   // .:).O..@..!:..|.
+                B4 72 C8 4E 0B 8A 0E 1A E4 8E 67 A9 F8 F6 DE 9D   // .r.N......g.....
+                5F 7F 3D 52 AC 23 E4 8A C5 18 01 F1 DC 95 0A BE   // _.=R.#..........
+                90 1D A3 4D 2A 9E 3B AA DB 14 1A 17 C7 7E F3 C5   // ...M*.;......~..
+                65 DD 5E E5 05 4B 91 CF 63 BB 3C 6A B8 3F 72 AB   // e.^..K..c.<j.?r.
+                3A AF E9 3D 0F C3 C2 34 8B 76 4F AF B0 B1 C0 73   // :..=...4.vO....s
+                3D E5 14 59 AE AB 46 58 03 84 BF 9D 74 C4 E2 81   // =..Y..FX....t...
+                64 B7 CD E2 47 F8 91 BA 07 89 1C 9D 87 2A D2 BB ) // d...G........*..
+  .hash algorithm 0x00008004
+  .ver 5:0:0:0
+}
+.module Microsoft.AspNetCore.Mvc.Abstractions.dll
+// MVID: {f4135893-9a79-4bb4-a823-b475a70b4b54}
+.imagebase 0x10000000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000009    //  ILONLY
+// Image base: 0x00007FF094EF8000
+
+
+// =============== CLASS MEMBERS DECLARATION ===================
+
+.class /*02000002*/ private auto ansi sealed beforefieldinit Microsoft.CodeAnalysis.EmbeddedAttribute
+       extends [System.Runtime/*23000001*/]System.Attribute/*01000014*/
+{
+  .custom /*0C000033:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .custom /*0C000034:06000001*/ instance void Microsoft.CodeAnalysis.EmbeddedAttribute/*02000002*/::.ctor() /* 06000001 */ = ( 01 00 00 00 ) 
+  .method /*06000001*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method EmbeddedAttribute::.ctor
+
+} // end of class Microsoft.CodeAnalysis.EmbeddedAttribute
+
+.class /*02000003*/ private auto ansi sealed beforefieldinit System.Runtime.CompilerServices.NullableAttribute
+       extends [System.Runtime/*23000001*/]System.Attribute/*01000014*/
+{
+  .custom /*0C000036:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .custom /*0C000037:06000001*/ instance void Microsoft.CodeAnalysis.EmbeddedAttribute/*02000002*/::.ctor() /* 06000001 */ = ( 01 00 00 00 ) 
+  .custom /*0C000038:0A000013*/ instance void [System.Runtime/*23000001*/]System.AttributeUsageAttribute/*01000016*/::.ctor(valuetype [System.Runtime/*23000001*/]System.AttributeTargets/*01000015*/) /* 0A000013 */ = ( 01 00 84 6B 00 00 02 00 54 02 0D 41 6C 6C 6F 77   // ...k....T..Allow
+                                                                                                                                                                                                                          4D 75 6C 74 69 70 6C 65 00 54 02 09 49 6E 68 65   // Multiple.T..Inhe
+                                                                                                                                                                                                                          72 69 74 65 64 00 )                               // rited.
+  .field /*04000001*/ public initonly uint8[] NullableFlags
+  .method /*06000002*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(uint8 A_1) cil managed
+  // SIG: 20 01 01 05
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method NullableAttribute::.ctor
+
+  .method /*06000003*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(uint8[] A_1) cil managed
+  // SIG: 20 01 01 1D 05
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method NullableAttribute::.ctor
+
+} // end of class System.Runtime.CompilerServices.NullableAttribute
+
+.class /*02000004*/ private auto ansi sealed beforefieldinit System.Runtime.CompilerServices.NullableContextAttribute
+       extends [System.Runtime/*23000001*/]System.Attribute/*01000014*/
+{
+  .custom /*0C00003B:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .custom /*0C00003C:06000001*/ instance void Microsoft.CodeAnalysis.EmbeddedAttribute/*02000002*/::.ctor() /* 06000001 */ = ( 01 00 00 00 ) 
+  .custom /*0C00003D:0A000013*/ instance void [System.Runtime/*23000001*/]System.AttributeUsageAttribute/*01000016*/::.ctor(valuetype [System.Runtime/*23000001*/]System.AttributeTargets/*01000015*/) /* 0A000013 */ = ( 01 00 4C 14 00 00 02 00 54 02 0D 41 6C 6C 6F 77   // ..L.....T..Allow
+                                                                                                                                                                                                                          4D 75 6C 74 69 70 6C 65 00 54 02 09 49 6E 68 65   // Multiple.T..Inhe
+                                                                                                                                                                                                                          72 69 74 65 64 00 )                               // rited.
+  .field /*04000002*/ public initonly uint8 Flag
+  .method /*06000004*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(uint8 A_1) cil managed
+  // SIG: 20 01 01 05
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method NullableContextAttribute::.ctor
+
+} // end of class System.Runtime.CompilerServices.NullableContextAttribute
+
+.class /*02000005*/ private abstract auto ansi sealed beforefieldinit Microsoft.Extensions.Internal.ClosedGenericMatcher
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000040:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000041:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000005*/ public hidebysig static 
+          class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          ExtractGenericInterface(class [System.Runtime/*23000001*/]System.Type/*01000018*/ queryType,
+                                  class [System.Runtime/*23000001*/]System.Type/*01000018*/ interfaceType) cil managed
+  // SIG: 00 02 12 61 12 61 12 61
+  {
+    .param [0]/*08000001*/ 
+    .custom /*0C000001:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClosedGenericMatcher::ExtractGenericInterface
+
+} // end of class Microsoft.Extensions.Internal.ClosedGenericMatcher
+
+.class /*02000006*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ActionContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000044:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000045:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000006*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionContext::.ctor
+
+  .method /*06000007*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext) cil managed
+  // SIG: 20 01 01 12 18
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionContext::.ctor
+
+  .method /*06000008*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ httpContext,
+                               class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.RouteData/*0100001A*/ routeData,
+                               class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ actionDescriptor) cil managed
+  // SIG: 20 03 01 12 65 12 69 12 81 E8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionContext::.ctor
+
+  .method /*06000009*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ httpContext,
+                               class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.RouteData/*0100001A*/ routeData,
+                               class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ actionDescriptor,
+                               class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ modelState) cil managed
+  // SIG: 20 04 01 12 65 12 69 12 81 E8 12 80 90
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionContext::.ctor
+
+  .method /*0600000A*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ 
+          get_ActionDescriptor() cil managed
+  // SIG: 20 00 12 81 E8
+  {
+    .custom /*0C000050:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionContext::get_ActionDescriptor
+
+  .method /*0600000B*/ public hidebysig specialname 
+          instance void  set_ActionDescriptor(class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 E8
+  {
+    .custom /*0C000054:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionContext::set_ActionDescriptor
+
+  .method /*0600000C*/ public hidebysig specialname 
+          instance class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ 
+          get_HttpContext() cil managed
+  // SIG: 20 00 12 65
+  {
+    .custom /*0C000058:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionContext::get_HttpContext
+
+  .method /*0600000D*/ public hidebysig specialname 
+          instance void  set_HttpContext(class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ 'value') cil managed
+  // SIG: 20 01 01 12 65
+  {
+    .custom /*0C00005C:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionContext::set_HttpContext
+
+  .method /*0600000E*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ 
+          get_ModelState() cil managed
+  // SIG: 20 00 12 80 90
+  {
+    .custom /*0C000061:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionContext::get_ModelState
+
+  .method /*0600000F*/ public hidebysig specialname 
+          instance class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.RouteData/*0100001A*/ 
+          get_RouteData() cil managed
+  // SIG: 20 00 12 69
+  {
+    .custom /*0C000065:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionContext::get_RouteData
+
+  .method /*06000010*/ public hidebysig specialname 
+          instance void  set_RouteData(class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.RouteData/*0100001A*/ 'value') cil managed
+  // SIG: 20 01 01 12 69
+  {
+    .custom /*0C000067:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionContext::set_RouteData
+
+  .property /*17000001*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/
+          ActionDescriptor()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/::get_ActionDescriptor() /* 0600000A */
+    .set instance void Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/::set_ActionDescriptor(class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/) /* 0600000B */
+  } // end of property ActionContext::ActionDescriptor
+  .property /*17000002*/ instance callconv(8) class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/
+          HttpContext()
+  {
+    .get instance class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/::get_HttpContext() /* 0600000C */
+    .set instance void Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/::set_HttpContext(class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/) /* 0600000D */
+  } // end of property ActionContext::HttpContext
+  .property /*17000003*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/
+          ModelState()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/::get_ModelState() /* 0600000E */
+  } // end of property ActionContext::ModelState
+  .property /*17000004*/ instance callconv(8) class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.RouteData/*0100001A*/
+          RouteData()
+  {
+    .get instance class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.RouteData/*0100001A*/ Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/::get_RouteData() /* 0600000F */
+    .set instance void Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/::set_RouteData(class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.RouteData/*0100001A*/) /* 06000010 */
+  } // end of property ActionContext::RouteData
+} // end of class Microsoft.AspNetCore.Mvc.ActionContext
+
+.class /*02000007*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.IActionResult
+{
+  .custom /*0C000049:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000011*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task/*0100001B*/ 
+          ExecuteResultAsync(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ context) cil managed
+  // SIG: 20 01 12 6D 12 18
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionResult::ExecuteResultAsync
+
+} // end of class Microsoft.AspNetCore.Mvc.IActionResult
+
+.class /*02000008*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.IUrlHelper
+{
+  .custom /*0C00004B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000012*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ 
+          get_ActionContext() cil managed
+  // SIG: 20 00 12 18
+  {
+    // Method begins at RVA 0x0
+  } // end of method IUrlHelper::get_ActionContext
+
+  .method /*06000013*/ public hidebysig newslot abstract virtual 
+          instance string  Action(class Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/ actionContext) cil managed
+  // SIG: 20 01 0E 12 28
+  {
+    .param [0]/*08000010*/ 
+    .custom /*0C00006B:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IUrlHelper::Action
+
+  .method /*06000014*/ public hidebysig newslot abstract virtual 
+          instance string  Content(string contentPath) cil managed
+  // SIG: 20 01 0E 0E
+  {
+    .custom /*0C000074:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IUrlHelper::Content
+
+  .method /*06000015*/ public hidebysig newslot abstract virtual 
+          instance bool  IsLocalUrl(string url) cil managed
+  // SIG: 20 01 02 0E
+  {
+    .custom /*0C000079:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IUrlHelper::IsLocalUrl
+
+  .method /*06000016*/ public hidebysig newslot abstract virtual 
+          instance string  RouteUrl(class Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext/*0200000B*/ routeContext) cil managed
+  // SIG: 20 01 0E 12 2C
+  {
+    .param [0]/*08000014*/ 
+    .custom /*0C000077:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IUrlHelper::RouteUrl
+
+  .method /*06000017*/ public hidebysig newslot abstract virtual 
+          instance string  Link(string routeName,
+                                object values) cil managed
+  // SIG: 20 02 0E 0E 1C
+  {
+    .custom /*0C00007D:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IUrlHelper::Link
+
+  .property /*17000005*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/
+          ActionContext()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ Microsoft.AspNetCore.Mvc.IUrlHelper/*02000008*/::get_ActionContext() /* 06000012 */
+  } // end of property IUrlHelper::ActionContext
+} // end of class Microsoft.AspNetCore.Mvc.IUrlHelper
+
+.class /*02000009*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00004D:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00004E:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000018*/ public hidebysig specialname 
+          instance string  get_Template() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C00007F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C000080:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AttributeRouteInfo::get_Template
+
+  .method /*06000019*/ public hidebysig specialname 
+          instance void  set_Template(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C000082:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C000083:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AttributeRouteInfo::set_Template
+
+  .method /*0600001A*/ public hidebysig specialname 
+          instance int32  get_Order() cil managed
+  // SIG: 20 00 08
+  {
+    .custom /*0C000085:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AttributeRouteInfo::get_Order
+
+  .method /*0600001B*/ public hidebysig specialname 
+          instance void  set_Order(int32 'value') cil managed
+  // SIG: 20 01 01 08
+  {
+    .custom /*0C000088:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AttributeRouteInfo::set_Order
+
+  .method /*0600001C*/ public hidebysig specialname 
+          instance string  get_Name() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C00008A:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AttributeRouteInfo::get_Name
+
+  .method /*0600001D*/ public hidebysig specialname 
+          instance void  set_Name(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C00008D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AttributeRouteInfo::set_Name
+
+  .method /*0600001E*/ public hidebysig specialname 
+          instance bool  get_SuppressLinkGeneration() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C000090:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AttributeRouteInfo::get_SuppressLinkGeneration
+
+  .method /*0600001F*/ public hidebysig specialname 
+          instance void  set_SuppressLinkGeneration(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C000095:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AttributeRouteInfo::set_SuppressLinkGeneration
+
+  .method /*06000020*/ public hidebysig specialname 
+          instance bool  get_SuppressPathMatching() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C000099:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AttributeRouteInfo::get_SuppressPathMatching
+
+  .method /*06000021*/ public hidebysig specialname 
+          instance void  set_SuppressPathMatching(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C00009D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AttributeRouteInfo::set_SuppressPathMatching
+
+  .method /*06000022*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AttributeRouteInfo::.ctor
+
+  .property /*17000006*/ instance callconv(8) string
+          Template()
+  {
+    .custom /*0C000047:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance string Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/::get_Template() /* 06000018 */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/::set_Template(string) /* 06000019 */
+  } // end of property AttributeRouteInfo::Template
+  .property /*17000007*/ instance callconv(8) int32
+          Order()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/::get_Order() /* 0600001A */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/::set_Order(int32) /* 0600001B */
+  } // end of property AttributeRouteInfo::Order
+  .property /*17000008*/ instance callconv(8) string
+          Name()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/::get_Name() /* 0600001C */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/::set_Name(string) /* 0600001D */
+  } // end of property AttributeRouteInfo::Name
+  .property /*17000009*/ instance callconv(8) bool
+          SuppressLinkGeneration()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/::get_SuppressLinkGeneration() /* 0600001E */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/::set_SuppressLinkGeneration(bool) /* 0600001F */
+  } // end of property AttributeRouteInfo::SuppressLinkGeneration
+  .property /*1700000A*/ instance callconv(8) bool
+          SuppressPathMatching()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/::get_SuppressPathMatching() /* 06000020 */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/::set_SuppressPathMatching(bool) /* 06000021 */
+  } // end of property AttributeRouteInfo::SuppressPathMatching
+} // end of class Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo
+
+.class /*0200000A*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Routing.UrlActionContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000051:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C000052:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000023*/ public hidebysig specialname 
+          instance string  get_Action() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0000A5:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::get_Action
+
+  .method /*06000024*/ public hidebysig specialname 
+          instance void  set_Action(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0000AB:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::set_Action
+
+  .method /*06000025*/ public hidebysig specialname 
+          instance string  get_Controller() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0000B1:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::get_Controller
+
+  .method /*06000026*/ public hidebysig specialname 
+          instance void  set_Controller(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0000B6:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::set_Controller
+
+  .method /*06000027*/ public hidebysig specialname 
+          instance object  get_Values() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C0000B8:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::get_Values
+
+  .method /*06000028*/ public hidebysig specialname 
+          instance void  set_Values(object 'value') cil managed
+  // SIG: 20 01 01 1C
+  {
+    .custom /*0C0000BA:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::set_Values
+
+  .method /*06000029*/ public hidebysig specialname 
+          instance string  get_Protocol() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0000BF:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::get_Protocol
+
+  .method /*0600002A*/ public hidebysig specialname 
+          instance void  set_Protocol(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0000C2:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::set_Protocol
+
+  .method /*0600002B*/ public hidebysig specialname 
+          instance string  get_Host() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0000C7:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::get_Host
+
+  .method /*0600002C*/ public hidebysig specialname 
+          instance void  set_Host(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0000CB:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::set_Host
+
+  .method /*0600002D*/ public hidebysig specialname 
+          instance string  get_Fragment() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0000CF:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::get_Fragment
+
+  .method /*0600002E*/ public hidebysig specialname 
+          instance void  set_Fragment(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0000D4:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::set_Fragment
+
+  .method /*0600002F*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlActionContext::.ctor
+
+  .property /*1700000B*/ instance callconv(8) string
+          Action()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/::get_Action() /* 06000023 */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/::set_Action(string) /* 06000024 */
+  } // end of property UrlActionContext::Action
+  .property /*1700000C*/ instance callconv(8) string
+          Controller()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/::get_Controller() /* 06000025 */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/::set_Controller(string) /* 06000026 */
+  } // end of property UrlActionContext::Controller
+  .property /*1700000D*/ instance callconv(8) object
+          Values()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/::get_Values() /* 06000027 */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/::set_Values(object) /* 06000028 */
+  } // end of property UrlActionContext::Values
+  .property /*1700000E*/ instance callconv(8) string
+          Protocol()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/::get_Protocol() /* 06000029 */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/::set_Protocol(string) /* 0600002A */
+  } // end of property UrlActionContext::Protocol
+  .property /*1700000F*/ instance callconv(8) string
+          Host()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/::get_Host() /* 0600002B */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/::set_Host(string) /* 0600002C */
+  } // end of property UrlActionContext::Host
+  .property /*17000010*/ instance callconv(8) string
+          Fragment()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/::get_Fragment() /* 0600002D */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.UrlActionContext/*0200000A*/::set_Fragment(string) /* 0600002E */
+  } // end of property UrlActionContext::Fragment
+} // end of class Microsoft.AspNetCore.Mvc.Routing.UrlActionContext
+
+.class /*0200000B*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000055:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C000056:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000030*/ public hidebysig specialname 
+          instance string  get_RouteName() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0000DA:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlRouteContext::get_RouteName
+
+  .method /*06000031*/ public hidebysig specialname 
+          instance void  set_RouteName(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0000DE:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlRouteContext::set_RouteName
+
+  .method /*06000032*/ public hidebysig specialname 
+          instance object  get_Values() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C0000E2:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlRouteContext::get_Values
+
+  .method /*06000033*/ public hidebysig specialname 
+          instance void  set_Values(object 'value') cil managed
+  // SIG: 20 01 01 1C
+  {
+    .custom /*0C0000E6:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlRouteContext::set_Values
+
+  .method /*06000034*/ public hidebysig specialname 
+          instance string  get_Protocol() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0000EA:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlRouteContext::get_Protocol
+
+  .method /*06000035*/ public hidebysig specialname 
+          instance void  set_Protocol(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0000EF:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlRouteContext::set_Protocol
+
+  .method /*06000036*/ public hidebysig specialname 
+          instance string  get_Host() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0000F4:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlRouteContext::get_Host
+
+  .method /*06000037*/ public hidebysig specialname 
+          instance void  set_Host(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0000F9:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlRouteContext::set_Host
+
+  .method /*06000038*/ public hidebysig specialname 
+          instance string  get_Fragment() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0000FE:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlRouteContext::get_Fragment
+
+  .method /*06000039*/ public hidebysig specialname 
+          instance void  set_Fragment(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C000103:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlRouteContext::set_Fragment
+
+  .method /*0600003A*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method UrlRouteContext::.ctor
+
+  .property /*17000011*/ instance callconv(8) string
+          RouteName()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext/*0200000B*/::get_RouteName() /* 06000030 */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext/*0200000B*/::set_RouteName(string) /* 06000031 */
+  } // end of property UrlRouteContext::RouteName
+  .property /*17000012*/ instance callconv(8) object
+          Values()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext/*0200000B*/::get_Values() /* 06000032 */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext/*0200000B*/::set_Values(object) /* 06000033 */
+  } // end of property UrlRouteContext::Values
+  .property /*17000013*/ instance callconv(8) string
+          Protocol()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext/*0200000B*/::get_Protocol() /* 06000034 */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext/*0200000B*/::set_Protocol(string) /* 06000035 */
+  } // end of property UrlRouteContext::Protocol
+  .property /*17000014*/ instance callconv(8) string
+          Host()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext/*0200000B*/::get_Host() /* 06000036 */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext/*0200000B*/::set_Host(string) /* 06000037 */
+  } // end of property UrlRouteContext::Host
+  .property /*17000015*/ instance callconv(8) string
+          Fragment()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext/*0200000B*/::get_Fragment() /* 06000038 */
+    .set instance void Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext/*0200000B*/::set_Fragment(string) /* 06000039 */
+  } // end of property UrlRouteContext::Fragment
+} // end of class Microsoft.AspNetCore.Mvc.Routing.UrlRouteContext
+
+.class /*0200000C*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000059:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C00005A:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .class /*02000083*/ auto ansi nested private beforefieldinit CompositePropertyFilterProvider
+         extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+         implements Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/
+  {
+    .custom /*0C00019A:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    .custom /*0C00019B:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .interfaceimpl type Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/
+    .custom /*0C0000BE:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .class /*02000092*/ auto ansi sealed nested private beforefieldinit '<>c__DisplayClass4_0'
+           extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+    {
+      .custom /*0C0001B3:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+      .field /*0400004D*/ public class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool>> propertyFilters
+      .custom /*0C00013E:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+      .method /*06000322*/ public hidebysig specialname rtspecialname 
+              instance void  .ctor() cil managed
+      // SIG: 20 00 01
+      {
+        // Method begins at RVA 0x4050
+        // Code size       2 (0x2)
+        .maxstack  8
+        IL_0000:  /* 14   |                  */ ldnull
+        IL_0001:  /* 7A   |                  */ throw
+      } // end of method '<>c__DisplayClass4_0'::.ctor
+
+      .method /*06000323*/ assembly hidebysig 
+              instance bool  '<CreatePropertyFilter>b__2'(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ m) cil managed
+      // SIG: 20 01 02 12 80 84
+      {
+        // Method begins at RVA 0x4050
+        // Code size       2 (0x2)
+        .maxstack  8
+        IL_0000:  /* 14   |                  */ ldnull
+        IL_0001:  /* 7A   |                  */ throw
+      } // end of method '<>c__DisplayClass4_0'::'<CreatePropertyFilter>b__2'
+
+    } // end of class '<>c__DisplayClass4_0'
+
+    .class /*02000093*/ auto ansi serializable sealed nested private beforefieldinit '<>c'
+           extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+    {
+      .custom /*0C0001B4:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+      .field /*0400004E*/ public static initonly class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*//CompositePropertyFilterProvider/*02000083*//'<>c'/*02000093*/ '<>9'
+      .custom /*0C000142:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+      .field /*0400004F*/ public static class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/,class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool>> '<>9__4_0'
+      .custom /*0C000147:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+      .field /*04000050*/ public static class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool>,bool> '<>9__4_1'
+      .custom /*0C00014D:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+      .method /*06000324*/ public hidebysig specialname rtspecialname 
+              instance void  .ctor() cil managed
+      // SIG: 20 00 01
+      {
+        // Method begins at RVA 0x4050
+        // Code size       2 (0x2)
+        .maxstack  8
+        IL_0000:  /* 14   |                  */ ldnull
+        IL_0001:  /* 7A   |                  */ throw
+      } // end of method '<>c'::.ctor
+
+      .method /*06000325*/ assembly hidebysig 
+              instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool> 
+              '<CreatePropertyFilter>b__4_0'(class Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/ p) cil managed
+      // SIG: 20 01 15 12 71 02 12 80 84 02 12 60
+      {
+        .custom /*0C000349:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
+        // Method begins at RVA 0x4050
+        // Code size       2 (0x2)
+        .maxstack  8
+        IL_0000:  /* 14   |                  */ ldnull
+        IL_0001:  /* 7A   |                  */ throw
+      } // end of method '<>c'::'<CreatePropertyFilter>b__4_0'
+
+      .method /*06000326*/ assembly hidebysig 
+              instance bool  '<CreatePropertyFilter>b__4_1'(class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool> p) cil managed
+      // SIG: 20 01 02 15 12 71 02 12 80 84 02
+      {
+        .custom /*0C00034A:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
+        // Method begins at RVA 0x4050
+        // Code size       2 (0x2)
+        .maxstack  8
+        IL_0000:  /* 14   |                  */ ldnull
+        IL_0001:  /* 7A   |                  */ throw
+      } // end of method '<>c'::'<CreatePropertyFilter>b__4_1'
+
+    } // end of class '<>c'
+
+    .method /*060002E9*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor(class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/> providers) cil managed
+    // SIG: 20 01 01 15 12 75 01 12 60
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method CompositePropertyFilterProvider::.ctor
+
+    .method /*060002EA*/ public hidebysig newslot specialname virtual final 
+            instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool> 
+            get_PropertyFilter() cil managed
+    // SIG: 20 00 15 12 71 02 12 80 84 02
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method CompositePropertyFilterProvider::get_PropertyFilter
+
+    .property /*1700015F*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool>
+            PropertyFilter()
+    {
+      .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool> Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*//CompositePropertyFilterProvider/*02000083*/::get_PropertyFilter() /* 060002EA */
+    } // end of property CompositePropertyFilterProvider::PropertyFilter
+  } // end of class CompositePropertyFilterProvider
+
+  .method /*0600003B*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::.ctor
+
+  .method /*0600003C*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/ other) cil managed
+  // SIG: 20 01 01 12 30
+  {
+    .custom /*0C00010C:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::.ctor
+
+  .method /*0600003D*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ 
+          get_BindingSource() cil managed
+  // SIG: 20 00 12 34
+  {
+    .custom /*0C00010F:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::get_BindingSource
+
+  .method /*0600003E*/ public hidebysig specialname 
+          instance void  set_BindingSource(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ 'value') cil managed
+  // SIG: 20 01 01 12 34
+  {
+    .custom /*0C000113:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::set_BindingSource
+
+  .method /*0600003F*/ public hidebysig specialname 
+          instance string  get_BinderModelName() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C000114:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::get_BinderModelName
+
+  .method /*06000040*/ public hidebysig specialname 
+          instance void  set_BinderModelName(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C000118:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::set_BinderModelName
+
+  .method /*06000041*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_BinderType() cil managed
+  // SIG: 20 00 12 61
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::get_BinderType
+
+  .method /*06000042*/ public hidebysig specialname 
+          instance void  set_BinderType(class [System.Runtime/*23000001*/]System.Type/*01000018*/ 'value') cil managed
+  // SIG: 20 01 01 12 61
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::set_BinderType
+
+  .method /*06000043*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/ 
+          get_PropertyFilterProvider() cil managed
+  // SIG: 20 00 12 60
+  {
+    .custom /*0C00011E:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::get_PropertyFilterProvider
+
+  .method /*06000044*/ public hidebysig specialname 
+          instance void  set_PropertyFilterProvider(class Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/ 'value') cil managed
+  // SIG: 20 01 01 12 60
+  {
+    .custom /*0C000121:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::set_PropertyFilterProvider
+
+  .method /*06000045*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/,bool> 
+          get_RequestPredicate() cil managed
+  // SIG: 20 00 15 12 71 02 12 18 02
+  {
+    .custom /*0C000123:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .param [0]/*0800002D*/ 
+    .custom /*0C0000D2:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::get_RequestPredicate
+
+  .method /*06000046*/ public hidebysig specialname 
+          instance void  set_RequestPredicate(class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/,bool> 'value') cil managed
+  // SIG: 20 01 01 15 12 71 02 12 18 02
+  {
+    .custom /*0C000127:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .param [1]/*0800002E*/ 
+    .custom /*0C0000D6:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::set_RequestPredicate
+
+  .method /*06000047*/ public hidebysig specialname 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior/*0200000F*/ 
+          get_EmptyBodyBehavior() cil managed
+  // SIG: 20 00 11 3C
+  {
+    .custom /*0C00012A:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::get_EmptyBodyBehavior
+
+  .method /*06000048*/ public hidebysig specialname 
+          instance void  set_EmptyBodyBehavior(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior/*0200000F*/ 'value') cil managed
+  // SIG: 20 01 01 11 3C
+  {
+    .custom /*0C00012E:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::set_EmptyBodyBehavior
+
+  .method /*06000049*/ public hidebysig static 
+          class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/ 
+          GetBindingInfo(class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<object> attributes) cil managed
+  // SIG: 00 01 12 30 15 12 75 01 1C
+  {
+    .custom /*0C000131:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    .param [0]/*08000030*/ 
+    .custom /*0C0000DC:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::GetBindingInfo
+
+  .method /*0600004A*/ public hidebysig static 
+          class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/ 
+          GetBindingInfo(class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<object> attributes,
+                         class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ modelMetadata) cil managed
+  // SIG: 00 02 12 30 15 12 75 01 1C 12 80 84
+  {
+    .custom /*0C000136:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    .param [0]/*08000032*/ 
+    .custom /*0C0000E4:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::GetBindingInfo
+
+  .method /*0600004B*/ public hidebysig instance bool 
+          TryApplyBindingInfo(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ modelMetadata) cil managed
+  // SIG: 20 01 02 12 80 84
+  {
+    .custom /*0C000139:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingInfo::TryApplyBindingInfo
+
+  .property /*17000016*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/
+          BindingSource()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/::get_BindingSource() /* 0600003D */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/::set_BindingSource(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/) /* 0600003E */
+  } // end of property BindingInfo::BindingSource
+  .property /*17000017*/ instance callconv(8) string
+          BinderModelName()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/::get_BinderModelName() /* 0600003F */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/::set_BinderModelName(string) /* 06000040 */
+  } // end of property BindingInfo::BinderModelName
+  .property /*17000018*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          BinderType()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/::get_BinderType() /* 06000041 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/::set_BinderType(class [System.Runtime/*23000001*/]System.Type/*01000018*/) /* 06000042 */
+  } // end of property BindingInfo::BinderType
+  .property /*17000019*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/
+          PropertyFilterProvider()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/ Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/::get_PropertyFilterProvider() /* 06000043 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/::set_PropertyFilterProvider(class Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/) /* 06000044 */
+  } // end of property BindingInfo::PropertyFilterProvider
+  .property /*1700001A*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/,bool>
+          RequestPredicate()
+  {
+    .custom /*0C000087:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/,bool> Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/::get_RequestPredicate() /* 06000045 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/::set_RequestPredicate(class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/,bool>) /* 06000046 */
+  } // end of property BindingInfo::RequestPredicate
+  .property /*1700001B*/ instance callconv(8) valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior/*0200000F*/
+          EmptyBodyBehavior()
+  {
+    .get instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior/*0200000F*/ Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/::get_EmptyBodyBehavior() /* 06000047 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/::set_EmptyBodyBehavior(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior/*0200000F*/) /* 06000048 */
+  } // end of property BindingInfo::EmptyBodyBehavior
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo
+
+.class /*0200000D*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+       implements class [System.Runtime/*23000001*/]System.IEquatable`1/*0100001F*/<class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/>/*1B000001*/
+{
+  .custom /*0C00005D:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00005E:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C00005F:0A000014*/ instance void [System.Runtime/*23000001*/]System.Diagnostics.DebuggerDisplayAttribute/*0100001E*/::.ctor(string) /* 0A000014 */ = ( 01 00 15 53 6F 75 72 63 65 3A 20 7B 44 69 73 70   // ...Source: {Disp
+                                                                                                                                                                    6C 61 79 4E 61 6D 65 7D 00 00 )                   // layName}..
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.IEquatable`1/*0100001F*/<class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/>/*1B000001*/
+  .custom /*0C000002:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 00 02 00 00 ) 
+  .field /*04000003*/ public static initonly class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Body
+  .field /*04000004*/ public static initonly class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Custom
+  .field /*04000005*/ public static initonly class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Form
+  .field /*04000006*/ public static initonly class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Header
+  .field /*04000007*/ public static initonly class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ ModelBinding
+  .field /*04000008*/ public static initonly class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Path
+  .field /*04000009*/ public static initonly class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Query
+  .field /*0400000A*/ public static initonly class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Services
+  .field /*0400000B*/ public static initonly class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Special
+  .field /*0400000C*/ public static initonly class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ FormFile
+  .method /*0600004C*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(string id,
+                               string displayName,
+                               bool isGreedy,
+                               bool isFromRequest) cil managed
+  // SIG: 20 04 01 0E 0E 02 02
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingSource::.ctor
+
+  .method /*0600004D*/ public hidebysig specialname 
+          instance string  get_DisplayName() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C00013D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingSource::get_DisplayName
+
+  .method /*0600004E*/ public hidebysig specialname 
+          instance string  get_Id() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C000141:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingSource::get_Id
+
+  .method /*0600004F*/ public hidebysig specialname 
+          instance bool  get_IsGreedy() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C000146:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingSource::get_IsGreedy
+
+  .method /*06000050*/ public hidebysig specialname 
+          instance bool  get_IsFromRequest() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C00014C:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingSource::get_IsFromRequest
+
+  .method /*06000051*/ public hidebysig newslot virtual 
+          instance bool  CanAcceptDataFrom(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ bindingSource) cil managed
+  // SIG: 20 01 02 12 34
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingSource::CanAcceptDataFrom
+
+  .method /*06000052*/ public hidebysig newslot virtual final 
+          instance bool  Equals(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ other) cil managed
+  // SIG: 20 01 02 12 34
+  {
+    .custom /*0C000153:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingSource::Equals
+
+  .method /*06000053*/ public hidebysig virtual 
+          instance bool  Equals(object obj) cil managed
+  // SIG: 20 01 02 1C
+  {
+    .custom /*0C000155:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingSource::Equals
+
+  .method /*06000054*/ public hidebysig virtual 
+          instance int32  GetHashCode() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingSource::GetHashCode
+
+  .method /*06000055*/ public hidebysig specialname static 
+          bool  op_Equality(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ s1,
+                            class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ s2) cil managed
+  // SIG: 00 02 02 12 34 12 34
+  {
+    .custom /*0C000156:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingSource::op_Equality
+
+  .method /*06000056*/ public hidebysig specialname static 
+          bool  op_Inequality(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ s1,
+                              class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ s2) cil managed
+  // SIG: 00 02 02 12 34 12 34
+  {
+    .custom /*0C000157:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method BindingSource::op_Inequality
+
+  .property /*1700001C*/ instance callconv(8) string
+          DisplayName()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/::get_DisplayName() /* 0600004D */
+  } // end of property BindingSource::DisplayName
+  .property /*1700001D*/ instance callconv(8) string
+          Id()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/::get_Id() /* 0600004E */
+  } // end of property BindingSource::Id
+  .property /*1700001E*/ instance callconv(8) bool
+          IsGreedy()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/::get_IsGreedy() /* 0600004F */
+  } // end of property BindingSource::IsGreedy
+  .property /*1700001F*/ instance callconv(8) bool
+          IsFromRequest()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/::get_IsFromRequest() /* 06000050 */
+  } // end of property BindingSource::IsFromRequest
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource
+
+.class /*0200000E*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.CompositeBindingSource
+       extends Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/
+{
+  .custom /*0C000062:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000063:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .class /*02000084*/ auto ansi serializable sealed nested private beforefieldinit '<>c'
+         extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+  {
+    .custom /*0C00019D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .field /*04000033*/ public static initonly class Microsoft.AspNetCore.Mvc.ModelBinding.CompositeBindingSource/*0200000E*//'<>c'/*02000084*/ '<>9'
+    .custom /*0C0000E7:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .field /*04000034*/ public static class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/,string> '<>9__0_0'
+    .custom /*0C0000EB:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .field /*04000035*/ public static class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> '<>9__0_1'
+    .custom /*0C0000F0:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .method /*060002EB*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method '<>c'::.ctor
+
+    .method /*060002EC*/ assembly hidebysig 
+            instance string  '<Create>b__0_0'(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ s) cil managed
+    // SIG: 20 01 0E 12 34
+    {
+      .custom /*0C00033A:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method '<>c'::'<Create>b__0_0'
+
+    .method /*060002ED*/ assembly hidebysig 
+            instance string  '<Create>b__0_1'(string s) cil managed
+    // SIG: 20 01 0E 0E
+    {
+      .custom /*0C00033B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method '<>c'::'<Create>b__0_1'
+
+  } // end of class '<>c'
+
+  .method /*06000057*/ public hidebysig static 
+          class Microsoft.AspNetCore.Mvc.ModelBinding.CompositeBindingSource/*0200000E*/ 
+          Create(class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/> bindingSources,
+                 string displayName) cil managed
+  // SIG: 00 02 12 38 15 12 75 01 12 34 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method CompositeBindingSource::Create
+
+  .method /*06000058*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/> 
+          get_BindingSources() cil managed
+  // SIG: 20 00 15 12 75 01 12 34
+  {
+    .custom /*0C000158:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method CompositeBindingSource::get_BindingSources
+
+  .method /*06000059*/ public hidebysig virtual 
+          instance bool  CanAcceptDataFrom(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ bindingSource) cil managed
+  // SIG: 20 01 02 12 34
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method CompositeBindingSource::CanAcceptDataFrom
+
+  .property /*17000020*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/>
+          BindingSources()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/> Microsoft.AspNetCore.Mvc.ModelBinding.CompositeBindingSource/*0200000E*/::get_BindingSources() /* 06000058 */
+  } // end of property CompositeBindingSource::BindingSources
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.CompositeBindingSource
+
+.class /*0200000F*/ public auto ansi sealed Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior
+       extends [System.Runtime/*23000001*/]System.Enum/*01000020*/
+{
+  .field /*0400000D*/ public specialname rtspecialname int32 value__
+  .field /*0400000E*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior/*0200000F*/ Default = int32(0x00000000)
+  .field /*0400000F*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior/*0200000F*/ Allow = int32(0x00000001)
+  .field /*04000010*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior/*0200000F*/ Disallow = int32(0x00000002)
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior
+
+.class /*02000010*/ public sequential ansi sealed beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.EnumGroupAndName
+       extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+{
+  .custom /*0C000068:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000069:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C00006A:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+  .class /*02000085*/ auto ansi sealed nested private beforefieldinit '<>c__DisplayClass1_0'
+         extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+  {
+    .custom /*0C00019F:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .field /*04000036*/ public string name
+    .custom /*0C0000F5:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .method /*060002EE*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method '<>c__DisplayClass1_0'::.ctor
+
+    .method /*060002EF*/ assembly hidebysig 
+            instance string  '<.ctor>b__0'() cil managed
+    // SIG: 20 00 0E
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method '<>c__DisplayClass1_0'::'<.ctor>b__0'
+
+  } // end of class '<>c__DisplayClass1_0'
+
+  .field /*04000011*/ private initonly class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string> _name
+  .field /*04000012*/ private initonly string '<Group>k__BackingField'
+  .custom /*0C00006E:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .method /*0600005A*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(string group,
+                               string name) cil managed
+  // SIG: 20 02 01 0E 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method EnumGroupAndName::.ctor
+
+  .method /*0600005B*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(string group,
+                               class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string> name) cil managed
+  // SIG: 20 02 01 0E 15 12 80 8D 01 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method EnumGroupAndName::.ctor
+
+  .method /*0600005C*/ public hidebysig specialname 
+          instance string  get_Group() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C00015B:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method EnumGroupAndName::get_Group
+
+  .method /*0600005D*/ public hidebysig specialname 
+          instance string  get_Name() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method EnumGroupAndName::get_Name
+
+  .property /*17000021*/ instance callconv(8) string
+          Group()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.EnumGroupAndName/*02000010*/::get_Group() /* 0600005C */
+  } // end of property EnumGroupAndName::Group
+  .property /*17000022*/ instance callconv(8) string
+          Name()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.EnumGroupAndName/*02000010*/::get_Name() /* 0600005D */
+  } // end of property EnumGroupAndName::Name
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.EnumGroupAndName
+
+.class /*02000011*/ interface private abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.IConfigureEmptyBodyBehavior
+{
+  .method /*0600005E*/ public hidebysig newslot specialname abstract virtual 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior/*0200000F*/ 
+          get_EmptyBodyBehavior() cil managed
+  // SIG: 20 00 11 3C
+  {
+    // Method begins at RVA 0x0
+  } // end of method IConfigureEmptyBodyBehavior::get_EmptyBodyBehavior
+
+  .property /*17000023*/ instance callconv(8) valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior/*0200000F*/
+          EmptyBodyBehavior()
+  {
+    .get instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EmptyBodyBehavior/*0200000F*/ Microsoft.AspNetCore.Mvc.ModelBinding.IConfigureEmptyBodyBehavior/*02000011*/::get_EmptyBodyBehavior() /* 0600005E */
+  } // end of property IConfigureEmptyBodyBehavior::EmptyBodyBehavior
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.IConfigureEmptyBodyBehavior
+
+.class /*02000012*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.IBinderTypeProviderMetadata
+       implements Microsoft.AspNetCore.Mvc.ModelBinding.IBindingSourceMetadata/*02000013*/
+{
+  .custom /*0C00006F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .interfaceimpl type Microsoft.AspNetCore.Mvc.ModelBinding.IBindingSourceMetadata/*02000013*/
+  .custom /*0C000035:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*0600005F*/ public hidebysig newslot specialname abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_BinderType() cil managed
+  // SIG: 20 00 12 61
+  {
+    // Method begins at RVA 0x0
+  } // end of method IBinderTypeProviderMetadata::get_BinderType
+
+  .property /*17000024*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          BinderType()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.ModelBinding.IBinderTypeProviderMetadata/*02000012*/::get_BinderType() /* 0600005F */
+  } // end of property IBinderTypeProviderMetadata::BinderType
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.IBinderTypeProviderMetadata
+
+.class /*02000013*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.IBindingSourceMetadata
+{
+  .custom /*0C000072:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .method /*06000060*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ 
+          get_BindingSource() cil managed
+  // SIG: 20 00 12 34
+  {
+    // Method begins at RVA 0x0
+  } // end of method IBindingSourceMetadata::get_BindingSource
+
+  .property /*17000025*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/
+          BindingSource()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Microsoft.AspNetCore.Mvc.ModelBinding.IBindingSourceMetadata/*02000013*/::get_BindingSource() /* 06000060 */
+  } // end of property IBindingSourceMetadata::BindingSource
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.IBindingSourceMetadata
+
+.class /*02000014*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinder
+{
+  .custom /*0C000076:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000061*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task/*0100001B*/ 
+          BindModelAsync(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/ bindingContext) cil managed
+  // SIG: 20 01 12 6D 12 74
+  {
+    // Method begins at RVA 0x0
+  } // end of method IModelBinder::BindModelAsync
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinder
+
+.class /*02000015*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinderProvider
+{
+  .custom /*0C00007A:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000062*/ public hidebysig newslot abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinder/*02000014*/ 
+          GetBinder(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderProviderContext/*0200001C*/ context) cil managed
+  // SIG: 20 01 12 50 12 70
+  {
+    .param [0]/*08000049*/ 
+    .custom /*0C000135:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IModelBinderProvider::GetBinder
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinderProvider
+
+.class /*02000016*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider
+{
+  .custom /*0C00007C:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000063*/ public hidebysig newslot abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          GetMetadataForType(class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType) cil managed
+  // SIG: 20 01 12 80 84 12 61
+  {
+    // Method begins at RVA 0x0
+  } // end of method IModelMetadataProvider::GetMetadataForType
+
+  .method /*06000064*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/> 
+          GetMetadataForProperties(class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType) cil managed
+  // SIG: 20 01 15 12 75 01 12 80 84 12 61
+  {
+    // Method begins at RVA 0x0
+  } // end of method IModelMetadataProvider::GetMetadataForProperties
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider
+
+.class /*02000017*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.IModelNameProvider
+{
+  .custom /*0C00007E:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000065*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_Name() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method IModelNameProvider::get_Name
+
+  .property /*17000026*/ instance callconv(8) string
+          Name()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.IModelNameProvider/*02000017*/::get_Name() /* 06000065 */
+  } // end of property IModelNameProvider::Name
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.IModelNameProvider
+
+.class /*02000018*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider
+{
+  .custom /*0C000081:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000066*/ public hidebysig newslot specialname abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool> 
+          get_PropertyFilter() cil managed
+  // SIG: 20 00 15 12 71 02 12 80 84 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method IPropertyFilterProvider::get_PropertyFilter
+
+  .property /*17000027*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool>
+          PropertyFilter()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool> Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/::get_PropertyFilter() /* 06000066 */
+  } // end of property IPropertyFilterProvider::PropertyFilter
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider
+
+.class /*02000019*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.IRequestPredicateProvider
+{
+  .custom /*0C000084:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000067*/ public hidebysig newslot specialname abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/,bool> 
+          get_RequestPredicate() cil managed
+  // SIG: 20 00 15 12 71 02 12 18 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method IRequestPredicateProvider::get_RequestPredicate
+
+  .property /*17000028*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/,bool>
+          RequestPredicate()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/,bool> Microsoft.AspNetCore.Mvc.ModelBinding.IRequestPredicateProvider/*02000019*/::get_RequestPredicate() /* 06000067 */
+  } // end of property IRequestPredicateProvider::RequestPredicate
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.IRequestPredicateProvider
+
+.class /*0200001A*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.IValueProvider
+{
+  .custom /*0C000086:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000068*/ public hidebysig newslot abstract virtual 
+          instance bool  ContainsPrefix(string prefix) cil managed
+  // SIG: 20 01 02 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method IValueProvider::ContainsPrefix
+
+  .method /*06000069*/ public hidebysig newslot abstract virtual 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/ 
+          GetValue(string key) cil managed
+  // SIG: 20 01 11 80 A8 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method IValueProvider::GetValue
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProvider
+
+.class /*0200001B*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.IValueProviderFactory
+{
+  .custom /*0C000089:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*0600006A*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task/*0100001B*/ 
+          CreateValueProviderAsync(class Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderFactoryContext/*02000029*/ context) cil managed
+  // SIG: 20 01 12 6D 12 80 A4
+  {
+    // Method begins at RVA 0x0
+  } // end of method IValueProviderFactory::CreateValueProviderAsync
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProviderFactory
+
+.class /*0200001C*/ public abstract auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderProviderContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00008B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00008C:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*0600006B*/ public hidebysig newslot abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinder/*02000014*/ 
+          CreateBinder(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ metadata) cil managed
+  // SIG: 20 01 12 50 12 80 84
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBinderProviderContext::CreateBinder
+
+  .method /*0600006C*/ public hidebysig newslot virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.IModelBinder/*02000014*/ 
+          CreateBinder(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ metadata,
+                       class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/ bindingInfo) cil managed
+  // SIG: 20 02 12 50 12 80 84 12 30
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBinderProviderContext::CreateBinder
+
+  .method /*0600006D*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/ 
+          get_BindingInfo() cil managed
+  // SIG: 20 00 12 30
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBinderProviderContext::get_BindingInfo
+
+  .method /*0600006E*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_Metadata() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBinderProviderContext::get_Metadata
+
+  .method /*0600006F*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/ 
+          get_MetadataProvider() cil managed
+  // SIG: 20 00 12 58
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBinderProviderContext::get_MetadataProvider
+
+  .method /*06000070*/ public hidebysig newslot specialname virtual 
+          instance class [System.ComponentModel/*23000004*/]System.IServiceProvider/*01000024*/ 
+          get_Services() cil managed
+  // SIG: 20 00 12 80 91
+  {
+    .custom /*0C000177:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBinderProviderContext::get_Services
+
+  .method /*06000071*/ family hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBinderProviderContext::.ctor
+
+  .property /*17000029*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/
+          BindingInfo()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderProviderContext/*0200001C*/::get_BindingInfo() /* 0600006D */
+  } // end of property ModelBinderProviderContext::BindingInfo
+  .property /*1700002A*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          Metadata()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderProviderContext/*0200001C*/::get_Metadata() /* 0600006E */
+  } // end of property ModelBinderProviderContext::Metadata
+  .property /*1700002B*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/
+          MetadataProvider()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderProviderContext/*0200001C*/::get_MetadataProvider() /* 0600006F */
+  } // end of property ModelBinderProviderContext::MetadataProvider
+  .property /*1700002C*/ instance callconv(8) class [System.ComponentModel/*23000004*/]System.IServiceProvider/*01000024*/
+          Services()
+  {
+    .get instance class [System.ComponentModel/*23000004*/]System.IServiceProvider/*01000024*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderProviderContext/*0200001C*/::get_Services() /* 06000070 */
+  } // end of property ModelBinderProviderContext::Services
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderProviderContext
+
+.class /*0200001D*/ public abstract auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00008E:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00008F:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .class /*02000086*/ sequential ansi sealed nested public beforefieldinit NestedScope
+         extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+         implements [System.Runtime/*23000001*/]System.IDisposable/*01000025*/
+  {
+    .custom /*0C0001A0:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
+    .custom /*0C0001A1:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+    .field /*04000037*/ private initonly class Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/ _context
+    .custom /*0C0000FA:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+    .method /*060002F0*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/ context) cil managed
+    // SIG: 20 01 01 12 74
+    {
+      .custom /*0C00033C:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method NestedScope::.ctor
+
+    .method /*060002F1*/ public hidebysig newslot virtual final 
+            instance void  Dispose() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method NestedScope::Dispose
+
+  } // end of class NestedScope
+
+  .method /*06000072*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ 
+          get_ActionContext() cil managed
+  // SIG: 20 00 12 18
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_ActionContext
+
+  .method /*06000073*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_ActionContext(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ 'value') cil managed
+  // SIG: 20 01 01 12 18
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_ActionContext
+
+  .method /*06000074*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_BinderModelName() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_BinderModelName
+
+  .method /*06000075*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_BinderModelName(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_BinderModelName
+
+  .method /*06000076*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ 
+          get_BindingSource() cil managed
+  // SIG: 20 00 12 34
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_BindingSource
+
+  .method /*06000077*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_BindingSource(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ 'value') cil managed
+  // SIG: 20 01 01 12 34
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_BindingSource
+
+  .method /*06000078*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_FieldName() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_FieldName
+
+  .method /*06000079*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_FieldName(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_FieldName
+
+  .method /*0600007A*/ public hidebysig newslot specialname virtual 
+          instance class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ 
+          get_HttpContext() cil managed
+  // SIG: 20 00 12 65
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingContext::get_HttpContext
+
+  .method /*0600007B*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_IsTopLevelObject() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_IsTopLevelObject
+
+  .method /*0600007C*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_IsTopLevelObject(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_IsTopLevelObject
+
+  .method /*0600007D*/ public hidebysig newslot specialname abstract virtual 
+          instance object  get_Model() cil managed
+  // SIG: 20 00 1C
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_Model
+
+  .method /*0600007E*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_Model(object 'value') cil managed
+  // SIG: 20 01 01 1C
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_Model
+
+  .method /*0600007F*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_ModelMetadata() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_ModelMetadata
+
+  .method /*06000080*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_ModelMetadata(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 84
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_ModelMetadata
+
+  .method /*06000081*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_ModelName() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_ModelName
+
+  .method /*06000082*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_ModelName(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_ModelName
+
+  .method /*06000083*/ public hidebysig specialname 
+          instance string  get_OriginalModelName() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C000199:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingContext::get_OriginalModelName
+
+  .method /*06000084*/ family hidebysig specialname 
+          instance void  set_OriginalModelName(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C00019C:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingContext::set_OriginalModelName
+
+  .method /*06000085*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ 
+          get_ModelState() cil managed
+  // SIG: 20 00 12 80 90
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_ModelState
+
+  .method /*06000086*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_ModelState(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 90
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_ModelState
+
+  .method /*06000087*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_ModelType() cil managed
+  // SIG: 20 00 12 61
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingContext::get_ModelType
+
+  .method /*06000088*/ public hidebysig newslot specialname abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool> 
+          get_PropertyFilter() cil managed
+  // SIG: 20 00 15 12 71 02 12 80 84 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_PropertyFilter
+
+  .method /*06000089*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_PropertyFilter(class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool> 'value') cil managed
+  // SIG: 20 01 01 15 12 71 02 12 80 84 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_PropertyFilter
+
+  .method /*0600008A*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/ 
+          get_ValidationState() cil managed
+  // SIG: 20 00 12 80 E4
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_ValidationState
+
+  .method /*0600008B*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_ValidationState(class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 E4
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_ValidationState
+
+  .method /*0600008C*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProvider/*0200001A*/ 
+          get_ValueProvider() cil managed
+  // SIG: 20 00 12 68
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_ValueProvider
+
+  .method /*0600008D*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_ValueProvider(class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProvider/*0200001A*/ 'value') cil managed
+  // SIG: 20 01 01 12 68
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_ValueProvider
+
+  .method /*0600008E*/ public hidebysig newslot specialname abstract virtual 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/ 
+          get_Result() cil managed
+  // SIG: 20 00 11 78
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::get_Result
+
+  .method /*0600008F*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_Result(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/ 'value') cil managed
+  // SIG: 20 01 01 11 78
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::set_Result
+
+  .method /*06000090*/ public hidebysig newslot abstract virtual 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*//NestedScope/*02000086*/ 
+          EnterNestedScope(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ modelMetadata,
+                           string fieldName,
+                           string modelName,
+                           object model) cil managed
+  // SIG: 20 04 11 82 18 12 80 84 0E 0E 1C
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::EnterNestedScope
+
+  .method /*06000091*/ public hidebysig newslot abstract virtual 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*//NestedScope/*02000086*/ 
+          EnterNestedScope() cil managed
+  // SIG: 20 00 11 82 18
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::EnterNestedScope
+
+  .method /*06000092*/ family hidebysig newslot abstract virtual 
+          instance void  ExitNestedScope() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelBindingContext::ExitNestedScope
+
+  .method /*06000093*/ family hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingContext::.ctor
+
+  .property /*1700002D*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/
+          ActionContext()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_ActionContext() /* 06000072 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_ActionContext(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/) /* 06000073 */
+  } // end of property ModelBindingContext::ActionContext
+  .property /*1700002E*/ instance callconv(8) string
+          BinderModelName()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_BinderModelName() /* 06000074 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_BinderModelName(string) /* 06000075 */
+  } // end of property ModelBindingContext::BinderModelName
+  .property /*1700002F*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/
+          BindingSource()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_BindingSource() /* 06000076 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_BindingSource(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/) /* 06000077 */
+  } // end of property ModelBindingContext::BindingSource
+  .property /*17000030*/ instance callconv(8) string
+          FieldName()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_FieldName() /* 06000078 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_FieldName(string) /* 06000079 */
+  } // end of property ModelBindingContext::FieldName
+  .property /*17000031*/ instance callconv(8) class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/
+          HttpContext()
+  {
+    .get instance class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_HttpContext() /* 0600007A */
+  } // end of property ModelBindingContext::HttpContext
+  .property /*17000032*/ instance callconv(8) bool
+          IsTopLevelObject()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_IsTopLevelObject() /* 0600007B */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_IsTopLevelObject(bool) /* 0600007C */
+  } // end of property ModelBindingContext::IsTopLevelObject
+  .property /*17000033*/ instance callconv(8) object
+          Model()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_Model() /* 0600007D */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_Model(object) /* 0600007E */
+  } // end of property ModelBindingContext::Model
+  .property /*17000034*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          ModelMetadata()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_ModelMetadata() /* 0600007F */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_ModelMetadata(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/) /* 06000080 */
+  } // end of property ModelBindingContext::ModelMetadata
+  .property /*17000035*/ instance callconv(8) string
+          ModelName()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_ModelName() /* 06000081 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_ModelName(string) /* 06000082 */
+  } // end of property ModelBindingContext::ModelName
+  .property /*17000036*/ instance callconv(8) string
+          OriginalModelName()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_OriginalModelName() /* 06000083 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_OriginalModelName(string) /* 06000084 */
+  } // end of property ModelBindingContext::OriginalModelName
+  .property /*17000037*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/
+          ModelState()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_ModelState() /* 06000085 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_ModelState(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/) /* 06000086 */
+  } // end of property ModelBindingContext::ModelState
+  .property /*17000038*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          ModelType()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_ModelType() /* 06000087 */
+  } // end of property ModelBindingContext::ModelType
+  .property /*17000039*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool>
+          PropertyFilter()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool> Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_PropertyFilter() /* 06000088 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_PropertyFilter(class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,bool>) /* 06000089 */
+  } // end of property ModelBindingContext::PropertyFilter
+  .property /*1700003A*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/
+          ValidationState()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_ValidationState() /* 0600008A */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_ValidationState(class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/) /* 0600008B */
+  } // end of property ModelBindingContext::ValidationState
+  .property /*1700003B*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProvider/*0200001A*/
+          ValueProvider()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProvider/*0200001A*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_ValueProvider() /* 0600008C */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_ValueProvider(class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProvider/*0200001A*/) /* 0600008D */
+  } // end of property ModelBindingContext::ValueProvider
+  .property /*1700003C*/ instance callconv(8) valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/
+          Result()
+  {
+    .get instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::get_Result() /* 0600008E */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext/*0200001D*/::set_Result(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/) /* 0600008F */
+  } // end of property ModelBindingContext::Result
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext
+
+.class /*0200001E*/ public sequential ansi sealed beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult
+       extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+       implements class [System.Runtime/*23000001*/]System.IEquatable`1/*0100001F*/<valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/>/*1B000002*/
+{
+  .custom /*0C000092:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C000093:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C000094:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.IEquatable`1/*0100001F*/<valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/>/*1B000002*/
+  .custom /*0C000039:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .field /*04000013*/ private initonly object '<Model>k__BackingField'
+  .custom /*0C000071:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .field /*04000014*/ private initonly bool '<IsModelSet>k__BackingField'
+  .custom /*0C000075:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .method /*06000094*/ public hidebysig static 
+          valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/ 
+          Failed() cil managed
+  // SIG: 00 00 11 78
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingResult::Failed
+
+  .method /*06000095*/ public hidebysig static 
+          valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/ 
+          Success(object model) cil managed
+  // SIG: 00 01 11 78 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingResult::Success
+
+  .method /*06000096*/ public hidebysig specialname 
+          instance object  get_Model() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C0001B6:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingResult::get_Model
+
+  .method /*06000097*/ public hidebysig specialname 
+          instance bool  get_IsModelSet() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0001B7:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingResult::get_IsModelSet
+
+  .method /*06000098*/ public hidebysig virtual 
+          instance bool  Equals(object obj) cil managed
+  // SIG: 20 01 02 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingResult::Equals
+
+  .method /*06000099*/ public hidebysig virtual 
+          instance int32  GetHashCode() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingResult::GetHashCode
+
+  .method /*0600009A*/ public hidebysig newslot virtual final 
+          instance bool  Equals(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/ other) cil managed
+  // SIG: 20 01 02 11 78
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingResult::Equals
+
+  .method /*0600009B*/ public hidebysig virtual 
+          instance string  ToString() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0001B8:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingResult::ToString
+
+  .method /*0600009C*/ public hidebysig specialname static 
+          bool  op_Equality(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/ x,
+                            valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/ y) cil managed
+  // SIG: 00 02 02 11 78 11 78
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingResult::op_Equality
+
+  .method /*0600009D*/ public hidebysig specialname static 
+          bool  op_Inequality(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/ x,
+                              valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/ y) cil managed
+  // SIG: 00 02 02 11 78 11 78
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingResult::op_Inequality
+
+  .property /*1700003D*/ instance callconv(8) object
+          Model()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/::get_Model() /* 06000096 */
+  } // end of property ModelBindingResult::Model
+  .property /*1700003E*/ instance callconv(8) bool
+          IsModelSet()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult/*0200001E*/::get_IsModelSet() /* 06000097 */
+  } // end of property ModelBindingResult::IsModelSet
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingResult
+
+.class /*0200001F*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ModelError
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000097:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000098:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*0600009E*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [System.Runtime/*23000001*/]System.Exception/*01000026*/ exception) cil managed
+  // SIG: 20 01 01 12 80 99
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelError::.ctor
+
+  .method /*0600009F*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [System.Runtime/*23000001*/]System.Exception/*01000026*/ exception,
+                               string errorMessage) cil managed
+  // SIG: 20 02 01 12 80 99 0E
+  {
+    .param [2]/*0800006E*/ 
+    .custom /*0C000173:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelError::.ctor
+
+  .method /*060000A0*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(string errorMessage) cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0001BA:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelError::.ctor
+
+  .method /*060000A1*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Exception/*01000026*/ 
+          get_Exception() cil managed
+  // SIG: 20 00 12 80 99
+  {
+    .custom /*0C0001BB:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0001BC:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelError::get_Exception
+
+  .method /*060000A2*/ public hidebysig specialname 
+          instance string  get_ErrorMessage() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0001BD:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelError::get_ErrorMessage
+
+  .property /*1700003F*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Exception/*01000026*/
+          Exception()
+  {
+    .custom /*0C000117:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Exception/*01000026*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelError/*0200001F*/::get_Exception() /* 060000A1 */
+  } // end of property ModelError::Exception
+  .property /*17000040*/ instance callconv(8) string
+          ErrorMessage()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelError/*0200001F*/::get_ErrorMessage() /* 060000A2 */
+  } // end of property ModelError::ErrorMessage
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ModelError
+
+.class /*02000020*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ModelErrorCollection
+       extends class [System.Runtime/*23000001*/]System.Collections.ObjectModel.Collection`1/*01000027*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelError/*0200001F*/>/*1B000003*/
+{
+  .custom /*0C00009B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00009C:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
+  .method /*060000A3*/ public hidebysig instance void 
+          Add(class [System.Runtime/*23000001*/]System.Exception/*01000026*/ exception) cil managed
+  // SIG: 20 01 01 12 80 99
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelErrorCollection::Add
+
+  .method /*060000A4*/ public hidebysig instance void 
+          Add(string errorMessage) cil managed
+  // SIG: 20 01 01 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelErrorCollection::Add
+
+  .method /*060000A5*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelErrorCollection::.ctor
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ModelErrorCollection
+
+.class /*02000021*/ public abstract auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+       implements class [System.Runtime/*23000001*/]System.IEquatable`1/*0100001F*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/>/*1B000004*/,
+                  Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/
+{
+  .custom /*0C00009F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000A0:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C0000A1:0A000014*/ instance void [System.Runtime/*23000001*/]System.Diagnostics.DebuggerDisplayAttribute/*0100001E*/::.ctor(string) /* 0A000014 */ = ( 01 00 17 7B 44 65 62 75 67 67 65 72 54 6F 53 74   // ...{DebuggerToSt
+                                                                                                                                                                    72 69 6E 67 28 29 2C 6E 71 7D 00 00 )             // ring(),nq}..
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.IEquatable`1/*0100001F*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/>/*1B000004*/
+  .custom /*0C00003E:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 00 02 00 00 ) 
+  .interfaceimpl type Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/
+  .custom /*0C000042:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .class /*02000087*/ auto ansi sealed nested private beforefieldinit '<>c__DisplayClass30_0'
+         extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+  {
+    .custom /*0C0001A2:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .field /*04000038*/ public class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ metadata
+    .custom /*0C0000FF:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .method /*060002F2*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method '<>c__DisplayClass30_0'::.ctor
+
+    .method /*060002F3*/ assembly hidebysig 
+            instance bool  '<get_BoundProperties>b__0'(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ p) cil managed
+    // SIG: 20 01 02 12 80 84
+    {
+      .custom /*0C00033D:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method '<>c__DisplayClass30_0'::'<get_BoundProperties>b__0'
+
+  } // end of class '<>c__DisplayClass30_0'
+
+  .class /*02000088*/ auto ansi sealed nested private beforefieldinit '<>c__DisplayClass147_0'
+         extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+  {
+    .custom /*0C0001A3:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .field /*04000039*/ public class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ parameter
+    .custom /*0C000104:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .method /*060002F4*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method '<>c__DisplayClass147_0'::.ctor
+
+    .method /*060002F5*/ assembly hidebysig 
+            instance bool  '<CalculateRecordTypeConstructorDetails>b__0'(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ p) cil managed
+    // SIG: 20 01 02 12 80 84
+    {
+      .custom /*0C00033E:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method '<>c__DisplayClass147_0'::'<CalculateRecordTypeConstructorDetails>b__0'
+
+  } // end of class '<>c__DisplayClass147_0'
+
+  .field /*04000015*/ public static initonly int32 DefaultOrder
+  .method /*060000A6*/ family hidebysig specialname rtspecialname 
+          instance void  .ctor(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/ identity) cil managed
+  // SIG: 20 01 01 11 80 F4
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::.ctor
+
+  .method /*060000A7*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_ContainerType() cil managed
+  // SIG: 20 00 12 61
+  {
+    .custom /*0C0001C1:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_ContainerType
+
+  .method /*060000A8*/ public hidebysig newslot specialname virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_ContainerMetadata() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_ContainerMetadata
+
+  .method /*060000A9*/ public hidebysig specialname 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataKind/*0200003E*/ 
+          get_MetadataKind() cil managed
+  // SIG: 20 00 11 80 F8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_MetadataKind
+
+  .method /*060000AA*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_ModelType() cil managed
+  // SIG: 20 00 12 61
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_ModelType
+
+  .method /*060000AB*/ public hidebysig specialname 
+          instance string  get_Name() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0001C4:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_Name
+
+  .method /*060000AC*/ public hidebysig specialname 
+          instance string  get_ParameterName() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0001C5:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_ParameterName
+
+  .method /*060000AD*/ public hidebysig specialname 
+          instance string  get_PropertyName() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0001C7:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_PropertyName
+
+  .method /*060000AE*/ famorassem hidebysig specialname 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/ 
+          get_Identity() cil managed
+  // SIG: 20 00 11 80 F4
+  {
+    .custom /*0C0001C8:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_Identity
+
+  .method /*060000AF*/ public hidebysig newslot specialname abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<object,object> 
+          get_AdditionalValues() cil managed
+  // SIG: 20 00 15 12 80 A1 02 1C 1C
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_AdditionalValues
+
+  .method /*060000B0*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelPropertyCollection/*02000023*/ 
+          get_Properties() cil managed
+  // SIG: 20 00 12 80 8C
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_Properties
+
+  .method /*060000B1*/ assembly hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/> 
+          get_BoundProperties() cil managed
+  // SIG: 20 00 15 12 80 A5 01 12 80 84
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_BoundProperties
+
+  .method /*060000B2*/ assembly hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/> 
+          get_BoundConstructorParameterMapping() cil managed
+  // SIG: 20 00 15 12 80 A1 02 12 80 84 12 80 84
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_BoundConstructorParameterMapping
+
+  .method /*060000B3*/ assembly hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/> 
+          get_BoundConstructorPropertyMapping() cil managed
+  // SIG: 20 00 15 12 80 A1 02 12 80 84 12 80 84
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_BoundConstructorPropertyMapping
+
+  .method /*060000B4*/ public hidebysig newslot specialname virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_BoundConstructor() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    .custom /*0C0001CA:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0001CB:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_BoundConstructor
+
+  .method /*060000B5*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/> 
+          get_BoundConstructorParameters() cil managed
+  // SIG: 20 00 15 12 80 A5 01 12 80 84
+  {
+    .custom /*0C0001CC:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .param [0]/*08000073*/ 
+    .custom /*0C000180:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_BoundConstructorParameters
+
+  .method /*060000B6*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_BinderModelName() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_BinderModelName
+
+  .method /*060000B7*/ public hidebysig newslot specialname abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_BinderType() cil managed
+  // SIG: 20 00 12 61
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_BinderType
+
+  .method /*060000B8*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ 
+          get_BindingSource() cil managed
+  // SIG: 20 00 12 34
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_BindingSource
+
+  .method /*060000B9*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_ConvertEmptyStringToNull() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_ConvertEmptyStringToNull
+
+  .method /*060000BA*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_DataTypeName() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_DataTypeName
+
+  .method /*060000BB*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_Description() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_Description
+
+  .method /*060000BC*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_DisplayFormatString() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_DisplayFormatString
+
+  .method /*060000BD*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_DisplayName() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_DisplayName
+
+  .method /*060000BE*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_EditFormatString() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_EditFormatString
+
+  .method /*060000BF*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_ElementMetadata() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    .custom /*0C0001CD:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_ElementMetadata
+
+  .method /*060000C0*/ public hidebysig newslot specialname abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EnumGroupAndName/*02000010*/,string>> 
+          get_EnumGroupedDisplayNamesAndValues() cil managed
+  // SIG: 20 00 15 12 75 01 15 11 80 A9 02 11 40 0E
+  {
+    .param [0]/*08000074*/ 
+    .custom /*0C000183:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 03 00 00 00 01 00 01 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_EnumGroupedDisplayNamesAndValues
+
+  .method /*060000C1*/ public hidebysig newslot specialname abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<string,string> 
+          get_EnumNamesAndValues() cil managed
+  // SIG: 20 00 15 12 80 A1 02 0E 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_EnumNamesAndValues
+
+  .method /*060000C2*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_HasNonDefaultEditFormat() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_HasNonDefaultEditFormat
+
+  .method /*060000C3*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_HtmlEncode() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_HtmlEncode
+
+  .method /*060000C4*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_HideSurroundingHtml() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_HideSurroundingHtml
+
+  .method /*060000C5*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_IsBindingAllowed() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_IsBindingAllowed
+
+  .method /*060000C6*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_IsBindingRequired() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_IsBindingRequired
+
+  .method /*060000C7*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_IsEnum() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_IsEnum
+
+  .method /*060000C8*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_IsFlagsEnum() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_IsFlagsEnum
+
+  .method /*060000C9*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_IsReadOnly() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_IsReadOnly
+
+  .method /*060000CA*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_IsRequired() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_IsRequired
+
+  .method /*060000CB*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/ 
+          get_ModelBindingMessageProvider() cil managed
+  // SIG: 20 00 12 80 F0
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_ModelBindingMessageProvider
+
+  .method /*060000CC*/ public hidebysig newslot specialname abstract virtual 
+          instance int32  get_Order() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_Order
+
+  .method /*060000CD*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_Placeholder() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_Placeholder
+
+  .method /*060000CE*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_NullDisplayText() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_NullDisplayText
+
+  .method /*060000CF*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/ 
+          get_PropertyFilterProvider() cil managed
+  // SIG: 20 00 12 60
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_PropertyFilterProvider
+
+  .method /*060000D0*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_ShowForDisplay() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_ShowForDisplay
+
+  .method /*060000D1*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_ShowForEdit() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_ShowForEdit
+
+  .method /*060000D2*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_SimpleDisplayProperty() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_SimpleDisplayProperty
+
+  .method /*060000D3*/ public hidebysig newslot specialname abstract virtual 
+          instance string  get_TemplateHint() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_TemplateHint
+
+  .method /*060000D4*/ public hidebysig newslot specialname virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IPropertyValidationFilter/*02000032*/ 
+          get_PropertyValidationFilter() cil managed
+  // SIG: 20 00 12 80 C8
+  {
+    .custom /*0C0001CF:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_PropertyValidationFilter
+
+  .method /*060000D5*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_ValidateChildren() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_ValidateChildren
+
+  .method /*060000D6*/ public hidebysig newslot specialname virtual 
+          instance valuetype [System.Runtime/*23000001*/]System.Nullable`1/*0100002B*/<bool> 
+          get_HasValidators() cil managed
+  // SIG: 20 00 15 11 80 AD 01 02
+  {
+    .custom /*0C0001D0:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_HasValidators
+
+  .method /*060000D7*/ public hidebysig newslot specialname abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<object> 
+          get_ValidatorMetadata() cil managed
+  // SIG: 20 00 15 12 80 A5 01 1C
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_ValidatorMetadata
+
+  .method /*060000D8*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_ElementType() cil managed
+  // SIG: 20 00 12 61
+  {
+    .custom /*0C0001D3:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0001D4:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_ElementType
+
+  .method /*060000D9*/ public hidebysig specialname 
+          instance bool  get_IsComplexType() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0001D5:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_IsComplexType
+
+  .method /*060000DA*/ public hidebysig specialname 
+          instance bool  get_IsNullableValueType() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0001D6:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_IsNullableValueType
+
+  .method /*060000DB*/ public hidebysig specialname 
+          instance bool  get_IsCollectionType() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0001D7:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_IsCollectionType
+
+  .method /*060000DC*/ public hidebysig specialname 
+          instance bool  get_IsEnumerableType() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0001D8:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_IsEnumerableType
+
+  .method /*060000DD*/ public hidebysig specialname 
+          instance bool  get_IsReferenceOrNullableType() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0001D9:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_IsReferenceOrNullableType
+
+  .method /*060000DE*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_UnderlyingOrModelType() cil managed
+  // SIG: 20 00 12 61
+  {
+    .custom /*0C0001DA:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_UnderlyingOrModelType
+
+  .method /*060000DF*/ public hidebysig newslot specialname abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<object,object> 
+          get_PropertyGetter() cil managed
+  // SIG: 20 00 15 12 71 02 1C 1C
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_PropertyGetter
+
+  .method /*060000E0*/ public hidebysig newslot specialname abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Action`2/*0100002C*/<object,object> 
+          get_PropertySetter() cil managed
+  // SIG: 20 00 15 12 80 B1 02 1C 1C
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadata::get_PropertySetter
+
+  .method /*060000E1*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<object[],object> 
+          get_BoundConstructorInvoker() cil managed
+  // SIG: 20 00 15 12 71 02 1D 1C 1C
+  {
+    .param [0]/*08000075*/ 
+    .custom /*0C000187:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 02 01 01 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_BoundConstructorInvoker
+
+  .method /*060000E2*/ assembly hidebysig newslot specialname strict virtual 
+          instance bool  get_PropertyHasValidators() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::get_PropertyHasValidators
+
+  .method /*060000E3*/ assembly hidebysig 
+          instance void  ThrowIfRecordTypeHasValidationOnProperties() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::ThrowIfRecordTypeHasValidationOnProperties
+
+  .method /*060000E4*/ public hidebysig instance string 
+          GetDisplayName() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::GetDisplayName
+
+  .method /*060000E5*/ public hidebysig newslot virtual final 
+          instance bool  Equals(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ other) cil managed
+  // SIG: 20 01 02 12 80 84
+  {
+    .custom /*0C0001DF:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::Equals
+
+  .method /*060000E6*/ public hidebysig virtual 
+          instance bool  Equals(object obj) cil managed
+  // SIG: 20 01 02 1C
+  {
+    .custom /*0C0001E0:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::Equals
+
+  .method /*060000E7*/ public hidebysig virtual 
+          instance int32  GetHashCode() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::GetHashCode
+
+  .method /*060000E8*/ public hidebysig newslot virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          GetMetadataForType(class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType) cil managed
+  // SIG: 20 01 12 80 84 12 61
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::GetMetadataForType
+
+  .method /*060000E9*/ public hidebysig newslot virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/> 
+          GetMetadataForProperties(class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType) cil managed
+  // SIG: 20 01 15 12 75 01 12 80 84 12 61
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadata::GetMetadataForProperties
+
+  .property /*17000041*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          ContainerType()
+  {
+    .custom /*0C00011A:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_ContainerType() /* 060000A7 */
+  } // end of property ModelMetadata::ContainerType
+  .property /*17000042*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          ContainerMetadata()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_ContainerMetadata() /* 060000A8 */
+  } // end of property ModelMetadata::ContainerMetadata
+  .property /*17000043*/ instance callconv(8) valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataKind/*0200003E*/
+          MetadataKind()
+  {
+    .get instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataKind/*0200003E*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_MetadataKind() /* 060000A9 */
+  } // end of property ModelMetadata::MetadataKind
+  .property /*17000044*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          ModelType()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_ModelType() /* 060000AA */
+  } // end of property ModelMetadata::ModelType
+  .property /*17000045*/ instance callconv(8) string
+          Name()
+  {
+    .custom /*0C000126:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_Name() /* 060000AB */
+  } // end of property ModelMetadata::Name
+  .property /*17000046*/ instance callconv(8) string
+          ParameterName()
+  {
+    .custom /*0C000129:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_ParameterName() /* 060000AC */
+  } // end of property ModelMetadata::ParameterName
+  .property /*17000047*/ instance callconv(8) string
+          PropertyName()
+  {
+    .custom /*0C00012D:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_PropertyName() /* 060000AD */
+  } // end of property ModelMetadata::PropertyName
+  .property /*17000048*/ instance callconv(8) valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/
+          Identity()
+  {
+    .get instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_Identity() /* 060000AE */
+  } // end of property ModelMetadata::Identity
+  .property /*17000049*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<object,object>
+          AdditionalValues()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<object,object> Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_AdditionalValues() /* 060000AF */
+  } // end of property ModelMetadata::AdditionalValues
+  .property /*1700004A*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelPropertyCollection/*02000023*/
+          Properties()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelPropertyCollection/*02000023*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_Properties() /* 060000B0 */
+  } // end of property ModelMetadata::Properties
+  .property /*1700004B*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/>
+          BoundProperties()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/> Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_BoundProperties() /* 060000B1 */
+  } // end of property ModelMetadata::BoundProperties
+  .property /*1700004C*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/>
+          BoundConstructorParameterMapping()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/> Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_BoundConstructorParameterMapping() /* 060000B2 */
+  } // end of property ModelMetadata::BoundConstructorParameterMapping
+  .property /*1700004D*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/>
+          BoundConstructorPropertyMapping()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/> Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_BoundConstructorPropertyMapping() /* 060000B3 */
+  } // end of property ModelMetadata::BoundConstructorPropertyMapping
+  .property /*1700004E*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          BoundConstructor()
+  {
+    .custom /*0C000145:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_BoundConstructor() /* 060000B4 */
+  } // end of property ModelMetadata::BoundConstructor
+  .property /*1700004F*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/>
+          BoundConstructorParameters()
+  {
+    .custom /*0C00014B:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/> Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_BoundConstructorParameters() /* 060000B5 */
+  } // end of property ModelMetadata::BoundConstructorParameters
+  .property /*17000050*/ instance callconv(8) string
+          BinderModelName()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_BinderModelName() /* 060000B6 */
+  } // end of property ModelMetadata::BinderModelName
+  .property /*17000051*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          BinderType()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_BinderType() /* 060000B7 */
+  } // end of property ModelMetadata::BinderType
+  .property /*17000052*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/
+          BindingSource()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_BindingSource() /* 060000B8 */
+  } // end of property ModelMetadata::BindingSource
+  .property /*17000053*/ instance callconv(8) bool
+          ConvertEmptyStringToNull()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_ConvertEmptyStringToNull() /* 060000B9 */
+  } // end of property ModelMetadata::ConvertEmptyStringToNull
+  .property /*17000054*/ instance callconv(8) string
+          DataTypeName()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_DataTypeName() /* 060000BA */
+  } // end of property ModelMetadata::DataTypeName
+  .property /*17000055*/ instance callconv(8) string
+          Description()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_Description() /* 060000BB */
+  } // end of property ModelMetadata::Description
+  .property /*17000056*/ instance callconv(8) string
+          DisplayFormatString()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_DisplayFormatString() /* 060000BC */
+  } // end of property ModelMetadata::DisplayFormatString
+  .property /*17000057*/ instance callconv(8) string
+          DisplayName()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_DisplayName() /* 060000BD */
+  } // end of property ModelMetadata::DisplayName
+  .property /*17000058*/ instance callconv(8) string
+          EditFormatString()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_EditFormatString() /* 060000BE */
+  } // end of property ModelMetadata::EditFormatString
+  .property /*17000059*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          ElementMetadata()
+  {
+    .custom /*0C000159:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_ElementMetadata() /* 060000BF */
+  } // end of property ModelMetadata::ElementMetadata
+  .property /*1700005A*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EnumGroupAndName/*02000010*/,string>>
+          EnumGroupedDisplayNamesAndValues()
+  {
+    .custom /*0C00015A:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 03 00 00 00 01 00 01 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<valuetype Microsoft.AspNetCore.Mvc.ModelBinding.EnumGroupAndName/*02000010*/,string>> Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_EnumGroupedDisplayNamesAndValues() /* 060000C0 */
+  } // end of property ModelMetadata::EnumGroupedDisplayNamesAndValues
+  .property /*1700005B*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<string,string>
+          EnumNamesAndValues()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<string,string> Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_EnumNamesAndValues() /* 060000C1 */
+  } // end of property ModelMetadata::EnumNamesAndValues
+  .property /*1700005C*/ instance callconv(8) bool
+          HasNonDefaultEditFormat()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_HasNonDefaultEditFormat() /* 060000C2 */
+  } // end of property ModelMetadata::HasNonDefaultEditFormat
+  .property /*1700005D*/ instance callconv(8) bool
+          HtmlEncode()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_HtmlEncode() /* 060000C3 */
+  } // end of property ModelMetadata::HtmlEncode
+  .property /*1700005E*/ instance callconv(8) bool
+          HideSurroundingHtml()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_HideSurroundingHtml() /* 060000C4 */
+  } // end of property ModelMetadata::HideSurroundingHtml
+  .property /*1700005F*/ instance callconv(8) bool
+          IsBindingAllowed()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_IsBindingAllowed() /* 060000C5 */
+  } // end of property ModelMetadata::IsBindingAllowed
+  .property /*17000060*/ instance callconv(8) bool
+          IsBindingRequired()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_IsBindingRequired() /* 060000C6 */
+  } // end of property ModelMetadata::IsBindingRequired
+  .property /*17000061*/ instance callconv(8) bool
+          IsEnum()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_IsEnum() /* 060000C7 */
+  } // end of property ModelMetadata::IsEnum
+  .property /*17000062*/ instance callconv(8) bool
+          IsFlagsEnum()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_IsFlagsEnum() /* 060000C8 */
+  } // end of property ModelMetadata::IsFlagsEnum
+  .property /*17000063*/ instance callconv(8) bool
+          IsReadOnly()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_IsReadOnly() /* 060000C9 */
+  } // end of property ModelMetadata::IsReadOnly
+  .property /*17000064*/ instance callconv(8) bool
+          IsRequired()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_IsRequired() /* 060000CA */
+  } // end of property ModelMetadata::IsRequired
+  .property /*17000065*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/
+          ModelBindingMessageProvider()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_ModelBindingMessageProvider() /* 060000CB */
+  } // end of property ModelMetadata::ModelBindingMessageProvider
+  .property /*17000066*/ instance callconv(8) int32
+          Order()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_Order() /* 060000CC */
+  } // end of property ModelMetadata::Order
+  .property /*17000067*/ instance callconv(8) string
+          Placeholder()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_Placeholder() /* 060000CD */
+  } // end of property ModelMetadata::Placeholder
+  .property /*17000068*/ instance callconv(8) string
+          NullDisplayText()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_NullDisplayText() /* 060000CE */
+  } // end of property ModelMetadata::NullDisplayText
+  .property /*17000069*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/
+          PropertyFilterProvider()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.IPropertyFilterProvider/*02000018*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_PropertyFilterProvider() /* 060000CF */
+  } // end of property ModelMetadata::PropertyFilterProvider
+  .property /*1700006A*/ instance callconv(8) bool
+          ShowForDisplay()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_ShowForDisplay() /* 060000D0 */
+  } // end of property ModelMetadata::ShowForDisplay
+  .property /*1700006B*/ instance callconv(8) bool
+          ShowForEdit()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_ShowForEdit() /* 060000D1 */
+  } // end of property ModelMetadata::ShowForEdit
+  .property /*1700006C*/ instance callconv(8) string
+          SimpleDisplayProperty()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_SimpleDisplayProperty() /* 060000D2 */
+  } // end of property ModelMetadata::SimpleDisplayProperty
+  .property /*1700006D*/ instance callconv(8) string
+          TemplateHint()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_TemplateHint() /* 060000D3 */
+  } // end of property ModelMetadata::TemplateHint
+  .property /*1700006E*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IPropertyValidationFilter/*02000032*/
+          PropertyValidationFilter()
+  {
+    .custom /*0C000174:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IPropertyValidationFilter/*02000032*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_PropertyValidationFilter() /* 060000D4 */
+  } // end of property ModelMetadata::PropertyValidationFilter
+  .property /*1700006F*/ instance callconv(8) bool
+          ValidateChildren()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_ValidateChildren() /* 060000D5 */
+  } // end of property ModelMetadata::ValidateChildren
+  .property /*17000070*/ instance callconv(8) valuetype [System.Runtime/*23000001*/]System.Nullable`1/*0100002B*/<bool>
+          HasValidators()
+  {
+    .get instance valuetype [System.Runtime/*23000001*/]System.Nullable`1/*0100002B*/<bool> Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_HasValidators() /* 060000D6 */
+  } // end of property ModelMetadata::HasValidators
+  .property /*17000071*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<object>
+          ValidatorMetadata()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<object> Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_ValidatorMetadata() /* 060000D7 */
+  } // end of property ModelMetadata::ValidatorMetadata
+  .property /*17000072*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          ElementType()
+  {
+    .custom /*0C00017D:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_ElementType() /* 060000D8 */
+  } // end of property ModelMetadata::ElementType
+  .property /*17000073*/ instance callconv(8) bool
+          IsComplexType()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_IsComplexType() /* 060000D9 */
+  } // end of property ModelMetadata::IsComplexType
+  .property /*17000074*/ instance callconv(8) bool
+          IsNullableValueType()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_IsNullableValueType() /* 060000DA */
+  } // end of property ModelMetadata::IsNullableValueType
+  .property /*17000075*/ instance callconv(8) bool
+          IsCollectionType()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_IsCollectionType() /* 060000DB */
+  } // end of property ModelMetadata::IsCollectionType
+  .property /*17000076*/ instance callconv(8) bool
+          IsEnumerableType()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_IsEnumerableType() /* 060000DC */
+  } // end of property ModelMetadata::IsEnumerableType
+  .property /*17000077*/ instance callconv(8) bool
+          IsReferenceOrNullableType()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_IsReferenceOrNullableType() /* 060000DD */
+  } // end of property ModelMetadata::IsReferenceOrNullableType
+  .property /*17000078*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          UnderlyingOrModelType()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_UnderlyingOrModelType() /* 060000DE */
+  } // end of property ModelMetadata::UnderlyingOrModelType
+  .property /*17000079*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<object,object>
+          PropertyGetter()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<object,object> Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_PropertyGetter() /* 060000DF */
+  } // end of property ModelMetadata::PropertyGetter
+  .property /*1700007A*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Action`2/*0100002C*/<object,object>
+          PropertySetter()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Action`2/*0100002C*/<object,object> Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_PropertySetter() /* 060000E0 */
+  } // end of property ModelMetadata::PropertySetter
+  .property /*1700007B*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<object[],object>
+          BoundConstructorInvoker()
+  {
+    .custom /*0C00018E:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 02 01 01 01 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<object[],object> Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_BoundConstructorInvoker() /* 060000E1 */
+  } // end of property ModelMetadata::BoundConstructorInvoker
+  .property /*1700007C*/ instance callconv(8) bool
+          PropertyHasValidators()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/::get_PropertyHasValidators() /* 060000E2 */
+  } // end of property ModelMetadata::PropertyHasValidators
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata
+
+.class /*02000022*/ public abstract auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadataProvider
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+       implements Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/
+{
+  .custom /*0C0000A3:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000A4:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .interfaceimpl type Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/
+  .custom /*0C000046:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060000EA*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/> 
+          GetMetadataForProperties(class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType) cil managed
+  // SIG: 20 01 15 12 75 01 12 80 84 12 61
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadataProvider::GetMetadataForProperties
+
+  .method /*060000EB*/ public hidebysig newslot abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          GetMetadataForType(class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType) cil managed
+  // SIG: 20 01 12 80 84 12 61
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadataProvider::GetMetadataForType
+
+  .method /*060000EC*/ public hidebysig newslot abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          GetMetadataForParameter(class [System.Runtime/*23000001*/]System.Reflection.ParameterInfo/*0100002D*/ parameter) cil managed
+  // SIG: 20 01 12 80 84 12 80 B5
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelMetadataProvider::GetMetadataForParameter
+
+  .method /*060000ED*/ public hidebysig newslot virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          GetMetadataForParameter(class [System.Runtime/*23000001*/]System.Reflection.ParameterInfo/*0100002D*/ parameter,
+                                  class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType) cil managed
+  // SIG: 20 02 12 80 84 12 80 B5 12 61
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataProvider::GetMetadataForParameter
+
+  .method /*060000EE*/ public hidebysig newslot virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          GetMetadataForProperty(class [System.Runtime/*23000001*/]System.Reflection.PropertyInfo/*0100002E*/ propertyInfo,
+                                 class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType) cil managed
+  // SIG: 20 02 12 80 84 12 80 B9 12 61
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataProvider::GetMetadataForProperty
+
+  .method /*060000EF*/ public hidebysig newslot virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          GetMetadataForConstructor(class [System.Runtime/*23000001*/]System.Reflection.ConstructorInfo/*0100002F*/ constructor,
+                                    class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType) cil managed
+  // SIG: 20 02 12 80 84 12 80 BD 12 61
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataProvider::GetMetadataForConstructor
+
+  .method /*060000F0*/ family hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataProvider::.ctor
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadataProvider
+
+.class /*02000023*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ModelPropertyCollection
+       extends class [System.Runtime/*23000001*/]System.Collections.ObjectModel.ReadOnlyCollection`1/*01000031*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/>/*1B000005*/
+{
+  .custom /*0C0000A7:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000A8:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
+  .custom /*0C0000A9:0A000016*/ instance void [System.Runtime/*23000001*/]System.Reflection.DefaultMemberAttribute/*01000030*/::.ctor(string) /* 0A000016 */ = ( 01 00 04 49 74 65 6D 00 00 )                      // ...Item..
+  .method /*060000F1*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/> properties) cil managed
+  // SIG: 20 01 01 15 12 75 01 12 80 84
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelPropertyCollection::.ctor
+
+  .method /*060000F2*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_Item(string propertyName) cil managed
+  // SIG: 20 01 12 80 84 0E
+  {
+    .param [0]/*08000084*/ 
+    .custom /*0C00019E:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelPropertyCollection::get_Item
+
+  .property /*1700007D*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          Item(string)
+  {
+    .custom /*0C000193:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelPropertyCollection/*02000023*/::get_Item(string) /* 060000F2 */
+  } // end of property ModelPropertyCollection::Item
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ModelPropertyCollection
+
+.class /*02000024*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+       implements class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>/*1B000006*/,
+                  class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>>/*1B000007*/,
+                  [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/,
+                  class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyCollection`1/*01000035*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>>/*1B000008*/
+{
+  .custom /*0C0000AD:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000AE:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C0000AF:0A000016*/ instance void [System.Runtime/*23000001*/]System.Reflection.DefaultMemberAttribute/*01000030*/::.ctor(string) /* 0A000016 */ = ( 01 00 04 49 74 65 6D 00 00 )                      // ...Item..
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>/*1B000006*/
+  .custom /*0C00004A:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 03 00 00 00 00 01 01 00 00 ) 
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>>/*1B000007*/
+  .custom /*0C00004C:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 00 00 01 01 00 00 ) 
+  .interfaceimpl type [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/
+  .custom /*0C00004F:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyCollection`1/*01000035*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>>/*1B000008*/
+  .custom /*0C000053:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 00 00 01 01 00 00 ) 
+  .class /*02000089*/ sequential ansi sealed nested private beforefieldinit MatchResult
+         extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+  {
+    .custom /*0C0001A4:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
+    .field /*0400003A*/ public valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//Delimiter/*0200008A*/ Type
+    .field /*0400003B*/ public int32 Index
+  } // end of class MatchResult
+
+  .class /*0200008A*/ auto ansi sealed nested private Delimiter
+         extends [System.Runtime/*23000001*/]System.Enum/*01000020*/
+  {
+    .custom /*0C0001A5:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
+    .field /*0400003C*/ public specialname rtspecialname int32 value__
+    .field /*0400003D*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//Delimiter/*0200008A*/ None = int32(0x00000000)
+    .field /*0400003E*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//Delimiter/*0200008A*/ Dot = int32(0x00000001)
+    .field /*0400003F*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//Delimiter/*0200008A*/ OpenBracket = int32(0x00000002)
+  } // end of class Delimiter
+
+  .class /*0200008B*/ auto ansi nested private beforefieldinit ModelStateNode
+         extends Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/
+  {
+    .custom /*0C0001A6:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .custom /*0C0001A7:0A000014*/ instance void [System.Runtime/*23000001*/]System.Diagnostics.DebuggerDisplayAttribute/*0100001E*/::.ctor(string) /* 0A000014 */ = ( 01 00 3D 53 75 62 4B 65 79 3D 7B 53 75 62 4B 65   // ..=SubKey={SubKe
+                                                                                                                                                                      79 7D 2C 20 4B 65 79 3D 7B 4B 65 79 7D 2C 20 56   // y}, Key={Key}, V
+                                                                                                                                                                      61 6C 69 64 61 74 69 6F 6E 53 74 61 74 65 3D 7B   // alidationState={
+                                                                                                                                                                      56 61 6C 69 64 61 74 69 6F 6E 53 74 61 74 65 7D   // ValidationState}
+                                                                                                                                                                      00 00 ) 
+    .method /*060002F6*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor(valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringSegment/*01000037*/ subKey) cil managed
+    // SIG: 20 01 01 11 80 DD
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::.ctor
+
+    .method /*060002F7*/ public hidebysig specialname 
+            instance class [System.Collections/*23000006*/]System.Collections.Generic.List`1/*01000038*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/> 
+            get_ChildNodes() cil managed
+    // SIG: 20 00 15 12 80 E1 01 12 82 2C
+    {
+      .custom /*0C00033F:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+      .param [0]/*080001EB*/ 
+      .custom /*0C000281:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::get_ChildNodes
+
+    .method /*060002F8*/ public hidebysig specialname 
+            instance void  set_ChildNodes(class [System.Collections/*23000006*/]System.Collections.Generic.List`1/*01000038*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/> 'value') cil managed
+    // SIG: 20 01 01 15 12 80 E1 01 12 82 2C
+    {
+      .custom /*0C000340:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+      .param [1]/*080001EC*/ 
+      .custom /*0C000282:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::set_ChildNodes
+
+    .method /*060002F9*/ public hidebysig specialname virtual 
+            instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/> 
+            get_Children() cil managed
+    // SIG: 20 00 15 12 80 A5 01 12 80 94
+    {
+      .param [0]/*080001ED*/ 
+      .custom /*0C000284:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::get_Children
+
+    .method /*060002FA*/ public hidebysig specialname 
+            instance string  get_Key() cil managed
+    // SIG: 20 00 0E
+    {
+      .custom /*0C000341:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::get_Key
+
+    .method /*060002FB*/ public hidebysig specialname 
+            instance void  set_Key(string 'value') cil managed
+    // SIG: 20 01 01 0E
+    {
+      .custom /*0C000342:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::set_Key
+
+    .method /*060002FC*/ public hidebysig specialname 
+            instance valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringSegment/*01000037*/ 
+            get_SubKey() cil managed
+    // SIG: 20 00 11 80 DD
+    {
+      .custom /*0C000343:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::get_SubKey
+
+    .method /*060002FD*/ public hidebysig specialname virtual 
+            instance bool  get_IsContainerNode() cil managed
+    // SIG: 20 00 02
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::get_IsContainerNode
+
+    .method /*060002FE*/ public hidebysig 
+            instance void  MarkNonContainerNode() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::MarkNonContainerNode
+
+    .method /*060002FF*/ public hidebysig 
+            instance void  Copy(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/ entry) cil managed
+    // SIG: 20 01 01 12 80 94
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::Copy
+
+    .method /*06000300*/ public hidebysig 
+            instance void  Reset() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::Reset
+
+    .method /*06000301*/ public hidebysig 
+            instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/ 
+            GetNode(valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringSegment/*01000037*/ subKey) cil managed aggressiveinlining
+    // SIG: 20 01 12 82 2C 11 80 DD
+    {
+      .custom /*0C000344:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::GetNode
+
+    .method /*06000302*/ public hidebysig 
+            instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/ 
+            GetOrAddNode(valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringSegment/*01000037*/ subKey) cil managed aggressiveinlining
+    // SIG: 20 01 12 82 2C 11 80 DD
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::GetOrAddNode
+
+    .method /*06000303*/ public hidebysig virtual 
+            instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/ 
+            GetModelStateForProperty(string propertyName) cil managed
+    // SIG: 20 01 12 80 94 0E
+    {
+      .param [0]/*080001F2*/ 
+      .custom /*0C000289:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ModelStateNode::GetModelStateForProperty
+
+    .property /*17000160*/ instance callconv(8) class [System.Collections/*23000006*/]System.Collections.Generic.List`1/*01000038*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/>
+            ChildNodes()
+    {
+      .custom /*0C000221:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+      .get instance class [System.Collections/*23000006*/]System.Collections.Generic.List`1/*01000038*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/> Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/::get_ChildNodes() /* 060002F7 */
+      .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/::set_ChildNodes(class [System.Collections/*23000006*/]System.Collections.Generic.List`1/*01000038*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/>) /* 060002F8 */
+    } // end of property ModelStateNode::ChildNodes
+    .property /*17000161*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>
+            Children()
+    {
+      .custom /*0C000222:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+      .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/> Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/::get_Children() /* 060002F9 */
+    } // end of property ModelStateNode::Children
+    .property /*17000162*/ instance callconv(8) string
+            Key()
+    {
+      .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/::get_Key() /* 060002FA */
+      .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/::set_Key(string) /* 060002FB */
+    } // end of property ModelStateNode::Key
+    .property /*17000163*/ instance callconv(8) valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringSegment/*01000037*/
+            SubKey()
+    {
+      .get instance valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringSegment/*01000037*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/::get_SubKey() /* 060002FC */
+    } // end of property ModelStateNode::SubKey
+    .property /*17000164*/ instance callconv(8) bool
+            IsContainerNode()
+    {
+      .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/::get_IsContainerNode() /* 060002FD */
+    } // end of property ModelStateNode::IsContainerNode
+  } // end of class ModelStateNode
+
+  .class /*0200008C*/ sequential ansi sealed nested public beforefieldinit PrefixEnumerable
+         extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+         implements class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>>/*1B000007*/,
+                    [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/
+  {
+    .custom /*0C0001A8:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .custom /*0C0001A9:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+    .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>>/*1B000007*/
+    .custom /*0C0000C6:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 00 00 01 01 00 00 ) 
+    .interfaceimpl type [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/
+    .custom /*0C0000CA:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .field /*04000040*/ private initonly class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ _dictionary
+    .field /*04000041*/ private initonly string _prefix
+    .method /*06000304*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ dictionary,
+                                 string prefix) cil managed
+    // SIG: 20 02 01 12 80 90 0E
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method PrefixEnumerable::.ctor
+
+    .method /*06000305*/ public hidebysig 
+            instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//Enumerator/*0200008D*/ 
+            GetEnumerator() cil managed
+    // SIG: 20 00 11 82 34
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method PrefixEnumerable::GetEnumerator
+
+    .method /*06000306*/ private hidebysig newslot virtual final 
+            instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>> 
+            'System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>>.GetEnumerator'() cil managed
+    // SIG: 20 00 15 12 80 C9 01 15 11 80 A9 02 0E 12 80 94
+    {
+      .param [0]/*080001F6*/ 
+      .custom /*0C00028B:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 01 00 01 01 00 00 ) 
+      .override  method instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<!0> class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>>/*1B000007*/::GetEnumerator() /* 0A000019 */
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method PrefixEnumerable::'System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>>.GetEnumerator'
+
+    .method /*06000307*/ private hidebysig newslot virtual final 
+            instance class [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/ 
+            System.Collections.IEnumerable.GetEnumerator() cil managed
+    // SIG: 20 00 12 80 D1
+    {
+      .override [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/::GetEnumerator /*01000033::0A00001A*/ 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method PrefixEnumerable::System.Collections.IEnumerable.GetEnumerator
+
+  } // end of class PrefixEnumerable
+
+  .class /*0200008D*/ sequential ansi sealed nested public beforefieldinit Enumerator
+         extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+         implements class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>>/*1B000009*/,
+                    [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/,
+                    [System.Runtime/*23000001*/]System.IDisposable/*01000025*/
+  {
+    .custom /*0C0001AB:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>>/*1B000009*/
+    .custom /*0C0000CE:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 00 00 01 01 00 00 ) 
+    .interfaceimpl type [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/
+    .custom /*0C0000D3:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .interfaceimpl type [System.Runtime/*23000001*/]System.IDisposable/*01000025*/
+    .custom /*0C0000D7:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .field /*04000042*/ private initonly class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/ _rootNode
+    .custom /*0C00011B:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .field /*04000043*/ private class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/ _modelStateNode
+    .field /*04000044*/ private class [System.Collections/*23000006*/]System.Collections.Generic.List`1/*01000038*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ModelStateNode/*0200008B*/> _nodes
+    .custom /*0C000122:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    .field /*04000045*/ private int32 _index
+    .field /*04000046*/ private bool _visitedRoot
+    .method /*06000308*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ dictionary,
+                                 string prefix) cil managed
+    // SIG: 20 02 01 12 80 90 0E
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method Enumerator::.ctor
+
+    .method /*06000309*/ public hidebysig newslot specialname virtual final 
+            instance valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/> 
+            get_Current() cil managed
+    // SIG: 20 00 15 11 80 A9 02 0E 12 80 94
+    {
+      .param [0]/*080001F9*/ 
+      .custom /*0C00028F:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 03 00 00 00 00 01 01 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method Enumerator::get_Current
+
+    .method /*0600030A*/ private hidebysig newslot specialname virtual final 
+            instance object  System.Collections.IEnumerator.get_Current() cil managed
+    // SIG: 20 00 1C
+    {
+      .override [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/::get_Current /*01000034::0A00001C*/ 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method Enumerator::System.Collections.IEnumerator.get_Current
+
+    .method /*0600030B*/ public hidebysig newslot virtual final 
+            instance void  Dispose() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method Enumerator::Dispose
+
+    .method /*0600030C*/ public hidebysig newslot virtual final 
+            instance bool  MoveNext() cil managed
+    // SIG: 20 00 02
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method Enumerator::MoveNext
+
+    .method /*0600030D*/ public hidebysig newslot virtual final 
+            instance void  Reset() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method Enumerator::Reset
+
+    .property /*17000165*/ instance callconv(8) valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>
+            Current()
+    {
+      .custom /*0C000223:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 03 00 00 00 00 01 01 00 00 ) 
+      .get instance valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/> Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//Enumerator/*0200008D*/::get_Current() /* 06000309 */
+    } // end of property Enumerator::Current
+    .property /*17000166*/ instance callconv(8) object
+            System.Collections.IEnumerator.Current()
+    {
+      .get instance object Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//Enumerator/*0200008D*/::System.Collections.IEnumerator.get_Current() /* 0600030A */
+    } // end of property Enumerator::System.Collections.IEnumerator.Current
+  } // end of class Enumerator
+
+  .class /*0200008E*/ sequential ansi sealed nested public beforefieldinit KeyEnumerable
+         extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+         implements class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<string>/*1B00000A*/,
+                    [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/
+  {
+    .custom /*0C0001AC:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .custom /*0C0001AD:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+    .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<string>/*1B00000A*/
+    .custom /*0C0000D9:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
+    .interfaceimpl type [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/
+    .custom /*0C0000DD:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .field /*04000047*/ private initonly class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ _dictionary
+    .method /*0600030E*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ dictionary) cil managed
+    // SIG: 20 01 01 12 80 90
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method KeyEnumerable::.ctor
+
+    .method /*0600030F*/ public hidebysig 
+            instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//KeyEnumerator/*0200008F*/ 
+            GetEnumerator() cil managed
+    // SIG: 20 00 11 82 3C
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method KeyEnumerable::GetEnumerator
+
+    .method /*06000310*/ private hidebysig newslot virtual final 
+            instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<string> 
+            'System.Collections.Generic.IEnumerable<System.String>.GetEnumerator'() cil managed
+    // SIG: 20 00 15 12 80 C9 01 0E
+    {
+      .override  method instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<!0> class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<string>/*1B00000A*/::GetEnumerator() /* 0A00001D */
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method KeyEnumerable::'System.Collections.Generic.IEnumerable<System.String>.GetEnumerator'
+
+    .method /*06000311*/ private hidebysig newslot virtual final 
+            instance class [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/ 
+            System.Collections.IEnumerable.GetEnumerator() cil managed
+    // SIG: 20 00 12 80 D1
+    {
+      .override [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/::GetEnumerator /*01000033::0A00001A*/ 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method KeyEnumerable::System.Collections.IEnumerable.GetEnumerator
+
+  } // end of class KeyEnumerable
+
+  .class /*0200008F*/ sequential ansi sealed nested public beforefieldinit KeyEnumerator
+         extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+         implements class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<string>/*1B00000B*/,
+                    [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/,
+                    [System.Runtime/*23000001*/]System.IDisposable/*01000025*/
+  {
+    .custom /*0C0001AE:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<string>/*1B00000B*/
+    .custom /*0C0000E1:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
+    .interfaceimpl type [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/
+    .custom /*0C0000E5:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .interfaceimpl type [System.Runtime/*23000001*/]System.IDisposable/*01000025*/
+    .custom /*0C0000E9:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .field /*04000048*/ private valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//Enumerator/*0200008D*/ _prefixEnumerator
+    .field /*04000049*/ private string '<Current>k__BackingField'
+    .custom /*0C000132:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .method /*06000312*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ dictionary,
+                                 string prefix) cil managed
+    // SIG: 20 02 01 12 80 90 0E
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method KeyEnumerator::.ctor
+
+    .method /*06000313*/ public hidebysig newslot specialname virtual final 
+            instance string  get_Current() cil managed
+    // SIG: 20 00 0E
+    {
+      .custom /*0C000345:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+      .custom /*0C000346:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method KeyEnumerator::get_Current
+
+    .method /*06000314*/ private hidebysig newslot specialname virtual final 
+            instance object  System.Collections.IEnumerator.get_Current() cil managed
+    // SIG: 20 00 1C
+    {
+      .override [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/::get_Current /*01000034::0A00001C*/ 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method KeyEnumerator::System.Collections.IEnumerator.get_Current
+
+    .method /*06000315*/ public hidebysig newslot virtual final 
+            instance void  Dispose() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method KeyEnumerator::Dispose
+
+    .method /*06000316*/ public hidebysig newslot virtual final 
+            instance bool  MoveNext() cil managed
+    // SIG: 20 00 02
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method KeyEnumerator::MoveNext
+
+    .method /*06000317*/ public hidebysig newslot virtual final 
+            instance void  Reset() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method KeyEnumerator::Reset
+
+    .property /*17000167*/ instance callconv(8) string
+            Current()
+    {
+      .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//KeyEnumerator/*0200008F*/::get_Current() /* 06000313 */
+    } // end of property KeyEnumerator::Current
+    .property /*17000168*/ instance callconv(8) object
+            System.Collections.IEnumerator.Current()
+    {
+      .get instance object Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//KeyEnumerator/*0200008F*/::System.Collections.IEnumerator.get_Current() /* 06000314 */
+    } // end of property KeyEnumerator::System.Collections.IEnumerator.Current
+  } // end of class KeyEnumerator
+
+  .class /*02000090*/ sequential ansi sealed nested public beforefieldinit ValueEnumerable
+         extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+         implements class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>/*1B00000C*/,
+                    [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/
+  {
+    .custom /*0C0001B0:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .custom /*0C0001B1:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+    .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>/*1B00000C*/
+    .custom /*0C0000EE:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
+    .interfaceimpl type [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/
+    .custom /*0C0000F3:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .field /*0400004A*/ private initonly class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ _dictionary
+    .method /*06000318*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ dictionary) cil managed
+    // SIG: 20 01 01 12 80 90
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ValueEnumerable::.ctor
+
+    .method /*06000319*/ public hidebysig 
+            instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ValueEnumerator/*02000091*/ 
+            GetEnumerator() cil managed
+    // SIG: 20 00 11 82 44
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ValueEnumerable::GetEnumerator
+
+    .method /*0600031A*/ private hidebysig newslot virtual final 
+            instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/> 
+            'System.Collections.Generic.IEnumerable<Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>.GetEnumerator'() cil managed
+    // SIG: 20 00 15 12 80 C9 01 12 80 94
+    {
+      .override  method instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<!0> class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>/*1B00000C*/::GetEnumerator() /* 0A00001E */
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ValueEnumerable::'System.Collections.Generic.IEnumerable<Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>.GetEnumerator'
+
+    .method /*0600031B*/ private hidebysig newslot virtual final 
+            instance class [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/ 
+            System.Collections.IEnumerable.GetEnumerator() cil managed
+    // SIG: 20 00 12 80 D1
+    {
+      .override [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/::GetEnumerator /*01000033::0A00001A*/ 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ValueEnumerable::System.Collections.IEnumerable.GetEnumerator
+
+  } // end of class ValueEnumerable
+
+  .class /*02000091*/ sequential ansi sealed nested public beforefieldinit ValueEnumerator
+         extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+         implements class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>/*1B00000D*/,
+                    [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/,
+                    [System.Runtime/*23000001*/]System.IDisposable/*01000025*/
+  {
+    .custom /*0C0001B2:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>/*1B00000D*/
+    .custom /*0C0000F8:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
+    .interfaceimpl type [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/
+    .custom /*0C0000FD:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .interfaceimpl type [System.Runtime/*23000001*/]System.IDisposable/*01000025*/
+    .custom /*0C000102:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .field /*0400004B*/ private valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//Enumerator/*0200008D*/ _prefixEnumerator
+    .field /*0400004C*/ private class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/ '<Current>k__BackingField'
+    .custom /*0C00013A:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .method /*0600031C*/ public hidebysig specialname rtspecialname 
+            instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ dictionary,
+                                 string prefix) cil managed
+    // SIG: 20 02 01 12 80 90 0E
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ValueEnumerator::.ctor
+
+    .method /*0600031D*/ public hidebysig newslot specialname virtual final 
+            instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/ 
+            get_Current() cil managed
+    // SIG: 20 00 12 80 94
+    {
+      .custom /*0C000347:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+      .custom /*0C000348:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ValueEnumerator::get_Current
+
+    .method /*0600031E*/ private hidebysig newslot specialname virtual final 
+            instance object  System.Collections.IEnumerator.get_Current() cil managed
+    // SIG: 20 00 1C
+    {
+      .override [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/::get_Current /*01000034::0A00001C*/ 
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ValueEnumerator::System.Collections.IEnumerator.get_Current
+
+    .method /*0600031F*/ public hidebysig newslot virtual final 
+            instance void  Dispose() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ValueEnumerator::Dispose
+
+    .method /*06000320*/ public hidebysig newslot virtual final 
+            instance bool  MoveNext() cil managed
+    // SIG: 20 00 02
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ValueEnumerator::MoveNext
+
+    .method /*06000321*/ public hidebysig newslot virtual final 
+            instance void  Reset() cil managed
+    // SIG: 20 00 01
+    {
+      // Method begins at RVA 0x4050
+      // Code size       2 (0x2)
+      .maxstack  8
+      IL_0000:  /* 14   |                  */ ldnull
+      IL_0001:  /* 7A   |                  */ throw
+    } // end of method ValueEnumerator::Reset
+
+    .property /*17000169*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/
+            Current()
+    {
+      .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ValueEnumerator/*02000091*/::get_Current() /* 0600031D */
+    } // end of property ValueEnumerator::Current
+    .property /*1700016A*/ instance callconv(8) object
+            System.Collections.IEnumerator.Current()
+    {
+      .get instance object Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ValueEnumerator/*02000091*/::System.Collections.IEnumerator.get_Current() /* 0600031E */
+    } // end of property ValueEnumerator::System.Collections.IEnumerator.Current
+  } // end of class ValueEnumerator
+
+  .field /*04000016*/ public static initonly int32 DefaultMaxAllowedErrors
+  .method /*060000F3*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::.ctor
+
+  .method /*060000F4*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(int32 maxAllowedErrors) cil managed
+  // SIG: 20 01 01 08
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::.ctor
+
+  .method /*060000F5*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ dictionary) cil managed
+  // SIG: 20 01 01 12 80 90
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::.ctor
+
+  .method /*060000F6*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/ 
+          get_Root() cil managed
+  // SIG: 20 00 12 80 94
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::get_Root
+
+  .method /*060000F7*/ public hidebysig specialname 
+          instance int32  get_MaxAllowedErrors() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::get_MaxAllowedErrors
+
+  .method /*060000F8*/ public hidebysig specialname 
+          instance void  set_MaxAllowedErrors(int32 'value') cil managed
+  // SIG: 20 01 01 08
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::set_MaxAllowedErrors
+
+  .method /*060000F9*/ public hidebysig specialname 
+          instance bool  get_HasReachedMaxErrors() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::get_HasReachedMaxErrors
+
+  .method /*060000FA*/ public hidebysig specialname 
+          instance int32  get_ErrorCount() cil managed
+  // SIG: 20 00 08
+  {
+    .custom /*0C0001E9:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::get_ErrorCount
+
+  .method /*060000FB*/ public hidebysig newslot specialname virtual final 
+          instance int32  get_Count() cil managed
+  // SIG: 20 00 08
+  {
+    .custom /*0C0001EA:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::get_Count
+
+  .method /*060000FC*/ public hidebysig specialname 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//KeyEnumerable/*0200008E*/ 
+          get_Keys() cil managed
+  // SIG: 20 00 11 82 38
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::get_Keys
+
+  .method /*060000FD*/ private hidebysig newslot specialname virtual final 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<string> 
+          'System.Collections.Generic.IReadOnlyDictionary<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>.get_Keys'() cil managed
+  // SIG: 20 00 15 12 75 01 0E
+  {
+    .override  method instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<!0> class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>/*1B000006*/::get_Keys() /* 0A000017 */
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::'System.Collections.Generic.IReadOnlyDictionary<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>.get_Keys'
+
+  .method /*060000FE*/ public hidebysig specialname 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ValueEnumerable/*02000090*/ 
+          get_Values() cil managed
+  // SIG: 20 00 11 82 40
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::get_Values
+
+  .method /*060000FF*/ private hidebysig newslot specialname virtual final 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/> 
+          'System.Collections.Generic.IReadOnlyDictionary<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>.get_Values'() cil managed
+  // SIG: 20 00 15 12 75 01 12 80 94
+  {
+    .override  method instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<!1> class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>/*1B000006*/::get_Values() /* 0A000018 */
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::'System.Collections.Generic.IReadOnlyDictionary<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>.get_Values'
+
+  .method /*06000100*/ public hidebysig specialname 
+          instance bool  get_IsValid() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::get_IsValid
+
+  .method /*06000101*/ public hidebysig specialname 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/ 
+          get_ValidationState() cil managed
+  // SIG: 20 00 11 80 98
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::get_ValidationState
+
+  .method /*06000102*/ public hidebysig newslot specialname virtual final 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/ 
+          get_Item(string key) cil managed
+  // SIG: 20 01 12 80 94 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::get_Item
+
+  .method /*06000103*/ public hidebysig instance bool 
+          TryAddModelException(string key,
+                               class [System.Runtime/*23000001*/]System.Exception/*01000026*/ exception) cil managed
+  // SIG: 20 02 02 0E 12 80 99
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::TryAddModelException
+
+  .method /*06000104*/ public hidebysig instance void 
+          AddModelError(string key,
+                        class [System.Runtime/*23000001*/]System.Exception/*01000026*/ exception,
+                        class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ metadata) cil managed
+  // SIG: 20 03 01 0E 12 80 99 12 80 84
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::AddModelError
+
+  .method /*06000105*/ public hidebysig instance bool 
+          TryAddModelError(string key,
+                           class [System.Runtime/*23000001*/]System.Exception/*01000026*/ exception,
+                           class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ metadata) cil managed
+  // SIG: 20 03 02 0E 12 80 99 12 80 84
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::TryAddModelError
+
+  .method /*06000106*/ public hidebysig instance void 
+          AddModelError(string key,
+                        string errorMessage) cil managed
+  // SIG: 20 02 01 0E 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::AddModelError
+
+  .method /*06000107*/ public hidebysig instance bool 
+          TryAddModelError(string key,
+                           string errorMessage) cil managed
+  // SIG: 20 02 02 0E 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::TryAddModelError
+
+  .method /*06000108*/ public hidebysig instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/ 
+          GetFieldValidationState(string key) cil managed
+  // SIG: 20 01 11 80 98 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::GetFieldValidationState
+
+  .method /*06000109*/ public hidebysig instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/ 
+          GetValidationState(string key) cil managed
+  // SIG: 20 01 11 80 98 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::GetValidationState
+
+  .method /*0600010A*/ public hidebysig instance void 
+          MarkFieldValid(string key) cil managed
+  // SIG: 20 01 01 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::MarkFieldValid
+
+  .method /*0600010B*/ public hidebysig instance void 
+          MarkFieldSkipped(string key) cil managed
+  // SIG: 20 01 01 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::MarkFieldSkipped
+
+  .method /*0600010C*/ public hidebysig instance void 
+          Merge(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ dictionary) cil managed
+  // SIG: 20 01 01 12 80 90
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::Merge
+
+  .method /*0600010D*/ public hidebysig instance void 
+          SetModelValue(string key,
+                        object rawValue,
+                        string attemptedValue) cil managed
+  // SIG: 20 03 01 0E 1C 0E
+  {
+    .param [2]/*0800009C*/ 
+    .custom /*0C0001B9:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::SetModelValue
+
+  .method /*0600010E*/ public hidebysig instance void 
+          SetModelValue(string key,
+                        valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/ valueProviderResult) cil managed
+  // SIG: 20 02 01 0E 11 80 A8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::SetModelValue
+
+  .method /*0600010F*/ public hidebysig instance void 
+          ClearValidationState(string key) cil managed
+  // SIG: 20 01 01 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::ClearValidationState
+
+  .method /*06000110*/ public hidebysig instance void 
+          Clear() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::Clear
+
+  .method /*06000111*/ public hidebysig newslot virtual final 
+          instance bool  ContainsKey(string key) cil managed
+  // SIG: 20 01 02 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::ContainsKey
+
+  .method /*06000112*/ public hidebysig instance bool 
+          Remove(string key) cil managed
+  // SIG: 20 01 02 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::Remove
+
+  .method /*06000113*/ public hidebysig newslot virtual final 
+          instance bool  TryGetValue(string key,
+                                     [out] class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/& 'value') cil managed
+  // SIG: 20 02 02 0E 10 12 80 94
+  {
+    .param [2]/*080000A4*/ 
+    .custom /*0C0001BE:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0001BF:0A00001B*/ instance void [System.Runtime/*23000001*/]System.Diagnostics.CodeAnalysis.NotNullWhenAttribute/*01000036*/::.ctor(bool) /* 0A00001B */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::TryGetValue
+
+  .method /*06000114*/ public hidebysig instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//Enumerator/*0200008D*/ 
+          GetEnumerator() cil managed
+  // SIG: 20 00 11 82 34
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::GetEnumerator
+
+  .method /*06000115*/ private hidebysig newslot virtual final 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>> 
+          'System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>>.GetEnumerator'() cil managed
+  // SIG: 20 00 15 12 80 C9 01 15 11 80 A9 02 0E 12 80 94
+  {
+    .param [0]/*080000A5*/ 
+    .custom /*0C0001C0:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 01 00 01 01 00 00 ) 
+    .override  method instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<!0> class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<string,class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>>/*1B000007*/::GetEnumerator() /* 0A000019 */
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::'System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>>.GetEnumerator'
+
+  .method /*06000116*/ private hidebysig newslot virtual final 
+          instance class [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/ 
+          System.Collections.IEnumerable.GetEnumerator() cil managed
+  // SIG: 20 00 12 80 D1
+  {
+    .override [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/::GetEnumerator /*01000033::0A00001A*/ 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::System.Collections.IEnumerable.GetEnumerator
+
+  .method /*06000117*/ public hidebysig static 
+          bool  StartsWithPrefix(string prefix,
+                                 string key) cil managed
+  // SIG: 00 02 02 0E 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::StartsWithPrefix
+
+  .method /*06000118*/ public hidebysig instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//PrefixEnumerable/*0200008C*/ 
+          FindKeysWithPrefix(string prefix) cil managed
+  // SIG: 20 01 11 82 30 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateDictionary::FindKeysWithPrefix
+
+  .property /*1700007E*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/
+          Root()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::get_Root() /* 060000F6 */
+  } // end of property ModelStateDictionary::Root
+  .property /*1700007F*/ instance callconv(8) int32
+          MaxAllowedErrors()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::get_MaxAllowedErrors() /* 060000F7 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::set_MaxAllowedErrors(int32) /* 060000F8 */
+  } // end of property ModelStateDictionary::MaxAllowedErrors
+  .property /*17000080*/ instance callconv(8) bool
+          HasReachedMaxErrors()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::get_HasReachedMaxErrors() /* 060000F9 */
+  } // end of property ModelStateDictionary::HasReachedMaxErrors
+  .property /*17000081*/ instance callconv(8) int32
+          ErrorCount()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::get_ErrorCount() /* 060000FA */
+  } // end of property ModelStateDictionary::ErrorCount
+  .property /*17000082*/ instance callconv(8) int32
+          Count()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::get_Count() /* 060000FB */
+  } // end of property ModelStateDictionary::Count
+  .property /*17000083*/ instance callconv(8) valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//KeyEnumerable/*0200008E*/
+          Keys()
+  {
+    .get instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//KeyEnumerable/*0200008E*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::get_Keys() /* 060000FC */
+  } // end of property ModelStateDictionary::Keys
+  .property /*17000084*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<string>
+          'System.Collections.Generic.IReadOnlyDictionary<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>.Keys'()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<string> Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::'System.Collections.Generic.IReadOnlyDictionary<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>.get_Keys'() /* 060000FD */
+  } // end of property ModelStateDictionary::'System.Collections.Generic.IReadOnlyDictionary<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>.Keys'
+  .property /*17000085*/ instance callconv(8) valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ValueEnumerable/*02000090*/
+          Values()
+  {
+    .get instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*//ValueEnumerable/*02000090*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::get_Values() /* 060000FE */
+  } // end of property ModelStateDictionary::Values
+  .property /*17000086*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>
+          'System.Collections.Generic.IReadOnlyDictionary<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>.Values'()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/> Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::'System.Collections.Generic.IReadOnlyDictionary<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>.get_Values'() /* 060000FF */
+  } // end of property ModelStateDictionary::'System.Collections.Generic.IReadOnlyDictionary<System.String,Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry>.Values'
+  .property /*17000087*/ instance callconv(8) bool
+          IsValid()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::get_IsValid() /* 06000100 */
+  } // end of property ModelStateDictionary::IsValid
+  .property /*17000088*/ instance callconv(8) valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/
+          ValidationState()
+  {
+    .get instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::get_ValidationState() /* 06000101 */
+  } // end of property ModelStateDictionary::ValidationState
+  .property /*17000089*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/
+          Item(string)
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/::get_Item(string) /* 06000102 */
+  } // end of property ModelStateDictionary::Item
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary
+
+.class /*02000025*/ public abstract auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C0000B4:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C0000B5:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000119*/ public hidebysig specialname 
+          instance object  get_RawValue() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C0001F2:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateEntry::get_RawValue
+
+  .method /*0600011A*/ public hidebysig specialname 
+          instance void  set_RawValue(object 'value') cil managed
+  // SIG: 20 01 01 1C
+  {
+    .custom /*0C0001F3:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateEntry::set_RawValue
+
+  .method /*0600011B*/ public hidebysig specialname 
+          instance string  get_AttemptedValue() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0001F5:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateEntry::get_AttemptedValue
+
+  .method /*0600011C*/ public hidebysig specialname 
+          instance void  set_AttemptedValue(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0001F7:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateEntry::set_AttemptedValue
+
+  .method /*0600011D*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelErrorCollection/*02000020*/ 
+          get_Errors() cil managed
+  // SIG: 20 00 12 80 80
+  {
+    .custom /*0C0001F8:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateEntry::get_Errors
+
+  .method /*0600011E*/ public hidebysig specialname 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/ 
+          get_ValidationState() cil managed
+  // SIG: 20 00 11 80 98
+  {
+    .custom /*0C0001F9:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateEntry::get_ValidationState
+
+  .method /*0600011F*/ public hidebysig specialname 
+          instance void  set_ValidationState(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/ 'value') cil managed
+  // SIG: 20 01 01 11 80 98
+  {
+    .custom /*0C0001FA:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateEntry::set_ValidationState
+
+  .method /*06000120*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_IsContainerNode() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method ModelStateEntry::get_IsContainerNode
+
+  .method /*06000121*/ public hidebysig newslot abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/ 
+          GetModelStateForProperty(string propertyName) cil managed
+  // SIG: 20 01 12 80 94 0E
+  {
+    .custom /*0C0001FB:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    .param [0]/*080000AC*/ 
+    .custom /*0C0001C6:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method ModelStateEntry::GetModelStateForProperty
+
+  .method /*06000122*/ public hidebysig newslot specialname abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/> 
+          get_Children() cil managed
+  // SIG: 20 00 15 12 80 A5 01 12 80 94
+  {
+    .param [0]/*080000AE*/ 
+    .custom /*0C0001C9:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method ModelStateEntry::get_Children
+
+  .method /*06000123*/ family hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelStateEntry::.ctor
+
+  .property /*1700008A*/ instance callconv(8) object
+          RawValue()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/::get_RawValue() /* 06000119 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/::set_RawValue(object) /* 0600011A */
+  } // end of property ModelStateEntry::RawValue
+  .property /*1700008B*/ instance callconv(8) string
+          AttemptedValue()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/::get_AttemptedValue() /* 0600011B */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/::set_AttemptedValue(string) /* 0600011C */
+  } // end of property ModelStateEntry::AttemptedValue
+  .property /*1700008C*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelErrorCollection/*02000020*/
+          Errors()
+  {
+    .custom /*0C0001AA:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelErrorCollection/*02000020*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/::get_Errors() /* 0600011D */
+  } // end of property ModelStateEntry::Errors
+  .property /*1700008D*/ instance callconv(8) valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/
+          ValidationState()
+  {
+    .get instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/ Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/::get_ValidationState() /* 0600011E */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/::set_ValidationState(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/) /* 0600011F */
+  } // end of property ModelStateEntry::ValidationState
+  .property /*1700008E*/ instance callconv(8) bool
+          IsContainerNode()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/::get_IsContainerNode() /* 06000120 */
+  } // end of property ModelStateEntry::IsContainerNode
+  .property /*1700008F*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/>
+          Children()
+  {
+    .custom /*0C0001AF:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/> Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry/*02000025*/::get_Children() /* 06000122 */
+  } // end of property ModelStateEntry::Children
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateEntry
+
+.class /*02000026*/ public auto ansi sealed Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState
+       extends [System.Runtime/*23000001*/]System.Enum/*01000020*/
+{
+  .field /*04000017*/ public specialname rtspecialname int32 value__
+  .field /*04000018*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/ Unvalidated = int32(0x00000000)
+  .field /*04000019*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/ Invalid = int32(0x00000001)
+  .field /*0400001A*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/ Valid = int32(0x00000002)
+  .field /*0400001B*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState/*02000026*/ Skipped = int32(0x00000003)
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ModelValidationState
+
+.class /*02000027*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.TooManyModelErrorsException
+       extends [System.Runtime/*23000001*/]System.Exception/*01000026*/
+{
+  .method /*06000124*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(string message) cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0001FD:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method TooManyModelErrorsException::.ctor
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.TooManyModelErrorsException
+
+.class /*02000028*/ public auto ansi sealed beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderException
+       extends [System.Runtime/*23000001*/]System.Exception/*01000026*/
+{
+  .custom /*0C0000BC:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000BD:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000125*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(string message) cil managed
+  // SIG: 20 01 01 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderException::.ctor
+
+  .method /*06000126*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(string message,
+                               class [System.Runtime/*23000001*/]System.Exception/*01000026*/ innerException) cil managed
+  // SIG: 20 02 01 0E 12 80 99
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderException::.ctor
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderException
+
+.class /*02000029*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderFactoryContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C0000C0:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000C1:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000127*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ context) cil managed
+  // SIG: 20 01 01 12 18
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderFactoryContext::.ctor
+
+  .method /*06000128*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ 
+          get_ActionContext() cil managed
+  // SIG: 20 00 12 18
+  {
+    .custom /*0C0001FE:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderFactoryContext::get_ActionContext
+
+  .method /*06000129*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProvider/*0200001A*/> 
+          get_ValueProviders() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 68
+  {
+    .custom /*0C0001FF:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderFactoryContext::get_ValueProviders
+
+  .property /*17000090*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/
+          ActionContext()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderFactoryContext/*02000029*/::get_ActionContext() /* 06000128 */
+  } // end of property ValueProviderFactoryContext::ActionContext
+  .property /*17000091*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProvider/*0200001A*/>
+          ValueProviders()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProvider/*0200001A*/> Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderFactoryContext/*02000029*/::get_ValueProviders() /* 06000129 */
+  } // end of property ValueProviderFactoryContext::ValueProviders
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderFactoryContext
+
+.class /*0200002A*/ public sequential ansi sealed beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult
+       extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+       implements class [System.Runtime/*23000001*/]System.IEquatable`1/*0100001F*/<valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/>/*1B00000E*/,
+                  class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<string>/*1B00000A*/,
+                  [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/
+{
+  .custom /*0C0000C3:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000C4:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C0000C5:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.IEquatable`1/*0100001F*/<valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/>/*1B00000E*/
+  .custom /*0C000057:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<string>/*1B00000A*/
+  .custom /*0C00005B:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
+  .interfaceimpl type [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/
+  .custom /*0C000060:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .field /*0400001C*/ private static initonly class [System.Runtime/*23000001*/]System.Globalization.CultureInfo/*0100003A*/ _invariantCulture
+  .field /*0400001D*/ public static valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/ None
+  .field /*0400001E*/ private initonly class [System.Runtime/*23000001*/]System.Globalization.CultureInfo/*0100003A*/ '<Culture>k__BackingField'
+  .custom /*0C000091:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .field /*0400001F*/ private initonly valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringValues/*0100003B*/ '<Values>k__BackingField'
+  .custom /*0C000096:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .method /*0600012A*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringValues/*0100003B*/ values) cil managed
+  // SIG: 20 01 01 11 80 ED
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::.ctor
+
+  .method /*0600012B*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringValues/*0100003B*/ values,
+                               class [System.Runtime/*23000001*/]System.Globalization.CultureInfo/*0100003A*/ culture) cil managed
+  // SIG: 20 02 01 11 80 ED 12 80 E9
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::.ctor
+
+  .method /*0600012C*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Globalization.CultureInfo/*0100003A*/ 
+          get_Culture() cil managed
+  // SIG: 20 00 12 80 E9
+  {
+    .custom /*0C000200:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::get_Culture
+
+  .method /*0600012D*/ public hidebysig specialname 
+          instance valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringValues/*0100003B*/ 
+          get_Values() cil managed
+  // SIG: 20 00 11 80 ED
+  {
+    .custom /*0C000201:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::get_Values
+
+  .method /*0600012E*/ public hidebysig specialname 
+          instance string  get_FirstValue() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C000202:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::get_FirstValue
+
+  .method /*0600012F*/ public hidebysig specialname 
+          instance int32  get_Length() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::get_Length
+
+  .method /*06000130*/ public hidebysig virtual 
+          instance bool  Equals(object obj) cil managed
+  // SIG: 20 01 02 1C
+  {
+    .custom /*0C000203:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::Equals
+
+  .method /*06000131*/ public hidebysig newslot virtual final 
+          instance bool  Equals(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/ other) cil managed
+  // SIG: 20 01 02 11 80 A8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::Equals
+
+  .method /*06000132*/ public hidebysig virtual 
+          instance int32  GetHashCode() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::GetHashCode
+
+  .method /*06000133*/ public hidebysig virtual 
+          instance string  ToString() cil managed
+  // SIG: 20 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::ToString
+
+  .method /*06000134*/ public hidebysig newslot virtual final 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<string> 
+          GetEnumerator() cil managed
+  // SIG: 20 00 15 12 80 C9 01 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::GetEnumerator
+
+  .method /*06000135*/ private hidebysig newslot virtual final 
+          instance class [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/ 
+          System.Collections.IEnumerable.GetEnumerator() cil managed
+  // SIG: 20 00 12 80 D1
+  {
+    .override [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/::GetEnumerator /*01000033::0A00001A*/ 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::System.Collections.IEnumerable.GetEnumerator
+
+  .method /*06000136*/ public hidebysig specialname static 
+          string  op_Explicit(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/ result) cil managed
+  // SIG: 00 01 0E 11 80 A8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::op_Explicit
+
+  .method /*06000137*/ public hidebysig specialname static 
+          string[]  op_Explicit(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/ result) cil managed
+  // SIG: 00 01 1D 0E 11 80 A8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::op_Explicit
+
+  .method /*06000138*/ public hidebysig specialname static 
+          bool  op_Equality(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/ x,
+                            valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/ y) cil managed
+  // SIG: 00 02 02 11 80 A8 11 80 A8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::op_Equality
+
+  .method /*06000139*/ public hidebysig specialname static 
+          bool  op_Inequality(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/ x,
+                              valuetype Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/ y) cil managed
+  // SIG: 00 02 02 11 80 A8 11 80 A8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValueProviderResult::op_Inequality
+
+  .property /*17000092*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Globalization.CultureInfo/*0100003A*/
+          Culture()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Globalization.CultureInfo/*0100003A*/ Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/::get_Culture() /* 0600012C */
+  } // end of property ValueProviderResult::Culture
+  .property /*17000093*/ instance callconv(8) valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringValues/*0100003B*/
+          Values()
+  {
+    .get instance valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringValues/*0100003B*/ Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/::get_Values() /* 0600012D */
+  } // end of property ValueProviderResult::Values
+  .property /*17000094*/ instance callconv(8) string
+          FirstValue()
+  {
+    .custom /*0C0001B5:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/::get_FirstValue() /* 0600012E */
+  } // end of property ValueProviderResult::FirstValue
+  .property /*17000095*/ instance callconv(8) int32
+          Length()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult/*0200002A*/::get_Length() /* 0600012F */
+  } // end of property ValueProviderResult::Length
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.ValueProviderResult
+
+.class /*0200002B*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientModelValidationContext
+       extends Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationContextBase/*02000035*/
+{
+  .custom /*0C0000C8:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000C9:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*0600013A*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ metadata,
+                               class Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/ metadataProvider,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,string> attributes) cil managed
+  // SIG: 20 04 01 12 18 12 80 84 12 58 15 12 80 F1 02 0E 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientModelValidationContext::.ctor
+
+  .method /*0600013B*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,string> 
+          get_Attributes() cil managed
+  // SIG: 20 00 15 12 80 F1 02 0E 0E
+  {
+    .custom /*0C000206:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientModelValidationContext::get_Attributes
+
+  .property /*17000096*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,string>
+          Attributes()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,string> Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientModelValidationContext/*0200002B*/::get_Attributes() /* 0600013B */
+  } // end of property ClientModelValidationContext::Attributes
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientModelValidationContext
+
+.class /*0200002C*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorItem
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C0000CC:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000CD:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*0600013C*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientValidatorItem::.ctor
+
+  .method /*0600013D*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(object validatorMetadata) cil managed
+  // SIG: 20 01 01 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientValidatorItem::.ctor
+
+  .method /*0600013E*/ public hidebysig specialname 
+          instance object  get_ValidatorMetadata() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C000207:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientValidatorItem::get_ValidatorMetadata
+
+  .method /*0600013F*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IClientModelValidator/*0200002E*/ 
+          get_Validator() cil managed
+  // SIG: 20 00 12 80 B8
+  {
+    .custom /*0C000209:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientValidatorItem::get_Validator
+
+  .method /*06000140*/ public hidebysig specialname 
+          instance void  set_Validator(class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IClientModelValidator/*0200002E*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 B8
+  {
+    .custom /*0C00020B:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientValidatorItem::set_Validator
+
+  .method /*06000141*/ public hidebysig specialname 
+          instance bool  get_IsReusable() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C00020C:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientValidatorItem::get_IsReusable
+
+  .method /*06000142*/ public hidebysig specialname 
+          instance void  set_IsReusable(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C00020D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientValidatorItem::set_IsReusable
+
+  .property /*17000097*/ instance callconv(8) object
+          ValidatorMetadata()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorItem/*0200002C*/::get_ValidatorMetadata() /* 0600013E */
+  } // end of property ClientValidatorItem::ValidatorMetadata
+  .property /*17000098*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IClientModelValidator/*0200002E*/
+          Validator()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IClientModelValidator/*0200002E*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorItem/*0200002C*/::get_Validator() /* 0600013F */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorItem/*0200002C*/::set_Validator(class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IClientModelValidator/*0200002E*/) /* 06000140 */
+  } // end of property ClientValidatorItem::Validator
+  .property /*17000099*/ instance callconv(8) bool
+          IsReusable()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorItem/*0200002C*/::get_IsReusable() /* 06000141 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorItem/*0200002C*/::set_IsReusable(bool) /* 06000142 */
+  } // end of property ClientValidatorItem::IsReusable
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorItem
+
+.class /*0200002D*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorProviderContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C0000D0:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000D1:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000143*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ modelMetadata,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorItem/*0200002C*/> items) cil managed
+  // SIG: 20 02 01 12 80 84 15 12 80 E5 01 12 80 B0
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientValidatorProviderContext::.ctor
+
+  .method /*06000144*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_ModelMetadata() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    .custom /*0C00020F:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientValidatorProviderContext::get_ModelMetadata
+
+  .method /*06000145*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<object> 
+          get_ValidatorMetadata() cil managed
+  // SIG: 20 00 15 12 80 A5 01 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientValidatorProviderContext::get_ValidatorMetadata
+
+  .method /*06000146*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorItem/*0200002C*/> 
+          get_Results() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 80 B0
+  {
+    .custom /*0C000210:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ClientValidatorProviderContext::get_Results
+
+  .property /*1700009A*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          ModelMetadata()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorProviderContext/*0200002D*/::get_ModelMetadata() /* 06000144 */
+  } // end of property ClientValidatorProviderContext::ModelMetadata
+  .property /*1700009B*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<object>
+          ValidatorMetadata()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<object> Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorProviderContext/*0200002D*/::get_ValidatorMetadata() /* 06000145 */
+  } // end of property ClientValidatorProviderContext::ValidatorMetadata
+  .property /*1700009C*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorItem/*0200002C*/>
+          Results()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorItem/*0200002C*/> Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorProviderContext/*0200002D*/::get_Results() /* 06000146 */
+  } // end of property ClientValidatorProviderContext::Results
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorProviderContext
+
+.class /*0200002E*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IClientModelValidator
+{
+  .custom /*0C0000D5:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000147*/ public hidebysig newslot abstract virtual 
+          instance void  AddValidation(class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientModelValidationContext/*0200002B*/ context) cil managed
+  // SIG: 20 01 01 12 80 AC
+  {
+    // Method begins at RVA 0x0
+  } // end of method IClientModelValidator::AddValidation
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IClientModelValidator
+
+.class /*0200002F*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IClientModelValidatorProvider
+{
+  .custom /*0C0000D8:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000148*/ public hidebysig newslot abstract virtual 
+          instance void  CreateValidators(class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ClientValidatorProviderContext/*0200002D*/ context) cil managed
+  // SIG: 20 01 01 12 80 B4
+  {
+    // Method begins at RVA 0x0
+  } // end of method IClientModelValidatorProvider::CreateValidators
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IClientModelValidatorProvider
+
+.class /*02000030*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IModelValidator
+{
+  .custom /*0C0000DB:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000149*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationResult/*02000036*/> 
+          Validate(class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationContext/*02000034*/ context) cil managed
+  // SIG: 20 01 15 12 75 01 12 80 D8 12 80 D0
+  {
+    // Method begins at RVA 0x0
+  } // end of method IModelValidator::Validate
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IModelValidator
+
+.class /*02000031*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IModelValidatorProvider
+{
+  .custom /*0C0000E0:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*0600014A*/ public hidebysig newslot abstract virtual 
+          instance void  CreateValidators(class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidatorProviderContext/*02000037*/ context) cil managed
+  // SIG: 20 01 01 12 80 DC
+  {
+    // Method begins at RVA 0x0
+  } // end of method IModelValidatorProvider::CreateValidators
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IModelValidatorProvider
+
+.class /*02000032*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IPropertyValidationFilter
+{
+  .method /*0600014B*/ public hidebysig newslot abstract virtual 
+          instance bool  ShouldValidateEntry(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationEntry/*02000038*/ entry,
+                                             valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationEntry/*02000038*/ parentEntry) cil managed
+  // SIG: 20 02 02 11 80 E0 11 80 E0
+  {
+    // Method begins at RVA 0x0
+  } // end of method IPropertyValidationFilter::ShouldValidateEntry
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IPropertyValidationFilter
+
+.class /*02000033*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IValidationStrategy
+{
+  .custom /*0C0000E8:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*0600014C*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationEntry/*02000038*/> 
+          GetChildren(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ metadata,
+                      string key,
+                      object model) cil managed
+  // SIG: 20 03 15 12 80 C9 01 11 80 E0 12 80 84 0E 1C
+  {
+    // Method begins at RVA 0x0
+  } // end of method IValidationStrategy::GetChildren
+
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IValidationStrategy
+
+.class /*02000034*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationContext
+       extends Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationContextBase/*02000035*/
+{
+  .custom /*0C0000EC:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000ED:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*0600014D*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ modelMetadata,
+                               class Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/ metadataProvider,
+                               object container,
+                               object model) cil managed
+  // SIG: 20 05 01 12 18 12 80 84 12 58 1C 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidationContext::.ctor
+
+  .method /*0600014E*/ public hidebysig specialname 
+          instance object  get_Model() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C000212:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidationContext::get_Model
+
+  .method /*0600014F*/ public hidebysig specialname 
+          instance object  get_Container() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C000213:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidationContext::get_Container
+
+  .property /*1700009D*/ instance callconv(8) object
+          Model()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationContext/*02000034*/::get_Model() /* 0600014E */
+  } // end of property ModelValidationContext::Model
+  .property /*1700009E*/ instance callconv(8) object
+          Container()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationContext/*02000034*/::get_Container() /* 0600014F */
+  } // end of property ModelValidationContext::Container
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationContext
+
+.class /*02000035*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationContextBase
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C0000F1:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000F2:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000150*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ modelMetadata,
+                               class Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/ metadataProvider) cil managed
+  // SIG: 20 03 01 12 18 12 80 84 12 58
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidationContextBase::.ctor
+
+  .method /*06000151*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ 
+          get_ActionContext() cil managed
+  // SIG: 20 00 12 18
+  {
+    .custom /*0C000214:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidationContextBase::get_ActionContext
+
+  .method /*06000152*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_ModelMetadata() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    .custom /*0C000215:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidationContextBase::get_ModelMetadata
+
+  .method /*06000153*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/ 
+          get_MetadataProvider() cil managed
+  // SIG: 20 00 12 58
+  {
+    .custom /*0C000216:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidationContextBase::get_MetadataProvider
+
+  .property /*1700009F*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/
+          ActionContext()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationContextBase/*02000035*/::get_ActionContext() /* 06000151 */
+  } // end of property ModelValidationContextBase::ActionContext
+  .property /*170000A0*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          ModelMetadata()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationContextBase/*02000035*/::get_ModelMetadata() /* 06000152 */
+  } // end of property ModelValidationContextBase::ModelMetadata
+  .property /*170000A1*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/
+          MetadataProvider()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.IModelMetadataProvider/*02000016*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationContextBase/*02000035*/::get_MetadataProvider() /* 06000153 */
+  } // end of property ModelValidationContextBase::MetadataProvider
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationContextBase
+
+.class /*02000036*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationResult
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C0000F6:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000F7:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000154*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(string memberName,
+                               string message) cil managed
+  // SIG: 20 02 01 0E 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidationResult::.ctor
+
+  .method /*06000155*/ public hidebysig specialname 
+          instance string  get_MemberName() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C000217:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidationResult::get_MemberName
+
+  .method /*06000156*/ public hidebysig specialname 
+          instance string  get_Message() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C000218:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidationResult::get_Message
+
+  .property /*170000A2*/ instance callconv(8) string
+          MemberName()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationResult/*02000036*/::get_MemberName() /* 06000155 */
+  } // end of property ModelValidationResult::MemberName
+  .property /*170000A3*/ instance callconv(8) string
+          Message()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationResult/*02000036*/::get_Message() /* 06000156 */
+  } // end of property ModelValidationResult::Message
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidationResult
+
+.class /*02000037*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidatorProviderContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C0000FB:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000FC:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000157*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ modelMetadata,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidatorItem/*0200003B*/> items) cil managed
+  // SIG: 20 02 01 12 80 84 15 12 80 E5 01 12 80 EC
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidatorProviderContext::.ctor
+
+  .method /*06000158*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_ModelMetadata() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    .custom /*0C000219:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidatorProviderContext::get_ModelMetadata
+
+  .method /*06000159*/ public hidebysig specialname 
+          instance void  set_ModelMetadata(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 84
+  {
+    .custom /*0C00021A:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidatorProviderContext::set_ModelMetadata
+
+  .method /*0600015A*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<object> 
+          get_ValidatorMetadata() cil managed
+  // SIG: 20 00 15 12 80 A5 01 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidatorProviderContext::get_ValidatorMetadata
+
+  .method /*0600015B*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidatorItem/*0200003B*/> 
+          get_Results() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 80 EC
+  {
+    .custom /*0C00021B:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelValidatorProviderContext::get_Results
+
+  .property /*170000A4*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          ModelMetadata()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidatorProviderContext/*02000037*/::get_ModelMetadata() /* 06000158 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidatorProviderContext/*02000037*/::set_ModelMetadata(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/) /* 06000159 */
+  } // end of property ModelValidatorProviderContext::ModelMetadata
+  .property /*170000A5*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<object>
+          ValidatorMetadata()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<object> Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidatorProviderContext/*02000037*/::get_ValidatorMetadata() /* 0600015A */
+  } // end of property ModelValidatorProviderContext::ValidatorMetadata
+  .property /*170000A6*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidatorItem/*0200003B*/>
+          Results()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidatorItem/*0200003B*/> Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidatorProviderContext/*02000037*/::get_Results() /* 0600015B */
+  } // end of property ModelValidatorProviderContext::Results
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ModelValidatorProviderContext
+
+.class /*02000038*/ public sequential ansi sealed beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationEntry
+       extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+{
+  .custom /*0C000100:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000101:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .field /*04000020*/ private object _model
+  .custom /*0C00009A:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+  .field /*04000021*/ private class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<object> _modelAccessor
+  .custom /*0C00009E:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+  .field /*04000022*/ private initonly string '<Key>k__BackingField'
+  .custom /*0C0000A2:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .field /*04000023*/ private initonly class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ '<Metadata>k__BackingField'
+  .custom /*0C0000A6:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .method /*0600015C*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ metadata,
+                               string key,
+                               object model) cil managed
+  // SIG: 20 03 01 12 80 84 0E 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationEntry::.ctor
+
+  .method /*0600015D*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ metadata,
+                               string key,
+                               class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<object> modelAccessor) cil managed
+  // SIG: 20 03 01 12 80 84 0E 15 12 80 8D 01 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationEntry::.ctor
+
+  .method /*0600015E*/ public hidebysig specialname 
+          instance string  get_Key() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C00021C:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+    .custom /*0C00021D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationEntry::get_Key
+
+  .method /*0600015F*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_Metadata() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    .custom /*0C00021E:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+    .custom /*0C00021F:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationEntry::get_Metadata
+
+  .method /*06000160*/ public hidebysig specialname 
+          instance object  get_Model() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C000220:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationEntry::get_Model
+
+  .property /*170000A7*/ instance callconv(8) string
+          Key()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationEntry/*02000038*/::get_Key() /* 0600015E */
+  } // end of property ValidationEntry::Key
+  .property /*170000A8*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          Metadata()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationEntry/*02000038*/::get_Metadata() /* 0600015F */
+  } // end of property ValidationEntry::Metadata
+  .property /*170000A9*/ instance callconv(8) object
+          Model()
+  {
+    .custom /*0C0001C2:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance object Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationEntry/*02000038*/::get_Model() /* 06000160 */
+  } // end of property ValidationEntry::Model
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationEntry
+
+.class /*02000039*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+       implements class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>/*1B00000F*/,
+                  class [System.Runtime/*23000001*/]System.Collections.Generic.ICollection`1/*0100003D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>>/*1B000011*/,
+                  class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>>/*1B000012*/,
+                  [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/,
+                  class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>/*1B000010*/,
+                  class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyCollection`1/*01000035*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>>/*1B000013*/
+{
+  .custom /*0C000105:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000106:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C000107:0A000016*/ instance void [System.Runtime/*23000001*/]System.Reflection.DefaultMemberAttribute/*01000030*/::.ctor(string) /* 0A000016 */ = ( 01 00 04 49 74 65 6D 00 00 )                      // ...Item..
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>/*1B00000F*/
+  .custom /*0C000064:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 03 00 00 00 00 01 01 00 00 ) 
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.ICollection`1/*0100003D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>>/*1B000011*/
+  .custom /*0C000066:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 00 00 01 01 00 00 ) 
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>>/*1B000012*/
+  .custom /*0C00006C:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 00 00 01 01 00 00 ) 
+  .interfaceimpl type [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/
+  .custom /*0C00006D:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>/*1B000010*/
+  .custom /*0C000070:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 03 00 00 00 00 01 01 00 00 ) 
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyCollection`1/*01000035*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>>/*1B000013*/
+  .custom /*0C000073:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 00 00 01 01 00 00 ) 
+  .method /*06000161*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::.ctor
+
+  .method /*06000162*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/ 
+          get_Item(object key) cil managed
+  // SIG: 20 01 12 80 E8 1C
+  {
+    .param [0]/*080000E4*/ 
+    .custom /*0C0001DE:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::get_Item
+
+  .method /*06000163*/ public hidebysig specialname 
+          instance void  set_Item(object key,
+                                  class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/ 'value') cil managed
+  // SIG: 20 02 01 1C 12 80 E8
+  {
+    .param [2]/*080000E7*/ 
+    .custom /*0C0001E1:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::set_Item
+
+  .method /*06000164*/ private hidebysig newslot specialname virtual final 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/ 
+          'System.Collections.Generic.IDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.get_Item'(object key) cil managed
+  // SIG: 20 01 12 80 E8 1C
+  {
+    .override  method instance !1 class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>/*1B00000F*/::get_Item(!0) /* 0A00001F */
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::'System.Collections.Generic.IDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.get_Item'
+
+  .method /*06000165*/ private hidebysig newslot specialname virtual final 
+          instance void  'System.Collections.Generic.IDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.set_Item'(object key,
+                                                                                                                                                                class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/ 'value') cil managed
+  // SIG: 20 02 01 1C 12 80 E8
+  {
+    .override  method instance void class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>/*1B00000F*/::set_Item(!0,
+                                                                                                                                                                                                                                                 !1) /* 0A000020 */
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::'System.Collections.Generic.IDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.set_Item'
+
+  .method /*06000166*/ private hidebysig newslot specialname virtual final 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/ 
+          'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.get_Item'(object key) cil managed
+  // SIG: 20 01 12 80 E8 1C
+  {
+    .override  method instance !1 class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>/*1B000010*/::get_Item(!0) /* 0A000021 */
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.get_Item'
+
+  .method /*06000167*/ public hidebysig newslot specialname virtual final 
+          instance int32  get_Count() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::get_Count
+
+  .method /*06000168*/ public hidebysig newslot specialname virtual final 
+          instance bool  get_IsReadOnly() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::get_IsReadOnly
+
+  .method /*06000169*/ public hidebysig newslot specialname virtual final 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.ICollection`1/*0100003D*/<object> 
+          get_Keys() cil managed
+  // SIG: 20 00 15 12 80 F5 01 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::get_Keys
+
+  .method /*0600016A*/ public hidebysig newslot specialname virtual final 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.ICollection`1/*0100003D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/> 
+          get_Values() cil managed
+  // SIG: 20 00 15 12 80 F5 01 12 80 E8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::get_Values
+
+  .method /*0600016B*/ private hidebysig newslot specialname virtual final 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<object> 
+          'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.get_Keys'() cil managed
+  // SIG: 20 00 15 12 75 01 1C
+  {
+    .override  method instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<!0> class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>/*1B000010*/::get_Keys() /* 0A000022 */
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.get_Keys'
+
+  .method /*0600016C*/ private hidebysig newslot specialname virtual final 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/> 
+          'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.get_Values'() cil managed
+  // SIG: 20 00 15 12 75 01 12 80 E8
+  {
+    .override  method instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<!1> class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyDictionary`2/*01000028*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>/*1B000010*/::get_Values() /* 0A000023 */
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.get_Values'
+
+  .method /*0600016D*/ public hidebysig newslot virtual final 
+          instance void  Add(valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/> item) cil managed
+  // SIG: 20 01 01 15 11 80 A9 02 1C 12 80 E8
+  {
+    .param [1]/*080000EC*/ 
+    .custom /*0C0001E3:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 03 00 00 00 00 01 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::Add
+
+  .method /*0600016E*/ public hidebysig newslot virtual final 
+          instance void  Add(object key,
+                             class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/ 'value') cil managed
+  // SIG: 20 02 01 1C 12 80 E8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::Add
+
+  .method /*0600016F*/ public hidebysig newslot virtual final 
+          instance void  Clear() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::Clear
+
+  .method /*06000170*/ public hidebysig newslot virtual final 
+          instance bool  Contains(valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/> item) cil managed
+  // SIG: 20 01 02 15 11 80 A9 02 1C 12 80 E8
+  {
+    .param [1]/*080000EF*/ 
+    .custom /*0C0001E4:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 03 00 00 00 00 01 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::Contains
+
+  .method /*06000171*/ public hidebysig newslot virtual final 
+          instance bool  ContainsKey(object key) cil managed
+  // SIG: 20 01 02 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::ContainsKey
+
+  .method /*06000172*/ public hidebysig newslot virtual final 
+          instance void  CopyTo(valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>[] 'array',
+                                int32 arrayIndex) cil managed
+  // SIG: 20 02 01 1D 15 11 80 A9 02 1C 12 80 E8 08
+  {
+    .param [1]/*080000F1*/ 
+    .custom /*0C0001E5:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 01 00 01 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::CopyTo
+
+  .method /*06000173*/ public hidebysig newslot virtual final 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerator`1/*01000032*/<valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>> 
+          GetEnumerator() cil managed
+  // SIG: 20 00 15 12 80 C9 01 15 11 80 A9 02 1C 12 80 E8
+  {
+    .param [0]/*080000F3*/ 
+    .custom /*0C0001E6:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 04 00 00 00 01 00 01 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::GetEnumerator
+
+  .method /*06000174*/ public hidebysig newslot virtual final 
+          instance bool  Remove(valuetype [System.Runtime/*23000001*/]System.Collections.Generic.KeyValuePair`2/*0100002A*/<object,class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/> item) cil managed
+  // SIG: 20 01 02 15 11 80 A9 02 1C 12 80 E8
+  {
+    .param [1]/*080000F4*/ 
+    .custom /*0C0001E7:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 03 00 00 00 00 01 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::Remove
+
+  .method /*06000175*/ public hidebysig newslot virtual final 
+          instance bool  Remove(object key) cil managed
+  // SIG: 20 01 02 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::Remove
+
+  .method /*06000176*/ public hidebysig newslot virtual final 
+          instance bool  TryGetValue(object key,
+                                     [out] class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/& 'value') cil managed
+  // SIG: 20 02 02 1C 10 12 80 E8
+  {
+    .param [2]/*080000F7*/ 
+    .custom /*0C0001E8:0A000024*/ instance void [System.Runtime/*23000001*/]System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute/*0100003E*/::.ctor(bool) /* 0A000024 */ = ( 01 00 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::TryGetValue
+
+  .method /*06000177*/ private hidebysig newslot virtual final 
+          instance class [System.Runtime/*23000001*/]System.Collections.IEnumerator/*01000034*/ 
+          System.Collections.IEnumerable.GetEnumerator() cil managed
+  // SIG: 20 00 12 80 D1
+  {
+    .override [System.Runtime/*23000001*/]System.Collections.IEnumerable/*01000033*/::GetEnumerator /*01000033::0A00001A*/ 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateDictionary::System.Collections.IEnumerable.GetEnumerator
+
+  .property /*170000AA*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/
+          Item(object)
+  {
+    .custom /*0C0001C3:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/::get_Item(object) /* 06000162 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/::set_Item(object,
+                                                                                                                        class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/) /* 06000163 */
+  } // end of property ValidationStateDictionary::Item
+  .property /*170000AB*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/
+          'System.Collections.Generic.IDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.Item'(object)
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/::'System.Collections.Generic.IDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.get_Item'(object) /* 06000164 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/::'System.Collections.Generic.IDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.set_Item'(object,
+                                                                                                                                                                                                                                                      class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/) /* 06000165 */
+  } // end of property ValidationStateDictionary::'System.Collections.Generic.IDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.Item'
+  .property /*170000AC*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/
+          'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.Item'(object)
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/::'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.get_Item'(object) /* 06000166 */
+  } // end of property ValidationStateDictionary::'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.Item'
+  .property /*170000AD*/ instance callconv(8) int32
+          Count()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/::get_Count() /* 06000167 */
+  } // end of property ValidationStateDictionary::Count
+  .property /*170000AE*/ instance callconv(8) bool
+          IsReadOnly()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/::get_IsReadOnly() /* 06000168 */
+  } // end of property ValidationStateDictionary::IsReadOnly
+  .property /*170000AF*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.ICollection`1/*0100003D*/<object>
+          Keys()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.ICollection`1/*0100003D*/<object> Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/::get_Keys() /* 06000169 */
+  } // end of property ValidationStateDictionary::Keys
+  .property /*170000B0*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.ICollection`1/*0100003D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>
+          Values()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.ICollection`1/*0100003D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/> Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/::get_Values() /* 0600016A */
+  } // end of property ValidationStateDictionary::Values
+  .property /*170000B1*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<object>
+          'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.Keys'()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<object> Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/::'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.get_Keys'() /* 0600016B */
+  } // end of property ValidationStateDictionary::'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.Keys'
+  .property /*170000B2*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/>
+          'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.Values'()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/> Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary/*02000039*/::'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.get_Values'() /* 0600016C */
+  } // end of property ValidationStateDictionary::'System.Collections.Generic.IReadOnlyDictionary<System.Object,Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry>.Values'
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateDictionary
+
+.class /*0200003A*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000108:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000109:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000178*/ public hidebysig specialname 
+          instance string  get_Key() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C000224:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateEntry::get_Key
+
+  .method /*06000179*/ public hidebysig specialname 
+          instance void  set_Key(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C000225:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateEntry::set_Key
+
+  .method /*0600017A*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_Metadata() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    .custom /*0C000226:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateEntry::get_Metadata
+
+  .method /*0600017B*/ public hidebysig specialname 
+          instance void  set_Metadata(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 84
+  {
+    .custom /*0C000227:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateEntry::set_Metadata
+
+  .method /*0600017C*/ public hidebysig specialname 
+          instance bool  get_SuppressValidation() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C000228:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateEntry::get_SuppressValidation
+
+  .method /*0600017D*/ public hidebysig specialname 
+          instance void  set_SuppressValidation(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C000229:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateEntry::set_SuppressValidation
+
+  .method /*0600017E*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IValidationStrategy/*02000033*/ 
+          get_Strategy() cil managed
+  // SIG: 20 00 12 80 CC
+  {
+    .custom /*0C00022B:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateEntry::get_Strategy
+
+  .method /*0600017F*/ public hidebysig specialname 
+          instance void  set_Strategy(class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IValidationStrategy/*02000033*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 CC
+  {
+    .custom /*0C00022C:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateEntry::set_Strategy
+
+  .method /*06000180*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidationStateEntry::.ctor
+
+  .property /*170000B3*/ instance callconv(8) string
+          Key()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/::get_Key() /* 06000178 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/::set_Key(string) /* 06000179 */
+  } // end of property ValidationStateEntry::Key
+  .property /*170000B4*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          Metadata()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/::get_Metadata() /* 0600017A */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/::set_Metadata(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/) /* 0600017B */
+  } // end of property ValidationStateEntry::Metadata
+  .property /*170000B5*/ instance callconv(8) bool
+          SuppressValidation()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/::get_SuppressValidation() /* 0600017C */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/::set_SuppressValidation(bool) /* 0600017D */
+  } // end of property ValidationStateEntry::SuppressValidation
+  .property /*170000B6*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IValidationStrategy/*02000033*/
+          Strategy()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IValidationStrategy/*02000033*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/::get_Strategy() /* 0600017E */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry/*0200003A*/::set_Strategy(class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IValidationStrategy/*02000033*/) /* 0600017F */
+  } // end of property ValidationStateEntry::Strategy
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidationStateEntry
+
+.class /*0200003B*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidatorItem
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00010A:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00010B:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000181*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidatorItem::.ctor
+
+  .method /*06000182*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(object validatorMetadata) cil managed
+  // SIG: 20 01 01 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidatorItem::.ctor
+
+  .method /*06000183*/ public hidebysig specialname 
+          instance object  get_ValidatorMetadata() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C00022D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidatorItem::get_ValidatorMetadata
+
+  .method /*06000184*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IModelValidator/*02000030*/ 
+          get_Validator() cil managed
+  // SIG: 20 00 12 80 C0
+  {
+    .custom /*0C00022E:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidatorItem::get_Validator
+
+  .method /*06000185*/ public hidebysig specialname 
+          instance void  set_Validator(class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IModelValidator/*02000030*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 C0
+  {
+    .custom /*0C00022F:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidatorItem::set_Validator
+
+  .method /*06000186*/ public hidebysig specialname 
+          instance bool  get_IsReusable() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C000230:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidatorItem::get_IsReusable
+
+  .method /*06000187*/ public hidebysig specialname 
+          instance void  set_IsReusable(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C000231:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ValidatorItem::set_IsReusable
+
+  .property /*170000B7*/ instance callconv(8) object
+          ValidatorMetadata()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidatorItem/*0200003B*/::get_ValidatorMetadata() /* 06000183 */
+  } // end of property ValidatorItem::ValidatorMetadata
+  .property /*170000B8*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IModelValidator/*02000030*/
+          Validator()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IModelValidator/*02000030*/ Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidatorItem/*0200003B*/::get_Validator() /* 06000184 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidatorItem/*0200003B*/::set_Validator(class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.IModelValidator/*02000030*/) /* 06000185 */
+  } // end of property ValidatorItem::Validator
+  .property /*170000B9*/ instance callconv(8) bool
+          IsReusable()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidatorItem/*0200003B*/::get_IsReusable() /* 06000186 */
+    .set instance void Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidatorItem/*0200003B*/::set_IsReusable(bool) /* 06000187 */
+  } // end of property ValidatorItem::IsReusable
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Validation.ValidatorItem
+
+.class /*0200003C*/ public abstract auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00010D:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00010E:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000188*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> 
+          get_MissingBindRequiredValueAccessor() cil managed
+  // SIG: 20 00 15 12 71 02 0E 0E
+  {
+    .custom /*0C000232:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingMessageProvider::get_MissingBindRequiredValueAccessor
+
+  .method /*06000189*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string> 
+          get_MissingKeyOrValueAccessor() cil managed
+  // SIG: 20 00 15 12 80 8D 01 0E
+  {
+    .custom /*0C000233:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingMessageProvider::get_MissingKeyOrValueAccessor
+
+  .method /*0600018A*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string> 
+          get_MissingRequestBodyRequiredValueAccessor() cil managed
+  // SIG: 20 00 15 12 80 8D 01 0E
+  {
+    .custom /*0C000234:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingMessageProvider::get_MissingRequestBodyRequiredValueAccessor
+
+  .method /*0600018B*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> 
+          get_ValueMustNotBeNullAccessor() cil managed
+  // SIG: 20 00 15 12 71 02 0E 0E
+  {
+    .custom /*0C000235:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingMessageProvider::get_ValueMustNotBeNullAccessor
+
+  .method /*0600018C*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<string,string,string> 
+          get_AttemptedValueIsInvalidAccessor() cil managed
+  // SIG: 20 00 15 12 80 FD 03 0E 0E 0E
+  {
+    .custom /*0C000236:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingMessageProvider::get_AttemptedValueIsInvalidAccessor
+
+  .method /*0600018D*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> 
+          get_NonPropertyAttemptedValueIsInvalidAccessor() cil managed
+  // SIG: 20 00 15 12 71 02 0E 0E
+  {
+    .custom /*0C000237:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingMessageProvider::get_NonPropertyAttemptedValueIsInvalidAccessor
+
+  .method /*0600018E*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> 
+          get_UnknownValueIsInvalidAccessor() cil managed
+  // SIG: 20 00 15 12 71 02 0E 0E
+  {
+    .custom /*0C000238:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingMessageProvider::get_UnknownValueIsInvalidAccessor
+
+  .method /*0600018F*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string> 
+          get_NonPropertyUnknownValueIsInvalidAccessor() cil managed
+  // SIG: 20 00 15 12 80 8D 01 0E
+  {
+    .custom /*0C000239:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingMessageProvider::get_NonPropertyUnknownValueIsInvalidAccessor
+
+  .method /*06000190*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> 
+          get_ValueIsInvalidAccessor() cil managed
+  // SIG: 20 00 15 12 71 02 0E 0E
+  {
+    .custom /*0C00023A:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingMessageProvider::get_ValueIsInvalidAccessor
+
+  .method /*06000191*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> 
+          get_ValueMustBeANumberAccessor() cil managed
+  // SIG: 20 00 15 12 71 02 0E 0E
+  {
+    .custom /*0C00023B:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingMessageProvider::get_ValueMustBeANumberAccessor
+
+  .method /*06000192*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string> 
+          get_NonPropertyValueMustBeANumberAccessor() cil managed
+  // SIG: 20 00 15 12 80 8D 01 0E
+  {
+    .custom /*0C00023D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingMessageProvider::get_NonPropertyValueMustBeANumberAccessor
+
+  .method /*06000193*/ family hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelBindingMessageProvider::.ctor
+
+  .property /*170000BA*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string>
+          MissingBindRequiredValueAccessor()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/::get_MissingBindRequiredValueAccessor() /* 06000188 */
+  } // end of property ModelBindingMessageProvider::MissingBindRequiredValueAccessor
+  .property /*170000BB*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string>
+          MissingKeyOrValueAccessor()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string> Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/::get_MissingKeyOrValueAccessor() /* 06000189 */
+  } // end of property ModelBindingMessageProvider::MissingKeyOrValueAccessor
+  .property /*170000BC*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string>
+          MissingRequestBodyRequiredValueAccessor()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string> Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/::get_MissingRequestBodyRequiredValueAccessor() /* 0600018A */
+  } // end of property ModelBindingMessageProvider::MissingRequestBodyRequiredValueAccessor
+  .property /*170000BD*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string>
+          ValueMustNotBeNullAccessor()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/::get_ValueMustNotBeNullAccessor() /* 0600018B */
+  } // end of property ModelBindingMessageProvider::ValueMustNotBeNullAccessor
+  .property /*170000BE*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<string,string,string>
+          AttemptedValueIsInvalidAccessor()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<string,string,string> Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/::get_AttemptedValueIsInvalidAccessor() /* 0600018C */
+  } // end of property ModelBindingMessageProvider::AttemptedValueIsInvalidAccessor
+  .property /*170000BF*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string>
+          NonPropertyAttemptedValueIsInvalidAccessor()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/::get_NonPropertyAttemptedValueIsInvalidAccessor() /* 0600018D */
+  } // end of property ModelBindingMessageProvider::NonPropertyAttemptedValueIsInvalidAccessor
+  .property /*170000C0*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string>
+          UnknownValueIsInvalidAccessor()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/::get_UnknownValueIsInvalidAccessor() /* 0600018E */
+  } // end of property ModelBindingMessageProvider::UnknownValueIsInvalidAccessor
+  .property /*170000C1*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string>
+          NonPropertyUnknownValueIsInvalidAccessor()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string> Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/::get_NonPropertyUnknownValueIsInvalidAccessor() /* 0600018F */
+  } // end of property ModelBindingMessageProvider::NonPropertyUnknownValueIsInvalidAccessor
+  .property /*170000C2*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string>
+          ValueIsInvalidAccessor()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/::get_ValueIsInvalidAccessor() /* 06000190 */
+  } // end of property ModelBindingMessageProvider::ValueIsInvalidAccessor
+  .property /*170000C3*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string>
+          ValueMustBeANumberAccessor()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`2/*0100001C*/<string,string> Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/::get_ValueMustBeANumberAccessor() /* 06000191 */
+  } // end of property ModelBindingMessageProvider::ValueMustBeANumberAccessor
+  .property /*170000C4*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string>
+          NonPropertyValueMustBeANumberAccessor()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`1/*01000023*/<string> Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider/*0200003C*/::get_NonPropertyValueMustBeANumberAccessor() /* 06000192 */
+  } // end of property ModelBindingMessageProvider::NonPropertyValueMustBeANumberAccessor
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelBindingMessageProvider
+
+.class /*0200003D*/ public sequential ansi sealed beforefieldinit Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
+       extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+       implements class [System.Runtime/*23000001*/]System.IEquatable`1/*0100001F*/<valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/>/*1B000014*/
+{
+  .custom /*0C000110:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C000111:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C000112:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+  .interfaceimpl type class [System.Runtime/*23000001*/]System.IEquatable`1/*0100001F*/<valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/>/*1B000014*/
+  .custom /*0C000078:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .field /*04000024*/ private initonly class [System.Runtime/*23000001*/]System.Type/*01000018*/ '<ContainerType>k__BackingField'
+  .custom /*0C0000AC:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .field /*04000025*/ private initonly class [System.Runtime/*23000001*/]System.Type/*01000018*/ '<ModelType>k__BackingField'
+  .custom /*0C0000B2:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C0000B3:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .field /*04000026*/ private initonly string '<Name>k__BackingField'
+  .custom /*0C0000B7:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .field /*04000027*/ private initonly object '<FieldInfo>k__BackingField'
+  .custom /*0C0000B9:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .field /*04000028*/ private initonly class [System.Runtime/*23000001*/]System.Reflection.ConstructorInfo/*0100002F*/ '<ConstructorInfo>k__BackingField'
+  .custom /*0C0000BB:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .method /*06000194*/ public hidebysig static 
+          valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/ 
+          ForType(class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType) cil managed
+  // SIG: 00 01 11 80 F4 12 61
+  {
+    .custom /*0C00023E:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::ForType
+
+  .method /*06000195*/ public hidebysig static 
+          valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/ 
+          ForProperty(class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType,
+                      string name,
+                      class [System.Runtime/*23000001*/]System.Type/*01000018*/ containerType) cil managed
+  // SIG: 00 03 11 80 F4 12 61 0E 12 61
+  {
+    .custom /*0C00023F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    .custom /*0C000240:0A000025*/ instance void [System.Runtime/*23000001*/]System.ObsoleteAttribute/*01000040*/::.ctor(string) /* 0A000025 */ = ( 01 00 3C 54 68 69 73 20 41 50 49 20 69 73 20 6F   // ..<This API is o
+                                                                                                                                                   62 73 6F 6C 65 74 65 20 61 6E 64 20 6D 61 79 20   // bsolete and may 
+                                                                                                                                                   62 65 20 72 65 6D 6F 76 65 64 20 69 6E 20 61 20   // be removed in a 
+                                                                                                                                                   66 75 74 75 72 65 20 72 65 6C 65 61 73 65 2E 00   // future release..
+                                                                                                                                                   00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::ForProperty
+
+  .method /*06000196*/ public hidebysig static 
+          valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/ 
+          ForProperty(class [System.Runtime/*23000001*/]System.Reflection.PropertyInfo/*0100002E*/ propertyInfo,
+                      class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType,
+                      class [System.Runtime/*23000001*/]System.Type/*01000018*/ containerType) cil managed
+  // SIG: 00 03 11 80 F4 12 80 B9 12 61 12 61
+  {
+    .custom /*0C000241:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::ForProperty
+
+  .method /*06000197*/ public hidebysig static 
+          valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/ 
+          ForParameter(class [System.Runtime/*23000001*/]System.Reflection.ParameterInfo/*0100002D*/ parameter) cil managed
+  // SIG: 00 01 11 80 F4 12 80 B5
+  {
+    .custom /*0C000242:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::ForParameter
+
+  .method /*06000198*/ public hidebysig static 
+          valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/ 
+          ForParameter(class [System.Runtime/*23000001*/]System.Reflection.ParameterInfo/*0100002D*/ parameter,
+                       class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType) cil managed
+  // SIG: 00 02 11 80 F4 12 80 B5 12 61
+  {
+    .custom /*0C000243:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::ForParameter
+
+  .method /*06000199*/ public hidebysig static 
+          valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/ 
+          ForConstructor(class [System.Runtime/*23000001*/]System.Reflection.ConstructorInfo/*0100002F*/ constructor,
+                         class [System.Runtime/*23000001*/]System.Type/*01000018*/ modelType) cil managed
+  // SIG: 00 02 11 80 F4 12 80 BD 12 61
+  {
+    .custom /*0C000244:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::ForConstructor
+
+  .method /*0600019A*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_ContainerType() cil managed
+  // SIG: 20 00 12 61
+  {
+    .custom /*0C000245:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::get_ContainerType
+
+  .method /*0600019B*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_ModelType() cil managed
+  // SIG: 20 00 12 61
+  {
+    .custom /*0C000246:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    .custom /*0C000247:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::get_ModelType
+
+  .method /*0600019C*/ public hidebysig specialname 
+          instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataKind/*0200003E*/ 
+          get_MetadataKind() cil managed
+  // SIG: 20 00 11 80 F8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::get_MetadataKind
+
+  .method /*0600019D*/ public hidebysig specialname 
+          instance string  get_Name() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C000248:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::get_Name
+
+  .method /*0600019E*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Reflection.ParameterInfo/*0100002D*/ 
+          get_ParameterInfo() cil managed
+  // SIG: 20 00 12 80 B5
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::get_ParameterInfo
+
+  .method /*0600019F*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Reflection.PropertyInfo/*0100002E*/ 
+          get_PropertyInfo() cil managed
+  // SIG: 20 00 12 80 B9
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::get_PropertyInfo
+
+  .method /*060001A0*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Reflection.ConstructorInfo/*0100002F*/ 
+          get_ConstructorInfo() cil managed
+  // SIG: 20 00 12 80 BD
+  {
+    .custom /*0C000249:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::get_ConstructorInfo
+
+  .method /*060001A1*/ public hidebysig newslot virtual final 
+          instance bool  Equals(valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/ other) cil managed
+  // SIG: 20 01 02 11 80 F4
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::Equals
+
+  .method /*060001A2*/ public hidebysig virtual 
+          instance bool  Equals(object obj) cil managed
+  // SIG: 20 01 02 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::Equals
+
+  .method /*060001A3*/ public hidebysig virtual 
+          instance int32  GetHashCode() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ModelMetadataIdentity::GetHashCode
+
+  .property /*170000C5*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          ContainerType()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/::get_ContainerType() /* 0600019A */
+  } // end of property ModelMetadataIdentity::ContainerType
+  .property /*170000C6*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          ModelType()
+  {
+    .custom /*0C0001CE:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/::get_ModelType() /* 0600019B */
+  } // end of property ModelMetadataIdentity::ModelType
+  .property /*170000C7*/ instance callconv(8) valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataKind/*0200003E*/
+          MetadataKind()
+  {
+    .get instance valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataKind/*0200003E*/ Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/::get_MetadataKind() /* 0600019C */
+  } // end of property ModelMetadataIdentity::MetadataKind
+  .property /*170000C8*/ instance callconv(8) string
+          Name()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/::get_Name() /* 0600019D */
+  } // end of property ModelMetadataIdentity::Name
+  .property /*170000C9*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Reflection.ParameterInfo/*0100002D*/
+          ParameterInfo()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Reflection.ParameterInfo/*0100002D*/ Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/::get_ParameterInfo() /* 0600019E */
+  } // end of property ModelMetadataIdentity::ParameterInfo
+  .property /*170000CA*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Reflection.PropertyInfo/*0100002E*/
+          PropertyInfo()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Reflection.PropertyInfo/*0100002E*/ Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/::get_PropertyInfo() /* 0600019F */
+  } // end of property ModelMetadataIdentity::PropertyInfo
+  .property /*170000CB*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Reflection.ConstructorInfo/*0100002F*/
+          ConstructorInfo()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Reflection.ConstructorInfo/*0100002F*/ Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity/*0200003D*/::get_ConstructorInfo() /* 060001A0 */
+  } // end of property ModelMetadataIdentity::ConstructorInfo
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataIdentity
+
+.class /*0200003E*/ public auto ansi sealed Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataKind
+       extends [System.Runtime/*23000001*/]System.Enum/*01000020*/
+{
+  .field /*04000029*/ public specialname rtspecialname int32 value__
+  .field /*0400002A*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataKind/*0200003E*/ Type = int32(0x00000000)
+  .field /*0400002B*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataKind/*0200003E*/ Property = int32(0x00000001)
+  .field /*0400002C*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataKind/*0200003E*/ Parameter = int32(0x00000002)
+  .field /*0400002D*/ public static literal valuetype Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataKind/*0200003E*/ Constructor = int32(0x00000003)
+} // end of class Microsoft.AspNetCore.Mvc.ModelBinding.Metadata.ModelMetadataKind
+
+.class /*0200003F*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Formatters.FormatterCollection`1<TFormatter>
+       extends class [System.Runtime/*23000001*/]System.Collections.ObjectModel.Collection`1/*01000027*/<!TFormatter>/*1B000015*/
+{
+  .custom /*0C000115:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000116:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 00 01 00 00 ) 
+  .method /*060001A4*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FormatterCollection`1::.ctor
+
+  .method /*060001A5*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<!TFormatter> list) cil managed
+  // SIG: 20 01 01 15 12 80 E5 01 13 00
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FormatterCollection`1::.ctor
+
+  .method /*060001A6*/ public hidebysig instance void 
+          RemoveType<(!TFormatter/*1B000016*/) T>() cil managed
+  // SIG: 30 01 00 01
+  {
+    .custom /*0C00024C:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 00 00 00 ) 
+    .param constraint   T/*2A000002*/ , !TFormatter/*1B000016*/
+      .custom /*0C000032:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FormatterCollection`1::RemoveType
+
+  .method /*060001A7*/ public hidebysig instance void 
+          RemoveType(class [System.Runtime/*23000001*/]System.Type/*01000018*/ formatterType) cil managed
+  // SIG: 20 01 01 12 61
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FormatterCollection`1::RemoveType
+
+} // end of class Microsoft.AspNetCore.Mvc.Formatters.FormatterCollection`1
+
+.class /*02000040*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter
+{
+  .custom /*0C000119:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*060001A8*/ public hidebysig newslot abstract virtual 
+          instance bool  CanRead(class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterContext/*02000042*/ context) cil managed
+  // SIG: 20 01 02 12 81 08
+  {
+    // Method begins at RVA 0x0
+  } // end of method IInputFormatter::CanRead
+
+  .method /*060001A9*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task`1/*01000041*/<class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterResult/*02000045*/> 
+          ReadAsync(class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterContext/*02000042*/ context) cil managed
+  // SIG: 20 01 15 12 81 05 01 12 81 14 12 81 08
+  {
+    // Method begins at RVA 0x0
+  } // end of method IInputFormatter::ReadAsync
+
+} // end of class Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter
+
+.class /*02000041*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Formatters.IInputFormatterExceptionPolicy
+{
+  .method /*060001AA*/ public hidebysig newslot specialname abstract virtual 
+          instance valuetype Microsoft.AspNetCore.Mvc.Formatters.InputFormatterExceptionPolicy/*02000044*/ 
+          get_ExceptionPolicy() cil managed
+  // SIG: 20 00 11 81 10
+  {
+    // Method begins at RVA 0x0
+  } // end of method IInputFormatterExceptionPolicy::get_ExceptionPolicy
+
+  .property /*170000CC*/ instance callconv(8) valuetype Microsoft.AspNetCore.Mvc.Formatters.InputFormatterExceptionPolicy/*02000044*/
+          ExceptionPolicy()
+  {
+    .get instance valuetype Microsoft.AspNetCore.Mvc.Formatters.InputFormatterExceptionPolicy/*02000044*/ Microsoft.AspNetCore.Mvc.Formatters.IInputFormatterExceptionPolicy/*02000041*/::get_ExceptionPolicy() /* 060001AA */
+  } // end of property IInputFormatterExceptionPolicy::ExceptionPolicy
+} // end of class Microsoft.AspNetCore.Mvc.Formatters.IInputFormatterExceptionPolicy
+
+.class /*02000042*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Formatters.InputFormatterContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00011C:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00011D:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060001AB*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ httpContext,
+                               string modelName,
+                               class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ modelState,
+                               class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ metadata,
+                               class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<class [System.Runtime/*23000001*/]System.IO.Stream/*01000042*/,class [System.Runtime/*23000001*/]System.Text.Encoding/*01000043*/,class [System.Runtime/*23000001*/]System.IO.TextReader/*01000044*/> readerFactory) cil managed
+  // SIG: 20 05 01 12 65 0E 12 80 90 12 80 84 15 12 80 FD 03 12 81 09 12 81 0D 12 81 11
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterContext::.ctor
+
+  .method /*060001AC*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ httpContext,
+                               string modelName,
+                               class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ modelState,
+                               class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ metadata,
+                               class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<class [System.Runtime/*23000001*/]System.IO.Stream/*01000042*/,class [System.Runtime/*23000001*/]System.Text.Encoding/*01000043*/,class [System.Runtime/*23000001*/]System.IO.TextReader/*01000044*/> readerFactory,
+                               bool treatEmptyInputAsDefaultValue) cil managed
+  // SIG: 20 06 01 12 65 0E 12 80 90 12 80 84 15 12 80 FD 03 12 81 09 12 81 0D 12 81 11 02
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterContext::.ctor
+
+  .method /*060001AD*/ public hidebysig specialname 
+          instance bool  get_TreatEmptyInputAsDefaultValue() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C00024D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterContext::get_TreatEmptyInputAsDefaultValue
+
+  .method /*060001AE*/ public hidebysig specialname 
+          instance class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ 
+          get_HttpContext() cil managed
+  // SIG: 20 00 12 65
+  {
+    .custom /*0C00024E:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterContext::get_HttpContext
+
+  .method /*060001AF*/ public hidebysig specialname 
+          instance string  get_ModelName() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C00024F:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterContext::get_ModelName
+
+  .method /*060001B0*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ 
+          get_ModelState() cil managed
+  // SIG: 20 00 12 80 90
+  {
+    .custom /*0C000250:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterContext::get_ModelState
+
+  .method /*060001B1*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_Metadata() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    .custom /*0C000251:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterContext::get_Metadata
+
+  .method /*060001B2*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_ModelType() cil managed
+  // SIG: 20 00 12 61
+  {
+    .custom /*0C000252:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterContext::get_ModelType
+
+  .method /*060001B3*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<class [System.Runtime/*23000001*/]System.IO.Stream/*01000042*/,class [System.Runtime/*23000001*/]System.Text.Encoding/*01000043*/,class [System.Runtime/*23000001*/]System.IO.TextReader/*01000044*/> 
+          get_ReaderFactory() cil managed
+  // SIG: 20 00 15 12 80 FD 03 12 81 09 12 81 0D 12 81 11
+  {
+    .custom /*0C000253:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterContext::get_ReaderFactory
+
+  .property /*170000CD*/ instance callconv(8) bool
+          TreatEmptyInputAsDefaultValue()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Formatters.InputFormatterContext/*02000042*/::get_TreatEmptyInputAsDefaultValue() /* 060001AD */
+  } // end of property InputFormatterContext::TreatEmptyInputAsDefaultValue
+  .property /*170000CE*/ instance callconv(8) class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/
+          HttpContext()
+  {
+    .get instance class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ Microsoft.AspNetCore.Mvc.Formatters.InputFormatterContext/*02000042*/::get_HttpContext() /* 060001AE */
+  } // end of property InputFormatterContext::HttpContext
+  .property /*170000CF*/ instance callconv(8) string
+          ModelName()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Formatters.InputFormatterContext/*02000042*/::get_ModelName() /* 060001AF */
+  } // end of property InputFormatterContext::ModelName
+  .property /*170000D0*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/
+          ModelState()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary/*02000024*/ Microsoft.AspNetCore.Mvc.Formatters.InputFormatterContext/*02000042*/::get_ModelState() /* 060001B0 */
+  } // end of property InputFormatterContext::ModelState
+  .property /*170000D1*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          Metadata()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.Formatters.InputFormatterContext/*02000042*/::get_Metadata() /* 060001B1 */
+  } // end of property InputFormatterContext::Metadata
+  .property /*170000D2*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          ModelType()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.Formatters.InputFormatterContext/*02000042*/::get_ModelType() /* 060001B2 */
+  } // end of property InputFormatterContext::ModelType
+  .property /*170000D3*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<class [System.Runtime/*23000001*/]System.IO.Stream/*01000042*/,class [System.Runtime/*23000001*/]System.Text.Encoding/*01000043*/,class [System.Runtime/*23000001*/]System.IO.TextReader/*01000044*/>
+          ReaderFactory()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<class [System.Runtime/*23000001*/]System.IO.Stream/*01000042*/,class [System.Runtime/*23000001*/]System.Text.Encoding/*01000043*/,class [System.Runtime/*23000001*/]System.IO.TextReader/*01000044*/> Microsoft.AspNetCore.Mvc.Formatters.InputFormatterContext/*02000042*/::get_ReaderFactory() /* 060001B3 */
+  } // end of property InputFormatterContext::ReaderFactory
+} // end of class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterContext
+
+.class /*02000043*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Formatters.InputFormatterException
+       extends [System.Runtime/*23000001*/]System.Exception/*01000026*/
+{
+  .custom /*0C00011F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000120:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060001B4*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterException::.ctor
+
+  .method /*060001B5*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(string message) cil managed
+  // SIG: 20 01 01 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterException::.ctor
+
+  .method /*060001B6*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(string message,
+                               class [System.Runtime/*23000001*/]System.Exception/*01000026*/ innerException) cil managed
+  // SIG: 20 02 01 0E 12 80 99
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterException::.ctor
+
+} // end of class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterException
+
+.class /*02000044*/ public auto ansi sealed Microsoft.AspNetCore.Mvc.Formatters.InputFormatterExceptionPolicy
+       extends [System.Runtime/*23000001*/]System.Enum/*01000020*/
+{
+  .field /*0400002E*/ public specialname rtspecialname int32 value__
+  .field /*0400002F*/ public static literal valuetype Microsoft.AspNetCore.Mvc.Formatters.InputFormatterExceptionPolicy/*02000044*/ AllExceptions = int32(0x00000000)
+  .field /*04000030*/ public static literal valuetype Microsoft.AspNetCore.Mvc.Formatters.InputFormatterExceptionPolicy/*02000044*/ MalformedInputExceptions = int32(0x00000001)
+} // end of class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterExceptionPolicy
+
+.class /*02000045*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Formatters.InputFormatterResult
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000124:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000125:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060001B7*/ public hidebysig specialname 
+          instance bool  get_HasError() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C000254:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterResult::get_HasError
+
+  .method /*060001B8*/ public hidebysig specialname 
+          instance bool  get_IsModelSet() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C000255:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterResult::get_IsModelSet
+
+  .method /*060001B9*/ public hidebysig specialname 
+          instance object  get_Model() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C000256:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C000257:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterResult::get_Model
+
+  .method /*060001BA*/ public hidebysig static 
+          class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterResult/*02000045*/ 
+          Failure() cil managed
+  // SIG: 00 00 12 81 14
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterResult::Failure
+
+  .method /*060001BB*/ public hidebysig static 
+          class [System.Runtime/*23000001*/]System.Threading.Tasks.Task`1/*01000041*/<class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterResult/*02000045*/> 
+          FailureAsync() cil managed
+  // SIG: 00 00 15 12 81 05 01 12 81 14
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterResult::FailureAsync
+
+  .method /*060001BC*/ public hidebysig static 
+          class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterResult/*02000045*/ 
+          Success(object model) cil managed
+  // SIG: 00 01 12 81 14 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterResult::Success
+
+  .method /*060001BD*/ public hidebysig static 
+          class [System.Runtime/*23000001*/]System.Threading.Tasks.Task`1/*01000041*/<class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterResult/*02000045*/> 
+          SuccessAsync(object model) cil managed
+  // SIG: 00 01 15 12 81 05 01 12 81 14 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterResult::SuccessAsync
+
+  .method /*060001BE*/ public hidebysig static 
+          class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterResult/*02000045*/ 
+          NoValue() cil managed
+  // SIG: 00 00 12 81 14
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterResult::NoValue
+
+  .method /*060001BF*/ public hidebysig static 
+          class [System.Runtime/*23000001*/]System.Threading.Tasks.Task`1/*01000041*/<class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterResult/*02000045*/> 
+          NoValueAsync() cil managed
+  // SIG: 00 00 15 12 81 05 01 12 81 14
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method InputFormatterResult::NoValueAsync
+
+  .property /*170000D4*/ instance callconv(8) bool
+          HasError()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Formatters.InputFormatterResult/*02000045*/::get_HasError() /* 060001B7 */
+  } // end of property InputFormatterResult::HasError
+  .property /*170000D5*/ instance callconv(8) bool
+          IsModelSet()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Formatters.InputFormatterResult/*02000045*/::get_IsModelSet() /* 060001B8 */
+  } // end of property InputFormatterResult::IsModelSet
+  .property /*170000D6*/ instance callconv(8) object
+          Model()
+  {
+    .custom /*0C0001D1:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance object Microsoft.AspNetCore.Mvc.Formatters.InputFormatterResult/*02000045*/::get_Model() /* 060001B9 */
+  } // end of property InputFormatterResult::Model
+} // end of class Microsoft.AspNetCore.Mvc.Formatters.InputFormatterResult
+
+.class /*02000046*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Formatters.IOutputFormatter
+{
+  .custom /*0C000128:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*060001C0*/ public hidebysig newslot abstract virtual 
+          instance bool  CanWriteResult(class Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext/*02000047*/ context) cil managed
+  // SIG: 20 01 02 12 81 1C
+  {
+    // Method begins at RVA 0x0
+  } // end of method IOutputFormatter::CanWriteResult
+
+  .method /*060001C1*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task/*0100001B*/ 
+          WriteAsync(class Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterWriteContext/*02000048*/ context) cil managed
+  // SIG: 20 01 12 6D 12 81 20
+  {
+    // Method begins at RVA 0x0
+  } // end of method IOutputFormatter::WriteAsync
+
+} // end of class Microsoft.AspNetCore.Mvc.Formatters.IOutputFormatter
+
+.class /*02000047*/ public abstract auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00012B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C00012C:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060001C2*/ family hidebysig specialname rtspecialname 
+          instance void  .ctor(class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ httpContext) cil managed
+  // SIG: 20 01 01 12 65
+  {
+    .custom /*0C000259:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterCanWriteContext::.ctor
+
+  .method /*060001C3*/ public hidebysig newslot specialname virtual 
+          instance class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ 
+          get_HttpContext() cil managed
+  // SIG: 20 00 12 65
+  {
+    .custom /*0C00025B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    .custom /*0C00025C:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterCanWriteContext::get_HttpContext
+
+  .method /*060001C4*/ family hidebysig newslot specialname virtual 
+          instance void  set_HttpContext(class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ 'value') cil managed
+  // SIG: 20 01 01 12 65
+  {
+    .custom /*0C00025D:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    .custom /*0C00025E:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterCanWriteContext::set_HttpContext
+
+  .method /*060001C5*/ public hidebysig newslot specialname virtual 
+          instance valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringSegment/*01000037*/ 
+          get_ContentType() cil managed
+  // SIG: 20 00 11 80 DD
+  {
+    .custom /*0C00025F:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterCanWriteContext::get_ContentType
+
+  .method /*060001C6*/ public hidebysig newslot specialname virtual 
+          instance void  set_ContentType(valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringSegment/*01000037*/ 'value') cil managed
+  // SIG: 20 01 01 11 80 DD
+  {
+    .custom /*0C000260:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterCanWriteContext::set_ContentType
+
+  .method /*060001C7*/ public hidebysig newslot specialname virtual 
+          instance bool  get_ContentTypeIsServerDefined() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C000261:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterCanWriteContext::get_ContentTypeIsServerDefined
+
+  .method /*060001C8*/ public hidebysig newslot specialname virtual 
+          instance void  set_ContentTypeIsServerDefined(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C000262:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterCanWriteContext::set_ContentTypeIsServerDefined
+
+  .method /*060001C9*/ public hidebysig newslot specialname virtual 
+          instance object  get_Object() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C000263:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterCanWriteContext::get_Object
+
+  .method /*060001CA*/ family hidebysig newslot specialname virtual 
+          instance void  set_Object(object 'value') cil managed
+  // SIG: 20 01 01 1C
+  {
+    .custom /*0C000264:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterCanWriteContext::set_Object
+
+  .method /*060001CB*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_ObjectType() cil managed
+  // SIG: 20 00 12 61
+  {
+    .custom /*0C000265:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterCanWriteContext::get_ObjectType
+
+  .method /*060001CC*/ family hidebysig newslot specialname virtual 
+          instance void  set_ObjectType(class [System.Runtime/*23000001*/]System.Type/*01000018*/ 'value') cil managed
+  // SIG: 20 01 01 12 61
+  {
+    .custom /*0C000266:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterCanWriteContext::set_ObjectType
+
+  .property /*170000D7*/ instance callconv(8) class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/
+          HttpContext()
+  {
+    .custom /*0C0001D2:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+    .get instance class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext/*02000047*/::get_HttpContext() /* 060001C3 */
+    .set instance void Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext/*02000047*/::set_HttpContext(class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/) /* 060001C4 */
+  } // end of property OutputFormatterCanWriteContext::HttpContext
+  .property /*170000D8*/ instance callconv(8) valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringSegment/*01000037*/
+          ContentType()
+  {
+    .get instance valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringSegment/*01000037*/ Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext/*02000047*/::get_ContentType() /* 060001C5 */
+    .set instance void Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext/*02000047*/::set_ContentType(valuetype [Microsoft.Extensions.Primitives/*23000005*/]Microsoft.Extensions.Primitives.StringSegment/*01000037*/) /* 060001C6 */
+  } // end of property OutputFormatterCanWriteContext::ContentType
+  .property /*170000D9*/ instance callconv(8) bool
+          ContentTypeIsServerDefined()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext/*02000047*/::get_ContentTypeIsServerDefined() /* 060001C7 */
+    .set instance void Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext/*02000047*/::set_ContentTypeIsServerDefined(bool) /* 060001C8 */
+  } // end of property OutputFormatterCanWriteContext::ContentTypeIsServerDefined
+  .property /*170000DA*/ instance callconv(8) object
+          Object()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext/*02000047*/::get_Object() /* 060001C9 */
+    .set instance void Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext/*02000047*/::set_Object(object) /* 060001CA */
+  } // end of property OutputFormatterCanWriteContext::Object
+  .property /*170000DB*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          ObjectType()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext/*02000047*/::get_ObjectType() /* 060001CB */
+    .set instance void Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext/*02000047*/::set_ObjectType(class [System.Runtime/*23000001*/]System.Type/*01000018*/) /* 060001CC */
+  } // end of property OutputFormatterCanWriteContext::ObjectType
+} // end of class Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext
+
+.class /*02000048*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterWriteContext
+       extends Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterCanWriteContext/*02000047*/
+{
+  .custom /*0C00012F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000130:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060001CD*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ httpContext,
+                               class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<class [System.Runtime/*23000001*/]System.IO.Stream/*01000042*/,class [System.Runtime/*23000001*/]System.Text.Encoding/*01000043*/,class [System.Runtime/*23000001*/]System.IO.TextWriter/*01000045*/> writerFactory,
+                               class [System.Runtime/*23000001*/]System.Type/*01000018*/ objectType,
+                               object 'object') cil managed
+  // SIG: 20 04 01 12 65 15 12 80 FD 03 12 81 09 12 81 0D 12 81 15 12 61 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterWriteContext::.ctor
+
+  .method /*060001CE*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<class [System.Runtime/*23000001*/]System.IO.Stream/*01000042*/,class [System.Runtime/*23000001*/]System.Text.Encoding/*01000043*/,class [System.Runtime/*23000001*/]System.IO.TextWriter/*01000045*/> 
+          get_WriterFactory() cil managed
+  // SIG: 20 00 15 12 80 FD 03 12 81 09 12 81 0D 12 81 15
+  {
+    .custom /*0C000267:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterWriteContext::get_WriterFactory
+
+  .method /*060001CF*/ family hidebysig newslot specialname virtual 
+          instance void  set_WriterFactory(class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<class [System.Runtime/*23000001*/]System.IO.Stream/*01000042*/,class [System.Runtime/*23000001*/]System.Text.Encoding/*01000043*/,class [System.Runtime/*23000001*/]System.IO.TextWriter/*01000045*/> 'value') cil managed
+  // SIG: 20 01 01 15 12 80 FD 03 12 81 09 12 81 0D 12 81 15
+  {
+    .custom /*0C000268:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method OutputFormatterWriteContext::set_WriterFactory
+
+  .property /*170000DC*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<class [System.Runtime/*23000001*/]System.IO.Stream/*01000042*/,class [System.Runtime/*23000001*/]System.Text.Encoding/*01000043*/,class [System.Runtime/*23000001*/]System.IO.TextWriter/*01000045*/>
+          WriterFactory()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<class [System.Runtime/*23000001*/]System.IO.Stream/*01000042*/,class [System.Runtime/*23000001*/]System.Text.Encoding/*01000043*/,class [System.Runtime/*23000001*/]System.IO.TextWriter/*01000045*/> Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterWriteContext/*02000048*/::get_WriterFactory() /* 060001CE */
+    .set instance void Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterWriteContext/*02000048*/::set_WriterFactory(class [System.Runtime/*23000001*/]System.Func`3/*0100003F*/<class [System.Runtime/*23000001*/]System.IO.Stream/*01000042*/,class [System.Runtime/*23000001*/]System.Text.Encoding/*01000043*/,class [System.Runtime/*23000001*/]System.IO.TextWriter/*01000045*/>) /* 060001CF */
+  } // end of property OutputFormatterWriteContext::WriterFactory
+} // end of class Microsoft.AspNetCore.Mvc.Formatters.OutputFormatterWriteContext
+
+.class /*02000049*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext
+       extends Microsoft.AspNetCore.Mvc.Filters.FilterContext/*0200004E*/
+{
+  .custom /*0C000133:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000134:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060001D0*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/> filters,
+                               object controller) cil managed
+  // SIG: 20 03 01 12 18 15 12 80 E5 01 12 81 78 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutedContext::.ctor
+
+  .method /*060001D1*/ public hidebysig newslot specialname virtual 
+          instance bool  get_Canceled() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C000269:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutedContext::get_Canceled
+
+  .method /*060001D2*/ public hidebysig newslot specialname virtual 
+          instance void  set_Canceled(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C00026A:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutedContext::set_Canceled
+
+  .method /*060001D3*/ public hidebysig newslot specialname virtual 
+          instance object  get_Controller() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C00026B:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutedContext::get_Controller
+
+  .method /*060001D4*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Exception/*01000026*/ 
+          get_Exception() cil managed
+  // SIG: 20 00 12 80 99
+  {
+    .custom /*0C00026C:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutedContext::get_Exception
+
+  .method /*060001D5*/ public hidebysig newslot specialname virtual 
+          instance void  set_Exception(class [System.Runtime/*23000001*/]System.Exception/*01000026*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 99
+  {
+    .custom /*0C00026D:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutedContext::set_Exception
+
+  .method /*060001D6*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/ 
+          get_ExceptionDispatchInfo() cil managed
+  // SIG: 20 00 12 81 19
+  {
+    .custom /*0C00026E:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutedContext::get_ExceptionDispatchInfo
+
+  .method /*060001D7*/ public hidebysig newslot specialname virtual 
+          instance void  set_ExceptionDispatchInfo(class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 19
+  {
+    .custom /*0C00026F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutedContext::set_ExceptionDispatchInfo
+
+  .method /*060001D8*/ public hidebysig newslot specialname virtual 
+          instance bool  get_ExceptionHandled() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C000270:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutedContext::get_ExceptionHandled
+
+  .method /*060001D9*/ public hidebysig newslot specialname virtual 
+          instance void  set_ExceptionHandled(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C000271:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutedContext::set_ExceptionHandled
+
+  .method /*060001DA*/ public hidebysig newslot specialname virtual 
+          instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 
+          get_Result() cil managed
+  // SIG: 20 00 12 1C
+  {
+    .custom /*0C000272:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutedContext::get_Result
+
+  .method /*060001DB*/ public hidebysig newslot specialname virtual 
+          instance void  set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 'value') cil managed
+  // SIG: 20 01 01 12 1C
+  {
+    .custom /*0C000273:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutedContext::set_Result
+
+  .property /*170000DD*/ instance callconv(8) bool
+          Canceled()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/::get_Canceled() /* 060001D1 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/::set_Canceled(bool) /* 060001D2 */
+  } // end of property ActionExecutedContext::Canceled
+  .property /*170000DE*/ instance callconv(8) object
+          Controller()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/::get_Controller() /* 060001D3 */
+  } // end of property ActionExecutedContext::Controller
+  .property /*170000DF*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Exception/*01000026*/
+          Exception()
+  {
+    .custom /*0C0001DB:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Exception/*01000026*/ Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/::get_Exception() /* 060001D4 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/::set_Exception(class [System.Runtime/*23000001*/]System.Exception/*01000026*/) /* 060001D5 */
+  } // end of property ActionExecutedContext::Exception
+  .property /*170000E0*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/
+          ExceptionDispatchInfo()
+  {
+    .custom /*0C0001DC:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/ Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/::get_ExceptionDispatchInfo() /* 060001D6 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/::set_ExceptionDispatchInfo(class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/) /* 060001D7 */
+  } // end of property ActionExecutedContext::ExceptionDispatchInfo
+  .property /*170000E1*/ instance callconv(8) bool
+          ExceptionHandled()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/::get_ExceptionHandled() /* 060001D8 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/::set_ExceptionHandled(bool) /* 060001D9 */
+  } // end of property ActionExecutedContext::ExceptionHandled
+  .property /*170000E2*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/
+          Result()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/::get_Result() /* 060001DA */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/::set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/) /* 060001DB */
+  } // end of property ActionExecutedContext::Result
+} // end of class Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext
+
+.class /*0200004A*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext
+       extends Microsoft.AspNetCore.Mvc.Filters.FilterContext/*0200004E*/
+{
+  .custom /*0C000137:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000138:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060001DC*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/> filters,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,object> actionArguments,
+                               object controller) cil managed
+  // SIG: 20 04 01 12 18 15 12 80 E5 01 12 81 78 15 12 80 F1 02 0E 1C 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutingContext::.ctor
+
+  .method /*060001DD*/ public hidebysig newslot specialname virtual 
+          instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 
+          get_Result() cil managed
+  // SIG: 20 00 12 1C
+  {
+    .custom /*0C000274:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C000275:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutingContext::get_Result
+
+  .method /*060001DE*/ public hidebysig newslot specialname virtual 
+          instance void  set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 'value') cil managed
+  // SIG: 20 01 01 12 1C
+  {
+    .custom /*0C000276:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C000277:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutingContext::set_Result
+
+  .method /*060001DF*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,object> 
+          get_ActionArguments() cil managed
+  // SIG: 20 00 15 12 80 F1 02 0E 1C
+  {
+    .custom /*0C000278:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutingContext::get_ActionArguments
+
+  .method /*060001E0*/ public hidebysig newslot specialname virtual 
+          instance object  get_Controller() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C000279:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionExecutingContext::get_Controller
+
+  .property /*170000E3*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/
+          Result()
+  {
+    .custom /*0C0001DD:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext/*0200004A*/::get_Result() /* 060001DD */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext/*0200004A*/::set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/) /* 060001DE */
+  } // end of property ActionExecutingContext::Result
+  .property /*170000E4*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,object>
+          ActionArguments()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,object> Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext/*0200004A*/::get_ActionArguments() /* 060001DF */
+  } // end of property ActionExecutingContext::ActionArguments
+  .property /*170000E5*/ instance callconv(8) object
+          Controller()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext/*0200004A*/::get_Controller() /* 060001E0 */
+  } // end of property ActionExecutingContext::Controller
+} // end of class Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext
+
+.class /*0200004B*/ public auto ansi sealed Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate
+       extends [System.Runtime/*23000001*/]System.MulticastDelegate/*01000047*/
+{
+  .method /*060001E1*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(object 'object',
+                               native int 'method') runtime managed
+  // SIG: 20 02 01 1C 18
+  {
+  } // end of method ActionExecutionDelegate::.ctor
+
+  .method /*060001E2*/ public hidebysig newslot virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task`1/*01000041*/<class Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/> 
+          Invoke() runtime managed
+  // SIG: 20 00 15 12 81 05 01 12 81 24
+  {
+    .custom /*0C00027A:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  } // end of method ActionExecutionDelegate::Invoke
+
+  .method /*060001E3*/ public hidebysig newslot virtual 
+          instance class [System.Runtime/*23000001*/]System.IAsyncResult/*01000048*/ 
+          BeginInvoke(class [System.Runtime/*23000001*/]System.AsyncCallback/*01000049*/ callback,
+                      object 'object') runtime managed
+  // SIG: 20 02 12 81 21 12 81 25 1C
+  {
+  } // end of method ActionExecutionDelegate::BeginInvoke
+
+  .method /*060001E4*/ public hidebysig newslot virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task`1/*01000041*/<class Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/> 
+          EndInvoke(class [System.Runtime/*23000001*/]System.IAsyncResult/*01000048*/ result) runtime managed
+  // SIG: 20 01 15 12 81 05 01 12 81 24 12 81 21
+  {
+    .param [0]/*0800013F*/ 
+    .custom /*0C00020A:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+  } // end of method ActionExecutionDelegate::EndInvoke
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate
+
+.class /*0200004C*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext
+       extends Microsoft.AspNetCore.Mvc.Filters.FilterContext/*0200004E*/
+{
+  .custom /*0C00013B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C00013C:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060001E5*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/> filters) cil managed
+  // SIG: 20 02 01 12 18 15 12 80 E5 01 12 81 78
+  {
+    .custom /*0C00027B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AuthorizationFilterContext::.ctor
+
+  .method /*060001E6*/ public hidebysig newslot specialname virtual 
+          instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 
+          get_Result() cil managed
+  // SIG: 20 00 12 1C
+  {
+    .custom /*0C00027C:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AuthorizationFilterContext::get_Result
+
+  .method /*060001E7*/ public hidebysig newslot specialname virtual 
+          instance void  set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 'value') cil managed
+  // SIG: 20 01 01 12 1C
+  {
+    .custom /*0C00027D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method AuthorizationFilterContext::set_Result
+
+  .property /*170000E6*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/
+          Result()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext/*0200004C*/::get_Result() /* 060001E6 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext/*0200004C*/::set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/) /* 060001E7 */
+  } // end of property AuthorizationFilterContext::Result
+} // end of class Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext
+
+.class /*0200004D*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Filters.ExceptionContext
+       extends Microsoft.AspNetCore.Mvc.Filters.FilterContext/*0200004E*/
+{
+  .custom /*0C00013F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C000140:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060001E8*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/> filters) cil managed
+  // SIG: 20 02 01 12 18 15 12 80 E5 01 12 81 78
+  {
+    .custom /*0C00027E:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ExceptionContext::.ctor
+
+  .method /*060001E9*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Exception/*01000026*/ 
+          get_Exception() cil managed
+  // SIG: 20 00 12 80 99
+  {
+    .custom /*0C00027F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ExceptionContext::get_Exception
+
+  .method /*060001EA*/ public hidebysig newslot specialname virtual 
+          instance void  set_Exception(class [System.Runtime/*23000001*/]System.Exception/*01000026*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 99
+  {
+    .custom /*0C000280:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ExceptionContext::set_Exception
+
+  .method /*060001EB*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/ 
+          get_ExceptionDispatchInfo() cil managed
+  // SIG: 20 00 12 81 19
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ExceptionContext::get_ExceptionDispatchInfo
+
+  .method /*060001EC*/ public hidebysig newslot specialname virtual 
+          instance void  set_ExceptionDispatchInfo(class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 19
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ExceptionContext::set_ExceptionDispatchInfo
+
+  .method /*060001ED*/ public hidebysig newslot specialname virtual 
+          instance bool  get_ExceptionHandled() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C000283:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ExceptionContext::get_ExceptionHandled
+
+  .method /*060001EE*/ public hidebysig newslot specialname virtual 
+          instance void  set_ExceptionHandled(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C000285:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ExceptionContext::set_ExceptionHandled
+
+  .method /*060001EF*/ public hidebysig newslot specialname virtual 
+          instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 
+          get_Result() cil managed
+  // SIG: 20 00 12 1C
+  {
+    .custom /*0C000286:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ExceptionContext::get_Result
+
+  .method /*060001F0*/ public hidebysig newslot specialname virtual 
+          instance void  set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 'value') cil managed
+  // SIG: 20 01 01 12 1C
+  {
+    .custom /*0C000287:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ExceptionContext::set_Result
+
+  .property /*170000E7*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Exception/*01000026*/
+          Exception()
+  {
+    .custom /*0C0001E2:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Exception/*01000026*/ Microsoft.AspNetCore.Mvc.Filters.ExceptionContext/*0200004D*/::get_Exception() /* 060001E9 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ExceptionContext/*0200004D*/::set_Exception(class [System.Runtime/*23000001*/]System.Exception/*01000026*/) /* 060001EA */
+  } // end of property ExceptionContext::Exception
+  .property /*170000E8*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/
+          ExceptionDispatchInfo()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/ Microsoft.AspNetCore.Mvc.Filters.ExceptionContext/*0200004D*/::get_ExceptionDispatchInfo() /* 060001EB */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ExceptionContext/*0200004D*/::set_ExceptionDispatchInfo(class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/) /* 060001EC */
+  } // end of property ExceptionContext::ExceptionDispatchInfo
+  .property /*170000E9*/ instance callconv(8) bool
+          ExceptionHandled()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Filters.ExceptionContext/*0200004D*/::get_ExceptionHandled() /* 060001ED */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ExceptionContext/*0200004D*/::set_ExceptionHandled(bool) /* 060001EE */
+  } // end of property ExceptionContext::ExceptionHandled
+  .property /*170000EA*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/
+          Result()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ Microsoft.AspNetCore.Mvc.Filters.ExceptionContext/*0200004D*/::get_Result() /* 060001EF */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ExceptionContext/*0200004D*/::set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/) /* 060001F0 */
+  } // end of property ExceptionContext::Result
+} // end of class Microsoft.AspNetCore.Mvc.Filters.ExceptionContext
+
+.class /*0200004E*/ public abstract auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Filters.FilterContext
+       extends Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/
+{
+  .custom /*0C000143:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000144:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060001F1*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/> filters) cil managed
+  // SIG: 20 02 01 12 18 15 12 80 E5 01 12 81 78
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterContext::.ctor
+
+  .method /*060001F2*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/> 
+          get_Filters() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 81 78
+  {
+    .custom /*0C000288:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterContext::get_Filters
+
+  .method /*060001F3*/ public hidebysig instance bool 
+          IsEffectivePolicy<(Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/) TMetadata>(!!TMetadata policy) cil managed
+  // SIG: 30 01 01 02 1E 00
+  {
+    .param type TMetadata /*2A000003*/ 
+      .custom /*0C00003A:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterContext::IsEffectivePolicy
+
+  .method /*060001F4*/ public hidebysig instance !!TMetadata 
+          FindEffectivePolicy<(Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/) TMetadata>() cil managed
+  // SIG: 30 01 00 1E 00
+  {
+    .param type TMetadata /*2A000004*/ 
+      .custom /*0C00003F:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+    .param [0]/*0800014D*/ 
+    .custom /*0C000211:0A000026*/ instance void [System.Runtime/*23000001*/]System.Diagnostics.CodeAnalysis.MaybeNullAttribute/*0100004A*/::.ctor() /* 0A000026 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterContext::FindEffectivePolicy
+
+  .property /*170000EB*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/>
+          Filters()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/> Microsoft.AspNetCore.Mvc.Filters.FilterContext/*0200004E*/::get_Filters() /* 060001F2 */
+  } // end of property FilterContext::Filters
+} // end of class Microsoft.AspNetCore.Mvc.Filters.FilterContext
+
+.class /*0200004F*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000148:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000149:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C00014A:0A000014*/ instance void [System.Runtime/*23000001*/]System.Diagnostics.DebuggerDisplayAttribute/*0100001E*/::.ctor(string) /* 0A000014 */ = ( 01 00 30 46 69 6C 74 65 72 20 3D 20 7B 46 69 6C   // ..0Filter = {Fil
+                                                                                                                                                                    74 65 72 2E 54 6F 53 74 72 69 6E 67 28 29 2C 6E   // ter.ToString(),n
+                                                                                                                                                                    71 7D 2C 20 4F 72 64 65 72 20 3D 20 7B 4F 72 64   // q}, Order = {Ord
+                                                                                                                                                                    65 72 7D 00 00 )                                  // er}..
+  .method /*060001F5*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/ 'filter',
+                               int32 filterScope) cil managed
+  // SIG: 20 02 01 12 81 78 08
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterDescriptor::.ctor
+
+  .method /*060001F6*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/ 
+          get_Filter() cil managed
+  // SIG: 20 00 12 81 78
+  {
+    .custom /*0C00028A:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterDescriptor::get_Filter
+
+  .method /*060001F7*/ public hidebysig specialname 
+          instance int32  get_Order() cil managed
+  // SIG: 20 00 08
+  {
+    .custom /*0C00028C:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterDescriptor::get_Order
+
+  .method /*060001F8*/ public hidebysig specialname 
+          instance void  set_Order(int32 'value') cil managed
+  // SIG: 20 01 01 08
+  {
+    .custom /*0C00028D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterDescriptor::set_Order
+
+  .method /*060001F9*/ public hidebysig specialname 
+          instance int32  get_Scope() cil managed
+  // SIG: 20 00 08
+  {
+    .custom /*0C00028E:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterDescriptor::get_Scope
+
+  .property /*170000EC*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+          Filter()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/ Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/::get_Filter() /* 060001F6 */
+  } // end of property FilterDescriptor::Filter
+  .property /*170000ED*/ instance callconv(8) int32
+          Order()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/::get_Order() /* 060001F7 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/::set_Order(int32) /* 060001F8 */
+  } // end of property FilterDescriptor::Order
+  .property /*170000EE*/ instance callconv(8) int32
+          Scope()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/::get_Scope() /* 060001F9 */
+  } // end of property FilterDescriptor::Scope
+} // end of class Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor
+
+.class /*02000050*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Filters.FilterItem
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00014E:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00014F:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C000150:0A000014*/ instance void [System.Runtime/*23000001*/]System.Diagnostics.DebuggerDisplayAttribute/*0100001E*/::.ctor(string) /* 0A000014 */ = ( 01 00 14 46 69 6C 74 65 72 49 74 65 6D 3A 20 7B   // ...FilterItem: {
+                                                                                                                                                                    46 69 6C 74 65 72 7D 00 00 )                      // Filter}..
+  .method /*060001FA*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/ descriptor) cil managed
+  // SIG: 20 01 01 12 81 3C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterItem::.ctor
+
+  .method /*060001FB*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/ descriptor,
+                               class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/ 'filter') cil managed
+  // SIG: 20 02 01 12 81 3C 12 81 78
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterItem::.ctor
+
+  .method /*060001FC*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/ 
+          get_Descriptor() cil managed
+  // SIG: 20 00 12 81 3C
+  {
+    .custom /*0C000290:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterItem::get_Descriptor
+
+  .method /*060001FD*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/ 
+          get_Filter() cil managed
+  // SIG: 20 00 12 81 78
+  {
+    .custom /*0C000291:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterItem::get_Filter
+
+  .method /*060001FE*/ public hidebysig specialname 
+          instance void  set_Filter(class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 78
+  {
+    .custom /*0C000292:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterItem::set_Filter
+
+  .method /*060001FF*/ public hidebysig specialname 
+          instance bool  get_IsReusable() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C000293:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterItem::get_IsReusable
+
+  .method /*06000200*/ public hidebysig specialname 
+          instance void  set_IsReusable(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C000294:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterItem::set_IsReusable
+
+  .property /*170000EF*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/
+          Descriptor()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/ Microsoft.AspNetCore.Mvc.Filters.FilterItem/*02000050*/::get_Descriptor() /* 060001FC */
+  } // end of property FilterItem::Descriptor
+  .property /*170000F0*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+          Filter()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/ Microsoft.AspNetCore.Mvc.Filters.FilterItem/*02000050*/::get_Filter() /* 060001FD */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.FilterItem/*02000050*/::set_Filter(class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/) /* 060001FE */
+  } // end of property FilterItem::Filter
+  .property /*170000F1*/ instance callconv(8) bool
+          IsReusable()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Filters.FilterItem/*02000050*/::get_IsReusable() /* 060001FF */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.FilterItem/*02000050*/::set_IsReusable(bool) /* 06000200 */
+  } // end of property FilterItem::IsReusable
+} // end of class Microsoft.AspNetCore.Mvc.Filters.FilterItem
+
+.class /*02000051*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Filters.FilterProviderContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000151:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000152:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000201*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.FilterItem/*02000050*/> items) cil managed
+  // SIG: 20 02 01 12 18 15 12 80 E5 01 12 81 40
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterProviderContext::.ctor
+
+  .method /*06000202*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ 
+          get_ActionContext() cil managed
+  // SIG: 20 00 12 18
+  {
+    .custom /*0C000295:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterProviderContext::get_ActionContext
+
+  .method /*06000203*/ public hidebysig specialname 
+          instance void  set_ActionContext(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ 'value') cil managed
+  // SIG: 20 01 01 12 18
+  {
+    .custom /*0C000296:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterProviderContext::set_ActionContext
+
+  .method /*06000204*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.FilterItem/*02000050*/> 
+          get_Results() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 81 40
+  {
+    .custom /*0C000297:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterProviderContext::get_Results
+
+  .method /*06000205*/ public hidebysig specialname 
+          instance void  set_Results(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.FilterItem/*02000050*/> 'value') cil managed
+  // SIG: 20 01 01 15 12 80 E5 01 12 81 40
+  {
+    .custom /*0C000298:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method FilterProviderContext::set_Results
+
+  .property /*170000F2*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/
+          ActionContext()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ Microsoft.AspNetCore.Mvc.Filters.FilterProviderContext/*02000051*/::get_ActionContext() /* 06000202 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.FilterProviderContext/*02000051*/::set_ActionContext(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/) /* 06000203 */
+  } // end of property FilterProviderContext::ActionContext
+  .property /*170000F3*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.FilterItem/*02000050*/>
+          Results()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.FilterItem/*02000050*/> Microsoft.AspNetCore.Mvc.Filters.FilterProviderContext/*02000051*/::get_Results() /* 06000204 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.FilterProviderContext/*02000051*/::set_Results(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.FilterItem/*02000050*/>) /* 06000205 */
+  } // end of property FilterProviderContext::Results
+} // end of class Microsoft.AspNetCore.Mvc.Filters.FilterProviderContext
+
+.class /*02000052*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IActionFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+  .custom /*0C000154:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .interfaceimpl type Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+  .custom /*0C00007B:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000206*/ public hidebysig newslot abstract virtual 
+          instance void  OnActionExecuting(class Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext/*0200004A*/ context) cil managed
+  // SIG: 20 01 01 12 81 28
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionFilter::OnActionExecuting
+
+  .method /*06000207*/ public hidebysig newslot abstract virtual 
+          instance void  OnActionExecuted(class Microsoft.AspNetCore.Mvc.Filters.ActionExecutedContext/*02000049*/ context) cil managed
+  // SIG: 20 01 01 12 81 24
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionFilter::OnActionExecuted
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IActionFilter
+
+.class /*02000053*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IAlwaysRunResultFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IResultFilter/*02000062*/,
+                  Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IAlwaysRunResultFilter
+
+.class /*02000054*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IAsyncActionFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+  .method /*06000208*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task/*0100001B*/ 
+          OnActionExecutionAsync(class Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext/*0200004A*/ context,
+                                 class Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate/*0200004B*/ next) cil managed
+  // SIG: 20 02 12 6D 12 81 28 12 81 2C
+  {
+    .custom /*0C000299:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IAsyncActionFilter::OnActionExecutionAsync
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IAsyncActionFilter
+
+.class /*02000055*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IAsyncAlwaysRunResultFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IAsyncResultFilter/*02000059*/,
+                  Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IAsyncAlwaysRunResultFilter
+
+.class /*02000056*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IAsyncAuthorizationFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+  .method /*06000209*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task/*0100001B*/ 
+          OnAuthorizationAsync(class Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext/*0200004C*/ context) cil managed
+  // SIG: 20 01 12 6D 12 81 30
+  {
+    .custom /*0C00029A:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IAsyncAuthorizationFilter::OnAuthorizationAsync
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IAsyncAuthorizationFilter
+
+.class /*02000057*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IAsyncExceptionFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+  .method /*0600020A*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task/*0100001B*/ 
+          OnExceptionAsync(class Microsoft.AspNetCore.Mvc.Filters.ExceptionContext/*0200004D*/ context) cil managed
+  // SIG: 20 01 12 6D 12 81 34
+  {
+    .custom /*0C00029B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IAsyncExceptionFilter::OnExceptionAsync
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IAsyncExceptionFilter
+
+.class /*02000058*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IAsyncResourceFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+  .method /*0600020B*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task/*0100001B*/ 
+          OnResourceExecutionAsync(class Microsoft.AspNetCore.Mvc.Filters.ResourceExecutingContext/*02000064*/ context,
+                                   class Microsoft.AspNetCore.Mvc.Filters.ResourceExecutionDelegate/*02000065*/ next) cil managed
+  // SIG: 20 02 12 6D 12 81 90 12 81 94
+  {
+    .custom /*0C00029C:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IAsyncResourceFilter::OnResourceExecutionAsync
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IAsyncResourceFilter
+
+.class /*02000059*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IAsyncResultFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+  .method /*0600020C*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task/*0100001B*/ 
+          OnResultExecutionAsync(class Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext/*02000067*/ context,
+                                 class Microsoft.AspNetCore.Mvc.Filters.ResultExecutionDelegate/*02000068*/ next) cil managed
+  // SIG: 20 02 12 6D 12 81 9C 12 81 A0
+  {
+    .custom /*0C00029D:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IAsyncResultFilter::OnResultExecutionAsync
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IAsyncResultFilter
+
+.class /*0200005A*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IAuthorizationFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+  .method /*0600020D*/ public hidebysig newslot abstract virtual 
+          instance void  OnAuthorization(class Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext/*0200004C*/ context) cil managed
+  // SIG: 20 01 01 12 81 30
+  {
+    .custom /*0C00029E:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IAuthorizationFilter::OnAuthorization
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IAuthorizationFilter
+
+.class /*0200005B*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IExceptionFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+  .method /*0600020E*/ public hidebysig newslot abstract virtual 
+          instance void  OnException(class Microsoft.AspNetCore.Mvc.Filters.ExceptionContext/*0200004D*/ context) cil managed
+  // SIG: 20 01 01 12 81 34
+  {
+    .custom /*0C00029F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IExceptionFilter::OnException
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IExceptionFilter
+
+.class /*0200005C*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IFilterContainer
+{
+  .custom /*0C00015C:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*0600020F*/ public hidebysig newslot specialname abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/ 
+          get_FilterDefinition() cil managed
+  // SIG: 20 00 12 81 78
+  {
+    // Method begins at RVA 0x0
+  } // end of method IFilterContainer::get_FilterDefinition
+
+  .method /*06000210*/ public hidebysig newslot specialname abstract virtual 
+          instance void  set_FilterDefinition(class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 78
+  {
+    // Method begins at RVA 0x0
+  } // end of method IFilterContainer::set_FilterDefinition
+
+  .property /*170000F4*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+          FilterDefinition()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/ Microsoft.AspNetCore.Mvc.Filters.IFilterContainer/*0200005C*/::get_FilterDefinition() /* 0600020F */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.IFilterContainer/*0200005C*/::set_FilterDefinition(class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/) /* 06000210 */
+  } // end of property IFilterContainer::FilterDefinition
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IFilterContainer
+
+.class /*0200005D*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IFilterFactory
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+  .method /*06000211*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_IsReusable() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method IFilterFactory::get_IsReusable
+
+  .method /*06000212*/ public hidebysig newslot abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/ 
+          CreateInstance(class [System.ComponentModel/*23000004*/]System.IServiceProvider/*01000024*/ serviceProvider) cil managed
+  // SIG: 20 01 12 81 78 12 80 91
+  {
+    .custom /*0C0002A0:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IFilterFactory::CreateInstance
+
+  .property /*170000F5*/ instance callconv(8) bool
+          IsReusable()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Filters.IFilterFactory/*0200005D*/::get_IsReusable() /* 06000211 */
+  } // end of property IFilterFactory::IsReusable
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IFilterFactory
+
+.class /*0200005E*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata
+{
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata
+
+.class /*0200005F*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IFilterProvider
+{
+  .custom /*0C00015D:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000213*/ public hidebysig newslot specialname abstract virtual 
+          instance int32  get_Order() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x0
+  } // end of method IFilterProvider::get_Order
+
+  .method /*06000214*/ public hidebysig newslot abstract virtual 
+          instance void  OnProvidersExecuting(class Microsoft.AspNetCore.Mvc.Filters.FilterProviderContext/*02000051*/ context) cil managed
+  // SIG: 20 01 01 12 81 44
+  {
+    // Method begins at RVA 0x0
+  } // end of method IFilterProvider::OnProvidersExecuting
+
+  .method /*06000215*/ public hidebysig newslot abstract virtual 
+          instance void  OnProvidersExecuted(class Microsoft.AspNetCore.Mvc.Filters.FilterProviderContext/*02000051*/ context) cil managed
+  // SIG: 20 01 01 12 81 44
+  {
+    // Method begins at RVA 0x0
+  } // end of method IFilterProvider::OnProvidersExecuted
+
+  .property /*170000F6*/ instance callconv(8) int32
+          Order()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.Filters.IFilterProvider/*0200005F*/::get_Order() /* 06000213 */
+  } // end of property IFilterProvider::Order
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IFilterProvider
+
+.class /*02000060*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IOrderedFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+  .method /*06000216*/ public hidebysig newslot specialname abstract virtual 
+          instance int32  get_Order() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x0
+  } // end of method IOrderedFilter::get_Order
+
+  .property /*170000F7*/ instance callconv(8) int32
+          Order()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.Filters.IOrderedFilter/*02000060*/::get_Order() /* 06000216 */
+  } // end of property IOrderedFilter::Order
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IOrderedFilter
+
+.class /*02000061*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IResourceFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+  .custom /*0C00015E:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .interfaceimpl type Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+  .custom /*0C0000AA:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000217*/ public hidebysig newslot abstract virtual 
+          instance void  OnResourceExecuting(class Microsoft.AspNetCore.Mvc.Filters.ResourceExecutingContext/*02000064*/ context) cil managed
+  // SIG: 20 01 01 12 81 90
+  {
+    // Method begins at RVA 0x0
+  } // end of method IResourceFilter::OnResourceExecuting
+
+  .method /*06000218*/ public hidebysig newslot abstract virtual 
+          instance void  OnResourceExecuted(class Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/ context) cil managed
+  // SIG: 20 01 01 12 81 8C
+  {
+    // Method begins at RVA 0x0
+  } // end of method IResourceFilter::OnResourceExecuted
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IResourceFilter
+
+.class /*02000062*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Filters.IResultFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+  .custom /*0C00015F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .interfaceimpl type Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+  .custom /*0C0000B0:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000219*/ public hidebysig newslot abstract virtual 
+          instance void  OnResultExecuting(class Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext/*02000067*/ context) cil managed
+  // SIG: 20 01 01 12 81 9C
+  {
+    // Method begins at RVA 0x0
+  } // end of method IResultFilter::OnResultExecuting
+
+  .method /*0600021A*/ public hidebysig newslot abstract virtual 
+          instance void  OnResultExecuted(class Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/ context) cil managed
+  // SIG: 20 01 01 12 81 98
+  {
+    // Method begins at RVA 0x0
+  } // end of method IResultFilter::OnResultExecuted
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.IResultFilter
+
+.class /*02000063*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext
+       extends Microsoft.AspNetCore.Mvc.Filters.FilterContext/*0200004E*/
+{
+  .custom /*0C000160:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C000161:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*0600021B*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/> filters) cil managed
+  // SIG: 20 02 01 12 18 15 12 80 E5 01 12 81 78
+  {
+    .custom /*0C0002A1:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutedContext::.ctor
+
+  .method /*0600021C*/ public hidebysig newslot specialname virtual 
+          instance bool  get_Canceled() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0002A2:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutedContext::get_Canceled
+
+  .method /*0600021D*/ public hidebysig newslot specialname virtual 
+          instance void  set_Canceled(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C0002A3:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutedContext::set_Canceled
+
+  .method /*0600021E*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Exception/*01000026*/ 
+          get_Exception() cil managed
+  // SIG: 20 00 12 80 99
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutedContext::get_Exception
+
+  .method /*0600021F*/ public hidebysig newslot specialname virtual 
+          instance void  set_Exception(class [System.Runtime/*23000001*/]System.Exception/*01000026*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 99
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutedContext::set_Exception
+
+  .method /*06000220*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/ 
+          get_ExceptionDispatchInfo() cil managed
+  // SIG: 20 00 12 81 19
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutedContext::get_ExceptionDispatchInfo
+
+  .method /*06000221*/ public hidebysig newslot specialname virtual 
+          instance void  set_ExceptionDispatchInfo(class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 19
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutedContext::set_ExceptionDispatchInfo
+
+  .method /*06000222*/ public hidebysig newslot specialname virtual 
+          instance bool  get_ExceptionHandled() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0002A4:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutedContext::get_ExceptionHandled
+
+  .method /*06000223*/ public hidebysig newslot specialname virtual 
+          instance void  set_ExceptionHandled(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C0002A5:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutedContext::set_ExceptionHandled
+
+  .method /*06000224*/ public hidebysig newslot specialname virtual 
+          instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 
+          get_Result() cil managed
+  // SIG: 20 00 12 1C
+  {
+    .custom /*0C0002A6:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutedContext::get_Result
+
+  .method /*06000225*/ public hidebysig newslot specialname virtual 
+          instance void  set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 'value') cil managed
+  // SIG: 20 01 01 12 1C
+  {
+    .custom /*0C0002A7:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutedContext::set_Result
+
+  .property /*170000F8*/ instance callconv(8) bool
+          Canceled()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/::get_Canceled() /* 0600021C */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/::set_Canceled(bool) /* 0600021D */
+  } // end of property ResourceExecutedContext::Canceled
+  .property /*170000F9*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Exception/*01000026*/
+          Exception()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Exception/*01000026*/ Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/::get_Exception() /* 0600021E */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/::set_Exception(class [System.Runtime/*23000001*/]System.Exception/*01000026*/) /* 0600021F */
+  } // end of property ResourceExecutedContext::Exception
+  .property /*170000FA*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/
+          ExceptionDispatchInfo()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/ Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/::get_ExceptionDispatchInfo() /* 06000220 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/::set_ExceptionDispatchInfo(class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/) /* 06000221 */
+  } // end of property ResourceExecutedContext::ExceptionDispatchInfo
+  .property /*170000FB*/ instance callconv(8) bool
+          ExceptionHandled()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/::get_ExceptionHandled() /* 06000222 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/::set_ExceptionHandled(bool) /* 06000223 */
+  } // end of property ResourceExecutedContext::ExceptionHandled
+  .property /*170000FC*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/
+          Result()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/::get_Result() /* 06000224 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/::set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/) /* 06000225 */
+  } // end of property ResourceExecutedContext::Result
+} // end of class Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext
+
+.class /*02000064*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Filters.ResourceExecutingContext
+       extends Microsoft.AspNetCore.Mvc.Filters.FilterContext/*0200004E*/
+{
+  .custom /*0C000162:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000163:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000226*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/> filters,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProviderFactory/*0200001B*/> valueProviderFactories) cil managed
+  // SIG: 20 03 01 12 18 15 12 80 E5 01 12 81 78 15 12 80 E5 01 12 6C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutingContext::.ctor
+
+  .method /*06000227*/ public hidebysig newslot specialname virtual 
+          instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 
+          get_Result() cil managed
+  // SIG: 20 00 12 1C
+  {
+    .custom /*0C0002A8:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0002A9:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutingContext::get_Result
+
+  .method /*06000228*/ public hidebysig newslot specialname virtual 
+          instance void  set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 'value') cil managed
+  // SIG: 20 01 01 12 1C
+  {
+    .custom /*0C0002AA:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0002AB:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutingContext::set_Result
+
+  .method /*06000229*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProviderFactory/*0200001B*/> 
+          get_ValueProviderFactories() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 6C
+  {
+    .custom /*0C0002AC:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResourceExecutingContext::get_ValueProviderFactories
+
+  .property /*170000FD*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/
+          Result()
+  {
+    .custom /*0C0001EB:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ Microsoft.AspNetCore.Mvc.Filters.ResourceExecutingContext/*02000064*/::get_Result() /* 06000227 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ResourceExecutingContext/*02000064*/::set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/) /* 06000228 */
+  } // end of property ResourceExecutingContext::Result
+  .property /*170000FE*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProviderFactory/*0200001B*/>
+          ValueProviderFactories()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ModelBinding.IValueProviderFactory/*0200001B*/> Microsoft.AspNetCore.Mvc.Filters.ResourceExecutingContext/*02000064*/::get_ValueProviderFactories() /* 06000229 */
+  } // end of property ResourceExecutingContext::ValueProviderFactories
+} // end of class Microsoft.AspNetCore.Mvc.Filters.ResourceExecutingContext
+
+.class /*02000065*/ public auto ansi sealed Microsoft.AspNetCore.Mvc.Filters.ResourceExecutionDelegate
+       extends [System.Runtime/*23000001*/]System.MulticastDelegate/*01000047*/
+{
+  .method /*0600022A*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(object 'object',
+                               native int 'method') runtime managed
+  // SIG: 20 02 01 1C 18
+  {
+  } // end of method ResourceExecutionDelegate::.ctor
+
+  .method /*0600022B*/ public hidebysig newslot virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task`1/*01000041*/<class Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/> 
+          Invoke() runtime managed
+  // SIG: 20 00 15 12 81 05 01 12 81 8C
+  {
+    .custom /*0C0002AD:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  } // end of method ResourceExecutionDelegate::Invoke
+
+  .method /*0600022C*/ public hidebysig newslot virtual 
+          instance class [System.Runtime/*23000001*/]System.IAsyncResult/*01000048*/ 
+          BeginInvoke(class [System.Runtime/*23000001*/]System.AsyncCallback/*01000049*/ callback,
+                      object 'object') runtime managed
+  // SIG: 20 02 12 81 21 12 81 25 1C
+  {
+  } // end of method ResourceExecutionDelegate::BeginInvoke
+
+  .method /*0600022D*/ public hidebysig newslot virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task`1/*01000041*/<class Microsoft.AspNetCore.Mvc.Filters.ResourceExecutedContext/*02000063*/> 
+          EndInvoke(class [System.Runtime/*23000001*/]System.IAsyncResult/*01000048*/ result) runtime managed
+  // SIG: 20 01 15 12 81 05 01 12 81 8C 12 81 21
+  {
+    .param [0]/*0800017D*/ 
+    .custom /*0C00022A:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+  } // end of method ResourceExecutionDelegate::EndInvoke
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.ResourceExecutionDelegate
+
+.class /*02000066*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext
+       extends Microsoft.AspNetCore.Mvc.Filters.FilterContext/*0200004E*/
+{
+  .custom /*0C000164:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C000165:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*0600022E*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/> filters,
+                               class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ result,
+                               object controller) cil managed
+  // SIG: 20 04 01 12 18 15 12 80 E5 01 12 81 78 12 1C 1C
+  {
+    .custom /*0C0002AE:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutedContext::.ctor
+
+  .method /*0600022F*/ public hidebysig newslot specialname virtual 
+          instance bool  get_Canceled() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0002AF:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutedContext::get_Canceled
+
+  .method /*06000230*/ public hidebysig newslot specialname virtual 
+          instance void  set_Canceled(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C0002B0:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutedContext::set_Canceled
+
+  .method /*06000231*/ public hidebysig newslot specialname virtual 
+          instance object  get_Controller() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C0002B1:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    .custom /*0C0002B2:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutedContext::get_Controller
+
+  .method /*06000232*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Exception/*01000026*/ 
+          get_Exception() cil managed
+  // SIG: 20 00 12 80 99
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutedContext::get_Exception
+
+  .method /*06000233*/ public hidebysig newslot specialname virtual 
+          instance void  set_Exception(class [System.Runtime/*23000001*/]System.Exception/*01000026*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 99
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutedContext::set_Exception
+
+  .method /*06000234*/ public hidebysig newslot specialname virtual 
+          instance class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/ 
+          get_ExceptionDispatchInfo() cil managed
+  // SIG: 20 00 12 81 19
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutedContext::get_ExceptionDispatchInfo
+
+  .method /*06000235*/ public hidebysig newslot specialname virtual 
+          instance void  set_ExceptionDispatchInfo(class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 19
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutedContext::set_ExceptionDispatchInfo
+
+  .method /*06000236*/ public hidebysig newslot specialname virtual 
+          instance bool  get_ExceptionHandled() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0002B3:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutedContext::get_ExceptionHandled
+
+  .method /*06000237*/ public hidebysig newslot specialname virtual 
+          instance void  set_ExceptionHandled(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C0002B4:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutedContext::set_ExceptionHandled
+
+  .method /*06000238*/ public hidebysig newslot specialname virtual 
+          instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 
+          get_Result() cil managed
+  // SIG: 20 00 12 1C
+  {
+    .custom /*0C0002B5:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    .custom /*0C0002B6:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutedContext::get_Result
+
+  .property /*170000FF*/ instance callconv(8) bool
+          Canceled()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/::get_Canceled() /* 0600022F */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/::set_Canceled(bool) /* 06000230 */
+  } // end of property ResultExecutedContext::Canceled
+  .property /*17000100*/ instance callconv(8) object
+          Controller()
+  {
+    .custom /*0C0001EC:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+    .get instance object Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/::get_Controller() /* 06000231 */
+  } // end of property ResultExecutedContext::Controller
+  .property /*17000101*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Exception/*01000026*/
+          Exception()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Exception/*01000026*/ Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/::get_Exception() /* 06000232 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/::set_Exception(class [System.Runtime/*23000001*/]System.Exception/*01000026*/) /* 06000233 */
+  } // end of property ResultExecutedContext::Exception
+  .property /*17000102*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/
+          ExceptionDispatchInfo()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/ Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/::get_ExceptionDispatchInfo() /* 06000234 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/::set_ExceptionDispatchInfo(class [System.Runtime/*23000001*/]System.Runtime.ExceptionServices.ExceptionDispatchInfo/*01000046*/) /* 06000235 */
+  } // end of property ResultExecutedContext::ExceptionDispatchInfo
+  .property /*17000103*/ instance callconv(8) bool
+          ExceptionHandled()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/::get_ExceptionHandled() /* 06000236 */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/::set_ExceptionHandled(bool) /* 06000237 */
+  } // end of property ResultExecutedContext::ExceptionHandled
+  .property /*17000104*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/
+          Result()
+  {
+    .custom /*0C0001ED:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/::get_Result() /* 06000238 */
+  } // end of property ResultExecutedContext::Result
+} // end of class Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext
+
+.class /*02000067*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext
+       extends Microsoft.AspNetCore.Mvc.Filters.FilterContext/*0200004E*/
+{
+  .custom /*0C000166:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000167:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000239*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/> filters,
+                               class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ result,
+                               object controller) cil managed
+  // SIG: 20 04 01 12 18 15 12 80 E5 01 12 81 78 12 1C 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutingContext::.ctor
+
+  .method /*0600023A*/ public hidebysig newslot specialname virtual 
+          instance object  get_Controller() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C0002B7:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutingContext::get_Controller
+
+  .method /*0600023B*/ public hidebysig newslot specialname virtual 
+          instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 
+          get_Result() cil managed
+  // SIG: 20 00 12 1C
+  {
+    .custom /*0C0002B8:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutingContext::get_Result
+
+  .method /*0600023C*/ public hidebysig newslot specialname virtual 
+          instance void  set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ 'value') cil managed
+  // SIG: 20 01 01 12 1C
+  {
+    .custom /*0C0002B9:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutingContext::set_Result
+
+  .method /*0600023D*/ public hidebysig newslot specialname virtual 
+          instance bool  get_Cancel() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0002BA:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutingContext::get_Cancel
+
+  .method /*0600023E*/ public hidebysig newslot specialname virtual 
+          instance void  set_Cancel(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C0002BB:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ResultExecutingContext::set_Cancel
+
+  .property /*17000105*/ instance callconv(8) object
+          Controller()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext/*02000067*/::get_Controller() /* 0600023A */
+  } // end of property ResultExecutingContext::Controller
+  .property /*17000106*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/
+          Result()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/ Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext/*02000067*/::get_Result() /* 0600023B */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext/*02000067*/::set_Result(class Microsoft.AspNetCore.Mvc.IActionResult/*02000007*/) /* 0600023C */
+  } // end of property ResultExecutingContext::Result
+  .property /*17000107*/ instance callconv(8) bool
+          Cancel()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext/*02000067*/::get_Cancel() /* 0600023D */
+    .set instance void Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext/*02000067*/::set_Cancel(bool) /* 0600023E */
+  } // end of property ResultExecutingContext::Cancel
+} // end of class Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext
+
+.class /*02000068*/ public auto ansi sealed Microsoft.AspNetCore.Mvc.Filters.ResultExecutionDelegate
+       extends [System.Runtime/*23000001*/]System.MulticastDelegate/*01000047*/
+{
+  .method /*0600023F*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(object 'object',
+                               native int 'method') runtime managed
+  // SIG: 20 02 01 1C 18
+  {
+  } // end of method ResultExecutionDelegate::.ctor
+
+  .method /*06000240*/ public hidebysig newslot virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task`1/*01000041*/<class Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/> 
+          Invoke() runtime managed
+  // SIG: 20 00 15 12 81 05 01 12 81 98
+  {
+    .custom /*0C0002BC:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  } // end of method ResultExecutionDelegate::Invoke
+
+  .method /*06000241*/ public hidebysig newslot virtual 
+          instance class [System.Runtime/*23000001*/]System.IAsyncResult/*01000048*/ 
+          BeginInvoke(class [System.Runtime/*23000001*/]System.AsyncCallback/*01000049*/ callback,
+                      object 'object') runtime managed
+  // SIG: 20 02 12 81 21 12 81 25 1C
+  {
+  } // end of method ResultExecutionDelegate::BeginInvoke
+
+  .method /*06000242*/ public hidebysig newslot virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task`1/*01000041*/<class Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext/*02000066*/> 
+          EndInvoke(class [System.Runtime/*23000001*/]System.IAsyncResult/*01000048*/ result) runtime managed
+  // SIG: 20 01 15 12 81 05 01 12 81 98 12 81 21
+  {
+    .param [0]/*08000191*/ 
+    .custom /*0C00023C:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+  } // end of method ResultExecutionDelegate::EndInvoke
+
+} // end of class Microsoft.AspNetCore.Mvc.Filters.ResultExecutionDelegate
+
+.class /*02000069*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Authorization.IAllowAnonymousFilter
+       implements Microsoft.AspNetCore.Mvc.Filters.IFilterMetadata/*0200005E*/
+{
+} // end of class Microsoft.AspNetCore.Mvc.Authorization.IAllowAnonymousFilter
+
+.class /*0200006A*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000168:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000169:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C00016A:0A000014*/ instance void [System.Runtime/*23000001*/]System.Diagnostics.DebuggerDisplayAttribute/*0100001E*/::.ctor(string) /* 0A000014 */ = ( 01 00 21 7B 41 63 74 69 6F 6E 44 65 73 63 72 69   // ..!{ActionDescri
+                                                                                                                                                                    70 74 6F 72 2E 44 69 73 70 6C 61 79 4E 61 6D 65   // ptor.DisplayName
+                                                                                                                                                                    2C 6E 71 7D 00 00 )                               // ,nq}..
+  .method /*06000243*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ 
+          get_ActionDescriptor() cil managed
+  // SIG: 20 00 12 81 E8
+  {
+    .custom /*0C0002BD:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::get_ActionDescriptor
+
+  .method /*06000244*/ public hidebysig specialname 
+          instance void  set_ActionDescriptor(class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 E8
+  {
+    .custom /*0C0002BE:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::set_ActionDescriptor
+
+  .method /*06000245*/ public hidebysig specialname 
+          instance string  get_GroupName() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0002BF:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0002C0:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::get_GroupName
+
+  .method /*06000246*/ public hidebysig specialname 
+          instance void  set_GroupName(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0002C1:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0002C2:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::set_GroupName
+
+  .method /*06000247*/ public hidebysig specialname 
+          instance string  get_HttpMethod() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0002C3:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0002C4:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::get_HttpMethod
+
+  .method /*06000248*/ public hidebysig specialname 
+          instance void  set_HttpMethod(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0002C5:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0002C6:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::set_HttpMethod
+
+  .method /*06000249*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/> 
+          get_ParameterDescriptions() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 81 B0
+  {
+    .custom /*0C0002C7:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::get_ParameterDescriptions
+
+  .method /*0600024A*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<object,object> 
+          get_Properties() cil managed
+  // SIG: 20 00 15 12 80 F1 02 1C 1C
+  {
+    .custom /*0C0002C8:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::get_Properties
+
+  .method /*0600024B*/ public hidebysig specialname 
+          instance string  get_RelativePath() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0002C9:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::get_RelativePath
+
+  .method /*0600024C*/ public hidebysig specialname 
+          instance void  set_RelativePath(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0002CA:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::set_RelativePath
+
+  .method /*0600024D*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiRequestFormat/*0200006E*/> 
+          get_SupportedRequestFormats() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 81 B8
+  {
+    .custom /*0C0002CB:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::get_SupportedRequestFormats
+
+  .method /*0600024E*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/> 
+          get_SupportedResponseTypes() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 81 C0
+  {
+    .custom /*0C0002CC:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::get_SupportedResponseTypes
+
+  .method /*0600024F*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescription::.ctor
+
+  .property /*17000108*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/
+          ActionDescriptor()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/::get_ActionDescriptor() /* 06000243 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/::set_ActionDescriptor(class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/) /* 06000244 */
+  } // end of property ApiDescription::ActionDescriptor
+  .property /*17000109*/ instance callconv(8) string
+          GroupName()
+  {
+    .custom /*0C0001EE:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance string Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/::get_GroupName() /* 06000245 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/::set_GroupName(string) /* 06000246 */
+  } // end of property ApiDescription::GroupName
+  .property /*1700010A*/ instance callconv(8) string
+          HttpMethod()
+  {
+    .custom /*0C0001EF:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance string Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/::get_HttpMethod() /* 06000247 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/::set_HttpMethod(string) /* 06000248 */
+  } // end of property ApiDescription::HttpMethod
+  .property /*1700010B*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/>
+          ParameterDescriptions()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/> Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/::get_ParameterDescriptions() /* 06000249 */
+  } // end of property ApiDescription::ParameterDescriptions
+  .property /*1700010C*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<object,object>
+          Properties()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<object,object> Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/::get_Properties() /* 0600024A */
+  } // end of property ApiDescription::Properties
+  .property /*1700010D*/ instance callconv(8) string
+          RelativePath()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/::get_RelativePath() /* 0600024B */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/::set_RelativePath(string) /* 0600024C */
+  } // end of property ApiDescription::RelativePath
+  .property /*1700010E*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiRequestFormat/*0200006E*/>
+          SupportedRequestFormats()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiRequestFormat/*0200006E*/> Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/::get_SupportedRequestFormats() /* 0600024D */
+  } // end of property ApiDescription::SupportedRequestFormats
+  .property /*1700010F*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/>
+          SupportedResponseTypes()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/> Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/::get_SupportedResponseTypes() /* 0600024E */
+  } // end of property ApiDescription::SupportedResponseTypes
+} // end of class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription
+
+.class /*0200006B*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionProviderContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00016B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00016C:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000250*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/> actions) cil managed
+  // SIG: 20 01 01 15 12 80 A5 01 12 81 E8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescriptionProviderContext::.ctor
+
+  .method /*06000251*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/> 
+          get_Actions() cil managed
+  // SIG: 20 00 15 12 80 A5 01 12 81 E8
+  {
+    .custom /*0C0002CD:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescriptionProviderContext::get_Actions
+
+  .method /*06000252*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/> 
+          get_Results() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 81 A8
+  {
+    .custom /*0C0002CE:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiDescriptionProviderContext::get_Results
+
+  .property /*17000110*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/>
+          Actions()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/> Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionProviderContext/*0200006B*/::get_Actions() /* 06000251 */
+  } // end of property ApiDescriptionProviderContext::Actions
+  .property /*17000111*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/>
+          Results()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescription/*0200006A*/> Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionProviderContext/*0200006B*/::get_Results() /* 06000252 */
+  } // end of property ApiDescriptionProviderContext::Results
+} // end of class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionProviderContext
+
+.class /*0200006C*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00016D:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00016E:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000253*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_ModelMetadata() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    .custom /*0C0002CF:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::get_ModelMetadata
+
+  .method /*06000254*/ public hidebysig specialname 
+          instance void  set_ModelMetadata(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 84
+  {
+    .custom /*0C0002D0:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::set_ModelMetadata
+
+  .method /*06000255*/ public hidebysig specialname 
+          instance string  get_Name() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0002D1:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::get_Name
+
+  .method /*06000256*/ public hidebysig specialname 
+          instance void  set_Name(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0002D2:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::set_Name
+
+  .method /*06000257*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo/*0200006D*/ 
+          get_RouteInfo() cil managed
+  // SIG: 20 00 12 81 B4
+  {
+    .custom /*0C0002D3:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0002D4:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::get_RouteInfo
+
+  .method /*06000258*/ public hidebysig specialname 
+          instance void  set_RouteInfo(class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo/*0200006D*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 B4
+  {
+    .custom /*0C0002D5:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0002D6:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::set_RouteInfo
+
+  .method /*06000259*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ 
+          get_Source() cil managed
+  // SIG: 20 00 12 34
+  {
+    .custom /*0C0002D7:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::get_Source
+
+  .method /*0600025A*/ public hidebysig specialname 
+          instance void  set_Source(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ 'value') cil managed
+  // SIG: 20 01 01 12 34
+  {
+    .custom /*0C0002D8:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::set_Source
+
+  .method /*0600025B*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/ 
+          get_BindingInfo() cil managed
+  // SIG: 20 00 12 30
+  {
+    .custom /*0C0002D9:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0002DA:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::get_BindingInfo
+
+  .method /*0600025C*/ public hidebysig specialname 
+          instance void  set_BindingInfo(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/ 'value') cil managed
+  // SIG: 20 01 01 12 30
+  {
+    .custom /*0C0002DB:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0002DC:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::set_BindingInfo
+
+  .method /*0600025D*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_Type() cil managed
+  // SIG: 20 00 12 61
+  {
+    .custom /*0C0002DD:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::get_Type
+
+  .method /*0600025E*/ public hidebysig specialname 
+          instance void  set_Type(class [System.Runtime/*23000001*/]System.Type/*01000018*/ 'value') cil managed
+  // SIG: 20 01 01 12 61
+  {
+    .custom /*0C0002DE:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::set_Type
+
+  .method /*0600025F*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/ 
+          get_ParameterDescriptor() cil managed
+  // SIG: 20 00 12 82 04
+  {
+    .custom /*0C0002DF:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::get_ParameterDescriptor
+
+  .method /*06000260*/ public hidebysig specialname 
+          instance void  set_ParameterDescriptor(class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/ 'value') cil managed
+  // SIG: 20 01 01 12 82 04
+  {
+    .custom /*0C0002E0:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::set_ParameterDescriptor
+
+  .method /*06000261*/ public hidebysig specialname 
+          instance bool  get_IsRequired() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0002E1:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::get_IsRequired
+
+  .method /*06000262*/ public hidebysig specialname 
+          instance void  set_IsRequired(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C0002E2:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::set_IsRequired
+
+  .method /*06000263*/ public hidebysig specialname 
+          instance object  get_DefaultValue() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C0002E3:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0002E4:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::get_DefaultValue
+
+  .method /*06000264*/ public hidebysig specialname 
+          instance void  set_DefaultValue(object 'value') cil managed
+  // SIG: 20 01 01 1C
+  {
+    .custom /*0C0002E5:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C0002E6:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::set_DefaultValue
+
+  .method /*06000265*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterDescription::.ctor
+
+  .property /*17000112*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          ModelMetadata()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::get_ModelMetadata() /* 06000253 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::set_ModelMetadata(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/) /* 06000254 */
+  } // end of property ApiParameterDescription::ModelMetadata
+  .property /*17000113*/ instance callconv(8) string
+          Name()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::get_Name() /* 06000255 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::set_Name(string) /* 06000256 */
+  } // end of property ApiParameterDescription::Name
+  .property /*17000114*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo/*0200006D*/
+          RouteInfo()
+  {
+    .custom /*0C0001F0:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo/*0200006D*/ Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::get_RouteInfo() /* 06000257 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::set_RouteInfo(class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo/*0200006D*/) /* 06000258 */
+  } // end of property ApiParameterDescription::RouteInfo
+  .property /*17000115*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/
+          Source()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/ Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::get_Source() /* 06000259 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::set_Source(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingSource/*0200000D*/) /* 0600025A */
+  } // end of property ApiParameterDescription::Source
+  .property /*17000116*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/
+          BindingInfo()
+  {
+    .custom /*0C0001F1:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/ Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::get_BindingInfo() /* 0600025B */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::set_BindingInfo(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/) /* 0600025C */
+  } // end of property ApiParameterDescription::BindingInfo
+  .property /*17000117*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          Type()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::get_Type() /* 0600025D */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::set_Type(class [System.Runtime/*23000001*/]System.Type/*01000018*/) /* 0600025E */
+  } // end of property ApiParameterDescription::Type
+  .property /*17000118*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/
+          ParameterDescriptor()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/ Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::get_ParameterDescriptor() /* 0600025F */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::set_ParameterDescriptor(class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/) /* 06000260 */
+  } // end of property ApiParameterDescription::ParameterDescriptor
+  .property /*17000119*/ instance callconv(8) bool
+          IsRequired()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::get_IsRequired() /* 06000261 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::set_IsRequired(bool) /* 06000262 */
+  } // end of property ApiParameterDescription::IsRequired
+  .property /*1700011A*/ instance callconv(8) object
+          DefaultValue()
+  {
+    .custom /*0C0001F4:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance object Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::get_DefaultValue() /* 06000263 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription/*0200006C*/::set_DefaultValue(object) /* 06000264 */
+  } // end of property ApiParameterDescription::DefaultValue
+} // end of class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterDescription
+
+.class /*0200006D*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00016F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C000170:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000266*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.IRouteConstraint/*0100004B*/> 
+          get_Constraints() cil managed
+  // SIG: 20 00 15 12 75 01 12 81 2D
+  {
+    .custom /*0C0002E7:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .param [0]/*080001A1*/ 
+    .custom /*0C00024A:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterRouteInfo::get_Constraints
+
+  .method /*06000267*/ public hidebysig specialname 
+          instance void  set_Constraints(class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.IRouteConstraint/*0100004B*/> 'value') cil managed
+  // SIG: 20 01 01 15 12 75 01 12 81 2D
+  {
+    .custom /*0C0002E8:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .param [1]/*080001A2*/ 
+    .custom /*0C00024B:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterRouteInfo::set_Constraints
+
+  .method /*06000268*/ public hidebysig specialname 
+          instance object  get_DefaultValue() cil managed
+  // SIG: 20 00 1C
+  {
+    .custom /*0C0002E9:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterRouteInfo::get_DefaultValue
+
+  .method /*06000269*/ public hidebysig specialname 
+          instance void  set_DefaultValue(object 'value') cil managed
+  // SIG: 20 01 01 1C
+  {
+    .custom /*0C0002EA:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterRouteInfo::set_DefaultValue
+
+  .method /*0600026A*/ public hidebysig specialname 
+          instance bool  get_IsOptional() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0002EB:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterRouteInfo::get_IsOptional
+
+  .method /*0600026B*/ public hidebysig specialname 
+          instance void  set_IsOptional(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C0002EC:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterRouteInfo::set_IsOptional
+
+  .method /*0600026C*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiParameterRouteInfo::.ctor
+
+  .property /*1700011B*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.IRouteConstraint/*0100004B*/>
+          Constraints()
+  {
+    .custom /*0C0001F6:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.IRouteConstraint/*0100004B*/> Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo/*0200006D*/::get_Constraints() /* 06000266 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo/*0200006D*/::set_Constraints(class [System.Runtime/*23000001*/]System.Collections.Generic.IEnumerable`1/*0100001D*/<class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.IRouteConstraint/*0100004B*/>) /* 06000267 */
+  } // end of property ApiParameterRouteInfo::Constraints
+  .property /*1700011C*/ instance callconv(8) object
+          DefaultValue()
+  {
+    .get instance object Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo/*0200006D*/::get_DefaultValue() /* 06000268 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo/*0200006D*/::set_DefaultValue(object) /* 06000269 */
+  } // end of property ApiParameterRouteInfo::DefaultValue
+  .property /*1700011D*/ instance callconv(8) bool
+          IsOptional()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo/*0200006D*/::get_IsOptional() /* 0600026A */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo/*0200006D*/::set_IsOptional(bool) /* 0600026B */
+  } // end of property ApiParameterRouteInfo::IsOptional
+} // end of class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiParameterRouteInfo
+
+.class /*0200006E*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ApiExplorer.ApiRequestFormat
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000171:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000172:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*0600026D*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter/*02000040*/ 
+          get_Formatter() cil managed
+  // SIG: 20 00 12 81 00
+  {
+    .custom /*0C0002ED:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiRequestFormat::get_Formatter
+
+  .method /*0600026E*/ public hidebysig specialname 
+          instance void  set_Formatter(class Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter/*02000040*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 00
+  {
+    .custom /*0C0002EE:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiRequestFormat::set_Formatter
+
+  .method /*0600026F*/ public hidebysig specialname 
+          instance string  get_MediaType() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0002EF:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiRequestFormat::get_MediaType
+
+  .method /*06000270*/ public hidebysig specialname 
+          instance void  set_MediaType(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0002F0:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiRequestFormat::set_MediaType
+
+  .method /*06000271*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiRequestFormat::.ctor
+
+  .property /*1700011E*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter/*02000040*/
+          Formatter()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter/*02000040*/ Microsoft.AspNetCore.Mvc.ApiExplorer.ApiRequestFormat/*0200006E*/::get_Formatter() /* 0600026D */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiRequestFormat/*0200006E*/::set_Formatter(class Microsoft.AspNetCore.Mvc.Formatters.IInputFormatter/*02000040*/) /* 0600026E */
+  } // end of property ApiRequestFormat::Formatter
+  .property /*1700011F*/ instance callconv(8) string
+          MediaType()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ApiExplorer.ApiRequestFormat/*0200006E*/::get_MediaType() /* 0600026F */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiRequestFormat/*0200006E*/::set_MediaType(string) /* 06000270 */
+  } // end of property ApiRequestFormat::MediaType
+} // end of class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiRequestFormat
+
+.class /*0200006F*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseFormat
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000175:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000176:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000272*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.Formatters.IOutputFormatter/*02000046*/ 
+          get_Formatter() cil managed
+  // SIG: 20 00 12 81 18
+  {
+    .custom /*0C0002F1:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseFormat::get_Formatter
+
+  .method /*06000273*/ public hidebysig specialname 
+          instance void  set_Formatter(class Microsoft.AspNetCore.Mvc.Formatters.IOutputFormatter/*02000046*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 18
+  {
+    .custom /*0C0002F2:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseFormat::set_Formatter
+
+  .method /*06000274*/ public hidebysig specialname 
+          instance string  get_MediaType() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C0002F3:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseFormat::get_MediaType
+
+  .method /*06000275*/ public hidebysig specialname 
+          instance void  set_MediaType(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C0002F4:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseFormat::set_MediaType
+
+  .method /*06000276*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseFormat::.ctor
+
+  .property /*17000120*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Formatters.IOutputFormatter/*02000046*/
+          Formatter()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.Formatters.IOutputFormatter/*02000046*/ Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseFormat/*0200006F*/::get_Formatter() /* 06000272 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseFormat/*0200006F*/::set_Formatter(class Microsoft.AspNetCore.Mvc.Formatters.IOutputFormatter/*02000046*/) /* 06000273 */
+  } // end of property ApiResponseFormat::Formatter
+  .property /*17000121*/ instance callconv(8) string
+          MediaType()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseFormat/*0200006F*/::get_MediaType() /* 06000274 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseFormat/*0200006F*/::set_MediaType(string) /* 06000275 */
+  } // end of property ApiResponseFormat::MediaType
+} // end of class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseFormat
+
+.class /*02000070*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000178:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+  .custom /*0C000179:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000277*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseFormat/*0200006F*/> 
+          get_ApiResponseFormats() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 81 BC
+  {
+    .custom /*0C0002F5:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    .custom /*0C0002F6:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseType::get_ApiResponseFormats
+
+  .method /*06000278*/ public hidebysig specialname 
+          instance void  set_ApiResponseFormats(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseFormat/*0200006F*/> 'value') cil managed
+  // SIG: 20 01 01 15 12 80 E5 01 12 81 BC
+  {
+    .custom /*0C0002F7:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    .custom /*0C0002F8:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseType::set_ApiResponseFormats
+
+  .method /*06000279*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 
+          get_ModelMetadata() cil managed
+  // SIG: 20 00 12 80 84
+  {
+    .custom /*0C0002F9:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseType::get_ModelMetadata
+
+  .method /*0600027A*/ public hidebysig specialname 
+          instance void  set_ModelMetadata(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ 'value') cil managed
+  // SIG: 20 01 01 12 80 84
+  {
+    .custom /*0C0002FA:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseType::set_ModelMetadata
+
+  .method /*0600027B*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_Type() cil managed
+  // SIG: 20 00 12 61
+  {
+    .custom /*0C0002FB:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseType::get_Type
+
+  .method /*0600027C*/ public hidebysig specialname 
+          instance void  set_Type(class [System.Runtime/*23000001*/]System.Type/*01000018*/ 'value') cil managed
+  // SIG: 20 01 01 12 61
+  {
+    .custom /*0C0002FC:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseType::set_Type
+
+  .method /*0600027D*/ public hidebysig specialname 
+          instance int32  get_StatusCode() cil managed
+  // SIG: 20 00 08
+  {
+    .custom /*0C0002FD:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseType::get_StatusCode
+
+  .method /*0600027E*/ public hidebysig specialname 
+          instance void  set_StatusCode(int32 'value') cil managed
+  // SIG: 20 01 01 08
+  {
+    .custom /*0C0002FE:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseType::set_StatusCode
+
+  .method /*0600027F*/ public hidebysig specialname 
+          instance bool  get_IsDefaultResponse() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C0002FF:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseType::get_IsDefaultResponse
+
+  .method /*06000280*/ public hidebysig specialname 
+          instance void  set_IsDefaultResponse(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C000300:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseType::set_IsDefaultResponse
+
+  .method /*06000281*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ApiResponseType::.ctor
+
+  .property /*17000122*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseFormat/*0200006F*/>
+          ApiResponseFormats()
+  {
+    .custom /*0C0001FC:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 01 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseFormat/*0200006F*/> Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/::get_ApiResponseFormats() /* 06000277 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/::set_ApiResponseFormats(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseFormat/*0200006F*/>) /* 06000278 */
+  } // end of property ApiResponseType::ApiResponseFormats
+  .property /*17000123*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/
+          ModelMetadata()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/ Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/::get_ModelMetadata() /* 06000279 */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/::set_ModelMetadata(class Microsoft.AspNetCore.Mvc.ModelBinding.ModelMetadata/*02000021*/) /* 0600027A */
+  } // end of property ApiResponseType::ModelMetadata
+  .property /*17000124*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          Type()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/::get_Type() /* 0600027B */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/::set_Type(class [System.Runtime/*23000001*/]System.Type/*01000018*/) /* 0600027C */
+  } // end of property ApiResponseType::Type
+  .property /*17000125*/ instance callconv(8) int32
+          StatusCode()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/::get_StatusCode() /* 0600027D */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/::set_StatusCode(int32) /* 0600027E */
+  } // end of property ApiResponseType::StatusCode
+  .property /*17000126*/ instance callconv(8) bool
+          IsDefaultResponse()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/::get_IsDefaultResponse() /* 0600027F */
+    .set instance void Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType/*02000070*/::set_IsDefaultResponse(bool) /* 06000280 */
+  } // end of property ApiResponseType::IsDefaultResponse
+} // end of class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiResponseType
+
+.class /*02000071*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ApiExplorer.IApiDescriptionProvider
+{
+  .custom /*0C00017A:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*06000282*/ public hidebysig newslot specialname abstract virtual 
+          instance int32  get_Order() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x0
+  } // end of method IApiDescriptionProvider::get_Order
+
+  .method /*06000283*/ public hidebysig newslot abstract virtual 
+          instance void  OnProvidersExecuting(class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionProviderContext/*0200006B*/ context) cil managed
+  // SIG: 20 01 01 12 81 AC
+  {
+    // Method begins at RVA 0x0
+  } // end of method IApiDescriptionProvider::OnProvidersExecuting
+
+  .method /*06000284*/ public hidebysig newslot abstract virtual 
+          instance void  OnProvidersExecuted(class Microsoft.AspNetCore.Mvc.ApiExplorer.ApiDescriptionProviderContext/*0200006B*/ context) cil managed
+  // SIG: 20 01 01 12 81 AC
+  {
+    // Method begins at RVA 0x0
+  } // end of method IApiDescriptionProvider::OnProvidersExecuted
+
+  .property /*17000127*/ instance callconv(8) int32
+          Order()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.ApiExplorer.IApiDescriptionProvider/*02000071*/::get_Order() /* 06000282 */
+  } // end of property IApiDescriptionProvider::Order
+} // end of class Microsoft.AspNetCore.Mvc.ApiExplorer.IApiDescriptionProvider
+
+.class /*02000072*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00017B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00017C:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000285*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<valuetype Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate/*02000075*/> 
+          get_Candidates() cil managed
+  // SIG: 20 00 15 12 80 A5 01 11 81 D4
+  {
+    .custom /*0C000301:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintContext::get_Candidates
+
+  .method /*06000286*/ public hidebysig specialname 
+          instance void  set_Candidates(class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<valuetype Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate/*02000075*/> 'value') cil managed
+  // SIG: 20 01 01 15 12 80 A5 01 11 81 D4
+  {
+    .custom /*0C000302:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintContext::set_Candidates
+
+  .method /*06000287*/ public hidebysig specialname 
+          instance valuetype Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate/*02000075*/ 
+          get_CurrentCandidate() cil managed
+  // SIG: 20 00 11 81 D4
+  {
+    .custom /*0C000303:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintContext::get_CurrentCandidate
+
+  .method /*06000288*/ public hidebysig specialname 
+          instance void  set_CurrentCandidate(valuetype Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate/*02000075*/ 'value') cil managed
+  // SIG: 20 01 01 11 81 D4
+  {
+    .custom /*0C000304:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintContext::set_CurrentCandidate
+
+  .method /*06000289*/ public hidebysig specialname 
+          instance class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.RouteContext/*0100004C*/ 
+          get_RouteContext() cil managed
+  // SIG: 20 00 12 81 31
+  {
+    .custom /*0C000305:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintContext::get_RouteContext
+
+  .method /*0600028A*/ public hidebysig specialname 
+          instance void  set_RouteContext(class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.RouteContext/*0100004C*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 31
+  {
+    .custom /*0C000306:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintContext::set_RouteContext
+
+  .method /*0600028B*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintContext::.ctor
+
+  .property /*17000128*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<valuetype Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate/*02000075*/>
+          Candidates()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<valuetype Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate/*02000075*/> Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintContext/*02000072*/::get_Candidates() /* 06000285 */
+    .set instance void Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintContext/*02000072*/::set_Candidates(class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<valuetype Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate/*02000075*/>) /* 06000286 */
+  } // end of property ActionConstraintContext::Candidates
+  .property /*17000129*/ instance callconv(8) valuetype Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate/*02000075*/
+          CurrentCandidate()
+  {
+    .get instance valuetype Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate/*02000075*/ Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintContext/*02000072*/::get_CurrentCandidate() /* 06000287 */
+    .set instance void Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintContext/*02000072*/::set_CurrentCandidate(valuetype Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate/*02000075*/) /* 06000288 */
+  } // end of property ActionConstraintContext::CurrentCandidate
+  .property /*1700012A*/ instance callconv(8) class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.RouteContext/*0100004C*/
+          RouteContext()
+  {
+    .get instance class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.RouteContext/*0100004C*/ Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintContext/*02000072*/::get_RouteContext() /* 06000289 */
+    .set instance void Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintContext/*02000072*/::set_RouteContext(class [Microsoft.AspNetCore.Routing.Abstractions/*23000003*/]Microsoft.AspNetCore.Routing.RouteContext/*0100004C*/) /* 0600028A */
+  } // end of property ActionConstraintContext::RouteContext
+} // end of class Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintContext
+
+.class /*02000073*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintItem
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00017E:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00017F:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*0600028C*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata/*02000078*/ metadata) cil managed
+  // SIG: 20 01 01 12 81 E0
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintItem::.ctor
+
+  .method /*0600028D*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint/*02000076*/ 
+          get_Constraint() cil managed
+  // SIG: 20 00 12 81 D8
+  {
+    .custom /*0C000307:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintItem::get_Constraint
+
+  .method /*0600028E*/ public hidebysig specialname 
+          instance void  set_Constraint(class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint/*02000076*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 D8
+  {
+    .custom /*0C000308:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintItem::set_Constraint
+
+  .method /*0600028F*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata/*02000078*/ 
+          get_Metadata() cil managed
+  // SIG: 20 00 12 81 E0
+  {
+    .custom /*0C000309:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintItem::get_Metadata
+
+  .method /*06000290*/ public hidebysig specialname 
+          instance bool  get_IsReusable() cil managed
+  // SIG: 20 00 02
+  {
+    .custom /*0C00030A:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintItem::get_IsReusable
+
+  .method /*06000291*/ public hidebysig specialname 
+          instance void  set_IsReusable(bool 'value') cil managed
+  // SIG: 20 01 01 02
+  {
+    .custom /*0C00030B:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintItem::set_IsReusable
+
+  .property /*1700012B*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint/*02000076*/
+          Constraint()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint/*02000076*/ Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintItem/*02000073*/::get_Constraint() /* 0600028D */
+    .set instance void Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintItem/*02000073*/::set_Constraint(class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint/*02000076*/) /* 0600028E */
+  } // end of property ActionConstraintItem::Constraint
+  .property /*1700012C*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata/*02000078*/
+          Metadata()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata/*02000078*/ Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintItem/*02000073*/::get_Metadata() /* 0600028F */
+  } // end of property ActionConstraintItem::Metadata
+  .property /*1700012D*/ instance callconv(8) bool
+          IsReusable()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintItem/*02000073*/::get_IsReusable() /* 06000290 */
+    .set instance void Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintItem/*02000073*/::set_IsReusable(bool) /* 06000291 */
+  } // end of property ActionConstraintItem::IsReusable
+} // end of class Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintItem
+
+.class /*02000074*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintProviderContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000181:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000182:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*06000292*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ context,
+                               class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ action,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintItem/*02000073*/> items) cil managed
+  // SIG: 20 03 01 12 65 12 81 E8 15 12 80 E5 01 12 81 CC
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintProviderContext::.ctor
+
+  .method /*06000293*/ public hidebysig specialname 
+          instance class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ 
+          get_HttpContext() cil managed
+  // SIG: 20 00 12 65
+  {
+    .custom /*0C00030C:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintProviderContext::get_HttpContext
+
+  .method /*06000294*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ 
+          get_Action() cil managed
+  // SIG: 20 00 12 81 E8
+  {
+    .custom /*0C00030D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintProviderContext::get_Action
+
+  .method /*06000295*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintItem/*02000073*/> 
+          get_Results() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 81 CC
+  {
+    .custom /*0C00030E:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionConstraintProviderContext::get_Results
+
+  .property /*1700012E*/ instance callconv(8) class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/
+          HttpContext()
+  {
+    .get instance class [Microsoft.AspNetCore.Http.Abstractions/*23000002*/]Microsoft.AspNetCore.Http.HttpContext/*01000019*/ Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintProviderContext/*02000074*/::get_HttpContext() /* 06000293 */
+  } // end of property ActionConstraintProviderContext::HttpContext
+  .property /*1700012F*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/
+          Action()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintProviderContext/*02000074*/::get_Action() /* 06000294 */
+  } // end of property ActionConstraintProviderContext::Action
+  .property /*17000130*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintItem/*02000073*/>
+          Results()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintItem/*02000073*/> Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintProviderContext/*02000074*/::get_Results() /* 06000295 */
+  } // end of property ActionConstraintProviderContext::Results
+} // end of class Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintProviderContext
+
+.class /*02000075*/ public sequential ansi sealed beforefieldinit Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate
+       extends [System.Runtime/*23000001*/]System.ValueType/*01000022*/
+{
+  .custom /*0C000184:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000185:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C000186:0A000015*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.IsReadOnlyAttribute/*01000021*/::.ctor() /* 0A000015 */ = ( 01 00 00 00 ) 
+  .field /*04000031*/ private initonly class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ '<Action>k__BackingField'
+  .custom /*0C0000DF:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .field /*04000032*/ private initonly class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint/*02000076*/> '<Constraints>k__BackingField'
+  .custom /*0C0000E3:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+  .method /*06000296*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ action,
+                               class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint/*02000076*/> constraints) cil managed
+  // SIG: 20 02 01 12 81 E8 15 12 80 A5 01 12 81 D8
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionSelectorCandidate::.ctor
+
+  .method /*06000297*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ 
+          get_Action() cil managed
+  // SIG: 20 00 12 81 E8
+  {
+    .custom /*0C00030F:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionSelectorCandidate::get_Action
+
+  .method /*06000298*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint/*02000076*/> 
+          get_Constraints() cil managed
+  // SIG: 20 00 15 12 80 A5 01 12 81 D8
+  {
+    .custom /*0C000310:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionSelectorCandidate::get_Constraints
+
+  .property /*17000131*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/
+          Action()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate/*02000075*/::get_Action() /* 06000297 */
+  } // end of property ActionSelectorCandidate::Action
+  .property /*17000132*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint/*02000076*/>
+          Constraints()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IReadOnlyList`1/*01000029*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint/*02000076*/> Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate/*02000075*/::get_Constraints() /* 06000298 */
+  } // end of property ActionSelectorCandidate::Constraints
+} // end of class Microsoft.AspNetCore.Mvc.ActionConstraints.ActionSelectorCandidate
+
+.class /*02000076*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint
+       implements Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata/*02000078*/
+{
+  .method /*06000299*/ public hidebysig newslot specialname abstract virtual 
+          instance int32  get_Order() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionConstraint::get_Order
+
+  .method /*0600029A*/ public hidebysig newslot abstract virtual 
+          instance bool  Accept(class Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintContext/*02000072*/ context) cil managed
+  // SIG: 20 01 02 12 81 C8
+  {
+    .custom /*0C000311:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IActionConstraint::Accept
+
+  .property /*17000133*/ instance callconv(8) int32
+          Order()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint/*02000076*/::get_Order() /* 06000299 */
+  } // end of property IActionConstraint::Order
+} // end of class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint
+
+.class /*02000077*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintFactory
+       implements Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata/*02000078*/
+{
+  .method /*0600029B*/ public hidebysig newslot specialname abstract virtual 
+          instance bool  get_IsReusable() cil managed
+  // SIG: 20 00 02
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionConstraintFactory::get_IsReusable
+
+  .method /*0600029C*/ public hidebysig newslot abstract virtual 
+          instance class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraint/*02000076*/ 
+          CreateInstance(class [System.ComponentModel/*23000004*/]System.IServiceProvider/*01000024*/ services) cil managed
+  // SIG: 20 01 12 81 D8 12 80 91
+  {
+    .custom /*0C000312:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+    // Method begins at RVA 0x0
+  } // end of method IActionConstraintFactory::CreateInstance
+
+  .property /*17000134*/ instance callconv(8) bool
+          IsReusable()
+  {
+    .get instance bool Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintFactory/*02000077*/::get_IsReusable() /* 0600029B */
+  } // end of property IActionConstraintFactory::IsReusable
+} // end of class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintFactory
+
+.class /*02000078*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata
+{
+} // end of class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata
+
+.class /*02000079*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintProvider
+{
+  .custom /*0C000188:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*0600029D*/ public hidebysig newslot specialname abstract virtual 
+          instance int32  get_Order() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionConstraintProvider::get_Order
+
+  .method /*0600029E*/ public hidebysig newslot abstract virtual 
+          instance void  OnProvidersExecuting(class Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintProviderContext/*02000074*/ context) cil managed
+  // SIG: 20 01 01 12 81 D0
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionConstraintProvider::OnProvidersExecuting
+
+  .method /*0600029F*/ public hidebysig newslot abstract virtual 
+          instance void  OnProvidersExecuted(class Microsoft.AspNetCore.Mvc.ActionConstraints.ActionConstraintProviderContext/*02000074*/ context) cil managed
+  // SIG: 20 01 01 12 81 D0
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionConstraintProvider::OnProvidersExecuted
+
+  .property /*17000135*/ instance callconv(8) int32
+          Order()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintProvider/*02000079*/::get_Order() /* 0600029D */
+  } // end of property IActionConstraintProvider::Order
+} // end of class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintProvider
+
+.class /*0200007A*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000189:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00018A:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060002A0*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::.ctor
+
+  .method /*060002A1*/ public hidebysig specialname 
+          instance string  get_Id() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C000313:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::get_Id
+
+  .method /*060002A2*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,string> 
+          get_RouteValues() cil managed
+  // SIG: 20 00 15 12 80 F1 02 0E 0E
+  {
+    .custom /*0C000314:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::get_RouteValues
+
+  .method /*060002A3*/ public hidebysig specialname 
+          instance void  set_RouteValues(class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,string> 'value') cil managed
+  // SIG: 20 01 01 15 12 80 F1 02 0E 0E
+  {
+    .custom /*0C000315:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::set_RouteValues
+
+  .method /*060002A4*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/ 
+          get_AttributeRouteInfo() cil managed
+  // SIG: 20 00 12 24
+  {
+    .custom /*0C000316:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C000317:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::get_AttributeRouteInfo
+
+  .method /*060002A5*/ public hidebysig specialname 
+          instance void  set_AttributeRouteInfo(class Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/ 'value') cil managed
+  // SIG: 20 01 01 12 24
+  {
+    .custom /*0C000318:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C000319:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::set_AttributeRouteInfo
+
+  .method /*060002A6*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata/*02000078*/> 
+          get_ActionConstraints() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 81 E0
+  {
+    .custom /*0C00031A:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .param [0]/*080001C1*/ 
+    .custom /*0C000258:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::get_ActionConstraints
+
+  .method /*060002A7*/ public hidebysig specialname 
+          instance void  set_ActionConstraints(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata/*02000078*/> 'value') cil managed
+  // SIG: 20 01 01 15 12 80 E5 01 12 81 E0
+  {
+    .custom /*0C00031B:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    .param [1]/*080001C2*/ 
+    .custom /*0C00025A:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::set_ActionConstraints
+
+  .method /*060002A8*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<object> 
+          get_EndpointMetadata() cil managed
+  // SIG: 20 00 15 12 80 E5 01 1C
+  {
+    .custom /*0C00031C:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::get_EndpointMetadata
+
+  .method /*060002A9*/ public hidebysig specialname 
+          instance void  set_EndpointMetadata(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<object> 'value') cil managed
+  // SIG: 20 01 01 15 12 80 E5 01 1C
+  {
+    .custom /*0C00031D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::set_EndpointMetadata
+
+  .method /*060002AA*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/> 
+          get_Parameters() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 82 04
+  {
+    .custom /*0C00031E:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::get_Parameters
+
+  .method /*060002AB*/ public hidebysig specialname 
+          instance void  set_Parameters(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/> 'value') cil managed
+  // SIG: 20 01 01 15 12 80 E5 01 12 82 04
+  {
+    .custom /*0C00031F:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::set_Parameters
+
+  .method /*060002AC*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/> 
+          get_BoundProperties() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 82 04
+  {
+    .custom /*0C000320:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::get_BoundProperties
+
+  .method /*060002AD*/ public hidebysig specialname 
+          instance void  set_BoundProperties(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/> 'value') cil managed
+  // SIG: 20 01 01 15 12 80 E5 01 12 82 04
+  {
+    .custom /*0C000321:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::set_BoundProperties
+
+  .method /*060002AE*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/> 
+          get_FilterDescriptors() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 81 3C
+  {
+    .custom /*0C000322:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::get_FilterDescriptors
+
+  .method /*060002AF*/ public hidebysig specialname 
+          instance void  set_FilterDescriptors(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/> 'value') cil managed
+  // SIG: 20 01 01 15 12 80 E5 01 12 81 3C
+  {
+    .custom /*0C000323:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::set_FilterDescriptors
+
+  .method /*060002B0*/ public hidebysig newslot specialname virtual 
+          instance string  get_DisplayName() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C000324:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C000325:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::get_DisplayName
+
+  .method /*060002B1*/ public hidebysig newslot specialname virtual 
+          instance void  set_DisplayName(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C000326:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C000327:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::set_DisplayName
+
+  .method /*060002B2*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<object,object> 
+          get_Properties() cil managed
+  // SIG: 20 00 15 12 80 F1 02 1C 1C
+  {
+    .custom /*0C000328:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::get_Properties
+
+  .method /*060002B3*/ public hidebysig specialname 
+          instance void  set_Properties(class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<object,object> 'value') cil managed
+  // SIG: 20 01 01 15 12 80 F1 02 1C 1C
+  {
+    .custom /*0C000329:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptor::set_Properties
+
+  .property /*17000136*/ instance callconv(8) string
+          Id()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::get_Id() /* 060002A1 */
+  } // end of property ActionDescriptor::Id
+  .property /*17000137*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,string>
+          RouteValues()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,string> Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::get_RouteValues() /* 060002A2 */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::set_RouteValues(class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<string,string>) /* 060002A3 */
+  } // end of property ActionDescriptor::RouteValues
+  .property /*17000138*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/
+          AttributeRouteInfo()
+  {
+    .custom /*0C000204:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/ Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::get_AttributeRouteInfo() /* 060002A4 */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::set_AttributeRouteInfo(class Microsoft.AspNetCore.Mvc.Routing.AttributeRouteInfo/*02000009*/) /* 060002A5 */
+  } // end of property ActionDescriptor::AttributeRouteInfo
+  .property /*17000139*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata/*02000078*/>
+          ActionConstraints()
+  {
+    .custom /*0C000205:06000003*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8[]) /* 06000003 */ = ( 01 00 02 00 00 00 02 01 00 00 ) 
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata/*02000078*/> Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::get_ActionConstraints() /* 060002A6 */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::set_ActionConstraints(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.ActionConstraints.IActionConstraintMetadata/*02000078*/>) /* 060002A7 */
+  } // end of property ActionDescriptor::ActionConstraints
+  .property /*1700013A*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<object>
+          EndpointMetadata()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<object> Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::get_EndpointMetadata() /* 060002A8 */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::set_EndpointMetadata(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<object>) /* 060002A9 */
+  } // end of property ActionDescriptor::EndpointMetadata
+  .property /*1700013B*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/>
+          Parameters()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/> Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::get_Parameters() /* 060002AA */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::set_Parameters(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/>) /* 060002AB */
+  } // end of property ActionDescriptor::Parameters
+  .property /*1700013C*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/>
+          BoundProperties()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/> Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::get_BoundProperties() /* 060002AC */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::set_BoundProperties(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/>) /* 060002AD */
+  } // end of property ActionDescriptor::BoundProperties
+  .property /*1700013D*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/>
+          FilterDescriptors()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/> Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::get_FilterDescriptors() /* 060002AE */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::set_FilterDescriptors(class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Filters.FilterDescriptor/*0200004F*/>) /* 060002AF */
+  } // end of property ActionDescriptor::FilterDescriptors
+  .property /*1700013E*/ instance callconv(8) string
+          DisplayName()
+  {
+    .custom /*0C000208:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance string Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::get_DisplayName() /* 060002B0 */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::set_DisplayName(string) /* 060002B1 */
+  } // end of property ActionDescriptor::DisplayName
+  .property /*1700013F*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<object,object>
+          Properties()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<object,object> Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::get_Properties() /* 060002B2 */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/::set_Properties(class [System.Runtime/*23000001*/]System.Collections.Generic.IDictionary`2/*0100003C*/<object,object>) /* 060002B3 */
+  } // end of property ActionDescriptor::Properties
+} // end of class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor
+
+.class /*0200007B*/ public abstract auto ansi sealed beforefieldinit Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptorExtensions
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00018B:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C00018C:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .custom /*0C00018D:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
+  .method /*060002B4*/ public hidebysig static 
+          !!T  GetProperty<T>(class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ actionDescriptor) cil managed
+  // SIG: 10 01 01 1E 00 12 81 E8
+  {
+    .custom /*0C00032A:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
+    .param type T /*2A000005*/ 
+      .custom /*0C000043:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptorExtensions::GetProperty
+
+  .method /*060002B5*/ public hidebysig static 
+          void  SetProperty<T>(class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/ actionDescriptor,
+                               !!T 'value') cil managed
+  // SIG: 10 01 02 01 12 81 E8 1E 00
+  {
+    .custom /*0C00032B:0A000001*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.ExtensionAttribute/*01000001*/::.ctor() /* 0A000001 */ = ( 01 00 00 00 ) 
+    .param type T /*2A000006*/ 
+      .custom /*0C000048:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptorExtensions::SetProperty
+
+} // end of class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptorExtensions
+
+.class /*0200007C*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptorProviderContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C00018F:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000190:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060002B6*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/> 
+          get_Results() cil managed
+  // SIG: 20 00 15 12 80 E5 01 12 81 E8
+  {
+    .custom /*0C00032C:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptorProviderContext::get_Results
+
+  .method /*060002B7*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionDescriptorProviderContext::.ctor
+
+  .property /*17000140*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/>
+          Results()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Collections.Generic.IList`1/*01000039*/<class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptor/*0200007A*/> Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptorProviderContext/*0200007C*/::get_Results() /* 060002B6 */
+  } // end of property ActionDescriptorProviderContext::Results
+} // end of class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptorProviderContext
+
+.class /*0200007D*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Abstractions.ActionInvokerProviderContext
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000191:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000192:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060002B8*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor(class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ actionContext) cil managed
+  // SIG: 20 01 01 12 18
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionInvokerProviderContext::.ctor
+
+  .method /*060002B9*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ 
+          get_ActionContext() cil managed
+  // SIG: 20 00 12 18
+  {
+    .custom /*0C00032D:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionInvokerProviderContext::get_ActionContext
+
+  .method /*060002BA*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.Abstractions.IActionInvoker/*0200007F*/ 
+          get_Result() cil managed
+  // SIG: 20 00 12 81 FC
+  {
+    .custom /*0C00032E:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C00032F:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionInvokerProviderContext::get_Result
+
+  .method /*060002BB*/ public hidebysig specialname 
+          instance void  set_Result(class Microsoft.AspNetCore.Mvc.Abstractions.IActionInvoker/*0200007F*/ 'value') cil managed
+  // SIG: 20 01 01 12 81 FC
+  {
+    .custom /*0C000330:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 02 00 00 ) 
+    .custom /*0C000331:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ActionInvokerProviderContext::set_Result
+
+  .property /*17000141*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/
+          ActionContext()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ActionContext/*02000006*/ Microsoft.AspNetCore.Mvc.Abstractions.ActionInvokerProviderContext/*0200007D*/::get_ActionContext() /* 060002B9 */
+  } // end of property ActionInvokerProviderContext::ActionContext
+  .property /*17000142*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.Abstractions.IActionInvoker/*0200007F*/
+          Result()
+  {
+    .custom /*0C00020E:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 02 00 00 ) 
+    .get instance class Microsoft.AspNetCore.Mvc.Abstractions.IActionInvoker/*0200007F*/ Microsoft.AspNetCore.Mvc.Abstractions.ActionInvokerProviderContext/*0200007D*/::get_Result() /* 060002BA */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ActionInvokerProviderContext/*0200007D*/::set_Result(class Microsoft.AspNetCore.Mvc.Abstractions.IActionInvoker/*0200007F*/) /* 060002BB */
+  } // end of property ActionInvokerProviderContext::Result
+} // end of class Microsoft.AspNetCore.Mvc.Abstractions.ActionInvokerProviderContext
+
+.class /*0200007E*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Abstractions.IActionDescriptorProvider
+{
+  .custom /*0C000194:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*060002BC*/ public hidebysig newslot specialname abstract virtual 
+          instance int32  get_Order() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionDescriptorProvider::get_Order
+
+  .method /*060002BD*/ public hidebysig newslot abstract virtual 
+          instance void  OnProvidersExecuting(class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptorProviderContext/*0200007C*/ context) cil managed
+  // SIG: 20 01 01 12 81 F0
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionDescriptorProvider::OnProvidersExecuting
+
+  .method /*060002BE*/ public hidebysig newslot abstract virtual 
+          instance void  OnProvidersExecuted(class Microsoft.AspNetCore.Mvc.Abstractions.ActionDescriptorProviderContext/*0200007C*/ context) cil managed
+  // SIG: 20 01 01 12 81 F0
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionDescriptorProvider::OnProvidersExecuted
+
+  .property /*17000143*/ instance callconv(8) int32
+          Order()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.Abstractions.IActionDescriptorProvider/*0200007E*/::get_Order() /* 060002BC */
+  } // end of property IActionDescriptorProvider::Order
+} // end of class Microsoft.AspNetCore.Mvc.Abstractions.IActionDescriptorProvider
+
+.class /*0200007F*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Abstractions.IActionInvoker
+{
+  .custom /*0C000195:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*060002BF*/ public hidebysig newslot abstract virtual 
+          instance class [System.Runtime/*23000001*/]System.Threading.Tasks.Task/*0100001B*/ 
+          InvokeAsync() cil managed
+  // SIG: 20 00 12 6D
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionInvoker::InvokeAsync
+
+} // end of class Microsoft.AspNetCore.Mvc.Abstractions.IActionInvoker
+
+.class /*02000080*/ interface public abstract auto ansi Microsoft.AspNetCore.Mvc.Abstractions.IActionInvokerProvider
+{
+  .custom /*0C000196:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .method /*060002C0*/ public hidebysig newslot specialname abstract virtual 
+          instance int32  get_Order() cil managed
+  // SIG: 20 00 08
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionInvokerProvider::get_Order
+
+  .method /*060002C1*/ public hidebysig newslot abstract virtual 
+          instance void  OnProvidersExecuting(class Microsoft.AspNetCore.Mvc.Abstractions.ActionInvokerProviderContext/*0200007D*/ context) cil managed
+  // SIG: 20 01 01 12 81 F4
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionInvokerProvider::OnProvidersExecuting
+
+  .method /*060002C2*/ public hidebysig newslot abstract virtual 
+          instance void  OnProvidersExecuted(class Microsoft.AspNetCore.Mvc.Abstractions.ActionInvokerProviderContext/*0200007D*/ context) cil managed
+  // SIG: 20 01 01 12 81 F4
+  {
+    // Method begins at RVA 0x0
+  } // end of method IActionInvokerProvider::OnProvidersExecuted
+
+  .property /*17000144*/ instance callconv(8) int32
+          Order()
+  {
+    .get instance int32 Microsoft.AspNetCore.Mvc.Abstractions.IActionInvokerProvider/*02000080*/::get_Order() /* 060002C0 */
+  } // end of property IActionInvokerProvider::Order
+} // end of class Microsoft.AspNetCore.Mvc.Abstractions.IActionInvokerProvider
+
+.class /*02000081*/ public auto ansi beforefieldinit Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .custom /*0C000197:06000004*/ instance void System.Runtime.CompilerServices.NullableContextAttribute/*02000004*/::.ctor(uint8) /* 06000004 */ = ( 01 00 01 00 00 ) 
+  .custom /*0C000198:06000002*/ instance void System.Runtime.CompilerServices.NullableAttribute/*02000003*/::.ctor(uint8) /* 06000002 */ = ( 01 00 00 00 00 ) 
+  .method /*060002C3*/ public hidebysig specialname 
+          instance string  get_Name() cil managed
+  // SIG: 20 00 0E
+  {
+    .custom /*0C000332:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ParameterDescriptor::get_Name
+
+  .method /*060002C4*/ public hidebysig specialname 
+          instance void  set_Name(string 'value') cil managed
+  // SIG: 20 01 01 0E
+  {
+    .custom /*0C000333:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ParameterDescriptor::set_Name
+
+  .method /*060002C5*/ public hidebysig specialname 
+          instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ 
+          get_ParameterType() cil managed
+  // SIG: 20 00 12 61
+  {
+    .custom /*0C000334:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ParameterDescriptor::get_ParameterType
+
+  .method /*060002C6*/ public hidebysig specialname 
+          instance void  set_ParameterType(class [System.Runtime/*23000001*/]System.Type/*01000018*/ 'value') cil managed
+  // SIG: 20 01 01 12 61
+  {
+    .custom /*0C000335:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ParameterDescriptor::set_ParameterType
+
+  .method /*060002C7*/ public hidebysig specialname 
+          instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/ 
+          get_BindingInfo() cil managed
+  // SIG: 20 00 12 30
+  {
+    .custom /*0C000336:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ParameterDescriptor::get_BindingInfo
+
+  .method /*060002C8*/ public hidebysig specialname 
+          instance void  set_BindingInfo(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/ 'value') cil managed
+  // SIG: 20 01 01 12 30
+  {
+    .custom /*0C000337:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ParameterDescriptor::set_BindingInfo
+
+  .method /*060002C9*/ public hidebysig specialname rtspecialname 
+          instance void  .ctor() cil managed
+  // SIG: 20 00 01
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method ParameterDescriptor::.ctor
+
+  .property /*17000145*/ instance callconv(8) string
+          Name()
+  {
+    .get instance string Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/::get_Name() /* 060002C3 */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/::set_Name(string) /* 060002C4 */
+  } // end of property ParameterDescriptor::Name
+  .property /*17000146*/ instance callconv(8) class [System.Runtime/*23000001*/]System.Type/*01000018*/
+          ParameterType()
+  {
+    .get instance class [System.Runtime/*23000001*/]System.Type/*01000018*/ Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/::get_ParameterType() /* 060002C5 */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/::set_ParameterType(class [System.Runtime/*23000001*/]System.Type/*01000018*/) /* 060002C6 */
+  } // end of property ParameterDescriptor::ParameterType
+  .property /*17000147*/ instance callconv(8) class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/
+          BindingInfo()
+  {
+    .get instance class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/ Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/::get_BindingInfo() /* 060002C7 */
+    .set instance void Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor/*02000081*/::set_BindingInfo(class Microsoft.AspNetCore.Mvc.ModelBinding.BindingInfo/*0200000C*/) /* 060002C8 */
+  } // end of property ParameterDescriptor::BindingInfo
+} // end of class Microsoft.AspNetCore.Mvc.Abstractions.ParameterDescriptor
+
+.class /*02000082*/ private abstract auto ansi sealed beforefieldinit Microsoft.AspNetCore.Mvc.Abstractions.Resources
+       extends [System.Runtime/*23000001*/]System.Object/*01000017*/
+{
+  .method /*060002CA*/ assembly hidebysig specialname static 
+          class [System.Runtime/*23000001*/]System.Resources.ResourceManager/*0100004D*/ 
+          get_ResourceManager() cil managed
+  // SIG: 00 00 12 81 35
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_ResourceManager
+
+  .method /*060002CB*/ assembly hidebysig specialname static 
+          class [System.Runtime/*23000001*/]System.Globalization.CultureInfo/*0100003A*/ 
+          get_Culture() cil managed
+  // SIG: 00 00 12 80 E9
+  {
+    .custom /*0C000338:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_Culture
+
+  .method /*060002CC*/ assembly hidebysig specialname static 
+          void  set_Culture(class [System.Runtime/*23000001*/]System.Globalization.CultureInfo/*0100003A*/ 'value') cil managed
+  // SIG: 00 01 01 12 80 E9
+  {
+    .custom /*0C000339:0A000012*/ instance void [System.Runtime/*23000001*/]System.Runtime.CompilerServices.CompilerGeneratedAttribute/*01000013*/::.ctor() /* 0A000012 */ = ( 01 00 00 00 ) 
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::set_Culture
+
+  .method /*060002CD*/ assembly hidebysig static 
+          string  GetResourceString(string resourceKey,
+                                    [opt] string defaultValue) cil managed aggressiveinlining
+  // SIG: 00 02 0E 0E 0E
+  {
+    .param [2]/*080001D7*/  = nullref
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::GetResourceString
+
+  .method /*060002CE*/ assembly hidebysig specialname static 
+          string  get_ArgumentCannotBeNullOrEmpty() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_ArgumentCannotBeNullOrEmpty
+
+  .method /*060002CF*/ assembly hidebysig specialname static 
+          string  get_ModelBindingContext_ModelMetadataMustBeSet() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_ModelBindingContext_ModelMetadataMustBeSet
+
+  .method /*060002D0*/ assembly hidebysig specialname static 
+          string  get_Validation_InvalidFieldCannotBeReset() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_Validation_InvalidFieldCannotBeReset
+
+  .method /*060002D1*/ assembly hidebysig specialname static 
+          string  get_Validation_InvalidFieldCannotBeReset_ToSkipped() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_Validation_InvalidFieldCannotBeReset_ToSkipped
+
+  .method /*060002D2*/ assembly hidebysig specialname static 
+          string  get_ModelStateDictionary_MaxModelStateErrors() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_ModelStateDictionary_MaxModelStateErrors
+
+  .method /*060002D3*/ assembly hidebysig specialname static 
+          string  get_BindingSource_Body() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_Body
+
+  .method /*060002D4*/ assembly hidebysig specialname static 
+          string  get_BindingSource_Custom() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_Custom
+
+  .method /*060002D5*/ assembly hidebysig specialname static 
+          string  get_BindingSource_Form() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_Form
+
+  .method /*060002D6*/ assembly hidebysig specialname static 
+          string  get_BindingSource_Header() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_Header
+
+  .method /*060002D7*/ assembly hidebysig specialname static 
+          string  get_BindingSource_Services() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_Services
+
+  .method /*060002D8*/ assembly hidebysig specialname static 
+          string  get_BindingSource_ModelBinding() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_ModelBinding
+
+  .method /*060002D9*/ assembly hidebysig specialname static 
+          string  get_BindingSource_Path() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_Path
+
+  .method /*060002DA*/ assembly hidebysig specialname static 
+          string  get_BindingSource_Query() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_Query
+
+  .method /*060002DB*/ assembly hidebysig specialname static 
+          string  get_BindingSource_CannotBeComposite() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_CannotBeComposite
+
+  .method /*060002DC*/ assembly hidebysig static 
+          string  FormatBindingSource_CannotBeComposite(object p0,
+                                                        object p1) cil managed
+  // SIG: 00 02 0E 1C 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::FormatBindingSource_CannotBeComposite
+
+  .method /*060002DD*/ assembly hidebysig specialname static 
+          string  get_BindingSource_MustBeFromRequest() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_MustBeFromRequest
+
+  .method /*060002DE*/ assembly hidebysig static 
+          string  FormatBindingSource_MustBeFromRequest(object p0,
+                                                        object p1) cil managed
+  // SIG: 00 02 0E 1C 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::FormatBindingSource_MustBeFromRequest
+
+  .method /*060002DF*/ assembly hidebysig specialname static 
+          string  get_BindingSource_CannotBeGreedy() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_CannotBeGreedy
+
+  .method /*060002E0*/ assembly hidebysig static 
+          string  FormatBindingSource_CannotBeGreedy(object p0,
+                                                     object p1) cil managed
+  // SIG: 00 02 0E 1C 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::FormatBindingSource_CannotBeGreedy
+
+  .method /*060002E1*/ assembly hidebysig specialname static 
+          string  get_BindingSource_MustBeGreedy() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_MustBeGreedy
+
+  .method /*060002E2*/ assembly hidebysig static 
+          string  FormatBindingSource_MustBeGreedy(object p0,
+                                                   object p1) cil managed
+  // SIG: 00 02 0E 1C 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::FormatBindingSource_MustBeGreedy
+
+  .method /*060002E3*/ assembly hidebysig specialname static 
+          string  get_BindingSource_Special() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_Special
+
+  .method /*060002E4*/ assembly hidebysig specialname static 
+          string  get_BindingSource_FormFile() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BindingSource_FormFile
+
+  .method /*060002E5*/ assembly hidebysig specialname static 
+          string  get_BinderType_MustBeIModelBinder() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_BinderType_MustBeIModelBinder
+
+  .method /*060002E6*/ assembly hidebysig static 
+          string  FormatBinderType_MustBeIModelBinder(object p0,
+                                                      object p1) cil managed
+  // SIG: 00 02 0E 1C 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::FormatBinderType_MustBeIModelBinder
+
+  .method /*060002E7*/ assembly hidebysig specialname static 
+          string  get_RecordTypeHasValidationOnProperties() cil managed
+  // SIG: 00 00 0E
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::get_RecordTypeHasValidationOnProperties
+
+  .method /*060002E8*/ assembly hidebysig static 
+          string  FormatRecordTypeHasValidationOnProperties(object p0,
+                                                            object p1) cil managed
+  // SIG: 00 02 0E 1C 1C
+  {
+    // Method begins at RVA 0x4050
+    // Code size       2 (0x2)
+    .maxstack  8
+    IL_0000:  /* 14   |                  */ ldnull
+    IL_0001:  /* 7A   |                  */ throw
+  } // end of method Resources::FormatRecordTypeHasValidationOnProperties
+
+  .property /*17000148*/ callconv(8) class [System.Runtime/*23000001*/]System.Resources.ResourceManager/*0100004D*/
+          ResourceManager()
+  {
+    .get class [System.Runtime/*23000001*/]System.Resources.ResourceManager/*0100004D*/ Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_ResourceManager() /* 060002CA */
+  } // end of property Resources::ResourceManager
+  .property /*17000149*/ callconv(8) class [System.Runtime/*23000001*/]System.Globalization.CultureInfo/*0100003A*/
+          Culture()
+  {
+    .get class [System.Runtime/*23000001*/]System.Globalization.CultureInfo/*0100003A*/ Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_Culture() /* 060002CB */
+    .set void Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::set_Culture(class [System.Runtime/*23000001*/]System.Globalization.CultureInfo/*0100003A*/) /* 060002CC */
+  } // end of property Resources::Culture
+  .property /*1700014A*/ callconv(8) string
+          ArgumentCannotBeNullOrEmpty()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_ArgumentCannotBeNullOrEmpty() /* 060002CE */
+  } // end of property Resources::ArgumentCannotBeNullOrEmpty
+  .property /*1700014B*/ callconv(8) string
+          ModelBindingContext_ModelMetadataMustBeSet()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_ModelBindingContext_ModelMetadataMustBeSet() /* 060002CF */
+  } // end of property Resources::ModelBindingContext_ModelMetadataMustBeSet
+  .property /*1700014C*/ callconv(8) string
+          Validation_InvalidFieldCannotBeReset()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_Validation_InvalidFieldCannotBeReset() /* 060002D0 */
+  } // end of property Resources::Validation_InvalidFieldCannotBeReset
+  .property /*1700014D*/ callconv(8) string
+          Validation_InvalidFieldCannotBeReset_ToSkipped()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_Validation_InvalidFieldCannotBeReset_ToSkipped() /* 060002D1 */
+  } // end of property Resources::Validation_InvalidFieldCannotBeReset_ToSkipped
+  .property /*1700014E*/ callconv(8) string
+          ModelStateDictionary_MaxModelStateErrors()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_ModelStateDictionary_MaxModelStateErrors() /* 060002D2 */
+  } // end of property Resources::ModelStateDictionary_MaxModelStateErrors
+  .property /*1700014F*/ callconv(8) string
+          BindingSource_Body()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_Body() /* 060002D3 */
+  } // end of property Resources::BindingSource_Body
+  .property /*17000150*/ callconv(8) string
+          BindingSource_Custom()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_Custom() /* 060002D4 */
+  } // end of property Resources::BindingSource_Custom
+  .property /*17000151*/ callconv(8) string
+          BindingSource_Form()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_Form() /* 060002D5 */
+  } // end of property Resources::BindingSource_Form
+  .property /*17000152*/ callconv(8) string
+          BindingSource_Header()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_Header() /* 060002D6 */
+  } // end of property Resources::BindingSource_Header
+  .property /*17000153*/ callconv(8) string
+          BindingSource_Services()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_Services() /* 060002D7 */
+  } // end of property Resources::BindingSource_Services
+  .property /*17000154*/ callconv(8) string
+          BindingSource_ModelBinding()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_ModelBinding() /* 060002D8 */
+  } // end of property Resources::BindingSource_ModelBinding
+  .property /*17000155*/ callconv(8) string
+          BindingSource_Path()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_Path() /* 060002D9 */
+  } // end of property Resources::BindingSource_Path
+  .property /*17000156*/ callconv(8) string
+          BindingSource_Query()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_Query() /* 060002DA */
+  } // end of property Resources::BindingSource_Query
+  .property /*17000157*/ callconv(8) string
+          BindingSource_CannotBeComposite()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_CannotBeComposite() /* 060002DB */
+  } // end of property Resources::BindingSource_CannotBeComposite
+  .property /*17000158*/ callconv(8) string
+          BindingSource_MustBeFromRequest()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_MustBeFromRequest() /* 060002DD */
+  } // end of property Resources::BindingSource_MustBeFromRequest
+  .property /*17000159*/ callconv(8) string
+          BindingSource_CannotBeGreedy()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_CannotBeGreedy() /* 060002DF */
+  } // end of property Resources::BindingSource_CannotBeGreedy
+  .property /*1700015A*/ callconv(8) string
+          BindingSource_MustBeGreedy()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_MustBeGreedy() /* 060002E1 */
+  } // end of property Resources::BindingSource_MustBeGreedy
+  .property /*1700015B*/ callconv(8) string
+          BindingSource_Special()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_Special() /* 060002E3 */
+  } // end of property Resources::BindingSource_Special
+  .property /*1700015C*/ callconv(8) string
+          BindingSource_FormFile()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BindingSource_FormFile() /* 060002E4 */
+  } // end of property Resources::BindingSource_FormFile
+  .property /*1700015D*/ callconv(8) string
+          BinderType_MustBeIModelBinder()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_BinderType_MustBeIModelBinder() /* 060002E5 */
+  } // end of property Resources::BinderType_MustBeIModelBinder
+  .property /*1700015E*/ callconv(8) string
+          RecordTypeHasValidationOnProperties()
+  {
+    .get string Microsoft.AspNetCore.Mvc.Abstractions.Resources/*02000082*/::get_RecordTypeHasValidationOnProperties() /* 060002E7 */
+  } // end of property Resources::RecordTypeHasValidationOnProperties
+} // end of class Microsoft.AspNetCore.Mvc.Abstractions.Resources
+
+
+// =============================================================
+
+// *********** DISASSEMBLY COMPLETE ***********************
