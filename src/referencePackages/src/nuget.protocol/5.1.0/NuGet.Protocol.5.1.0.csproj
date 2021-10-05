@@ -29,7 +29,7 @@
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
         <PackageReference Include="NuGet.Packaging" Version="5.1.0" />
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.2" />
         <Reference Include="System.IdentityModel" />
         <Reference Include="System.IO.Compression" />
         <Reference Include="System.Net.Http" />

@@ -33,7 +33,7 @@
         <PackageReference Include="NuGet.Configuration" Version="5.1.0" />
         <PackageReference Include="NuGet.Versioning" Version="5.1.0" />
         <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.2" />
         <Reference Include="System.IO.Compression" />
         <Reference Include="System.Security" />
         <Reference Include="System.Xml" />
