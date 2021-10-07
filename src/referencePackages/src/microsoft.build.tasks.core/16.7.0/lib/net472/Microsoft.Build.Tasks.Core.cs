@@ -2287,54 +2287,6 @@ namespace Microsoft.Build.Tasks.Xaml
         protected override bool ValidateParameters() { throw null; }
     }
 }
-namespace Microsoft.VisualStudio.Setup.Configuration
-{
-    [System.Runtime.InteropServices.TypeIdentifierAttribute]
-    public partial interface IEnumSetupInstances
-    {
-        void Next(int celt, Microsoft.VisualStudio.Setup.Configuration.ISetupInstance[] rgelt, out int pceltFetched);
-    }
-    [System.FlagsAttribute]
-    [System.Runtime.InteropServices.TypeIdentifierAttribute("310100ba-5f84-4103-abe0-e8132ae862d9", "Microsoft.VisualStudio.Setup.Configuration.InstanceState")]
-    public enum InstanceState : uint
-    {
-        None = (uint)0,
-        Local = (uint)1,
-        Registered = (uint)2,
-        NoRebootRequired = (uint)4,
-        NoErrors = (uint)8,
-        Complete = (uint)4294967295,
-    }
-    [System.Runtime.InteropServices.TypeIdentifierAttribute]
-    public partial interface ISetupConfiguration
-    {
-    }
-    [System.Runtime.InteropServices.TypeIdentifierAttribute]
-    public partial interface ISetupConfiguration2 : Microsoft.VisualStudio.Setup.Configuration.ISetupConfiguration
-    {
-        Microsoft.VisualStudio.Setup.Configuration.IEnumSetupInstances EnumAllInstances();
-        void _VtblGap1_3() { }
-    }
-    [System.Runtime.InteropServices.TypeIdentifierAttribute]
-    public partial interface ISetupInstance
-    {
-        string GetDisplayName(int lcid = 0);
-        string GetInstallationPath();
-        string GetInstallationVersion();
-        void _VtblGap1_3() { }
-    }
-    [System.Runtime.InteropServices.TypeIdentifierAttribute]
-    public partial interface ISetupInstance2 : Microsoft.VisualStudio.Setup.Configuration.ISetupInstance
-    {
-        Microsoft.VisualStudio.Setup.Configuration.InstanceState GetState();
-        void _VtblGap1_8() { }
-    }
-    [Microsoft.Cci.DummyTypeReference]
-    [System.Runtime.InteropServices.TypeIdentifierAttribute]
-    public partial interface SetupConfiguration : Microsoft.VisualStudio.Setup.Configuration.ISetupConfiguration, Microsoft.VisualStudio.Setup.Configuration.ISetupConfiguration2
-    {
-    }
-}
 namespace System.Deployment.Internal.CodeSigning
 {
     public sealed partial class RSAPKCS1SHA256SignatureDescription : System.Security.Cryptography.SignatureDescription

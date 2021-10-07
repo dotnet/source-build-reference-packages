@@ -649,7 +649,7 @@ namespace Microsoft.VisualStudio.Setup.Configuration
     public partial interface ISetupConfiguration2 : Microsoft.VisualStudio.Setup.Configuration.ISetupConfiguration
     {
         Microsoft.VisualStudio.Setup.Configuration.IEnumSetupInstances EnumAllInstances();
-        void _VtblGap1_3() { }
+        void _VtblGap1_3();
     }
     [System.Runtime.InteropServices.TypeIdentifierAttribute]
     public partial interface ISetupInstance
@@ -657,15 +657,14 @@ namespace Microsoft.VisualStudio.Setup.Configuration
         string GetDisplayName(int lcid = 0);
         string GetInstallationPath();
         string GetInstallationVersion();
-        void _VtblGap1_3() { }
+        void _VtblGap1_3();
     }
     [System.Runtime.InteropServices.TypeIdentifierAttribute]
     public partial interface ISetupInstance2 : Microsoft.VisualStudio.Setup.Configuration.ISetupInstance
     {
         Microsoft.VisualStudio.Setup.Configuration.InstanceState GetState();
-        void _VtblGap1_8() { }
+        void _VtblGap1_8();
     }
-    [Microsoft.Cci.DummyTypeReference]
     [System.Runtime.InteropServices.TypeIdentifierAttribute]
     public partial interface SetupConfiguration : Microsoft.VisualStudio.Setup.Configuration.ISetupConfiguration, Microsoft.VisualStudio.Setup.Configuration.ISetupConfiguration2
     {

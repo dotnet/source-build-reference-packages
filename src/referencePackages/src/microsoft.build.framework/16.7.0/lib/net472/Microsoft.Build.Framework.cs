@@ -789,9 +789,7 @@ namespace Microsoft.Build.Framework.XamlTypes
         public void BeginInit() { }
         public void EndInit() { }
         public string GetMetadata(string metadataName) { throw null; }
-        [Microsoft.Cci.DummyTypeReference]
         public System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type) { throw null; }
-        [Microsoft.Cci.DummyTypeReference]
         public System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes() { throw null; }
     }
     public sealed partial class DataSource : System.ComponentModel.ISupportInitialize
@@ -847,9 +845,7 @@ namespace Microsoft.Build.Framework.XamlTypes
         public FileExtension() { }
         public string ContentType { get { throw null; } set { } }
         public string Name { get { throw null; } set { } }
-        [Microsoft.Cci.DummyTypeReference]
         public System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type) { throw null; }
-        [Microsoft.Cci.DummyTypeReference]
         public System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes() { throw null; }
     }
     public sealed partial class IntProperty : Microsoft.Build.Framework.XamlTypes.BaseProperty
@@ -874,9 +870,7 @@ namespace Microsoft.Build.Framework.XamlTypes
         public bool UpToDateCheckInput { get { throw null; } set { } }
         public void BeginInit() { }
         public void EndInit() { }
-        [Microsoft.Cci.DummyTypeReference]
         public System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type) { throw null; }
-        [Microsoft.Cci.DummyTypeReference]
         public System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes() { throw null; }
     }
     public partial class NameValuePair
@@ -890,7 +884,6 @@ namespace Microsoft.Build.Framework.XamlTypes
     {
         public ProjectSchemaDefinitions() { }
         public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.IProjectSchemaNode> Nodes { get { throw null; } set { } }
-        [Microsoft.Cci.DummyTypeReference]
         public System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type) { throw null; }
         public System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes() { throw null; }
     }
@@ -928,9 +921,7 @@ namespace Microsoft.Build.Framework.XamlTypes
         public System.Collections.Specialized.OrderedDictionary GetPropertiesByCategory() { throw null; }
         public System.Collections.Generic.IList<Microsoft.Build.Framework.XamlTypes.BaseProperty> GetPropertiesInCategory(string categoryName) { throw null; }
         public Microsoft.Build.Framework.XamlTypes.BaseProperty GetProperty(string propertyName) { throw null; }
-        [Microsoft.Cci.DummyTypeReference]
         public System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type) { throw null; }
-        [Microsoft.Cci.DummyTypeReference]
         public System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes() { throw null; }
     }
     public sealed partial class RuleBag : Microsoft.Build.Framework.XamlTypes.IProjectSchemaNode, System.ComponentModel.ISupportInitialize
@@ -939,9 +930,7 @@ namespace Microsoft.Build.Framework.XamlTypes
         public System.Collections.Generic.List<Microsoft.Build.Framework.XamlTypes.Rule> Rules { get { throw null; } set { } }
         public void BeginInit() { }
         public void EndInit() { }
-        [Microsoft.Cci.DummyTypeReference]
         public System.Collections.Generic.IEnumerable<object> GetSchemaObjects(System.Type type) { throw null; }
-        [Microsoft.Cci.DummyTypeReference]
         public System.Collections.Generic.IEnumerable<System.Type> GetSchemaObjectTypes() { throw null; }
     }
     public enum RuleOverrideMode
