@@ -31,7 +31,7 @@
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
         <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.1.1" />
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.2" />
         <Reference Include="System" />
         <Reference Include="System.Runtime.Serialization" />
     </ItemGroup>

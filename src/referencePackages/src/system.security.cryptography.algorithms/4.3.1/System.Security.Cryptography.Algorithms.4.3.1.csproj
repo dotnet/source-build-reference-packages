@@ -45,13 +45,13 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
     <PackageReference Include="System.Security.Cryptography.Primitives" Version="4.3.0" />
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.0-alpha-5" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.2" />
     <Reference Include="System.Core" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
     <PackageReference Include="System.Security.Cryptography.Primitives" Version="4.3.0" />
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net461" Version="1.0.0-alpha-5" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net461" Version="1.0.2" />
     <Reference Include="System.Core" />
   </ItemGroup>
 
@@ -60,7 +60,7 @@
     <PackageReference Include="System.Runtime" Version="4.3.0" />
     <PackageReference Include="System.Security.Cryptography.Encoding" Version="4.3.0" />
     <PackageReference Include="System.Security.Cryptography.Primitives" Version="4.3.0" />
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net462" Version="1.0.0-alpha-5" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net462" Version="1.0.2" />
     <Reference Include="System.Core" />
   </ItemGroup>
 

@@ -30,14 +30,14 @@
     <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
         <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.2.0" />
         <PackageReference Include="System.Security.Cryptography.Encoding" Version="4.0.0" />
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.2" />
         <Reference Include="System" />
         <Reference Include="System.Core" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
         <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.2.0" />
         <PackageReference Include="System.Security.Cryptography.Encoding" Version="4.0.0" />
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net461" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net461" Version="1.0.2" />
         <Reference Include="System" />
         <Reference Include="System.Core" />
     </ItemGroup>

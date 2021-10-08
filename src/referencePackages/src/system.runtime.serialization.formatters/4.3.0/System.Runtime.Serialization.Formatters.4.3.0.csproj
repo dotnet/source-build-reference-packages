@@ -24,7 +24,7 @@
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
         <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.2" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.4' ">
         <PackageReference Include="System.Collections" Version="4.3.0" />
