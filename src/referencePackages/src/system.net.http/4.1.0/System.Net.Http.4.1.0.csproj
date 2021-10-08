@@ -47,7 +47,7 @@
         <PackageReference Include="Microsoft.Win32.Primitives" Version="4.0.1" />
         <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.0.0" />
         <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.1.0" />
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.2" />
     </ItemGroup>
 
   

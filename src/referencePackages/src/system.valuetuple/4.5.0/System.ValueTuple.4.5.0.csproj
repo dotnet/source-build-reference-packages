@@ -20,11 +20,11 @@
   </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net461" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net461" Version="1.0.2" />
         <Reference Include="System" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net47' ">
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net47" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net47" Version="1.0.2" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
         <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />

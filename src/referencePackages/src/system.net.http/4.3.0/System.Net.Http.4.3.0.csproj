@@ -46,7 +46,7 @@
     <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
         <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.3.0" />
         <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.0" />
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.2" />
         <Reference Include="System" />
         <Reference Include="System.Core" />
     </ItemGroup>

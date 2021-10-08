@@ -47,13 +47,13 @@
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net45' ">
         <PackageReference Include="System.ComponentModel.Primitives" Version="4.3.0" />
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net45" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net45" Version="1.0.2" />
         <Reference Include="System" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
         <PackageReference Include="System.Collections.NonGeneric" Version="4.3.0" />
         <PackageReference Include="System.ComponentModel.Primitives" Version="4.3.0" />
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net462" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net462" Version="1.0.2" />
         <Reference Include="System" />
     </ItemGroup>
 

@@ -24,11 +24,11 @@
         <PackageReference Include="System.Runtime" Version="4.1.0" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net46" Version="1.0.2" />
     </ItemGroup>
     <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
         <PackageReference Include="System.Reflection" Version="4.1.0" />
-        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net462" Version="1.0.0-alpha-5" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net462" Version="1.0.2" />
     </ItemGroup>
 
   
