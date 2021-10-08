@@ -14,6 +14,8 @@
     <NoWarn>$(NoWarn);NU5128</NoWarn>
     <!-- Disable NU5048: continue to use deprecated 'PackageIconUrl'/'iconUrl' for now. -->
     <NoWarn>$(NoWarn);NU5048</NoWarn>
+    <!-- Disable NU5131: text-only packages with placeholders produce this warning -->
+    <NoWarn>$(NoWarn);NU5131</NoWarn>
   </PropertyGroup>
 
 </Project>
