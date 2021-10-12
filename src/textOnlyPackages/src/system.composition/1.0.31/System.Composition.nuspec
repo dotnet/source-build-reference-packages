@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata minClientVersion="2.12">
+    <id>System.Composition</id>
+    <version>1.0.31</version>
+    <title>System.Composition</title>
+    <authors>Microsoft</authors>
+    <owners>microsoft,dotnetframework</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <licenseUrl>http://go.microsoft.com/fwlink/?LinkId=329770</licenseUrl>
+    <projectUrl>https://dot.net/</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
+    <description>This packages provides a version of the Managed Extensibility Framework (MEF) that is lightweight and specifically optimized for high throughput scenarios, such as the web.
+
+Commonly Used Types:
+System.Composition.ExportAttribute
+System.Composition.ImportAttribute
+System.Composition.Convention.ConventionBuilder
+System.Composition.Hosting.CompositionHost
+System.Composition.CompositionContext
+System.Composition.CompositionContextExtensions
+ 
+When using NuGet 3.x this package requires at least version 3.4.</description>
+    <releaseNotes>https://go.microsoft.com/fwlink/?LinkID=799421</releaseNotes>
+    <copyright>© Microsoft Corporation.  All rights reserved.</copyright>
+    <serviceable>true</serviceable>
+    <dependencies>
+      <dependency id="System.Composition.AttributedModel" version="1.0.31" />
+      <dependency id="System.Composition.Convention" version="1.0.31" />
+      <dependency id="System.Composition.Hosting" version="1.0.31" />
+      <dependency id="System.Composition.Runtime" version="1.0.31" />
+      <dependency id="System.Composition.TypedParts" version="1.0.31" />
+    </dependencies>
+  </metadata>
+</package>
