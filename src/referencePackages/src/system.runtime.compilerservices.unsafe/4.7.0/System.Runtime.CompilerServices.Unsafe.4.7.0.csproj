@@ -9,6 +9,7 @@
   <PropertyGroup>
     <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/4.7.0/ref/</OutputPath>
     <IntermediateOutputPath>$(ArtifactsObjDir)system.runtime.compilerservices.unsafe/4.7.0</IntermediateOutputPath>
+    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
@@ -22,10 +23,6 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
     <PackageReference Include="System.Runtime" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />
   </ItemGroup>
 
 </Project>
