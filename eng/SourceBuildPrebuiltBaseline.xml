@@ -18,9 +18,6 @@
       They are tracked by https://github.com/dotnet/source-build/issues/2423
     -->
     <Usage Id="runtime.native.System" Version="4.3.0" />
-    <Usage Id="System.Data.Common" Version="4.3.0" IsDirectDependency="true" />
-    <Usage Id="System.Memory" Version="4.5.0" IsDirectDependency="true" />
-    <Usage Id="System.Net.NameResolution" Version="4.3.0" IsDirectDependency="true" />
     <Usage Id="System.Reflection.TypeExtensions" Version="4.7.0" IsDirectDependency="true" />
     <Usage Id="System.Runtime.CompilerServices.Unsafe" Version="4.5.0" IsDirectDependency="true" />
     <Usage Id="System.Security.AccessControl" Version="4.4.0" IsDirectDependency="true" />
