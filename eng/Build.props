@@ -26,7 +26,8 @@
   </ItemGroup>
 
   <Target Name="BuildDependencyPackageProjects"
-          BeforeTargets="Execute">
+          BeforeTargets="Execute"
+          Condition="'$(ArcadeBuildFromSource)' != 'true' or '$(ArcadeInnerBuildFromSource)' == 'true'">
 
     <MSBuild
       Condition="'@(DependencyPackageProjects)' != ''"
