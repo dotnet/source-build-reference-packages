@@ -11,21 +11,14 @@
     <UsagePattern IdentityGlob="runtime.linux-x64.Microsoft.NETCore.ILDAsm/*" />
 
     <UsagePattern IdentityGlob="Microsoft.SourceBuild.Intermediate.*/*" />
+
+    <UsagePattern IdentityGlob="runtime.*/*" />
   </IgnorePatterns>
   <Usages>
     <!--
       The following prebuilts are being tracked in the 6.0 prebuilt burndown effort.
       They are tracked by https://github.com/dotnet/source-build/issues/2423
     -->
-    <Usage Id="runtime.native.System" Version="4.3.0" />
-    <Usage Id="System.Data.Common" Version="4.3.0" IsDirectDependency="true" />
-    <Usage Id="System.Memory" Version="4.5.0" IsDirectDependency="true" />
-    <Usage Id="System.Net.NameResolution" Version="4.3.0" IsDirectDependency="true" />
-    <Usage Id="System.Reflection.TypeExtensions" Version="4.7.0" IsDirectDependency="true" />
-    <Usage Id="System.Runtime.CompilerServices.Unsafe" Version="4.5.0" IsDirectDependency="true" />
-    <Usage Id="System.Security.AccessControl" Version="4.4.0" IsDirectDependency="true" />
-    <Usage Id="System.Security.Cryptography.Cng" Version="4.4.0" IsDirectDependency="true" />
-    <Usage Id="System.Security.Principal.Windows" Version="4.4.0" IsDirectDependency="true" />
     <Usage Id="System.Threading.Tasks.Dataflow" Version="4.5.24" IsDirectDependency="true" />
   </Usages>
 </UsageData>
