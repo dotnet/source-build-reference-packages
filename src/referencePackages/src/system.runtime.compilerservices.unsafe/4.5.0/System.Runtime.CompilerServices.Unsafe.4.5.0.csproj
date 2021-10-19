@@ -4,7 +4,6 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.0;netstandard2.0;netcoreapp2.0</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/4.5.0/system.runtime.compilerservices.unsafe.nuspec</NuspecFile>
-    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -14,6 +13,7 @@
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
     <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/4.5.0/lib/</OutputPath>
+    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +23,11 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
     <PackageReference Include="System.Runtime" Version="4.3.0" />
+    <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />
   </ItemGroup>
 
 </Project>
