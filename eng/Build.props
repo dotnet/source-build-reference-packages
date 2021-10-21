@@ -1,6 +1,19 @@
 <Project>
 
   <ItemGroup>
+    <!--
+      The following DependencyPackageProjects are ones on which other packages depend.  Adding them
+      to this ItemGroup will ensure that they get built first and in order of inclusion.  Also,
+      packages included here will be added to the source-build package cache when building with
+      source-build to allow them to be considered in prebuilt reporting.
+
+      Format:
+      <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Extensions.Options.5.0.0.csproj" />
+    -->
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Build.Framework.16.5.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Build.Utilities.Core.16.5.0.csproj" />
+
+
     <TargetingPackageProject Include="$(RepoRoot)src\targetPacks\ILsrc\**\*.csproj" />
     <ProjectToBuild Include="@(TargetingPackageProject)" />
 
@@ -9,7 +22,25 @@
 
     <ReferencePackageProject Include="$(RepoRoot)src\referencePackages\src\**\*.csproj" />
     <ProjectToBuild Include="@(ReferencePackageProject)" />
+
+    <ProjectToBuild Remove="@(DependencyPackageProjects)" />
   </ItemGroup>
+
+  <Target Name="BuildDependencyPackageProjects"
+          BeforeTargets="Execute"
+          Condition="'$(ArcadeBuildFromSource)' != 'true' or '$(ArcadeInnerBuildFromSource)' == 'true'">
+
+    <MSBuild
+      Condition="'@(DependencyPackageProjects)' != ''"
+      Projects="@(DependencyPackageProjects)"
+      Targets="Restore;Build;Pack" />
+
+    <!-- Copy packages into package cache if building with source-build -->
+    <Copy
+      Condition="'$(CurrentRepoSourceBuiltNupkgCacheDir)' != ''"
+      SourceFiles="@(DependencyPackageProjects->'$(ArtifactsShippingPackagesDir)%(FileName).nupkg')"
+      DestinationFolder="$(CurrentRepoSourceBuiltNupkgCacheDir)" />
+  </Target>
 
   <!--
     Adding new projects is somewhat copy-paste heavy and may result in project name overlaps. Catch

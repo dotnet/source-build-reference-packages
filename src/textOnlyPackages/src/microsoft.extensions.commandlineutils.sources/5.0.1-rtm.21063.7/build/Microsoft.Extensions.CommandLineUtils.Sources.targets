@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="_AddSourcePackageSourceRoot_E18B4099AF96A05B91753DD6F89FA4A1ED38298F" BeforeTargets="InitializeSourceControlInformation">
+    <ItemGroup>
+      <_PackageCompileItems Remove="@(_PackageCompileItems)"/>
+      <_PackageCompileItems Include="%(Compile.RootDir)%(Compile.Directory)" Condition="'%(Compile.NuGetPackageId)' == 'Microsoft.Extensions.CommandLineUtils.Sources'" />
+    </ItemGroup>
+
+    <PropertyGroup>
+      <_PackageCompileItem>@(_PackageCompileItems)</_PackageCompileItem>
+      <_PackageCompileItem Condition="'$(_PackageCompileItem)' != ''">$(_PackageCompileItem.Split(';')[0])</_PackageCompileItem>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <SourceRoot Include="$([System.Text.RegularExpressions.Regex]::Match($(_PackageCompileItem), '^$([System.Text.RegularExpressions.Regex]::Escape($([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)../contentFiles/'))))([^\\/]+[\\/][^\\/]+[\\/])'))" 
+                  SourceLinkUrl="https://raw.githubusercontent.com/dotnet/extensions/eddd4eac8cd0d5cf1178adb9d0660373de0dddff/src/Shared/src/CommandLineUtils/*"/>
+    </ItemGroup>
+  </Target>
+</Project>

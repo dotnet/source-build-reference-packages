@@ -10,6 +10,9 @@
   <PropertyGroup>
     <OutputPath>$(ArtifactsBinDir)system.security.permissions/4.7.0/ref/</OutputPath>
     <IntermediateOutputPath>$(ArtifactsObjDir)system.security.permissions/4.7.0</IntermediateOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
     <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
@@ -20,8 +23,9 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <PackageReference Include="System.Security.AccessControl" Version="4.7.0" />
+    <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />
   </ItemGroup>
-  
+
   <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
     <PackageReference Include="System.Security.AccessControl" Version="4.7.0" />
     <PackageReference Include="System.Windows.Extensions" Version="4.7.0" />

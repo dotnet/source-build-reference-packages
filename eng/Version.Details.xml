@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Dependencies>
   <ToolsetDependencies>
-    <!--
-      Uncomment this dependency to simulate a bootstrap build: use source-built SBRP to build SBRP.
-    <Dependency Name="Microsoft.SourceBuild.Intermediate.source-build-reference-packages" Version="5.0.0-preview.7.20378.1">
+    <Dependency Name="Microsoft.SourceBuild.Intermediate.source-build-reference-packages" Version="6.0.0-alpha.1.21519.4">
       <Uri>https://github.com/dotnet/source-build-reference-packages</Uri>
-      <Sha>ac0bb924c430e5f2bdee37ee7bce434a60fe1b5e</Sha>
-      <SourceBuildRepoName>source-build-reference-packages</SourceBuildRepoName>
+      <Sha>2e0273e0bcdc70087adf893795a323f191c93dcc</Sha>
+      <SourceBuild RepoName="source-build-reference-packages" ManagedOnly="true" />
     </Dependency>
     -->
     <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="6.0.0-beta.21514.2">
       <Uri>https://github.com/dotnet/arcade</Uri>
       <Sha>3c0c263bdf428b44240d07015b8ff2152bddac00</Sha>
+    </Dependency>
+    <Dependency Name="Microsoft.SourceLink.GitHub" Version="1.1.0-beta-21423-02" CoherentParentDependency="Microsoft.DotNet.Arcade.Sdk">
+      <Uri>https://github.com/dotnet/sourcelink</Uri>
+      <Sha>6dcc7d005e38829efb6714d2ecfc4c0cb383e7d9</Sha>
+      <SourceBuild RepoName="sourcelink" ManagedOnly="true" />
     </Dependency>
     <Dependency Name="Microsoft.NETCore.ILAsm" Version="5.0.0-preview.4.20202.18">
       <Uri>https://github.com/dotnet/runtime</Uri>
@@ -20,6 +23,11 @@
     <Dependency Name="Microsoft.NETCore.ILDAsm" Version="5.0.0-preview.4.20202.18">
       <Uri>https://github.com/dotnet/runtime</Uri>
       <Sha>0375524a91a47ca4db3ee1be548f74bab7e26e76</Sha>
+    </Dependency>
+    <Dependency Name="Microsoft.SourceBuild.Intermediate.source-build" Version="0.1.0-alpha.1.21508.1">
+      <Uri>https://github.com/dotnet/source-build</Uri>
+      <Sha>b448fa29f5d273d8abf7354402d7b320d5cffcce</Sha>
+      <SourceBuild RepoName="source-build" ManagedOnly="true" />
     </Dependency>
   </ToolsetDependencies>
 </Dependencies>
