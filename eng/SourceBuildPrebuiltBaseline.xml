@@ -1,5 +1,8 @@
 <UsageData>
   <IgnorePatterns>
+    <!-- Re-enable with https://github.com/dotnet/source-build/issues/2545 -->
+    <UsagePattern IdentityGlob="*/*" />
+
     <!-- Sourcelink prebuilts. See https://github.com/dotnet/source-build/issues/2515 -->
     <UsagePattern IdentityGlob="Microsoft.SourceLink.GitHub/*" />
     <UsagePattern IdentityGlob="Microsoft.SourceLink.Common/*" />
