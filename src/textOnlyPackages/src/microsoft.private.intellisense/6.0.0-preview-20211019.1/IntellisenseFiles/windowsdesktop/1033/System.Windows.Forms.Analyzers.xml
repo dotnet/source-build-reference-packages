@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Windows.Forms.Analyzers</name>
+  </assembly>
+  <members>
+    <member name="T:System.Windows.Forms.Analyzers.AppManifestAnalyzer" />
+    <member name="M:System.Windows.Forms.Analyzers.AppManifestAnalyzer.#ctor" />
+    <member name="M:System.Windows.Forms.Analyzers.AppManifestAnalyzer.Initialize(Microsoft.CodeAnalysis.Diagnostics.AnalysisContext)">
+      <param name="context" />
+    </member>
+    <member name="P:System.Windows.Forms.Analyzers.AppManifestAnalyzer.SupportedDiagnostics" />
+    <member name="T:System.Windows.Forms.Analyzers.HighDpiMode">
+      <summary>Specifies the different high DPI modes that can be applied to an application.</summary>
+    </member>
+    <member name="F:System.Windows.Forms.Analyzers.HighDpiMode.DpiUnaware">
+      <summary>The window does not scale for DPI changes and always assumes a scale factor of 100%.</summary>
+    </member>
+    <member name="F:System.Windows.Forms.Analyzers.HighDpiMode.DpiUnawareGdiScaled">
+      <summary>Similar to <see cref="F:System.Windows.Forms.Analyzers.HighDpiMode.DpiUnaware" />, but improves the quality of GDI/GDI+ based content.</summary>
+    </member>
+    <member name="F:System.Windows.Forms.Analyzers.HighDpiMode.PerMonitor">
+      <summary>The window checks for DPI when it's created and adjusts scale factor when the DPI changes.</summary>
+    </member>
+    <member name="F:System.Windows.Forms.Analyzers.HighDpiMode.PerMonitorV2">
+      <summary>Similar to <see cref="F:System.Windows.Forms.Analyzers.HighDpiMode.PerMonitor" />, but enables child window DPI change notification, improved scaling of comctl32 controls and dialog scaling.</summary>
+    </member>
+    <member name="F:System.Windows.Forms.Analyzers.HighDpiMode.SystemAware">
+      <summary>The window queries for the DPI of the primary monitor once and uses this for the application on all monitors.</summary>
+    </member>
+  </members>
+</doc>
