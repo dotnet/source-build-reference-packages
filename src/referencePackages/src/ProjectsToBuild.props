@@ -314,5 +314,7 @@
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.diagnostics.diagnosticsource/5.0.0/System.Diagnostics.DiagnosticSource.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.encodings.web/5.0.0/System.Text.Encodings.Web.csproj"/>
     <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.text.json/5.0.0/System.Text.Json.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)microsoft.win32.systemevents/5.0.0/Microsoft.Win32.SystemEvents.csproj"/>
+    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)system.drawing.common/5.0.2/System.Drawing.Common.csproj"/>
   </ItemGroup>
 </Project>
