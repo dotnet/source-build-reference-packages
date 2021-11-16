@@ -1,17 +1,16 @@
 parameters:
   job: null
+  imageName: null
+
+jobs:
+- job: ${{ parameters.job }}
   pool:
     ${{ if eq(variables['System.TeamProject'], 'public') }}:
       name: NetCore1ESPool-Svc-Public
       demands: ImageOverride -equals Build.Ubuntu.1604.Amd64.Open
     ${{ if eq(variables['System.TeamProject'], 'internal') }}:
       name: NetCore1ESPool-Svc-Internal
-      demands: ImageOverride -equals Build.Ubuntu.1604.Amd64
-  imageName: null
-
-jobs:
-- job: ${{ parameters.job }}
-  pool: ${{ parameters.pool }}
+      demands: ImageOverride -equals Build.Ubuntu.1604.Amd64  
   timeoutInMinutes: 280
   variables:
     # Use ":z" to set selinux flag for sharing in build-owned root dir. https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label
