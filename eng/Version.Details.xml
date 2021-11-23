@@ -6,9 +6,9 @@
       <Sha>2e0273e0bcdc70087adf893795a323f191c93dcc</Sha>
       <SourceBuild RepoName="source-build-reference-packages" ManagedOnly="true" />
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="6.0.0-beta.21566.8">
+    <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="6.0.0-beta.21572.5">
       <Uri>https://github.com/dotnet/arcade</Uri>
-      <Sha>958161a35309eed8a0ab8658573a07f6dd4dfbe0</Sha>
+      <Sha>a3492c19d7858efb184d1563a4d82142f6a791c3</Sha>
       <SourceBuild RepoName="arcade" ManagedOnly="true" />
     </Dependency>
     <Dependency Name="Microsoft.SourceLink.GitHub" Version="1.1.0-beta-21480-02" CoherentParentDependency="Microsoft.DotNet.Arcade.Sdk">
