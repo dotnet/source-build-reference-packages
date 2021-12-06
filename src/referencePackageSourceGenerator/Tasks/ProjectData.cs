@@ -1,3 +1,7 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// // The .NET Foundation licenses this file to you under the MIT license.
+// // See the LICENSE file in the project root for more information.
+//
 using NuGet.Frameworks;
 using NuGet.Packaging;
 using NuGet.Repositories;
@@ -19,10 +23,12 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
     public class ProjectData
     {
         private static Dictionary<string, ProjectData> projectDataCache = new Dictionary<string, ProjectData>();
+
         public static ProjectData[] GetAllProjectData()
         {
             return projectDataCache.Values.ToArray();
         }
+
         public static ProjectData GetOrCreateProjectData(string targetPackagesPath, string dllPath, string srcPath)
         {
             if (projectDataCache.ContainsKey(dllPath))
@@ -41,13 +47,16 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 projData.InitializeDependencies();
             }
         }
+
         public static ProjectData GetProjectData(string dllPath)
         {
             return projectDataCache.ContainsKey(dllPath) ? projectDataCache[dllPath] : null;
         }
 
         private NuspecReader nReader;
+
         private string targetPackagesPath;
+
         private ProjectData(string targetPackagesPath, string dllPath, string srcPath)
         {
             this.DllPath = dllPath;
@@ -62,16 +71,16 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             var rootDir = Path.Combine(targetPackagesPath, Path.Combine(splitPath.Take(2).ToArray()));
             this.NuSpecFile = Directory.GetFiles(rootDir, "*.nuspec", SearchOption.TopDirectoryOnly)[0];
             nReader = new NuspecReader(NuSpecFile);
-      
+
             // Find the package name
             this.PackageName = nReader.GetId();
-            
+
             // Find the package version
             this.PackageVersion = nReader.GetVersion();
 
             // Find the tfm for the dll
             this.ShortTfm = splitPath[splitPath.Length - 2];
-            
+
             // Find the project name for the dll
             this.ProjectFileName = dllPath.Replace(targetPackagesPath, srcPath).Replace(".dll", ".csproj");
 
@@ -79,7 +88,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             this.SourceFileName = dllPath.Replace(targetPackagesPath, srcPath).Replace(".dll", ".cs");
 
             // Find the subPath for the dll (either ref or lib, usually)
-            this.SubPath = splitPath[splitPath.Length -3];
+            this.SubPath = splitPath[splitPath.Length - 3];
 
             var pkgData = PackageData.GetOrCreatePackageData(srcPath, this.PackageName, this.PackageVersion.ToString());
             pkgData.ReferenceProjects.Add(this);
@@ -89,6 +98,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             // Get the dependencies
             this.Dependencies = GetPackageDependencies(targetPackagesPath, GetTargetFramework(this.ShortTfm));
         }
+
         public NuGetFramework GetTargetFramework(string tfmFolderName)
         {
             string numRegex = @"[^0-9]*(?<major>[0-9])[.]*(?<minor>[0-9])(?<patch>[0-9]?)";
@@ -105,26 +115,31 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             string identifierLongName = DefaultFrameworkMappings.Instance.IdentifierShortNames.FirstOrDefault(t => tfmFolderName.StartsWith(t.Value)).Key;
             return new NuGetFramework(identifierLongName, new System.Version(majorVer, minorVer, patchVer));
         }
+
         public string GetTfmFolderName(NuGetFramework targetFramework)
         {
             string framework = DefaultFrameworkMappings.Instance.IdentifierShortNames.FirstOrDefault(t => t.Key == targetFramework.Framework).Value;
             string version = framework == "netstandard" ? $"{targetFramework.Version.Major}.{targetFramework.Version.Minor}" : $"{targetFramework.Version.Major}{targetFramework.Version.Minor}";
             return framework + version;
         }
+
         public string GetFileVersion()
         {
             return FileVersionInfo.GetVersionInfo(this.DllPath)?.FileVersion;
         }
+
         public string[] GetFrameworkReferences()
         {
             return this.nReader.GetFrameworkAssemblyGroups().Where(frg => frg.TargetFramework == GetTargetFramework(this.ShortTfm)).SelectMany(frg => frg.Items).ToArray();
         }
+
         public NuGet.Packaging.Core.PackageDependency[] GetPackageReferences()
         {
             var retval = this.nReader.GetDependencyGroups().Where(dg => dg.TargetFramework == GetTargetFramework(this.ShortTfm)).SelectMany(dg => dg.Packages);
             retval = retval.Where(p => !p.Id.StartsWith("runtime.native"));
             return retval.ToArray();
         }
+
         public List<string> GetAdditionalUsings()
         {
             List<string> result = new List<string>();
@@ -160,6 +175,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             }
             return result;
         }
+
         public string ConvertGeneric(string genericType)
         {
             if (!genericType.Contains("`")) return genericType;
@@ -169,6 +185,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             var commas = string.Concat(Enumerable.Repeat(", ", numberOfTypes - 1));
             return $"{typeName}<{commas}>";
         }
+
         public string GetTypeForwards()
         {
             // Don't generate type forwards for netstandard
@@ -248,6 +265,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             }
             return result.ToString();
         }
+
         private PackageData[] GetPackageDependencies(string targetPackagesPath, NuGetFramework targetFramework)
         {
             List<PackageData> dependencies = new List<PackageData>();
@@ -277,14 +295,23 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             }
             return dependencies.ToArray();
         }
+
         public string DllPath { get; internal set; }
+
         public string NuSpecFile { get; internal set; }
+
         public string PackageName { get; internal set; }
+
         public NuGetVersion PackageVersion { get; internal set; }
+
         public string ShortTfm { get; internal set; }
+
         public string ProjectFileName { get; internal set; }
+
         public string SourceFileName { get; internal set; }
+
         public string SubPath { get; internal set; }
+
         public PackageData[] Dependencies { get; internal set; }
     }
 }

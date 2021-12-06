@@ -221,14 +221,17 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
 
             return true;
         }
+
         private string GetStrongNameKeyId(ProjectData assemblyInfo)
         {
             return GetStrongNameKeyTuple(assemblyInfo).Id;
         }
+
         private string GetStrongNameKeyFileName(ProjectData assemblyInfo)
         {
             return GetStrongNameKeyTuple(assemblyInfo).FileName;
         }
+
         private (string Id, string FileName) GetStrongNameKeyTuple(ProjectData assemblyInfo)
         {
             string appStrongNameKey = assemblyInfo.GetStrongNameKey();

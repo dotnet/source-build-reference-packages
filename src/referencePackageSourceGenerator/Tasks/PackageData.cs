@@ -1,3 +1,7 @@
+// Licensed to the .NET Foundation under one or more agreements.
+// // The .NET Foundation licenses this file to you under the MIT license.
+// // See the LICENSE file in the project root for more information.
+//
 using NuGet.Frameworks;
 using NuGet.Packaging;
 using NuGet.Repositories;
@@ -18,21 +22,34 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
     public class PackageData
     {
         private static List<PackageData> pkgDataCache = new List<PackageData>();
+
         public string Key { get; set; }
+
         public string Id { get; set; }
+
         public string Version { get; set; }
+
         public string IdVersion => this.Id + ":" + this.Version;
+
         public string RelativePath { get; set; }
+
         public string ProjectPath { get; set; }
+
         public string RelativeProjectPath { get; set; }
+
         public string V2ProjectPath { get; set; }
+
         public string V2RelativeProjectPath { get; set; }
+
         public string DirectoryBuildPropsPath { get; set; }
+
         public List<ProjectData> ReferenceProjects { get; set; }
+
         public override string ToString()
         {
             return this.ProjectPath;
         }
+
         public string[] RelatedPackageDataIdVersions
         {
             get
@@ -44,23 +61,28 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                     .ToArray();
             }
         }
+
         public static PackageData[] GetAll()
         {
             return pkgDataCache.ToArray();
         }
+
         public static string GetKey(string id, string version)
         {
             return Path.Combine(id.ToLower(), version);
         }
+
         public static PackageData GetPackageData(string id, string version)
         {
             return pkgDataCache.FirstOrDefault(p => p.Key == GetKey(id, version));
         }
+
         public static PackageData GetOrCreatePackageData(string srcPath, string id, string version)
         {
             var pkgData = pkgDataCache.FirstOrDefault(p => p.Key == GetKey(id, version));
             return pkgData ?? new PackageData(id, version, srcPath);
         }
+
         private PackageData(string id, string version, string srcPath)
         {
             this.Id = id;
