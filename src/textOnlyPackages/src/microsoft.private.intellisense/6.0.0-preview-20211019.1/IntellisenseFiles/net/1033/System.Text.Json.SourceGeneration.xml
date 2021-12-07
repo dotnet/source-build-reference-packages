@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Text.Json.SourceGeneration</name>
+  </assembly>
+  <members>
+    <member name="T:System.Text.Json.SourceGeneration.JsonSourceGenerator" />
+    <member name="M:System.Text.Json.SourceGeneration.JsonSourceGenerator.#ctor" />
+    <member name="M:System.Text.Json.SourceGeneration.JsonSourceGenerator.Execute(Microsoft.CodeAnalysis.GeneratorExecutionContext)">
+      <param name="executionContext" />
+    </member>
+    <member name="M:System.Text.Json.SourceGeneration.JsonSourceGenerator.GetSerializableTypes" />
+    <member name="M:System.Text.Json.SourceGeneration.JsonSourceGenerator.Initialize(Microsoft.CodeAnalysis.GeneratorInitializationContext)">
+      <param name="context" />
+    </member>
+  </members>
+</doc>
