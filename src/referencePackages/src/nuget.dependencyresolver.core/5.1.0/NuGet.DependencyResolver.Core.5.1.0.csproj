@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))/dir.props" />
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
+    <NuspecFile>$(ArtifactsBinDir)nuget.dependencyresolver.core/5.1.0/nuget.dependencyresolver.core.nuspec</NuspecFile>
+    <StrongNameKeyId>MicrosoftShared</StrongNameKeyId>
+   </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputPath>$(ArtifactsBinDir)nuget.dependencyresolver.core/5.1.0/ref/</OutputPath>
+    <IntermediateOutputPath>$(ArtifactsObjDir)nuget.dependencyresolver.core/5.1.0</IntermediateOutputPath>
+  </PropertyGroup>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+        <OutputPath>$(ArtifactsBinDir)nuget.dependencyresolver.core/5.1.0/lib/</OutputPath>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(TargetFramework)' == 'net472' ">
+        <OutputPath>$(ArtifactsBinDir)nuget.dependencyresolver.core/5.1.0/lib/</OutputPath>
+    </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="**/ref/$(TargetFramework)/*.cs" />
+    <Compile Include="**/lib/$(TargetFramework)/*.cs" />
+  </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+        <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />
+        <PackageReference Include="NuGet.LibraryModel" Version="5.1.0" />
+        <PackageReference Include="NuGet.Protocol" Version="5.1.0" />
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+        <PackageReference Include="NuGet.LibraryModel" Version="5.1.0" />
+        <PackageReference Include="NuGet.Protocol" Version="5.1.0" />
+        <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.2" />
+    </ItemGroup>
+
+  
+</Project>
