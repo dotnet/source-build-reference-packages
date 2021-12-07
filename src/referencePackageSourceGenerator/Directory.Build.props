@@ -2,7 +2,6 @@
 <Project>
   <PropertyGroup>
     <ImportNetSdkFromRepoToolset>false</ImportNetSdkFromRepoToolset>
-    <!-- <ExcludeRestorePackageImports>true</ExcludeRestorePackageImports> -->
   </PropertyGroup>
 
   <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" />

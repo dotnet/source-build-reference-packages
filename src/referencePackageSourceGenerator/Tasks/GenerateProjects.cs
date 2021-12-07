@@ -48,9 +48,11 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             // Second, setup dependencies between all generated project data
             ProjectData.GenerateAllDependencies();
 
-            string projectsToBuildAdditions = PackageData.GetAll().Select(p => $"    <ProjectsToBuild Include=\"$(ReferenceAssemblySourcePath){ p.RelativeProjectPath}\"/>").Aggregate((a, b) => a + "\n" + b);
+            // Create a script file to copy the newly added project source to the output directory
+            string projectSourceCopyCommands = PackageData.GetAll().Select(p => $"cp -r --parents ./{p.RelativePath}/* $1").Aggregate((a, b) => a + "\n" + b);
+            projectSourceCopyCommands += "\nfind . -type f -iname Directory.Build.props -exec cp --parents {} $1 \\;";
 
-            File.WriteAllText(Path.Combine(SrcPath, "ProjectsToBuildAdditions.txt"), projectsToBuildAdditions);
+            File.WriteAllText(Path.Combine(SrcPath, "CopyProjects.sh"), projectSourceCopyCommands);
 
             foreach (var pkgData in PackageData.GetAll())
             {

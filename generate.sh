@@ -2,6 +2,8 @@
 #set -x
 source="${BASH_SOURCE[0]}"
 
+DEFAULT_TFM=net6.0
+
 # resolve $SOURCE until the file is no longer a symlink
 while [[ -h $source ]]; do
   scriptroot="$( cd -P "$( dirname "$source" )" && pwd )"
@@ -107,7 +109,7 @@ fi
 INPUT="$pathToCSV"
 OLDIFS=$IFS
 IFS=,
-DEFAULT_TFM=net6.0
+
 restoreProjectsDir="$scriptroot/artifacts/targetRestoreProjects"
 targetPackageTemplate="$scriptroot/src/referencePackageSourceGenerator/GenerateSource/targetPackage.csproj.template"
 if [ -d "$restoreProjectsDir" ]; then
@@ -135,10 +137,6 @@ pathToGeneratedSrc="$scriptroot/artifacts/generatedSrc"
 pathToRepoSrc="$pathToDestRepo/src/referencePackages/src"
 
 pushd "$pathToGeneratedSrc"
-cp ./ProjectsToBuildAdditions.txt ./CopyProjects.sh
-sed -i 's/    <ProjectsToBuild Include="$(ReferenceAssemblySourcePath)/cp -r --parents .\//g' CopyProjects.sh
-sed -i 's/\/[^\/]*\/>/\/* $1/g' CopyProjects.sh
-echo -e '\nfind . -type f -iname Directory.Build.props -exec cp --parents {} $1 \;' >> CopyProjects.sh
 chmod 755 ./CopyProjects.sh
 ./CopyProjects.sh "$pathToRepoSrc"
 popd
