@@ -1,6 +1,11 @@
 <Project>
 
-  <ItemGroup>
+  <ItemGroup Condition=" '$(GeneratePackageSource)' == 'true' ">
+    <ProjectToBuild Include="$(RepoRoot)src/referencePackageSourceGenerator/Tasks/GenerateProjectsTask.csproj" />
+    <ProjectToBuild Include="$(RepoRoot)src/referencePackageSourceGenerator/GenerateSource/GenerateSource.proj" />
+    <ProjectToBuild Include="$(Reporoot)src/referencePackageSourceGenerator/GenerateProjects/GenerateProjects.proj" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(GeneratePackageSource)' != 'true' ">
     <!--
       The following DependencyPackageProjects are ones on which other packages depend.  Adding them
       to this ItemGroup will ensure that they get built first and in order of inclusion.  Also,

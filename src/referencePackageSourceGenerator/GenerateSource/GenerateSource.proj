@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <SkipCopyBuildProduct>true</SkipCopyBuildProduct>
+    <RestorePackagesPath>$(TargetPackagesPath)</RestorePackagesPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <RestoreProjects Include="$(RepoRoot)artifacts/targetRestoreProjects/*.csproj"/>
+  </ItemGroup>
+
+  <Target Name="ErrorEmptyRestoreProjects"
+    BeforeTargets="RestoreAllProjects"
+    Condition=" '@(RestoreProjects)' == '' ">
+    <Error Text="There are no restore projects to process." />
+  </Target>
+
+  <Target Name="RestoreAllProjects" BeforeTargets="_IsProjectRestoreSupported">
+    <Message Importance="High" Text="==> Restoring all target packages to $(TargetPackagesPath)" />
+
+    <Exec Command="$(DOTNET_INSTALL_DIR)/dotnet restore %(RestoreProjects.Identity) /p:TargetPackagesPath=$(TargetPackagesPath)" />
+  </Target>
+
+  <Target Name="CopyNuspecFiles" BeforeTargets="CoreCompile">
+    <Message Importance="High" Text="==> Copying all target package nuspec files to generated source" />
+    <Copy SourceFiles="@(NuspecFiles)" DestinationFiles="@(NuspecFiles->'$(GeneratedSourcePath)%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Importance="High" Text="Copy Nuspecs Complete."/>
+  </Target>
+
+  <Target Name="CopyDummyFiles" BeforeTargets="CoreCompile">
+    <Message Importance="High" Text="==> Copying all target package dummy files (_._) to generated source" />
+    <Message Importance="Low" Text="DUMMY: %(DummyFiles.Identity)" />
+    <Copy SourceFiles="@(DummyFiles)" DestinationFiles="@(DummyFiles->'$(GeneratedSourcePath)%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Message Importance="High" Text="Copy DummyFiles Complete."/>
+  </Target>
+
+  <Target Name="SetupReferencePath" BeforeTargets="GenerateReferenceAssemblySource" DependsOnTargets="GetGenApiDlls">
+    <!-- ReferencePath is used by the GenerateReferenceAsemblySource target to locate references -->
+    <ItemGroup>
+        <ReferencePath Include="@(GenApiDlls)" />
+        <ReferencePath Include="$(DOTNET_INSTALL_DIR)/shared/Microsoft.NETCore.App/$(BundledNETCoreAppPackageVersion)/mscorlib.dll" />
+    </ItemGroup>
+  </Target>
+
+  <Target Name="CoreCompile" DependsOnTargets="GetGenApiDlls" >
+    <Message Importance="High" Text="==> Generating source for all target package dlls" />
+    <MakeDir Directories="$(GeneratedSourcePath)%(GenApiDlls.RecursiveDir)" />
+
+    <MSBuild Projects="$(RepoRoot)src/referencePackageSourceGenerator/GenerateSource/GenerateSource.proj" 
+        Targets="GenerateReferenceAssemblySource"
+        Properties="TargetPath=%(GenApiDlls.Identity);TargetDir=$(RestorePackagesPath)%(GenApiDlls.RecursiveDir);TargetName=%(GenApiDlls.Filename);GenAPITargetPath=$(GeneratedSourcePath)%(GenApiDlls.RecursiveDir)%(GenApiDlls.Filename).cs;GenAPIAdditionalParameters=--header-file $(RepoRoot)src/referencePackageSourceGenerator/LicenseHeader.txt --exclude-attributes-list $(RepoRoot)src/referencePackageSourceGenerator/DefaultGenApiDocIds.txt" />
+
+    <Message Importance="High" Text="GenerateSource Complete."/>
+  </Target>
+
+  <Target Name="CreateManifestResourceNames" />
+  <Import Project="$(ArtifactsDir)toolset/Common/Tools.proj.nuget.g.targets" />
+
+  <Target Name="PublishPackagesToBlobFeed" />
+</Project>
