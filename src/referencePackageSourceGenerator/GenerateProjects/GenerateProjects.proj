@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <SkipCopyBuildProduct>true</SkipCopyBuildProduct>
+    <GenerateProjectsTaskPath>$(ArtifactsDir)bin/GenerateProjectsTask/Debug/net5.0/GenerateProjectsTask.dll</GenerateProjectsTaskPath>
+    <GeneratorVersion Condition=" '$(GeneratorVersion)' == '' ">2</GeneratorVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Tasks/GenerateProjectsTask.csproj" />
+    <ProjectReference Include="../GenerateSource/GenerateSource.proj">
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+
+  <UsingTask AssemblyFile="$(GenerateProjectsTaskPath)" TaskName="GenerateProjects" />
+
+  <Target Name="CoreCompile" DependsOnTargets="GetGenApiDlls" >
+    <Message Importance="High" Text="==> Generating projects for all target packages" />
+    <GenerateProjects 
+        PackageDlls="@(GenApiDlls)"
+        SrcPath="$(GeneratedSourcePath)"
+        TargetPackagesPath="$(TargetPackagesPath)" 
+        GeneratorVersion="$(GeneratorVersion)" />
+  </Target>
+
+  <Target Name="CreateManifestResourceNames" />
+  <Import Project="$(ArtifactsDir)toolset/Common/Tools.proj.nuget.g.targets" />
+</Project>
