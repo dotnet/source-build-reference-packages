@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project>
-  <ItemGroup>
+  <ItemGroup Condition=" '$(GeneratePackageSource)' != 'true' ">
     <PackageReference Include="Microsoft.DotNet.Build.Tasks.Feed" Version="$(MicrosoftDotNetBuildTasksFeedVersion)" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(GeneratePackageSource)' == 'true' ">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(GeneratePackageSource)' == 'true' ">
+    <PackageReference Include="Microsoft.DotNet.GenAPI" Version="$(MicrosoftDotNetGenApiPackageVersion)" />
+    <PackageReference Include="Microsoft.DotNet.Build.Tasks.Packaging" Version="$(MicrosoftDotNetBuildTasksPackagingPackageVersion)" />
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(GeneratePackageSource)' == 'true' ">
+    <!--When we are doing SDK validation we place the locally built packages in a custom path. This has to be propagated so the next
+        build can restore the local packages.-->
+    <RestoreSources Condition="'$(AdditionalRestoreSources)' != ''">
+        $(RestoreSources);
+        $(AdditionalRestoreSources)
+    </RestoreSources>
+  </PropertyGroup>
 </Project>
