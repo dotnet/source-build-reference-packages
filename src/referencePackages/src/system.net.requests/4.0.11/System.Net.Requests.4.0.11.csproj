@@ -33,7 +33,8 @@
         <PackageReference Include="System.Diagnostics.Tracing" Version="4.1.0" />
         <PackageReference Include="System.Globalization" Version="4.0.11" />
         <PackageReference Include="System.IO" Version="4.1.0" />
-        <PackageReference Include="System.Net.Http" Version="4.1.0" />
+        <!-- Manually updated version from 4.1.0 to address CVE-2018-8292 -->
+        <PackageReference Include="System.Net.Http" Version="4.3.4" />
         <PackageReference Include="System.Net.Primitives" Version="4.0.11" />
         <PackageReference Include="System.Net.WebHeaderCollection" Version="4.0.1" />
         <PackageReference Include="System.Resources.ResourceManager" Version="4.0.1" />
