@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Dependencies>
   <ToolsetDependencies>
-    <Dependency Name="Microsoft.SourceBuild.Intermediate.source-build-reference-packages" Version="7.0.0-alpha.1.21616.2">
+    <Dependency Name="Microsoft.SourceBuild.Intermediate.source-build-reference-packages" Version="7.0.0-alpha.1.21616.3">
       <Uri>https://github.com/dotnet/source-build-reference-packages</Uri>
       <Sha>5a659cd9117a398098779cfd75bdd86c1214c669</Sha>
       <SourceBuild RepoName="source-build-reference-packages" ManagedOnly="true" />
