@@ -59,9 +59,19 @@
   </Target>
 
   <Target Name="GetILToolPackageReferences">
+    <Exec IgnoreExitCode="true" Command="ldd --version 2&gt;&amp;1 | grep -q musl">
+      <Output TaskParameter="ExitCode" PropertyName="OSPlatformIsMuslCheck" />
+    </Exec>
+
+    <PropertyGroup>
+      <OSPlatformIsMusl Condition="$(OSPlatformIsMuslCheck) == '0'">true</OSPlatformIsMusl>
+      <OSPlatformIsMusl Condition="$(OSPlatformIsMusl) == ''">false</OSPlatformIsMusl>
+    </PropertyGroup>
+
     <PropertyGroup>
       <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('windows'))">win</_OSPlatform>
       <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('linux'))">linux</_OSPlatform>
+      <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('linux')) and '$(OSPlatformIsMusl)' == 'true'">linux-musl</_OSPlatform>
       <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('osx'))">osx</_OSPlatform>
       <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('freebsd'))">freebsd</_OSPlatform>
       <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('netbsd'))">netbsd</_OSPlatform>
