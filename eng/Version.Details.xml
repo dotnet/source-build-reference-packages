@@ -24,9 +24,9 @@
       <Uri>https://github.com/dotnet/runtime</Uri>
       <Sha>0375524a91a47ca4db3ee1be548f74bab7e26e76</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.SourceBuild.Intermediate.source-build" Version="0.1.0-alpha.1.21508.1">
-      <Uri>https://github.com/dotnet/source-build</Uri>
-      <Sha>b448fa29f5d273d8abf7354402d7b320d5cffcce</Sha>
+    <Dependency Name="Microsoft.SourceBuild.Intermediate.source-build-externals" Version="7.0.0-alpha.1.22110.1">
+      <Uri>https://github.com/dotnet/source-build-externals</Uri>
+      <Sha>a28332454bd70964205fb18bf3d0a1146a228b25</Sha>
       <SourceBuild RepoName="source-build" ManagedOnly="true" />
     </Dependency>
   </ToolsetDependencies>
