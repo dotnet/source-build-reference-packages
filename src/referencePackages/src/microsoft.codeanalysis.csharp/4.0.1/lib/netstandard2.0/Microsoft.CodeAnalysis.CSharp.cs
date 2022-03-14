@@ -10,6 +10,12 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.CodeAnalysis.Diagnostics;
+using Microsoft.CodeAnalysis.Emit;
+using Microsoft.CodeAnalysis.Symbols;
 
 [assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
 [assembly: AllowPartiallyTrustedCallers]
@@ -111,17 +117,19 @@ namespace Microsoft.CodeAnalysis.CSharp
     }
     public partial class CSharpCommandLineParser : Microsoft.CodeAnalysis.CommandLineParser
     {
-        internal CSharpCommandLineParser() { }
+        internal CSharpCommandLineParser() : base (null, false) { }
         public static Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser Default { get { throw null; } }
         protected override string RegularFileExtension { get { throw null; } }
         public static Microsoft.CodeAnalysis.CSharp.CSharpCommandLineParser Script { get { throw null; } }
         protected override string ScriptFileExtension { get { throw null; } }
         public new Microsoft.CodeAnalysis.CSharp.CSharpCommandLineArguments Parse(System.Collections.Generic.IEnumerable<string> args, string baseDirectory, string sdkDirectory, string additionalReferenceDirectories = null) { throw null; }
         public static System.Collections.Generic.IEnumerable<string> ParseConditionalCompilationSymbols(string value, out System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Diagnostic> diagnostics) { throw null; }
+        internal sealed override CommandLineArguments CommonParse(IEnumerable<string> args, string baseDirectory, string sdkDirectory, string additionalReferenceDirectories) { throw null; }
+        internal override void GenerateErrorForNoFilesFoundInRecurse(string path, IList<Diagnostic> diagnostics) { throw null; }
     }
     public sealed partial class CSharpCompilation : Microsoft.CodeAnalysis.Compilation
     {
-        internal CSharpCompilation() { }
+        internal CSharpCompilation() : base(null, default, null, false, null, null) { }
         protected override Microsoft.CodeAnalysis.IAssemblySymbol CommonAssembly { get { throw null; } }
         protected override Microsoft.CodeAnalysis.ITypeSymbol CommonDynamicType { get { throw null; } }
         protected override Microsoft.CodeAnalysis.INamespaceSymbol CommonGlobalNamespace { get { throw null; } }
@@ -200,15 +208,227 @@ namespace Microsoft.CodeAnalysis.CSharp
         public new Microsoft.CodeAnalysis.CSharp.CSharpCompilation WithReferences(params Microsoft.CodeAnalysis.MetadataReference[] references) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.CSharpCompilation WithReferences(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.MetadataReference> references) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.CSharpCompilation WithScriptCompilationInfo(Microsoft.CodeAnalysis.CSharp.CSharpScriptCompilationInfo info) { throw null; }
+        internal override AnalyzerDriver CreateAnalyzerDriver(System.Collections.Immutable.ImmutableArray<DiagnosticAnalyzer> analyzers, AnalyzerManager analyzerManager, SeverityFilter severityFilter) { throw null; }
+        internal override void AddDebugSourceDocumentsForChecksumDirectives(DebugDocumentsBuilder documentsBuilder, SyntaxTree tree, DiagnosticBag diagnostics) { throw null; }
+        internal override IEnumerable<ReferenceDirective> ReferenceDirectives => throw null;
+        internal System.Collections.Immutable.ImmutableArray<Diagnostic> GetDiagnostics(CompilationStage stage, bool includeEarlierStages, CancellationToken cancellationToken) { throw null; }
+        private protected override INamedTypeSymbolInternal CommonGetSpecialType(SpecialType specialType) { throw null; }
+        private protected override MetadataReference CommonGetMetadataReference(IAssemblySymbol assemblySymbol) { throw null; }
+        internal override void ReportUnusedImports(DiagnosticBag diagnostics, CancellationToken cancellationToken) { throw null; }
+        internal override SemanticModel CreateSemanticModel(SyntaxTree syntaxTree, bool ignoreAccessibility) { throw null; }
+        internal override Compilation WithSemanticModelProvider(SemanticModelProvider semanticModelProvider) { throw null; }
+        internal override Guid DebugSourceDocumentLanguageId => throw null; 
+        internal override bool CompileMethods(CommonPEModuleBuilder moduleBuilder, bool emittingPdb, bool emitMetadataOnly, bool emitTestCoverageData, DiagnosticBag diagnostics, Predicate<ISymbolInternal> filterOpt, CancellationToken cancellationToken) { throw null; }
+        internal override void CompleteTrees(SyntaxTree filterTree) { throw null; }
+        internal override ScriptCompilationInfo CommonScriptCompilationInfo => throw null;
+        internal override int CompareSourceLocations(Location loc1, Location loc2) { throw null; }
+        internal override int CompareSourceLocations(SyntaxNode loc1, SyntaxNode loc2) { throw null; }
+        internal override int CompareSourceLocations(SyntaxReference loc1, SyntaxReference loc2) { throw null; }
+        internal override StrongNameKeys StrongNameKeys => throw null;
+        internal override CommonMessageProvider MessageProvider => throw null;
+        internal override bool IsSystemTypeReference(ITypeSymbolInternal type) { throw null; }
+        internal override Microsoft.CodeAnalysis.Operations.IConvertibleConversion ClassifyConvertibleConversion(IOperation source, ITypeSymbol destination, out ConstantValue constantValue) { throw null; }
+        internal override CommonPEModuleBuilder CreateModuleBuilder(EmitOptions emitOptions, IMethodSymbol debugEntryPoint, System.IO.Stream sourceLinkStream, IEnumerable<EmbeddedText> embeddedTexts, IEnumerable<ResourceDescription> manifestResources, Microsoft.CodeAnalysis.CodeGen.CompilationTestData testData, DiagnosticBag diagnostics, CancellationToken cancellationToken) { throw null; }
+        internal override ISymbolInternal CommonGetWellKnownTypeMember(WellKnownMember member) {throw null; }
+        internal override IDictionary<(string path, string content), MetadataReference> ReferenceDirectiveMap => throw null;
+        internal override bool HasCodeToEmit() {throw null; }
+        internal override bool IsAttributeType(ITypeSymbol type) { throw null; }
+        internal override CommonReferenceManager CommonGetBoundReferenceManager() { throw null; }
+        internal override CommonAnonymousTypeManager CommonAnonymousTypeManager => throw null;
+        internal override ISymbolInternal CommonGetSpecialTypeMember(SpecialMember specialMember) { throw null; }
+        internal override void GetDiagnostics(CompilationStage stage, bool includeEarlierStages, DiagnosticBag diagnostics, CancellationToken cancellationToken) { throw null; }
+        internal override bool IsUnreferencedAssemblyIdentityDiagnosticCode(int code) { throw null; }
+        internal override ITypeSymbolInternal CommonGetWellKnownType(WellKnownType wellknownType) { throw null; }
+        internal override EmitDifferenceResult EmitDifference( EmitBaseline baseline, IEnumerable<SemanticEdit> edits, Func<ISymbol, bool> isAddedSymbol, System.IO.Stream metadataStream, System.IO.Stream ilStream, System.IO.Stream pdbStream, Microsoft.CodeAnalysis.CodeGen.CompilationTestData testData, CancellationToken cancellationToken) { throw null; }
+        internal override void SerializePdbEmbeddedCompilationOptions(System.Reflection.Metadata.BlobBuilder builder) { throw null; }
+        internal override bool HasSubmissionResult() { throw null; }
+        private protected override bool IsSymbolAccessibleWithinCore(ISymbol symbol, ISymbol within, ITypeSymbol throughType) { throw null; }
+        internal override Compilation WithEventQueue(AsyncQueue<CompilationEvent> eventQueue) { throw null; }
+        internal override bool IsDelaySigned => throw null;
+        internal override void ValidateDebugEntryPoint(IMethodSymbol debugEntryPoint, DiagnosticBag diagnostics) { throw null; }
+        internal override int GetSyntaxTreeOrdinal(SyntaxTree tree) { throw null; }
+        internal override byte LinkerMajorVersion => throw null;
+        internal override bool GenerateResourcesAndDocumentationComments(CommonPEModuleBuilder moduleBuilder, System.IO.Stream xmlDocStream, System.IO.Stream win32Resources, bool _, string outputNameOverride, DiagnosticBag diagnostics, CancellationToken cancellationToken) { throw null; }
     }
     public sealed partial class CSharpCompilationOptions : Microsoft.CodeAnalysis.CompilationOptions, System.IEquatable<Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions>
     {
-        public CSharpCompilationOptions(Microsoft.CodeAnalysis.OutputKind outputKind, bool reportSuppressedDiagnostics, string moduleName, string mainTypeName, string scriptClassName, System.Collections.Generic.IEnumerable<string> usings, Microsoft.CodeAnalysis.OptimizationLevel optimizationLevel, bool checkOverflow, bool allowUnsafe, string cryptoKeyContainer, string cryptoKeyFile, System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey, bool? delaySign, Microsoft.CodeAnalysis.Platform platform, Microsoft.CodeAnalysis.ReportDiagnostic generalDiagnosticOption, int warningLevel, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>> specificDiagnosticOptions, bool concurrentBuild, bool deterministic, Microsoft.CodeAnalysis.XmlReferenceResolver xmlReferenceResolver, Microsoft.CodeAnalysis.SourceReferenceResolver sourceReferenceResolver, Microsoft.CodeAnalysis.MetadataReferenceResolver metadataReferenceResolver, Microsoft.CodeAnalysis.AssemblyIdentityComparer assemblyIdentityComparer, Microsoft.CodeAnalysis.StrongNameProvider strongNameProvider) { }
-        public CSharpCompilationOptions(Microsoft.CodeAnalysis.OutputKind outputKind, bool reportSuppressedDiagnostics, string moduleName, string mainTypeName, string scriptClassName, System.Collections.Generic.IEnumerable<string> usings, Microsoft.CodeAnalysis.OptimizationLevel optimizationLevel, bool checkOverflow, bool allowUnsafe, string cryptoKeyContainer, string cryptoKeyFile, System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey, bool? delaySign, Microsoft.CodeAnalysis.Platform platform, Microsoft.CodeAnalysis.ReportDiagnostic generalDiagnosticOption, int warningLevel, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>> specificDiagnosticOptions, bool concurrentBuild, bool deterministic, Microsoft.CodeAnalysis.XmlReferenceResolver xmlReferenceResolver, Microsoft.CodeAnalysis.SourceReferenceResolver sourceReferenceResolver, Microsoft.CodeAnalysis.MetadataReferenceResolver metadataReferenceResolver, Microsoft.CodeAnalysis.AssemblyIdentityComparer assemblyIdentityComparer, Microsoft.CodeAnalysis.StrongNameProvider strongNameProvider, bool publicSign) { }
-        public CSharpCompilationOptions(Microsoft.CodeAnalysis.OutputKind outputKind, bool reportSuppressedDiagnostics, string moduleName, string mainTypeName, string scriptClassName, System.Collections.Generic.IEnumerable<string> usings, Microsoft.CodeAnalysis.OptimizationLevel optimizationLevel, bool checkOverflow, bool allowUnsafe, string cryptoKeyContainer, string cryptoKeyFile, System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey, bool? delaySign, Microsoft.CodeAnalysis.Platform platform, Microsoft.CodeAnalysis.ReportDiagnostic generalDiagnosticOption, int warningLevel, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>> specificDiagnosticOptions, bool concurrentBuild, bool deterministic, Microsoft.CodeAnalysis.XmlReferenceResolver xmlReferenceResolver, Microsoft.CodeAnalysis.SourceReferenceResolver sourceReferenceResolver, Microsoft.CodeAnalysis.MetadataReferenceResolver metadataReferenceResolver, Microsoft.CodeAnalysis.AssemblyIdentityComparer assemblyIdentityComparer, Microsoft.CodeAnalysis.StrongNameProvider strongNameProvider, bool publicSign, Microsoft.CodeAnalysis.MetadataImportOptions metadataImportOptions) { }
-        public CSharpCompilationOptions(Microsoft.CodeAnalysis.OutputKind outputKind, bool reportSuppressedDiagnostics = false, string moduleName = null, string mainTypeName = null, string scriptClassName = null, System.Collections.Generic.IEnumerable<string> usings = null, Microsoft.CodeAnalysis.OptimizationLevel optimizationLevel = Microsoft.CodeAnalysis.OptimizationLevel.Debug, bool checkOverflow = false, bool allowUnsafe = false, string cryptoKeyContainer = null, string cryptoKeyFile = null, System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey = default(System.Collections.Immutable.ImmutableArray<byte>), bool? delaySign = default(bool?), Microsoft.CodeAnalysis.Platform platform = Microsoft.CodeAnalysis.Platform.AnyCpu, Microsoft.CodeAnalysis.ReportDiagnostic generalDiagnosticOption = Microsoft.CodeAnalysis.ReportDiagnostic.Default, int warningLevel = 4, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>> specificDiagnosticOptions = null, bool concurrentBuild = true, bool deterministic = false, Microsoft.CodeAnalysis.XmlReferenceResolver xmlReferenceResolver = null, Microsoft.CodeAnalysis.SourceReferenceResolver sourceReferenceResolver = null, Microsoft.CodeAnalysis.MetadataReferenceResolver metadataReferenceResolver = null, Microsoft.CodeAnalysis.AssemblyIdentityComparer assemblyIdentityComparer = null, Microsoft.CodeAnalysis.StrongNameProvider strongNameProvider = null, bool publicSign = false, Microsoft.CodeAnalysis.MetadataImportOptions metadataImportOptions = Microsoft.CodeAnalysis.MetadataImportOptions.Public, Microsoft.CodeAnalysis.NullableContextOptions nullableContextOptions = Microsoft.CodeAnalysis.NullableContextOptions.Disable) { }
-        public CSharpCompilationOptions(Microsoft.CodeAnalysis.OutputKind outputKind, string moduleName, string mainTypeName, string scriptClassName, System.Collections.Generic.IEnumerable<string> usings, Microsoft.CodeAnalysis.OptimizationLevel optimizationLevel, bool checkOverflow, bool allowUnsafe, string cryptoKeyContainer, string cryptoKeyFile, System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey, bool? delaySign, Microsoft.CodeAnalysis.Platform platform, Microsoft.CodeAnalysis.ReportDiagnostic generalDiagnosticOption, int warningLevel, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>> specificDiagnosticOptions, bool concurrentBuild, Microsoft.CodeAnalysis.XmlReferenceResolver xmlReferenceResolver, Microsoft.CodeAnalysis.SourceReferenceResolver sourceReferenceResolver, Microsoft.CodeAnalysis.MetadataReferenceResolver metadataReferenceResolver, Microsoft.CodeAnalysis.AssemblyIdentityComparer assemblyIdentityComparer, Microsoft.CodeAnalysis.StrongNameProvider strongNameProvider) { }
-        public CSharpCompilationOptions(Microsoft.CodeAnalysis.OutputKind outputKind, string moduleName, string mainTypeName, string scriptClassName, System.Collections.Generic.IEnumerable<string> usings, Microsoft.CodeAnalysis.OptimizationLevel optimizationLevel, bool checkOverflow, bool allowUnsafe, string cryptoKeyContainer, string cryptoKeyFile, System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey, bool? delaySign, Microsoft.CodeAnalysis.Platform platform, Microsoft.CodeAnalysis.ReportDiagnostic generalDiagnosticOption, int warningLevel, System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>> specificDiagnosticOptions, bool concurrentBuild, bool deterministic, Microsoft.CodeAnalysis.XmlReferenceResolver xmlReferenceResolver, Microsoft.CodeAnalysis.SourceReferenceResolver sourceReferenceResolver, Microsoft.CodeAnalysis.MetadataReferenceResolver metadataReferenceResolver, Microsoft.CodeAnalysis.AssemblyIdentityComparer assemblyIdentityComparer, Microsoft.CodeAnalysis.StrongNameProvider strongNameProvider) { }
+        public CSharpCompilationOptions(
+            OutputKind outputKind,
+            bool reportSuppressedDiagnostics = false,
+            string moduleName = null,
+            string mainTypeName = null,
+            string scriptClassName = null,
+            IEnumerable<string> usings = null,
+            OptimizationLevel optimizationLevel = OptimizationLevel.Debug,
+            bool checkOverflow = false,
+            bool allowUnsafe = false,
+            string cryptoKeyContainer = null,
+            string cryptoKeyFile = null,
+            System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey = default,
+            bool? delaySign = null,
+            Platform platform = Platform.AnyCpu,
+            ReportDiagnostic generalDiagnosticOption = ReportDiagnostic.Default,
+            int warningLevel = Diagnostic.DefaultWarningLevel,
+            IEnumerable<KeyValuePair<string, ReportDiagnostic>> specificDiagnosticOptions = null,
+            bool concurrentBuild = true,
+            bool deterministic = false,
+            XmlReferenceResolver xmlReferenceResolver = null,
+            SourceReferenceResolver sourceReferenceResolver = null,
+            MetadataReferenceResolver metadataReferenceResolver = null,
+            AssemblyIdentityComparer assemblyIdentityComparer = null,
+            StrongNameProvider strongNameProvider = null,
+            bool publicSign = false,
+            MetadataImportOptions metadataImportOptions = MetadataImportOptions.Public,
+            NullableContextOptions nullableContextOptions = NullableContextOptions.Disable)
+            : this(outputKind, reportSuppressedDiagnostics, moduleName, mainTypeName, scriptClassName,
+                   usings, optimizationLevel, checkOverflow, allowUnsafe,
+                   cryptoKeyContainer, cryptoKeyFile, cryptoPublicKey, delaySign, platform,
+                   generalDiagnosticOption, warningLevel,
+                   specificDiagnosticOptions, concurrentBuild, deterministic,
+                   currentLocalTime: default,
+                   debugPlusMode: false,
+                   xmlReferenceResolver: xmlReferenceResolver,
+                   sourceReferenceResolver: sourceReferenceResolver,
+                   syntaxTreeOptionsProvider: null,
+                   metadataReferenceResolver: metadataReferenceResolver,
+                   assemblyIdentityComparer: assemblyIdentityComparer,
+                   strongNameProvider: strongNameProvider,
+                   metadataImportOptions: metadataImportOptions,
+                   referencesSupersedeLowerVersions: false,
+                   publicSign: publicSign,
+                   topLevelBinderFlags: BinderFlags.None,
+                   nullableContextOptions: nullableContextOptions)
+        {
+        }
+ 
+        // 15.9 BACKCOMPAT OVERLOAD -- DO NOT TOUCH
+        public CSharpCompilationOptions(
+            OutputKind outputKind,
+            bool reportSuppressedDiagnostics,
+            string moduleName,
+            string mainTypeName,
+            string scriptClassName,
+            IEnumerable<string> usings,
+            OptimizationLevel optimizationLevel,
+            bool checkOverflow,
+            bool allowUnsafe,
+            string cryptoKeyContainer,
+            string cryptoKeyFile,
+            System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey,
+            bool? delaySign,
+            Platform platform,
+            ReportDiagnostic generalDiagnosticOption,
+            int warningLevel,
+            IEnumerable<KeyValuePair<string, ReportDiagnostic>> specificDiagnosticOptions,
+            bool concurrentBuild,
+            bool deterministic,
+            XmlReferenceResolver xmlReferenceResolver,
+            SourceReferenceResolver sourceReferenceResolver,
+            MetadataReferenceResolver metadataReferenceResolver,
+            AssemblyIdentityComparer assemblyIdentityComparer,
+            StrongNameProvider strongNameProvider,
+            bool publicSign,
+            MetadataImportOptions metadataImportOptions)
+            : this(outputKind, reportSuppressedDiagnostics, moduleName, mainTypeName, scriptClassName,
+                   usings, optimizationLevel, checkOverflow, allowUnsafe,
+                   cryptoKeyContainer, cryptoKeyFile, cryptoPublicKey, delaySign, platform,
+                   generalDiagnosticOption, warningLevel,
+                   specificDiagnosticOptions, concurrentBuild, deterministic,
+                   xmlReferenceResolver,
+                   sourceReferenceResolver,
+                   metadataReferenceResolver,
+                   assemblyIdentityComparer,
+                   strongNameProvider,
+                   publicSign,
+                   metadataImportOptions,
+                   nullableContextOptions: NullableContextOptions.Disable)
+        {
+        }
+        public CSharpCompilationOptions(
+            OutputKind outputKind,
+            bool reportSuppressedDiagnostics,
+            string moduleName,
+            string mainTypeName,
+            string scriptClassName,
+            IEnumerable<string> usings,
+            OptimizationLevel optimizationLevel,
+            bool checkOverflow,
+            bool allowUnsafe,
+            string cryptoKeyContainer,
+            string cryptoKeyFile,
+            System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey,
+            bool? delaySign,
+            Platform platform,
+            ReportDiagnostic generalDiagnosticOption,
+            int warningLevel,
+            IEnumerable<KeyValuePair<string, ReportDiagnostic>> specificDiagnosticOptions,
+            bool concurrentBuild,
+            bool deterministic,
+            XmlReferenceResolver xmlReferenceResolver,
+            SourceReferenceResolver sourceReferenceResolver,
+            MetadataReferenceResolver metadataReferenceResolver,
+            AssemblyIdentityComparer assemblyIdentityComparer,
+            StrongNameProvider strongNameProvider,
+            bool publicSign)
+            : this(outputKind, reportSuppressedDiagnostics, moduleName, mainTypeName, scriptClassName,
+                   usings, optimizationLevel, checkOverflow, allowUnsafe,
+                   cryptoKeyContainer, cryptoKeyFile, cryptoPublicKey, delaySign, platform,
+                   generalDiagnosticOption, warningLevel,
+                   specificDiagnosticOptions, concurrentBuild, deterministic,
+                   xmlReferenceResolver,
+                   sourceReferenceResolver,
+                   metadataReferenceResolver,
+                   assemblyIdentityComparer,
+                   strongNameProvider,
+                   publicSign,
+                   MetadataImportOptions.Public)
+        {
+        }
+ 
+        // Expects correct arguments.
+        internal CSharpCompilationOptions(
+            OutputKind outputKind,
+            bool reportSuppressedDiagnostics,
+            string moduleName,
+            string mainTypeName,
+            string scriptClassName,
+            IEnumerable<string> usings,
+            OptimizationLevel optimizationLevel,
+            bool checkOverflow,
+            bool allowUnsafe,
+            string cryptoKeyContainer,
+            string cryptoKeyFile,
+            System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey,
+            bool? delaySign,
+            Platform platform,
+            ReportDiagnostic generalDiagnosticOption,
+            int warningLevel,
+            IEnumerable<KeyValuePair<string, ReportDiagnostic>> specificDiagnosticOptions,
+            bool concurrentBuild,
+            bool deterministic,
+            DateTime currentLocalTime,
+            bool debugPlusMode,
+            XmlReferenceResolver xmlReferenceResolver,
+            SourceReferenceResolver sourceReferenceResolver,
+            SyntaxTreeOptionsProvider syntaxTreeOptionsProvider,
+            MetadataReferenceResolver metadataReferenceResolver,
+            AssemblyIdentityComparer assemblyIdentityComparer,
+            StrongNameProvider strongNameProvider,
+            MetadataImportOptions metadataImportOptions,
+            bool referencesSupersedeLowerVersions,
+            bool publicSign,
+            BinderFlags topLevelBinderFlags,
+            NullableContextOptions nullableContextOptions)
+            : base(outputKind, reportSuppressedDiagnostics, moduleName, mainTypeName, scriptClassName,
+                   cryptoKeyContainer, cryptoKeyFile, cryptoPublicKey, delaySign, publicSign, optimizationLevel, checkOverflow,
+                   platform, generalDiagnosticOption, warningLevel, default,
+                   concurrentBuild, deterministic, currentLocalTime, debugPlusMode, xmlReferenceResolver,
+                   sourceReferenceResolver, syntaxTreeOptionsProvider, metadataReferenceResolver,
+                   assemblyIdentityComparer, strongNameProvider, metadataImportOptions, referencesSupersedeLowerVersions)
+        {
+        }
+ 
+        private CSharpCompilationOptions(CSharpCompilationOptions other) : this( outputKind: other.OutputKind, moduleName: other.ModuleName, mainTypeName: other.MainTypeName, scriptClassName: other.ScriptClassName, usings: other.Usings, optimizationLevel: other.OptimizationLevel, checkOverflow: other.CheckOverflow, allowUnsafe: other.AllowUnsafe, cryptoKeyContainer: other.CryptoKeyContainer, cryptoKeyFile: other.CryptoKeyFile, cryptoPublicKey: other.CryptoPublicKey, delaySign: other.DelaySign, platform: other.Platform, generalDiagnosticOption: other.GeneralDiagnosticOption, warningLevel: other.WarningLevel, specificDiagnosticOptions: other.SpecificDiagnosticOptions, concurrentBuild: other.ConcurrentBuild, deterministic: other.Deterministic, currentLocalTime: other.CurrentLocalTime, debugPlusMode: other.DebugPlusMode, xmlReferenceResolver: other.XmlReferenceResolver, sourceReferenceResolver: other.SourceReferenceResolver, syntaxTreeOptionsProvider: other.SyntaxTreeOptionsProvider, metadataReferenceResolver: other.MetadataReferenceResolver, assemblyIdentityComparer: other.AssemblyIdentityComparer, strongNameProvider: other.StrongNameProvider, metadataImportOptions: other.MetadataImportOptions, referencesSupersedeLowerVersions: other.ReferencesSupersedeLowerVersions, reportSuppressedDiagnostics: other.ReportSuppressedDiagnostics, publicSign: other.PublicSign, topLevelBinderFlags: default, nullableContextOptions: other.NullableContextOptions) { }
         public bool AllowUnsafe { get { throw null; } }
         public override string Language { get { throw null; } }
         public override Microsoft.CodeAnalysis.NullableContextOptions NullableContextOptions { get { throw null; } protected set { } }
@@ -249,7 +469,7 @@ namespace Microsoft.CodeAnalysis.CSharp
         public new Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions WithCryptoKeyContainer(string name) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions WithCryptoKeyFile(string path) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions WithCryptoPublicKey(System.Collections.Immutable.ImmutableArray<byte> value) { throw null; }
-        public new Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions WithDelaySign(bool? value) { throw null; }
+        public new Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions WithDelaySign(bool value) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions WithDeterministic(bool deterministic) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions WithGeneralDiagnosticOption(Microsoft.CodeAnalysis.ReportDiagnostic value) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions WithMainTypeName(string name) { throw null; }
@@ -274,6 +494,10 @@ namespace Microsoft.CodeAnalysis.CSharp
         public Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions WithUsings(params string[] usings) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions WithWarningLevel(int warningLevel) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.CSharpCompilationOptions WithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver resolver) { throw null; }
+        internal override System.Collections.Immutable.ImmutableArray<string> GetImports() { throw null; }
+        internal override Diagnostic FilterDiagnostic(Diagnostic diagnostic, CancellationToken cancellationToken) { throw null; }
+        internal override void ValidateOptions(Microsoft.CodeAnalysis.PooledObjects.ArrayBuilder<Diagnostic> diagnostic) {throw null;}
+
     }
     public partial class CSharpDiagnosticFormatter : Microsoft.CodeAnalysis.DiagnosticFormatter
     {
@@ -390,15 +614,20 @@ namespace Microsoft.CodeAnalysis.CSharp
     }
     public sealed partial class CSharpGeneratorDriver : Microsoft.CodeAnalysis.GeneratorDriver
     {
-        internal CSharpGeneratorDriver() { }
+        internal CSharpGeneratorDriver() : base(default, default, default, default, default) { }
         public static Microsoft.CodeAnalysis.CSharp.CSharpGeneratorDriver Create(params Microsoft.CodeAnalysis.IIncrementalGenerator[] incrementalGenerators) { throw null; }
         public static Microsoft.CodeAnalysis.CSharp.CSharpGeneratorDriver Create(params Microsoft.CodeAnalysis.ISourceGenerator[] generators) { throw null; }
         public static Microsoft.CodeAnalysis.CSharp.CSharpGeneratorDriver Create(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ISourceGenerator> generators, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.AdditionalText> additionalTexts, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions parseOptions, Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptionsProvider optionsProvider) { throw null; }
         public static Microsoft.CodeAnalysis.CSharp.CSharpGeneratorDriver Create(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ISourceGenerator> generators, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.AdditionalText> additionalTexts = null, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions parseOptions = null, Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptionsProvider optionsProvider = null, Microsoft.CodeAnalysis.GeneratorDriverOptions driverOptions = default(Microsoft.CodeAnalysis.GeneratorDriverOptions)) { throw null; }
+
+        internal override SyntaxTree ParseGeneratedSourceText(GeneratedSourceText input, string fileName, CancellationToken cancellationToken) { throw null; }
+        internal override GeneratorDriver FromState(GeneratorDriverState state){ throw null; }
+        internal override CommonMessageProvider MessageProvider => throw null;
+        internal override string SourceExtension => throw null;
     }
     public sealed partial class CSharpParseOptions : Microsoft.CodeAnalysis.ParseOptions, System.IEquatable<Microsoft.CodeAnalysis.CSharp.CSharpParseOptions>
     {
-        public CSharpParseOptions(Microsoft.CodeAnalysis.CSharp.LanguageVersion languageVersion = Microsoft.CodeAnalysis.CSharp.LanguageVersion.Default, Microsoft.CodeAnalysis.DocumentationMode documentationMode = Microsoft.CodeAnalysis.DocumentationMode.Parse, Microsoft.CodeAnalysis.SourceCodeKind kind = Microsoft.CodeAnalysis.SourceCodeKind.Regular, System.Collections.Generic.IEnumerable<string> preprocessorSymbols = null) { }
+        public CSharpParseOptions(Microsoft.CodeAnalysis.CSharp.LanguageVersion languageVersion = Microsoft.CodeAnalysis.CSharp.LanguageVersion.Default, Microsoft.CodeAnalysis.DocumentationMode documentationMode = Microsoft.CodeAnalysis.DocumentationMode.Parse, Microsoft.CodeAnalysis.SourceCodeKind kind = Microsoft.CodeAnalysis.SourceCodeKind.Regular, System.Collections.Generic.IEnumerable<string> preprocessorSymbols = null) : base(default, default){ }
         public static Microsoft.CodeAnalysis.CSharp.CSharpParseOptions Default { get { throw null; } }
         public override System.Collections.Generic.IReadOnlyDictionary<string, string> Features { get { throw null; } }
         public override string Language { get { throw null; } }
@@ -418,16 +647,19 @@ namespace Microsoft.CodeAnalysis.CSharp
         public Microsoft.CodeAnalysis.CSharp.CSharpParseOptions WithPreprocessorSymbols(System.Collections.Generic.IEnumerable<string> preprocessorSymbols) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.CSharpParseOptions WithPreprocessorSymbols(System.Collections.Immutable.ImmutableArray<string> symbols) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.CSharpParseOptions WithPreprocessorSymbols(params string[] preprocessorSymbols) { throw null; }
+        internal override void ValidateOptions(Microsoft.CodeAnalysis.PooledObjects.ArrayBuilder<Diagnostic> builder) {throw null; }
     }
     public sealed partial class CSharpScriptCompilationInfo : Microsoft.CodeAnalysis.ScriptCompilationInfo
     {
-        internal CSharpScriptCompilationInfo() { }
+        internal CSharpScriptCompilationInfo() : base(null, null) { }
         public new Microsoft.CodeAnalysis.CSharp.CSharpCompilation PreviousScriptCompilation { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.CSharpScriptCompilationInfo WithPreviousScriptCompilation(Microsoft.CodeAnalysis.CSharp.CSharpCompilation compilation) { throw null; }
+        internal override ScriptCompilationInfo CommonWithPreviousScriptCompilation(Compilation compilation) { throw null; }
+        internal override Compilation CommonPreviousScriptCompilation => throw null;
     }
     public abstract partial class CSharpSyntaxNode : Microsoft.CodeAnalysis.SyntaxNode, System.IFormattable
     {
-        internal CSharpSyntaxNode() { }
+        internal CSharpSyntaxNode() : base (null, 0, null) { }
         public override string Language { get { throw null; } }
         protected override Microsoft.CodeAnalysis.SyntaxTree SyntaxTreeCore { get { throw null; } }
         public abstract void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor);
@@ -457,6 +689,9 @@ namespace Microsoft.CodeAnalysis.CSharp
         protected internal override Microsoft.CodeAnalysis.SyntaxNode ReplaceTokenInListCore(Microsoft.CodeAnalysis.SyntaxToken originalToken, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> newTokens) { throw null; }
         protected internal override Microsoft.CodeAnalysis.SyntaxNode ReplaceTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> newTrivia) { throw null; }
         string System.IFormattable.ToString(string format, System.IFormatProvider formatProvider) { throw null; }
+        internal override SyntaxNode GetCachedSlot(int slot) { throw null; }
+        internal override SyntaxNode GetNodeSlot(int slot) { throw null; }
+
     }
     public abstract partial class CSharpSyntaxRewriter : Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<Microsoft.CodeAnalysis.SyntaxNode>
     {
@@ -718,12 +953,11 @@ namespace Microsoft.CodeAnalysis.CSharp
         [System.ObsoleteAttribute("The diagnosticOptions parameter is obsolete due to performance problems, if you are passing non-null use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
         public static Microsoft.CodeAnalysis.SyntaxTree Create(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode root, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions options, string path, System.Text.Encoding encoding, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions) { throw null; }
         [System.ObsoleteAttribute("The diagnosticOptions and isGeneratedCode parameters are obsolete due to performance problems, if you are using them use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
-        public static Microsoft.CodeAnalysis.SyntaxTree Create(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode root, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions options, string path, System.Text.Encoding encoding, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, bool? isGeneratedCode) { throw null; }
+        public static Microsoft.CodeAnalysis.SyntaxTree Create(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode root, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions options, string path, System.Text.Encoding encoding, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, bool isGeneratedCode) { throw null; }
         public override System.Collections.Generic.IList<Microsoft.CodeAnalysis.Text.TextSpan> GetChangedSpans(Microsoft.CodeAnalysis.SyntaxTree oldTree) { throw null; }
         public override System.Collections.Generic.IList<Microsoft.CodeAnalysis.Text.TextChange> GetChanges(Microsoft.CodeAnalysis.SyntaxTree oldTree) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CompilationUnitSyntax GetCompilationUnitRoot(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         public override System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Diagnostic> GetDiagnostics(Microsoft.CodeAnalysis.SyntaxNode node) { throw null; }
-        public override System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Diagnostic> Ge; }
         public override Microsoft.CodeAnalysis.FileLinePositionSpan GetLineSpan(Microsoft.CodeAnalysis.Text.TextSpan span, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         public override Microsoft.CodeAnalysis.LineVisibility GetLineVisibility(int position, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         public override Microsoft.CodeAnalysis.Location GetLocation(Microsoft.CodeAnalysis.Text.TextSpan span) { throw null; }
@@ -735,12 +969,12 @@ namespace Microsoft.CodeAnalysis.CSharp
         public override bool HasHiddenRegions() { throw null; }
         public override bool IsEquivalentTo(Microsoft.CodeAnalysis.SyntaxTree tree, bool topLevel = false) { throw null; }
         [System.ObsoleteAttribute("The diagnosticOptions and isGeneratedCode parameters are obsolete due to performance problems, if you are using them use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
-        public static Microsoft.CodeAnalysis.SyntaxTree ParseText(Microsoft.CodeAnalysis.Text.SourceText text, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions options, string path, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, bool? isGeneratedCode, System.Threading.CancellationToken cancellationToken) { throw null; }
+        public static Microsoft.CodeAnalysis.SyntaxTree ParseText(Microsoft.CodeAnalysis.Text.SourceText text, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions options, string path, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, bool isGeneratedCode, System.Threading.CancellationToken cancellationToken) { throw null; }
         [System.ObsoleteAttribute("The diagnosticOptions parameter is obsolete due to performance problems, if you are passing non-null use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
         public static Microsoft.CodeAnalysis.SyntaxTree ParseText(Microsoft.CodeAnalysis.Text.SourceText text, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions options, string path, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, System.Threading.CancellationToken cancellationToken) { throw null; }
         public static Microsoft.CodeAnalysis.SyntaxTree ParseText(Microsoft.CodeAnalysis.Text.SourceText text, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions options = null, string path = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         [System.ObsoleteAttribute("The diagnosticOptions and isGeneratedCode parameters are obsolete due to performance problems, if you are using them use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
-        public static Microsoft.CodeAnalysis.SyntaxTree ParseText(string text, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions options, string path, System.Text.Encoding encoding, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, bool? isGeneratedCode, System.Threading.CancellationToken cancellationToken) { throw null; }
+        public static Microsoft.CodeAnalysis.SyntaxTree ParseText(string text, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions options, string path, System.Text.Encoding encoding, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, bool isGeneratedCode, System.Threading.CancellationToken cancellationToken) { throw null; }
         [System.ObsoleteAttribute("The diagnosticOptions parameter is obsolete due to performance problems, if you are passing non-null use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
         public static Microsoft.CodeAnalysis.SyntaxTree ParseText(string text, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions options, string path, System.Text.Encoding encoding, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, System.Threading.CancellationToken cancellationToken) { throw null; }
         public static Microsoft.CodeAnalysis.SyntaxTree ParseText(string text, Microsoft.CodeAnalysis.CSharp.CSharpParseOptions options = null, string path = "", System.Text.Encoding encoding = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
@@ -1244,7 +1478,7 @@ namespace Microsoft.CodeAnalysis.CSharp
     public partial struct DeconstructionInfo
     {
         private object _dummy;
-        public Microsoft.CodeAnalysis.CSharp.Conversion? Conversion { get { throw null; } }
+        public Microsoft.CodeAnalysis.CSharp.Conversion Conversion { get { throw null; } }
         public Microsoft.CodeAnalysis.IMethodSymbol Method { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CSharp.DeconstructionInfo> Nested { get { throw null; } }
     }
@@ -1856,12 +2090,12 @@ namespace Microsoft.CodeAnalysis.CSharp
         public static Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax ParseParameterList(string text, int offset = 0, Microsoft.CodeAnalysis.ParseOptions options = null, bool consumeFullText = true) { throw null; }
         public static Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax ParseStatement(string text, int offset = 0, Microsoft.CodeAnalysis.ParseOptions options = null, bool consumeFullText = true) { throw null; }
         [System.ObsoleteAttribute("The diagnosticOptions and isGeneratedCode parameters are obsolete due to performance problems, if you are using them use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
-        public static Microsoft.CodeAnalysis.SyntaxTree ParseSyntaxTree(Microsoft.CodeAnalysis.Text.SourceText text, Microsoft.CodeAnalysis.ParseOptions options, string path, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, bool? isGeneratedCode, System.Threading.CancellationToken cancellationToken) { throw null; }
+        public static Microsoft.CodeAnalysis.SyntaxTree ParseSyntaxTree(Microsoft.CodeAnalysis.Text.SourceText text, Microsoft.CodeAnalysis.ParseOptions options, string path, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, bool isGeneratedCode, System.Threading.CancellationToken cancellationToken) { throw null; }
         [System.ObsoleteAttribute("The diagnosticOptions parameter is obsolete due to performance problems, if you are passing non-null use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
         public static Microsoft.CodeAnalysis.SyntaxTree ParseSyntaxTree(Microsoft.CodeAnalysis.Text.SourceText text, Microsoft.CodeAnalysis.ParseOptions options, string path, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, System.Threading.CancellationToken cancellationToken) { throw null; }
         public static Microsoft.CodeAnalysis.SyntaxTree ParseSyntaxTree(Microsoft.CodeAnalysis.Text.SourceText text, Microsoft.CodeAnalysis.ParseOptions options = null, string path = "", System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         [System.ObsoleteAttribute("The diagnosticOptions and isGeneratedCode parameters are obsolete due to performance problems, if you are using them use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
-        public static Microsoft.CodeAnalysis.SyntaxTree ParseSyntaxTree(string text, Microsoft.CodeAnalysis.ParseOptions options, string path, System.Text.Encoding encoding, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, bool? isGeneratedCode, System.Threading.CancellationToken cancellationToken) { throw null; }
+        public static Microsoft.CodeAnalysis.SyntaxTree ParseSyntaxTree(string text, Microsoft.CodeAnalysis.ParseOptions options, string path, System.Text.Encoding encoding, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, bool isGeneratedCode, System.Threading.CancellationToken cancellationToken) { throw null; }
         [System.ObsoleteAttribute("The diagnosticOptions parameter is obsolete due to performance problems, if you are passing non-null use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
         public static Microsoft.CodeAnalysis.SyntaxTree ParseSyntaxTree(string text, Microsoft.CodeAnalysis.ParseOptions options, string path, System.Text.Encoding encoding, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions, System.Threading.CancellationToken cancellationToken) { throw null; }
         public static Microsoft.CodeAnalysis.SyntaxTree ParseSyntaxTree(string text, Microsoft.CodeAnalysis.ParseOptions options = null, string path = "", System.Text.Encoding encoding = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
@@ -2797,6 +3031,42 @@ namespace Microsoft.CodeAnalysis.CSharp
     public static partial class TypedConstantExtensions
     {
         public static string ToCSharpString(this Microsoft.CodeAnalysis.TypedConstant constant) { throw null; }
+    }
+    internal enum BinderFlags : uint
+    {
+        None, // No specific location
+        SuppressConstraintChecks = 1 << 0,
+        SuppressObsoleteChecks = 1 << 1,
+        ConstructorInitializer = 1 << 2,
+        FieldInitializer = 1 << 3,
+        ObjectInitializerMember = 1 << 4,    // object initializer field/property access
+        CollectionInitializerAddMethod = 1 << 5,   // used for collection initializer add method overload resolution diagnostics
+        AttributeArgument = 1 << 6,
+        GenericConstraintsClause = 1 << 7, // "where" clause (used for cycle checking)
+        Cref = 1 << 8, // documentation comment cref
+        CrefParameterOrReturnType = 1 << 9, // Same as Cref, but lookup considers inherited members
+        UnsafeRegion = 1 << 10,
+        SuppressUnsafeDiagnostics = 1 << 11,
+        SemanticModel = 1 << 12,
+        EarlyAttributeBinding = 1 << 13,
+        CheckedRegion = 1 << 14,
+        UncheckedRegion = 1 << 15,
+        InLockBody = 1 << 16, // body, not the expression
+        InCatchBlock = 1 << 17,
+        InFinallyBlock = 1 << 18,
+        InTryBlockOfTryCatch = 1 << 19, // try block must have at least one catch clause
+        InCatchFilter = 1 << 20,
+        InNestedFinallyBlock = 1 << 21,
+        IgnoreAccessibility = 1 << 22,
+        ParameterDefaultValue = 1 << 23,
+        AllowManagedAddressOf = 1 << 24,
+        AllowAwaitInUnsafeContext = 1 << 25,
+        IgnoreCorLibraryDuplicatedTypes = 1 << 26,
+        InContextualAttributeBinder = 1 << 27,
+        InEEMethodBinder = 1 << 28,
+        SuppressTypeArgumentBinding = 1 << 29,
+        InExpressionTree = 1 << 30,
+        AllClearedAtExecutableCodeBoundary = InLockBody | InCatchBlock | InCatchFilter | InFinallyBlock | InTryBlockOfTryCatch | InNestedFinallyBlock,
     }
 }
 namespace Microsoft.CodeAnalysis.CSharp.Syntax

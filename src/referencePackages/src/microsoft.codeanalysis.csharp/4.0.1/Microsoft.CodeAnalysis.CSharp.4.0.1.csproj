@@ -2,7 +2,7 @@
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))/dir.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)microsoft.codeanalysis.csharp/4.0.1/microsoft.codeanalysis.csharp.nuspec</NuspecFile>
     <StrongNameKeyId>MicrosoftShared</StrongNameKeyId>
   </PropertyGroup>
@@ -16,10 +16,6 @@
     <OutputPath>$(ArtifactsBinDir)microsoft.codeanalysis.csharp/4.0.1/lib/</OutputPath>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
-    <OutputPath>$(ArtifactsBinDir)microsoft.codeanalysis.csharp/4.0.1/lib/</OutputPath>
-  </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />
     <Compile Include="**/lib/$(TargetFramework)/*.cs" />
@@ -27,10 +23,6 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="[4.0.1, 4.0.1]" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
     <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="[4.0.1, 4.0.1]" />
   </ItemGroup>
 

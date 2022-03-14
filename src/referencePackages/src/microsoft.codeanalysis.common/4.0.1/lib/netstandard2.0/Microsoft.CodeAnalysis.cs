@@ -4990,3 +4990,58 @@ namespace Microsoft.CodeAnalysis.Text
         public override string ToString() { throw null; }
     }
 }
+
+// manual fix up
+namespace Microsoft.CodeAnalysis
+{
+    internal readonly struct DeclarationInfo
+    {
+    }
+
+    internal class CommonMessageProvider
+    {
+    }
+
+    internal class StrongNameKeys
+    {
+    }
+
+    internal class StrongNameFileSystem
+    {
+    }
+
+    public partial class DesktopStrongNameProvider : Microsoft.CodeAnalysis.StrongNameProvider
+    {
+        internal override StrongNameFileSystem FileSystem { get => throw null; }
+        internal override StrongNameKeys CreateKeys(string keyFilePath, string keyContainerName, bool hasCounterSignature, CommonMessageProvider messageProvider) { throw null; }
+        internal override void SignFile(StrongNameKeys keys, string filePath) { }
+        internal override void SignBuilder(Microsoft.Cci.ExtendedPEBuilder peBuilder, System.Reflection.Metadata.BlobBuilder peBlob, System.Security.Cryptography.RSAParameters privateKey) { }
+        internal virtual Microsoft.CodeAnalysis.Interop.IClrStrongName GetStrongNameInterface() { throw null; }
+    }
+
+    public sealed partial class UnresolvedMetadataReference : Microsoft.CodeAnalysis.MetadataReference
+    {
+        internal override MetadataReference WithPropertiesImplReturningMetadataReference(MetadataReferenceProperties properties) { throw null; }
+    }
+}
+
+namespace Microsoft.CodeAnalysis.Interop
+{
+    internal interface IClrStrongName
+    {
+    }
+}
+
+namespace Microsoft.Cci
+{
+    internal class ExtendedPEBuilder
+    {
+    }
+}
+
+namespace Microsoft.CodeAnalysis.PooledObjects
+{
+    internal struct ArrayBuilder<T> 
+    {
+    }
+}
