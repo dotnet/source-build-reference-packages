@@ -18,9 +18,6 @@
     <serviceable>true</serviceable>
     <repository type="git" url="https://github.com/dotnet/roslyn" commit="b3e69109341a1017423af7981b8b84b646f5bcce" />
     <dependencies>
-      <group targetFramework=".NETCoreApp3.1">
-        <dependency id="Microsoft.CodeAnalysis.Common" version="[4.0.1, 4.0.1]" exclude="Build,Analyzers" />
-      </group>
       <group targetFramework=".NETStandard2.0">
         <dependency id="Microsoft.CodeAnalysis.Common" version="[4.0.1, 4.0.1]" exclude="Build,Analyzers" />
       </group>
