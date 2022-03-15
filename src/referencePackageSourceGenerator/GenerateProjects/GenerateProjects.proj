@@ -18,7 +18,7 @@
   <UsingTask AssemblyFile="$(GenerateProjectsTaskPath)" TaskName="GenerateProjects" />
 
   <Target Name="CoreCompile" DependsOnTargets="GetGenApiDlls" >
-    <!-- Ensure source is generated first.  GenerateProjects modifies updates the assembly version attribute placeholder -->
+    <!-- Ensure source is generated first.  GenerateProjects requires the source to replace the assembly version attribute placeholder -->
     <MSBuild Projects="@(ProjectReference)" Targets="Build" />
 
     <Message Importance="High" Text="==> Generating projects for all target packages" />
