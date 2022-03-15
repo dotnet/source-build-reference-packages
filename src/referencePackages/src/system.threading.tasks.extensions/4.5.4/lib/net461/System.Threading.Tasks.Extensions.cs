@@ -173,15 +173,15 @@ namespace System.Threading.Tasks.Sources
     [System.FlagsAttribute]
     public enum ValueTaskSourceOnCompletedFlags
     {
-        FlowExecutionContext = 2,
         None = 0,
         UseSchedulingContext = 1,
+        FlowExecutionContext = 2,
     }
     public enum ValueTaskSourceStatus
     {
-        Canceled = 3,
-        Faulted = 2,
         Pending = 0,
         Succeeded = 1,
+        Faulted = 2,
+        Canceled = 3,
     }
 }

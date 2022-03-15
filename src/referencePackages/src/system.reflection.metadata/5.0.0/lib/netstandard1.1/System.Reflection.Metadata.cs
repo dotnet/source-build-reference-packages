@@ -270,7 +270,7 @@ namespace System.Reflection.Metadata
         public void WriteContentTo(System.Reflection.Metadata.BlobBuilder destination) { }
         public void WriteContentTo(ref System.Reflection.Metadata.BlobWriter destination) { }
         public void WriteDateTime(System.DateTime value) { }
-        public void WriteDecimal(System.Decimal value) { }
+        public void WriteDecimal(decimal value) { }
         public void WriteDouble(double value) { }
         public void WriteGuid(System.Guid value) { }
         public void WriteInt16(short value) { }
@@ -355,7 +355,7 @@ namespace System.Reflection.Metadata
         public int ReadCompressedSignedInteger() { throw null; }
         public object ReadConstant(System.Reflection.Metadata.ConstantTypeCode typeCode) { throw null; }
         public System.DateTime ReadDateTime() { throw null; }
-        public System.Decimal ReadDecimal() { throw null; }
+        public decimal ReadDecimal() { throw null; }
         public double ReadDouble() { throw null; }
         public System.Guid ReadGuid() { throw null; }
         public short ReadInt16() { throw null; }
@@ -411,7 +411,7 @@ namespace System.Reflection.Metadata
         public void WriteCompressedSignedInteger(int value) { }
         public void WriteConstant(object value) { }
         public void WriteDateTime(System.DateTime value) { }
-        public void WriteDecimal(System.Decimal value) { }
+        public void WriteDecimal(decimal value) { }
         public void WriteDouble(double value) { }
         public void WriteGuid(System.Guid value) { }
         public void WriteInt16(short value) { }

@@ -252,7 +252,7 @@ namespace System.Buffers
     public static partial class BuffersExtensions
     {
         public static void CopyTo<T>(this in System.Buffers.ReadOnlySequence<T> source, System.Span<T> destination) { }
-        public static System.Nullable<System.SequencePosition> PositionOf<T>(this in System.Buffers.ReadOnlySequence<T> source, T value) where T : System.IEquatable<T> { throw null; }
+        public static System.SequencePosition? PositionOf<T>(this in System.Buffers.ReadOnlySequence<T> source, T value) where T : System.IEquatable<T> { throw null; }
         public static T[] ToArray<T>(this in System.Buffers.ReadOnlySequence<T> sequence) { throw null; }
         public static void Write<T>(this System.Buffers.IBufferWriter<T> writer, System.ReadOnlySpan<T> value) { }
     }
@@ -305,10 +305,10 @@ namespace System.Buffers
     }
     public enum OperationStatus
     {
-        DestinationTooSmall = 1,
         Done = 0,
-        InvalidData = 3,
+        DestinationTooSmall = 1,
         NeedMoreData = 2,
+        InvalidData = 3,
     }
     public abstract partial class ReadOnlySequenceSegment<T>
     {
