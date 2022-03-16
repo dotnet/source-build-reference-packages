@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 #set -x
+
+# Stop script if command returns non-zero exit code.
+set -e
+
 source="${BASH_SOURCE[0]}"
 
 DEFAULT_TFM=net6.0
