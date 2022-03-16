@@ -53,7 +53,12 @@
           @(PotentialCompileSrc);
           **\*.csproj;
           @(NuGetGeneratedMetadataFile);
-          "/>
+          "
+        Condition="'$(TextOnlyPackage)' != 'true'" />
+      <StructureFile
+        Include="**\*"
+        Exclude="$(MSBuildProjectFullPath)"
+        Condition="'$(TextOnlyPackage)' == 'true'"/>
 
       <StaticAssetFile
         Include="@(StructureFile)"
@@ -109,7 +114,6 @@
 
     <PropertyGroup>
       <NuspecFile>$(TFMPackTempOutputDir)@(NuspecFile)</NuspecFile>
-      <NuspecFile Condition="'$(PackNuspecInPlace)' == 'true'">@(NuspecFile)</NuspecFile>
     </PropertyGroup>
   </Target>
 
