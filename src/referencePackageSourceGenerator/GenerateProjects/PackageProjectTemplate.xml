@@ -3,6 +3,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>#TargetFrameworks#</TargetFrameworks>
+	<LangVersion>latest</LangVersion>
+	<NoWarn>8632</NoWarn>
     <NuspecFile>$(ArtifactsBinDir)#RelativePath#/#LowerCaseFileName#.nuspec</NuspecFile>#KeyFileTag##EnableImplicitReferencesTag#
   </PropertyGroup>
 
