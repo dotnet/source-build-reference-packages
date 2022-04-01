@@ -13,14 +13,14 @@
       <Sha>75a68216dbce20b32729cbb3c6ad76a9e1623b67</Sha>
       <SourceBuild RepoName="source-build-reference-packages" ManagedOnly="true" />
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="7.0.0-beta.22179.1">
+    <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="7.0.0-beta.22181.2">
       <Uri>https://github.com/dotnet/arcade</Uri>
-      <Sha>1527dc867ccb652def4c0f57fbd2ebbed3a94019</Sha>
+      <Sha>e0b311bcd81fc9e27bcf7715dcda62fa38dfa49a</Sha>
       <SourceBuild RepoName="arcade" ManagedOnly="true" />
     </Dependency>
-    <Dependency Name="Microsoft.SourceLink.GitHub" Version="1.2.0-beta-22174-02" CoherentParentDependency="Microsoft.DotNet.Arcade.Sdk">
+    <Dependency Name="Microsoft.SourceLink.GitHub" Version="1.2.0-beta-22179-02" CoherentParentDependency="Microsoft.DotNet.Arcade.Sdk">
       <Uri>https://github.com/dotnet/sourcelink</Uri>
-      <Sha>95b2fa6768c8a5791655326c3f49468127a22b73</Sha>
+      <Sha>00accce73f32b91a59d3be28c1f6993c3cd4df3e</Sha>
       <SourceBuild RepoName="sourcelink" ManagedOnly="true" />
     </Dependency>
     <Dependency Name="Microsoft.NETCore.ILAsm" Version="5.0.0-preview.4.20202.18">
