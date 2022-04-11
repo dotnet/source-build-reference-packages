@@ -42,6 +42,9 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <WarningsAsErrors></WarningsAsErrors>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    
+    <Nullable>Disable</Nullable>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -87,6 +90,12 @@
     <NoWarn>$(NoWarn);NU5131</NoWarn>
     <!-- Disable NU5048: continue to use deprecated 'PackageIconUrl'/'iconUrl' for now. -->
     <NoWarn>$(NoWarn);NU5048</NoWarn>
+    
+    <!--
+      Don't warn on CS8632 - The annotation for nullable reference types should only be used in code within a ‘#nullable’ annotations context.
+      The generated APIs may contain null annotated code, but we disable nullable project wide 
+    -->
+    <NoWarn>$(NoWarn);CS8632</NoWarn>
   </PropertyGroup>
 
 </Project>

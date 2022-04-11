@@ -2,7 +2,7 @@
   <Import Project="$([MSBuild]::GetPathOfFileAbove(Directory.Build.props, $(MSBuildThisFileDirectory)..))" />
 
   <PropertyGroup>
-    <PackNuspecInPlace>true</PackNuspecInPlace>
+    <TextOnlyPackage>true</TextOnlyPackage>
 
     <TargetFramework>netstandard2.0</TargetFramework>
     <IncludeBuildOutput>false</IncludeBuildOutput>

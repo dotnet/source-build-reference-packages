@@ -210,8 +210,14 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                     Directory.Delete(Path.GetDirectoryName(pd.SourceFileName));
                 }
 
-                if (updateSrcText && File.Exists(outputFilename))
+                if (updateSrcText)
                 {
+                    if (!File.Exists(outputFilename))
+                    {
+                        Log.LogError($"Source file '{outputFilename}' not found");
+                        return false;
+                    }
+
                     Log.LogMessage(MessageImportance.Low, $"Updating {outputFilename} with assembly version attributes");
                     Directory.CreateDirectory(codeArtifactsPath);
                     string srcText = File.ReadAllText(outputFilename);
