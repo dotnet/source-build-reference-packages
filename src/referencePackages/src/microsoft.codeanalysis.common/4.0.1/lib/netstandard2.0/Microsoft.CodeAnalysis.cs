@@ -22,7 +22,6 @@ using System.Security;
 [assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
 [assembly: AssemblyFileVersion("4.0.121.55815")]
 [assembly: AssemblyInformationalVersion("4.0.121.55815 built by: SOURCEBUILD")]
-[assembly: CLSCompliant(true)]
 [assembly: AssemblyMetadata("", "")]
 [assembly: AssemblyVersion("4.0.0.0")]
 
@@ -48,17 +47,18 @@ namespace Microsoft.CodeAnalysis
     {
         protected AdditionalText() { }
         public abstract string Path { get; }
-        public abstract Microsoft.CodeAnalysis.Text.SourceText GetText(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        public abstract Microsoft.CodeAnalysis.Text.SourceText? GetText(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
     }
     public sealed partial class AnalyzerConfig
     {
         internal AnalyzerConfig() { }
-        public static Microsoft.CodeAnalysis.AnalyzerConfig Parse(Microsoft.CodeAnalysis.Text.SourceText text, string pathToFile) { throw null; }
-        public static Microsoft.CodeAnalysis.AnalyzerConfig Parse(string text, string pathToFile) { throw null; }
+        public static Microsoft.CodeAnalysis.AnalyzerConfig Parse(Microsoft.CodeAnalysis.Text.SourceText text, string? pathToFile) { throw null; }
+        public static Microsoft.CodeAnalysis.AnalyzerConfig Parse(string text, string? pathToFile) { throw null; }
     }
     public readonly partial struct AnalyzerConfigOptionsResult
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public System.Collections.Immutable.ImmutableDictionary<string, string> AnalyzerOptions { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostic> Diagnostics { get { throw null; } }
         public System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> TreeOptions { get { throw null; } }
@@ -81,7 +81,7 @@ namespace Microsoft.CodeAnalysis
     }
     public sealed partial class AssemblyIdentity : System.IEquatable<Microsoft.CodeAnalysis.AssemblyIdentity>
     {
-        public AssemblyIdentity(string name, System.Version version = null, string cultureName = null, System.Collections.Immutable.ImmutableArray<byte> publicKeyOrToken = default(System.Collections.Immutable.ImmutableArray<byte>), bool hasPublicKey = false, bool isRetargetable = false, System.Reflection.AssemblyContentType contentType = System.Reflection.AssemblyContentType.Default) { }
+        public AssemblyIdentity(string? name, System.Version? version = null, string? cultureName = null, System.Collections.Immutable.ImmutableArray<byte> publicKeyOrToken = default(System.Collections.Immutable.ImmutableArray<byte>), bool hasPublicKey = false, bool isRetargetable = false, System.Reflection.AssemblyContentType contentType = System.Reflection.AssemblyContentType.Default) { }
         public System.Reflection.AssemblyContentType ContentType { get { throw null; } }
         public string CultureName { get { throw null; } }
         public System.Reflection.AssemblyNameFlags Flags { get { throw null; } }
@@ -92,16 +92,16 @@ namespace Microsoft.CodeAnalysis
         public System.Collections.Immutable.ImmutableArray<byte> PublicKey { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<byte> PublicKeyToken { get { throw null; } }
         public System.Version Version { get { throw null; } }
-        public bool Equals(Microsoft.CodeAnalysis.AssemblyIdentity obj) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public bool Equals(Microsoft.CodeAnalysis.AssemblyIdentity? obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public static Microsoft.CodeAnalysis.AssemblyIdentity FromAssemblyDefinition(System.Reflection.Assembly assembly) { throw null; }
         public string GetDisplayName(bool fullKey = false) { throw null; }
         public override int GetHashCode() { throw null; }
-        public static bool operator ==(Microsoft.CodeAnalysis.AssemblyIdentity left, Microsoft.CodeAnalysis.AssemblyIdentity right) { throw null; }
-        public static bool operator !=(Microsoft.CodeAnalysis.AssemblyIdentity left, Microsoft.CodeAnalysis.AssemblyIdentity right) { throw null; }
+        public static bool operator ==(Microsoft.CodeAnalysis.AssemblyIdentity? left, Microsoft.CodeAnalysis.AssemblyIdentity? right) { throw null; }
+        public static bool operator !=(Microsoft.CodeAnalysis.AssemblyIdentity? left, Microsoft.CodeAnalysis.AssemblyIdentity? right) { throw null; }
         public override string ToString() { throw null; }
-        public static bool TryParseDisplayName(string displayName, out Microsoft.CodeAnalysis.AssemblyIdentity identity) { throw null; }
-        public static bool TryParseDisplayName(string displayName, out Microsoft.CodeAnalysis.AssemblyIdentity identity, out Microsoft.CodeAnalysis.AssemblyIdentityParts parts) { throw null; }
+        public static bool TryParseDisplayName(string displayName, out Microsoft.CodeAnalysis.AssemblyIdentity? identity) { throw null; }
+        public static bool TryParseDisplayName(string displayName, out Microsoft.CodeAnalysis.AssemblyIdentity? identity, out Microsoft.CodeAnalysis.AssemblyIdentityParts parts) { throw null; }
     }
     public partial class AssemblyIdentityComparer
     {
@@ -152,17 +152,17 @@ namespace Microsoft.CodeAnalysis
         public static Microsoft.CodeAnalysis.AssemblyMetadata CreateFromStream(System.IO.Stream peStream, System.Reflection.PortableExecutable.PEStreamOptions options) { throw null; }
         public override void Dispose() { }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ModuleMetadata> GetModules() { throw null; }
-        public Microsoft.CodeAnalysis.PortableExecutableReference GetReference(Microsoft.CodeAnalysis.DocumentationProvider documentation = null, System.Collections.Immutable.ImmutableArray<string> aliases = default(System.Collections.Immutable.ImmutableArray<string>), bool embedInteropTypes = false, string filePath = null, string display = null) { throw null; }
+        public Microsoft.CodeAnalysis.PortableExecutableReference GetReference(Microsoft.CodeAnalysis.DocumentationProvider? documentation = null, System.Collections.Immutable.ImmutableArray<string> aliases = default(System.Collections.Immutable.ImmutableArray<string>), bool embedInteropTypes = false, string? filePath = null, string? display = null) { throw null; }
     }
     public abstract partial class AttributeData
     {
         protected AttributeData() { }
-        public Microsoft.CodeAnalysis.SyntaxReference ApplicationSyntaxReference { get { throw null; } }
-        public Microsoft.CodeAnalysis.INamedTypeSymbol AttributeClass { get { throw null; } }
-        public Microsoft.CodeAnalysis.IMethodSymbol AttributeConstructor { get { throw null; } }
-        protected abstract Microsoft.CodeAnalysis.SyntaxReference CommonApplicationSyntaxReference { get; }
-        protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol CommonAttributeClass { get; }
-        protected abstract Microsoft.CodeAnalysis.IMethodSymbol CommonAttributeConstructor { get; }
+        public Microsoft.CodeAnalysis.SyntaxReference? ApplicationSyntaxReference { get { throw null; } }
+        public Microsoft.CodeAnalysis.INamedTypeSymbol? AttributeClass { get { throw null; } }
+        public Microsoft.CodeAnalysis.IMethodSymbol? AttributeConstructor { get { throw null; } }
+        protected abstract Microsoft.CodeAnalysis.SyntaxReference? CommonApplicationSyntaxReference { get; }
+        protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol? CommonAttributeClass { get; }
+        protected abstract Microsoft.CodeAnalysis.IMethodSymbol? CommonAttributeConstructor { get; }
         protected internal abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.TypedConstant> CommonConstructorArguments { get; }
         protected internal abstract System.Collections.Immutable.ImmutableArray<System.Collections.Generic.KeyValuePair<string, Microsoft.CodeAnalysis.TypedConstant>> CommonNamedArguments { get; }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.TypedConstant> ConstructorArguments { get { throw null; } }
@@ -199,7 +199,7 @@ namespace Microsoft.CodeAnalysis
         public static int GetHashCode(string value) { throw null; }
         public static bool StartsWith(string value, string possibleStart) { throw null; }
         public static char ToLower(char c) { throw null; }
-        public static string ToLower(string value) { throw null; }
+        public static string? ToLower(string? value) { throw null; }
         public static void ToLower(System.Text.StringBuilder builder) { }
     }
     public readonly partial struct ChildSyntaxList : System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNodeOrToken>, System.Collections.Generic.IReadOnlyCollection<Microsoft.CodeAnalysis.SyntaxNodeOrToken>, System.Collections.Generic.IReadOnlyList<Microsoft.CodeAnalysis.SyntaxNodeOrToken>, System.Collections.IEnumerable, System.IEquatable<Microsoft.CodeAnalysis.ChildSyntaxList>
@@ -210,7 +210,7 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.SyntaxNodeOrToken this[int index] { get { throw null; } }
         public bool Any() { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.ChildSyntaxList other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxNodeOrToken First() { throw null; }
         public Microsoft.CodeAnalysis.ChildSyntaxList.Enumerator GetEnumerator() { throw null; }
         public override int GetHashCode() { throw null; }
@@ -233,7 +233,7 @@ namespace Microsoft.CodeAnalysis
             private readonly object _dummy;
             private readonly int _dummyPrimitive;
             public bool Equals(Microsoft.CodeAnalysis.ChildSyntaxList.Reversed other) { throw null; }
-            public override bool Equals(object obj) { throw null; }
+            public override bool Equals(object? obj) { throw null; }
             public Microsoft.CodeAnalysis.ChildSyntaxList.Reversed.Enumerator GetEnumerator() { throw null; }
             public override int GetHashCode() { throw null; }
             System.Collections.Generic.IEnumerator<Microsoft.CodeAnalysis.SyntaxNodeOrToken> System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNodeOrToken>.GetEnumerator() { throw null; }
@@ -251,10 +251,11 @@ namespace Microsoft.CodeAnalysis
     public partial struct CommandLineAnalyzerReference : System.IEquatable<Microsoft.CodeAnalysis.CommandLineAnalyzerReference>
     {
         private object _dummy;
+        private int _dummyPrimitive;
         public CommandLineAnalyzerReference(string path) { throw null; }
         public string FilePath { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.CommandLineAnalyzerReference other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
     }
     public abstract partial class CommandLineArguments
@@ -263,53 +264,53 @@ namespace Microsoft.CodeAnalysis
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CommandLineSourceFile> AdditionalFiles { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<string> AnalyzerConfigPaths { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CommandLineAnalyzerReference> AnalyzerReferences { get { throw null; } }
-        public string AppConfigPath { get { throw null; } }
-        public string BaseDirectory { get { throw null; } }
+        public string? AppConfigPath { get { throw null; } }
+        public string? BaseDirectory { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.SourceHashAlgorithm ChecksumAlgorithm { get { throw null; } }
-        public string CompilationName { get { throw null; } }
+        public string? CompilationName { get { throw null; } }
         public Microsoft.CodeAnalysis.CompilationOptions CompilationOptions { get { throw null; } }
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CompilationOptionsCore { get; }
         public bool DisplayHelp { get { throw null; } }
         public bool DisplayLangVersions { get { throw null; } }
         public bool DisplayLogo { get { throw null; } }
         public bool DisplayVersion { get { throw null; } }
-        public string DocumentationPath { get { throw null; } }
+        public string? DocumentationPath { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CommandLineSourceFile> EmbeddedFiles { get { throw null; } }
         public Microsoft.CodeAnalysis.Emit.EmitOptions EmitOptions { get { throw null; } }
         public bool EmitPdb { get { throw null; } }
         public bool EmitPdbFile { get { throw null; } }
-        public System.Text.Encoding Encoding { get { throw null; } }
-        public Microsoft.CodeAnalysis.ErrorLogOptions ErrorLogOptions { get { throw null; } }
-        public string ErrorLogPath { get { throw null; } }
+        public System.Text.Encoding? Encoding { get { throw null; } }
+        public Microsoft.CodeAnalysis.ErrorLogOptions? ErrorLogOptions { get { throw null; } }
+        public string? ErrorLogPath { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostic> Errors { get { throw null; } }
-        public string GeneratedFilesOutputDirectory { get { throw null; } }
+        public string? GeneratedFilesOutputDirectory { get { throw null; } }
         public bool InteractiveMode { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<string> KeyFileSearchPaths { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ResourceDescription> ManifestResources { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CommandLineReference> MetadataReferences { get { throw null; } }
         public bool NoWin32Manifest { get { throw null; } }
         public string OutputDirectory { get { throw null; } }
-        public string OutputFileName { get { throw null; } }
-        public string OutputRefFilePath { get { throw null; } }
+        public string? OutputFileName { get { throw null; } }
+        public string? OutputRefFilePath { get { throw null; } }
         public Microsoft.CodeAnalysis.ParseOptions ParseOptions { get { throw null; } }
         protected abstract Microsoft.CodeAnalysis.ParseOptions ParseOptionsCore { get; }
         public System.Collections.Immutable.ImmutableArray<System.Collections.Generic.KeyValuePair<string, string>> PathMap { get { throw null; } }
-        public string PdbPath { get { throw null; } }
-        public System.Globalization.CultureInfo PreferredUILang { get { throw null; } }
+        public string? PdbPath { get { throw null; } }
+        public System.Globalization.CultureInfo? PreferredUILang { get { throw null; } }
         public bool PrintFullPaths { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<string> ReferencePaths { get { throw null; } }
         public bool ReportAnalyzer { get { throw null; } }
-        public string RuleSetPath { get { throw null; } }
+        public string? RuleSetPath { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<string> ScriptArguments { get { throw null; } }
         public bool SkipAnalyzers { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CommandLineSourceFile> SourceFiles { get { throw null; } }
-        public string SourceLink { get { throw null; } }
+        public string? SourceLink { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<string> SourcePaths { get { throw null; } }
-        public string TouchedFilesPath { get { throw null; } }
+        public string? TouchedFilesPath { get { throw null; } }
         public bool Utf8Output { get { throw null; } }
-        public string Win32Icon { get { throw null; } }
-        public string Win32Manifest { get { throw null; } }
-        public string Win32ResourceFile { get { throw null; } }
+        public string? Win32Icon { get { throw null; } }
+        public string? Win32Manifest { get { throw null; } }
+        public string? Win32ResourceFile { get { throw null; } }
         public string GetOutputFilePath(string outputFileName) { throw null; }
         public string GetPdbFilePath(string outputFileName) { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference> ResolveAnalyzerReferences(Microsoft.CodeAnalysis.IAnalyzerAssemblyLoader analyzerLoader) { throw null; }
@@ -320,18 +321,19 @@ namespace Microsoft.CodeAnalysis
         internal CommandLineParser() { }
         protected abstract string RegularFileExtension { get; }
         protected abstract string ScriptFileExtension { get; }
-        public Microsoft.CodeAnalysis.CommandLineArguments Parse(System.Collections.Generic.IEnumerable<string> args, string baseDirectory, string sdkDirectory, string additionalReferenceDirectories) { throw null; }
+        public Microsoft.CodeAnalysis.CommandLineArguments Parse(System.Collections.Generic.IEnumerable<string> args, string baseDirectory, string? sdkDirectory, string? additionalReferenceDirectories) { throw null; }
         protected System.Collections.Immutable.ImmutableArray<System.Collections.Generic.KeyValuePair<string, string>> ParsePathMap(string pathMap, System.Collections.Generic.IList<Microsoft.CodeAnalysis.Diagnostic> errors) { throw null; }
         public static System.Collections.Generic.IEnumerable<string> SplitCommandLineIntoArguments(string commandLine, bool removeHashComments) { throw null; }
     }
     public partial struct CommandLineReference : System.IEquatable<Microsoft.CodeAnalysis.CommandLineReference>
     {
         private object _dummy;
+        private int _dummyPrimitive;
         public CommandLineReference(string reference, Microsoft.CodeAnalysis.MetadataReferenceProperties properties) { throw null; }
         public Microsoft.CodeAnalysis.MetadataReferenceProperties Properties { get { throw null; } }
         public string Reference { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.CommandLineReference other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
     }
     public partial struct CommandLineSourceFile
@@ -349,14 +351,14 @@ namespace Microsoft.CodeAnalysis
         internal Compilation() { }
         protected readonly System.Collections.Generic.IReadOnlyDictionary<string, string> _features;
         public Microsoft.CodeAnalysis.IAssemblySymbol Assembly { get { throw null; } }
-        public string AssemblyName { get { throw null; } }
+        public string? AssemblyName { get { throw null; } }
         protected abstract Microsoft.CodeAnalysis.IAssemblySymbol CommonAssembly { get; }
         protected abstract Microsoft.CodeAnalysis.ITypeSymbol CommonDynamicType { get; }
         protected abstract Microsoft.CodeAnalysis.INamespaceSymbol CommonGlobalNamespace { get; }
         protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol CommonObjectType { get; }
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonOptions { get; }
-        protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol CommonScriptClass { get; }
-        protected abstract Microsoft.CodeAnalysis.ITypeSymbol CommonScriptGlobalsType { get; }
+        protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol? CommonScriptClass { get; }
+        protected abstract Microsoft.CodeAnalysis.ITypeSymbol? CommonScriptGlobalsType { get; }
         protected abstract Microsoft.CodeAnalysis.IModuleSymbol CommonSourceModule { get; }
         protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.SyntaxTree> CommonSyntaxTrees { get; }
         public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.MetadataReference> DirectiveReferences { get; }
@@ -369,8 +371,8 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.CompilationOptions Options { get { throw null; } }
         public abstract System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.AssemblyIdentity> ReferencedAssemblyNames { get; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.MetadataReference> References { get { throw null; } }
-        public Microsoft.CodeAnalysis.INamedTypeSymbol ScriptClass { get { throw null; } }
-        public Microsoft.CodeAnalysis.ScriptCompilationInfo ScriptCompilationInfo { get { throw null; } }
+        public Microsoft.CodeAnalysis.INamedTypeSymbol? ScriptClass { get { throw null; } }
+        public Microsoft.CodeAnalysis.ScriptCompilationInfo? ScriptCompilationInfo { get { throw null; } }
         public Microsoft.CodeAnalysis.IModuleSymbol SourceModule { get { throw null; } }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTree> SyntaxTrees { get { throw null; } }
         public Microsoft.CodeAnalysis.Compilation AddReferences(params Microsoft.CodeAnalysis.MetadataReference[] references) { throw null; }
@@ -378,36 +380,36 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.Compilation AddSyntaxTrees(params Microsoft.CodeAnalysis.SyntaxTree[] trees) { throw null; }
         public Microsoft.CodeAnalysis.Compilation AddSyntaxTrees(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTree> trees) { throw null; }
         protected abstract void AppendDefaultVersionResource(System.IO.Stream resourceStream);
-        protected static void CheckTupleElementLocations(int cardinality, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location> elementLocations) { }
-        protected static System.Collections.Immutable.ImmutableArray<string> CheckTupleElementNames(int cardinality, System.Collections.Immutable.ImmutableArray<string> elementNames) { throw null; }
+        protected static void CheckTupleElementLocations(int cardinality, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location?> elementLocations) { }
+        protected static System.Collections.Immutable.ImmutableArray<string?> CheckTupleElementNames(int cardinality, System.Collections.Immutable.ImmutableArray<string?> elementNames) { throw null; }
         protected static void CheckTupleElementNullableAnnotations(int cardinality, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> elementNullableAnnotations) { }
         public abstract Microsoft.CodeAnalysis.Operations.CommonConversion ClassifyCommonConversion(Microsoft.CodeAnalysis.ITypeSymbol source, Microsoft.CodeAnalysis.ITypeSymbol destination);
         public Microsoft.CodeAnalysis.Compilation Clone() { throw null; }
         protected abstract Microsoft.CodeAnalysis.Compilation CommonAddSyntaxTrees(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTree> trees);
-        protected Microsoft.CodeAnalysis.INamedTypeSymbol CommonBindScriptClass() { throw null; }
+        protected Microsoft.CodeAnalysis.INamedTypeSymbol? CommonBindScriptClass() { throw null; }
         protected abstract Microsoft.CodeAnalysis.Compilation CommonClone();
-        protected abstract bool CommonContainsSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree syntaxTree);
+        protected abstract bool CommonContainsSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree? syntaxTree);
         protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol CommonCreateAnonymousTypeSymbol(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> memberTypes, System.Collections.Immutable.ImmutableArray<string> memberNames, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location> memberLocations, System.Collections.Immutable.ImmutableArray<bool> memberIsReadOnly, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> memberNullableAnnotations);
         protected abstract Microsoft.CodeAnalysis.IArrayTypeSymbol CommonCreateArrayTypeSymbol(Microsoft.CodeAnalysis.ITypeSymbol elementType, int rank, Microsoft.CodeAnalysis.NullableAnnotation elementNullableAnnotation);
         protected abstract Microsoft.CodeAnalysis.INamespaceSymbol CommonCreateErrorNamespaceSymbol(Microsoft.CodeAnalysis.INamespaceSymbol container, string name);
-        protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol CommonCreateErrorTypeSymbol(Microsoft.CodeAnalysis.INamespaceOrTypeSymbol container, string name, int arity);
+        protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol CommonCreateErrorTypeSymbol(Microsoft.CodeAnalysis.INamespaceOrTypeSymbol? container, string name, int arity);
         protected abstract Microsoft.CodeAnalysis.IFunctionPointerTypeSymbol CommonCreateFunctionPointerTypeSymbol(Microsoft.CodeAnalysis.ITypeSymbol returnType, Microsoft.CodeAnalysis.RefKind returnRefKind, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> parameterTypes, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.RefKind> parameterRefKinds, System.Reflection.Metadata.SignatureCallingConvention callingConvention, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.INamedTypeSymbol> callingConventionTypes);
         protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol CommonCreateNativeIntegerTypeSymbol(bool signed);
         protected abstract Microsoft.CodeAnalysis.IPointerTypeSymbol CommonCreatePointerTypeSymbol(Microsoft.CodeAnalysis.ITypeSymbol elementType);
-        protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol CommonCreateTupleTypeSymbol(Microsoft.CodeAnalysis.INamedTypeSymbol underlyingType, System.Collections.Immutable.ImmutableArray<string> elementNames, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location> elementLocations, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> elementNullableAnnotations);
-        protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol CommonCreateTupleTypeSymbol(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> elementTypes, System.Collections.Immutable.ImmutableArray<string> elementNames, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location> elementLocations, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> elementNullableAnnotations);
-        protected abstract Microsoft.CodeAnalysis.ISymbol CommonGetAssemblyOrModuleSymbol(Microsoft.CodeAnalysis.MetadataReference reference);
-        protected abstract Microsoft.CodeAnalysis.INamespaceSymbol CommonGetCompilationNamespace(Microsoft.CodeAnalysis.INamespaceSymbol namespaceSymbol);
-        protected abstract Microsoft.CodeAnalysis.IMethodSymbol CommonGetEntryPoint(System.Threading.CancellationToken cancellationToken);
+        protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol CommonCreateTupleTypeSymbol(Microsoft.CodeAnalysis.INamedTypeSymbol underlyingType, System.Collections.Immutable.ImmutableArray<string?> elementNames, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location?> elementLocations, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> elementNullableAnnotations);
+        protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol CommonCreateTupleTypeSymbol(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> elementTypes, System.Collections.Immutable.ImmutableArray<string?> elementNames, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location?> elementLocations, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> elementNullableAnnotations);
+        protected abstract Microsoft.CodeAnalysis.ISymbol? CommonGetAssemblyOrModuleSymbol(Microsoft.CodeAnalysis.MetadataReference reference);
+        protected abstract Microsoft.CodeAnalysis.INamespaceSymbol? CommonGetCompilationNamespace(Microsoft.CodeAnalysis.INamespaceSymbol namespaceSymbol);
+        protected abstract Microsoft.CodeAnalysis.IMethodSymbol? CommonGetEntryPoint(System.Threading.CancellationToken cancellationToken);
         protected abstract Microsoft.CodeAnalysis.SemanticModel CommonGetSemanticModel(Microsoft.CodeAnalysis.SyntaxTree syntaxTree, bool ignoreAccessibility);
-        protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol CommonGetTypeByMetadataName(string metadataName);
+        protected abstract Microsoft.CodeAnalysis.INamedTypeSymbol? CommonGetTypeByMetadataName(string metadataName);
         protected abstract Microsoft.CodeAnalysis.Compilation CommonRemoveAllSyntaxTrees();
         protected abstract Microsoft.CodeAnalysis.Compilation CommonRemoveSyntaxTrees(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTree> trees);
         protected abstract Microsoft.CodeAnalysis.Compilation CommonReplaceSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree oldTree, Microsoft.CodeAnalysis.SyntaxTree newTree);
-        protected abstract Microsoft.CodeAnalysis.Compilation CommonWithAssemblyName(string outputName);
+        protected abstract Microsoft.CodeAnalysis.Compilation CommonWithAssemblyName(string? outputName);
         protected abstract Microsoft.CodeAnalysis.Compilation CommonWithOptions(Microsoft.CodeAnalysis.CompilationOptions options);
         protected abstract Microsoft.CodeAnalysis.Compilation CommonWithReferences(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.MetadataReference> newReferences);
-        protected abstract Microsoft.CodeAnalysis.Compilation CommonWithScriptCompilationInfo(Microsoft.CodeAnalysis.ScriptCompilationInfo info);
+        protected abstract Microsoft.CodeAnalysis.Compilation CommonWithScriptCompilationInfo(Microsoft.CodeAnalysis.ScriptCompilationInfo? info);
         public abstract bool ContainsSymbolsWithName(System.Func<string, bool> predicate, Microsoft.CodeAnalysis.SymbolFilter filter = Microsoft.CodeAnalysis.SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         public abstract bool ContainsSymbolsWithName(string name, Microsoft.CodeAnalysis.SymbolFilter filter = Microsoft.CodeAnalysis.SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         public bool ContainsSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree syntaxTree) { throw null; }
@@ -415,58 +417,58 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.INamedTypeSymbol CreateAnonymousTypeSymbol(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> memberTypes, System.Collections.Immutable.ImmutableArray<string> memberNames, System.Collections.Immutable.ImmutableArray<bool> memberIsReadOnly = default(System.Collections.Immutable.ImmutableArray<bool>), System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location> memberLocations = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location>), System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> memberNullableAnnotations = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation>)) { throw null; }
         public Microsoft.CodeAnalysis.IArrayTypeSymbol CreateArrayTypeSymbol(Microsoft.CodeAnalysis.ITypeSymbol elementType, int rank) { throw null; }
         public Microsoft.CodeAnalysis.IArrayTypeSymbol CreateArrayTypeSymbol(Microsoft.CodeAnalysis.ITypeSymbol elementType, int rank = 1, Microsoft.CodeAnalysis.NullableAnnotation elementNullableAnnotation = Microsoft.CodeAnalysis.NullableAnnotation.None) { throw null; }
-        public System.IO.Stream CreateDefaultWin32Resources(bool versionResource, bool noManifest, System.IO.Stream manifestContents, System.IO.Stream iconInIcoFormat) { throw null; }
+        public System.IO.Stream CreateDefaultWin32Resources(bool versionResource, bool noManifest, System.IO.Stream? manifestContents, System.IO.Stream? iconInIcoFormat) { throw null; }
         public Microsoft.CodeAnalysis.INamespaceSymbol CreateErrorNamespaceSymbol(Microsoft.CodeAnalysis.INamespaceSymbol container, string name) { throw null; }
-        public Microsoft.CodeAnalysis.INamedTypeSymbol CreateErrorTypeSymbol(Microsoft.CodeAnalysis.INamespaceOrTypeSymbol container, string name, int arity) { throw null; }
+        public Microsoft.CodeAnalysis.INamedTypeSymbol CreateErrorTypeSymbol(Microsoft.CodeAnalysis.INamespaceOrTypeSymbol? container, string name, int arity) { throw null; }
         public Microsoft.CodeAnalysis.IFunctionPointerTypeSymbol CreateFunctionPointerTypeSymbol(Microsoft.CodeAnalysis.ITypeSymbol returnType, Microsoft.CodeAnalysis.RefKind returnRefKind, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> parameterTypes, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.RefKind> parameterRefKinds, System.Reflection.Metadata.SignatureCallingConvention callingConvention = System.Reflection.Metadata.SignatureCallingConvention.Default, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.INamedTypeSymbol> callingConventionTypes = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.INamedTypeSymbol>)) { throw null; }
         public Microsoft.CodeAnalysis.INamedTypeSymbol CreateNativeIntegerTypeSymbol(bool signed) { throw null; }
         public Microsoft.CodeAnalysis.IPointerTypeSymbol CreatePointerTypeSymbol(Microsoft.CodeAnalysis.ITypeSymbol pointedAtType) { throw null; }
-        public Microsoft.CodeAnalysis.INamedTypeSymbol CreateTupleTypeSymbol(Microsoft.CodeAnalysis.INamedTypeSymbol underlyingType, System.Collections.Immutable.ImmutableArray<string> elementNames, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location> elementLocations) { throw null; }
-        public Microsoft.CodeAnalysis.INamedTypeSymbol CreateTupleTypeSymbol(Microsoft.CodeAnalysis.INamedTypeSymbol underlyingType, System.Collections.Immutable.ImmutableArray<string> elementNames = default(System.Collections.Immutable.ImmutableArray<string>), System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location> elementLocations = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location>), System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> elementNullableAnnotations = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation>)) { throw null; }
-        public Microsoft.CodeAnalysis.INamedTypeSymbol CreateTupleTypeSymbol(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> elementTypes, System.Collections.Immutable.ImmutableArray<string> elementNames, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location> elementLocations) { throw null; }
-        public Microsoft.CodeAnalysis.INamedTypeSymbol CreateTupleTypeSymbol(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> elementTypes, System.Collections.Immutable.ImmutableArray<string> elementNames = default(System.Collections.Immutable.ImmutableArray<string>), System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location> elementLocations = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location>), System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> elementNullableAnnotations = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation>)) { throw null; }
-        public Microsoft.CodeAnalysis.Emit.EmitResult Emit(System.IO.Stream peStream, System.IO.Stream pdbStream = null, System.IO.Stream xmlDocumentationStream = null, System.IO.Stream win32Resources = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ResourceDescription> manifestResources = null, Microsoft.CodeAnalysis.Emit.EmitOptions options = null, Microsoft.CodeAnalysis.IMethodSymbol debugEntryPoint = null, System.IO.Stream sourceLinkStream = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.EmbeddedText> embeddedTexts = null, System.IO.Stream metadataPEStream = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
-        public Microsoft.CodeAnalysis.Emit.EmitResult Emit(System.IO.Stream peStream, System.IO.Stream pdbStream, System.IO.Stream xmlDocumentationStream, System.IO.Stream win32Resources, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ResourceDescription> manifestResources, Microsoft.CodeAnalysis.Emit.EmitOptions options, Microsoft.CodeAnalysis.IMethodSymbol debugEntryPoint, System.IO.Stream sourceLinkStream, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.EmbeddedText> embeddedTexts, System.Threading.CancellationToken cancellationToken) { throw null; }
+        public Microsoft.CodeAnalysis.INamedTypeSymbol CreateTupleTypeSymbol(Microsoft.CodeAnalysis.INamedTypeSymbol underlyingType, System.Collections.Immutable.ImmutableArray<string?> elementNames, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location?> elementLocations) { throw null; }
+        public Microsoft.CodeAnalysis.INamedTypeSymbol CreateTupleTypeSymbol(Microsoft.CodeAnalysis.INamedTypeSymbol underlyingType, System.Collections.Immutable.ImmutableArray<string?> elementNames = default(System.Collections.Immutable.ImmutableArray<string>), System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location?> elementLocations = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location>), System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> elementNullableAnnotations = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation>)) { throw null; }
+        public Microsoft.CodeAnalysis.INamedTypeSymbol CreateTupleTypeSymbol(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> elementTypes, System.Collections.Immutable.ImmutableArray<string?> elementNames, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location?> elementLocations) { throw null; }
+        public Microsoft.CodeAnalysis.INamedTypeSymbol CreateTupleTypeSymbol(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> elementTypes, System.Collections.Immutable.ImmutableArray<string?> elementNames = default(System.Collections.Immutable.ImmutableArray<string>), System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location?> elementLocations = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Location>), System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> elementNullableAnnotations = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation>)) { throw null; }
+        public Microsoft.CodeAnalysis.Emit.EmitResult Emit(System.IO.Stream peStream, System.IO.Stream? pdbStream = null, System.IO.Stream? xmlDocumentationStream = null, System.IO.Stream? win32Resources = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ResourceDescription>? manifestResources = null, Microsoft.CodeAnalysis.Emit.EmitOptions? options = null, Microsoft.CodeAnalysis.IMethodSymbol? debugEntryPoint = null, System.IO.Stream? sourceLinkStream = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.EmbeddedText>? embeddedTexts = null, System.IO.Stream? metadataPEStream = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
+        public Microsoft.CodeAnalysis.Emit.EmitResult Emit(System.IO.Stream peStream, System.IO.Stream? pdbStream, System.IO.Stream? xmlDocumentationStream, System.IO.Stream? win32Resources, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ResourceDescription>? manifestResources, Microsoft.CodeAnalysis.Emit.EmitOptions options, Microsoft.CodeAnalysis.IMethodSymbol? debugEntryPoint, System.IO.Stream? sourceLinkStream, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.EmbeddedText>? embeddedTexts, System.Threading.CancellationToken cancellationToken) { throw null; }
         public Microsoft.CodeAnalysis.Emit.EmitResult Emit(System.IO.Stream peStream, System.IO.Stream pdbStream, System.IO.Stream xmlDocumentationStream, System.IO.Stream win32Resources, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ResourceDescription> manifestResources, Microsoft.CodeAnalysis.Emit.EmitOptions options, Microsoft.CodeAnalysis.IMethodSymbol debugEntryPoint, System.Threading.CancellationToken cancellationToken) { throw null; }
-        public Microsoft.CodeAnalysis.Emit.EmitResult Emit(System.IO.Stream peStream, System.IO.Stream pdbStream, System.IO.Stream xmlDocumentationStream, System.IO.Stream win32Resources, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ResourceDescription> manifestResources, Microsoft.CodeAnalysis.Emit.EmitOptions options, System.Threading.CancellationToken cancellationToken) { throw null; }
+        public Microsoft.CodeAnalysis.Emit.EmitResult Emit(System.IO.Stream peStream, System.IO.Stream? pdbStream, System.IO.Stream? xmlDocumentationStream, System.IO.Stream? win32Resources, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ResourceDescription>? manifestResources, Microsoft.CodeAnalysis.Emit.EmitOptions options, System.Threading.CancellationToken cancellationToken) { throw null; }
         [System.ObsoleteAttribute("UpdatedMethods is now part of EmitDifferenceResult, so you should use an overload that doesn't take it.")]
         public Microsoft.CodeAnalysis.Emit.EmitDifferenceResult EmitDifference(Microsoft.CodeAnalysis.Emit.EmitBaseline baseline, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Emit.SemanticEdit> edits, System.Func<Microsoft.CodeAnalysis.ISymbol, bool> isAddedSymbol, System.IO.Stream metadataStream, System.IO.Stream ilStream, System.IO.Stream pdbStream, System.Collections.Generic.ICollection<System.Reflection.Metadata.MethodDefinitionHandle> updatedMethods, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         public Microsoft.CodeAnalysis.Emit.EmitDifferenceResult EmitDifference(Microsoft.CodeAnalysis.Emit.EmitBaseline baseline, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Emit.SemanticEdit> edits, System.Func<Microsoft.CodeAnalysis.ISymbol, bool> isAddedSymbol, System.IO.Stream metadataStream, System.IO.Stream ilStream, System.IO.Stream pdbStream, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         [System.ObsoleteAttribute("UpdatedMethods is now part of EmitDifferenceResult, so you should use an overload that doesn't take it.")]
         public Microsoft.CodeAnalysis.Emit.EmitDifferenceResult EmitDifference(Microsoft.CodeAnalysis.Emit.EmitBaseline baseline, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Emit.SemanticEdit> edits, System.IO.Stream metadataStream, System.IO.Stream ilStream, System.IO.Stream pdbStream, System.Collections.Generic.ICollection<System.Reflection.Metadata.MethodDefinitionHandle> updatedMethods, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
-        public Microsoft.CodeAnalysis.ISymbol GetAssemblyOrModuleSymbol(Microsoft.CodeAnalysis.MetadataReference reference) { throw null; }
-        public Microsoft.CodeAnalysis.INamespaceSymbol GetCompilationNamespace(Microsoft.CodeAnalysis.INamespaceSymbol namespaceSymbol) { throw null; }
+        public Microsoft.CodeAnalysis.ISymbol? GetAssemblyOrModuleSymbol(Microsoft.CodeAnalysis.MetadataReference reference) { throw null; }
+        public Microsoft.CodeAnalysis.INamespaceSymbol? GetCompilationNamespace(Microsoft.CodeAnalysis.INamespaceSymbol namespaceSymbol) { throw null; }
         public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostic> GetDeclarationDiagnostics(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostic> GetDiagnostics(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        public Microsoft.CodeAnalysis.IMethodSymbol GetEntryPoint(System.Threading.CancellationToken cancellationToken) { throw null; }
-        public Microsoft.CodeAnalysis.MetadataReference GetMetadataReference(Microsoft.CodeAnalysis.IAssemblySymbol assemblySymbol) { throw null; }
+        public Microsoft.CodeAnalysis.IMethodSymbol? GetEntryPoint(System.Threading.CancellationToken cancellationToken) { throw null; }
+        public Microsoft.CodeAnalysis.MetadataReference? GetMetadataReference(Microsoft.CodeAnalysis.IAssemblySymbol assemblySymbol) { throw null; }
         public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostic> GetMethodBodyDiagnostics(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostic> GetParseDiagnostics(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        public static string GetRequiredLanguageVersion(Microsoft.CodeAnalysis.Diagnostic diagnostic) { throw null; }
+        public static string? GetRequiredLanguageVersion(Microsoft.CodeAnalysis.Diagnostic diagnostic) { throw null; }
         public Microsoft.CodeAnalysis.SemanticModel GetSemanticModel(Microsoft.CodeAnalysis.SyntaxTree syntaxTree, bool ignoreAccessibility = false) { throw null; }
         public Microsoft.CodeAnalysis.INamedTypeSymbol GetSpecialType(Microsoft.CodeAnalysis.SpecialType specialType) { throw null; }
         public abstract System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ISymbol> GetSymbolsWithName(System.Func<string, bool> predicate, Microsoft.CodeAnalysis.SymbolFilter filter = Microsoft.CodeAnalysis.SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         public abstract System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ISymbol> GetSymbolsWithName(string name, Microsoft.CodeAnalysis.SymbolFilter filter = Microsoft.CodeAnalysis.SymbolFilter.TypeAndMember, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        public Microsoft.CodeAnalysis.INamedTypeSymbol GetTypeByMetadataName(string fullyQualifiedMetadataName) { throw null; }
+        public Microsoft.CodeAnalysis.INamedTypeSymbol? GetTypeByMetadataName(string fullyQualifiedMetadataName) { throw null; }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.AssemblyIdentity> GetUnreferencedAssemblyIdentities(Microsoft.CodeAnalysis.Diagnostic diagnostic) { throw null; }
         public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.MetadataReference> GetUsedAssemblyReferences(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        public bool HasImplicitConversion(Microsoft.CodeAnalysis.ITypeSymbol fromType, Microsoft.CodeAnalysis.ITypeSymbol toType) { throw null; }
-        public bool IsSymbolAccessibleWithin(Microsoft.CodeAnalysis.ISymbol symbol, Microsoft.CodeAnalysis.ISymbol within, Microsoft.CodeAnalysis.ITypeSymbol throughType = null) { throw null; }
+        public bool HasImplicitConversion(Microsoft.CodeAnalysis.ITypeSymbol? fromType, Microsoft.CodeAnalysis.ITypeSymbol? toType) { throw null; }
+        public bool IsSymbolAccessibleWithin(Microsoft.CodeAnalysis.ISymbol symbol, Microsoft.CodeAnalysis.ISymbol within, Microsoft.CodeAnalysis.ITypeSymbol? throughType = null) { throw null; }
         public Microsoft.CodeAnalysis.Compilation RemoveAllReferences() { throw null; }
         public Microsoft.CodeAnalysis.Compilation RemoveAllSyntaxTrees() { throw null; }
         public Microsoft.CodeAnalysis.Compilation RemoveReferences(params Microsoft.CodeAnalysis.MetadataReference[] references) { throw null; }
         public Microsoft.CodeAnalysis.Compilation RemoveReferences(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.MetadataReference> references) { throw null; }
         public Microsoft.CodeAnalysis.Compilation RemoveSyntaxTrees(params Microsoft.CodeAnalysis.SyntaxTree[] trees) { throw null; }
         public Microsoft.CodeAnalysis.Compilation RemoveSyntaxTrees(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTree> trees) { throw null; }
-        public Microsoft.CodeAnalysis.Compilation ReplaceReference(Microsoft.CodeAnalysis.MetadataReference oldReference, Microsoft.CodeAnalysis.MetadataReference newReference) { throw null; }
+        public Microsoft.CodeAnalysis.Compilation ReplaceReference(Microsoft.CodeAnalysis.MetadataReference oldReference, Microsoft.CodeAnalysis.MetadataReference? newReference) { throw null; }
         public Microsoft.CodeAnalysis.Compilation ReplaceSyntaxTree(Microsoft.CodeAnalysis.SyntaxTree oldTree, Microsoft.CodeAnalysis.SyntaxTree newTree) { throw null; }
         protected static System.Collections.Generic.IReadOnlyDictionary<string, string> SyntaxTreeCommonFeatures(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTree> trees) { throw null; }
         public abstract Microsoft.CodeAnalysis.CompilationReference ToMetadataReference(System.Collections.Immutable.ImmutableArray<string> aliases = default(System.Collections.Immutable.ImmutableArray<string>), bool embedInteropTypes = false);
-        public Microsoft.CodeAnalysis.Compilation WithAssemblyName(string assemblyName) { throw null; }
+        public Microsoft.CodeAnalysis.Compilation WithAssemblyName(string? assemblyName) { throw null; }
         public Microsoft.CodeAnalysis.Compilation WithOptions(Microsoft.CodeAnalysis.CompilationOptions options) { throw null; }
         public Microsoft.CodeAnalysis.Compilation WithReferences(params Microsoft.CodeAnalysis.MetadataReference[] newReferences) { throw null; }
         public Microsoft.CodeAnalysis.Compilation WithReferences(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.MetadataReference> newReferences) { throw null; }
-        public Microsoft.CodeAnalysis.Compilation WithScriptCompilationInfo(Microsoft.CodeAnalysis.ScriptCompilationInfo info) { throw null; }
+        public Microsoft.CodeAnalysis.Compilation WithScriptCompilationInfo(Microsoft.CodeAnalysis.ScriptCompilationInfo? info) { throw null; }
     }
     public abstract partial class CompilationOptions
     {
@@ -474,8 +476,8 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.AssemblyIdentityComparer AssemblyIdentityComparer { get { throw null; } protected set { } }
         public bool CheckOverflow { get { throw null; } protected set { } }
         public bool ConcurrentBuild { get { throw null; } protected set { } }
-        public string CryptoKeyContainer { get { throw null; } protected set { } }
-        public string CryptoKeyFile { get { throw null; } protected set { } }
+        public string? CryptoKeyContainer { get { throw null; } protected set { } }
+        public string? CryptoKeyFile { get { throw null; } protected set { } }
         public System.Collections.Immutable.ImmutableArray<byte> CryptoPublicKey { get { throw null; } protected set { } }
         public bool? DelaySign { get { throw null; } protected set { } }
         public bool Deterministic { get { throw null; } protected set { } }
@@ -484,68 +486,68 @@ namespace Microsoft.CodeAnalysis
         protected internal System.Collections.Immutable.ImmutableArray<string> Features { get { throw null; } protected set { } }
         public Microsoft.CodeAnalysis.ReportDiagnostic GeneralDiagnosticOption { get { throw null; } protected set { } }
         public abstract string Language { get; }
-        public string MainTypeName { get { throw null; } protected set { } }
+        public string? MainTypeName { get { throw null; } protected set { } }
         public Microsoft.CodeAnalysis.MetadataImportOptions MetadataImportOptions { get { throw null; } protected set { } }
-        public Microsoft.CodeAnalysis.MetadataReferenceResolver MetadataReferenceResolver { get { throw null; } protected set { } }
-        public string ModuleName { get { throw null; } protected set { } }
+        public Microsoft.CodeAnalysis.MetadataReferenceResolver? MetadataReferenceResolver { get { throw null; } protected set { } }
+        public string? ModuleName { get { throw null; } protected set { } }
         public abstract Microsoft.CodeAnalysis.NullableContextOptions NullableContextOptions { get; protected set; }
         public Microsoft.CodeAnalysis.OptimizationLevel OptimizationLevel { get { throw null; } protected set { } }
         public Microsoft.CodeAnalysis.OutputKind OutputKind { get { throw null; } protected set { } }
         public Microsoft.CodeAnalysis.Platform Platform { get { throw null; } protected set { } }
         public bool PublicSign { get { throw null; } protected set { } }
         public bool ReportSuppressedDiagnostics { get { throw null; } protected set { } }
-        public string ScriptClassName { get { throw null; } protected set { } }
-        public Microsoft.CodeAnalysis.SourceReferenceResolver SourceReferenceResolver { get { throw null; } protected set { } }
+        public string? ScriptClassName { get { throw null; } protected set { } }
+        public Microsoft.CodeAnalysis.SourceReferenceResolver? SourceReferenceResolver { get { throw null; } protected set { } }
         public System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> SpecificDiagnosticOptions { get { throw null; } protected set { } }
-        public Microsoft.CodeAnalysis.StrongNameProvider StrongNameProvider { get { throw null; } protected set { } }
-        public Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider SyntaxTreeOptionsProvider { get { throw null; } protected set { } }
+        public Microsoft.CodeAnalysis.StrongNameProvider? StrongNameProvider { get { throw null; } protected set { } }
+        public Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider? SyntaxTreeOptionsProvider { get { throw null; } protected set { } }
         public int WarningLevel { get { throw null; } protected set { } }
-        public Microsoft.CodeAnalysis.XmlReferenceResolver XmlReferenceResolver { get { throw null; } protected set { } }
-        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithAssemblyIdentityComparer(Microsoft.CodeAnalysis.AssemblyIdentityComparer comparer);
+        public Microsoft.CodeAnalysis.XmlReferenceResolver? XmlReferenceResolver { get { throw null; } protected set { } }
+        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithAssemblyIdentityComparer(Microsoft.CodeAnalysis.AssemblyIdentityComparer? comparer);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithCheckOverflow(bool checkOverflow);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithConcurrentBuild(bool concurrent);
-        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithCryptoKeyContainer(string cryptoKeyContainer);
-        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithCryptoKeyFile(string cryptoKeyFile);
+        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithCryptoKeyContainer(string? cryptoKeyContainer);
+        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithCryptoKeyFile(string? cryptoKeyFile);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithCryptoPublicKey(System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithDelaySign(bool? delaySign);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithDeterministic(bool deterministic);
         [System.ObsoleteAttribute]
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithFeatures(System.Collections.Immutable.ImmutableArray<string> features);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithGeneralDiagnosticOption(Microsoft.CodeAnalysis.ReportDiagnostic generalDiagnosticOption);
-        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithMainTypeName(string mainTypeName);
+        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithMainTypeName(string? mainTypeName);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithMetadataImportOptions(Microsoft.CodeAnalysis.MetadataImportOptions value);
-        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithMetadataReferenceResolver(Microsoft.CodeAnalysis.MetadataReferenceResolver resolver);
-        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithModuleName(string moduleName);
+        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithMetadataReferenceResolver(Microsoft.CodeAnalysis.MetadataReferenceResolver? resolver);
+        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithModuleName(string? moduleName);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithOptimizationLevel(Microsoft.CodeAnalysis.OptimizationLevel value);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithOutputKind(Microsoft.CodeAnalysis.OutputKind kind);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithPlatform(Microsoft.CodeAnalysis.Platform platform);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithPublicSign(bool publicSign);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithReportSuppressedDiagnostics(bool reportSuppressedDiagnostics);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithScriptClassName(string scriptClassName);
-        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithSourceReferenceResolver(Microsoft.CodeAnalysis.SourceReferenceResolver resolver);
+        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithSourceReferenceResolver(Microsoft.CodeAnalysis.SourceReferenceResolver? resolver);
         protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithSpecificDiagnosticOptions(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>> specificDiagnosticOptions);
-        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithSpecificDiagnosticOptions(System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> specificDiagnosticOptions);
-        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithStrongNameProvider(Microsoft.CodeAnalysis.StrongNameProvider provider);
-        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithSyntaxTreeOptionsProvider(Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider resolver);
-        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver resolver);
-        public abstract override bool Equals(object obj);
-        protected bool EqualsHelper(Microsoft.CodeAnalysis.CompilationOptions other) { throw null; }
+        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithSpecificDiagnosticOptions(System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic>? specificDiagnosticOptions);
+        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithStrongNameProvider(Microsoft.CodeAnalysis.StrongNameProvider? provider);
+        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithSyntaxTreeOptionsProvider(Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider? resolver);
+        protected abstract Microsoft.CodeAnalysis.CompilationOptions CommonWithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver? resolver);
+        public abstract override bool Equals(object? obj);
+        protected bool EqualsHelper(Microsoft.CodeAnalysis.CompilationOptions? other) { throw null; }
         public abstract override int GetHashCode();
         protected int GetHashCodeHelper() { throw null; }
-        public static bool operator ==(Microsoft.CodeAnalysis.CompilationOptions left, Microsoft.CodeAnalysis.CompilationOptions right) { throw null; }
-        public static bool operator !=(Microsoft.CodeAnalysis.CompilationOptions left, Microsoft.CodeAnalysis.CompilationOptions right) { throw null; }
+        public static bool operator ==(Microsoft.CodeAnalysis.CompilationOptions? left, Microsoft.CodeAnalysis.CompilationOptions? right) { throw null; }
+        public static bool operator !=(Microsoft.CodeAnalysis.CompilationOptions? left, Microsoft.CodeAnalysis.CompilationOptions? right) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithAssemblyIdentityComparer(Microsoft.CodeAnalysis.AssemblyIdentityComparer comparer) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithConcurrentBuild(bool concurrent) { throw null; }
-        public Microsoft.CodeAnalysis.CompilationOptions WithCryptoKeyContainer(string cryptoKeyContainer) { throw null; }
-        public Microsoft.CodeAnalysis.CompilationOptions WithCryptoKeyFile(string cryptoKeyFile) { throw null; }
+        public Microsoft.CodeAnalysis.CompilationOptions WithCryptoKeyContainer(string? cryptoKeyContainer) { throw null; }
+        public Microsoft.CodeAnalysis.CompilationOptions WithCryptoKeyFile(string? cryptoKeyFile) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithCryptoPublicKey(System.Collections.Immutable.ImmutableArray<byte> cryptoPublicKey) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithDelaySign(bool? delaySign) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithDeterministic(bool deterministic) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithGeneralDiagnosticOption(Microsoft.CodeAnalysis.ReportDiagnostic value) { throw null; }
-        public Microsoft.CodeAnalysis.CompilationOptions WithMainTypeName(string mainTypeName) { throw null; }
+        public Microsoft.CodeAnalysis.CompilationOptions WithMainTypeName(string? mainTypeName) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithMetadataImportOptions(Microsoft.CodeAnalysis.MetadataImportOptions value) { throw null; }
-        public Microsoft.CodeAnalysis.CompilationOptions WithMetadataReferenceResolver(Microsoft.CodeAnalysis.MetadataReferenceResolver resolver) { throw null; }
-        public Microsoft.CodeAnalysis.CompilationOptions WithModuleName(string moduleName) { throw null; }
+        public Microsoft.CodeAnalysis.CompilationOptions WithMetadataReferenceResolver(Microsoft.CodeAnalysis.MetadataReferenceResolver? resolver) { throw null; }
+        public Microsoft.CodeAnalysis.CompilationOptions WithModuleName(string? moduleName) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithOptimizationLevel(Microsoft.CodeAnalysis.OptimizationLevel value) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithOutputKind(Microsoft.CodeAnalysis.OutputKind kind) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithOverflowChecks(bool checkOverflow) { throw null; }
@@ -553,20 +555,20 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.CompilationOptions WithPublicSign(bool publicSign) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithReportSuppressedDiagnostics(bool value) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithScriptClassName(string scriptClassName) { throw null; }
-        public Microsoft.CodeAnalysis.CompilationOptions WithSourceReferenceResolver(Microsoft.CodeAnalysis.SourceReferenceResolver resolver) { throw null; }
+        public Microsoft.CodeAnalysis.CompilationOptions WithSourceReferenceResolver(Microsoft.CodeAnalysis.SourceReferenceResolver? resolver) { throw null; }
         public Microsoft.CodeAnalysis.CompilationOptions WithSpecificDiagnosticOptions(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, Microsoft.CodeAnalysis.ReportDiagnostic>> value) { throw null; }
-        public Microsoft.CodeAnalysis.CompilationOptions WithSpecificDiagnosticOptions(System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> value) { throw null; }
-        public Microsoft.CodeAnalysis.CompilationOptions WithStrongNameProvider(Microsoft.CodeAnalysis.StrongNameProvider provider) { throw null; }
-        public Microsoft.CodeAnalysis.CompilationOptions WithSyntaxTreeOptionsProvider(Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider provider) { throw null; }
-        public Microsoft.CodeAnalysis.CompilationOptions WithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver resolver) { throw null; }
+        public Microsoft.CodeAnalysis.CompilationOptions WithSpecificDiagnosticOptions(System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic>? value) { throw null; }
+        public Microsoft.CodeAnalysis.CompilationOptions WithStrongNameProvider(Microsoft.CodeAnalysis.StrongNameProvider? provider) { throw null; }
+        public Microsoft.CodeAnalysis.CompilationOptions WithSyntaxTreeOptionsProvider(Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider? provider) { throw null; }
+        public Microsoft.CodeAnalysis.CompilationOptions WithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver? resolver) { throw null; }
     }
     public abstract partial class CompilationReference : Microsoft.CodeAnalysis.MetadataReference, System.IEquatable<Microsoft.CodeAnalysis.CompilationReference>
     {
         internal CompilationReference() : base (default(Microsoft.CodeAnalysis.MetadataReferenceProperties)) { }
         public Microsoft.CodeAnalysis.Compilation Compilation { get { throw null; } }
-        public override string Display { get { throw null; } }
-        public bool Equals(Microsoft.CodeAnalysis.CompilationReference other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override string? Display { get { throw null; } }
+        public bool Equals(Microsoft.CodeAnalysis.CompilationReference? other) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public new Microsoft.CodeAnalysis.CompilationReference WithAliases(System.Collections.Generic.IEnumerable<string> aliases) { throw null; }
         public new Microsoft.CodeAnalysis.CompilationReference WithAliases(System.Collections.Immutable.ImmutableArray<string> aliases) { throw null; }
@@ -618,11 +620,11 @@ namespace Microsoft.CodeAnalysis
     public partial class DesktopStrongNameProvider : Microsoft.CodeAnalysis.StrongNameProvider
     {
         public DesktopStrongNameProvider(System.Collections.Immutable.ImmutableArray<string> keyFileSearchPaths) { }
-        public DesktopStrongNameProvider(System.Collections.Immutable.ImmutableArray<string> keyFileSearchPaths = default(System.Collections.Immutable.ImmutableArray<string>), string tempPath = null) { }
-        public override bool Equals(object obj) { throw null; }
+        public DesktopStrongNameProvider(System.Collections.Immutable.ImmutableArray<string> keyFileSearchPaths = default(System.Collections.Immutable.ImmutableArray<string>), string? tempPath = null) { }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
     }
-    public abstract partial class Diagnostic : System.IEquatable<Microsoft.CodeAnalysis.Diagnostic>, System.IFormattable
+    public abstract partial class Diagnostic : System.IEquatable<Microsoft.CodeAnalysis.Diagnostic?>, System.IFormattable
     {
         protected Diagnostic() { }
         public abstract System.Collections.Generic.IReadOnlyList<Microsoft.CodeAnalysis.Location> AdditionalLocations { get; }
@@ -632,31 +634,31 @@ namespace Microsoft.CodeAnalysis
         public abstract bool IsSuppressed { get; }
         public bool IsWarningAsError { get { throw null; } }
         public abstract Microsoft.CodeAnalysis.Location Location { get; }
-        public virtual System.Collections.Immutable.ImmutableDictionary<string, string> Properties { get { throw null; } }
+        public virtual System.Collections.Immutable.ImmutableDictionary<string, string?> Properties { get { throw null; } }
         public abstract Microsoft.CodeAnalysis.DiagnosticSeverity Severity { get; }
         public abstract int WarningLevel { get; }
-        public static Microsoft.CodeAnalysis.Diagnostic Create(Microsoft.CodeAnalysis.DiagnosticDescriptor descriptor, Microsoft.CodeAnalysis.Location location, Microsoft.CodeAnalysis.DiagnosticSeverity effectiveSeverity, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Location> additionalLocations, System.Collections.Immutable.ImmutableDictionary<string, string> properties, params object[] messageArgs) { throw null; }
-        public static Microsoft.CodeAnalysis.Diagnostic Create(Microsoft.CodeAnalysis.DiagnosticDescriptor descriptor, Microsoft.CodeAnalysis.Location location, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Location> additionalLocations, System.Collections.Immutable.ImmutableDictionary<string, string> properties, params object[] messageArgs) { throw null; }
-        public static Microsoft.CodeAnalysis.Diagnostic Create(Microsoft.CodeAnalysis.DiagnosticDescriptor descriptor, Microsoft.CodeAnalysis.Location location, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Location> additionalLocations, params object[] messageArgs) { throw null; }
-        public static Microsoft.CodeAnalysis.Diagnostic Create(Microsoft.CodeAnalysis.DiagnosticDescriptor descriptor, Microsoft.CodeAnalysis.Location location, System.Collections.Immutable.ImmutableDictionary<string, string> properties, params object[] messageArgs) { throw null; }
-        public static Microsoft.CodeAnalysis.Diagnostic Create(Microsoft.CodeAnalysis.DiagnosticDescriptor descriptor, Microsoft.CodeAnalysis.Location location, params object[] messageArgs) { throw null; }
-        public static Microsoft.CodeAnalysis.Diagnostic Create(string id, string category, Microsoft.CodeAnalysis.LocalizableString message, Microsoft.CodeAnalysis.DiagnosticSeverity severity, Microsoft.CodeAnalysis.DiagnosticSeverity defaultSeverity, bool isEnabledByDefault, int warningLevel, Microsoft.CodeAnalysis.LocalizableString title = null, Microsoft.CodeAnalysis.LocalizableString description = null, string helpLink = null, Microsoft.CodeAnalysis.Location location = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Location> additionalLocations = null, System.Collections.Generic.IEnumerable<string> customTags = null, System.Collections.Immutable.ImmutableDictionary<string, string> properties = null) { throw null; }
-        public static Microsoft.CodeAnalysis.Diagnostic Create(string id, string category, Microsoft.CodeAnalysis.LocalizableString message, Microsoft.CodeAnalysis.DiagnosticSeverity severity, Microsoft.CodeAnalysis.DiagnosticSeverity defaultSeverity, bool isEnabledByDefault, int warningLevel, bool isSuppressed, Microsoft.CodeAnalysis.LocalizableString title = null, Microsoft.CodeAnalysis.LocalizableString description = null, string helpLink = null, Microsoft.CodeAnalysis.Location location = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Location> additionalLocations = null, System.Collections.Generic.IEnumerable<string> customTags = null, System.Collections.Immutable.ImmutableDictionary<string, string> properties = null) { throw null; }
-        public abstract bool Equals(Microsoft.CodeAnalysis.Diagnostic obj);
-        public abstract override bool Equals(object obj);
+        public static Microsoft.CodeAnalysis.Diagnostic Create(Microsoft.CodeAnalysis.DiagnosticDescriptor descriptor, Microsoft.CodeAnalysis.Location? location, Microsoft.CodeAnalysis.DiagnosticSeverity effectiveSeverity, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Location>? additionalLocations, System.Collections.Immutable.ImmutableDictionary<string, string?>? properties, params object?[]? messageArgs) { throw null; }
+        public static Microsoft.CodeAnalysis.Diagnostic Create(Microsoft.CodeAnalysis.DiagnosticDescriptor descriptor, Microsoft.CodeAnalysis.Location? location, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Location>? additionalLocations, System.Collections.Immutable.ImmutableDictionary<string, string?>? properties, params object?[]? messageArgs) { throw null; }
+        public static Microsoft.CodeAnalysis.Diagnostic Create(Microsoft.CodeAnalysis.DiagnosticDescriptor descriptor, Microsoft.CodeAnalysis.Location? location, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Location>? additionalLocations, params object?[]? messageArgs) { throw null; }
+        public static Microsoft.CodeAnalysis.Diagnostic Create(Microsoft.CodeAnalysis.DiagnosticDescriptor descriptor, Microsoft.CodeAnalysis.Location? location, System.Collections.Immutable.ImmutableDictionary<string, string?>? properties, params object?[]? messageArgs) { throw null; }
+        public static Microsoft.CodeAnalysis.Diagnostic Create(Microsoft.CodeAnalysis.DiagnosticDescriptor descriptor, Microsoft.CodeAnalysis.Location? location, params object?[]? messageArgs) { throw null; }
+        public static Microsoft.CodeAnalysis.Diagnostic Create(string id, string category, Microsoft.CodeAnalysis.LocalizableString message, Microsoft.CodeAnalysis.DiagnosticSeverity severity, Microsoft.CodeAnalysis.DiagnosticSeverity defaultSeverity, bool isEnabledByDefault, int warningLevel, Microsoft.CodeAnalysis.LocalizableString? title = null, Microsoft.CodeAnalysis.LocalizableString? description = null, string? helpLink = null, Microsoft.CodeAnalysis.Location? location = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Location>? additionalLocations = null, System.Collections.Generic.IEnumerable<string>? customTags = null, System.Collections.Immutable.ImmutableDictionary<string, string?>? properties = null) { throw null; }
+        public static Microsoft.CodeAnalysis.Diagnostic Create(string id, string category, Microsoft.CodeAnalysis.LocalizableString message, Microsoft.CodeAnalysis.DiagnosticSeverity severity, Microsoft.CodeAnalysis.DiagnosticSeverity defaultSeverity, bool isEnabledByDefault, int warningLevel, bool isSuppressed, Microsoft.CodeAnalysis.LocalizableString? title = null, Microsoft.CodeAnalysis.LocalizableString? description = null, string? helpLink = null, Microsoft.CodeAnalysis.Location? location = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Location>? additionalLocations = null, System.Collections.Generic.IEnumerable<string>? customTags = null, System.Collections.Immutable.ImmutableDictionary<string, string?>? properties = null) { throw null; }
+        public abstract bool Equals(Microsoft.CodeAnalysis.Diagnostic? obj);
+        public abstract override bool Equals(object? obj);
         public abstract override int GetHashCode();
-        public abstract string GetMessage(System.IFormatProvider formatProvider = null);
-        public Microsoft.CodeAnalysis.Diagnostics.SuppressionInfo GetSuppressionInfo(Microsoft.CodeAnalysis.Compilation compilation) { throw null; }
-        string System.IFormattable.ToString(string ignored, System.IFormatProvider formatProvider) { throw null; }
+        public abstract string GetMessage(System.IFormatProvider? formatProvider = null);
+        public Microsoft.CodeAnalysis.Diagnostics.SuppressionInfo? GetSuppressionInfo(Microsoft.CodeAnalysis.Compilation compilation) { throw null; }
+        string System.IFormattable.ToString(string? ignored, System.IFormatProvider? formatProvider) { throw null; }
         public override string ToString() { throw null; }
         internal abstract Microsoft.CodeAnalysis.Diagnostic WithIsSuppressed(bool isSuppressed);
         internal abstract Microsoft.CodeAnalysis.Diagnostic WithLocation(Microsoft.CodeAnalysis.Location location);
         internal abstract Microsoft.CodeAnalysis.Diagnostic WithSeverity(Microsoft.CodeAnalysis.DiagnosticSeverity severity);
     }
-    public sealed partial class DiagnosticDescriptor : System.IEquatable<Microsoft.CodeAnalysis.DiagnosticDescriptor>
+    public sealed partial class DiagnosticDescriptor : System.IEquatable<Microsoft.CodeAnalysis.DiagnosticDescriptor?>
     {
-        public DiagnosticDescriptor(string id, Microsoft.CodeAnalysis.LocalizableString title, Microsoft.CodeAnalysis.LocalizableString messageFormat, string category, Microsoft.CodeAnalysis.DiagnosticSeverity defaultSeverity, bool isEnabledByDefault, Microsoft.CodeAnalysis.LocalizableString description = null, string helpLinkUri = null, params string[] customTags) { }
-        public DiagnosticDescriptor(string id, string title, string messageFormat, string category, Microsoft.CodeAnalysis.DiagnosticSeverity defaultSeverity, bool isEnabledByDefault, string description = null, string helpLinkUri = null, params string[] customTags) { }
+        public DiagnosticDescriptor(string id, Microsoft.CodeAnalysis.LocalizableString title, Microsoft.CodeAnalysis.LocalizableString messageFormat, string category, Microsoft.CodeAnalysis.DiagnosticSeverity defaultSeverity, bool isEnabledByDefault, Microsoft.CodeAnalysis.LocalizableString? description = null, string? helpLinkUri = null, params string[] customTags) { }
+        public DiagnosticDescriptor(string id, string title, string messageFormat, string category, Microsoft.CodeAnalysis.DiagnosticSeverity defaultSeverity, bool isEnabledByDefault, string? description = null, string? helpLinkUri = null, params string[] customTags) { }
         public string Category { get { throw null; } }
         public System.Collections.Generic.IEnumerable<string> CustomTags { get { throw null; } }
         public Microsoft.CodeAnalysis.DiagnosticSeverity DefaultSeverity { get { throw null; } }
@@ -666,15 +668,15 @@ namespace Microsoft.CodeAnalysis
         public bool IsEnabledByDefault { get { throw null; } }
         public Microsoft.CodeAnalysis.LocalizableString MessageFormat { get { throw null; } }
         public Microsoft.CodeAnalysis.LocalizableString Title { get { throw null; } }
-        public bool Equals(Microsoft.CodeAnalysis.DiagnosticDescriptor other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public bool Equals(Microsoft.CodeAnalysis.DiagnosticDescriptor? other) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public Microsoft.CodeAnalysis.ReportDiagnostic GetEffectiveSeverity(Microsoft.CodeAnalysis.CompilationOptions compilationOptions) { throw null; }
         public override int GetHashCode() { throw null; }
     }
     public partial class DiagnosticFormatter
     {
         public DiagnosticFormatter() { }
-        public virtual string Format(Microsoft.CodeAnalysis.Diagnostic diagnostic, System.IFormatProvider formatter = null) { throw null; }
+        public virtual string Format(Microsoft.CodeAnalysis.Diagnostic diagnostic, System.IFormatProvider? formatter = null) { throw null; }
     }
     public enum DiagnosticSeverity
     {
@@ -689,9 +691,9 @@ namespace Microsoft.CodeAnalysis
         public bool? BestFitMapping { get { throw null; } }
         public System.Runtime.InteropServices.CallingConvention CallingConvention { get { throw null; } }
         public System.Runtime.InteropServices.CharSet CharacterSet { get { throw null; } }
-        public string EntryPointName { get { throw null; } }
+        public string? EntryPointName { get { throw null; } }
         public bool ExactSpelling { get { throw null; } }
-        public string ModuleName { get { throw null; } }
+        public string? ModuleName { get { throw null; } }
         public bool SetLastError { get { throw null; } }
         public bool? ThrowOnUnmappableCharacter { get { throw null; } }
     }
@@ -699,8 +701,8 @@ namespace Microsoft.CodeAnalysis
     {
         public static string CreateDeclarationId(Microsoft.CodeAnalysis.ISymbol symbol) { throw null; }
         public static string CreateReferenceId(Microsoft.CodeAnalysis.ISymbol symbol) { throw null; }
-        public static Microsoft.CodeAnalysis.ISymbol GetFirstSymbolForDeclarationId(string id, Microsoft.CodeAnalysis.Compilation compilation) { throw null; }
-        public static Microsoft.CodeAnalysis.ISymbol GetFirstSymbolForReferenceId(string id, Microsoft.CodeAnalysis.Compilation compilation) { throw null; }
+        public static Microsoft.CodeAnalysis.ISymbol? GetFirstSymbolForDeclarationId(string id, Microsoft.CodeAnalysis.Compilation compilation) { throw null; }
+        public static Microsoft.CodeAnalysis.ISymbol? GetFirstSymbolForReferenceId(string id, Microsoft.CodeAnalysis.Compilation compilation) { throw null; }
         public static System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> GetSymbolsForDeclarationId(string id, Microsoft.CodeAnalysis.Compilation compilation) { throw null; }
         public static System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> GetSymbolsForReferenceId(string id, Microsoft.CodeAnalysis.Compilation compilation) { throw null; }
     }
@@ -714,8 +716,8 @@ namespace Microsoft.CodeAnalysis
     {
         protected DocumentationProvider() { }
         public static Microsoft.CodeAnalysis.DocumentationProvider Default { get { throw null; } }
-        public abstract override bool Equals(object obj);
-        protected internal abstract string GetDocumentationForSymbol(string documentationMemberID, System.Globalization.CultureInfo preferredCulture, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        public abstract override bool Equals(object? obj);
+        protected internal abstract string? GetDocumentationForSymbol(string documentationMemberID, System.Globalization.CultureInfo preferredCulture, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         public abstract override int GetHashCode();
     }
     public sealed partial class EmbeddedText
@@ -747,7 +749,7 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.Text.LinePositionSpan Span { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.LinePosition StartLinePosition { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.FileLinePositionSpan other) { throw null; }
-        public override bool Equals(object other) { throw null; }
+        public override bool Equals(object? other) { throw null; }
         public override int GetHashCode() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.FileLinePositionSpan left, Microsoft.CodeAnalysis.FileLinePositionSpan right) { throw null; }
         public static bool operator !=(Microsoft.CodeAnalysis.FileLinePositionSpan left, Microsoft.CodeAnalysis.FileLinePositionSpan right) { throw null; }
@@ -755,7 +757,7 @@ namespace Microsoft.CodeAnalysis
     }
     public static partial class FileSystemExtensions
     {
-        public static Microsoft.CodeAnalysis.Emit.EmitResult Emit(this Microsoft.CodeAnalysis.Compilation compilation, string outputPath, string pdbPath = null, string xmlDocPath = null, string win32ResourcesPath = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ResourceDescription> manifestResources = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
+        public static Microsoft.CodeAnalysis.Emit.EmitResult Emit(this Microsoft.CodeAnalysis.Compilation compilation, string outputPath, string? pdbPath = null, string? xmlDocPath = null, string? win32ResourcesPath = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.ResourceDescription>? manifestResources = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
     }
     public enum GeneratedKind
     {
@@ -766,6 +768,7 @@ namespace Microsoft.CodeAnalysis
     public readonly partial struct GeneratedSourceResult
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public string HintName { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.SourceText SourceText { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxTree SyntaxTree { get { throw null; } }
@@ -806,13 +809,14 @@ namespace Microsoft.CodeAnalysis
     public readonly partial struct GeneratorExecutionContext
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.AdditionalText> AdditionalFiles { get { throw null; } }
         public Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptionsProvider AnalyzerConfigOptions { get { throw null; } }
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public Microsoft.CodeAnalysis.Compilation Compilation { get { throw null; } }
         public Microsoft.CodeAnalysis.ParseOptions ParseOptions { get { throw null; } }
-        public Microsoft.CodeAnalysis.ISyntaxContextReceiver SyntaxContextReceiver { get { throw null; } }
-        public Microsoft.CodeAnalysis.ISyntaxReceiver SyntaxReceiver { get { throw null; } }
+        public Microsoft.CodeAnalysis.ISyntaxContextReceiver? SyntaxContextReceiver { get { throw null; } }
+        public Microsoft.CodeAnalysis.ISyntaxReceiver? SyntaxReceiver { get { throw null; } }
         public void AddSource(string hintName, Microsoft.CodeAnalysis.Text.SourceText sourceText) { }
         public void AddSource(string hintName, string source) { }
         public void ReportDiagnostic(Microsoft.CodeAnalysis.Diagnostic diagnostic) { }
@@ -825,6 +829,7 @@ namespace Microsoft.CodeAnalysis
     public partial struct GeneratorInitializationContext
     {
         private object _dummy;
+        private int _dummyPrimitive;
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public void RegisterForPostInitialization(System.Action<Microsoft.CodeAnalysis.GeneratorPostInitializationContext> callback) { }
         public void RegisterForSyntaxNotifications(Microsoft.CodeAnalysis.SyntaxContextReceiverCreator receiverCreator) { }
@@ -833,6 +838,7 @@ namespace Microsoft.CodeAnalysis
     public readonly partial struct GeneratorPostInitializationContext
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public void AddSource(string hintName, Microsoft.CodeAnalysis.Text.SourceText sourceText) { }
         public void AddSource(string hintName, string source) { }
@@ -842,17 +848,18 @@ namespace Microsoft.CodeAnalysis
         private readonly object _dummy;
         private readonly int _dummyPrimitive;
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostic> Diagnostics { get { throw null; } }
-        public System.Exception Exception { get { throw null; } }
+        public System.Exception? Exception { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.GeneratedSourceResult> GeneratedSources { get { throw null; } }
         public Microsoft.CodeAnalysis.ISourceGenerator Generator { get { throw null; } }
     }
     public readonly partial struct GeneratorSyntaxContext
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public Microsoft.CodeAnalysis.SyntaxNode Node { get { throw null; } }
         public Microsoft.CodeAnalysis.SemanticModel SemanticModel { get { throw null; } }
     }
-    public partial interface IAliasSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IAliasSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         Microsoft.CodeAnalysis.INamespaceOrTypeSymbol Target { get; }
     }
@@ -861,7 +868,7 @@ namespace Microsoft.CodeAnalysis
         void AddDependencyLocation(string fullPath);
         System.Reflection.Assembly LoadFromPath(string fullPath);
     }
-    public partial interface IArrayTypeSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IArrayTypeSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CustomModifier> CustomModifiers { get; }
         Microsoft.CodeAnalysis.NullableAnnotation ElementNullableAnnotation { get; }
@@ -870,9 +877,9 @@ namespace Microsoft.CodeAnalysis
         System.Collections.Immutable.ImmutableArray<int> LowerBounds { get; }
         int Rank { get; }
         System.Collections.Immutable.ImmutableArray<int> Sizes { get; }
-        bool Equals(Microsoft.CodeAnalysis.IArrayTypeSymbol other);
+        bool Equals(Microsoft.CodeAnalysis.IArrayTypeSymbol? other);
     }
-    public partial interface IAssemblySymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IAssemblySymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         Microsoft.CodeAnalysis.INamespaceSymbol GlobalNamespace { get; }
         Microsoft.CodeAnalysis.AssemblyIdentity Identity { get; }
@@ -882,45 +889,45 @@ namespace Microsoft.CodeAnalysis
         System.Collections.Generic.ICollection<string> NamespaceNames { get; }
         System.Collections.Generic.ICollection<string> TypeNames { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.INamedTypeSymbol> GetForwardedTypes();
-        Microsoft.CodeAnalysis.AssemblyMetadata GetMetadata();
-        Microsoft.CodeAnalysis.INamedTypeSymbol GetTypeByMetadataName(string fullyQualifiedMetadataName);
+        Microsoft.CodeAnalysis.AssemblyMetadata? GetMetadata();
+        Microsoft.CodeAnalysis.INamedTypeSymbol? GetTypeByMetadataName(string fullyQualifiedMetadataName);
         bool GivesAccessTo(Microsoft.CodeAnalysis.IAssemblySymbol toAssembly);
-        Microsoft.CodeAnalysis.INamedTypeSymbol ResolveForwardedType(string fullyQualifiedMetadataName);
+        Microsoft.CodeAnalysis.INamedTypeSymbol? ResolveForwardedType(string fullyQualifiedMetadataName);
     }
     public partial interface ICompilationUnitSyntax
     {
         Microsoft.CodeAnalysis.SyntaxToken EndOfFileToken { get; }
     }
-    public partial interface IDiscardSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IDiscardSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         Microsoft.CodeAnalysis.NullableAnnotation NullableAnnotation { get; }
         Microsoft.CodeAnalysis.ITypeSymbol Type { get; }
     }
-    public partial interface IDynamicTypeSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IDynamicTypeSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
     }
-    public partial interface IErrorTypeSymbol : Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IErrorTypeSymbol : Microsoft.CodeAnalysis.INamedTypeSymbol, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         Microsoft.CodeAnalysis.CandidateReason CandidateReason { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> CandidateSymbols { get; }
     }
-    public partial interface IEventSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IEventSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
-        Microsoft.CodeAnalysis.IMethodSymbol AddMethod { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? AddMethod { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IEventSymbol> ExplicitInterfaceImplementations { get; }
         bool IsWindowsRuntimeEvent { get; }
         Microsoft.CodeAnalysis.NullableAnnotation NullableAnnotation { get; }
         new Microsoft.CodeAnalysis.IEventSymbol OriginalDefinition { get; }
-        Microsoft.CodeAnalysis.IEventSymbol OverriddenEvent { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol RaiseMethod { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol RemoveMethod { get; }
+        Microsoft.CodeAnalysis.IEventSymbol? OverriddenEvent { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? RaiseMethod { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? RemoveMethod { get; }
         Microsoft.CodeAnalysis.ITypeSymbol Type { get; }
     }
-    public partial interface IFieldSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IFieldSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
-        Microsoft.CodeAnalysis.ISymbol AssociatedSymbol { get; }
-        object ConstantValue { get; }
-        Microsoft.CodeAnalysis.IFieldSymbol CorrespondingTupleField { get; }
+        Microsoft.CodeAnalysis.ISymbol? AssociatedSymbol { get; }
+        object? ConstantValue { get; }
+        Microsoft.CodeAnalysis.IFieldSymbol? CorrespondingTupleField { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CustomModifier> CustomModifiers { get; }
         int FixedSize { get; }
         bool HasConstantValue { get; }
@@ -933,7 +940,7 @@ namespace Microsoft.CodeAnalysis
         new Microsoft.CodeAnalysis.IFieldSymbol OriginalDefinition { get; }
         Microsoft.CodeAnalysis.ITypeSymbol Type { get; }
     }
-    public partial interface IFunctionPointerTypeSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IFunctionPointerTypeSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         Microsoft.CodeAnalysis.IMethodSymbol Signature { get; }
     }
@@ -941,13 +948,13 @@ namespace Microsoft.CodeAnalysis
     {
         void Initialize(Microsoft.CodeAnalysis.IncrementalGeneratorInitializationContext context);
     }
-    public partial interface ILabelSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface ILabelSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         Microsoft.CodeAnalysis.IMethodSymbol ContainingMethod { get; }
     }
-    public partial interface ILocalSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface ILocalSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
-        object ConstantValue { get; }
+        object? ConstantValue { get; }
         bool HasConstantValue { get; }
         bool IsConst { get; }
         bool IsFixed { get; }
@@ -957,11 +964,11 @@ namespace Microsoft.CodeAnalysis
         Microsoft.CodeAnalysis.RefKind RefKind { get; }
         Microsoft.CodeAnalysis.ITypeSymbol Type { get; }
     }
-    public partial interface IMethodSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IMethodSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         int Arity { get; }
-        Microsoft.CodeAnalysis.INamedTypeSymbol AssociatedAnonymousDelegate { get; }
-        Microsoft.CodeAnalysis.ISymbol AssociatedSymbol { get; }
+        Microsoft.CodeAnalysis.INamedTypeSymbol? AssociatedAnonymousDelegate { get; }
+        Microsoft.CodeAnalysis.ISymbol? AssociatedSymbol { get; }
         System.Reflection.Metadata.SignatureCallingConvention CallingConvention { get; }
         Microsoft.CodeAnalysis.IMethodSymbol ConstructedFrom { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IMethodSymbol> ExplicitInterfaceImplementations { get; }
@@ -978,13 +985,13 @@ namespace Microsoft.CodeAnalysis
         System.Reflection.MethodImplAttributes MethodImplementationFlags { get; }
         Microsoft.CodeAnalysis.MethodKind MethodKind { get; }
         new Microsoft.CodeAnalysis.IMethodSymbol OriginalDefinition { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol OverriddenMethod { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? OverriddenMethod { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IParameterSymbol> Parameters { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol PartialDefinitionPart { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol PartialImplementationPart { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? PartialDefinitionPart { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? PartialImplementationPart { get; }
         Microsoft.CodeAnalysis.NullableAnnotation ReceiverNullableAnnotation { get; }
-        Microsoft.CodeAnalysis.ITypeSymbol ReceiverType { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol ReducedFrom { get; }
+        Microsoft.CodeAnalysis.ITypeSymbol? ReceiverType { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? ReducedFrom { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CustomModifier> RefCustomModifiers { get; }
         Microsoft.CodeAnalysis.RefKind RefKind { get; }
         Microsoft.CodeAnalysis.NullableAnnotation ReturnNullableAnnotation { get; }
@@ -999,27 +1006,27 @@ namespace Microsoft.CodeAnalysis
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.INamedTypeSymbol> UnmanagedCallingConventionTypes { get; }
         Microsoft.CodeAnalysis.IMethodSymbol Construct(params Microsoft.CodeAnalysis.ITypeSymbol[] typeArguments);
         Microsoft.CodeAnalysis.IMethodSymbol Construct(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> typeArguments, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> typeArgumentNullableAnnotations);
-        Microsoft.CodeAnalysis.DllImportData GetDllImportData();
+        Microsoft.CodeAnalysis.DllImportData? GetDllImportData();
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.AttributeData> GetReturnTypeAttributes();
-        Microsoft.CodeAnalysis.ITypeSymbol GetTypeInferredDuringReduction(Microsoft.CodeAnalysis.ITypeParameterSymbol reducedFromTypeParameter);
-        Microsoft.CodeAnalysis.IMethodSymbol ReduceExtensionMethod(Microsoft.CodeAnalysis.ITypeSymbol receiverType);
+        Microsoft.CodeAnalysis.ITypeSymbol? GetTypeInferredDuringReduction(Microsoft.CodeAnalysis.ITypeParameterSymbol reducedFromTypeParameter);
+        Microsoft.CodeAnalysis.IMethodSymbol? ReduceExtensionMethod(Microsoft.CodeAnalysis.ITypeSymbol receiverType);
     }
-    public partial interface IModuleSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IModuleSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         Microsoft.CodeAnalysis.INamespaceSymbol GlobalNamespace { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.AssemblyIdentity> ReferencedAssemblies { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IAssemblySymbol> ReferencedAssemblySymbols { get; }
-        Microsoft.CodeAnalysis.ModuleMetadata GetMetadata();
-        Microsoft.CodeAnalysis.INamespaceSymbol GetModuleNamespace(Microsoft.CodeAnalysis.INamespaceSymbol namespaceSymbol);
+        Microsoft.CodeAnalysis.ModuleMetadata? GetMetadata();
+        Microsoft.CodeAnalysis.INamespaceSymbol? GetModuleNamespace(Microsoft.CodeAnalysis.INamespaceSymbol namespaceSymbol);
     }
-    public partial interface INamedTypeSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface INamedTypeSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         int Arity { get; }
-        Microsoft.CodeAnalysis.ISymbol AssociatedSymbol { get; }
+        Microsoft.CodeAnalysis.ISymbol? AssociatedSymbol { get; }
         Microsoft.CodeAnalysis.INamedTypeSymbol ConstructedFrom { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IMethodSymbol> Constructors { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol DelegateInvokeMethod { get; }
-        Microsoft.CodeAnalysis.INamedTypeSymbol EnumUnderlyingType { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? DelegateInvokeMethod { get; }
+        Microsoft.CodeAnalysis.INamedTypeSymbol? EnumUnderlyingType { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IMethodSymbol> InstanceConstructors { get; }
         bool IsComImport { get; }
         bool IsGenericType { get; }
@@ -1029,11 +1036,11 @@ namespace Microsoft.CodeAnalysis
         bool IsUnboundGenericType { get; }
         System.Collections.Generic.IEnumerable<string> MemberNames { get; }
         bool MightContainExtensionMethods { get; }
-        Microsoft.CodeAnalysis.INamedTypeSymbol NativeIntegerUnderlyingType { get; }
+        Microsoft.CodeAnalysis.INamedTypeSymbol? NativeIntegerUnderlyingType { get; }
         new Microsoft.CodeAnalysis.INamedTypeSymbol OriginalDefinition { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IMethodSymbol> StaticConstructors { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IFieldSymbol> TupleElements { get; }
-        Microsoft.CodeAnalysis.INamedTypeSymbol TupleUnderlyingType { get; }
+        Microsoft.CodeAnalysis.INamedTypeSymbol? TupleUnderlyingType { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> TypeArgumentNullableAnnotations { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> TypeArguments { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeParameterSymbol> TypeParameters { get; }
@@ -1042,7 +1049,7 @@ namespace Microsoft.CodeAnalysis
         Microsoft.CodeAnalysis.INamedTypeSymbol ConstructUnboundGenericType();
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CustomModifier> GetTypeArgumentCustomModifiers(int ordinal);
     }
-    public partial interface INamespaceOrTypeSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface INamespaceOrTypeSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         bool IsNamespace { get; }
         bool IsType { get; }
@@ -1052,10 +1059,10 @@ namespace Microsoft.CodeAnalysis
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.INamedTypeSymbol> GetTypeMembers(string name);
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.INamedTypeSymbol> GetTypeMembers(string name, int arity);
     }
-    public partial interface INamespaceSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface INamespaceSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.INamespaceSymbol> ConstituentNamespaces { get; }
-        Microsoft.CodeAnalysis.Compilation ContainingCompilation { get; }
+        Microsoft.CodeAnalysis.Compilation? ContainingCompilation { get; }
         bool IsGlobalNamespace { get; }
         Microsoft.CodeAnalysis.NamespaceKind NamespaceKind { get; }
         new System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.INamespaceOrTypeSymbol> GetMembers();
@@ -1065,6 +1072,7 @@ namespace Microsoft.CodeAnalysis
     public readonly partial struct IncrementalGeneratorInitializationContext
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public Microsoft.CodeAnalysis.IncrementalValuesProvider<Microsoft.CodeAnalysis.AdditionalText> AdditionalTextsProvider { get { throw null; } }
         public Microsoft.CodeAnalysis.IncrementalValueProvider<Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptionsProvider> AnalyzerConfigOptionsProvider { get { throw null; } }
         public Microsoft.CodeAnalysis.IncrementalValueProvider<Microsoft.CodeAnalysis.Compilation> CompilationProvider { get { throw null; } }
@@ -1088,6 +1096,7 @@ namespace Microsoft.CodeAnalysis
     public readonly partial struct IncrementalGeneratorPostInitializationContext
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public void AddSource(string hintName, Microsoft.CodeAnalysis.Text.SourceText sourceText) { }
         public void AddSource(string hintName, string source) { }
@@ -1095,8 +1104,8 @@ namespace Microsoft.CodeAnalysis
     public static partial class IncrementalValueProviderExtensions
     {
         public static Microsoft.CodeAnalysis.IncrementalValueProvider<System.Collections.Immutable.ImmutableArray<TSource>> Collect<TSource>(this Microsoft.CodeAnalysis.IncrementalValuesProvider<TSource> source) { throw null; }
-        public static Microsoft.CodeAnalysis.IncrementalValueProvider<System.ValueTuple<TLeft, TRight>> Combine<TLeft, TRight>(this Microsoft.CodeAnalysis.IncrementalValueProvider<TLeft> provider1, Microsoft.CodeAnalysis.IncrementalValueProvider<TRight> provider2) { throw null; }
-        public static Microsoft.CodeAnalysis.IncrementalValuesProvider<System.ValueTuple<TLeft, TRight>> Combine<TLeft, TRight>(this Microsoft.CodeAnalysis.IncrementalValuesProvider<TLeft> provider1, Microsoft.CodeAnalysis.IncrementalValueProvider<TRight> provider2) { throw null; }
+        public static Microsoft.CodeAnalysis.IncrementalValueProvider<(TLeft Left, TRight Right)> Combine<TLeft, TRight>(this Microsoft.CodeAnalysis.IncrementalValueProvider<TLeft> provider1, Microsoft.CodeAnalysis.IncrementalValueProvider<TRight> provider2) { throw null; }
+        public static Microsoft.CodeAnalysis.IncrementalValuesProvider<(TLeft Left, TRight Right)> Combine<TLeft, TRight>(this Microsoft.CodeAnalysis.IncrementalValuesProvider<TLeft> provider1, Microsoft.CodeAnalysis.IncrementalValueProvider<TRight> provider2) { throw null; }
         public static Microsoft.CodeAnalysis.IncrementalValuesProvider<TResult> SelectMany<TSource, TResult>(this Microsoft.CodeAnalysis.IncrementalValueProvider<TSource> source, System.Func<TSource, System.Threading.CancellationToken, System.Collections.Generic.IEnumerable<TResult>> selector) { throw null; }
         public static Microsoft.CodeAnalysis.IncrementalValuesProvider<TResult> SelectMany<TSource, TResult>(this Microsoft.CodeAnalysis.IncrementalValueProvider<TSource> source, System.Func<TSource, System.Threading.CancellationToken, System.Collections.Immutable.ImmutableArray<TResult>> selector) { throw null; }
         public static Microsoft.CodeAnalysis.IncrementalValuesProvider<TResult> SelectMany<TSource, TResult>(this Microsoft.CodeAnalysis.IncrementalValuesProvider<TSource> source, System.Func<TSource, System.Threading.CancellationToken, System.Collections.Generic.IEnumerable<TResult>> selector) { throw null; }
@@ -1110,29 +1119,31 @@ namespace Microsoft.CodeAnalysis
     public readonly partial struct IncrementalValueProvider<TValue>
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
     }
     public readonly partial struct IncrementalValuesProvider<TValues>
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
     }
     public partial interface IOperation
     {
         System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.IOperation> Children { get; }
-        Microsoft.CodeAnalysis.Optional<object> ConstantValue { get; }
+        Microsoft.CodeAnalysis.Optional<object?> ConstantValue { get; }
         bool IsImplicit { get; }
         Microsoft.CodeAnalysis.OperationKind Kind { get; }
         string Language { get; }
-        Microsoft.CodeAnalysis.IOperation Parent { get; }
-        Microsoft.CodeAnalysis.SemanticModel SemanticModel { get; }
+        Microsoft.CodeAnalysis.IOperation? Parent { get; }
+        Microsoft.CodeAnalysis.SemanticModel? SemanticModel { get; }
         Microsoft.CodeAnalysis.SyntaxNode Syntax { get; }
-        Microsoft.CodeAnalysis.ITypeSymbol Type { get; }
+        Microsoft.CodeAnalysis.ITypeSymbol? Type { get; }
         void Accept(Microsoft.CodeAnalysis.Operations.OperationVisitor visitor);
-        TResult Accept<TArgument, TResult>(Microsoft.CodeAnalysis.Operations.OperationVisitor<TArgument, TResult> visitor, TArgument argument);
+        TResult? Accept<TArgument, TResult>(Microsoft.CodeAnalysis.Operations.OperationVisitor<TArgument, TResult> visitor, TArgument argument);
     }
-    public partial interface IParameterSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IParameterSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CustomModifier> CustomModifiers { get; }
-        object ExplicitDefaultValue { get; }
+        object? ExplicitDefaultValue { get; }
         bool HasExplicitDefaultValue { get; }
         bool IsDiscard { get; }
         bool IsOptional { get; }
@@ -1145,42 +1156,42 @@ namespace Microsoft.CodeAnalysis
         Microsoft.CodeAnalysis.RefKind RefKind { get; }
         Microsoft.CodeAnalysis.ITypeSymbol Type { get; }
     }
-    public partial interface IPointerTypeSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IPointerTypeSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CustomModifier> CustomModifiers { get; }
         Microsoft.CodeAnalysis.ITypeSymbol PointedAtType { get; }
     }
-    public partial interface IPreprocessingSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IPreprocessingSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
     }
-    public partial interface IPropertySymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IPropertySymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IPropertySymbol> ExplicitInterfaceImplementations { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol GetMethod { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? GetMethod { get; }
         bool IsIndexer { get; }
         bool IsReadOnly { get; }
         bool IsWithEvents { get; }
         bool IsWriteOnly { get; }
         Microsoft.CodeAnalysis.NullableAnnotation NullableAnnotation { get; }
         new Microsoft.CodeAnalysis.IPropertySymbol OriginalDefinition { get; }
-        Microsoft.CodeAnalysis.IPropertySymbol OverriddenProperty { get; }
+        Microsoft.CodeAnalysis.IPropertySymbol? OverriddenProperty { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IParameterSymbol> Parameters { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CustomModifier> RefCustomModifiers { get; }
         Microsoft.CodeAnalysis.RefKind RefKind { get; }
         bool ReturnsByRef { get; }
         bool ReturnsByRefReadonly { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol SetMethod { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? SetMethod { get; }
         Microsoft.CodeAnalysis.ITypeSymbol Type { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.CustomModifier> TypeCustomModifiers { get; }
     }
-    public partial interface IRangeVariableSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface IRangeVariableSymbol : Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
     }
     public partial interface ISkippedTokensTriviaSyntax
     {
         Microsoft.CodeAnalysis.SyntaxTokenList Tokens { get; }
     }
-    public partial interface ISourceAssemblySymbol : Microsoft.CodeAnalysis.IAssemblySymbol, Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface ISourceAssemblySymbol : Microsoft.CodeAnalysis.IAssemblySymbol, Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         Microsoft.CodeAnalysis.Compilation Compilation { get; }
     }
@@ -1193,7 +1204,7 @@ namespace Microsoft.CodeAnalysis
     {
         Microsoft.CodeAnalysis.SyntaxTrivia ParentTrivia { get; }
     }
-    public partial interface ISymbol : System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface ISymbol : System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         bool CanBeReferencedByName { get; }
         Microsoft.CodeAnalysis.IAssemblySymbol ContainingAssembly { get; }
@@ -1220,19 +1231,19 @@ namespace Microsoft.CodeAnalysis
         string Name { get; }
         Microsoft.CodeAnalysis.ISymbol OriginalDefinition { get; }
         void Accept(Microsoft.CodeAnalysis.SymbolVisitor visitor);
-        TResult Accept<TResult>(Microsoft.CodeAnalysis.SymbolVisitor<TResult> visitor);
-        bool Equals(Microsoft.CodeAnalysis.ISymbol other, Microsoft.CodeAnalysis.SymbolEqualityComparer equalityComparer);
+        TResult? Accept<TResult>(Microsoft.CodeAnalysis.SymbolVisitor<TResult> visitor);
+        bool Equals(Microsoft.CodeAnalysis.ISymbol? other, Microsoft.CodeAnalysis.SymbolEqualityComparer equalityComparer);
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.AttributeData> GetAttributes();
-        string GetDocumentationCommentId();
-        string GetDocumentationCommentXml(System.Globalization.CultureInfo preferredCulture = null, bool expandIncludes = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.SymbolDisplayPart> ToDisplayParts(Microsoft.CodeAnalysis.SymbolDisplayFormat format = null);
-        string ToDisplayString(Microsoft.CodeAnalysis.SymbolDisplayFormat format = null);
-        System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.SymbolDisplayPart> ToMinimalDisplayParts(Microsoft.CodeAnalysis.SemanticModel semanticModel, int position, Microsoft.CodeAnalysis.SymbolDisplayFormat format = null);
-        string ToMinimalDisplayString(Microsoft.CodeAnalysis.SemanticModel semanticModel, int position, Microsoft.CodeAnalysis.SymbolDisplayFormat format = null);
+        string? GetDocumentationCommentId();
+        string? GetDocumentationCommentXml(System.Globalization.CultureInfo? preferredCulture = null, bool expandIncludes = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.SymbolDisplayPart> ToDisplayParts(Microsoft.CodeAnalysis.SymbolDisplayFormat? format = null);
+        string ToDisplayString(Microsoft.CodeAnalysis.SymbolDisplayFormat? format = null);
+        System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.SymbolDisplayPart> ToMinimalDisplayParts(Microsoft.CodeAnalysis.SemanticModel semanticModel, int position, Microsoft.CodeAnalysis.SymbolDisplayFormat? format = null);
+        string ToMinimalDisplayString(Microsoft.CodeAnalysis.SemanticModel semanticModel, int position, Microsoft.CodeAnalysis.SymbolDisplayFormat? format = null);
     }
     public static partial class ISymbolExtensions
     {
-        public static Microsoft.CodeAnalysis.IMethodSymbol GetConstructedReducedFrom(this Microsoft.CodeAnalysis.IMethodSymbol method) { throw null; }
+        public static Microsoft.CodeAnalysis.IMethodSymbol? GetConstructedReducedFrom(this Microsoft.CodeAnalysis.IMethodSymbol method) { throw null; }
     }
     public partial interface ISyntaxContextReceiver
     {
@@ -1242,12 +1253,12 @@ namespace Microsoft.CodeAnalysis
     {
         void OnVisitSyntaxNode(Microsoft.CodeAnalysis.SyntaxNode syntaxNode);
     }
-    public partial interface ITypeParameterSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface ITypeParameterSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, Microsoft.CodeAnalysis.ITypeSymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.NullableAnnotation> ConstraintNullableAnnotations { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> ConstraintTypes { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol DeclaringMethod { get; }
-        Microsoft.CodeAnalysis.INamedTypeSymbol DeclaringType { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? DeclaringMethod { get; }
+        Microsoft.CodeAnalysis.INamedTypeSymbol? DeclaringType { get; }
         bool HasConstructorConstraint { get; }
         bool HasNotNullConstraint { get; }
         bool HasReferenceTypeConstraint { get; }
@@ -1255,15 +1266,15 @@ namespace Microsoft.CodeAnalysis
         bool HasValueTypeConstraint { get; }
         int Ordinal { get; }
         new Microsoft.CodeAnalysis.ITypeParameterSymbol OriginalDefinition { get; }
-        Microsoft.CodeAnalysis.ITypeParameterSymbol ReducedFrom { get; }
+        Microsoft.CodeAnalysis.ITypeParameterSymbol? ReducedFrom { get; }
         Microsoft.CodeAnalysis.NullableAnnotation ReferenceTypeConstraintNullableAnnotation { get; }
         Microsoft.CodeAnalysis.TypeParameterKind TypeParameterKind { get; }
         Microsoft.CodeAnalysis.VarianceKind Variance { get; }
     }
-    public partial interface ITypeSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol>
+    public partial interface ITypeSymbol : Microsoft.CodeAnalysis.INamespaceOrTypeSymbol, Microsoft.CodeAnalysis.ISymbol, System.IEquatable<Microsoft.CodeAnalysis.ISymbol?>
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.INamedTypeSymbol> AllInterfaces { get; }
-        Microsoft.CodeAnalysis.INamedTypeSymbol BaseType { get; }
+        Microsoft.CodeAnalysis.INamedTypeSymbol? BaseType { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.INamedTypeSymbol> Interfaces { get; }
         bool IsAnonymousType { get; }
         bool IsNativeIntegerType { get; }
@@ -1278,11 +1289,11 @@ namespace Microsoft.CodeAnalysis
         new Microsoft.CodeAnalysis.ITypeSymbol OriginalDefinition { get; }
         Microsoft.CodeAnalysis.SpecialType SpecialType { get; }
         Microsoft.CodeAnalysis.TypeKind TypeKind { get; }
-        Microsoft.CodeAnalysis.ISymbol FindImplementationForInterfaceMember(Microsoft.CodeAnalysis.ISymbol interfaceMember);
-        System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.SymbolDisplayPart> ToDisplayParts(Microsoft.CodeAnalysis.NullableFlowState topLevelNullability, Microsoft.CodeAnalysis.SymbolDisplayFormat format = null);
-        string ToDisplayString(Microsoft.CodeAnalysis.NullableFlowState topLevelNullability, Microsoft.CodeAnalysis.SymbolDisplayFormat format = null);
-        System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.SymbolDisplayPart> ToMinimalDisplayParts(Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.NullableFlowState topLevelNullability, int position, Microsoft.CodeAnalysis.SymbolDisplayFormat format = null);
-        string ToMinimalDisplayString(Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.NullableFlowState topLevelNullability, int position, Microsoft.CodeAnalysis.SymbolDisplayFormat format = null);
+        Microsoft.CodeAnalysis.ISymbol? FindImplementationForInterfaceMember(Microsoft.CodeAnalysis.ISymbol interfaceMember);
+        System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.SymbolDisplayPart> ToDisplayParts(Microsoft.CodeAnalysis.NullableFlowState topLevelNullability, Microsoft.CodeAnalysis.SymbolDisplayFormat? format = null);
+        string ToDisplayString(Microsoft.CodeAnalysis.NullableFlowState topLevelNullability, Microsoft.CodeAnalysis.SymbolDisplayFormat? format = null);
+        System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.SymbolDisplayPart> ToMinimalDisplayParts(Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.NullableFlowState topLevelNullability, int position, Microsoft.CodeAnalysis.SymbolDisplayFormat? format = null);
+        string ToMinimalDisplayString(Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.NullableFlowState topLevelNullability, int position, Microsoft.CodeAnalysis.SymbolDisplayFormat? format = null);
         Microsoft.CodeAnalysis.ITypeSymbol WithNullableAnnotation(Microsoft.CodeAnalysis.NullableAnnotation nullableAnnotation);
     }
     public static partial class LanguageNames
@@ -1301,11 +1312,11 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.FileLinePositionSpan MappedSpan { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.LinePositionSpan Span { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.LineMapping other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.LineMapping left, Microsoft.CodeAnalysis.LineMapping right) { throw null; }
         public static bool operator !=(Microsoft.CodeAnalysis.LineMapping left, Microsoft.CodeAnalysis.LineMapping right) { throw null; }
-        public override string ToString() { throw null; }
+        public override string? ToString() { throw null; }
     }
     public enum LineVisibility
     {
@@ -1317,25 +1328,25 @@ namespace Microsoft.CodeAnalysis
     {
         public LocalizableResourceString(string nameOfLocalizableResource, System.Resources.ResourceManager resourceManager, System.Type resourceSource) { }
         public LocalizableResourceString(string nameOfLocalizableResource, System.Resources.ResourceManager resourceManager, System.Type resourceSource, params string[] formatArguments) { }
-        protected override bool AreEqual(object other) { throw null; }
+        protected override bool AreEqual(object? other) { throw null; }
         protected override int GetHash() { throw null; }
-        protected override string GetText(System.IFormatProvider formatProvider) { throw null; }
+        protected override string GetText(System.IFormatProvider? formatProvider) { throw null; }
     }
-    public abstract partial class LocalizableString : System.IEquatable<Microsoft.CodeAnalysis.LocalizableString>, System.IFormattable
+    public abstract partial class LocalizableString : System.IEquatable<Microsoft.CodeAnalysis.LocalizableString?>, System.IFormattable
     {
         protected LocalizableString() { }
-        public event System.EventHandler<System.Exception> OnException { add { } remove { } }
-        protected abstract bool AreEqual(object other);
-        public bool Equals(Microsoft.CodeAnalysis.LocalizableString other) { throw null; }
-        public sealed override bool Equals(object other) { throw null; }
+        public event System.EventHandler<System.Exception>? OnException { add { } remove { } }
+        protected abstract bool AreEqual(object? other);
+        public bool Equals(Microsoft.CodeAnalysis.LocalizableString? other) { throw null; }
+        public sealed override bool Equals(object? other) { throw null; }
         protected abstract int GetHash();
         public sealed override int GetHashCode() { throw null; }
-        protected abstract string GetText(System.IFormatProvider formatProvider);
+        protected abstract string GetText(System.IFormatProvider? formatProvider);
         public static explicit operator string (Microsoft.CodeAnalysis.LocalizableString localizableResource) { throw null; }
-        public static implicit operator Microsoft.CodeAnalysis.LocalizableString (string fixedResource) { throw null; }
-        string System.IFormattable.ToString(string ignored, System.IFormatProvider formatProvider) { throw null; }
+        public static implicit operator Microsoft.CodeAnalysis.LocalizableString (string? fixedResource) { throw null; }
+        string System.IFormattable.ToString(string? ignored, System.IFormatProvider? formatProvider) { throw null; }
         public sealed override string ToString() { throw null; }
-        public string ToString(System.IFormatProvider formatProvider) { throw null; }
+        public string ToString(System.IFormatProvider? formatProvider) { throw null; }
     }
     public abstract partial class Location
     {
@@ -1343,19 +1354,19 @@ namespace Microsoft.CodeAnalysis
         public bool IsInMetadata { get { throw null; } }
         public bool IsInSource { get { throw null; } }
         public abstract Microsoft.CodeAnalysis.LocationKind Kind { get; }
-        public Microsoft.CodeAnalysis.IModuleSymbol MetadataModule { get { throw null; } }
+        public Microsoft.CodeAnalysis.IModuleSymbol? MetadataModule { get { throw null; } }
         public static Microsoft.CodeAnalysis.Location None { get { throw null; } }
         public virtual Microsoft.CodeAnalysis.Text.TextSpan SourceSpan { get { throw null; } }
-        public virtual Microsoft.CodeAnalysis.SyntaxTree SourceTree { get { throw null; } }
+        public virtual Microsoft.CodeAnalysis.SyntaxTree? SourceTree { get { throw null; } }
         public static Microsoft.CodeAnalysis.Location Create(Microsoft.CodeAnalysis.SyntaxTree syntaxTree, Microsoft.CodeAnalysis.Text.TextSpan textSpan) { throw null; }
         public static Microsoft.CodeAnalysis.Location Create(string filePath, Microsoft.CodeAnalysis.Text.TextSpan textSpan, Microsoft.CodeAnalysis.Text.LinePositionSpan lineSpan) { throw null; }
-        public abstract override bool Equals(object obj);
+        public abstract override bool Equals(object? obj);
         protected virtual string GetDebuggerDisplay() { throw null; }
         public abstract override int GetHashCode();
         public virtual Microsoft.CodeAnalysis.FileLinePositionSpan GetLineSpan() { throw null; }
         public virtual Microsoft.CodeAnalysis.FileLinePositionSpan GetMappedLineSpan() { throw null; }
-        public static bool operator ==(Microsoft.CodeAnalysis.Location left, Microsoft.CodeAnalysis.Location right) { throw null; }
-        public static bool operator !=(Microsoft.CodeAnalysis.Location left, Microsoft.CodeAnalysis.Location right) { throw null; }
+        public static bool operator ==(Microsoft.CodeAnalysis.Location? left, Microsoft.CodeAnalysis.Location? right) { throw null; }
+        public static bool operator !=(Microsoft.CodeAnalysis.Location? left, Microsoft.CodeAnalysis.Location? right) { throw null; }
         public override string ToString() { throw null; }
     }
     public enum LocationKind : byte
@@ -1393,16 +1404,16 @@ namespace Microsoft.CodeAnalysis
     public abstract partial class MetadataReference
     {
         protected MetadataReference(Microsoft.CodeAnalysis.MetadataReferenceProperties properties) { }
-        public virtual string Display { get { throw null; } }
+        public virtual string? Display { get { throw null; } }
         public Microsoft.CodeAnalysis.MetadataReferenceProperties Properties { get { throw null; } }
         [System.ObsoleteAttribute("Use CreateFromFile(assembly.Location) instead", true)]
         public static Microsoft.CodeAnalysis.MetadataReference CreateFromAssembly(System.Reflection.Assembly assembly) { throw null; }
         [System.ObsoleteAttribute("Use CreateFromFile(assembly.Location) instead", true)]
-        public static Microsoft.CodeAnalysis.MetadataReference CreateFromAssembly(System.Reflection.Assembly assembly, Microsoft.CodeAnalysis.MetadataReferenceProperties properties, Microsoft.CodeAnalysis.DocumentationProvider documentation = null) { throw null; }
-        public static Microsoft.CodeAnalysis.PortableExecutableReference CreateFromFile(string path, Microsoft.CodeAnalysis.MetadataReferenceProperties properties = default(Microsoft.CodeAnalysis.MetadataReferenceProperties), Microsoft.CodeAnalysis.DocumentationProvider documentation = null) { throw null; }
-        public static Microsoft.CodeAnalysis.PortableExecutableReference CreateFromImage(System.Collections.Generic.IEnumerable<byte> peImage, Microsoft.CodeAnalysis.MetadataReferenceProperties properties = default(Microsoft.CodeAnalysis.MetadataReferenceProperties), Microsoft.CodeAnalysis.DocumentationProvider documentation = null, string filePath = null) { throw null; }
-        public static Microsoft.CodeAnalysis.PortableExecutableReference CreateFromImage(System.Collections.Immutable.ImmutableArray<byte> peImage, Microsoft.CodeAnalysis.MetadataReferenceProperties properties = default(Microsoft.CodeAnalysis.MetadataReferenceProperties), Microsoft.CodeAnalysis.DocumentationProvider documentation = null, string filePath = null) { throw null; }
-        public static Microsoft.CodeAnalysis.PortableExecutableReference CreateFromStream(System.IO.Stream peStream, Microsoft.CodeAnalysis.MetadataReferenceProperties properties = default(Microsoft.CodeAnalysis.MetadataReferenceProperties), Microsoft.CodeAnalysis.DocumentationProvider documentation = null, string filePath = null) { throw null; }
+        public static Microsoft.CodeAnalysis.MetadataReference CreateFromAssembly(System.Reflection.Assembly assembly, Microsoft.CodeAnalysis.MetadataReferenceProperties properties, Microsoft.CodeAnalysis.DocumentationProvider? documentation = null) { throw null; }
+        public static Microsoft.CodeAnalysis.PortableExecutableReference CreateFromFile(string path, Microsoft.CodeAnalysis.MetadataReferenceProperties properties = default(Microsoft.CodeAnalysis.MetadataReferenceProperties), Microsoft.CodeAnalysis.DocumentationProvider? documentation = null) { throw null; }
+        public static Microsoft.CodeAnalysis.PortableExecutableReference CreateFromImage(System.Collections.Generic.IEnumerable<byte> peImage, Microsoft.CodeAnalysis.MetadataReferenceProperties properties = default(Microsoft.CodeAnalysis.MetadataReferenceProperties), Microsoft.CodeAnalysis.DocumentationProvider? documentation = null, string? filePath = null) { throw null; }
+        public static Microsoft.CodeAnalysis.PortableExecutableReference CreateFromImage(System.Collections.Immutable.ImmutableArray<byte> peImage, Microsoft.CodeAnalysis.MetadataReferenceProperties properties = default(Microsoft.CodeAnalysis.MetadataReferenceProperties), Microsoft.CodeAnalysis.DocumentationProvider? documentation = null, string? filePath = null) { throw null; }
+        public static Microsoft.CodeAnalysis.PortableExecutableReference CreateFromStream(System.IO.Stream peStream, Microsoft.CodeAnalysis.MetadataReferenceProperties properties = default(Microsoft.CodeAnalysis.MetadataReferenceProperties), Microsoft.CodeAnalysis.DocumentationProvider? documentation = null, string? filePath = null) { throw null; }
         public Microsoft.CodeAnalysis.MetadataReference WithAliases(System.Collections.Generic.IEnumerable<string> aliases) { throw null; }
         public Microsoft.CodeAnalysis.MetadataReference WithAliases(System.Collections.Immutable.ImmutableArray<string> aliases) { throw null; }
         public Microsoft.CodeAnalysis.MetadataReference WithEmbedInteropTypes(bool value) { throw null; }
@@ -1421,7 +1432,7 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.MetadataImageKind Kind { get { throw null; } }
         public static Microsoft.CodeAnalysis.MetadataReferenceProperties Module { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.MetadataReferenceProperties other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.MetadataReferenceProperties left, Microsoft.CodeAnalysis.MetadataReferenceProperties right) { throw null; }
         public static bool operator !=(Microsoft.CodeAnalysis.MetadataReferenceProperties left, Microsoft.CodeAnalysis.MetadataReferenceProperties right) { throw null; }
@@ -1433,10 +1444,10 @@ namespace Microsoft.CodeAnalysis
     {
         protected MetadataReferenceResolver() { }
         public virtual bool ResolveMissingAssemblies { get { throw null; } }
-        public abstract override bool Equals(object other);
+        public abstract override bool Equals(object? other);
         public abstract override int GetHashCode();
-        public virtual Microsoft.CodeAnalysis.PortableExecutableReference ResolveMissingAssembly(Microsoft.CodeAnalysis.MetadataReference definition, Microsoft.CodeAnalysis.AssemblyIdentity referenceIdentity) { throw null; }
-        public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.PortableExecutableReference> ResolveReference(string reference, string baseFilePath, Microsoft.CodeAnalysis.MetadataReferenceProperties properties);
+        public virtual Microsoft.CodeAnalysis.PortableExecutableReference? ResolveMissingAssembly(Microsoft.CodeAnalysis.MetadataReference definition, Microsoft.CodeAnalysis.AssemblyIdentity referenceIdentity) { throw null; }
+        public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.PortableExecutableReference> ResolveReference(string reference, string? baseFilePath, Microsoft.CodeAnalysis.MetadataReferenceProperties properties);
     }
     public enum MethodKind
     {
@@ -1468,10 +1479,10 @@ namespace Microsoft.CodeAnalysis
         public static Microsoft.CodeAnalysis.ControlFlowAnalysis AnalyzeControlFlow(this Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.SyntaxNode firstStatement, Microsoft.CodeAnalysis.SyntaxNode lastStatement) { throw null; }
         public static Microsoft.CodeAnalysis.DataFlowAnalysis AnalyzeDataFlow(this Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.SyntaxNode statementOrExpression) { throw null; }
         public static Microsoft.CodeAnalysis.DataFlowAnalysis AnalyzeDataFlow(this Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.SyntaxNode firstStatement, Microsoft.CodeAnalysis.SyntaxNode lastStatement) { throw null; }
-        public static Microsoft.CodeAnalysis.IAliasSymbol GetAliasInfo(this Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.SyntaxNode nameSyntax, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
-        public static Microsoft.CodeAnalysis.ISymbol GetDeclaredSymbol(this Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.SyntaxNode declaration, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
+        public static Microsoft.CodeAnalysis.IAliasSymbol? GetAliasInfo(this Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.SyntaxNode nameSyntax, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
+        public static Microsoft.CodeAnalysis.ISymbol? GetDeclaredSymbol(this Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.SyntaxNode declaration, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         public static System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> GetMemberGroup(this Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.SyntaxNode node, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
-        public static Microsoft.CodeAnalysis.IAliasSymbol GetSpeculativeAliasInfo(this Microsoft.CodeAnalysis.SemanticModel semanticModel, int position, Microsoft.CodeAnalysis.SyntaxNode nameSyntax, Microsoft.CodeAnalysis.SpeculativeBindingOption bindingOption) { throw null; }
+        public static Microsoft.CodeAnalysis.IAliasSymbol? GetSpeculativeAliasInfo(this Microsoft.CodeAnalysis.SemanticModel semanticModel, int position, Microsoft.CodeAnalysis.SyntaxNode nameSyntax, Microsoft.CodeAnalysis.SpeculativeBindingOption bindingOption) { throw null; }
         public static Microsoft.CodeAnalysis.SymbolInfo GetSpeculativeSymbolInfo(this Microsoft.CodeAnalysis.SemanticModel semanticModel, int position, Microsoft.CodeAnalysis.SyntaxNode expression, Microsoft.CodeAnalysis.SpeculativeBindingOption bindingOption) { throw null; }
         public static Microsoft.CodeAnalysis.TypeInfo GetSpeculativeTypeInfo(this Microsoft.CodeAnalysis.SemanticModel semanticModel, int position, Microsoft.CodeAnalysis.SyntaxNode expression, Microsoft.CodeAnalysis.SpeculativeBindingOption bindingOption) { throw null; }
         public static Microsoft.CodeAnalysis.SymbolInfo GetSymbolInfo(this Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.SyntaxNode node, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
@@ -1495,7 +1506,7 @@ namespace Microsoft.CodeAnalysis
         public System.Reflection.Metadata.MetadataReader GetMetadataReader() { throw null; }
         public System.Collections.Immutable.ImmutableArray<string> GetModuleNames() { throw null; }
         public System.Guid GetModuleVersionId() { throw null; }
-        public Microsoft.CodeAnalysis.PortableExecutableReference GetReference(Microsoft.CodeAnalysis.DocumentationProvider documentation = null, string filePath = null, string display = null) { throw null; }
+        public Microsoft.CodeAnalysis.PortableExecutableReference GetReference(Microsoft.CodeAnalysis.DocumentationProvider? documentation = null, string? filePath = null, string? display = null) { throw null; }
     }
     public enum NamespaceKind
     {
@@ -1509,7 +1520,7 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.NullableAnnotation Annotation { get { throw null; } }
         public Microsoft.CodeAnalysis.NullableFlowState FlowState { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.NullabilityInfo other) { throw null; }
-        public override bool Equals(object other) { throw null; }
+        public override bool Equals(object? other) { throw null; }
         public override int GetHashCode() { throw null; }
     }
     public enum NullableAnnotation : byte
@@ -1712,12 +1723,12 @@ namespace Microsoft.CodeAnalysis
         protected abstract Microsoft.CodeAnalysis.ParseOptions CommonWithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode documentationMode);
         protected abstract Microsoft.CodeAnalysis.ParseOptions CommonWithFeatures(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, string>> features);
         public abstract Microsoft.CodeAnalysis.ParseOptions CommonWithKind(Microsoft.CodeAnalysis.SourceCodeKind kind);
-        public abstract override bool Equals(object obj);
-        protected bool EqualsHelper(Microsoft.CodeAnalysis.ParseOptions other) { throw null; }
+        public abstract override bool Equals(object? obj);
+        protected bool EqualsHelper(Microsoft.CodeAnalysis.ParseOptions? other) { throw null; }
         public abstract override int GetHashCode();
         protected int GetHashCodeHelper() { throw null; }
-        public static bool operator ==(Microsoft.CodeAnalysis.ParseOptions left, Microsoft.CodeAnalysis.ParseOptions right) { throw null; }
-        public static bool operator !=(Microsoft.CodeAnalysis.ParseOptions left, Microsoft.CodeAnalysis.ParseOptions right) { throw null; }
+        public static bool operator ==(Microsoft.CodeAnalysis.ParseOptions? left, Microsoft.CodeAnalysis.ParseOptions? right) { throw null; }
+        public static bool operator !=(Microsoft.CodeAnalysis.ParseOptions? left, Microsoft.CodeAnalysis.ParseOptions? right) { throw null; }
         public Microsoft.CodeAnalysis.ParseOptions WithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode documentationMode) { throw null; }
         public Microsoft.CodeAnalysis.ParseOptions WithFeatures(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, string>> features) { throw null; }
         public Microsoft.CodeAnalysis.ParseOptions WithKind(Microsoft.CodeAnalysis.SourceCodeKind kind) { throw null; }
@@ -1734,9 +1745,9 @@ namespace Microsoft.CodeAnalysis
     }
     public abstract partial class PortableExecutableReference : Microsoft.CodeAnalysis.MetadataReference
     {
-        protected PortableExecutableReference(Microsoft.CodeAnalysis.MetadataReferenceProperties properties, string fullPath = null, Microsoft.CodeAnalysis.DocumentationProvider initialDocumentation = null) : base (default(Microsoft.CodeAnalysis.MetadataReferenceProperties)) { }
-        public override string Display { get { throw null; } }
-        public string FilePath { get { throw null; } }
+        protected PortableExecutableReference(Microsoft.CodeAnalysis.MetadataReferenceProperties properties, string? fullPath = null, Microsoft.CodeAnalysis.DocumentationProvider? initialDocumentation = null) : base (default(Microsoft.CodeAnalysis.MetadataReferenceProperties)) { }
+        public override string? Display { get { throw null; } }
+        public string? FilePath { get { throw null; } }
         protected abstract Microsoft.CodeAnalysis.DocumentationProvider CreateDocumentationProvider();
         public Microsoft.CodeAnalysis.Metadata GetMetadata() { throw null; }
         public Microsoft.CodeAnalysis.MetadataId GetMetadataId() { throw null; }
@@ -1752,9 +1763,9 @@ namespace Microsoft.CodeAnalysis
         private object _dummy;
         private int _dummyPrimitive;
         public bool IsDefined { get { throw null; } }
-        public Microsoft.CodeAnalysis.IPreprocessingSymbol Symbol { get { throw null; } }
+        public Microsoft.CodeAnalysis.IPreprocessingSymbol? Symbol { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.PreprocessingSymbolInfo other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
     }
     public enum RefKind : byte
@@ -1777,7 +1788,7 @@ namespace Microsoft.CodeAnalysis
     public sealed partial class ResourceDescription
     {
         public ResourceDescription(string resourceName, System.Func<System.IO.Stream> dataProvider, bool isPublic) { }
-        public ResourceDescription(string resourceName, string fileName, System.Func<System.IO.Stream> dataProvider, bool isPublic) { }
+        public ResourceDescription(string resourceName, string? fileName, System.Func<System.IO.Stream> dataProvider, bool isPublic) { }
     }
     public partial class RuleSet
     {
@@ -1786,17 +1797,17 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.ReportDiagnostic GeneralDiagnosticOption { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.RuleSetInclude> Includes { get { throw null; } }
         public System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> SpecificDiagnosticOptions { get { throw null; } }
-        public static Microsoft.CodeAnalysis.ReportDiagnostic GetDiagnosticOptionsFromRulesetFile(string rulesetFileFullPath, out System.Collections.Generic.Dictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> specificDiagnosticOptions) { throw null; }
+        public static Microsoft.CodeAnalysis.ReportDiagnostic GetDiagnosticOptionsFromRulesetFile(string? rulesetFileFullPath, out System.Collections.Generic.Dictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> specificDiagnosticOptions) { throw null; }
         public static System.Collections.Immutable.ImmutableArray<string> GetEffectiveIncludesFromFile(string filePath) { throw null; }
         public static Microsoft.CodeAnalysis.RuleSet LoadEffectiveRuleSetFromFile(string filePath) { throw null; }
-        public Microsoft.CodeAnalysis.RuleSet WithEffectiveAction(Microsoft.CodeAnalysis.ReportDiagnostic action) { throw null; }
+        public Microsoft.CodeAnalysis.RuleSet? WithEffectiveAction(Microsoft.CodeAnalysis.ReportDiagnostic action) { throw null; }
     }
     public partial class RuleSetInclude
     {
         public RuleSetInclude(string includePath, Microsoft.CodeAnalysis.ReportDiagnostic action) { }
         public Microsoft.CodeAnalysis.ReportDiagnostic Action { get { throw null; } }
         public string IncludePath { get { throw null; } }
-        public Microsoft.CodeAnalysis.RuleSet LoadRuleSet(Microsoft.CodeAnalysis.RuleSet parent) { throw null; }
+        public Microsoft.CodeAnalysis.RuleSet? LoadRuleSet(Microsoft.CodeAnalysis.RuleSet parent) { throw null; }
     }
     public enum SarifVersion
     {
@@ -1812,10 +1823,10 @@ namespace Microsoft.CodeAnalysis
     public abstract partial class ScriptCompilationInfo
     {
         internal ScriptCompilationInfo() { }
-        public System.Type GlobalsType { get { throw null; } }
-        public Microsoft.CodeAnalysis.Compilation PreviousScriptCompilation { get { throw null; } }
+        public System.Type? GlobalsType { get { throw null; } }
+        public Microsoft.CodeAnalysis.Compilation? PreviousScriptCompilation { get { throw null; } }
         public System.Type ReturnType { get { throw null; } }
-        public Microsoft.CodeAnalysis.ScriptCompilationInfo WithPreviousScriptCompilation(Microsoft.CodeAnalysis.Compilation compilation) { throw null; }
+        public Microsoft.CodeAnalysis.ScriptCompilationInfo WithPreviousScriptCompilation(Microsoft.CodeAnalysis.Compilation? compilation) { throw null; }
     }
     public abstract partial class SemanticModel
     {
@@ -1827,8 +1838,8 @@ namespace Microsoft.CodeAnalysis
         public abstract bool IsSpeculativeSemanticModel { get; }
         public abstract string Language { get; }
         public abstract int OriginalPositionForSpeculation { get; }
-        public Microsoft.CodeAnalysis.SemanticModel ParentModel { get { throw null; } }
-        protected abstract Microsoft.CodeAnalysis.SemanticModel ParentModelCore { get; }
+        public Microsoft.CodeAnalysis.SemanticModel? ParentModel { get { throw null; } }
+        protected abstract Microsoft.CodeAnalysis.SemanticModel? ParentModelCore { get; }
         protected abstract Microsoft.CodeAnalysis.SyntaxNode RootCore { get; }
         public Microsoft.CodeAnalysis.SyntaxTree SyntaxTree { get { throw null; } }
         protected abstract Microsoft.CodeAnalysis.SyntaxTree SyntaxTreeCore { get; }
@@ -1838,23 +1849,23 @@ namespace Microsoft.CodeAnalysis
         protected abstract Microsoft.CodeAnalysis.DataFlowAnalysis AnalyzeDataFlowCore(Microsoft.CodeAnalysis.SyntaxNode firstStatement, Microsoft.CodeAnalysis.SyntaxNode lastStatement);
         internal abstract void ComputeDeclarationsInNode(Microsoft.CodeAnalysis.SyntaxNode node, Microsoft.CodeAnalysis.ISymbol associatedSymbol, bool getSymbol, Microsoft.CodeAnalysis.PooledObjects.ArrayBuilder<Microsoft.CodeAnalysis.DeclarationInfo> builder, System.Threading.CancellationToken cancellationToken, int? levelsToCompute = default(int?));
         internal abstract void ComputeDeclarationsInSpan(Microsoft.CodeAnalysis.Text.TextSpan span, bool getSymbol, Microsoft.CodeAnalysis.PooledObjects.ArrayBuilder<Microsoft.CodeAnalysis.DeclarationInfo> builder, System.Threading.CancellationToken cancellationToken);
-        protected abstract Microsoft.CodeAnalysis.IAliasSymbol GetAliasInfoCore(Microsoft.CodeAnalysis.SyntaxNode nameSyntax, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        public Microsoft.CodeAnalysis.Optional<object> GetConstantValue(Microsoft.CodeAnalysis.SyntaxNode node, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
-        protected abstract Microsoft.CodeAnalysis.Optional<object> GetConstantValueCore(Microsoft.CodeAnalysis.SyntaxNode node, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        protected abstract Microsoft.CodeAnalysis.IAliasSymbol? GetAliasInfoCore(Microsoft.CodeAnalysis.SyntaxNode nameSyntax, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        public Microsoft.CodeAnalysis.Optional<object?> GetConstantValue(Microsoft.CodeAnalysis.SyntaxNode node, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
+        protected abstract Microsoft.CodeAnalysis.Optional<object?> GetConstantValueCore(Microsoft.CodeAnalysis.SyntaxNode node, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostic> GetDeclarationDiagnostics(Microsoft.CodeAnalysis.Text.TextSpan? span = default(Microsoft.CodeAnalysis.Text.TextSpan?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        protected abstract Microsoft.CodeAnalysis.ISymbol GetDeclaredSymbolCore(Microsoft.CodeAnalysis.SyntaxNode declaration, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        protected abstract Microsoft.CodeAnalysis.ISymbol? GetDeclaredSymbolCore(Microsoft.CodeAnalysis.SyntaxNode declaration, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> GetDeclaredSymbolsCore(Microsoft.CodeAnalysis.SyntaxNode declaration, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostic> GetDiagnostics(Microsoft.CodeAnalysis.Text.TextSpan? span = default(Microsoft.CodeAnalysis.Text.TextSpan?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
-        public Microsoft.CodeAnalysis.ISymbol GetEnclosingSymbol(int position, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
-        protected abstract Microsoft.CodeAnalysis.ISymbol GetEnclosingSymbolCore(int position, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        public Microsoft.CodeAnalysis.ISymbol? GetEnclosingSymbol(int position, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
+        protected abstract Microsoft.CodeAnalysis.ISymbol? GetEnclosingSymbolCore(int position, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> GetMemberGroupCore(Microsoft.CodeAnalysis.SyntaxNode node, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostic> GetMethodBodyDiagnostics(Microsoft.CodeAnalysis.Text.TextSpan? span = default(Microsoft.CodeAnalysis.Text.TextSpan?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         public abstract Microsoft.CodeAnalysis.NullableContext GetNullableContext(int position);
-        public Microsoft.CodeAnalysis.IOperation GetOperation(Microsoft.CodeAnalysis.SyntaxNode node, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
-        protected abstract Microsoft.CodeAnalysis.IOperation GetOperationCore(Microsoft.CodeAnalysis.SyntaxNode node, System.Threading.CancellationToken cancellationToken);
+        public Microsoft.CodeAnalysis.IOperation? GetOperation(Microsoft.CodeAnalysis.SyntaxNode node, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
+        protected abstract Microsoft.CodeAnalysis.IOperation? GetOperationCore(Microsoft.CodeAnalysis.SyntaxNode node, System.Threading.CancellationToken cancellationToken);
         public Microsoft.CodeAnalysis.PreprocessingSymbolInfo GetPreprocessingSymbolInfo(Microsoft.CodeAnalysis.SyntaxNode nameSyntax) { throw null; }
         protected abstract Microsoft.CodeAnalysis.PreprocessingSymbolInfo GetPreprocessingSymbolInfoCore(Microsoft.CodeAnalysis.SyntaxNode nameSyntax);
-        protected abstract Microsoft.CodeAnalysis.IAliasSymbol GetSpeculativeAliasInfoCore(int position, Microsoft.CodeAnalysis.SyntaxNode nameSyntax, Microsoft.CodeAnalysis.SpeculativeBindingOption bindingOption);
+        protected abstract Microsoft.CodeAnalysis.IAliasSymbol? GetSpeculativeAliasInfoCore(int position, Microsoft.CodeAnalysis.SyntaxNode nameSyntax, Microsoft.CodeAnalysis.SpeculativeBindingOption bindingOption);
         protected abstract Microsoft.CodeAnalysis.SymbolInfo GetSpeculativeSymbolInfoCore(int position, Microsoft.CodeAnalysis.SyntaxNode expression, Microsoft.CodeAnalysis.SpeculativeBindingOption bindingOption);
         protected abstract Microsoft.CodeAnalysis.TypeInfo GetSpeculativeTypeInfoCore(int position, Microsoft.CodeAnalysis.SyntaxNode expression, Microsoft.CodeAnalysis.SpeculativeBindingOption bindingOption);
         protected abstract Microsoft.CodeAnalysis.SymbolInfo GetSymbolInfoCore(Microsoft.CodeAnalysis.SyntaxNode node, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -1865,16 +1876,16 @@ namespace Microsoft.CodeAnalysis
         protected abstract bool IsAccessibleCore(int position, Microsoft.CodeAnalysis.ISymbol symbol);
         public bool IsEventUsableAsField(int position, Microsoft.CodeAnalysis.IEventSymbol eventSymbol) { throw null; }
         protected abstract bool IsEventUsableAsFieldCore(int position, Microsoft.CodeAnalysis.IEventSymbol eventSymbol);
-        public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupBaseMembers(int position, string name = null) { throw null; }
-        protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupBaseMembersCore(int position, string name);
-        public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupLabels(int position, string name = null) { throw null; }
-        protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupLabelsCore(int position, string name);
-        public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupNamespacesAndTypes(int position, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol container = null, string name = null) { throw null; }
-        protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupNamespacesAndTypesCore(int position, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol container, string name);
-        public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupStaticMembers(int position, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol container = null, string name = null) { throw null; }
-        protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupStaticMembersCore(int position, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol container, string name);
-        public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupSymbols(int position, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol container = null, string name = null, bool includeReducedExtensionMethods = false) { throw null; }
-        protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupSymbolsCore(int position, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol container, string name, bool includeReducedExtensionMethods);
+        public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupBaseMembers(int position, string? name = null) { throw null; }
+        protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupBaseMembersCore(int position, string? name);
+        public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupLabels(int position, string? name = null) { throw null; }
+        protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupLabelsCore(int position, string? name);
+        public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupNamespacesAndTypes(int position, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol? container = null, string? name = null) { throw null; }
+        protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupNamespacesAndTypesCore(int position, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol? container, string? name);
+        public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupStaticMembers(int position, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol? container = null, string? name = null) { throw null; }
+        protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupStaticMembersCore(int position, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol? container, string? name);
+        public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupSymbols(int position, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol? container = null, string? name = null, bool includeReducedExtensionMethods = false) { throw null; }
+        protected abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> LookupSymbolsCore(int position, Microsoft.CodeAnalysis.INamespaceOrTypeSymbol? container, string? name, bool includeReducedExtensionMethods);
     }
     public readonly partial struct SeparatedSyntaxList<TNode> : System.Collections.Generic.IEnumerable<TNode>, System.Collections.Generic.IReadOnlyCollection<TNode>, System.Collections.Generic.IReadOnlyList<TNode>, System.Collections.IEnumerable, System.IEquatable<Microsoft.CodeAnalysis.SeparatedSyntaxList<TNode>> where TNode : Microsoft.CodeAnalysis.SyntaxNode
     {
@@ -1890,9 +1901,9 @@ namespace Microsoft.CodeAnalysis
         public bool Any() { throw null; }
         public bool Contains(TNode node) { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.SeparatedSyntaxList<TNode> other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public TNode First() { throw null; }
-        public TNode FirstOrDefault() { throw null; }
+        public TNode? FirstOrDefault() { throw null; }
         public Microsoft.CodeAnalysis.SeparatedSyntaxList<TNode>.Enumerator GetEnumerator() { throw null; }
         public override int GetHashCode() { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken GetSeparator(int index) { throw null; }
@@ -1905,7 +1916,7 @@ namespace Microsoft.CodeAnalysis
         public TNode Last() { throw null; }
         public int LastIndexOf(System.Func<TNode, bool> predicate) { throw null; }
         public int LastIndexOf(TNode node) { throw null; }
-        public TNode LastOrDefault() { throw null; }
+        public TNode? LastOrDefault() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.SeparatedSyntaxList<TNode> left, Microsoft.CodeAnalysis.SeparatedSyntaxList<TNode> right) { throw null; }
         public static implicit operator Microsoft.CodeAnalysis.SeparatedSyntaxList<TNode> (Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.SyntaxNode> nodes) { throw null; }
         public static implicit operator Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.SyntaxNode> (Microsoft.CodeAnalysis.SeparatedSyntaxList<TNode> nodes) { throw null; }
@@ -1924,7 +1935,7 @@ namespace Microsoft.CodeAnalysis
             private object _dummy;
             private int _dummyPrimitive;
             public TNode Current { get { throw null; } }
-            public override bool Equals(object obj) { throw null; }
+            public override bool Equals(object? obj) { throw null; }
             public override int GetHashCode() { throw null; }
             public bool MoveNext() { throw null; }
             public void Reset() { }
@@ -1939,24 +1950,25 @@ namespace Microsoft.CodeAnalysis
     }
     public partial class SourceFileResolver : Microsoft.CodeAnalysis.SourceReferenceResolver, System.IEquatable<Microsoft.CodeAnalysis.SourceFileResolver>
     {
-        public SourceFileResolver(System.Collections.Generic.IEnumerable<string> searchPaths, string baseDirectory) { }
-        public SourceFileResolver(System.Collections.Immutable.ImmutableArray<string> searchPaths, string baseDirectory) { }
-        public SourceFileResolver(System.Collections.Immutable.ImmutableArray<string> searchPaths, string baseDirectory, System.Collections.Immutable.ImmutableArray<System.Collections.Generic.KeyValuePair<string, string>> pathMap) { }
-        public string BaseDirectory { get { throw null; } }
+        public SourceFileResolver(System.Collections.Generic.IEnumerable<string> searchPaths, string? baseDirectory) { }
+        public SourceFileResolver(System.Collections.Immutable.ImmutableArray<string> searchPaths, string? baseDirectory) { }
+        public SourceFileResolver(System.Collections.Immutable.ImmutableArray<string> searchPaths, string? baseDirectory, System.Collections.Immutable.ImmutableArray<System.Collections.Generic.KeyValuePair<string, string>> pathMap) { }
+        public string? BaseDirectory { get { throw null; } }
         public static Microsoft.CodeAnalysis.SourceFileResolver Default { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<System.Collections.Generic.KeyValuePair<string, string>> PathMap { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<string> SearchPaths { get { throw null; } }
-        public bool Equals(Microsoft.CodeAnalysis.SourceFileResolver other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
-        protected virtual bool FileExists(string resolvedPath) { throw null; }
+        public bool Equals(Microsoft.CodeAnalysis.SourceFileResolver? other) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
+        protected virtual bool FileExists(string? resolvedPath) { throw null; }
         public override int GetHashCode() { throw null; }
-        public override string NormalizePath(string path, string baseFilePath) { throw null; }
+        public override string? NormalizePath(string path, string? baseFilePath) { throw null; }
         public override System.IO.Stream OpenRead(string resolvedPath) { throw null; }
-        public override string ResolveReference(string path, string baseFilePath) { throw null; }
+        public override string? ResolveReference(string path, string? baseFilePath) { throw null; }
     }
     public readonly partial struct SourceProductionContext
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public void AddSource(string hintName, Microsoft.CodeAnalysis.Text.SourceText sourceText) { }
         public void AddSource(string hintName, string source) { }
@@ -1965,12 +1977,12 @@ namespace Microsoft.CodeAnalysis
     public abstract partial class SourceReferenceResolver
     {
         protected SourceReferenceResolver() { }
-        public abstract override bool Equals(object other);
+        public abstract override bool Equals(object? other);
         public abstract override int GetHashCode();
-        public abstract string NormalizePath(string path, string baseFilePath);
+        public abstract string? NormalizePath(string path, string? baseFilePath);
         public abstract System.IO.Stream OpenRead(string resolvedPath);
         public virtual Microsoft.CodeAnalysis.Text.SourceText ReadText(string resolvedPath) { throw null; }
-        public abstract string ResolveReference(string path, string baseFilePath);
+        public abstract string? ResolveReference(string path, string? baseFilePath);
     }
     public enum SpecialType : sbyte
     {
@@ -2031,8 +2043,8 @@ namespace Microsoft.CodeAnalysis
     {
         protected StrongNameProvider() { }
         internal abstract Microsoft.CodeAnalysis.StrongNameFileSystem FileSystem { get; }
-        internal abstract Microsoft.CodeAnalysis.StrongNameKeys CreateKeys(string keyFilePath, string keyContainerName, bool hasCounterSignature, Microsoft.CodeAnalysis.CommonMessageProvider messageProvider);
-        public abstract override bool Equals(object other);
+        internal abstract Microsoft.CodeAnalysis.StrongNameKeys CreateKeys(string? keyFilePath, string? keyContainerName, bool hasCounterSignature, Microsoft.CodeAnalysis.CommonMessageProvider messageProvider);
+        public abstract override bool Equals(object? other);
         public abstract override int GetHashCode();
         internal abstract void SignBuilder(Microsoft.Cci.ExtendedPEBuilder peBuilder, System.Reflection.Metadata.BlobBuilder peBlob, System.Security.Cryptography.RSAParameters privateKey);
         internal abstract void SignFile(Microsoft.CodeAnalysis.StrongNameKeys keys, string filePath);
@@ -2051,20 +2063,20 @@ namespace Microsoft.CodeAnalysis
         public static Microsoft.CodeAnalysis.SubsystemVersion WindowsXP { get { throw null; } }
         public static Microsoft.CodeAnalysis.SubsystemVersion Create(int major, int minor) { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.SubsystemVersion other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public override string ToString() { throw null; }
         public static bool TryParse(string str, out Microsoft.CodeAnalysis.SubsystemVersion version) { throw null; }
     }
-    public sealed partial class SuppressionDescriptor : System.IEquatable<Microsoft.CodeAnalysis.SuppressionDescriptor>
+    public sealed partial class SuppressionDescriptor : System.IEquatable<Microsoft.CodeAnalysis.SuppressionDescriptor?>
     {
         public SuppressionDescriptor(string id, string suppressedDiagnosticId, Microsoft.CodeAnalysis.LocalizableString justification) { }
         public SuppressionDescriptor(string id, string suppressedDiagnosticId, string justification) { }
         public string Id { get { throw null; } }
         public Microsoft.CodeAnalysis.LocalizableString Justification { get { throw null; } }
         public string SuppressedDiagnosticId { get { throw null; } }
-        public bool Equals(Microsoft.CodeAnalysis.SuppressionDescriptor other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public bool Equals(Microsoft.CodeAnalysis.SuppressionDescriptor? other) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
     }
     public enum SymbolDisplayDelegateStyle
@@ -2195,9 +2207,9 @@ namespace Microsoft.CodeAnalysis
     {
         private object _dummy;
         private int _dummyPrimitive;
-        public SymbolDisplayPart(Microsoft.CodeAnalysis.SymbolDisplayPartKind kind, Microsoft.CodeAnalysis.ISymbol symbol, string text) { throw null; }
+        public SymbolDisplayPart(Microsoft.CodeAnalysis.SymbolDisplayPartKind kind, Microsoft.CodeAnalysis.ISymbol? symbol, string text) { throw null; }
         public Microsoft.CodeAnalysis.SymbolDisplayPartKind Kind { get { throw null; } }
-        public Microsoft.CodeAnalysis.ISymbol Symbol { get { throw null; } }
+        public Microsoft.CodeAnalysis.ISymbol? Symbol { get { throw null; } }
         public override string ToString() { throw null; }
     }
     public enum SymbolDisplayPartKind
@@ -2247,13 +2259,13 @@ namespace Microsoft.CodeAnalysis
         NameAndContainingTypes = 1,
         NameAndContainingTypesAndNamespaces = 2,
     }
-    public sealed partial class SymbolEqualityComparer : System.Collections.Generic.IEqualityComparer<Microsoft.CodeAnalysis.ISymbol>
+    public sealed partial class SymbolEqualityComparer : System.Collections.Generic.IEqualityComparer<Microsoft.CodeAnalysis.ISymbol?>
     {
         internal SymbolEqualityComparer() { }
         public static readonly Microsoft.CodeAnalysis.SymbolEqualityComparer Default;
         public static readonly Microsoft.CodeAnalysis.SymbolEqualityComparer IncludeNullability;
-        public bool Equals(Microsoft.CodeAnalysis.ISymbol x, Microsoft.CodeAnalysis.ISymbol y) { throw null; }
-        public int GetHashCode(Microsoft.CodeAnalysis.ISymbol obj) { throw null; }
+        public bool Equals(Microsoft.CodeAnalysis.ISymbol? x, Microsoft.CodeAnalysis.ISymbol? y) { throw null; }
+        public int GetHashCode(Microsoft.CodeAnalysis.ISymbol? obj) { throw null; }
     }
     [System.FlagsAttribute]
     public enum SymbolFilter
@@ -2271,9 +2283,9 @@ namespace Microsoft.CodeAnalysis
         private int _dummyPrimitive;
         public Microsoft.CodeAnalysis.CandidateReason CandidateReason { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ISymbol> CandidateSymbols { get { throw null; } }
-        public Microsoft.CodeAnalysis.ISymbol Symbol { get { throw null; } }
+        public Microsoft.CodeAnalysis.ISymbol? Symbol { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.SymbolInfo other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
     }
     public enum SymbolKind
@@ -2304,7 +2316,7 @@ namespace Microsoft.CodeAnalysis
     {
         protected SymbolVisitor() { }
         public virtual void DefaultVisit(Microsoft.CodeAnalysis.ISymbol symbol) { }
-        public virtual void Visit(Microsoft.CodeAnalysis.ISymbol symbol) { }
+        public virtual void Visit(Microsoft.CodeAnalysis.ISymbol? symbol) { }
         public virtual void VisitAlias(Microsoft.CodeAnalysis.IAliasSymbol symbol) { }
         public virtual void VisitArrayType(Microsoft.CodeAnalysis.IArrayTypeSymbol symbol) { }
         public virtual void VisitAssembly(Microsoft.CodeAnalysis.IAssemblySymbol symbol) { }
@@ -2328,48 +2340,49 @@ namespace Microsoft.CodeAnalysis
     public abstract partial class SymbolVisitor<TResult>
     {
         protected SymbolVisitor() { }
-        public virtual TResult DefaultVisit(Microsoft.CodeAnalysis.ISymbol symbol) { throw null; }
-        public virtual TResult Visit(Microsoft.CodeAnalysis.ISymbol symbol) { throw null; }
-        public virtual TResult VisitAlias(Microsoft.CodeAnalysis.IAliasSymbol symbol) { throw null; }
-        public virtual TResult VisitArrayType(Microsoft.CodeAnalysis.IArrayTypeSymbol symbol) { throw null; }
-        public virtual TResult VisitAssembly(Microsoft.CodeAnalysis.IAssemblySymbol symbol) { throw null; }
-        public virtual TResult VisitDiscard(Microsoft.CodeAnalysis.IDiscardSymbol symbol) { throw null; }
-        public virtual TResult VisitDynamicType(Microsoft.CodeAnalysis.IDynamicTypeSymbol symbol) { throw null; }
-        public virtual TResult VisitEvent(Microsoft.CodeAnalysis.IEventSymbol symbol) { throw null; }
-        public virtual TResult VisitField(Microsoft.CodeAnalysis.IFieldSymbol symbol) { throw null; }
-        public virtual TResult VisitFunctionPointerType(Microsoft.CodeAnalysis.IFunctionPointerTypeSymbol symbol) { throw null; }
-        public virtual TResult VisitLabel(Microsoft.CodeAnalysis.ILabelSymbol symbol) { throw null; }
-        public virtual TResult VisitLocal(Microsoft.CodeAnalysis.ILocalSymbol symbol) { throw null; }
-        public virtual TResult VisitMethod(Microsoft.CodeAnalysis.IMethodSymbol symbol) { throw null; }
-        public virtual TResult VisitModule(Microsoft.CodeAnalysis.IModuleSymbol symbol) { throw null; }
-        public virtual TResult VisitNamedType(Microsoft.CodeAnalysis.INamedTypeSymbol symbol) { throw null; }
-        public virtual TResult VisitNamespace(Microsoft.CodeAnalysis.INamespaceSymbol symbol) { throw null; }
-        public virtual TResult VisitParameter(Microsoft.CodeAnalysis.IParameterSymbol symbol) { throw null; }
-        public virtual TResult VisitPointerType(Microsoft.CodeAnalysis.IPointerTypeSymbol symbol) { throw null; }
-        public virtual TResult VisitProperty(Microsoft.CodeAnalysis.IPropertySymbol symbol) { throw null; }
-        public virtual TResult VisitRangeVariable(Microsoft.CodeAnalysis.IRangeVariableSymbol symbol) { throw null; }
-        public virtual TResult VisitTypeParameter(Microsoft.CodeAnalysis.ITypeParameterSymbol symbol) { throw null; }
+        public virtual TResult? DefaultVisit(Microsoft.CodeAnalysis.ISymbol symbol) { throw null; }
+        public virtual TResult? Visit(Microsoft.CodeAnalysis.ISymbol? symbol) { throw null; }
+        public virtual TResult? VisitAlias(Microsoft.CodeAnalysis.IAliasSymbol symbol) { throw null; }
+        public virtual TResult? VisitArrayType(Microsoft.CodeAnalysis.IArrayTypeSymbol symbol) { throw null; }
+        public virtual TResult? VisitAssembly(Microsoft.CodeAnalysis.IAssemblySymbol symbol) { throw null; }
+        public virtual TResult? VisitDiscard(Microsoft.CodeAnalysis.IDiscardSymbol symbol) { throw null; }
+        public virtual TResult? VisitDynamicType(Microsoft.CodeAnalysis.IDynamicTypeSymbol symbol) { throw null; }
+        public virtual TResult? VisitEvent(Microsoft.CodeAnalysis.IEventSymbol symbol) { throw null; }
+        public virtual TResult? VisitField(Microsoft.CodeAnalysis.IFieldSymbol symbol) { throw null; }
+        public virtual TResult? VisitFunctionPointerType(Microsoft.CodeAnalysis.IFunctionPointerTypeSymbol symbol) { throw null; }
+        public virtual TResult? VisitLabel(Microsoft.CodeAnalysis.ILabelSymbol symbol) { throw null; }
+        public virtual TResult? VisitLocal(Microsoft.CodeAnalysis.ILocalSymbol symbol) { throw null; }
+        public virtual TResult? VisitMethod(Microsoft.CodeAnalysis.IMethodSymbol symbol) { throw null; }
+        public virtual TResult? VisitModule(Microsoft.CodeAnalysis.IModuleSymbol symbol) { throw null; }
+        public virtual TResult? VisitNamedType(Microsoft.CodeAnalysis.INamedTypeSymbol symbol) { throw null; }
+        public virtual TResult? VisitNamespace(Microsoft.CodeAnalysis.INamespaceSymbol symbol) { throw null; }
+        public virtual TResult? VisitParameter(Microsoft.CodeAnalysis.IParameterSymbol symbol) { throw null; }
+        public virtual TResult? VisitPointerType(Microsoft.CodeAnalysis.IPointerTypeSymbol symbol) { throw null; }
+        public virtual TResult? VisitProperty(Microsoft.CodeAnalysis.IPropertySymbol symbol) { throw null; }
+        public virtual TResult? VisitRangeVariable(Microsoft.CodeAnalysis.IRangeVariableSymbol symbol) { throw null; }
+        public virtual TResult? VisitTypeParameter(Microsoft.CodeAnalysis.ITypeParameterSymbol symbol) { throw null; }
     }
-    public sealed partial class SyntaxAnnotation : System.IEquatable<Microsoft.CodeAnalysis.SyntaxAnnotation>
+    public sealed partial class SyntaxAnnotation : System.IEquatable<Microsoft.CodeAnalysis.SyntaxAnnotation?>
     {
         public SyntaxAnnotation() { }
-        public SyntaxAnnotation(string kind) { }
-        public SyntaxAnnotation(string kind, string data) { }
-        public string Data { get { throw null; } }
+        public SyntaxAnnotation(string? kind) { }
+        public SyntaxAnnotation(string? kind, string? data) { }
+        public string? Data { get { throw null; } }
         public static Microsoft.CodeAnalysis.SyntaxAnnotation ElasticAnnotation { get { throw null; } }
-        public string Kind { get { throw null; } }
-        public bool Equals(Microsoft.CodeAnalysis.SyntaxAnnotation other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public string? Kind { get { throw null; } }
+        public bool Equals(Microsoft.CodeAnalysis.SyntaxAnnotation? other) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
-        public static bool operator ==(Microsoft.CodeAnalysis.SyntaxAnnotation left, Microsoft.CodeAnalysis.SyntaxAnnotation right) { throw null; }
-        public static bool operator !=(Microsoft.CodeAnalysis.SyntaxAnnotation left, Microsoft.CodeAnalysis.SyntaxAnnotation right) { throw null; }
+        public static bool operator ==(Microsoft.CodeAnalysis.SyntaxAnnotation? left, Microsoft.CodeAnalysis.SyntaxAnnotation? right) { throw null; }
+        public static bool operator !=(Microsoft.CodeAnalysis.SyntaxAnnotation? left, Microsoft.CodeAnalysis.SyntaxAnnotation? right) { throw null; }
     }
-    public delegate Microsoft.CodeAnalysis.ISyntaxContextReceiver SyntaxContextReceiverCreator();
+    public delegate Microsoft.CodeAnalysis.ISyntaxContextReceiver? SyntaxContextReceiverCreator();
     public readonly partial struct SyntaxList<TNode> : System.Collections.Generic.IEnumerable<TNode>, System.Collections.Generic.IReadOnlyCollection<TNode>, System.Collections.Generic.IReadOnlyList<TNode>, System.Collections.IEnumerable, System.IEquatable<Microsoft.CodeAnalysis.SyntaxList<TNode>> where TNode : Microsoft.CodeAnalysis.SyntaxNode
     {
         private readonly object _dummy;
-        public SyntaxList(System.Collections.Generic.IEnumerable<TNode> nodes) { throw null; }
-        public SyntaxList(TNode node) { throw null; }
+        private readonly int _dummyPrimitive;
+        public SyntaxList(System.Collections.Generic.IEnumerable<TNode>? nodes) { throw null; }
+        public SyntaxList(TNode? node) { throw null; }
         public int Count { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.TextSpan FullSpan { get { throw null; } }
         public TNode this[int index] { get { throw null; } }
@@ -2378,9 +2391,9 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.SyntaxList<TNode> AddRange(System.Collections.Generic.IEnumerable<TNode> nodes) { throw null; }
         public bool Any() { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.SyntaxList<TNode> other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public TNode First() { throw null; }
-        public TNode FirstOrDefault() { throw null; }
+        public TNode? FirstOrDefault() { throw null; }
         public Microsoft.CodeAnalysis.SyntaxList<TNode>.Enumerator GetEnumerator() { throw null; }
         public override int GetHashCode() { throw null; }
         public int IndexOf(System.Func<TNode, bool> predicate) { throw null; }
@@ -2390,7 +2403,7 @@ namespace Microsoft.CodeAnalysis
         public TNode Last() { throw null; }
         public int LastIndexOf(System.Func<TNode, bool> predicate) { throw null; }
         public int LastIndexOf(TNode node) { throw null; }
-        public TNode LastOrDefault() { throw null; }
+        public TNode? LastOrDefault() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.SyntaxList<TNode> left, Microsoft.CodeAnalysis.SyntaxList<TNode> right) { throw null; }
         public static implicit operator Microsoft.CodeAnalysis.SyntaxList<TNode> (Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.SyntaxNode> nodes) { throw null; }
         public static implicit operator Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.SyntaxNode> (Microsoft.CodeAnalysis.SyntaxList<TNode> nodes) { throw null; }
@@ -2408,7 +2421,7 @@ namespace Microsoft.CodeAnalysis
             private object _dummy;
             private int _dummyPrimitive;
             public TNode Current { get { throw null; } }
-            public override bool Equals(object obj) { throw null; }
+            public override bool Equals(object? obj) { throw null; }
             public override int GetHashCode() { throw null; }
             public bool MoveNext() { throw null; }
             public void Reset() { }
@@ -2429,7 +2442,7 @@ namespace Microsoft.CodeAnalysis
         public bool IsStructuredTrivia { get { throw null; } }
         protected string KindText { get { throw null; } }
         public abstract string Language { get; }
-        public Microsoft.CodeAnalysis.SyntaxNode Parent { get { throw null; } }
+        public Microsoft.CodeAnalysis.SyntaxNode? Parent { get { throw null; } }
         public virtual Microsoft.CodeAnalysis.SyntaxTrivia ParentTrivia { get { throw null; } }
         public int RawKind { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.TextSpan Span { get { throw null; } }
@@ -2442,30 +2455,30 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.ChildSyntaxList ChildNodesAndTokens() { throw null; }
         public virtual Microsoft.CodeAnalysis.SyntaxNodeOrToken ChildThatContainsPosition(int position) { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> ChildTokens() { throw null; }
-        public bool Contains(Microsoft.CodeAnalysis.SyntaxNode node) { throw null; }
-        public T CopyAnnotationsTo<T>(T node) where T : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
-        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> DescendantNodes(Microsoft.CodeAnalysis.Text.TextSpan span, System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool> descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
-        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> DescendantNodes(System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool> descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
-        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> DescendantNodesAndSelf(Microsoft.CodeAnalysis.Text.TextSpan span, System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool> descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
-        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> DescendantNodesAndSelf(System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool> descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
-        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNodeOrToken> DescendantNodesAndTokens(Microsoft.CodeAnalysis.Text.TextSpan span, System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool> descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
-        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNodeOrToken> DescendantNodesAndTokens(System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool> descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
-        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNodeOrToken> DescendantNodesAndTokensAndSelf(Microsoft.CodeAnalysis.Text.TextSpan span, System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool> descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
-        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNodeOrToken> DescendantNodesAndTokensAndSelf(System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool> descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
-        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> DescendantTokens(Microsoft.CodeAnalysis.Text.TextSpan span, System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool> descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
-        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> DescendantTokens(System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool> descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
-        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> DescendantTrivia(Microsoft.CodeAnalysis.Text.TextSpan span, System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool> descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
-        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> DescendantTrivia(System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool> descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
+        public bool Contains(Microsoft.CodeAnalysis.SyntaxNode? node) { throw null; }
+        public T? CopyAnnotationsTo<T>(T? node) where T : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
+        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> DescendantNodes(Microsoft.CodeAnalysis.Text.TextSpan span, System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
+        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> DescendantNodes(System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
+        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> DescendantNodesAndSelf(Microsoft.CodeAnalysis.Text.TextSpan span, System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
+        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> DescendantNodesAndSelf(System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
+        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNodeOrToken> DescendantNodesAndTokens(Microsoft.CodeAnalysis.Text.TextSpan span, System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
+        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNodeOrToken> DescendantNodesAndTokens(System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
+        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNodeOrToken> DescendantNodesAndTokensAndSelf(Microsoft.CodeAnalysis.Text.TextSpan span, System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
+        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNodeOrToken> DescendantNodesAndTokensAndSelf(System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
+        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> DescendantTokens(Microsoft.CodeAnalysis.Text.TextSpan span, System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
+        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> DescendantTokens(System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
+        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> DescendantTrivia(Microsoft.CodeAnalysis.Text.TextSpan span, System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
+        public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> DescendantTrivia(System.Func<Microsoft.CodeAnalysis.SyntaxNode, bool>? descendIntoChildren = null, bool descendIntoTrivia = false) { throw null; }
         protected virtual bool EquivalentToCore(Microsoft.CodeAnalysis.SyntaxNode other) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxNode FindNode(Microsoft.CodeAnalysis.Text.TextSpan span, bool findInsideTrivia = false, bool getInnermostNodeForTie = false) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken FindToken(int position, bool findInsideTrivia = false) { throw null; }
         protected virtual Microsoft.CodeAnalysis.SyntaxToken FindTokenCore(int position, bool findInsideTrivia) { throw null; }
         protected virtual Microsoft.CodeAnalysis.SyntaxToken FindTokenCore(int position, System.Func<Microsoft.CodeAnalysis.SyntaxTrivia, bool> stepInto) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxTrivia FindTrivia(int position, bool findInsideTrivia = false) { throw null; }
-        public Microsoft.CodeAnalysis.SyntaxTrivia FindTrivia(int position, System.Func<Microsoft.CodeAnalysis.SyntaxTrivia, bool> stepInto) { throw null; }
+        public Microsoft.CodeAnalysis.SyntaxTrivia FindTrivia(int position, System.Func<Microsoft.CodeAnalysis.SyntaxTrivia, bool>? stepInto) { throw null; }
         protected virtual Microsoft.CodeAnalysis.SyntaxTrivia FindTriviaCore(int position, bool findInsideTrivia) { throw null; }
-        public TNode FirstAncestorOrSelf<TNode>(System.Func<TNode, bool> predicate = null, bool ascendOutOfTrivia = true) where TNode : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
-        public TNode FirstAncestorOrSelf<TNode, TArg>(System.Func<TNode, TArg, bool> predicate, TArg argument, bool ascendOutOfTrivia = true) where TNode : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
+        public TNode? FirstAncestorOrSelf<TNode>(System.Func<TNode, bool>? predicate = null, bool ascendOutOfTrivia = true) where TNode : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
+        public TNode? FirstAncestorOrSelf<TNode, TArg>(System.Func<TNode, TArg, bool> predicate, TArg argument, bool ascendOutOfTrivia = true) where TNode : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> GetAnnotatedNodes(Microsoft.CodeAnalysis.SyntaxAnnotation syntaxAnnotation) { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> GetAnnotatedNodes(string annotationKind) { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNodeOrToken> GetAnnotatedNodesAndTokens(Microsoft.CodeAnalysis.SyntaxAnnotation annotation) { throw null; }
@@ -2483,25 +2496,25 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.SyntaxToken GetLastToken(bool includeZeroWidth = false, bool includeSkipped = false, bool includeDirectives = false, bool includeDocumentationComments = false) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxTriviaList GetLeadingTrivia() { throw null; }
         public Microsoft.CodeAnalysis.Location GetLocation() { throw null; }
-        protected T GetRedAtZero<T>(ref T field) where T : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
-        protected T GetRed<T>(ref T field, int slot) where T : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
+        protected T? GetRedAtZero<T>(ref T? field) where T : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
+        protected T? GetRed<T>(ref T? field, int slot) where T : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public Microsoft.CodeAnalysis.SyntaxReference GetReference() { throw null; }
-        public Microsoft.CodeAnalysis.Text.SourceText GetText(System.Text.Encoding encoding = null, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm = Microsoft.CodeAnalysis.Text.SourceHashAlgorithm.Sha1) { throw null; }
+        public Microsoft.CodeAnalysis.Text.SourceText GetText(System.Text.Encoding? encoding = null, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm = Microsoft.CodeAnalysis.Text.SourceHashAlgorithm.Sha1) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxTriviaList GetTrailingTrivia() { throw null; }
-        public bool HasAnnotation(Microsoft.CodeAnalysis.SyntaxAnnotation annotation) { throw null; }
+        public bool HasAnnotation(Microsoft.CodeAnalysis.SyntaxAnnotation? annotation) { throw null; }
         public bool HasAnnotations(System.Collections.Generic.IEnumerable<string> annotationKinds) { throw null; }
         public bool HasAnnotations(string annotationKind) { throw null; }
         protected internal abstract Microsoft.CodeAnalysis.SyntaxNode InsertNodesInListCore(Microsoft.CodeAnalysis.SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> nodesToInsert, bool insertBefore);
         protected internal abstract Microsoft.CodeAnalysis.SyntaxNode InsertTokensInListCore(Microsoft.CodeAnalysis.SyntaxToken originalToken, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> newTokens, bool insertBefore);
         protected internal abstract Microsoft.CodeAnalysis.SyntaxNode InsertTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> newTrivia, bool insertBefore);
-        public bool IsEquivalentTo(Microsoft.CodeAnalysis.SyntaxNode other) { throw null; }
+        public bool IsEquivalentTo(Microsoft.CodeAnalysis.SyntaxNode? other) { throw null; }
         public bool IsEquivalentTo(Microsoft.CodeAnalysis.SyntaxNode node, bool topLevel = false) { throw null; }
         protected abstract bool IsEquivalentToCore(Microsoft.CodeAnalysis.SyntaxNode node, bool topLevel = false);
-        public bool IsIncrementallyIdenticalTo(Microsoft.CodeAnalysis.SyntaxNode other) { throw null; }
+        public bool IsIncrementallyIdenticalTo(Microsoft.CodeAnalysis.SyntaxNode? other) { throw null; }
         public bool IsPartOfStructuredTrivia() { throw null; }
         protected internal abstract Microsoft.CodeAnalysis.SyntaxNode NormalizeWhitespaceCore(string indentation, string eol, bool elasticTrivia);
-        protected internal abstract Microsoft.CodeAnalysis.SyntaxNode RemoveNodesCore(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> nodes, Microsoft.CodeAnalysis.SyntaxRemoveOptions options);
-        protected internal abstract Microsoft.CodeAnalysis.SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode> nodes = null, System.Func<TNode, TNode, Microsoft.CodeAnalysis.SyntaxNode> computeReplacementNode = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> tokens = null, System.Func<Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.SyntaxToken> computeReplacementToken = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> trivia = null, System.Func<Microsoft.CodeAnalysis.SyntaxTrivia, Microsoft.CodeAnalysis.SyntaxTrivia, Microsoft.CodeAnalysis.SyntaxTrivia> computeReplacementTrivia = null) where TNode : Microsoft.CodeAnalysis.SyntaxNode;
+        protected internal abstract Microsoft.CodeAnalysis.SyntaxNode? RemoveNodesCore(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> nodes, Microsoft.CodeAnalysis.SyntaxRemoveOptions options);
+        protected internal abstract Microsoft.CodeAnalysis.SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode>? nodes = null, System.Func<TNode, TNode, Microsoft.CodeAnalysis.SyntaxNode>? computeReplacementNode = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken>? tokens = null, System.Func<Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.SyntaxToken>? computeReplacementToken = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia>? trivia = null, System.Func<Microsoft.CodeAnalysis.SyntaxTrivia, Microsoft.CodeAnalysis.SyntaxTrivia, Microsoft.CodeAnalysis.SyntaxTrivia>? computeReplacementTrivia = null) where TNode : Microsoft.CodeAnalysis.SyntaxNode;
         protected internal abstract Microsoft.CodeAnalysis.SyntaxNode ReplaceNodeInListCore(Microsoft.CodeAnalysis.SyntaxNode originalNode, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> replacementNodes);
         protected internal abstract Microsoft.CodeAnalysis.SyntaxNode ReplaceTokenInListCore(Microsoft.CodeAnalysis.SyntaxToken originalToken, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> newTokens);
         protected internal abstract Microsoft.CodeAnalysis.SyntaxNode ReplaceTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> newTrivia);
@@ -2514,7 +2527,7 @@ namespace Microsoft.CodeAnalysis
     {
         public static System.Collections.Generic.IEnumerable<TNode> GetCurrentNodes<TNode>(this Microsoft.CodeAnalysis.SyntaxNode root, System.Collections.Generic.IEnumerable<TNode> nodes) where TNode : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static System.Collections.Generic.IEnumerable<TNode> GetCurrentNodes<TNode>(this Microsoft.CodeAnalysis.SyntaxNode root, TNode node) where TNode : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
-        public static TNode GetCurrentNode<TNode>(this Microsoft.CodeAnalysis.SyntaxNode root, TNode node) where TNode : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
+        public static TNode? GetCurrentNode<TNode>(this Microsoft.CodeAnalysis.SyntaxNode root, TNode node) where TNode : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TRoot InsertNodesAfter<TRoot>(this TRoot root, Microsoft.CodeAnalysis.SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> newNodes) where TRoot : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TRoot InsertNodesBefore<TRoot>(this TRoot root, Microsoft.CodeAnalysis.SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> newNodes) where TRoot : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TRoot InsertTokensAfter<TRoot>(this TRoot root, Microsoft.CodeAnalysis.SyntaxToken tokenInList, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> newTokens) where TRoot : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
@@ -2523,8 +2536,8 @@ namespace Microsoft.CodeAnalysis
         public static TRoot InsertTriviaBefore<TRoot>(this TRoot root, Microsoft.CodeAnalysis.SyntaxTrivia trivia, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> newTrivia) where TRoot : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TNode NormalizeWhitespace<TNode>(this TNode node, string indentation, bool elasticTrivia) where TNode : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TNode NormalizeWhitespace<TNode>(this TNode node, string indentation = "    ", string eol = "\r\n", bool elasticTrivia = false) where TNode : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
-        public static TRoot RemoveNodes<TRoot>(this TRoot root, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> nodes, Microsoft.CodeAnalysis.SyntaxRemoveOptions options) where TRoot : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
-        public static TRoot RemoveNode<TRoot>(this TRoot root, Microsoft.CodeAnalysis.SyntaxNode node, Microsoft.CodeAnalysis.SyntaxRemoveOptions options) where TRoot : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
+        public static TRoot? RemoveNodes<TRoot>(this TRoot root, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> nodes, Microsoft.CodeAnalysis.SyntaxRemoveOptions options) where TRoot : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
+        public static TRoot? RemoveNode<TRoot>(this TRoot root, Microsoft.CodeAnalysis.SyntaxNode node, Microsoft.CodeAnalysis.SyntaxRemoveOptions options) where TRoot : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TRoot ReplaceNodes<TRoot, TNode>(this TRoot root, System.Collections.Generic.IEnumerable<TNode> nodes, System.Func<TNode, TNode, Microsoft.CodeAnalysis.SyntaxNode> computeReplacementNode) where TRoot : Microsoft.CodeAnalysis.SyntaxNode where TNode : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TRoot ReplaceNode<TRoot>(this TRoot root, Microsoft.CodeAnalysis.SyntaxNode oldNode, Microsoft.CodeAnalysis.SyntaxNode newNode) where TRoot : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TRoot ReplaceNode<TRoot>(this TRoot root, Microsoft.CodeAnalysis.SyntaxNode oldNode, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> newNodes) where TRoot : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
@@ -2538,15 +2551,15 @@ namespace Microsoft.CodeAnalysis
         public static TRoot TrackNodes<TRoot>(this TRoot root, params Microsoft.CodeAnalysis.SyntaxNode[] nodes) where TRoot : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TRoot TrackNodes<TRoot>(this TRoot root, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> nodes) where TRoot : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TSyntax WithLeadingTrivia<TSyntax>(this TSyntax node, Microsoft.CodeAnalysis.SyntaxTriviaList trivia) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
-        public static TSyntax WithLeadingTrivia<TSyntax>(this TSyntax node, params Microsoft.CodeAnalysis.SyntaxTrivia[] trivia) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
-        public static TSyntax WithLeadingTrivia<TSyntax>(this TSyntax node, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> trivia) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
+        public static TSyntax WithLeadingTrivia<TSyntax>(this TSyntax node, params Microsoft.CodeAnalysis.SyntaxTrivia[]? trivia) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
+        public static TSyntax WithLeadingTrivia<TSyntax>(this TSyntax node, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia>? trivia) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TSyntax WithoutLeadingTrivia<TSyntax>(this TSyntax node) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TSyntax WithoutTrailingTrivia<TSyntax>(this TSyntax node) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static Microsoft.CodeAnalysis.SyntaxToken WithoutTrivia(this Microsoft.CodeAnalysis.SyntaxToken token) { throw null; }
         public static TSyntax WithoutTrivia<TSyntax>(this TSyntax syntax) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TSyntax WithTrailingTrivia<TSyntax>(this TSyntax node, Microsoft.CodeAnalysis.SyntaxTriviaList trivia) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
-        public static TSyntax WithTrailingTrivia<TSyntax>(this TSyntax node, params Microsoft.CodeAnalysis.SyntaxTrivia[] trivia) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
-        public static TSyntax WithTrailingTrivia<TSyntax>(this TSyntax node, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> trivia) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
+        public static TSyntax WithTrailingTrivia<TSyntax>(this TSyntax node, params Microsoft.CodeAnalysis.SyntaxTrivia[]? trivia) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
+        public static TSyntax WithTrailingTrivia<TSyntax>(this TSyntax node, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia>? trivia) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
         public static TSyntax WithTriviaFrom<TSyntax>(this TSyntax syntax, Microsoft.CodeAnalysis.SyntaxNode node) where TSyntax : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
     }
     public readonly partial struct SyntaxNodeOrToken : System.IEquatable<Microsoft.CodeAnalysis.SyntaxNodeOrToken>
@@ -2563,35 +2576,35 @@ namespace Microsoft.CodeAnalysis
         public bool IsNode { get { throw null; } }
         public bool IsToken { get { throw null; } }
         public string Language { get { throw null; } }
-        public Microsoft.CodeAnalysis.SyntaxNode Parent { get { throw null; } }
+        public Microsoft.CodeAnalysis.SyntaxNode? Parent { get { throw null; } }
         public int RawKind { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.TextSpan Span { get { throw null; } }
         public int SpanStart { get { throw null; } }
-        public Microsoft.CodeAnalysis.SyntaxTree SyntaxTree { get { throw null; } }
-        public Microsoft.CodeAnalysis.SyntaxNode AsNode() { throw null; }
+        public Microsoft.CodeAnalysis.SyntaxTree? SyntaxTree { get { throw null; } }
+        public Microsoft.CodeAnalysis.SyntaxNode? AsNode() { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken AsToken() { throw null; }
         public Microsoft.CodeAnalysis.ChildSyntaxList ChildNodesAndTokens() { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.SyntaxNodeOrToken other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxAnnotation> GetAnnotations(System.Collections.Generic.IEnumerable<string> annotationKinds) { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxAnnotation> GetAnnotations(string annotationKind) { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Diagnostic> GetDiagnostics() { throw null; }
         public static int GetFirstChildIndexSpanningPosition(Microsoft.CodeAnalysis.SyntaxNode node, int position) { throw null; }
         public override int GetHashCode() { throw null; }
         public Microsoft.CodeAnalysis.SyntaxTriviaList GetLeadingTrivia() { throw null; }
-        public Microsoft.CodeAnalysis.Location GetLocation() { throw null; }
+        public Microsoft.CodeAnalysis.Location? GetLocation() { throw null; }
         public Microsoft.CodeAnalysis.SyntaxNodeOrToken GetNextSibling() { throw null; }
         public Microsoft.CodeAnalysis.SyntaxNodeOrToken GetPreviousSibling() { throw null; }
         public Microsoft.CodeAnalysis.SyntaxTriviaList GetTrailingTrivia() { throw null; }
-        public bool HasAnnotation(Microsoft.CodeAnalysis.SyntaxAnnotation annotation) { throw null; }
+        public bool HasAnnotation(Microsoft.CodeAnalysis.SyntaxAnnotation? annotation) { throw null; }
         public bool HasAnnotations(System.Collections.Generic.IEnumerable<string> annotationKinds) { throw null; }
         public bool HasAnnotations(string annotationKind) { throw null; }
         public bool IsEquivalentTo(Microsoft.CodeAnalysis.SyntaxNodeOrToken other) { throw null; }
         public bool IsIncrementallyIdenticalTo(Microsoft.CodeAnalysis.SyntaxNodeOrToken other) { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.SyntaxNodeOrToken left, Microsoft.CodeAnalysis.SyntaxNodeOrToken right) { throw null; }
-        public static explicit operator Microsoft.CodeAnalysis.SyntaxNode (Microsoft.CodeAnalysis.SyntaxNodeOrToken nodeOrToken) { throw null; }
+        public static explicit operator Microsoft.CodeAnalysis.SyntaxNode? (Microsoft.CodeAnalysis.SyntaxNodeOrToken nodeOrToken) { throw null; }
         public static explicit operator Microsoft.CodeAnalysis.SyntaxToken (Microsoft.CodeAnalysis.SyntaxNodeOrToken nodeOrToken) { throw null; }
-        public static implicit operator Microsoft.CodeAnalysis.SyntaxNodeOrToken (Microsoft.CodeAnalysis.SyntaxNode node) { throw null; }
+        public static implicit operator Microsoft.CodeAnalysis.SyntaxNodeOrToken (Microsoft.CodeAnalysis.SyntaxNode? node) { throw null; }
         public static implicit operator Microsoft.CodeAnalysis.SyntaxNodeOrToken (Microsoft.CodeAnalysis.SyntaxToken token) { throw null; }
         public static bool operator !=(Microsoft.CodeAnalysis.SyntaxNodeOrToken left, Microsoft.CodeAnalysis.SyntaxNodeOrToken right) { throw null; }
         public string ToFullString() { throw null; }
@@ -2621,7 +2634,7 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.SyntaxNodeOrTokenList AddRange(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNodeOrToken> nodesOrTokens) { throw null; }
         public bool Any() { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.SyntaxNodeOrTokenList other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxNodeOrToken First() { throw null; }
         public Microsoft.CodeAnalysis.SyntaxNodeOrToken FirstOrDefault() { throw null; }
         public Microsoft.CodeAnalysis.SyntaxNodeOrTokenList.Enumerator GetEnumerator() { throw null; }
@@ -2647,7 +2660,7 @@ namespace Microsoft.CodeAnalysis
             private int _dummyPrimitive;
             public Microsoft.CodeAnalysis.SyntaxNodeOrToken Current { get { throw null; } }
             object System.Collections.IEnumerator.Current { get { throw null; } }
-            public override bool Equals(object obj) { throw null; }
+            public override bool Equals(object? obj) { throw null; }
             public override int GetHashCode() { throw null; }
             public bool MoveNext() { throw null; }
             void System.Collections.IEnumerator.Reset() { }
@@ -2689,18 +2702,18 @@ namespace Microsoft.CodeAnalysis
         public bool IsMissing { get { throw null; } }
         public string Language { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxTriviaList LeadingTrivia { get { throw null; } }
-        public Microsoft.CodeAnalysis.SyntaxNode Parent { get { throw null; } }
+        public Microsoft.CodeAnalysis.SyntaxNode? Parent { get { throw null; } }
         public int RawKind { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.TextSpan Span { get { throw null; } }
         public int SpanStart { get { throw null; } }
-        public Microsoft.CodeAnalysis.SyntaxTree SyntaxTree { get { throw null; } }
+        public Microsoft.CodeAnalysis.SyntaxTree? SyntaxTree { get { throw null; } }
         public string Text { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxTriviaList TrailingTrivia { get { throw null; } }
-        public object Value { get { throw null; } }
+        public object? Value { get { throw null; } }
         public string ValueText { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken CopyAnnotationsTo(Microsoft.CodeAnalysis.SyntaxToken token) { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.SyntaxToken other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> GetAllTrivia() { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxAnnotation> GetAnnotations(System.Collections.Generic.IEnumerable<string> annotationKinds) { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxAnnotation> GetAnnotations(string annotationKind) { throw null; }
@@ -2710,7 +2723,7 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.Location GetLocation() { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken GetNextToken(bool includeZeroWidth = false, bool includeSkipped = false, bool includeDirectives = false, bool includeDocumentationComments = false) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken GetPreviousToken(bool includeZeroWidth = false, bool includeSkipped = false, bool includeDirectives = false, bool includeDocumentationComments = false) { throw null; }
-        public bool HasAnnotation(Microsoft.CodeAnalysis.SyntaxAnnotation annotation) { throw null; }
+        public bool HasAnnotation(Microsoft.CodeAnalysis.SyntaxAnnotation? annotation) { throw null; }
         public bool HasAnnotations(string annotationKind) { throw null; }
         public bool HasAnnotations(params string[] annotationKinds) { throw null; }
         public bool IsEquivalentTo(Microsoft.CodeAnalysis.SyntaxToken token) { throw null; }
@@ -2723,14 +2736,14 @@ namespace Microsoft.CodeAnalysis
         public Microsoft.CodeAnalysis.SyntaxToken WithAdditionalAnnotations(params Microsoft.CodeAnalysis.SyntaxAnnotation[] annotations) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken WithAdditionalAnnotations(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxAnnotation> annotations) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken WithLeadingTrivia(Microsoft.CodeAnalysis.SyntaxTriviaList trivia) { throw null; }
-        public Microsoft.CodeAnalysis.SyntaxToken WithLeadingTrivia(params Microsoft.CodeAnalysis.SyntaxTrivia[] trivia) { throw null; }
-        public Microsoft.CodeAnalysis.SyntaxToken WithLeadingTrivia(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> trivia) { throw null; }
+        public Microsoft.CodeAnalysis.SyntaxToken WithLeadingTrivia(params Microsoft.CodeAnalysis.SyntaxTrivia[]? trivia) { throw null; }
+        public Microsoft.CodeAnalysis.SyntaxToken WithLeadingTrivia(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia>? trivia) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken WithoutAnnotations(params Microsoft.CodeAnalysis.SyntaxAnnotation[] annotations) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken WithoutAnnotations(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxAnnotation> annotations) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken WithoutAnnotations(string annotationKind) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken WithTrailingTrivia(Microsoft.CodeAnalysis.SyntaxTriviaList trivia) { throw null; }
-        public Microsoft.CodeAnalysis.SyntaxToken WithTrailingTrivia(params Microsoft.CodeAnalysis.SyntaxTrivia[] trivia) { throw null; }
-        public Microsoft.CodeAnalysis.SyntaxToken WithTrailingTrivia(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> trivia) { throw null; }
+        public Microsoft.CodeAnalysis.SyntaxToken WithTrailingTrivia(params Microsoft.CodeAnalysis.SyntaxTrivia[]? trivia) { throw null; }
+        public Microsoft.CodeAnalysis.SyntaxToken WithTrailingTrivia(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia>? trivia) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken WithTriviaFrom(Microsoft.CodeAnalysis.SyntaxToken token) { throw null; }
         public void WriteTo(System.IO.TextWriter writer) { }
     }
@@ -2750,7 +2763,7 @@ namespace Microsoft.CodeAnalysis
         public bool Any() { throw null; }
         public static Microsoft.CodeAnalysis.SyntaxTokenList Create(Microsoft.CodeAnalysis.SyntaxToken token) { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.SyntaxTokenList other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxToken First() { throw null; }
         public Microsoft.CodeAnalysis.SyntaxTokenList.Enumerator GetEnumerator() { throw null; }
         public override int GetHashCode() { throw null; }
@@ -2774,16 +2787,17 @@ namespace Microsoft.CodeAnalysis
             private object _dummy;
             private int _dummyPrimitive;
             public Microsoft.CodeAnalysis.SyntaxToken Current { get { throw null; } }
-            public override bool Equals(object obj) { throw null; }
+            public override bool Equals(object? obj) { throw null; }
             public override int GetHashCode() { throw null; }
             public bool MoveNext() { throw null; }
         }
         public readonly partial struct Reversed : System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken>, System.Collections.IEnumerable, System.IEquatable<Microsoft.CodeAnalysis.SyntaxTokenList.Reversed>
         {
             private readonly object _dummy;
+            private readonly int _dummyPrimitive;
             public Reversed(Microsoft.CodeAnalysis.SyntaxTokenList list) { throw null; }
             public bool Equals(Microsoft.CodeAnalysis.SyntaxTokenList.Reversed other) { throw null; }
-            public override bool Equals(object obj) { throw null; }
+            public override bool Equals(object? obj) { throw null; }
             public Microsoft.CodeAnalysis.SyntaxTokenList.Reversed.Enumerator GetEnumerator() { throw null; }
             public override int GetHashCode() { throw null; }
             System.Collections.Generic.IEnumerator<Microsoft.CodeAnalysis.SyntaxToken> System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken>.GetEnumerator() { throw null; }
@@ -2793,7 +2807,7 @@ namespace Microsoft.CodeAnalysis
                 private object _dummy;
                 private int _dummyPrimitive;
                 public Microsoft.CodeAnalysis.SyntaxToken Current { get { throw null; } }
-                public override bool Equals(object obj) { throw null; }
+                public override bool Equals(object? obj) { throw null; }
                 public override int GetHashCode() { throw null; }
                 public bool MoveNext() { throw null; }
             }
@@ -2805,7 +2819,7 @@ namespace Microsoft.CodeAnalysis
         protected SyntaxTree() { }
         [System.ObsoleteAttribute("Obsolete due to performance problems, use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
         public virtual System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> DiagnosticOptions { get { throw null; } }
-        public abstract System.Text.Encoding Encoding { get; }
+        public abstract System.Text.Encoding? Encoding { get; }
         public abstract string FilePath { get; }
         public abstract bool HasCompilationUnitRoot { get; }
         public abstract int Length { get; }
@@ -2833,9 +2847,9 @@ namespace Microsoft.CodeAnalysis
         public abstract bool HasHiddenRegions();
         public abstract bool IsEquivalentTo(Microsoft.CodeAnalysis.SyntaxTree tree, bool topLevel = false);
         public override string ToString() { throw null; }
-        public bool TryGetRoot(out Microsoft.CodeAnalysis.SyntaxNode root) { throw null; }
-        protected abstract bool TryGetRootCore(out Microsoft.CodeAnalysis.SyntaxNode root);
-        public abstract bool TryGetText(out Microsoft.CodeAnalysis.Text.SourceText text);
+        public bool TryGetRoot(out Microsoft.CodeAnalysis.SyntaxNode? root) { throw null; }
+        protected abstract bool TryGetRootCore(out Microsoft.CodeAnalysis.SyntaxNode? root);
+        public abstract bool TryGetText(out Microsoft.CodeAnalysis.Text.SourceText? text);
         public abstract Microsoft.CodeAnalysis.SyntaxTree WithChangedText(Microsoft.CodeAnalysis.Text.SourceText newText);
         [System.ObsoleteAttribute("Obsolete due to performance problems, use CompilationOptions.SyntaxTreeOptionsProvider instead", false)]
         public virtual Microsoft.CodeAnalysis.SyntaxTree WithDiagnosticOptions(System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> options) { throw null; }
@@ -2861,18 +2875,18 @@ namespace Microsoft.CodeAnalysis
         public int RawKind { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.TextSpan Span { get { throw null; } }
         public int SpanStart { get { throw null; } }
-        public Microsoft.CodeAnalysis.SyntaxTree SyntaxTree { get { throw null; } }
+        public Microsoft.CodeAnalysis.SyntaxTree? SyntaxTree { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken Token { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxTrivia CopyAnnotationsTo(Microsoft.CodeAnalysis.SyntaxTrivia trivia) { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.SyntaxTrivia other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxAnnotation> GetAnnotations(string annotationKind) { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxAnnotation> GetAnnotations(params string[] annotationKinds) { throw null; }
         public System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Diagnostic> GetDiagnostics() { throw null; }
         public override int GetHashCode() { throw null; }
         public Microsoft.CodeAnalysis.Location GetLocation() { throw null; }
-        public Microsoft.CodeAnalysis.SyntaxNode GetStructure() { throw null; }
-        public bool HasAnnotation(Microsoft.CodeAnalysis.SyntaxAnnotation annotation) { throw null; }
+        public Microsoft.CodeAnalysis.SyntaxNode? GetStructure() { throw null; }
+        public bool HasAnnotation(Microsoft.CodeAnalysis.SyntaxAnnotation? annotation) { throw null; }
         public bool HasAnnotations(string annotationKind) { throw null; }
         public bool HasAnnotations(params string[] annotationKinds) { throw null; }
         public bool IsEquivalentTo(Microsoft.CodeAnalysis.SyntaxTrivia trivia) { throw null; }
@@ -2894,7 +2908,7 @@ namespace Microsoft.CodeAnalysis
         private readonly int _dummyPrimitive;
         public SyntaxTriviaList(Microsoft.CodeAnalysis.SyntaxTrivia trivia) { throw null; }
         public SyntaxTriviaList(params Microsoft.CodeAnalysis.SyntaxTrivia[] trivias) { throw null; }
-        public SyntaxTriviaList(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> trivias) { throw null; }
+        public SyntaxTriviaList(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia>? trivias) { throw null; }
         public int Count { get { throw null; } }
         public static Microsoft.CodeAnalysis.SyntaxTriviaList Empty { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.TextSpan FullSpan { get { throw null; } }
@@ -2906,7 +2920,7 @@ namespace Microsoft.CodeAnalysis
         public static Microsoft.CodeAnalysis.SyntaxTriviaList Create(Microsoft.CodeAnalysis.SyntaxTrivia trivia) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxTrivia ElementAt(int index) { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.SyntaxTriviaList other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public Microsoft.CodeAnalysis.SyntaxTrivia First() { throw null; }
         public Microsoft.CodeAnalysis.SyntaxTriviaList.Enumerator GetEnumerator() { throw null; }
         public override int GetHashCode() { throw null; }
@@ -2935,9 +2949,10 @@ namespace Microsoft.CodeAnalysis
         public readonly partial struct Reversed : System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia>, System.Collections.IEnumerable, System.IEquatable<Microsoft.CodeAnalysis.SyntaxTriviaList.Reversed>
         {
             private readonly object _dummy;
+            private readonly int _dummyPrimitive;
             public Reversed(Microsoft.CodeAnalysis.SyntaxTriviaList list) { throw null; }
             public bool Equals(Microsoft.CodeAnalysis.SyntaxTriviaList.Reversed other) { throw null; }
-            public override bool Equals(object obj) { throw null; }
+            public override bool Equals(object? obj) { throw null; }
             public Microsoft.CodeAnalysis.SyntaxTriviaList.Reversed.Enumerator GetEnumerator() { throw null; }
             public override int GetHashCode() { throw null; }
             System.Collections.Generic.IEnumerator<Microsoft.CodeAnalysis.SyntaxTrivia> System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia>.GetEnumerator() { throw null; }
@@ -2954,6 +2969,7 @@ namespace Microsoft.CodeAnalysis
     public readonly partial struct SyntaxValueProvider
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public Microsoft.CodeAnalysis.IncrementalValuesProvider<T> CreateSyntaxProvider<T>(System.Func<Microsoft.CodeAnalysis.SyntaxNode, System.Threading.CancellationToken, bool> predicate, System.Func<Microsoft.CodeAnalysis.GeneratorSyntaxContext, System.Threading.CancellationToken, T> transform) { throw null; }
     }
     public abstract partial class SyntaxWalker
@@ -2977,11 +2993,11 @@ namespace Microsoft.CodeAnalysis
         private int _dummyPrimitive;
         public bool IsNull { get { throw null; } }
         public Microsoft.CodeAnalysis.TypedConstantKind Kind { get { throw null; } }
-        public Microsoft.CodeAnalysis.ITypeSymbol Type { get { throw null; } }
-        public object Value { get { throw null; } }
+        public Microsoft.CodeAnalysis.ITypeSymbol? Type { get { throw null; } }
+        public object? Value { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.TypedConstant> Values { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.TypedConstant other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
     }
     public enum TypedConstantKind
@@ -2997,11 +3013,11 @@ namespace Microsoft.CodeAnalysis
         private readonly object _dummy;
         private readonly int _dummyPrimitive;
         public Microsoft.CodeAnalysis.NullabilityInfo ConvertedNullability { get { throw null; } }
-        public Microsoft.CodeAnalysis.ITypeSymbol ConvertedType { get { throw null; } }
+        public Microsoft.CodeAnalysis.ITypeSymbol? ConvertedType { get { throw null; } }
         public Microsoft.CodeAnalysis.NullabilityInfo Nullability { get { throw null; } }
-        public Microsoft.CodeAnalysis.ITypeSymbol Type { get { throw null; } }
+        public Microsoft.CodeAnalysis.ITypeSymbol? Type { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.TypeInfo other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
     }
     public enum TypeKind : byte
@@ -3124,22 +3140,22 @@ namespace Microsoft.CodeAnalysis
     }
     public partial class XmlFileResolver : Microsoft.CodeAnalysis.XmlReferenceResolver
     {
-        public XmlFileResolver(string baseDirectory) { }
-        public string BaseDirectory { get { throw null; } }
+        public XmlFileResolver(string? baseDirectory) { }
+        public string? BaseDirectory { get { throw null; } }
         public static Microsoft.CodeAnalysis.XmlFileResolver Default { get { throw null; } }
-        public override bool Equals(object obj) { throw null; }
-        protected virtual bool FileExists(string resolvedPath) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
+        protected virtual bool FileExists(string? resolvedPath) { throw null; }
         public override int GetHashCode() { throw null; }
         public override System.IO.Stream OpenRead(string resolvedPath) { throw null; }
-        public override string ResolveReference(string path, string baseFilePath) { throw null; }
+        public override string? ResolveReference(string path, string? baseFilePath) { throw null; }
     }
     public abstract partial class XmlReferenceResolver
     {
         protected XmlReferenceResolver() { }
-        public abstract override bool Equals(object other);
+        public abstract override bool Equals(object? other);
         public abstract override int GetHashCode();
         public abstract System.IO.Stream OpenRead(string resolvedPath);
-        public abstract string ResolveReference(string path, string baseFilePath);
+        public abstract string? ResolveReference(string path, string? baseFilePath);
     }
 }
 namespace Microsoft.CodeAnalysis.Diagnostics
@@ -3147,6 +3163,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     public readonly partial struct AdditionalFileAnalysisContext
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public Microsoft.CodeAnalysis.AdditionalText AdditionalFile { get { throw null; } }
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public Microsoft.CodeAnalysis.Compilation Compilation { get { throw null; } }
@@ -3192,7 +3209,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     {
         protected AnalyzerConfigOptions() { }
         public static System.StringComparer KeyComparer { get { throw null; } }
-        public abstract bool TryGetValue(string key, out string value);
+        public abstract bool TryGetValue(string key, out string? value);
     }
     public abstract partial class AnalyzerConfigOptionsProvider
     {
@@ -3208,10 +3225,10 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         public override string Display { get { throw null; } }
         public override string FullPath { get { throw null; } }
         public override object Id { get { throw null; } }
-        public event System.EventHandler<Microsoft.CodeAnalysis.Diagnostics.AnalyzerLoadFailureEventArgs> AnalyzerLoadFailed { add { } remove { } }
-        public bool Equals(Microsoft.CodeAnalysis.Diagnostics.AnalyzerFileReference other) { throw null; }
-        public bool Equals(Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public event System.EventHandler<Microsoft.CodeAnalysis.Diagnostics.AnalyzerLoadFailureEventArgs>? AnalyzerLoadFailed { add { } remove { } }
+        public bool Equals(Microsoft.CodeAnalysis.Diagnostics.AnalyzerFileReference? other) { throw null; }
+        public bool Equals(Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference? other) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> GetAnalyzers(string language) { throw null; }
         public override System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> GetAnalyzersForAllLanguages() { throw null; }
         public System.Reflection.Assembly GetAssembly() { throw null; }
@@ -3223,20 +3240,20 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     }
     public sealed partial class AnalyzerImageReference : Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference
     {
-        public AnalyzerImageReference(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> analyzers, string fullPath = null, string display = null) { }
+        public AnalyzerImageReference(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> analyzers, string? fullPath = null, string? display = null) { }
         public override string Display { get { throw null; } }
-        public override string FullPath { get { throw null; } }
+        public override string? FullPath { get { throw null; } }
         public override object Id { get { throw null; } }
         public override System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> GetAnalyzers(string language) { throw null; }
         public override System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> GetAnalyzersForAllLanguages() { throw null; }
     }
     public sealed partial class AnalyzerLoadFailureEventArgs : System.EventArgs
     {
-        public AnalyzerLoadFailureEventArgs(Microsoft.CodeAnalysis.Diagnostics.AnalyzerLoadFailureEventArgs.FailureErrorCode errorCode, string message, System.Exception exceptionOpt = null, string typeNameOpt = null) { }
+        public AnalyzerLoadFailureEventArgs(Microsoft.CodeAnalysis.Diagnostics.AnalyzerLoadFailureEventArgs.FailureErrorCode errorCode, string message, System.Exception? exceptionOpt = null, string? typeNameOpt = null) { }
         public Microsoft.CodeAnalysis.Diagnostics.AnalyzerLoadFailureEventArgs.FailureErrorCode ErrorCode { get { throw null; } }
-        public System.Exception Exception { get { throw null; } }
+        public System.Exception? Exception { get { throw null; } }
         public string Message { get { throw null; } }
-        public string TypeName { get { throw null; } }
+        public string? TypeName { get { throw null; } }
         public enum FailureErrorCode
         {
             None = 0,
@@ -3252,7 +3269,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         public AnalyzerOptions(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.AdditionalText> additionalFiles, Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptionsProvider optionsProvider) { }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.AdditionalText> AdditionalFiles { get { throw null; } }
         public Microsoft.CodeAnalysis.Diagnostics.AnalyzerConfigOptionsProvider AnalyzerConfigOptionsProvider { get { throw null; } }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions WithAdditionalFiles(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.AdditionalText> additionalFiles) { throw null; }
     }
@@ -3260,7 +3277,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     {
         protected AnalyzerReference() { }
         public virtual string Display { get { throw null; } }
-        public abstract string FullPath { get; }
+        public abstract string? FullPath { get; }
         public abstract object Id { get; }
         public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> GetAnalyzers(string language);
         public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> GetAnalyzersForAllLanguages();
@@ -3272,6 +3289,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     public partial struct CodeBlockAnalysisContext
     {
         private object _dummy;
+        private int _dummyPrimitive;
         public CodeBlockAnalysisContext(Microsoft.CodeAnalysis.SyntaxNode codeBlock, Microsoft.CodeAnalysis.ISymbol owningSymbol, Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<Microsoft.CodeAnalysis.Diagnostic> reportDiagnostic, System.Func<Microsoft.CodeAnalysis.Diagnostic, bool> isSupportedDiagnostic, System.Threading.CancellationToken cancellationToken) { throw null; }
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxNode CodeBlock { get { throw null; } }
@@ -3295,6 +3313,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     public partial struct CompilationAnalysisContext
     {
         private object _dummy;
+        private int _dummyPrimitive;
         public CompilationAnalysisContext(Microsoft.CodeAnalysis.Compilation compilation, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<Microsoft.CodeAnalysis.Diagnostic> reportDiagnostic, System.Func<Microsoft.CodeAnalysis.Diagnostic, bool> isSupportedDiagnostic, System.Threading.CancellationToken cancellationToken) { throw null; }
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public Microsoft.CodeAnalysis.Compilation Compilation { get { throw null; } }
@@ -3329,7 +3348,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     }
     public partial class CompilationWithAnalyzers
     {
-        public CompilationWithAnalyzers(Microsoft.CodeAnalysis.Compilation compilation, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> analyzers, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Threading.CancellationToken cancellationToken) { }
+        public CompilationWithAnalyzers(Microsoft.CodeAnalysis.Compilation compilation, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> analyzers, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions? options, System.Threading.CancellationToken cancellationToken) { }
         public CompilationWithAnalyzers(Microsoft.CodeAnalysis.Compilation compilation, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> analyzers, Microsoft.CodeAnalysis.Diagnostics.CompilationWithAnalyzersOptions analysisOptions) { }
         public Microsoft.CodeAnalysis.Diagnostics.CompilationWithAnalyzersOptions AnalysisOptions { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> Analyzers { get { throw null; } }
@@ -3361,25 +3380,25 @@ namespace Microsoft.CodeAnalysis.Diagnostics
         public System.Threading.Tasks.Task<Microsoft.CodeAnalysis.Diagnostics.Telemetry.AnalyzerTelemetryInfo> GetAnalyzerTelemetryInfoAsync(Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer analyzer, System.Threading.CancellationToken cancellationToken) { throw null; }
         public static System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Diagnostic> GetEffectiveDiagnostics(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Diagnostic> diagnostics, Microsoft.CodeAnalysis.Compilation compilation) { throw null; }
         public static System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Diagnostic> GetEffectiveDiagnostics(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostic> diagnostics, Microsoft.CodeAnalysis.Compilation compilation) { throw null; }
-        public static bool IsDiagnosticAnalyzerSuppressed(Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer analyzer, Microsoft.CodeAnalysis.CompilationOptions options, System.Action<System.Exception, Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer, Microsoft.CodeAnalysis.Diagnostic> onAnalyzerException = null) { throw null; }
+        public static bool IsDiagnosticAnalyzerSuppressed(Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer analyzer, Microsoft.CodeAnalysis.CompilationOptions options, System.Action<System.Exception, Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer, Microsoft.CodeAnalysis.Diagnostic>? onAnalyzerException = null) { throw null; }
     }
     public sealed partial class CompilationWithAnalyzersOptions
     {
-        public CompilationWithAnalyzersOptions(Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<System.Exception, Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer, Microsoft.CodeAnalysis.Diagnostic> onAnalyzerException, bool concurrentAnalysis, bool logAnalyzerExecutionTime) { }
-        public CompilationWithAnalyzersOptions(Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<System.Exception, Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer, Microsoft.CodeAnalysis.Diagnostic> onAnalyzerException, bool concurrentAnalysis, bool logAnalyzerExecutionTime, bool reportSuppressedDiagnostics) { }
-        public CompilationWithAnalyzersOptions(Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<System.Exception, Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer, Microsoft.CodeAnalysis.Diagnostic> onAnalyzerException, bool concurrentAnalysis, bool logAnalyzerExecutionTime, bool reportSuppressedDiagnostics, System.Func<System.Exception, bool> analyzerExceptionFilter) { }
-        public System.Func<System.Exception, bool> AnalyzerExceptionFilter { get { throw null; } }
+        public CompilationWithAnalyzersOptions(Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<System.Exception, Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer, Microsoft.CodeAnalysis.Diagnostic>? onAnalyzerException, bool concurrentAnalysis, bool logAnalyzerExecutionTime) { }
+        public CompilationWithAnalyzersOptions(Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<System.Exception, Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer, Microsoft.CodeAnalysis.Diagnostic>? onAnalyzerException, bool concurrentAnalysis, bool logAnalyzerExecutionTime, bool reportSuppressedDiagnostics) { }
+        public CompilationWithAnalyzersOptions(Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions? options, System.Action<System.Exception, Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer, Microsoft.CodeAnalysis.Diagnostic>? onAnalyzerException, bool concurrentAnalysis, bool logAnalyzerExecutionTime, bool reportSuppressedDiagnostics, System.Func<System.Exception, bool>? analyzerExceptionFilter) { }
+        public System.Func<System.Exception, bool>? AnalyzerExceptionFilter { get { throw null; } }
         public bool ConcurrentAnalysis { get { throw null; } }
         public bool LogAnalyzerExecutionTime { get { throw null; } }
-        public System.Action<System.Exception, Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer, Microsoft.CodeAnalysis.Diagnostic> OnAnalyzerException { get { throw null; } }
-        public Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions Options { get { throw null; } }
+        public System.Action<System.Exception, Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer, Microsoft.CodeAnalysis.Diagnostic>? OnAnalyzerException { get { throw null; } }
+        public Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions? Options { get { throw null; } }
         public bool ReportSuppressedDiagnostics { get { throw null; } }
     }
     public abstract partial class DiagnosticAnalyzer
     {
         protected DiagnosticAnalyzer() { }
         public abstract System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.DiagnosticDescriptor> SupportedDiagnostics { get; }
-        public sealed override bool Equals(object obj) { throw null; }
+        public sealed override bool Equals(object? obj) { throw null; }
         public sealed override int GetHashCode() { throw null; }
         public abstract void Initialize(Microsoft.CodeAnalysis.Diagnostics.AnalysisContext context);
         public sealed override string ToString() { throw null; }
@@ -3392,7 +3411,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     }
     public static partial class DiagnosticAnalyzerExtensions
     {
-        public static Microsoft.CodeAnalysis.Diagnostics.CompilationWithAnalyzers WithAnalyzers(this Microsoft.CodeAnalysis.Compilation compilation, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> analyzers, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
+        public static Microsoft.CodeAnalysis.Diagnostics.CompilationWithAnalyzers WithAnalyzers(this Microsoft.CodeAnalysis.Compilation compilation, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> analyzers, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions? options = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         public static Microsoft.CodeAnalysis.Diagnostics.CompilationWithAnalyzers WithAnalyzers(this Microsoft.CodeAnalysis.Compilation compilation, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> analyzers, Microsoft.CodeAnalysis.Diagnostics.CompilationWithAnalyzersOptions analysisOptions) { throw null; }
     }
     public abstract partial class DiagnosticSuppressor : Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer
@@ -3413,6 +3432,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     public partial struct OperationAnalysisContext
     {
         private object _dummy;
+        private int _dummyPrimitive;
         public OperationAnalysisContext(Microsoft.CodeAnalysis.IOperation operation, Microsoft.CodeAnalysis.ISymbol containingSymbol, Microsoft.CodeAnalysis.Compilation compilation, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<Microsoft.CodeAnalysis.Diagnostic> reportDiagnostic, System.Func<Microsoft.CodeAnalysis.Diagnostic, bool> isSupportedDiagnostic, System.Threading.CancellationToken cancellationToken) { throw null; }
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public Microsoft.CodeAnalysis.Compilation Compilation { get { throw null; } }
@@ -3425,6 +3445,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     public partial struct OperationBlockAnalysisContext
     {
         private object _dummy;
+        private int _dummyPrimitive;
         public OperationBlockAnalysisContext(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IOperation> operationBlocks, Microsoft.CodeAnalysis.ISymbol owningSymbol, Microsoft.CodeAnalysis.Compilation compilation, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<Microsoft.CodeAnalysis.Diagnostic> reportDiagnostic, System.Func<Microsoft.CodeAnalysis.Diagnostic, bool> isSupportedDiagnostic, System.Threading.CancellationToken cancellationToken) { throw null; }
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public Microsoft.CodeAnalysis.Compilation Compilation { get { throw null; } }
@@ -3450,6 +3471,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     public partial struct SemanticModelAnalysisContext
     {
         private object _dummy;
+        private int _dummyPrimitive;
         public SemanticModelAnalysisContext(Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<Microsoft.CodeAnalysis.Diagnostic> reportDiagnostic, System.Func<Microsoft.CodeAnalysis.Diagnostic, bool> isSupportedDiagnostic, System.Threading.CancellationToken cancellationToken) { throw null; }
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions Options { get { throw null; } }
@@ -3458,16 +3480,17 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     }
     public sealed partial class SourceTextValueProvider<TValue>
     {
-        public SourceTextValueProvider(System.Func<Microsoft.CodeAnalysis.Text.SourceText, TValue> computeValue, System.Collections.Generic.IEqualityComparer<Microsoft.CodeAnalysis.Text.SourceText> sourceTextComparer = null) { }
+        public SourceTextValueProvider(System.Func<Microsoft.CodeAnalysis.Text.SourceText, TValue> computeValue, System.Collections.Generic.IEqualityComparer<Microsoft.CodeAnalysis.Text.SourceText>? sourceTextComparer = null) { }
     }
     public partial struct Suppression : System.IEquatable<Microsoft.CodeAnalysis.Diagnostics.Suppression>
     {
         private object _dummy;
+        private int _dummyPrimitive;
         public Microsoft.CodeAnalysis.SuppressionDescriptor Descriptor { get { throw null; } }
         public Microsoft.CodeAnalysis.Diagnostic SuppressedDiagnostic { get { throw null; } }
         public static Microsoft.CodeAnalysis.Diagnostics.Suppression Create(Microsoft.CodeAnalysis.SuppressionDescriptor descriptor, Microsoft.CodeAnalysis.Diagnostic suppressedDiagnostic) { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.Diagnostics.Suppression other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.Diagnostics.Suppression left, Microsoft.CodeAnalysis.Diagnostics.Suppression right) { throw null; }
         public static bool operator !=(Microsoft.CodeAnalysis.Diagnostics.Suppression left, Microsoft.CodeAnalysis.Diagnostics.Suppression right) { throw null; }
@@ -3475,6 +3498,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     public partial struct SuppressionAnalysisContext
     {
         private object _dummy;
+        private int _dummyPrimitive;
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public Microsoft.CodeAnalysis.Compilation Compilation { get { throw null; } }
         public Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions Options { get { throw null; } }
@@ -3485,12 +3509,13 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     public sealed partial class SuppressionInfo
     {
         internal SuppressionInfo() { }
-        public Microsoft.CodeAnalysis.AttributeData Attribute { get { throw null; } }
+        public Microsoft.CodeAnalysis.AttributeData? Attribute { get { throw null; } }
         public string Id { get { throw null; } }
     }
     public partial struct SymbolAnalysisContext
     {
         private object _dummy;
+        private int _dummyPrimitive;
         public SymbolAnalysisContext(Microsoft.CodeAnalysis.ISymbol symbol, Microsoft.CodeAnalysis.Compilation compilation, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<Microsoft.CodeAnalysis.Diagnostic> reportDiagnostic, System.Func<Microsoft.CodeAnalysis.Diagnostic, bool> isSupportedDiagnostic, System.Threading.CancellationToken cancellationToken) { throw null; }
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public Microsoft.CodeAnalysis.Compilation Compilation { get { throw null; } }
@@ -3518,11 +3543,12 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     public partial struct SyntaxNodeAnalysisContext
     {
         private object _dummy;
-        public SyntaxNodeAnalysisContext(Microsoft.CodeAnalysis.SyntaxNode node, Microsoft.CodeAnalysis.ISymbol containingSymbol, Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<Microsoft.CodeAnalysis.Diagnostic> reportDiagnostic, System.Func<Microsoft.CodeAnalysis.Diagnostic, bool> isSupportedDiagnostic, System.Threading.CancellationToken cancellationToken) { throw null; }
+        private int _dummyPrimitive;
+        public SyntaxNodeAnalysisContext(Microsoft.CodeAnalysis.SyntaxNode node, Microsoft.CodeAnalysis.ISymbol? containingSymbol, Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<Microsoft.CodeAnalysis.Diagnostic> reportDiagnostic, System.Func<Microsoft.CodeAnalysis.Diagnostic, bool> isSupportedDiagnostic, System.Threading.CancellationToken cancellationToken) { throw null; }
         public SyntaxNodeAnalysisContext(Microsoft.CodeAnalysis.SyntaxNode node, Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<Microsoft.CodeAnalysis.Diagnostic> reportDiagnostic, System.Func<Microsoft.CodeAnalysis.Diagnostic, bool> isSupportedDiagnostic, System.Threading.CancellationToken cancellationToken) { throw null; }
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public Microsoft.CodeAnalysis.Compilation Compilation { get { throw null; } }
-        public Microsoft.CodeAnalysis.ISymbol ContainingSymbol { get { throw null; } }
+        public Microsoft.CodeAnalysis.ISymbol? ContainingSymbol { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxNode Node { get { throw null; } }
         public Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions Options { get { throw null; } }
         public Microsoft.CodeAnalysis.SemanticModel SemanticModel { get { throw null; } }
@@ -3531,6 +3557,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     public partial struct SyntaxTreeAnalysisContext
     {
         private object _dummy;
+        private int _dummyPrimitive;
         public SyntaxTreeAnalysisContext(Microsoft.CodeAnalysis.SyntaxTree tree, Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions options, System.Action<Microsoft.CodeAnalysis.Diagnostic> reportDiagnostic, System.Func<Microsoft.CodeAnalysis.Diagnostic, bool> isSupportedDiagnostic, System.Threading.CancellationToken cancellationToken) { throw null; }
         public System.Threading.CancellationToken CancellationToken { get { throw null; } }
         public Microsoft.CodeAnalysis.Diagnostics.AnalyzerOptions Options { get { throw null; } }
@@ -3539,7 +3566,7 @@ namespace Microsoft.CodeAnalysis.Diagnostics
     }
     public sealed partial class SyntaxTreeValueProvider<TValue>
     {
-        public SyntaxTreeValueProvider(System.Func<Microsoft.CodeAnalysis.SyntaxTree, TValue> computeValue, System.Collections.Generic.IEqualityComparer<Microsoft.CodeAnalysis.SyntaxTree> syntaxTreeComparer = null) { }
+        public SyntaxTreeValueProvider(System.Func<Microsoft.CodeAnalysis.SyntaxTree, TValue> computeValue, System.Collections.Generic.IEqualityComparer<Microsoft.CodeAnalysis.SyntaxTree>? syntaxTreeComparer = null) { }
     }
     public sealed partial class UnresolvedAnalyzerReference : Microsoft.CodeAnalysis.Diagnostics.AnalyzerReference
     {
@@ -3623,7 +3650,7 @@ namespace Microsoft.CodeAnalysis.Emit
     public sealed partial class EmitDifferenceResult : Microsoft.CodeAnalysis.Emit.EmitResult
     {
         internal EmitDifferenceResult() { }
-        public Microsoft.CodeAnalysis.Emit.EmitBaseline Baseline { get { throw null; } }
+        public Microsoft.CodeAnalysis.Emit.EmitBaseline? Baseline { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<System.Reflection.Metadata.TypeDefinitionHandle> ChangedTypes { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<System.Reflection.Metadata.MethodDefinitionHandle> UpdatedMethods { get { throw null; } }
     }
@@ -3631,33 +3658,33 @@ namespace Microsoft.CodeAnalysis.Emit
     {
         public EmitOptions(bool metadataOnly, Microsoft.CodeAnalysis.Emit.DebugInformationFormat debugInformationFormat, string pdbFilePath, string outputNameOverride, int fileAlignment, ulong baseAddress, bool highEntropyVirtualAddressSpace, Microsoft.CodeAnalysis.SubsystemVersion subsystemVersion, string runtimeMetadataVersion, bool tolerateErrors, bool includePrivateMembers) { }
         public EmitOptions(bool metadataOnly, Microsoft.CodeAnalysis.Emit.DebugInformationFormat debugInformationFormat, string pdbFilePath, string outputNameOverride, int fileAlignment, ulong baseAddress, bool highEntropyVirtualAddressSpace, Microsoft.CodeAnalysis.SubsystemVersion subsystemVersion, string runtimeMetadataVersion, bool tolerateErrors, bool includePrivateMembers, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Emit.InstrumentationKind> instrumentationKinds) { }
-        public EmitOptions(bool metadataOnly, Microsoft.CodeAnalysis.Emit.DebugInformationFormat debugInformationFormat, string pdbFilePath, string outputNameOverride, int fileAlignment, ulong baseAddress, bool highEntropyVirtualAddressSpace, Microsoft.CodeAnalysis.SubsystemVersion subsystemVersion, string runtimeMetadataVersion, bool tolerateErrors, bool includePrivateMembers, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Emit.InstrumentationKind> instrumentationKinds, System.Security.Cryptography.HashAlgorithmName? pdbChecksumAlgorithm) { }
-        public EmitOptions(bool metadataOnly = false, Microsoft.CodeAnalysis.Emit.DebugInformationFormat debugInformationFormat = (Microsoft.CodeAnalysis.Emit.DebugInformationFormat)(0), string pdbFilePath = null, string outputNameOverride = null, int fileAlignment = 0, ulong baseAddress = (ulong)0, bool highEntropyVirtualAddressSpace = false, Microsoft.CodeAnalysis.SubsystemVersion subsystemVersion = default(Microsoft.CodeAnalysis.SubsystemVersion), string runtimeMetadataVersion = null, bool tolerateErrors = false, bool includePrivateMembers = true, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Emit.InstrumentationKind> instrumentationKinds = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Emit.InstrumentationKind>), System.Security.Cryptography.HashAlgorithmName? pdbChecksumAlgorithm = default(System.Security.Cryptography.HashAlgorithmName?), System.Text.Encoding defaultSourceFileEncoding = null, System.Text.Encoding fallbackSourceFileEncoding = null) { }
+        public EmitOptions(bool metadataOnly, Microsoft.CodeAnalysis.Emit.DebugInformationFormat debugInformationFormat, string? pdbFilePath, string? outputNameOverride, int fileAlignment, ulong baseAddress, bool highEntropyVirtualAddressSpace, Microsoft.CodeAnalysis.SubsystemVersion subsystemVersion, string? runtimeMetadataVersion, bool tolerateErrors, bool includePrivateMembers, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Emit.InstrumentationKind> instrumentationKinds, System.Security.Cryptography.HashAlgorithmName? pdbChecksumAlgorithm) { }
+        public EmitOptions(bool metadataOnly = false, Microsoft.CodeAnalysis.Emit.DebugInformationFormat debugInformationFormat = default(Microsoft.CodeAnalysis.Emit.DebugInformationFormat), string? pdbFilePath = null, string? outputNameOverride = null, int fileAlignment = 0, ulong baseAddress = (ulong)0, bool highEntropyVirtualAddressSpace = false, Microsoft.CodeAnalysis.SubsystemVersion subsystemVersion = default(Microsoft.CodeAnalysis.SubsystemVersion), string? runtimeMetadataVersion = null, bool tolerateErrors = false, bool includePrivateMembers = true, System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Emit.InstrumentationKind> instrumentationKinds = default(System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Emit.InstrumentationKind>), System.Security.Cryptography.HashAlgorithmName? pdbChecksumAlgorithm = default(System.Security.Cryptography.HashAlgorithmName?), System.Text.Encoding? defaultSourceFileEncoding = null, System.Text.Encoding? fallbackSourceFileEncoding = null) { }
         public ulong BaseAddress { get { throw null; } }
         public Microsoft.CodeAnalysis.Emit.DebugInformationFormat DebugInformationFormat { get { throw null; } }
-        public System.Text.Encoding DefaultSourceFileEncoding { get { throw null; } }
+        public System.Text.Encoding? DefaultSourceFileEncoding { get { throw null; } }
         public bool EmitMetadataOnly { get { throw null; } }
-        public System.Text.Encoding FallbackSourceFileEncoding { get { throw null; } }
+        public System.Text.Encoding? FallbackSourceFileEncoding { get { throw null; } }
         public int FileAlignment { get { throw null; } }
         public bool HighEntropyVirtualAddressSpace { get { throw null; } }
         public bool IncludePrivateMembers { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Emit.InstrumentationKind> InstrumentationKinds { get { throw null; } }
-        public string OutputNameOverride { get { throw null; } }
+        public string? OutputNameOverride { get { throw null; } }
         public System.Security.Cryptography.HashAlgorithmName PdbChecksumAlgorithm { get { throw null; } }
-        public string PdbFilePath { get { throw null; } }
-        public string RuntimeMetadataVersion { get { throw null; } }
+        public string? PdbFilePath { get { throw null; } }
+        public string? RuntimeMetadataVersion { get { throw null; } }
         public Microsoft.CodeAnalysis.SubsystemVersion SubsystemVersion { get { throw null; } }
         public bool TolerateErrors { get { throw null; } }
-        public bool Equals(Microsoft.CodeAnalysis.Emit.EmitOptions other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public bool Equals(Microsoft.CodeAnalysis.Emit.EmitOptions? other) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
-        public static bool operator ==(Microsoft.CodeAnalysis.Emit.EmitOptions left, Microsoft.CodeAnalysis.Emit.EmitOptions right) { throw null; }
-        public static bool operator !=(Microsoft.CodeAnalysis.Emit.EmitOptions left, Microsoft.CodeAnalysis.Emit.EmitOptions right) { throw null; }
+        public static bool operator ==(Microsoft.CodeAnalysis.Emit.EmitOptions? left, Microsoft.CodeAnalysis.Emit.EmitOptions? right) { throw null; }
+        public static bool operator !=(Microsoft.CodeAnalysis.Emit.EmitOptions? left, Microsoft.CodeAnalysis.Emit.EmitOptions? right) { throw null; }
         public Microsoft.CodeAnalysis.Emit.EmitOptions WithBaseAddress(ulong value) { throw null; }
         public Microsoft.CodeAnalysis.Emit.EmitOptions WithDebugInformationFormat(Microsoft.CodeAnalysis.Emit.DebugInformationFormat format) { throw null; }
-        public Microsoft.CodeAnalysis.Emit.EmitOptions WithDefaultSourceFileEncoding(System.Text.Encoding defaultSourceFileEncoding) { throw null; }
+        public Microsoft.CodeAnalysis.Emit.EmitOptions WithDefaultSourceFileEncoding(System.Text.Encoding? defaultSourceFileEncoding) { throw null; }
         public Microsoft.CodeAnalysis.Emit.EmitOptions WithEmitMetadataOnly(bool value) { throw null; }
-        public Microsoft.CodeAnalysis.Emit.EmitOptions WithFallbackSourceFileEncoding(System.Text.Encoding fallbackSourceFileEncoding) { throw null; }
+        public Microsoft.CodeAnalysis.Emit.EmitOptions WithFallbackSourceFileEncoding(System.Text.Encoding? fallbackSourceFileEncoding) { throw null; }
         public Microsoft.CodeAnalysis.Emit.EmitOptions WithFileAlignment(int value) { throw null; }
         public Microsoft.CodeAnalysis.Emit.EmitOptions WithHighEntropyVirtualAddressSpace(bool value) { throw null; }
         public Microsoft.CodeAnalysis.Emit.EmitOptions WithIncludePrivateMembers(bool value) { throw null; }
@@ -3685,14 +3712,14 @@ namespace Microsoft.CodeAnalysis.Emit
     {
         private readonly object _dummy;
         private readonly int _dummyPrimitive;
-        public SemanticEdit(Microsoft.CodeAnalysis.Emit.SemanticEditKind kind, Microsoft.CodeAnalysis.ISymbol oldSymbol, Microsoft.CodeAnalysis.ISymbol newSymbol, System.Func<Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.SyntaxNode> syntaxMap = null, bool preserveLocalVariables = false) { throw null; }
+        public SemanticEdit(Microsoft.CodeAnalysis.Emit.SemanticEditKind kind, Microsoft.CodeAnalysis.ISymbol? oldSymbol, Microsoft.CodeAnalysis.ISymbol? newSymbol, System.Func<Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.SyntaxNode?>? syntaxMap = null, bool preserveLocalVariables = false) { throw null; }
         public Microsoft.CodeAnalysis.Emit.SemanticEditKind Kind { get { throw null; } }
-        public Microsoft.CodeAnalysis.ISymbol NewSymbol { get { throw null; } }
-        public Microsoft.CodeAnalysis.ISymbol OldSymbol { get { throw null; } }
+        public Microsoft.CodeAnalysis.ISymbol? NewSymbol { get { throw null; } }
+        public Microsoft.CodeAnalysis.ISymbol? OldSymbol { get { throw null; } }
         public bool PreserveLocalVariables { get { throw null; } }
-        public System.Func<Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.SyntaxNode> SyntaxMap { get { throw null; } }
+        public System.Func<Microsoft.CodeAnalysis.SyntaxNode, Microsoft.CodeAnalysis.SyntaxNode?>? SyntaxMap { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.Emit.SemanticEdit other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.Emit.SemanticEdit left, Microsoft.CodeAnalysis.Emit.SemanticEdit right) { throw null; }
         public static bool operator !=(Microsoft.CodeAnalysis.Emit.SemanticEdit left, Microsoft.CodeAnalysis.Emit.SemanticEdit right) { throw null; }
@@ -3711,11 +3738,11 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
     public sealed partial class BasicBlock
     {
         internal BasicBlock() { }
-        public Microsoft.CodeAnalysis.IOperation BranchValue { get { throw null; } }
-        public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranch ConditionalSuccessor { get { throw null; } }
+        public Microsoft.CodeAnalysis.IOperation? BranchValue { get { throw null; } }
+        public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranch? ConditionalSuccessor { get { throw null; } }
         public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowConditionKind ConditionKind { get { throw null; } }
         public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion EnclosingRegion { get { throw null; } }
-        public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranch FallThroughSuccessor { get { throw null; } }
+        public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowBranch? FallThroughSuccessor { get { throw null; } }
         public bool IsReachable { get { throw null; } }
         public Microsoft.CodeAnalysis.FlowAnalysis.BasicBlockKind Kind { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IOperation> Operations { get { throw null; } }
@@ -3732,13 +3759,13 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
     {
         private int _dummyPrimitive;
         public bool Equals(Microsoft.CodeAnalysis.FlowAnalysis.CaptureId other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
     }
     public sealed partial class ControlFlowBranch
     {
         internal ControlFlowBranch() { }
-        public Microsoft.CodeAnalysis.FlowAnalysis.BasicBlock Destination { get { throw null; } }
+        public Microsoft.CodeAnalysis.FlowAnalysis.BasicBlock? Destination { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion> EnteringRegions { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion> FinallyRegions { get { throw null; } }
         public bool IsConditionalSuccessor { get { throw null; } }
@@ -3769,7 +3796,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.FlowAnalysis.BasicBlock> Blocks { get { throw null; } }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IMethodSymbol> LocalFunctions { get { throw null; } }
         public Microsoft.CodeAnalysis.IOperation OriginalOperation { get { throw null; } }
-        public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph Parent { get { throw null; } }
+        public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph? Parent { get { throw null; } }
         public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion Root { get { throw null; } }
         public static Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph Create(Microsoft.CodeAnalysis.Operations.IBlockOperation body, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         public static Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph Create(Microsoft.CodeAnalysis.Operations.IConstructorBodyOperation constructorBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
@@ -3777,7 +3804,7 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
         public static Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph Create(Microsoft.CodeAnalysis.Operations.IMethodBodyOperation methodBody, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         public static Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph Create(Microsoft.CodeAnalysis.Operations.IParameterInitializerOperation initializer, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         public static Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph Create(Microsoft.CodeAnalysis.Operations.IPropertyInitializerOperation initializer, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
-        public static Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph Create(Microsoft.CodeAnalysis.SyntaxNode node, Microsoft.CodeAnalysis.SemanticModel semanticModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
+        public static Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph? Create(Microsoft.CodeAnalysis.SyntaxNode node, Microsoft.CodeAnalysis.SemanticModel semanticModel, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph GetAnonymousFunctionControlFlowGraph(Microsoft.CodeAnalysis.FlowAnalysis.IFlowAnonymousFunctionOperation anonymousFunction, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowGraph GetLocalFunctionControlFlowGraph(Microsoft.CodeAnalysis.IMethodSymbol localFunction, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
     }
@@ -3790,8 +3817,8 @@ namespace Microsoft.CodeAnalysis.FlowAnalysis
     {
         internal ControlFlowRegion() { }
         public System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.FlowAnalysis.CaptureId> CaptureIds { get { throw null; } }
-        public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion EnclosingRegion { get { throw null; } }
-        public Microsoft.CodeAnalysis.ITypeSymbol ExceptionType { get { throw null; } }
+        public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegion? EnclosingRegion { get { throw null; } }
+        public Microsoft.CodeAnalysis.ITypeSymbol? ExceptionType { get { throw null; } }
         public int FirstBlockOrdinal { get { throw null; } }
         public Microsoft.CodeAnalysis.FlowAnalysis.ControlFlowRegionKind Kind { get { throw null; } }
         public int LastBlockOrdinal { get { throw null; } }
@@ -3902,7 +3929,7 @@ namespace Microsoft.CodeAnalysis.Operations
         public bool IsNumeric { get { throw null; } }
         public bool IsReference { get { throw null; } }
         public bool IsUserDefined { get { throw null; } }
-        public Microsoft.CodeAnalysis.IMethodSymbol MethodSymbol { get { throw null; } }
+        public Microsoft.CodeAnalysis.IMethodSymbol? MethodSymbol { get { throw null; } }
     }
     public partial interface IAddressOfOperation : Microsoft.CodeAnalysis.IOperation
     {
@@ -3922,13 +3949,13 @@ namespace Microsoft.CodeAnalysis.Operations
         Microsoft.CodeAnalysis.Operations.ArgumentKind ArgumentKind { get; }
         Microsoft.CodeAnalysis.Operations.CommonConversion InConversion { get; }
         Microsoft.CodeAnalysis.Operations.CommonConversion OutConversion { get; }
-        Microsoft.CodeAnalysis.IParameterSymbol Parameter { get; }
+        Microsoft.CodeAnalysis.IParameterSymbol? Parameter { get; }
         Microsoft.CodeAnalysis.IOperation Value { get; }
     }
     public partial interface IArrayCreationOperation : Microsoft.CodeAnalysis.IOperation
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IOperation> DimensionSizes { get; }
-        Microsoft.CodeAnalysis.Operations.IArrayInitializerOperation Initializer { get; }
+        Microsoft.CodeAnalysis.Operations.IArrayInitializerOperation? Initializer { get; }
     }
     public partial interface IArrayElementReferenceOperation : Microsoft.CodeAnalysis.IOperation
     {
@@ -3955,7 +3982,7 @@ namespace Microsoft.CodeAnalysis.Operations
         bool IsLifted { get; }
         Microsoft.CodeAnalysis.IOperation LeftOperand { get; }
         Microsoft.CodeAnalysis.Operations.BinaryOperatorKind OperatorKind { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol OperatorMethod { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? OperatorMethod { get; }
         Microsoft.CodeAnalysis.IOperation RightOperand { get; }
     }
     public partial interface IBinaryPatternOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.IPatternOperation
@@ -3977,13 +4004,13 @@ namespace Microsoft.CodeAnalysis.Operations
     public partial interface ICaseClauseOperation : Microsoft.CodeAnalysis.IOperation
     {
         Microsoft.CodeAnalysis.Operations.CaseKind CaseKind { get; }
-        Microsoft.CodeAnalysis.ILabelSymbol Label { get; }
+        Microsoft.CodeAnalysis.ILabelSymbol? Label { get; }
     }
     public partial interface ICatchClauseOperation : Microsoft.CodeAnalysis.IOperation
     {
-        Microsoft.CodeAnalysis.IOperation ExceptionDeclarationOrExpression { get; }
+        Microsoft.CodeAnalysis.IOperation? ExceptionDeclarationOrExpression { get; }
         Microsoft.CodeAnalysis.ITypeSymbol ExceptionType { get; }
-        Microsoft.CodeAnalysis.IOperation Filter { get; }
+        Microsoft.CodeAnalysis.IOperation? Filter { get; }
         Microsoft.CodeAnalysis.Operations.IBlockOperation Handler { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ILocalSymbol> Locals { get; }
     }
@@ -4009,7 +4036,7 @@ namespace Microsoft.CodeAnalysis.Operations
         bool IsChecked { get; }
         bool IsLifted { get; }
         Microsoft.CodeAnalysis.Operations.BinaryOperatorKind OperatorKind { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol OperatorMethod { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? OperatorMethod { get; }
         Microsoft.CodeAnalysis.Operations.CommonConversion OutConversion { get; }
     }
     public partial interface IConditionalAccessInstanceOperation : Microsoft.CodeAnalysis.IOperation
@@ -4024,7 +4051,7 @@ namespace Microsoft.CodeAnalysis.Operations
     {
         Microsoft.CodeAnalysis.IOperation Condition { get; }
         bool IsRef { get; }
-        Microsoft.CodeAnalysis.IOperation WhenFalse { get; }
+        Microsoft.CodeAnalysis.IOperation? WhenFalse { get; }
         Microsoft.CodeAnalysis.IOperation WhenTrue { get; }
     }
     public partial interface IConstantPatternOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.IPatternOperation
@@ -4033,7 +4060,7 @@ namespace Microsoft.CodeAnalysis.Operations
     }
     public partial interface IConstructorBodyOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.IMethodBodyBaseOperation
     {
-        Microsoft.CodeAnalysis.IOperation Initializer { get; }
+        Microsoft.CodeAnalysis.IOperation? Initializer { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ILocalSymbol> Locals { get; }
     }
     public partial interface IConversionOperation : Microsoft.CodeAnalysis.IOperation
@@ -4042,7 +4069,7 @@ namespace Microsoft.CodeAnalysis.Operations
         bool IsChecked { get; }
         bool IsTryCast { get; }
         Microsoft.CodeAnalysis.IOperation Operand { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol OperatorMethod { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? OperatorMethod { get; }
     }
     public partial interface IDeclarationExpressionOperation : Microsoft.CodeAnalysis.IOperation
     {
@@ -4050,8 +4077,8 @@ namespace Microsoft.CodeAnalysis.Operations
     }
     public partial interface IDeclarationPatternOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.IPatternOperation
     {
-        Microsoft.CodeAnalysis.ISymbol DeclaredSymbol { get; }
-        Microsoft.CodeAnalysis.ITypeSymbol MatchedType { get; }
+        Microsoft.CodeAnalysis.ISymbol? DeclaredSymbol { get; }
+        Microsoft.CodeAnalysis.ITypeSymbol? MatchedType { get; }
         bool MatchesNull { get; }
     }
     public partial interface IDeconstructionAssignmentOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.IAssignmentOperation
@@ -4086,15 +4113,15 @@ namespace Microsoft.CodeAnalysis.Operations
     }
     public partial interface IDynamicMemberReferenceOperation : Microsoft.CodeAnalysis.IOperation
     {
-        Microsoft.CodeAnalysis.ITypeSymbol ContainingType { get; }
-        Microsoft.CodeAnalysis.IOperation Instance { get; }
+        Microsoft.CodeAnalysis.ITypeSymbol? ContainingType { get; }
+        Microsoft.CodeAnalysis.IOperation? Instance { get; }
         string MemberName { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ITypeSymbol> TypeArguments { get; }
     }
     public partial interface IDynamicObjectCreationOperation : Microsoft.CodeAnalysis.IOperation
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IOperation> Arguments { get; }
-        Microsoft.CodeAnalysis.Operations.IObjectOrCollectionInitializerOperation Initializer { get; }
+        Microsoft.CodeAnalysis.Operations.IObjectOrCollectionInitializerOperation? Initializer { get; }
     }
     public partial interface IEmptyOperation : Microsoft.CodeAnalysis.IOperation
     {
@@ -4136,7 +4163,7 @@ namespace Microsoft.CodeAnalysis.Operations
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IOperation> AtLoopBottom { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IOperation> Before { get; }
-        Microsoft.CodeAnalysis.IOperation Condition { get; }
+        Microsoft.CodeAnalysis.IOperation? Condition { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ILocalSymbol> ConditionLocals { get; }
     }
     public partial interface IForToLoopOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.ILoopOperation
@@ -4153,7 +4180,7 @@ namespace Microsoft.CodeAnalysis.Operations
         bool IsChecked { get; }
         bool IsLifted { get; }
         bool IsPostfix { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol OperatorMethod { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? OperatorMethod { get; }
         Microsoft.CodeAnalysis.IOperation Target { get; }
     }
     public partial interface IInstanceReferenceOperation : Microsoft.CodeAnalysis.IOperation
@@ -4173,9 +4200,9 @@ namespace Microsoft.CodeAnalysis.Operations
     }
     public partial interface IInterpolationOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.IInterpolatedStringContentOperation
     {
-        Microsoft.CodeAnalysis.IOperation Alignment { get; }
+        Microsoft.CodeAnalysis.IOperation? Alignment { get; }
         Microsoft.CodeAnalysis.IOperation Expression { get; }
-        Microsoft.CodeAnalysis.IOperation FormatString { get; }
+        Microsoft.CodeAnalysis.IOperation? FormatString { get; }
     }
     public partial interface IInvalidOperation : Microsoft.CodeAnalysis.IOperation
     {
@@ -4183,7 +4210,7 @@ namespace Microsoft.CodeAnalysis.Operations
     public partial interface IInvocationOperation : Microsoft.CodeAnalysis.IOperation
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Operations.IArgumentOperation> Arguments { get; }
-        Microsoft.CodeAnalysis.IOperation Instance { get; }
+        Microsoft.CodeAnalysis.IOperation? Instance { get; }
         bool IsVirtual { get; }
         Microsoft.CodeAnalysis.IMethodSymbol TargetMethod { get; }
     }
@@ -4201,15 +4228,15 @@ namespace Microsoft.CodeAnalysis.Operations
     public partial interface ILabeledOperation : Microsoft.CodeAnalysis.IOperation
     {
         Microsoft.CodeAnalysis.ILabelSymbol Label { get; }
-        Microsoft.CodeAnalysis.IOperation Operation { get; }
+        Microsoft.CodeAnalysis.IOperation? Operation { get; }
     }
     public partial interface ILiteralOperation : Microsoft.CodeAnalysis.IOperation
     {
     }
     public partial interface ILocalFunctionOperation : Microsoft.CodeAnalysis.IOperation
     {
-        Microsoft.CodeAnalysis.Operations.IBlockOperation Body { get; }
-        Microsoft.CodeAnalysis.Operations.IBlockOperation IgnoredBody { get; }
+        Microsoft.CodeAnalysis.Operations.IBlockOperation? Body { get; }
+        Microsoft.CodeAnalysis.Operations.IBlockOperation? IgnoredBody { get; }
         Microsoft.CodeAnalysis.IMethodSymbol Symbol { get; }
     }
     public partial interface ILocalReferenceOperation : Microsoft.CodeAnalysis.IOperation
@@ -4237,13 +4264,13 @@ namespace Microsoft.CodeAnalysis.Operations
     }
     public partial interface IMemberReferenceOperation : Microsoft.CodeAnalysis.IOperation
     {
-        Microsoft.CodeAnalysis.IOperation Instance { get; }
+        Microsoft.CodeAnalysis.IOperation? Instance { get; }
         Microsoft.CodeAnalysis.ISymbol Member { get; }
     }
     public partial interface IMethodBodyBaseOperation : Microsoft.CodeAnalysis.IOperation
     {
-        Microsoft.CodeAnalysis.Operations.IBlockOperation BlockBody { get; }
-        Microsoft.CodeAnalysis.Operations.IBlockOperation ExpressionBody { get; }
+        Microsoft.CodeAnalysis.Operations.IBlockOperation? BlockBody { get; }
+        Microsoft.CodeAnalysis.Operations.IBlockOperation? ExpressionBody { get; }
     }
     public partial interface IMethodBodyOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.IMethodBodyBaseOperation
     {
@@ -4270,8 +4297,8 @@ namespace Microsoft.CodeAnalysis.Operations
     public partial interface IObjectCreationOperation : Microsoft.CodeAnalysis.IOperation
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Operations.IArgumentOperation> Arguments { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol Constructor { get; }
-        Microsoft.CodeAnalysis.Operations.IObjectOrCollectionInitializerOperation Initializer { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? Constructor { get; }
+        Microsoft.CodeAnalysis.Operations.IObjectOrCollectionInitializerOperation? Initializer { get; }
     }
     public partial interface IObjectOrCollectionInitializerOperation : Microsoft.CodeAnalysis.IOperation
     {
@@ -4294,7 +4321,7 @@ namespace Microsoft.CodeAnalysis.Operations
     }
     public partial interface IPatternCaseClauseOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.ICaseClauseOperation
     {
-        Microsoft.CodeAnalysis.IOperation Guard { get; }
+        Microsoft.CodeAnalysis.IOperation? Guard { get; }
         new Microsoft.CodeAnalysis.ILabelSymbol Label { get; }
         Microsoft.CodeAnalysis.Operations.IPatternOperation Pattern { get; }
     }
@@ -4330,15 +4357,15 @@ namespace Microsoft.CodeAnalysis.Operations
     public partial interface IRangeOperation : Microsoft.CodeAnalysis.IOperation
     {
         bool IsLifted { get; }
-        Microsoft.CodeAnalysis.IOperation LeftOperand { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol Method { get; }
-        Microsoft.CodeAnalysis.IOperation RightOperand { get; }
+        Microsoft.CodeAnalysis.IOperation? LeftOperand { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? Method { get; }
+        Microsoft.CodeAnalysis.IOperation? RightOperand { get; }
     }
     public partial interface IRecursivePatternOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.IPatternOperation
     {
-        Microsoft.CodeAnalysis.ISymbol DeclaredSymbol { get; }
+        Microsoft.CodeAnalysis.ISymbol? DeclaredSymbol { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Operations.IPatternOperation> DeconstructionSubpatterns { get; }
-        Microsoft.CodeAnalysis.ISymbol DeconstructSymbol { get; }
+        Microsoft.CodeAnalysis.ISymbol? DeconstructSymbol { get; }
         Microsoft.CodeAnalysis.ITypeSymbol MatchedType { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Operations.IPropertySubpatternOperation> PropertySubpatterns { get; }
     }
@@ -4364,7 +4391,7 @@ namespace Microsoft.CodeAnalysis.Operations
     }
     public partial interface IReturnOperation : Microsoft.CodeAnalysis.IOperation
     {
-        Microsoft.CodeAnalysis.IOperation ReturnedValue { get; }
+        Microsoft.CodeAnalysis.IOperation? ReturnedValue { get; }
     }
     public partial interface ISimpleAssignmentOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.IAssignmentOperation
     {
@@ -4389,7 +4416,7 @@ namespace Microsoft.CodeAnalysis.Operations
     }
     public partial interface ISwitchExpressionArmOperation : Microsoft.CodeAnalysis.IOperation
     {
-        Microsoft.CodeAnalysis.IOperation Guard { get; }
+        Microsoft.CodeAnalysis.IOperation? Guard { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ILocalSymbol> Locals { get; }
         Microsoft.CodeAnalysis.Operations.IPatternOperation Pattern { get; }
         Microsoft.CodeAnalysis.IOperation Value { get; }
@@ -4414,7 +4441,7 @@ namespace Microsoft.CodeAnalysis.Operations
     }
     public partial interface IThrowOperation : Microsoft.CodeAnalysis.IOperation
     {
-        Microsoft.CodeAnalysis.IOperation Exception { get; }
+        Microsoft.CodeAnalysis.IOperation? Exception { get; }
     }
     public partial interface ITranslatedQueryOperation : Microsoft.CodeAnalysis.IOperation
     {
@@ -4424,8 +4451,8 @@ namespace Microsoft.CodeAnalysis.Operations
     {
         Microsoft.CodeAnalysis.Operations.IBlockOperation Body { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Operations.ICatchClauseOperation> Catches { get; }
-        Microsoft.CodeAnalysis.ILabelSymbol ExitLabel { get; }
-        Microsoft.CodeAnalysis.Operations.IBlockOperation Finally { get; }
+        Microsoft.CodeAnalysis.ILabelSymbol? ExitLabel { get; }
+        Microsoft.CodeAnalysis.Operations.IBlockOperation? Finally { get; }
     }
     public partial interface ITupleBinaryOperation : Microsoft.CodeAnalysis.IOperation
     {
@@ -4436,7 +4463,7 @@ namespace Microsoft.CodeAnalysis.Operations
     public partial interface ITupleOperation : Microsoft.CodeAnalysis.IOperation
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IOperation> Elements { get; }
-        Microsoft.CodeAnalysis.ITypeSymbol NaturalType { get; }
+        Microsoft.CodeAnalysis.ITypeSymbol? NaturalType { get; }
     }
     public partial interface ITypeOfOperation : Microsoft.CodeAnalysis.IOperation
     {
@@ -4444,7 +4471,7 @@ namespace Microsoft.CodeAnalysis.Operations
     }
     public partial interface ITypeParameterObjectCreationOperation : Microsoft.CodeAnalysis.IOperation
     {
-        Microsoft.CodeAnalysis.Operations.IObjectOrCollectionInitializerOperation Initializer { get; }
+        Microsoft.CodeAnalysis.Operations.IObjectOrCollectionInitializerOperation? Initializer { get; }
     }
     public partial interface ITypePatternOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.IPatternOperation
     {
@@ -4456,7 +4483,7 @@ namespace Microsoft.CodeAnalysis.Operations
         bool IsLifted { get; }
         Microsoft.CodeAnalysis.IOperation Operand { get; }
         Microsoft.CodeAnalysis.Operations.UnaryOperatorKind OperatorKind { get; }
-        Microsoft.CodeAnalysis.IMethodSymbol OperatorMethod { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? OperatorMethod { get; }
     }
     public partial interface IUsingDeclarationOperation : Microsoft.CodeAnalysis.IOperation
     {
@@ -4478,12 +4505,12 @@ namespace Microsoft.CodeAnalysis.Operations
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.Operations.IVariableDeclaratorOperation> Declarators { get; }
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IOperation> IgnoredDimensions { get; }
-        Microsoft.CodeAnalysis.Operations.IVariableInitializerOperation Initializer { get; }
+        Microsoft.CodeAnalysis.Operations.IVariableInitializerOperation? Initializer { get; }
     }
     public partial interface IVariableDeclaratorOperation : Microsoft.CodeAnalysis.IOperation
     {
         System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IOperation> IgnoredArguments { get; }
-        Microsoft.CodeAnalysis.Operations.IVariableInitializerOperation Initializer { get; }
+        Microsoft.CodeAnalysis.Operations.IVariableInitializerOperation? Initializer { get; }
         Microsoft.CodeAnalysis.ILocalSymbol Symbol { get; }
     }
     public partial interface IVariableInitializerOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.ISymbolInitializerOperation
@@ -4491,14 +4518,14 @@ namespace Microsoft.CodeAnalysis.Operations
     }
     public partial interface IWhileLoopOperation : Microsoft.CodeAnalysis.IOperation, Microsoft.CodeAnalysis.Operations.ILoopOperation
     {
-        Microsoft.CodeAnalysis.IOperation Condition { get; }
+        Microsoft.CodeAnalysis.IOperation? Condition { get; }
         bool ConditionIsTop { get; }
         bool ConditionIsUntil { get; }
-        Microsoft.CodeAnalysis.IOperation IgnoredCondition { get; }
+        Microsoft.CodeAnalysis.IOperation? IgnoredCondition { get; }
     }
     public partial interface IWithOperation : Microsoft.CodeAnalysis.IOperation
     {
-        Microsoft.CodeAnalysis.IMethodSymbol CloneMethod { get; }
+        Microsoft.CodeAnalysis.IMethodSymbol? CloneMethod { get; }
         Microsoft.CodeAnalysis.Operations.IObjectOrCollectionInitializerOperation Initializer { get; }
         Microsoft.CodeAnalysis.IOperation Operand { get; }
     }
@@ -4512,24 +4539,24 @@ namespace Microsoft.CodeAnalysis.Operations
     }
     public static partial class OperationExtensions
     {
-        public static System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.IOperation> Descendants(this Microsoft.CodeAnalysis.IOperation operation) { throw null; }
-        public static System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.IOperation> DescendantsAndSelf(this Microsoft.CodeAnalysis.IOperation operation) { throw null; }
-        public static string GetArgumentName(this Microsoft.CodeAnalysis.Operations.IDynamicIndexerAccessOperation dynamicOperation, int index) { throw null; }
-        public static string GetArgumentName(this Microsoft.CodeAnalysis.Operations.IDynamicInvocationOperation dynamicOperation, int index) { throw null; }
-        public static string GetArgumentName(this Microsoft.CodeAnalysis.Operations.IDynamicObjectCreationOperation dynamicOperation, int index) { throw null; }
+        public static System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.IOperation> Descendants(this Microsoft.CodeAnalysis.IOperation? operation) { throw null; }
+        public static System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.IOperation> DescendantsAndSelf(this Microsoft.CodeAnalysis.IOperation? operation) { throw null; }
+        public static string? GetArgumentName(this Microsoft.CodeAnalysis.Operations.IDynamicIndexerAccessOperation dynamicOperation, int index) { throw null; }
+        public static string? GetArgumentName(this Microsoft.CodeAnalysis.Operations.IDynamicInvocationOperation dynamicOperation, int index) { throw null; }
+        public static string? GetArgumentName(this Microsoft.CodeAnalysis.Operations.IDynamicObjectCreationOperation dynamicOperation, int index) { throw null; }
         public static Microsoft.CodeAnalysis.RefKind? GetArgumentRefKind(this Microsoft.CodeAnalysis.Operations.IDynamicIndexerAccessOperation dynamicOperation, int index) { throw null; }
         public static Microsoft.CodeAnalysis.RefKind? GetArgumentRefKind(this Microsoft.CodeAnalysis.Operations.IDynamicInvocationOperation dynamicOperation, int index) { throw null; }
         public static Microsoft.CodeAnalysis.RefKind? GetArgumentRefKind(this Microsoft.CodeAnalysis.Operations.IDynamicObjectCreationOperation dynamicOperation, int index) { throw null; }
-        public static Microsoft.CodeAnalysis.IOperation GetCorrespondingOperation(this Microsoft.CodeAnalysis.Operations.IBranchOperation operation) { throw null; }
+        public static Microsoft.CodeAnalysis.IOperation? GetCorrespondingOperation(this Microsoft.CodeAnalysis.Operations.IBranchOperation operation) { throw null; }
         public static System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ILocalSymbol> GetDeclaredVariables(this Microsoft.CodeAnalysis.Operations.IVariableDeclarationGroupOperation declarationGroup) { throw null; }
         public static System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.ILocalSymbol> GetDeclaredVariables(this Microsoft.CodeAnalysis.Operations.IVariableDeclarationOperation declaration) { throw null; }
-        public static Microsoft.CodeAnalysis.Operations.IVariableInitializerOperation GetVariableInitializer(this Microsoft.CodeAnalysis.Operations.IVariableDeclaratorOperation declarationOperation) { throw null; }
+        public static Microsoft.CodeAnalysis.Operations.IVariableInitializerOperation? GetVariableInitializer(this Microsoft.CodeAnalysis.Operations.IVariableDeclaratorOperation declarationOperation) { throw null; }
     }
     public abstract partial class OperationVisitor
     {
         protected OperationVisitor() { }
         public virtual void DefaultVisit(Microsoft.CodeAnalysis.IOperation operation) { }
-        public virtual void Visit(Microsoft.CodeAnalysis.IOperation operation) { }
+        public virtual void Visit(Microsoft.CodeAnalysis.IOperation? operation) { }
         public virtual void VisitAddressOf(Microsoft.CodeAnalysis.Operations.IAddressOfOperation operation) { }
         public virtual void VisitAnonymousFunction(Microsoft.CodeAnalysis.Operations.IAnonymousFunctionOperation operation) { }
         public virtual void VisitAnonymousObjectCreation(Microsoft.CodeAnalysis.Operations.IAnonymousObjectCreationOperation operation) { }
@@ -4649,135 +4676,135 @@ namespace Microsoft.CodeAnalysis.Operations
     public abstract partial class OperationVisitor<TArgument, TResult>
     {
         protected OperationVisitor() { }
-        public virtual TResult DefaultVisit(Microsoft.CodeAnalysis.IOperation operation, TArgument argument) { throw null; }
-        public virtual TResult Visit(Microsoft.CodeAnalysis.IOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitAddressOf(Microsoft.CodeAnalysis.Operations.IAddressOfOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitAnonymousFunction(Microsoft.CodeAnalysis.Operations.IAnonymousFunctionOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitAnonymousObjectCreation(Microsoft.CodeAnalysis.Operations.IAnonymousObjectCreationOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitArgument(Microsoft.CodeAnalysis.Operations.IArgumentOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitArrayCreation(Microsoft.CodeAnalysis.Operations.IArrayCreationOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitArrayElementReference(Microsoft.CodeAnalysis.Operations.IArrayElementReferenceOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitArrayInitializer(Microsoft.CodeAnalysis.Operations.IArrayInitializerOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitAwait(Microsoft.CodeAnalysis.Operations.IAwaitOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitBinaryOperator(Microsoft.CodeAnalysis.Operations.IBinaryOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitBinaryPattern(Microsoft.CodeAnalysis.Operations.IBinaryPatternOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitBlock(Microsoft.CodeAnalysis.Operations.IBlockOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitBranch(Microsoft.CodeAnalysis.Operations.IBranchOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitCatchClause(Microsoft.CodeAnalysis.Operations.ICatchClauseOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitCaughtException(Microsoft.CodeAnalysis.FlowAnalysis.ICaughtExceptionOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitCoalesce(Microsoft.CodeAnalysis.Operations.ICoalesceOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitCoalesceAssignment(Microsoft.CodeAnalysis.Operations.ICoalesceAssignmentOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? DefaultVisit(Microsoft.CodeAnalysis.IOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? Visit(Microsoft.CodeAnalysis.IOperation? operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitAddressOf(Microsoft.CodeAnalysis.Operations.IAddressOfOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitAnonymousFunction(Microsoft.CodeAnalysis.Operations.IAnonymousFunctionOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitAnonymousObjectCreation(Microsoft.CodeAnalysis.Operations.IAnonymousObjectCreationOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitArgument(Microsoft.CodeAnalysis.Operations.IArgumentOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitArrayCreation(Microsoft.CodeAnalysis.Operations.IArrayCreationOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitArrayElementReference(Microsoft.CodeAnalysis.Operations.IArrayElementReferenceOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitArrayInitializer(Microsoft.CodeAnalysis.Operations.IArrayInitializerOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitAwait(Microsoft.CodeAnalysis.Operations.IAwaitOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitBinaryOperator(Microsoft.CodeAnalysis.Operations.IBinaryOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitBinaryPattern(Microsoft.CodeAnalysis.Operations.IBinaryPatternOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitBlock(Microsoft.CodeAnalysis.Operations.IBlockOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitBranch(Microsoft.CodeAnalysis.Operations.IBranchOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitCatchClause(Microsoft.CodeAnalysis.Operations.ICatchClauseOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitCaughtException(Microsoft.CodeAnalysis.FlowAnalysis.ICaughtExceptionOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitCoalesce(Microsoft.CodeAnalysis.Operations.ICoalesceOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitCoalesceAssignment(Microsoft.CodeAnalysis.Operations.ICoalesceAssignmentOperation operation, TArgument argument) { throw null; }
         [System.ObsoleteAttribute("ICollectionElementInitializerOperation has been replaced with IInvocationOperation and IDynamicInvocationOperation", true)]
-        public virtual TResult VisitCollectionElementInitializer(Microsoft.CodeAnalysis.Operations.ICollectionElementInitializerOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitCompoundAssignment(Microsoft.CodeAnalysis.Operations.ICompoundAssignmentOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitConditional(Microsoft.CodeAnalysis.Operations.IConditionalOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitConditionalAccess(Microsoft.CodeAnalysis.Operations.IConditionalAccessOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitConditionalAccessInstance(Microsoft.CodeAnalysis.Operations.IConditionalAccessInstanceOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitConstantPattern(Microsoft.CodeAnalysis.Operations.IConstantPatternOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitConstructorBodyOperation(Microsoft.CodeAnalysis.Operations.IConstructorBodyOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitConversion(Microsoft.CodeAnalysis.Operations.IConversionOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitDeclarationExpression(Microsoft.CodeAnalysis.Operations.IDeclarationExpressionOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitDeclarationPattern(Microsoft.CodeAnalysis.Operations.IDeclarationPatternOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitDeconstructionAssignment(Microsoft.CodeAnalysis.Operations.IDeconstructionAssignmentOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitDefaultCaseClause(Microsoft.CodeAnalysis.Operations.IDefaultCaseClauseOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitDefaultValue(Microsoft.CodeAnalysis.Operations.IDefaultValueOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitDelegateCreation(Microsoft.CodeAnalysis.Operations.IDelegateCreationOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitDiscardOperation(Microsoft.CodeAnalysis.Operations.IDiscardOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitDiscardPattern(Microsoft.CodeAnalysis.Operations.IDiscardPatternOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitDynamicIndexerAccess(Microsoft.CodeAnalysis.Operations.IDynamicIndexerAccessOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitDynamicInvocation(Microsoft.CodeAnalysis.Operations.IDynamicInvocationOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitDynamicMemberReference(Microsoft.CodeAnalysis.Operations.IDynamicMemberReferenceOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitDynamicObjectCreation(Microsoft.CodeAnalysis.Operations.IDynamicObjectCreationOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitEmpty(Microsoft.CodeAnalysis.Operations.IEmptyOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitEnd(Microsoft.CodeAnalysis.Operations.IEndOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitEventAssignment(Microsoft.CodeAnalysis.Operations.IEventAssignmentOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitEventReference(Microsoft.CodeAnalysis.Operations.IEventReferenceOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitExpressionStatement(Microsoft.CodeAnalysis.Operations.IExpressionStatementOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitFieldInitializer(Microsoft.CodeAnalysis.Operations.IFieldInitializerOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitFieldReference(Microsoft.CodeAnalysis.Operations.IFieldReferenceOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitFlowAnonymousFunction(Microsoft.CodeAnalysis.FlowAnalysis.IFlowAnonymousFunctionOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitFlowCapture(Microsoft.CodeAnalysis.FlowAnalysis.IFlowCaptureOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitFlowCaptureReference(Microsoft.CodeAnalysis.FlowAnalysis.IFlowCaptureReferenceOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitForEachLoop(Microsoft.CodeAnalysis.Operations.IForEachLoopOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitForLoop(Microsoft.CodeAnalysis.Operations.IForLoopOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitForToLoop(Microsoft.CodeAnalysis.Operations.IForToLoopOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitIncrementOrDecrement(Microsoft.CodeAnalysis.Operations.IIncrementOrDecrementOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitInstanceReference(Microsoft.CodeAnalysis.Operations.IInstanceReferenceOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitInterpolatedString(Microsoft.CodeAnalysis.Operations.IInterpolatedStringOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitInterpolatedStringText(Microsoft.CodeAnalysis.Operations.IInterpolatedStringTextOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitInterpolation(Microsoft.CodeAnalysis.Operations.IInterpolationOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitInvalid(Microsoft.CodeAnalysis.Operations.IInvalidOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitInvocation(Microsoft.CodeAnalysis.Operations.IInvocationOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitIsNull(Microsoft.CodeAnalysis.FlowAnalysis.IIsNullOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitIsPattern(Microsoft.CodeAnalysis.Operations.IIsPatternOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitIsType(Microsoft.CodeAnalysis.Operations.IIsTypeOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitLabeled(Microsoft.CodeAnalysis.Operations.ILabeledOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitLiteral(Microsoft.CodeAnalysis.Operations.ILiteralOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitLocalFunction(Microsoft.CodeAnalysis.Operations.ILocalFunctionOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitLocalReference(Microsoft.CodeAnalysis.Operations.ILocalReferenceOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitLock(Microsoft.CodeAnalysis.Operations.ILockOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitMemberInitializer(Microsoft.CodeAnalysis.Operations.IMemberInitializerOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitMethodBodyOperation(Microsoft.CodeAnalysis.Operations.IMethodBodyOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitMethodReference(Microsoft.CodeAnalysis.Operations.IMethodReferenceOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitNameOf(Microsoft.CodeAnalysis.Operations.INameOfOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitNegatedPattern(Microsoft.CodeAnalysis.Operations.INegatedPatternOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitObjectCreation(Microsoft.CodeAnalysis.Operations.IObjectCreationOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitObjectOrCollectionInitializer(Microsoft.CodeAnalysis.Operations.IObjectOrCollectionInitializerOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitOmittedArgument(Microsoft.CodeAnalysis.Operations.IOmittedArgumentOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitParameterInitializer(Microsoft.CodeAnalysis.Operations.IParameterInitializerOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitParameterReference(Microsoft.CodeAnalysis.Operations.IParameterReferenceOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitParenthesized(Microsoft.CodeAnalysis.Operations.IParenthesizedOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitPatternCaseClause(Microsoft.CodeAnalysis.Operations.IPatternCaseClauseOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitPropertyInitializer(Microsoft.CodeAnalysis.Operations.IPropertyInitializerOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitPropertyReference(Microsoft.CodeAnalysis.Operations.IPropertyReferenceOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitPropertySubpattern(Microsoft.CodeAnalysis.Operations.IPropertySubpatternOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitRaiseEvent(Microsoft.CodeAnalysis.Operations.IRaiseEventOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitRangeCaseClause(Microsoft.CodeAnalysis.Operations.IRangeCaseClauseOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitRangeOperation(Microsoft.CodeAnalysis.Operations.IRangeOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitRecursivePattern(Microsoft.CodeAnalysis.Operations.IRecursivePatternOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitReDim(Microsoft.CodeAnalysis.Operations.IReDimOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitReDimClause(Microsoft.CodeAnalysis.Operations.IReDimClauseOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitRelationalCaseClause(Microsoft.CodeAnalysis.Operations.IRelationalCaseClauseOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitRelationalPattern(Microsoft.CodeAnalysis.Operations.IRelationalPatternOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitReturn(Microsoft.CodeAnalysis.Operations.IReturnOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitSimpleAssignment(Microsoft.CodeAnalysis.Operations.ISimpleAssignmentOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitSingleValueCaseClause(Microsoft.CodeAnalysis.Operations.ISingleValueCaseClauseOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitSizeOf(Microsoft.CodeAnalysis.Operations.ISizeOfOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitStaticLocalInitializationSemaphore(Microsoft.CodeAnalysis.FlowAnalysis.IStaticLocalInitializationSemaphoreOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitStop(Microsoft.CodeAnalysis.Operations.IStopOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitSwitch(Microsoft.CodeAnalysis.Operations.ISwitchOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitSwitchCase(Microsoft.CodeAnalysis.Operations.ISwitchCaseOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitSwitchExpression(Microsoft.CodeAnalysis.Operations.ISwitchExpressionOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitSwitchExpressionArm(Microsoft.CodeAnalysis.Operations.ISwitchExpressionArmOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitThrow(Microsoft.CodeAnalysis.Operations.IThrowOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitTranslatedQuery(Microsoft.CodeAnalysis.Operations.ITranslatedQueryOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitTry(Microsoft.CodeAnalysis.Operations.ITryOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitTuple(Microsoft.CodeAnalysis.Operations.ITupleOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitTupleBinaryOperator(Microsoft.CodeAnalysis.Operations.ITupleBinaryOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitTypeOf(Microsoft.CodeAnalysis.Operations.ITypeOfOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitTypeParameterObjectCreation(Microsoft.CodeAnalysis.Operations.ITypeParameterObjectCreationOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitTypePattern(Microsoft.CodeAnalysis.Operations.ITypePatternOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitUnaryOperator(Microsoft.CodeAnalysis.Operations.IUnaryOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitUsing(Microsoft.CodeAnalysis.Operations.IUsingOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitUsingDeclaration(Microsoft.CodeAnalysis.Operations.IUsingDeclarationOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitVariableDeclaration(Microsoft.CodeAnalysis.Operations.IVariableDeclarationOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitVariableDeclarationGroup(Microsoft.CodeAnalysis.Operations.IVariableDeclarationGroupOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitVariableDeclarator(Microsoft.CodeAnalysis.Operations.IVariableDeclaratorOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitVariableInitializer(Microsoft.CodeAnalysis.Operations.IVariableInitializerOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitWhileLoop(Microsoft.CodeAnalysis.Operations.IWhileLoopOperation operation, TArgument argument) { throw null; }
-        public virtual TResult VisitWith(Microsoft.CodeAnalysis.Operations.IWithOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitCollectionElementInitializer(Microsoft.CodeAnalysis.Operations.ICollectionElementInitializerOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitCompoundAssignment(Microsoft.CodeAnalysis.Operations.ICompoundAssignmentOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitConditional(Microsoft.CodeAnalysis.Operations.IConditionalOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitConditionalAccess(Microsoft.CodeAnalysis.Operations.IConditionalAccessOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitConditionalAccessInstance(Microsoft.CodeAnalysis.Operations.IConditionalAccessInstanceOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitConstantPattern(Microsoft.CodeAnalysis.Operations.IConstantPatternOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitConstructorBodyOperation(Microsoft.CodeAnalysis.Operations.IConstructorBodyOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitConversion(Microsoft.CodeAnalysis.Operations.IConversionOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitDeclarationExpression(Microsoft.CodeAnalysis.Operations.IDeclarationExpressionOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitDeclarationPattern(Microsoft.CodeAnalysis.Operations.IDeclarationPatternOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitDeconstructionAssignment(Microsoft.CodeAnalysis.Operations.IDeconstructionAssignmentOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitDefaultCaseClause(Microsoft.CodeAnalysis.Operations.IDefaultCaseClauseOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitDefaultValue(Microsoft.CodeAnalysis.Operations.IDefaultValueOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitDelegateCreation(Microsoft.CodeAnalysis.Operations.IDelegateCreationOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitDiscardOperation(Microsoft.CodeAnalysis.Operations.IDiscardOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitDiscardPattern(Microsoft.CodeAnalysis.Operations.IDiscardPatternOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitDynamicIndexerAccess(Microsoft.CodeAnalysis.Operations.IDynamicIndexerAccessOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitDynamicInvocation(Microsoft.CodeAnalysis.Operations.IDynamicInvocationOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitDynamicMemberReference(Microsoft.CodeAnalysis.Operations.IDynamicMemberReferenceOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitDynamicObjectCreation(Microsoft.CodeAnalysis.Operations.IDynamicObjectCreationOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitEmpty(Microsoft.CodeAnalysis.Operations.IEmptyOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitEnd(Microsoft.CodeAnalysis.Operations.IEndOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitEventAssignment(Microsoft.CodeAnalysis.Operations.IEventAssignmentOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitEventReference(Microsoft.CodeAnalysis.Operations.IEventReferenceOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitExpressionStatement(Microsoft.CodeAnalysis.Operations.IExpressionStatementOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitFieldInitializer(Microsoft.CodeAnalysis.Operations.IFieldInitializerOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitFieldReference(Microsoft.CodeAnalysis.Operations.IFieldReferenceOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitFlowAnonymousFunction(Microsoft.CodeAnalysis.FlowAnalysis.IFlowAnonymousFunctionOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitFlowCapture(Microsoft.CodeAnalysis.FlowAnalysis.IFlowCaptureOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitFlowCaptureReference(Microsoft.CodeAnalysis.FlowAnalysis.IFlowCaptureReferenceOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitForEachLoop(Microsoft.CodeAnalysis.Operations.IForEachLoopOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitForLoop(Microsoft.CodeAnalysis.Operations.IForLoopOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitForToLoop(Microsoft.CodeAnalysis.Operations.IForToLoopOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitIncrementOrDecrement(Microsoft.CodeAnalysis.Operations.IIncrementOrDecrementOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitInstanceReference(Microsoft.CodeAnalysis.Operations.IInstanceReferenceOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitInterpolatedString(Microsoft.CodeAnalysis.Operations.IInterpolatedStringOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitInterpolatedStringText(Microsoft.CodeAnalysis.Operations.IInterpolatedStringTextOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitInterpolation(Microsoft.CodeAnalysis.Operations.IInterpolationOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitInvalid(Microsoft.CodeAnalysis.Operations.IInvalidOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitInvocation(Microsoft.CodeAnalysis.Operations.IInvocationOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitIsNull(Microsoft.CodeAnalysis.FlowAnalysis.IIsNullOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitIsPattern(Microsoft.CodeAnalysis.Operations.IIsPatternOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitIsType(Microsoft.CodeAnalysis.Operations.IIsTypeOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitLabeled(Microsoft.CodeAnalysis.Operations.ILabeledOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitLiteral(Microsoft.CodeAnalysis.Operations.ILiteralOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitLocalFunction(Microsoft.CodeAnalysis.Operations.ILocalFunctionOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitLocalReference(Microsoft.CodeAnalysis.Operations.ILocalReferenceOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitLock(Microsoft.CodeAnalysis.Operations.ILockOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitMemberInitializer(Microsoft.CodeAnalysis.Operations.IMemberInitializerOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitMethodBodyOperation(Microsoft.CodeAnalysis.Operations.IMethodBodyOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitMethodReference(Microsoft.CodeAnalysis.Operations.IMethodReferenceOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitNameOf(Microsoft.CodeAnalysis.Operations.INameOfOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitNegatedPattern(Microsoft.CodeAnalysis.Operations.INegatedPatternOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitObjectCreation(Microsoft.CodeAnalysis.Operations.IObjectCreationOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitObjectOrCollectionInitializer(Microsoft.CodeAnalysis.Operations.IObjectOrCollectionInitializerOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitOmittedArgument(Microsoft.CodeAnalysis.Operations.IOmittedArgumentOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitParameterInitializer(Microsoft.CodeAnalysis.Operations.IParameterInitializerOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitParameterReference(Microsoft.CodeAnalysis.Operations.IParameterReferenceOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitParenthesized(Microsoft.CodeAnalysis.Operations.IParenthesizedOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitPatternCaseClause(Microsoft.CodeAnalysis.Operations.IPatternCaseClauseOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitPropertyInitializer(Microsoft.CodeAnalysis.Operations.IPropertyInitializerOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitPropertyReference(Microsoft.CodeAnalysis.Operations.IPropertyReferenceOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitPropertySubpattern(Microsoft.CodeAnalysis.Operations.IPropertySubpatternOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitRaiseEvent(Microsoft.CodeAnalysis.Operations.IRaiseEventOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitRangeCaseClause(Microsoft.CodeAnalysis.Operations.IRangeCaseClauseOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitRangeOperation(Microsoft.CodeAnalysis.Operations.IRangeOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitRecursivePattern(Microsoft.CodeAnalysis.Operations.IRecursivePatternOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitReDim(Microsoft.CodeAnalysis.Operations.IReDimOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitReDimClause(Microsoft.CodeAnalysis.Operations.IReDimClauseOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitRelationalCaseClause(Microsoft.CodeAnalysis.Operations.IRelationalCaseClauseOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitRelationalPattern(Microsoft.CodeAnalysis.Operations.IRelationalPatternOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitReturn(Microsoft.CodeAnalysis.Operations.IReturnOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitSimpleAssignment(Microsoft.CodeAnalysis.Operations.ISimpleAssignmentOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitSingleValueCaseClause(Microsoft.CodeAnalysis.Operations.ISingleValueCaseClauseOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitSizeOf(Microsoft.CodeAnalysis.Operations.ISizeOfOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitStaticLocalInitializationSemaphore(Microsoft.CodeAnalysis.FlowAnalysis.IStaticLocalInitializationSemaphoreOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitStop(Microsoft.CodeAnalysis.Operations.IStopOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitSwitch(Microsoft.CodeAnalysis.Operations.ISwitchOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitSwitchCase(Microsoft.CodeAnalysis.Operations.ISwitchCaseOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitSwitchExpression(Microsoft.CodeAnalysis.Operations.ISwitchExpressionOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitSwitchExpressionArm(Microsoft.CodeAnalysis.Operations.ISwitchExpressionArmOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitThrow(Microsoft.CodeAnalysis.Operations.IThrowOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitTranslatedQuery(Microsoft.CodeAnalysis.Operations.ITranslatedQueryOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitTry(Microsoft.CodeAnalysis.Operations.ITryOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitTuple(Microsoft.CodeAnalysis.Operations.ITupleOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitTupleBinaryOperator(Microsoft.CodeAnalysis.Operations.ITupleBinaryOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitTypeOf(Microsoft.CodeAnalysis.Operations.ITypeOfOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitTypeParameterObjectCreation(Microsoft.CodeAnalysis.Operations.ITypeParameterObjectCreationOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitTypePattern(Microsoft.CodeAnalysis.Operations.ITypePatternOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitUnaryOperator(Microsoft.CodeAnalysis.Operations.IUnaryOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitUsing(Microsoft.CodeAnalysis.Operations.IUsingOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitUsingDeclaration(Microsoft.CodeAnalysis.Operations.IUsingDeclarationOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitVariableDeclaration(Microsoft.CodeAnalysis.Operations.IVariableDeclarationOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitVariableDeclarationGroup(Microsoft.CodeAnalysis.Operations.IVariableDeclarationGroupOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitVariableDeclarator(Microsoft.CodeAnalysis.Operations.IVariableDeclaratorOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitVariableInitializer(Microsoft.CodeAnalysis.Operations.IVariableInitializerOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitWhileLoop(Microsoft.CodeAnalysis.Operations.IWhileLoopOperation operation, TArgument argument) { throw null; }
+        public virtual TResult? VisitWith(Microsoft.CodeAnalysis.Operations.IWithOperation operation, TArgument argument) { throw null; }
     }
     public abstract partial class OperationWalker : Microsoft.CodeAnalysis.Operations.OperationVisitor
     {
         protected OperationWalker() { }
         public override void DefaultVisit(Microsoft.CodeAnalysis.IOperation operation) { }
-        public override void Visit(Microsoft.CodeAnalysis.IOperation operation) { }
+        public override void Visit(Microsoft.CodeAnalysis.IOperation? operation) { }
     }
-    public abstract partial class OperationWalker<TArgument> : Microsoft.CodeAnalysis.Operations.OperationVisitor<TArgument, object>
+    public abstract partial class OperationWalker<TArgument> : Microsoft.CodeAnalysis.Operations.OperationVisitor<TArgument, object?>
     {
         protected OperationWalker() { }
-        public override object DefaultVisit(Microsoft.CodeAnalysis.IOperation operation, TArgument argument) { throw null; }
-        public override object Visit(Microsoft.CodeAnalysis.IOperation operation, TArgument argument) { throw null; }
+        public override object? DefaultVisit(Microsoft.CodeAnalysis.IOperation operation, TArgument argument) { throw null; }
+        public override object? Visit(Microsoft.CodeAnalysis.IOperation? operation, TArgument argument) { throw null; }
     }
     public enum UnaryOperatorKind
     {
@@ -4803,7 +4830,7 @@ namespace Microsoft.CodeAnalysis.Text
         public static Microsoft.CodeAnalysis.Text.LinePosition Zero { get { throw null; } }
         public int CompareTo(Microsoft.CodeAnalysis.Text.LinePosition other) { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.Text.LinePosition other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.Text.LinePosition left, Microsoft.CodeAnalysis.Text.LinePosition right) { throw null; }
         public static bool operator >(Microsoft.CodeAnalysis.Text.LinePosition left, Microsoft.CodeAnalysis.Text.LinePosition right) { throw null; }
@@ -4821,7 +4848,7 @@ namespace Microsoft.CodeAnalysis.Text
         public Microsoft.CodeAnalysis.Text.LinePosition End { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.LinePosition Start { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.Text.LinePositionSpan other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.Text.LinePositionSpan left, Microsoft.CodeAnalysis.Text.LinePositionSpan right) { throw null; }
         public static bool operator !=(Microsoft.CodeAnalysis.Text.LinePositionSpan left, Microsoft.CodeAnalysis.Text.LinePositionSpan right) { throw null; }
@@ -4835,23 +4862,23 @@ namespace Microsoft.CodeAnalysis.Text
     }
     public abstract partial class SourceText
     {
-        protected SourceText(System.Collections.Immutable.ImmutableArray<byte> checksum = default(System.Collections.Immutable.ImmutableArray<byte>), Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm = Microsoft.CodeAnalysis.Text.SourceHashAlgorithm.Sha1, Microsoft.CodeAnalysis.Text.SourceTextContainer container = null) { }
+        protected SourceText(System.Collections.Immutable.ImmutableArray<byte> checksum = default(System.Collections.Immutable.ImmutableArray<byte>), Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm = Microsoft.CodeAnalysis.Text.SourceHashAlgorithm.Sha1, Microsoft.CodeAnalysis.Text.SourceTextContainer? container = null) { }
         public bool CanBeEmbedded { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.SourceHashAlgorithm ChecksumAlgorithm { get { throw null; } }
         public virtual Microsoft.CodeAnalysis.Text.SourceTextContainer Container { get { throw null; } }
-        public abstract System.Text.Encoding Encoding { get; }
+        public abstract System.Text.Encoding? Encoding { get; }
         public abstract char this[int position] { get; }
         public abstract int Length { get; }
         public Microsoft.CodeAnalysis.Text.TextLineCollection Lines { get { throw null; } }
         public bool ContentEquals(Microsoft.CodeAnalysis.Text.SourceText other) { throw null; }
         protected virtual bool ContentEqualsImpl(Microsoft.CodeAnalysis.Text.SourceText other) { throw null; }
         public abstract void CopyTo(int sourceIndex, char[] destination, int destinationIndex, int count);
-        public static Microsoft.CodeAnalysis.Text.SourceText From(byte[] buffer, int length, System.Text.Encoding encoding, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm, bool throwIfBinaryDetected) { throw null; }
-        public static Microsoft.CodeAnalysis.Text.SourceText From(byte[] buffer, int length, System.Text.Encoding encoding = null, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm = Microsoft.CodeAnalysis.Text.SourceHashAlgorithm.Sha1, bool throwIfBinaryDetected = false, bool canBeEmbedded = false) { throw null; }
-        public static Microsoft.CodeAnalysis.Text.SourceText From(System.IO.Stream stream, System.Text.Encoding encoding, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm, bool throwIfBinaryDetected) { throw null; }
-        public static Microsoft.CodeAnalysis.Text.SourceText From(System.IO.Stream stream, System.Text.Encoding encoding = null, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm = Microsoft.CodeAnalysis.Text.SourceHashAlgorithm.Sha1, bool throwIfBinaryDetected = false, bool canBeEmbedded = false) { throw null; }
-        public static Microsoft.CodeAnalysis.Text.SourceText From(System.IO.TextReader reader, int length, System.Text.Encoding encoding = null, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm = Microsoft.CodeAnalysis.Text.SourceHashAlgorithm.Sha1) { throw null; }
-        public static Microsoft.CodeAnalysis.Text.SourceText From(string text, System.Text.Encoding encoding = null, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm = Microsoft.CodeAnalysis.Text.SourceHashAlgorithm.Sha1) { throw null; }
+        public static Microsoft.CodeAnalysis.Text.SourceText From(byte[] buffer, int length, System.Text.Encoding? encoding, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm, bool throwIfBinaryDetected) { throw null; }
+        public static Microsoft.CodeAnalysis.Text.SourceText From(byte[] buffer, int length, System.Text.Encoding? encoding = null, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm = Microsoft.CodeAnalysis.Text.SourceHashAlgorithm.Sha1, bool throwIfBinaryDetected = false, bool canBeEmbedded = false) { throw null; }
+        public static Microsoft.CodeAnalysis.Text.SourceText From(System.IO.Stream stream, System.Text.Encoding? encoding, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm, bool throwIfBinaryDetected) { throw null; }
+        public static Microsoft.CodeAnalysis.Text.SourceText From(System.IO.Stream stream, System.Text.Encoding? encoding = null, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm = Microsoft.CodeAnalysis.Text.SourceHashAlgorithm.Sha1, bool throwIfBinaryDetected = false, bool canBeEmbedded = false) { throw null; }
+        public static Microsoft.CodeAnalysis.Text.SourceText From(System.IO.TextReader reader, int length, System.Text.Encoding? encoding = null, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm = Microsoft.CodeAnalysis.Text.SourceHashAlgorithm.Sha1) { throw null; }
+        public static Microsoft.CodeAnalysis.Text.SourceText From(string text, System.Text.Encoding? encoding = null, Microsoft.CodeAnalysis.Text.SourceHashAlgorithm checksumAlgorithm = Microsoft.CodeAnalysis.Text.SourceHashAlgorithm.Sha1) { throw null; }
         public virtual System.Collections.Generic.IReadOnlyList<Microsoft.CodeAnalysis.Text.TextChangeRange> GetChangeRanges(Microsoft.CodeAnalysis.Text.SourceText oldText) { throw null; }
         public System.Collections.Immutable.ImmutableArray<byte> GetChecksum() { throw null; }
         protected virtual Microsoft.CodeAnalysis.Text.TextLineCollection GetLinesCore() { throw null; }
@@ -4880,12 +4907,12 @@ namespace Microsoft.CodeAnalysis.Text
         private readonly int _dummyPrimitive;
         public TextChange(Microsoft.CodeAnalysis.Text.TextSpan span, string newText) { throw null; }
         [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public string NewText { get { throw null; } }
+        public string? NewText { get { throw null; } }
         public static System.Collections.Generic.IReadOnlyList<Microsoft.CodeAnalysis.Text.TextChange> NoChanges { get { throw null; } }
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
         public Microsoft.CodeAnalysis.Text.TextSpan Span { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.Text.TextChange other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.Text.TextChange left, Microsoft.CodeAnalysis.Text.TextChange right) { throw null; }
         public static implicit operator Microsoft.CodeAnalysis.Text.TextChangeRange (Microsoft.CodeAnalysis.Text.TextChange change) { throw null; }
@@ -4909,7 +4936,7 @@ namespace Microsoft.CodeAnalysis.Text
         public Microsoft.CodeAnalysis.Text.TextSpan Span { get { throw null; } }
         public static Microsoft.CodeAnalysis.Text.TextChangeRange Collapse(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Text.TextChangeRange> changes) { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.Text.TextChangeRange other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.Text.TextChangeRange left, Microsoft.CodeAnalysis.Text.TextChangeRange right) { throw null; }
         public static bool operator !=(Microsoft.CodeAnalysis.Text.TextChangeRange left, Microsoft.CodeAnalysis.Text.TextChangeRange right) { throw null; }
@@ -4925,9 +4952,9 @@ namespace Microsoft.CodeAnalysis.Text
         public Microsoft.CodeAnalysis.Text.TextSpan Span { get { throw null; } }
         public Microsoft.CodeAnalysis.Text.TextSpan SpanIncludingLineBreak { get { throw null; } }
         public int Start { get { throw null; } }
-        public Microsoft.CodeAnalysis.Text.SourceText Text { get { throw null; } }
+        public Microsoft.CodeAnalysis.Text.SourceText? Text { get { throw null; } }
         public bool Equals(Microsoft.CodeAnalysis.Text.TextLine other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public static Microsoft.CodeAnalysis.Text.TextLine FromSpan(Microsoft.CodeAnalysis.Text.SourceText text, Microsoft.CodeAnalysis.Text.TextSpan span) { throw null; }
         public override int GetHashCode() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.Text.TextLine left, Microsoft.CodeAnalysis.Text.TextLine right) { throw null; }
@@ -4954,7 +4981,7 @@ namespace Microsoft.CodeAnalysis.Text
             private int _dummyPrimitive;
             public Microsoft.CodeAnalysis.Text.TextLine Current { get { throw null; } }
             object System.Collections.IEnumerator.Current { get { throw null; } }
-            public override bool Equals(object obj) { throw null; }
+            public override bool Equals(object? obj) { throw null; }
             public override int GetHashCode() { throw null; }
             public bool MoveNext() { throw null; }
             bool System.Collections.IEnumerator.MoveNext() { throw null; }
@@ -4977,7 +5004,7 @@ namespace Microsoft.CodeAnalysis.Text
         public bool Contains(Microsoft.CodeAnalysis.Text.TextSpan span) { throw null; }
         public bool Contains(int position) { throw null; }
         public bool Equals(Microsoft.CodeAnalysis.Text.TextSpan other) { throw null; }
-        public override bool Equals(object obj) { throw null; }
+        public override bool Equals(object? obj) { throw null; }
         public static Microsoft.CodeAnalysis.Text.TextSpan FromBounds(int start, int end) { throw null; }
         public override int GetHashCode() { throw null; }
         public Microsoft.CodeAnalysis.Text.TextSpan? Intersection(Microsoft.CodeAnalysis.Text.TextSpan span) { throw null; }
@@ -4991,7 +5018,9 @@ namespace Microsoft.CodeAnalysis.Text
     }
 }
 
-// manual fix up
+// The following code was manually created to workaround api generator limitations.
+// --------------------------------------------------------------------------------
+
 namespace Microsoft.CodeAnalysis
 {
     internal readonly struct DeclarationInfo

@@ -28,7 +28,6 @@ using Microsoft.CodeAnalysis.Symbols;
 [assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
 [assembly: AssemblyFileVersion("4.0.121.55815")]
 [assembly: AssemblyInformationalVersion("4.0.121.55815 built by: SOURCEBUILD")]
-[assembly: CLSCompliant(true)]
 [assembly: AssemblyMetadata("", "")]
 [assembly: AssemblyVersion("4.0.0.0")]
 

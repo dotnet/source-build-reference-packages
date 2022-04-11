@@ -37,13 +37,14 @@ namespace System.Runtime.CompilerServices
         public unsafe static void* Add<T>(void* source, int elementOffset) { throw null; }
         public static ref T Add<T>(ref T source, int elementOffset) { throw null; }
         public static ref T Add<T>(ref T source, System.IntPtr elementOffset) { throw null; }
-        public static bool AreSame<T>([System.Diagnostics.CodeAnalysis.AllowNullAttribute]ref T left, [System.Diagnostics.CodeAnalysis.AllowNullAttribute]ref T right) { throw null; }
+        public static bool AreSame<T>([System.Diagnostics.CodeAnalysis.AllowNullAttribute] ref T left, [System.Diagnostics.CodeAnalysis.AllowNullAttribute] ref T right) { throw null; }
         public unsafe static void* AsPointer<T>(ref T value) { throw null; }
         public unsafe static ref T AsRef<T>(void* source) { throw null; }
         public static ref T AsRef<T>(in T source) { throw null; }
-        // Manual fixup on next line. Attribute was in wrong place and not marked "return:". https://github.com/dotnet/arcade/issues/6718
-        [return: System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute("o")] public static T As<T>(object o) where T : class { throw null; }        public static ref TTo As<TFrom, TTo>(ref TFrom source) { throw null; }
-        public static System.IntPtr ByteOffset<T>([System.Diagnostics.CodeAnalysis.AllowNullAttribute]ref T origin, [System.Diagnostics.CodeAnalysis.AllowNullAttribute]ref T target) { throw null; }
+        [return: System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute("o")]
+        public static T? As<T>(object? o) where T : class { throw null; }
+        public static ref TTo As<TFrom, TTo>(ref TFrom source) { throw null; }
+        public static System.IntPtr ByteOffset<T>([System.Diagnostics.CodeAnalysis.AllowNullAttribute] ref T origin, [System.Diagnostics.CodeAnalysis.AllowNullAttribute] ref T target) { throw null; }
         public static void CopyBlock(ref byte destination, ref byte source, uint byteCount) { }
         public unsafe static void CopyBlock(void* destination, void* source, uint byteCount) { }
         public static void CopyBlockUnaligned(ref byte destination, ref byte source, uint byteCount) { }
@@ -54,8 +55,8 @@ namespace System.Runtime.CompilerServices
         public unsafe static void InitBlock(void* startAddress, byte value, uint byteCount) { }
         public static void InitBlockUnaligned(ref byte startAddress, byte value, uint byteCount) { }
         public unsafe static void InitBlockUnaligned(void* startAddress, byte value, uint byteCount) { }
-        public static bool IsAddressGreaterThan<T>([System.Diagnostics.CodeAnalysis.AllowNullAttribute]ref T left, [System.Diagnostics.CodeAnalysis.AllowNullAttribute]ref T right) { throw null; }
-        public static bool IsAddressLessThan<T>([System.Diagnostics.CodeAnalysis.AllowNullAttribute]ref T left, [System.Diagnostics.CodeAnalysis.AllowNullAttribute]ref T right) { throw null; }
+        public static bool IsAddressGreaterThan<T>([System.Diagnostics.CodeAnalysis.AllowNullAttribute] ref T left, [System.Diagnostics.CodeAnalysis.AllowNullAttribute] ref T right) { throw null; }
+        public static bool IsAddressLessThan<T>([System.Diagnostics.CodeAnalysis.AllowNullAttribute] ref T left, [System.Diagnostics.CodeAnalysis.AllowNullAttribute] ref T right) { throw null; }
         public static bool IsNullRef<T>(ref T source) { throw null; }
         public static ref T NullRef<T>() { throw null; }
         public static T ReadUnaligned<T>(ref byte source) { throw null; }

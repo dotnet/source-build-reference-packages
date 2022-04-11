@@ -67,10 +67,12 @@ namespace System.Runtime.CompilerServices
     public readonly partial struct ConfiguredValueTaskAwaitable
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable.ConfiguredValueTaskAwaiter GetAwaiter() { throw null; }
         public readonly partial struct ConfiguredValueTaskAwaiter : System.Runtime.CompilerServices.ICriticalNotifyCompletion, System.Runtime.CompilerServices.INotifyCompletion
         {
             private readonly object _dummy;
+            private readonly int _dummyPrimitive;
             public bool IsCompleted { get { throw null; } }
             public void GetResult() { }
             public void OnCompleted(System.Action continuation) { }
@@ -80,10 +82,12 @@ namespace System.Runtime.CompilerServices
     public readonly partial struct ConfiguredValueTaskAwaitable<TResult>
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable<TResult>.ConfiguredValueTaskAwaiter GetAwaiter() { throw null; }
         public readonly partial struct ConfiguredValueTaskAwaiter : System.Runtime.CompilerServices.ICriticalNotifyCompletion, System.Runtime.CompilerServices.INotifyCompletion
         {
             private readonly object _dummy;
+            private readonly int _dummyPrimitive;
             public bool IsCompleted { get { throw null; } }
             public TResult GetResult() { throw null; }
             public void OnCompleted(System.Action continuation) { }
@@ -93,6 +97,7 @@ namespace System.Runtime.CompilerServices
     public readonly partial struct ValueTaskAwaiter : System.Runtime.CompilerServices.ICriticalNotifyCompletion, System.Runtime.CompilerServices.INotifyCompletion
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public bool IsCompleted { get { throw null; } }
         public void GetResult() { }
         public void OnCompleted(System.Action continuation) { }
@@ -101,6 +106,7 @@ namespace System.Runtime.CompilerServices
     public readonly partial struct ValueTaskAwaiter<TResult> : System.Runtime.CompilerServices.ICriticalNotifyCompletion, System.Runtime.CompilerServices.INotifyCompletion
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public bool IsCompleted { get { throw null; } }
         public TResult GetResult() { throw null; }
         public void OnCompleted(System.Action continuation) { }
@@ -133,7 +139,7 @@ namespace System.Threading.Tasks
     [System.Runtime.CompilerServices.AsyncMethodBuilderAttribute(typeof(System.Runtime.CompilerServices.AsyncValueTaskMethodBuilder<>))]
     public readonly partial struct ValueTask<TResult> : System.IEquatable<System.Threading.Tasks.ValueTask<TResult>>
     {
-        internal readonly TResult _result;
+        private readonly TResult _result;
         private readonly object _dummy;
         private readonly int _dummyPrimitive;
         public ValueTask(System.Threading.Tasks.Sources.IValueTaskSource<TResult> source, short token) { throw null; }
