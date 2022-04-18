@@ -43,7 +43,7 @@
   -->
   <Target Name="BuildDependencyPackageProjects"
           BeforeTargets="Execute"
-          Condition="'$(ArcadeBuildFromSource)' != 'true' or '$(ArcadeInnerBuildFromSource)' == 'true'"
+          Condition="'$(GeneratePackageSource)' != 'true' and ('$(ArcadeBuildFromSource)' != 'true' or '$(ArcadeInnerBuildFromSource)' == 'true')"
           Outputs="%(DependencyPackageProjects.Identity)">
 
     <MSBuild
@@ -64,7 +64,8 @@
     to hook into.
   -->
   <Target Name="InitializeNuGetConfig"
-          BeforeTargets="BuildDependencyPackageProjects">
+          BeforeTargets="BuildDependencyPackageProjects"
+          Condition="'$(GeneratePackageSource)' != 'true' and ('$(ArcadeBuildFromSource)' != 'true' or '$(ArcadeInnerBuildFromSource)' == 'true')">
 
       <AddSourceToNuGetConfig
         NuGetConfigFile="$(CurrentRepoSourceBuildSourceDir)NuGet.config"
