@@ -1,5 +1,7 @@
 <Project>
 
+  <UsingTask TaskName="Microsoft.DotNet.Arcade.Sdk.SourceBuild.AddSourceToNuGetConfig" AssemblyFile="$(MSBuildProjectDirectory)/netcoreapp3.1/Microsoft.DotNet.Arcade.Sdk.dll" />
+
   <ItemGroup Condition=" '$(GeneratePackageSource)' == 'true' ">
     <ProjectToBuild Include="$(RepoRoot)src/referencePackageSourceGenerator/Tasks/GenerateProjectsTask.csproj" />
     <ProjectToBuild Include="$(RepoRoot)src/referencePackageSourceGenerator/GenerateSource/GenerateSource.proj" />
@@ -35,9 +37,14 @@
     <ProjectToBuild Remove="@(DependencyPackageProjects)" />
   </ItemGroup>
 
+  <!--
+    Build each dependency project one at a time and then copy it's nupkg to the package feed so that dependent projects will reference
+    the SBRP packages vs online packages. Specifing `Outputs` is what enables this vs building all projects at once.
+  -->
   <Target Name="BuildDependencyPackageProjects"
           BeforeTargets="Execute"
-          Condition="'$(ArcadeBuildFromSource)' != 'true' or '$(ArcadeInnerBuildFromSource)' == 'true'">
+          Condition="'$(GeneratePackageSource)' != 'true' and ('$(ArcadeBuildFromSource)' != 'true' or '$(ArcadeInnerBuildFromSource)' == 'true')"
+          Outputs="%(DependencyPackageProjects.Identity)">
 
     <MSBuild
       Condition="'@(DependencyPackageProjects)' != ''"
@@ -49,6 +56,23 @@
       Condition="'$(CurrentRepoSourceBuiltNupkgCacheDir)' != ''"
       SourceFiles="@(DependencyPackageProjects->'$(ArtifactsShippingPackagesDir)%(FileName).nupkg')"
       DestinationFolder="$(CurrentRepoSourceBuiltNupkgCacheDir)" />
+  </Target>
+
+  <!--
+    Adding the local package cache to the NuGet.config must be done explicitly before BuildDependencyPackageProjects.
+    This normally gets done by the Arcade tool.proj which doesn't have a mechanism for BuildDependencyPackageProjects
+    to hook into.
+  -->
+  <Target Name="InitializeNuGetConfig"
+          BeforeTargets="BuildDependencyPackageProjects"
+          Condition="'$(GeneratePackageSource)' != 'true' and ('$(ArcadeBuildFromSource)' != 'true' or '$(ArcadeInnerBuildFromSource)' == 'true')">
+
+      <AddSourceToNuGetConfig
+        NuGetConfigFile="$(CurrentRepoSourceBuildSourceDir)NuGet.config"
+        SourceName="source-build-int-nupkg-cache"
+        SourcePath="$(CurrentRepoSourceBuiltNupkgCacheDir)" />
+
+      <MakeDir Directories="$(CurrentRepoSourceBuiltNupkgCacheDir)"/>
   </Target>
 
   <!--
