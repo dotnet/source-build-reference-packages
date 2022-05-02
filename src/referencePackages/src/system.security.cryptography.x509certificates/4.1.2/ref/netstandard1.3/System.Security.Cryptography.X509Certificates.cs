@@ -20,11 +20,11 @@ using System.Security;
 [assembly: AssemblyCompany("Microsoft Corporation")]
 [assembly: AssemblyProduct("Microsoft® .NET Framework")]
 [assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: AssemblyFileVersion("1.0.24212.01")]
-[assembly: AssemblyInformationalVersion("1.0.24212.01 built by: SOURCEBUILD")]
+[assembly: AssemblyFileVersion("1.0.25814.07")]
+[assembly: AssemblyInformationalVersion("1.0.25814.07 built by: SOURCEBUILD")]
 [assembly: CLSCompliant(true)]
 [assembly: AssemblyMetadata("", "")]
-[assembly: AssemblyVersion("4.1.0.0")]
+[assembly: AssemblyVersion("4.0.0.0")]
 
 
 
@@ -40,19 +40,14 @@ namespace Microsoft.Win32.SafeHandles
 }
 namespace System.Security.Cryptography.X509Certificates
 {
-    public static partial class ECDsaCertificateExtensions
-    {
-        public static System.Security.Cryptography.ECDsa GetECDsaPrivateKey(this System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) { throw null; }
-        public static System.Security.Cryptography.ECDsa GetECDsaPublicKey(this System.Security.Cryptography.X509Certificates.X509Certificate2 certificate) { throw null; }
-    }
     [System.FlagsAttribute]
     public enum OpenFlags
     {
-        IncludeArchived = 8,
-        MaxAllowed = 2,
-        OpenExistingOnly = 4,
         ReadOnly = 0,
         ReadWrite = 1,
+        MaxAllowed = 2,
+        OpenExistingOnly = 4,
+        IncludeArchived = 8,
     }
     public sealed partial class PublicKey
     {
@@ -96,16 +91,16 @@ namespace System.Security.Cryptography.X509Certificates
     [System.FlagsAttribute]
     public enum X500DistinguishedNameFlags
     {
-        DoNotUsePlusSign = 32,
-        DoNotUseQuotes = 64,
-        ForceUTF8Encoding = 16384,
         None = 0,
         Reversed = 1,
+        UseSemicolons = 16,
+        DoNotUsePlusSign = 32,
+        DoNotUseQuotes = 64,
         UseCommas = 128,
         UseNewLines = 256,
-        UseSemicolons = 16,
-        UseT61Encoding = 8192,
         UseUTF8Encoding = 4096,
+        UseT61Encoding = 8192,
+        ForceUTF8Encoding = 16384,
     }
     public sealed partial class X509BasicConstraintsExtension : System.Security.Cryptography.X509Certificates.X509Extension
     {
@@ -312,43 +307,40 @@ namespace System.Security.Cryptography.X509Certificates
     [System.FlagsAttribute]
     public enum X509ChainStatusFlags
     {
-        CtlNotSignatureValid = 262144,
-        CtlNotTimeValid = 131072,
-        CtlNotValidForUsage = 524288,
+        NoError = 0,
+        NotTimeValid = 1,
+        NotTimeNested = 2,
+        Revoked = 4,
+        NotSignatureValid = 8,
+        NotValidForUsage = 16,
+        UntrustedRoot = 32,
+        RevocationStatusUnknown = 64,
         Cyclic = 128,
-        ExplicitDistrust = 67108864,
-        HasExcludedNameConstraint = 32768,
+        InvalidExtension = 256,
+        InvalidPolicyConstraints = 512,
+        InvalidBasicConstraints = 1024,
+        InvalidNameConstraints = 2048,
+        HasNotSupportedNameConstraint = 4096,
         HasNotDefinedNameConstraint = 8192,
         HasNotPermittedNameConstraint = 16384,
-        HasNotSupportedCriticalExtension = 134217728,
-        HasNotSupportedNameConstraint = 4096,
-        HasWeakSignature = 1048576,
-        InvalidBasicConstraints = 1024,
-        InvalidExtension = 256,
-        InvalidNameConstraints = 2048,
-        InvalidPolicyConstraints = 512,
-        NoError = 0,
-        NoIssuanceChainPolicy = 33554432,
-        NotSignatureValid = 8,
-        NotTimeNested = 2,
-        NotTimeValid = 1,
-        NotValidForUsage = 16,
-        OfflineRevocation = 16777216,
+        HasExcludedNameConstraint = 32768,
         PartialChain = 65536,
-        RevocationStatusUnknown = 64,
-        Revoked = 4,
-        UntrustedRoot = 32,
+        CtlNotTimeValid = 131072,
+        CtlNotSignatureValid = 262144,
+        CtlNotValidForUsage = 524288,
+        OfflineRevocation = 16777216,
+        NoIssuanceChainPolicy = 33554432,
     }
     public enum X509ContentType
     {
-        Authenticode = 6,
+        Unknown = 0,
         Cert = 1,
+        SerializedCert = 2,
         Pfx = 3,
         Pkcs12 = 3,
-        Pkcs7 = 5,
-        SerializedCert = 2,
         SerializedStore = 4,
-        Unknown = 0,
+        Pkcs7 = 5,
+        Authenticode = 6,
     }
     public sealed partial class X509EnhancedKeyUsageExtension : System.Security.Cryptography.X509Certificates.X509Extension
     {
@@ -391,31 +383,31 @@ namespace System.Security.Cryptography.X509Certificates
     }
     public enum X509FindType
     {
+        FindByThumbprint = 0,
+        FindBySubjectName = 1,
+        FindBySubjectDistinguishedName = 2,
+        FindByIssuerName = 3,
+        FindByIssuerDistinguishedName = 4,
+        FindBySerialNumber = 5,
+        FindByTimeValid = 6,
+        FindByTimeNotYetValid = 7,
+        FindByTimeExpired = 8,
+        FindByTemplateName = 9,
         FindByApplicationPolicy = 10,
         FindByCertificatePolicy = 11,
         FindByExtension = 12,
-        FindByIssuerDistinguishedName = 4,
-        FindByIssuerName = 3,
         FindByKeyUsage = 13,
-        FindBySerialNumber = 5,
-        FindBySubjectDistinguishedName = 2,
         FindBySubjectKeyIdentifier = 14,
-        FindBySubjectName = 1,
-        FindByTemplateName = 9,
-        FindByThumbprint = 0,
-        FindByTimeExpired = 8,
-        FindByTimeNotYetValid = 7,
-        FindByTimeValid = 6,
     }
     [System.FlagsAttribute]
     public enum X509KeyStorageFlags
     {
         DefaultKeySet = 0,
-        Exportable = 4,
-        MachineKeySet = 2,
-        PersistKeySet = 16,
         UserKeySet = 1,
+        MachineKeySet = 2,
+        Exportable = 4,
         UserProtected = 8,
+        PersistKeySet = 16,
     }
     public sealed partial class X509KeyUsageExtension : System.Security.Cryptography.X509Certificates.X509Extension
     {
@@ -428,24 +420,24 @@ namespace System.Security.Cryptography.X509Certificates
     [System.FlagsAttribute]
     public enum X509KeyUsageFlags
     {
-        CrlSign = 2,
-        DataEncipherment = 16,
-        DecipherOnly = 32768,
-        DigitalSignature = 128,
-        EncipherOnly = 1,
-        KeyAgreement = 8,
-        KeyCertSign = 4,
-        KeyEncipherment = 32,
         None = 0,
+        EncipherOnly = 1,
+        CrlSign = 2,
+        KeyCertSign = 4,
+        KeyAgreement = 8,
+        DataEncipherment = 16,
+        KeyEncipherment = 32,
         NonRepudiation = 64,
+        DigitalSignature = 128,
+        DecipherOnly = 32768,
     }
     public enum X509NameType
     {
-        DnsFromAlternativeName = 4,
-        DnsName = 3,
-        EmailName = 1,
         SimpleName = 0,
+        EmailName = 1,
         UpnName = 2,
+        DnsName = 3,
+        DnsFromAlternativeName = 4,
         UrlName = 5,
     }
     public enum X509RevocationFlag
@@ -457,8 +449,8 @@ namespace System.Security.Cryptography.X509Certificates
     public enum X509RevocationMode
     {
         NoCheck = 0,
-        Offline = 2,
         Online = 1,
+        Offline = 2,
     }
     public sealed partial class X509Store : System.IDisposable
     {
@@ -486,26 +478,26 @@ namespace System.Security.Cryptography.X509Certificates
     }
     public enum X509SubjectKeyIdentifierHashAlgorithm
     {
-        CapiSha1 = 2,
         Sha1 = 0,
         ShortSha1 = 1,
+        CapiSha1 = 2,
     }
     [System.FlagsAttribute]
     public enum X509VerificationFlags
     {
-        AllFlags = 4095,
-        AllowUnknownCertificateAuthority = 16,
-        IgnoreCertificateAuthorityRevocationUnknown = 1024,
+        NoFlag = 0,
+        IgnoreNotTimeValid = 1,
         IgnoreCtlNotTimeValid = 2,
-        IgnoreCtlSignerRevocationUnknown = 512,
-        IgnoreEndRevocationUnknown = 256,
+        IgnoreNotTimeNested = 4,
         IgnoreInvalidBasicConstraints = 8,
+        AllowUnknownCertificateAuthority = 16,
+        IgnoreWrongUsage = 32,
         IgnoreInvalidName = 64,
         IgnoreInvalidPolicy = 128,
-        IgnoreNotTimeNested = 4,
-        IgnoreNotTimeValid = 1,
+        IgnoreEndRevocationUnknown = 256,
+        IgnoreCtlSignerRevocationUnknown = 512,
+        IgnoreCertificateAuthorityRevocationUnknown = 1024,
         IgnoreRootRevocationUnknown = 2048,
-        IgnoreWrongUsage = 32,
-        NoFlag = 0,
+        AllFlags = 4095,
     }
 }
