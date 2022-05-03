@@ -65,7 +65,7 @@
   -->
   <Target Name="InitializeNuGetConfig"
           BeforeTargets="BuildDependencyPackageProjects"
-          Condition="'$(GeneratePackageSource)' != 'true' and ('$(ArcadeBuildFromSource)' != 'true' or '$(ArcadeInnerBuildFromSource)' == 'true')">
+          Condition="'$(GeneratePackageSource)' != 'true' and '$(ArcadeInnerBuildFromSource)' == 'true'">
 
       <AddSourceToNuGetConfig
         NuGetConfigFile="$(CurrentRepoSourceBuildSourceDir)NuGet.config"
