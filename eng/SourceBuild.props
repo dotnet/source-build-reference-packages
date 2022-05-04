@@ -5,4 +5,20 @@
     <SourceBuildManagedOnly>true</SourceBuildManagedOnly>
   </PropertyGroup>
 
+  <Target Name="BuildDependencyPackageProjects"
+          Condition="'$(ArcadeInnerBuildFromSource)' == 'true'"
+          BeforeTargets="Execute">
+
+    <Exec
+      Command="./build.sh --configuration $(Configuration) /bl:$(ArtifactsDir)sourcebuild-dependency-projects.binlog /p:BuildDependencyPackageProjects=true /p:DotNetBuildFromSource=true /p:ArcadeInnerBuildFromSource=true"
+      WorkingDirectory="$(InnerSourceBuildRepoRoot)"
+      EnvironmentVariables="@(InnerBuildEnv)" />
+
+    <!-- Copy dependency packages into package cache -->
+    <Copy
+      Condition="'$(CurrentRepoSourceBuiltNupkgCacheDir)' != ''"
+      SourceFiles="@(DependencyPackageProjects->'$(ArtifactsShippingPackagesDir)%(FileName).nupkg')"
+      DestinationFolder="$(CurrentRepoSourceBuiltNupkgCacheDir)" />
+  </Target>
+
 </Project>
