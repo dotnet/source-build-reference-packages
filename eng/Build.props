@@ -1,18 +1,22 @@
 <Project>
 
-  <UsingTask TaskName="Microsoft.DotNet.Arcade.Sdk.SourceBuild.AddSourceToNuGetConfig" AssemblyFile="$(MSBuildProjectDirectory)/netcoreapp3.1/Microsoft.DotNet.Arcade.Sdk.dll" />
+  <PropertyGroup>
+    <BuildInParallel Condition=" '$(BuildInParallel)' == '' and '$(BuildDependencyPackageProjects)' == 'true' ">false</BuildInParallel>
+  </PropertyGroup>
 
   <ItemGroup Condition=" '$(GeneratePackageSource)' == 'true' ">
     <ProjectToBuild Include="$(RepoRoot)src/referencePackageSourceGenerator/Tasks/GenerateProjectsTask.csproj" />
     <ProjectToBuild Include="$(RepoRoot)src/referencePackageSourceGenerator/GenerateSource/GenerateSource.proj" />
     <ProjectToBuild Include="$(Reporoot)src/referencePackageSourceGenerator/GenerateProjects/GenerateProjects.proj" />
   </ItemGroup>
+
   <ItemGroup Condition=" '$(GeneratePackageSource)' != 'true' ">
     <!--
-      The following DependencyPackageProjects are ones on which other packages depend.  Adding them
-      to this ItemGroup will ensure that they get built first and in order of inclusion.  Also,
-      packages included here will be added to the source-build package cache when building with
-      source-build to allow them to be considered in prebuilt reporting.
+      The following DependencyPackageProjects are ones on which other packages depend on that do
+      not exist in the source-build package cache.  Adding them to this ItemGroup will ensure that
+      they get built first and in order of inclusion.  Also, packages included here will be added
+      to the source-build package cache when building with source-build to allow them to be
+      considered in prebuilt reporting.
 
       Format:
       <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Extensions.Options.5.0.0.csproj" />
@@ -26,7 +30,13 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Text.RegularExpressions.4.3.1.csproj" />
 
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Diagnostics.DiagnosticSource.5.0.0.csproj" />
+  </ItemGroup>
 
+  <ItemGroup Condition=" '$(BuildDependencyPackageProjects)' == 'true' ">
+    <ProjectToBuild Include="@(DependencyPackageProjects)" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(GeneratePackageSource)' != 'true' and '$(BuildDependencyPackageProjects)' != 'true'">
     <TargetingPackageProject Include="$(RepoRoot)src\targetPacks\ILsrc\**\*.csproj" />
     <ProjectToBuild Include="@(TargetingPackageProject)" />
 
@@ -38,44 +48,6 @@
 
     <ProjectToBuild Remove="@(DependencyPackageProjects)" />
   </ItemGroup>
-
-  <!--
-    Build each dependency project one at a time and then copy it's nupkg to the package feed so that dependent projects will reference
-    the SBRP packages vs online packages. Specifing `Outputs` is what enables this vs building all projects at once.
-  -->
-  <Target Name="BuildDependencyPackageProjects"
-          BeforeTargets="Execute"
-          Condition="'$(GeneratePackageSource)' != 'true' and ('$(ArcadeBuildFromSource)' != 'true' or '$(ArcadeInnerBuildFromSource)' == 'true')"
-          Outputs="%(DependencyPackageProjects.Identity)">
-
-    <MSBuild
-      Condition="'@(DependencyPackageProjects)' != ''"
-      Projects="@(DependencyPackageProjects)"
-      Targets="Restore;Build;Pack" />
-
-    <!-- Copy packages into package cache if building with source-build -->
-    <Copy
-      Condition="'$(CurrentRepoSourceBuiltNupkgCacheDir)' != ''"
-      SourceFiles="@(DependencyPackageProjects->'$(ArtifactsShippingPackagesDir)%(FileName).nupkg')"
-      DestinationFolder="$(CurrentRepoSourceBuiltNupkgCacheDir)" />
-  </Target>
-
-  <!--
-    Adding the local package cache to the NuGet.config must be done explicitly before BuildDependencyPackageProjects.
-    This normally gets done by the Arcade tool.proj which doesn't have a mechanism for BuildDependencyPackageProjects
-    to hook into.
-  -->
-  <Target Name="InitializeNuGetConfig"
-          BeforeTargets="BuildDependencyPackageProjects"
-          Condition="'$(GeneratePackageSource)' != 'true' and '$(ArcadeInnerBuildFromSource)' == 'true'">
-
-      <AddSourceToNuGetConfig
-        NuGetConfigFile="$(CurrentRepoSourceBuildSourceDir)NuGet.config"
-        SourceName="source-build-int-nupkg-cache"
-        SourcePath="$(CurrentRepoSourceBuiltNupkgCacheDir)" />
-
-      <MakeDir Directories="$(CurrentRepoSourceBuiltNupkgCacheDir)"/>
-  </Target>
 
   <!--
     Adding new projects is somewhat copy-paste heavy and may result in project name overlaps. Catch
