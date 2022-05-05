@@ -1,5 +1,9 @@
 <Project>
 
+  <PropertyGroup>
+    <BuildInParallel Condition=" '$(BuildInParallel)' == '' and '$(BuildDependencyPackageProjects)' == 'true' ">false</BuildInParallel>
+  </PropertyGroup>
+
   <ItemGroup Condition=" '$(GeneratePackageSource)' == 'true' ">
     <ProjectToBuild Include="$(RepoRoot)src/referencePackageSourceGenerator/Tasks/GenerateProjectsTask.csproj" />
     <ProjectToBuild Include="$(RepoRoot)src/referencePackageSourceGenerator/GenerateSource/GenerateSource.proj" />
@@ -28,7 +32,7 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Diagnostics.DiagnosticSource.5.0.0.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(GeneratePackageSource)' != 'true' and '$(BuildDependencyPackageProjects)' == 'true' ">
+  <ItemGroup Condition=" '$(BuildDependencyPackageProjects)' == 'true' ">
     <ProjectToBuild Include="@(DependencyPackageProjects)" />
   </ItemGroup>
 
