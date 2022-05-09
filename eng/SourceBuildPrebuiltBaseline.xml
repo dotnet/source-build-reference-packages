@@ -5,6 +5,7 @@
     <UsagePattern IdentityGlob="runtime.linux-x64.Microsoft.NETCore.ILDAsm/*" />
 
     <UsagePattern IdentityGlob="Microsoft.SourceBuild.Intermediate.*/*" />
+
   </IgnorePatterns>
   <Usages/>
 </UsageData>
