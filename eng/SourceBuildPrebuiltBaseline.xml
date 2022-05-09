@@ -7,8 +7,5 @@
     <UsagePattern IdentityGlob="Microsoft.SourceBuild.Intermediate.*/*" />
 
   </IgnorePatterns>
-  <Usages>
-      <!-- Remove once https://github.com/dotnet/arcade/pull/9271 has flowed into SBRP -->
-      <Usage Id="runtime.native.System.Security.Cryptography" Version="4.0.0" />
-  </Usages>
+  <Usages/>
 </UsageData>

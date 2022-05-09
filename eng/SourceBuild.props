@@ -10,7 +10,7 @@
           BeforeTargets="Execute">
 
     <Exec
-      Command="./build.sh --configuration $(Configuration) /bl:$(ArtifactsDir)sourcebuild-dependency-projects.binlog /p:BuildDependencyPackageProjects=true /p:DotNetBuildFromSource=true /p:ArcadeInnerBuildFromSource=true"
+      Command="./build.sh --configuration $(Configuration) /bl:$(ArtifactsDir)sourcebuild-dependency-projects.binlog /p:BuildDependencyPackageProjects=true /p:SetUpSourceBuildIntermediateNupkgCache=true /p:DotNetBuildFromSource=true /p:ArcadeInnerBuildFromSource=true"
       WorkingDirectory="$(InnerSourceBuildRepoRoot)"
       EnvironmentVariables="@(InnerBuildEnv)" />
 
