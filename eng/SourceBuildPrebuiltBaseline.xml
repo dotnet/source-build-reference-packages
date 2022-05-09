@@ -16,6 +16,8 @@
     <UsagePattern IdentityGlob="Microsoft.SourceBuild.Intermediate.*/*" />
 
     <UsagePattern IdentityGlob="runtime.*/*" />
+
+    <UsagePattern IdentityGlob="runtime.native.System.Security.Cryptography.*/*" />
   </IgnorePatterns>
   <Usages/>
 </UsageData>
