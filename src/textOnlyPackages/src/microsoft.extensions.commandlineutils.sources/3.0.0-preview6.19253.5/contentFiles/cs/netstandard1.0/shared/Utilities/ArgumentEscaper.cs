@@ -1,6 +1,5 @@
-// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-// See the LICENSE file in the project root for more information.
+// Copyright (c) .NET Foundation. All rights reserved.
+// Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +19,8 @@ namespace Microsoft.Extensions.CommandLineUtils
         /// <remarks>
         /// See https://blogs.msdn.microsoft.com/twistylittlepassagesallalike/2011/04/23/everyone-quotes-command-line-arguments-the-wrong-way/
         /// </remarks>
-        /// <param name="args">The arguments to concatenate.</param>
-        /// <returns>The escaped arguments, concatenated.</returns>
+        /// <param name="args"></param>
+        /// <returns></returns>
         public static string EscapeAndConcatenate(IEnumerable<string> args)
             => string.Join(" ", args.Select(EscapeSingleArg));
 
@@ -105,6 +104,6 @@ namespace Microsoft.Extensions.CommandLineUtils
         }
 
         private static bool ContainsWhitespace(string argument)
-            => argument.IndexOfAny(new[] { ' ', '\t', '\n' }) >= 0;
+            => argument.IndexOfAny(new [] { ' ', '\t', '\n' }) >= 0;
     }
 }
