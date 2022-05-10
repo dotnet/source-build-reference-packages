@@ -31,6 +31,8 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.X509Certificates.4.1.2.csproj" />
 
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Diagnostics.DiagnosticSource.5.0.0.csproj" />
+
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.IO.Pipes.AccessControl.5.0.0.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(BuildDependencyPackageProjects)' == 'true' ">
