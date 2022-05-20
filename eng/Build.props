@@ -45,7 +45,7 @@
     <ProjectToBuild Include="$(RepoRoot)\eng\NoOp.csproj" />
   </ItemGroup>
 
-  <Target Name="BuildDependencyPackageProjects"
+  <Target Name="InitializeCurrentRepoSourceBuiltNupkgCacheDir"
           BeforeTargets="Execute"
           Condition="'$(BuildDependencyPackageProjects)' == 'true'">
     <MakeDir Condition="'$(CurrentRepoSourceBuiltNupkgCacheDir)' != ''"
