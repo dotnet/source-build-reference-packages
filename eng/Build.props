@@ -42,14 +42,20 @@
 
   <ItemGroup Condition=" '$(BuildDependencyPackageProjects)' == 'true' ">
     <!-- Building an empty project triggers building the Arcade Tools.proj which is needed before BuildDependencyPackageProjects -->
-    <ProjectToBuild Include="$(RepoRoot)\eng\empty.csproj" />
+    <ProjectToBuild Include="$(RepoRoot)\eng\NoOp.csproj" />
   </ItemGroup>
+
+  <Target Name="BuildDependencyPackageProjects"
+          BeforeTargets="Execute"
+          Condition="'$(BuildDependencyPackageProjects)' == 'true'">
+    <MakeDir Condition="'$(CurrentRepoSourceBuiltNupkgCacheDir)' != ''"
+             Directories="$(CurrentRepoSourceBuiltNupkgCacheDir)" />
+  </Target>
 
   <Target Name="BuildDependencyPackageProjects"
           AfterTargets="Execute"
           Condition="'$(BuildDependencyPackageProjects)' == 'true'"
           Outputs="%(DependencyPackageProjects.Identity)">
-
     <MSBuild Condition="'@(DependencyPackageProjects)' != ''"
              Projects="@(DependencyPackageProjects)"
              Targets="Restore;Build;Pack" />

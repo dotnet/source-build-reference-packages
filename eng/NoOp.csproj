@@ -6,4 +6,6 @@
     <TargetFramework>net7.0</TargetFramework>
   </PropertyGroup>
 
+  <Target Name="Build" />
+
 </Project>
