@@ -16,3 +16,6 @@
 [submodule "src/MSBuildLocator"]
 	path = src/MSBuildLocator
 	url = https://github.com/microsoft/MSBuildLocator
+[submodule "src/jab"]
+	path = src/jab
+	url = https://github.com/pakrym/jab
