@@ -9,7 +9,6 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
-    <icon>Icon.png</icon>
     <projectUrl>https://github.com/dotnet/corefx</projectUrl>
     <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
     <description>Provides read-only reflection on assemblies in an isolated context with support for assemblies that have different architectures and runtimes.
