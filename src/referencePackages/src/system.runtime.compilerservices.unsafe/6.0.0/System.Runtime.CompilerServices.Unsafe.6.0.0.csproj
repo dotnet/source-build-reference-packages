@@ -2,7 +2,7 @@
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))/dir.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net461</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.nuspec</NuspecFile>
   </PropertyGroup>
 
@@ -12,10 +12,6 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/lib/</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
     <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/lib/</OutputPath>
   </PropertyGroup>
 
