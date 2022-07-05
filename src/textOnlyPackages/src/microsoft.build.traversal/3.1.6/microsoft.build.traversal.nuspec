@@ -2,11 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>Microsoft.Build.Traversal</id>
-    <version>3.0.23</version>
+    <version>3.1.6</version>
     <authors>Microsoft</authors>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <license type="file">LICENSE.txt</license>
-    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     <icon>MSBuild-NuGet-Icon.png</icon>
     <projectUrl>https://github.com/Microsoft/MSBuildSdks</projectUrl>
     <description>Provides MSBuild traversal logic.</description>
@@ -17,9 +16,8 @@
     </packageTypes>
     <repository url="https://github.com/Microsoft/MSBuildSdks.git" />
     <dependencies>
-      <group targetFramework=".NETFramework4.7.2" />
-      <group targetFramework=".NETCoreApp3.1" />
-      <group targetFramework="net5.0" />
+      <group targetFramework=".NETFramework4.0" />
+      <group targetFramework=".NETStandard2.0" />
     </dependencies>
   </metadata>
 </package>

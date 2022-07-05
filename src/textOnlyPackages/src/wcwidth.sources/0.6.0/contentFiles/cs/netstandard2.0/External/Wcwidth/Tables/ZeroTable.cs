@@ -1,13 +1,19 @@
+#if WCWIDTH
+#pragma warning restore
+#else
+#pragma warning disable
+#endif
+
 using System.Collections.Generic;
 
 namespace Wcwidth
 {
-    internal static partial class WideTable
+    internal static partial class ZeroTable
     {
         private static readonly Dictionary<Unicode, uint[,]> _lookup;
         private static readonly object _lock;
 
-        static WideTable()
+        static ZeroTable()
         {
             _lookup = new Dictionary<Unicode, uint[,]>();
             _lock = new object();
