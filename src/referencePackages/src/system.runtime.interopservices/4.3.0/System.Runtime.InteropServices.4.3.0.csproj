@@ -66,11 +66,4 @@
     <Reference Include="System.Core" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
-    <PackageReference Include="System.Runtime" Version="4.3.0" />
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net462" Version="1.0.2" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-  </ItemGroup>
-
 </Project>
