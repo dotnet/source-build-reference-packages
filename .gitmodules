@@ -16,6 +16,9 @@
 [submodule "src/MSBuildLocator"]
 	path = src/MSBuildLocator
 	url = https://github.com/microsoft/MSBuildLocator
+[submodule "src/azure-activedirectory-identitymodel-extensions-for-dotnet"]
+	path = src/azure-activedirectory-identitymodel-extensions-for-dotnet
+	url = https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet.git
 [submodule "src/jab"]
 	path = src/jab
 	url = https://github.com/pakrym/jab
