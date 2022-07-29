@@ -96,6 +96,11 @@
       The generated APIs may contain null annotated code, but we disable nullable project wide 
     -->
     <NoWarn>$(NoWarn);CS8632</NoWarn>
+
+    <!-- Don't warn on RS1025 - Configure generated code analysis -->
+    <NoWarn>$(NoWarn);RS1025</NoWarn>
+    <!-- Don't warn on RS1026 - Enable concurrent execution -->
+    <NoWarn>$(NoWarn);RS1026</NoWarn>
   </PropertyGroup>
 
 </Project>
