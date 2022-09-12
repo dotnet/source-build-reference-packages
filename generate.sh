@@ -33,8 +33,7 @@ usage() {
     echo "  --pkgCsv <pathToCSV>               A path to a csv file of packages to generate. Format is the same as the --pkg"
     echo "                                       option above, one per line.  If specified, the --pkg option is ignored."
     echo "  --dest <pathToDestRepo>            A path to the root of the repo to copy source into."
-    echo "  --type <packageType>               Type of the package to generate. Accepted values: text | ref."
-    echo "                                       Default: ref."
+    echo "  --type <packageType>               Type of the package to generate. Accepted values: ref (default) | text."
     echo "  --feeds <nugetFeeds>               A semicolon-separated list of additional NuGet feeds to use during restore."
     echo ""
 }
