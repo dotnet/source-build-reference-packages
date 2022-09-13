@@ -29,6 +29,24 @@
         GeneratorVersion="$(GeneratorVersion)" />
   </Target>
 
+  <Target Name="CopyGeneratedSource" AfterTargets="CoreCompile">
+    <ItemGroup>
+      <GeneratedSourcePackages Include="$(GeneratedSourcePath)\**\Directory.Build.props" />
+      <GeneratedSourceFiles Include="%(GeneratedSourcePackages.RelativeDir)\**\*.*" >
+        <!-- Due to the usage of a glob pattern in 'Include', 'RecursiveDir' will only contain the path for the /**/ pattern
+          https://docs.microsoft.com/en-us/visualstudio/msbuild/copy-task?view=vs-2022#parameters
+
+          As such, the parent directory containing the name of the package must be resolved manually.
+          For 'GetFileName' to return the name of the directory, the trailing slash in 'RecursiveDir' has to be trimmed out -->
+        <ParentDirectory>$([System.IO.Path]::GetFileName($([System.IO.Path]::TrimEndingDirectorySeparator(%(GeneratedSourcePackages.RelativeDir)))))</ParentDirectory>
+      </GeneratedSourceFiles>
+    </ItemGroup>
+
+    <Copy SourceFiles="@(GeneratedSourceFiles)" DestinationFiles="@(GeneratedSourceFiles->'$(PathToRepoSrc)/%(ParentDirectory)/%(RecursiveDir)%(Filename)%(Extension)')" />
+
+    <Message Importance="High" Text="==> Copied generated projects from $(GeneratedSourcePath) to $(PathToRepoSrc)" />
+  </Target>
+
   <Target Name="CreateManifestResourceNames" />
   <Import Project="$(ArtifactsDir)toolset/Common/Tools.proj.nuget.g.targets" />
 </Project>

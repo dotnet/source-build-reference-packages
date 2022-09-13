@@ -4,33 +4,24 @@
 # Stop script if command returns non-zero exit code.
 set -e
 
-source="${BASH_SOURCE[0]}"
-
 DEFAULT_TFM=net6.0
 
-# resolve $SOURCE until the file is no longer a symlink
-while [[ -h $source ]]; do
-  scriptroot="$( cd -P "$( dirname "$source" )" && pwd )"
-  source="$(readlink "$source")"
-
-  # if $source was a relative symlink, we need to resolve it relative to the path where the
-  # symlink file was located
-  [[ $source != /* ]] && source="$scriptroot/$source"
-done
-
+source="$(readlink -f "${BASH_SOURCE[0]}")"
 scriptroot="$( cd -P "$( dirname "$source" )" && pwd )"
 
-GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m'
 
 usage() {
     echo "usage: $0 [options]"
     echo ""
-    echo "  Restores reference package(s) and dependencies and generates cs files and accompanying projects"
-    echo "  to build a reference package.  The generated artifacts are added to the /src/ directory of this repo"
-    echo "  unless a different destination is specified.  If a csv file of packages is specified, multiple"
-    echo "  packages and their dependencies are generated."
+    echo "  Generates a reference package or a text-only package from the specified packages and versions. The"
+    echo "  type of the generated package is controlled via the --type option."
+    echo ""
+    echo "  Reference package generation will restore reference package(s) and dependencies and generate cs files"
+    echo "  and with accompanying projects into the specified destination ('./src/referencePackages/' by default)."
+    echo "  Text-only package generation will restore the specified package and copy the source-build-usable content"
+    echo "  into the provided directory ('./src/textOnlyPackages/' by default)."
     echo ""
     echo "  Either --pkg or --pkgCsv must be specified"
     echo ""
@@ -42,21 +33,24 @@ usage() {
     echo "  --pkgCsv <pathToCSV>               A path to a csv file of packages to generate. Format is the same as the --pkg"
     echo "                                       option above, one per line.  If specified, the --pkg option is ignored."
     echo "  --dest <pathToDestRepo>            A path to the root of the repo to copy source into."
+    echo "  --type <packageType>               Type of the package to generate. Accepted values: ref (default) | text."
+    echo "  --feeds <nugetFeeds>               A semicolon-separated list of additional NuGet feeds to use during restore."
     echo ""
 }
 
 packageVersion=
 defaultPathToCSV="$scriptroot/artifacts/targetPackages.csv"
 pathToCSV=
-pathToDestRepo="$scriptroot"
-positional_args=()
-requiredOptionSpecified=false
-while :; do
-    if [ $# -le 0 ]; then
-        break
-    fi
-    lowerI="$(echo "$1" | awk '{print tolower($0)}')"
-    case $lowerI in
+pathToDestRepo=
+packageType="ref"
+
+if [[ $# -le 0 ]]; then
+	usage
+	exit 0
+fi
+
+while [ $# -gt 0 ]; do
+    case "$1" in
         "-?"|-h|--help)
             usage
             exit 0
@@ -67,7 +61,6 @@ while :; do
                 exit 1
             fi
             pathToCSV="$(cd "$(dirname "$2")"; pwd)/$(basename "$2")"
-            requiredOptionSpecified=true
             shift
             ;;
         --dest)
@@ -78,9 +71,21 @@ while :; do
             pathToDestRepo="$(cd -P "$2" && pwd)"
             shift
             ;;
+        --type)
+            packageType="$2"
+            if [[ ! "$packageType" =~ ^(text|ref)$ ]]; then
+                echo -e "${RED}ERROR: unknown package type - $2${NC}"
+                usage
+                exit 1
+            fi
+            shift
+            ;;
         --pkg)
             packageVersion="$2"
-            requiredOptionSpecified=true
+            shift
+            ;;
+        --feeds)
+            feeds="$2"
             shift
             ;;
         *)
@@ -93,7 +98,8 @@ while :; do
     shift
 done
 
-if [ "$requiredOptionSpecified" != "true" ]; then
+if [ -z "$packageVersion" ] && [ -z "$pathToCSV" ]; then
+	echo -e "${RED}ERROR: Either --pkg or --pkgCsv must be specified!${NC}"
     usage
     exit 1
 fi
@@ -105,6 +111,14 @@ fi
 
 if [ "$pathToCSV" == "" ]; then
     pathToCSV="$defaultPathToCSV"
+fi
+
+if [[ -z "$pathToDestRepo" ]]; then
+    if [ "$packageType" == "ref" ]; then
+        pathToDestRepo="$scriptroot/src/referencePackages/src"
+    else
+        pathToDestRepo="$scriptroot/src/textOnlyPackages/src/"
+    fi
 fi
 
 # Generate restore projects for each target package
@@ -120,8 +134,8 @@ if [ -d "$restoreProjectsDir" ]; then
   rm -rf "$restoreProjectsDir"
 fi
 mkdir -p "$restoreProjectsDir"
-[ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
-while read pkgName pkgVersion tfm
+[ ! -f "$INPUT" ] && { echo "$INPUT file not found"; exit 99; }
+while read -r pkgName pkgVersion tfm
 do
     sed "s/##PackageName##/${pkgName}/g" "$targetPackageTemplate" > "$restoreProjectsDir/$pkgName.$pkgVersion.csproj"
     sed -i "s/##PackageVersion##/${pkgVersion}/g" "$restoreProjectsDir/$pkgName.$pkgVersion.csproj"
@@ -130,21 +144,20 @@ do
     else
         sed -i "s/##Tfm##/${DEFAULT_TFM}/g" "$restoreProjectsDir/$pkgName.$pkgVersion.csproj"
     fi
-done < $INPUT
+done < "$INPUT"
 IFS=$OLDIFS
 
-# Build the projects to generate source and projects
-"$scriptroot/eng/common/build.sh" --build --restore -bl /p:GeneratePackageSource=true /p:GeneratorVersion=2 $@
+if [[ "$packageType" == "ref" ]]; then
+    pathToRepoSrc="$pathToDestRepo"
 
-# Copy source to destination
-pathToGeneratedSrc="$scriptroot/artifacts/generatedSrc"
-pathToRepoSrc="$pathToDestRepo/src/referencePackages/src"
+    # Build the projects to generate source and projects
+    "$scriptroot/eng/common/build.sh" --build --restore -bl /p:GeneratePackageSource=true /p:GeneratorVersion=2 /p:PathToRepoSrc="$pathToRepoSrc" /p:RestoreAdditionalProjectSources="\"$feeds\"" "$@"
+else
+    # -p:RestoreAdditionalProjectSources -> specifies additional Nuget package sources, including feeds: https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#restore-properties
+    # -p:RestoreUsingNuGetTargets -> switch that controls who will restore the project; if set to `false`, Arcade's Build.proj will execute the Restore target of the project itself.
+    #	Otherwise, Build.proj will trigger its own instance of Nuget.targets.Restore and delegate the restore of all applicable projects to it. In this case, the Restore target is
+    #	outside the project and we cannot hook our post-processing logic to it. For more info see:
+    #	https://github.com/dotnet/arcade/blob/5b838a3ed7f8e53c3082724605e5237fa614a43c/src/Microsoft.DotNet.Arcade.Sdk/tools/Build.proj#L227
 
-pushd "$pathToGeneratedSrc"
-chmod 755 ./CopyProjects.sh
-./CopyProjects.sh "$pathToRepoSrc"
-popd
-
-echo
-echo -e "  Copied generated projects from ${GREEN}$pathToGeneratedSrc${NC} to ${GREEN}"$pathToRepoSrc"${NC}"
-echo
+    "$scriptroot/eng/common/build.sh" -bl --restore --projects "$scriptroot/src/textOnlyPackageGenerator/PackageGenerator.proj" /p:RestoreUsingNuGetTargets=false /p:TextOnlyPackageDestination="$pathToDestRepo" /p:PathToCsv="$pathToCSV" /p:RestoreAdditionalProjectSources="\"$feeds\""
+fi
