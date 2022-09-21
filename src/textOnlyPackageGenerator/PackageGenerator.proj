@@ -93,6 +93,7 @@
         .woff;
         .woff2;
         .xlf;
+        .xml;
         browserslist;
         browserslistrc;
         LICENSE;" />
