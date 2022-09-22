@@ -82,13 +82,6 @@
     <ProjectToBuild Include="$(RepoRoot)\eng\NoOp.csproj" />
   </ItemGroup>
 
-  <Target Name="InitializeCurrentRepoSourceBuiltNupkgCacheDir"
-          BeforeTargets="Execute"
-          Condition="'$(BuildDependencyPackageProjects)' == 'true'">
-    <MakeDir Condition="'$(CurrentRepoSourceBuiltNupkgCacheDir)' != ''"
-             Directories="$(CurrentRepoSourceBuiltNupkgCacheDir)" />
-  </Target>
-
   <Target Name="BuildDependencyPackageProjects"
           AfterTargets="Execute"
           Condition="'$(BuildDependencyPackageProjects)' == 'true'"
@@ -97,9 +90,9 @@
              Projects="@(DependencyPackageProjects)"
              Targets="Restore;Build;Pack" />
 
-    <Copy Condition="'$(CurrentRepoSourceBuiltNupkgCacheDir)' != ''"
+    <Copy Condition="'$(LocalNuGetPackageCacheDirectory)' != ''"
           SourceFiles="@(DependencyPackageProjects->'$(ArtifactsShippingPackagesDir)%(FileName).nupkg')"
-          DestinationFolder="$(CurrentRepoSourceBuiltNupkgCacheDir)" />
+          DestinationFolder="$(LocalNuGetPackageCacheDirectory)" />
   </Target>
 
   <ItemGroup Condition=" '$(GeneratePackageSource)' != 'true' and '$(BuildDependencyPackageProjects)' != 'true'">
