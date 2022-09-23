@@ -72,19 +72,15 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.CodeAnalysis.CSharp.4.0.1.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.CodeAnalysis.Workspaces.Common.4.0.1.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.CodeAnalysis.CSharp.Workspaces.4.0.1.csproj" />
+
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Reflection.Emit.ILGeneration.4.7.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Reflection.Emit.4.7.0.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(BuildDependencyPackageProjects)' == 'true' ">
     <!-- Building an empty project triggers building the Arcade Tools.proj which is needed before BuildDependencyPackageProjects -->
     <ProjectToBuild Include="$(RepoRoot)\eng\NoOp.csproj" />
   </ItemGroup>
-
-  <Target Name="InitializeCurrentRepoSourceBuiltNupkgCacheDir"
-          BeforeTargets="Execute"
-          Condition="'$(BuildDependencyPackageProjects)' == 'true'">
-    <MakeDir Condition="'$(CurrentRepoSourceBuiltNupkgCacheDir)' != ''"
-             Directories="$(CurrentRepoSourceBuiltNupkgCacheDir)" />
-  </Target>
 
   <Target Name="BuildDependencyPackageProjects"
           AfterTargets="Execute"
@@ -94,9 +90,9 @@
              Projects="@(DependencyPackageProjects)"
              Targets="Restore;Build;Pack" />
 
-    <Copy Condition="'$(CurrentRepoSourceBuiltNupkgCacheDir)' != ''"
+    <Copy Condition="'$(LocalNuGetPackageCacheDirectory)' != ''"
           SourceFiles="@(DependencyPackageProjects->'$(ArtifactsShippingPackagesDir)%(FileName).nupkg')"
-          DestinationFolder="$(CurrentRepoSourceBuiltNupkgCacheDir)" />
+          DestinationFolder="$(LocalNuGetPackageCacheDirectory)" />
   </Target>
 
   <ItemGroup Condition=" '$(GeneratePackageSource)' != 'true' and '$(BuildDependencyPackageProjects)' != 'true'">
