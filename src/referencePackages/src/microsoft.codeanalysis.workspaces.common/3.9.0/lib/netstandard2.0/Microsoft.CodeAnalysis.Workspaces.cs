@@ -1913,6 +1913,8 @@ namespace Microsoft.CodeAnalysis.Options
     public sealed partial class DocumentOptionSet : Microsoft.CodeAnalysis.Options.OptionSet
     {
         internal DocumentOptionSet() { }
+        internal override System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.Options.OptionKey> GetChangedOptions(Microsoft.CodeAnalysis.Options.OptionSet optionSet) { throw null; }
+        private protected override object? GetOptionCore(Microsoft.CodeAnalysis.Options.OptionKey optionKey) { throw null; }
         public T GetOption<T>(Microsoft.CodeAnalysis.Options.PerLanguageOption<T> option) { throw null; }
         public override Microsoft.CodeAnalysis.Options.OptionSet WithChangedOption(Microsoft.CodeAnalysis.Options.OptionKey optionAndLanguage, object? value) { throw null; }
         public Microsoft.CodeAnalysis.Options.DocumentOptionSet WithChangedOption<T>(Microsoft.CodeAnalysis.Options.PerLanguageOption<T> option, T value) { throw null; }
@@ -2122,5 +2124,16 @@ namespace Microsoft.CodeAnalysis.Tags
         public const string Structure = "Structure";
         public const string TypeParameter = "TypeParameter";
         public const string Warning = "Warning";
+    }
+}
+
+
+// The following code was manually created to workaround api generator limitations.
+// --------------------------------------------------------------------------------
+
+namespace Microsoft.CodeAnalysis.Editing
+{
+    internal class SyntaxGeneratorInternal 
+    {
     }
 }

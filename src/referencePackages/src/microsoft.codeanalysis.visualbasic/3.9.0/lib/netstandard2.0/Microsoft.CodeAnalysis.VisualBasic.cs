@@ -31,9 +31,8 @@ using System.Security;
 
 namespace Microsoft.CodeAnalysis
 {
-    public sealed partial class VisualBasicExtensions
+    public static partial class VisualBasicExtensions
     {
-        internal VisualBasicExtensions() { }
         public static bool Any(this Microsoft.CodeAnalysis.SyntaxTokenList list, Microsoft.CodeAnalysis.VisualBasic.SyntaxKind kind) { throw null; }
         public static bool Any(this Microsoft.CodeAnalysis.SyntaxTriviaList list, Microsoft.CodeAnalysis.VisualBasic.SyntaxKind kind) { throw null; }
         public static bool Any<TNode>(this Microsoft.CodeAnalysis.SeparatedSyntaxList<TNode> list, Microsoft.CodeAnalysis.VisualBasic.SyntaxKind kind) where TNode : Microsoft.CodeAnalysis.SyntaxNode { throw null; }
@@ -94,7 +93,7 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public bool IsValueType { get { throw null; } }
         public bool IsWidening { get { throw null; } }
         public Microsoft.CodeAnalysis.IMethodSymbol MethodSymbol { get { throw null; } }
-        bool Equals(Microsoft.CodeAnalysis.VisualBasic.Conversion other) { throw null; }
+        public bool Equals(Microsoft.CodeAnalysis.VisualBasic.Conversion other) { throw null; }
         public override bool Equals(object obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.VisualBasic.Conversion left, Microsoft.CodeAnalysis.VisualBasic.Conversion right) { throw null; }
@@ -114,9 +113,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public Microsoft.CodeAnalysis.IMethodSymbol GetEnumeratorMethod { get { throw null; } }
         public Microsoft.CodeAnalysis.IMethodSymbol MoveNextMethod { get { throw null; } }
     }
-    public sealed partial class GeneratedExtensionSyntaxFacts
+    public static partial class GeneratedExtensionSyntaxFacts
     {
-        internal GeneratedExtensionSyntaxFacts() { }
         public static string GetText(this Microsoft.CodeAnalysis.VisualBasic.SyntaxKind kind) { throw null; }
     }
     public sealed partial class GlobalImport : System.IEquatable<Microsoft.CodeAnalysis.VisualBasic.GlobalImport>
@@ -124,7 +122,7 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         internal GlobalImport() { }
         public Microsoft.CodeAnalysis.VisualBasic.Syntax.ImportsClauseSyntax Clause { get { throw null; } }
         public string Name { get { throw null; } }
-        bool Equals(Microsoft.CodeAnalysis.VisualBasic.GlobalImport other) { throw null; }
+        public bool Equals(Microsoft.CodeAnalysis.VisualBasic.GlobalImport other) { throw null; }
         public override bool Equals(object obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public static bool operator ==(Microsoft.CodeAnalysis.VisualBasic.GlobalImport left, Microsoft.CodeAnalysis.VisualBasic.GlobalImport right) { throw null; }
@@ -165,9 +163,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         VisualBasic16_9 = 1609,
         Latest = 2147483647,
     }
-    public sealed partial class LanguageVersionFacts
+    public static partial class LanguageVersionFacts
     {
-        internal LanguageVersionFacts() { }
         public static Microsoft.CodeAnalysis.VisualBasic.LanguageVersion MapSpecifiedToEffectiveVersion(this Microsoft.CodeAnalysis.VisualBasic.LanguageVersion version) { throw null; }
         public static string ToDisplayString(this Microsoft.CodeAnalysis.VisualBasic.LanguageVersion version) { throw null; }
         public static bool TryParse(string version, ref Microsoft.CodeAnalysis.VisualBasic.LanguageVersion result) { throw null; }
@@ -176,7 +173,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
     {
         private int _dummyPrimitive;
         public override string ToString() { throw null; }
-        string ToString_IFormattable(string format, System.IFormatProvider formatProvider) { throw null; }
+        // string ToString_IFormattable(string format, System.IFormatProvider formatProvider) { throw null; }
+        string IFormattable.ToString(string format, System.IFormatProvider formatProvider) { throw null; }
     }
     public enum OptionStrict : byte
     {
@@ -200,9 +198,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public static System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.SymbolDisplayPart> ToMinimalDisplayParts(Microsoft.CodeAnalysis.ISymbol symbol, Microsoft.CodeAnalysis.SemanticModel semanticModel, int position, Microsoft.CodeAnalysis.SymbolDisplayFormat format = null) { throw null; }
         public static string ToMinimalDisplayString(Microsoft.CodeAnalysis.ISymbol symbol, Microsoft.CodeAnalysis.SemanticModel semanticModel, int position, Microsoft.CodeAnalysis.SymbolDisplayFormat format = null) { throw null; }
     }
-    public sealed partial class SyntaxExtensions
+    public static partial class SyntaxExtensions
     {
-        internal SyntaxExtensions() { }
         public static Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.AttributeListSyntax> Attributes(this Microsoft.CodeAnalysis.VisualBasic.Syntax.AsClauseSyntax asClauseSyntax) { throw null; }
         public static Microsoft.CodeAnalysis.SyntaxToken NormalizeWhitespace(this Microsoft.CodeAnalysis.SyntaxToken token, string indentation, bool elasticTrivia) { throw null; }
         public static Microsoft.CodeAnalysis.SyntaxToken NormalizeWhitespace(this Microsoft.CodeAnalysis.SyntaxToken token, string indentation = "    ", string eol = "\r\n", bool elasticTrivia = false, bool useDefaultCasing = false) { throw null; }
@@ -714,8 +711,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.AssignmentStatementSyntax IntegerDivideAssignmentStatement(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax left, Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax right) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.BinaryExpressionSyntax IntegerDivideExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax left, Microsoft.CodeAnalysis.SyntaxToken operatorToken, Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax right) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.BinaryExpressionSyntax IntegerDivideExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax left, Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax right) { throw null; }
-        public static Microsoft.CodeAnalysis.SyntaxToken IntegerLiteralToken(Microsoft.CodeAnalysis.SyntaxTriviaList leadingTrivia, string text, Microsoft.CodeAnalysis.VisualBasic.Syntax.LiteralBase base, Microsoft.CodeAnalysis.VisualBasic.Syntax.TypeCharacter typeSuffix, ulong value, Microsoft.CodeAnalysis.SyntaxTriviaList trailingTrivia) { throw null; }
-        public static Microsoft.CodeAnalysis.SyntaxToken IntegerLiteralToken(string text, Microsoft.CodeAnalysis.VisualBasic.Syntax.LiteralBase base, Microsoft.CodeAnalysis.VisualBasic.Syntax.TypeCharacter typeSuffix, ulong value) { throw null; }
+        public static Microsoft.CodeAnalysis.SyntaxToken IntegerLiteralToken(Microsoft.CodeAnalysis.SyntaxTriviaList leadingTrivia, string text, Microsoft.CodeAnalysis.VisualBasic.Syntax.LiteralBase @base, Microsoft.CodeAnalysis.VisualBasic.Syntax.TypeCharacter typeSuffix, ulong value, Microsoft.CodeAnalysis.SyntaxTriviaList trailingTrivia) { throw null; }
+        public static Microsoft.CodeAnalysis.SyntaxToken IntegerLiteralToken(string text, Microsoft.CodeAnalysis.VisualBasic.Syntax.LiteralBase @base, Microsoft.CodeAnalysis.VisualBasic.Syntax.TypeCharacter typeSuffix, ulong value) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.InterfaceBlockSyntax InterfaceBlock(Microsoft.CodeAnalysis.VisualBasic.Syntax.InterfaceStatementSyntax interfaceStatement) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.InterfaceBlockSyntax InterfaceBlock(Microsoft.CodeAnalysis.VisualBasic.Syntax.InterfaceStatementSyntax interfaceStatement, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.InheritsStatementSyntax> inherits, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.ImplementsStatementSyntax> implements, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.StatementSyntax> members) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.InterfaceBlockSyntax InterfaceBlock(Microsoft.CodeAnalysis.VisualBasic.Syntax.InterfaceStatementSyntax interfaceStatement, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.InheritsStatementSyntax> inherits, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.ImplementsStatementSyntax> implements, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.StatementSyntax> members, Microsoft.CodeAnalysis.VisualBasic.Syntax.EndBlockStatementSyntax endInterfaceStatement) { throw null; }
@@ -1223,8 +1220,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.WithStatementSyntax WithStatement(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax expression) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlAttributeSyntax XmlAttribute(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name, Microsoft.CodeAnalysis.SyntaxToken equalsToken, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax value) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlAttributeSyntax XmlAttribute(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax value) { throw null; }
-        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlAttributeAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax base, Microsoft.CodeAnalysis.SyntaxToken token1, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.SyntaxToken token3, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
-        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlAttributeAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax base, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
+        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlAttributeAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax @base, Microsoft.CodeAnalysis.SyntaxToken token1, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.SyntaxToken token3, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
+        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlAttributeAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax @base, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlAttributeAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlBracketedNameSyntax XmlBracketedName(Microsoft.CodeAnalysis.SyntaxToken lessThanToken, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNameSyntax name, Microsoft.CodeAnalysis.SyntaxToken greaterThanToken) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlBracketedNameSyntax XmlBracketedName(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNameSyntax name) { throw null; }
@@ -1241,8 +1238,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlDeclarationSyntax XmlDeclaration(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlDeclarationOptionSyntax version, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlDeclarationOptionSyntax encoding, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlDeclarationOptionSyntax standalone) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlDeclarationOptionSyntax XmlDeclarationOption(Microsoft.CodeAnalysis.SyntaxToken name, Microsoft.CodeAnalysis.SyntaxToken equals, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlStringSyntax value) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlDeclarationOptionSyntax XmlDeclarationOption(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlStringSyntax value) { throw null; }
-        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlDescendantAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax base, Microsoft.CodeAnalysis.SyntaxToken token1, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.SyntaxToken token3, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
-        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlDescendantAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax base, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
+        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlDescendantAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax @base, Microsoft.CodeAnalysis.SyntaxToken token1, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.SyntaxToken token3, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
+        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlDescendantAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax @base, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlDescendantAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlDocumentSyntax XmlDocument(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlDeclarationSyntax declaration, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax> precedingMisc, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax root, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax> followingMisc) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlDocumentSyntax XmlDocument(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlDeclarationSyntax declaration, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax root) { throw null; }
@@ -1250,8 +1247,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlElementSyntax XmlElement(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlElementStartTagSyntax startTag, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlElementEndTagSyntax endTag) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlElementSyntax XmlElement(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNameSyntax name, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax> content) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlElementSyntax XmlElement(string localName, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax> content) { throw null; }
-        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlElementAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax base, Microsoft.CodeAnalysis.SyntaxToken token1, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.SyntaxToken token3, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
-        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlElementAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax base, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
+        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlElementAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax @base, Microsoft.CodeAnalysis.SyntaxToken token1, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.SyntaxToken token3, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
+        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlElementAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax @base, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlElementAccessExpression(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlElementEndTagSyntax XmlElementEndTag() { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlElementEndTagSyntax XmlElementEndTag(Microsoft.CodeAnalysis.SyntaxToken lessThanSlashToken, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNameSyntax name, Microsoft.CodeAnalysis.SyntaxToken greaterThanToken) { throw null; }
@@ -1271,8 +1268,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlElementSyntax XmlExampleElement(params Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax[] content) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlElementSyntax XmlExceptionElement(Microsoft.CodeAnalysis.VisualBasic.Syntax.CrefReferenceSyntax cref, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax> content) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlElementSyntax XmlExceptionElement(Microsoft.CodeAnalysis.VisualBasic.Syntax.CrefReferenceSyntax cref, params Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax[] content) { throw null; }
-        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlMemberAccessExpression(Microsoft.CodeAnalysis.VisualBasic.SyntaxKind kind, Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax base, Microsoft.CodeAnalysis.SyntaxToken token1, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.SyntaxToken token3, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
-        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlMemberAccessExpression(Microsoft.CodeAnalysis.VisualBasic.SyntaxKind kind, Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax base, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
+        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlMemberAccessExpression(Microsoft.CodeAnalysis.VisualBasic.SyntaxKind kind, Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax @base, Microsoft.CodeAnalysis.SyntaxToken token1, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.SyntaxToken token3, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
+        public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlMemberAccessExpression(Microsoft.CodeAnalysis.VisualBasic.SyntaxKind kind, Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax @base, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax XmlMemberAccessExpression(Microsoft.CodeAnalysis.VisualBasic.SyntaxKind kind, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlElementSyntax XmlMultiLineElement(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNameSyntax name, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax> content) { throw null; }
         public static Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlElementSyntax XmlMultiLineElement(string localName, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax> content) { throw null; }
@@ -2137,9 +2134,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         NamedTupleElement = (ushort)791,
         ConflictMarkerTrivia = (ushort)792,
     }
-    public sealed partial class TypedConstantExtensions
+    public static partial class TypedConstantExtensions
     {
-        internal TypedConstantExtensions() { }
         public static string ToVisualBasicString(this Microsoft.CodeAnalysis.TypedConstant constant) { throw null; }
     }
     public sealed partial class VisualBasicCommandLineArguments : Microsoft.CodeAnalysis.CommandLineArguments
@@ -2280,7 +2276,7 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         protected override Microsoft.CodeAnalysis.CompilationOptions CommonWithStrongNameProvider(Microsoft.CodeAnalysis.StrongNameProvider provider) { throw null; }
         protected override Microsoft.CodeAnalysis.CompilationOptions CommonWithSyntaxTreeOptionsProvider(Microsoft.CodeAnalysis.SyntaxTreeOptionsProvider provider) { throw null; }
         protected override Microsoft.CodeAnalysis.CompilationOptions CommonWithXmlReferenceResolver(Microsoft.CodeAnalysis.XmlReferenceResolver resolver) { throw null; }
-        bool Equals(Microsoft.CodeAnalysis.VisualBasic.VisualBasicCompilationOptions other) { throw null; }
+        public bool Equals(Microsoft.CodeAnalysis.VisualBasic.VisualBasicCompilationOptions other) { throw null; }
         public override bool Equals(object obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public new Microsoft.CodeAnalysis.VisualBasic.VisualBasicCompilationOptions WithAssemblyIdentityComparer(Microsoft.CodeAnalysis.AssemblyIdentityComparer comparer) { throw null; }
@@ -2324,9 +2320,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         protected VisualBasicDiagnosticFormatter() { }
         public static Microsoft.CodeAnalysis.VisualBasic.VisualBasicDiagnosticFormatter Instance { get { throw null; } }
     }
-    public sealed partial class VisualBasicExtensions
+    public static partial class VisualBasicExtensions
     {
-        internal VisualBasicExtensions() { }
         public static Microsoft.CodeAnalysis.SyntaxTokenList Add(this Microsoft.CodeAnalysis.SyntaxTokenList list, params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public static System.Collections.Immutable.ImmutableArray<Microsoft.CodeAnalysis.IAliasSymbol> AliasImports(this Microsoft.CodeAnalysis.Compilation compilation) { throw null; }
         public static Microsoft.CodeAnalysis.ControlFlowAnalysis AnalyzeControlFlow(this Microsoft.CodeAnalysis.SemanticModel semanticModel, Microsoft.CodeAnalysis.VisualBasic.Syntax.StatementSyntax statement) { throw null; }
@@ -2468,7 +2463,7 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         protected override Microsoft.CodeAnalysis.ParseOptions CommonWithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode documentationMode) { throw null; }
         protected override Microsoft.CodeAnalysis.ParseOptions CommonWithFeatures(System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<string, string>> features) { throw null; }
         public override Microsoft.CodeAnalysis.ParseOptions CommonWithKind(Microsoft.CodeAnalysis.SourceCodeKind kind) { throw null; }
-        bool Equals(Microsoft.CodeAnalysis.VisualBasic.VisualBasicParseOptions other) { throw null; }
+        public bool Equals(Microsoft.CodeAnalysis.VisualBasic.VisualBasicParseOptions other) { throw null; }
         public override bool Equals(object obj) { throw null; }
         public override int GetHashCode() { throw null; }
         public new Microsoft.CodeAnalysis.VisualBasic.VisualBasicParseOptions WithDocumentationMode(Microsoft.CodeAnalysis.DocumentationMode documentationMode) { throw null; }
@@ -2500,17 +2495,17 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public new Microsoft.CodeAnalysis.SyntaxTriviaList GetLeadingTrivia() { throw null; }
         public new Microsoft.CodeAnalysis.Location GetLocation() { throw null; }
         public new Microsoft.CodeAnalysis.SyntaxTriviaList GetTrailingTrivia() { throw null; }
-        protected override Microsoft.CodeAnalysis.SyntaxNode InsertNodesInListCore(Microsoft.CodeAnalysis.SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> nodesToInsert, bool insertBefore) { throw null; }
-        protected override Microsoft.CodeAnalysis.SyntaxNode InsertTokensInListCore(Microsoft.CodeAnalysis.SyntaxToken originalToken, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> newTokens, bool insertBefore) { throw null; }
-        protected override Microsoft.CodeAnalysis.SyntaxNode InsertTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> newTrivia, bool insertBefore) { throw null; }
+        protected internal override Microsoft.CodeAnalysis.SyntaxNode InsertNodesInListCore(Microsoft.CodeAnalysis.SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> nodesToInsert, bool insertBefore) { throw null; }
+        protected internal override Microsoft.CodeAnalysis.SyntaxNode InsertTokensInListCore(Microsoft.CodeAnalysis.SyntaxToken originalToken, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> newTokens, bool insertBefore) { throw null; }
+        protected internal override Microsoft.CodeAnalysis.SyntaxNode InsertTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> newTrivia, bool insertBefore) { throw null; }
         protected override bool IsEquivalentToCore(Microsoft.CodeAnalysis.SyntaxNode node, bool topLevel = false) { throw null; }
         public Microsoft.CodeAnalysis.VisualBasic.SyntaxKind Kind() { throw null; }
-        protected override Microsoft.CodeAnalysis.SyntaxNode NormalizeWhitespaceCore(string indentation, string eol, bool elasticTrivia) { throw null; }
-        protected override Microsoft.CodeAnalysis.SyntaxNode RemoveNodesCore(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> nodes, Microsoft.CodeAnalysis.SyntaxRemoveOptions options) { throw null; }
-        protected override Microsoft.CodeAnalysis.SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode> nodes = null, System.Func<TNode, TNode, Microsoft.CodeAnalysis.SyntaxNode> computeReplacementNode = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> tokens = null, System.Func<Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.SyntaxToken> computeReplacementToken = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> trivia = null, System.Func<Microsoft.CodeAnalysis.SyntaxTrivia, Microsoft.CodeAnalysis.SyntaxTrivia, Microsoft.CodeAnalysis.SyntaxTrivia> computeReplacementTrivia = null) { throw null; }
-        protected override Microsoft.CodeAnalysis.SyntaxNode ReplaceNodeInListCore(Microsoft.CodeAnalysis.SyntaxNode originalNode, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> replacementNodes) { throw null; }
-        protected override Microsoft.CodeAnalysis.SyntaxNode ReplaceTokenInListCore(Microsoft.CodeAnalysis.SyntaxToken originalToken, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> newTokens) { throw null; }
-        protected override Microsoft.CodeAnalysis.SyntaxNode ReplaceTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> newTrivia) { throw null; }
+        protected internal override Microsoft.CodeAnalysis.SyntaxNode NormalizeWhitespaceCore(string indentation, string eol, bool elasticTrivia) { throw null; }
+        protected internal override Microsoft.CodeAnalysis.SyntaxNode RemoveNodesCore(System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> nodes, Microsoft.CodeAnalysis.SyntaxRemoveOptions options) { throw null; }
+        protected internal override Microsoft.CodeAnalysis.SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode> nodes = null, System.Func<TNode, TNode, Microsoft.CodeAnalysis.SyntaxNode> computeReplacementNode = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> tokens = null, System.Func<Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.SyntaxToken, Microsoft.CodeAnalysis.SyntaxToken> computeReplacementToken = null, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> trivia = null, System.Func<Microsoft.CodeAnalysis.SyntaxTrivia, Microsoft.CodeAnalysis.SyntaxTrivia, Microsoft.CodeAnalysis.SyntaxTrivia> computeReplacementTrivia = null) { throw null; }
+        protected internal override Microsoft.CodeAnalysis.SyntaxNode ReplaceNodeInListCore(Microsoft.CodeAnalysis.SyntaxNode originalNode, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxNode> replacementNodes) { throw null; }
+        protected internal override Microsoft.CodeAnalysis.SyntaxNode ReplaceTokenInListCore(Microsoft.CodeAnalysis.SyntaxToken originalToken, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxToken> newTokens) { throw null; }
+        protected internal override Microsoft.CodeAnalysis.SyntaxNode ReplaceTriviaInListCore(Microsoft.CodeAnalysis.SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<Microsoft.CodeAnalysis.SyntaxTrivia> newTrivia) { throw null; }
     }
     public abstract partial class VisualBasicSyntaxRewriter : Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxVisitor<Microsoft.CodeAnalysis.SyntaxNode>
     {
@@ -2803,7 +2798,7 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public static Microsoft.CodeAnalysis.SyntaxTree ParseText(string text, Microsoft.CodeAnalysis.VisualBasic.VisualBasicParseOptions options = null, string path = "", System.Text.Encoding encoding = null, System.Collections.Immutable.ImmutableDictionary<string, Microsoft.CodeAnalysis.ReportDiagnostic> diagnosticOptions = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) { throw null; }
         public static Microsoft.CodeAnalysis.SyntaxTree ParseText(string text, Microsoft.CodeAnalysis.VisualBasic.VisualBasicParseOptions options, string path, System.Text.Encoding encoding, System.Threading.CancellationToken cancellationToken) { throw null; }
         public abstract bool TryGetRoot(ref Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxNode root);
-        protected override bool TryGetRootCore(ref Microsoft.CodeAnalysis.SyntaxNode root) { throw null; }
+        protected override bool TryGetRootCore(out Microsoft.CodeAnalysis.SyntaxNode root) { throw null; }
         public override Microsoft.CodeAnalysis.SyntaxTree WithChangedText(Microsoft.CodeAnalysis.Text.SourceText newText) { throw null; }
     }
     public abstract partial class VisualBasicSyntaxVisitor
@@ -6371,7 +6366,7 @@ namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
     public abstract partial class StructuredTriviaSyntax : Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxNode, Microsoft.CodeAnalysis.IStructuredTriviaSyntax
     {
         internal StructuredTriviaSyntax() { }
-        override Microsoft.CodeAnalysis.SyntaxTrivia ParentTrivia { get { throw null; } }
+        public override Microsoft.CodeAnalysis.SyntaxTrivia ParentTrivia { get { throw null; } }
     }
     public sealed partial class StructureStatementSyntax : Microsoft.CodeAnalysis.VisualBasic.Syntax.TypeStatementSyntax
     {
@@ -7109,8 +7104,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Token3 { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxVisitor visitor) { }
         public override TResult Accept<TResult>(Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxVisitor<TResult> visitor) { throw null; }
-        public Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax Update(Microsoft.CodeAnalysis.VisualBasic.SyntaxKind kind, Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax base, Microsoft.CodeAnalysis.SyntaxToken token1, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.SyntaxToken token3, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
-        public Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax WithBase(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax base) { throw null; }
+        public Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax Update(Microsoft.CodeAnalysis.VisualBasic.SyntaxKind kind, Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax @base, Microsoft.CodeAnalysis.SyntaxToken token1, Microsoft.CodeAnalysis.SyntaxToken token2, Microsoft.CodeAnalysis.SyntaxToken token3, Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
+        public Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax WithBase(Microsoft.CodeAnalysis.VisualBasic.Syntax.ExpressionSyntax @base) { throw null; }
         public Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax WithName(Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlNodeSyntax name) { throw null; }
         public Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax WithToken1(Microsoft.CodeAnalysis.SyntaxToken token1) { throw null; }
         public Microsoft.CodeAnalysis.VisualBasic.Syntax.XmlMemberAccessExpressionSyntax WithToken2(Microsoft.CodeAnalysis.SyntaxToken token2) { throw null; }

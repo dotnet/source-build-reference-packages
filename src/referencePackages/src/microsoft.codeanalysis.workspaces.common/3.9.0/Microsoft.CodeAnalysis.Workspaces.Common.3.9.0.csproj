@@ -26,7 +26,11 @@
     <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="[3.9.0, 3.9.0]" />
     <PackageReference Include="Humanizer.Core" Version="2.2.0" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="5.0.0" />
-    <PackageReference Include="System.Composition" Version="1.0.31" />
+    <PackageReference Include="System.Composition.AttributedModel" Version="1.0.31" />
+    <PackageReference Include="System.Composition.Convention" Version="1.0.31" />
+    <PackageReference Include="System.Composition.Hosting" Version="1.0.31" />
+    <PackageReference Include="System.Composition.Runtime" Version="1.0.31" />
+    <PackageReference Include="System.Composition.TypedParts" Version="1.0.31" />
     <PackageReference Include="System.IO.Pipelines" Version="5.0.0" />
   </ItemGroup>
 </Project>

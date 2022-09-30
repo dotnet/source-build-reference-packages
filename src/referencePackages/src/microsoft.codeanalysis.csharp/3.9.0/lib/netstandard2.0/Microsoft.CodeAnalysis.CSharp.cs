@@ -2770,7 +2770,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxTokenList Modifiers { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AccessorDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AccessorDeclarationSyntax AddBodyAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AccessorDeclarationSyntax AddBodyStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
@@ -2791,7 +2791,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken CloseBraceToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenBraceToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AccessorListSyntax AddAccessors(params Microsoft.CodeAnalysis.CSharp.Syntax.AccessorDeclarationSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AccessorListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openBraceToken, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AccessorDeclarationSyntax> accessors, Microsoft.CodeAnalysis.SyntaxToken closeBraceToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AccessorListSyntax WithAccessors(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AccessorDeclarationSyntax> accessors) { throw null; }
@@ -2805,7 +2805,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ColonColonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax Name { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AliasQualifiedNameSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax alias, Microsoft.CodeAnalysis.SyntaxToken colonColonToken, Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax name) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AliasQualifiedNameSyntax WithAlias(Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax alias) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AliasQualifiedNameSyntax WithColonColonToken(Microsoft.CodeAnalysis.SyntaxToken colonColonToken) { throw null; }
@@ -2838,7 +2838,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxTokenList Modifiers { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax? ParameterList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousMethodExpressionSyntax AddBlockAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousMethodExpressionSyntax AddBlockStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousMethodExpressionSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
@@ -2862,7 +2862,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken NewKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenBraceToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousObjectCreationExpressionSyntax AddInitializers(params Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousObjectMemberDeclaratorSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousObjectCreationExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken newKeyword, Microsoft.CodeAnalysis.SyntaxToken openBraceToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousObjectMemberDeclaratorSyntax> initializers, Microsoft.CodeAnalysis.SyntaxToken closeBraceToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousObjectCreationExpressionSyntax WithCloseBraceToken(Microsoft.CodeAnalysis.SyntaxToken closeBraceToken) { throw null; }
@@ -2876,7 +2876,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameEqualsSyntax? NameEquals { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousObjectMemberDeclaratorSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.NameEqualsSyntax? nameEquals, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousObjectMemberDeclaratorSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AnonymousObjectMemberDeclaratorSyntax WithNameEquals(Microsoft.CodeAnalysis.CSharp.Syntax.NameEqualsSyntax? nameEquals) { throw null; }
@@ -2888,7 +2888,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken CloseParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax AddArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax> arguments, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax WithArguments(Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax> arguments) { throw null; }
@@ -2903,7 +2903,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken RefKindKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken RefOrOutKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.NameColonSyntax? nameColon, Microsoft.CodeAnalysis.SyntaxToken refKindKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax WithNameColon(Microsoft.CodeAnalysis.CSharp.Syntax.NameColonSyntax? nameColon) { throw null; }
@@ -2917,7 +2917,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken NewKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrayTypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrayCreationExpressionSyntax AddTypeRankSpecifiers(params Microsoft.CodeAnalysis.CSharp.Syntax.ArrayRankSpecifierSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrayCreationExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken newKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ArrayTypeSyntax type, Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax? initializer) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrayCreationExpressionSyntax WithInitializer(Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax? initializer) { throw null; }
@@ -2932,7 +2932,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public int Rank { get { throw null; } }
         public Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax> Sizes { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrayRankSpecifierSyntax AddSizes(params Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrayRankSpecifierSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openBracketToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax> sizes, Microsoft.CodeAnalysis.SyntaxToken closeBracketToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrayRankSpecifierSyntax WithCloseBracketToken(Microsoft.CodeAnalysis.SyntaxToken closeBracketToken) { throw null; }
@@ -2945,7 +2945,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax ElementType { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ArrayRankSpecifierSyntax> RankSpecifiers { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrayTypeSyntax AddRankSpecifiers(params Microsoft.CodeAnalysis.CSharp.Syntax.ArrayRankSpecifierSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrayTypeSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax elementType, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ArrayRankSpecifierSyntax> rankSpecifiers) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrayTypeSyntax WithElementType(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax elementType) { throw null; }
@@ -2957,7 +2957,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ArrowToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrowExpressionClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken arrowToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrowExpressionClauseSyntax WithArrowToken(Microsoft.CodeAnalysis.SyntaxToken arrowToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArrowExpressionClauseSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
@@ -2969,7 +2969,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OperatorToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Right { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AssignmentExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax left, Microsoft.CodeAnalysis.SyntaxToken operatorToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax right) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AssignmentExpressionSyntax WithLeft(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax left) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AssignmentExpressionSyntax WithOperatorToken(Microsoft.CodeAnalysis.SyntaxToken operatorToken) { throw null; }
@@ -2982,7 +2982,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken CloseParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentListSyntax AddArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentSyntax> arguments, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentListSyntax WithArguments(Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentSyntax> arguments) { throw null; }
@@ -2996,7 +2996,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameColonSyntax? NameColon { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameEqualsSyntax? NameEquals { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.NameEqualsSyntax? nameEquals, Microsoft.CodeAnalysis.CSharp.Syntax.NameColonSyntax? nameColon, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentSyntax WithNameColon(Microsoft.CodeAnalysis.CSharp.Syntax.NameColonSyntax? nameColon) { throw null; }
@@ -3010,7 +3010,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenBracketToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeTargetSpecifierSyntax? Target { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax AddAttributes(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openBracketToken, Microsoft.CodeAnalysis.CSharp.Syntax.AttributeTargetSpecifierSyntax? target, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeSyntax> attributes, Microsoft.CodeAnalysis.SyntaxToken closeBracketToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax WithAttributes(Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeSyntax> attributes) { throw null; }
@@ -3024,7 +3024,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentListSyntax? ArgumentList { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax Name { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeSyntax AddArgumentListArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax name, Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentListSyntax? argumentList) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeSyntax WithArgumentList(Microsoft.CodeAnalysis.CSharp.Syntax.AttributeArgumentListSyntax? argumentList) { throw null; }
@@ -3036,7 +3036,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ColonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeTargetSpecifierSyntax Update(Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeTargetSpecifierSyntax WithColonToken(Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AttributeTargetSpecifierSyntax WithIdentifier(Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
@@ -3047,7 +3047,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken AwaitKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AwaitExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken awaitKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AwaitExpressionSyntax WithAwaitKeyword(Microsoft.CodeAnalysis.SyntaxToken awaitKeyword) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.AwaitExpressionSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
@@ -3060,7 +3060,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public override bool IsActive { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BadDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.BadDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.BadDirectiveTriviaSyntax WithHashToken(Microsoft.CodeAnalysis.SyntaxToken hashToken) { throw null; }
@@ -3086,7 +3086,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal BaseExpressionSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxToken Token { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BaseExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken token) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BaseExpressionSyntax WithToken(Microsoft.CodeAnalysis.SyntaxToken token) { throw null; }
     }
@@ -3111,7 +3111,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ColonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.BaseTypeSyntax> Types { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BaseListSyntax AddTypes(params Microsoft.CodeAnalysis.CSharp.Syntax.BaseTypeSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BaseListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken colonToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.BaseTypeSyntax> types) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BaseListSyntax WithColonToken(Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
@@ -3217,7 +3217,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OperatorToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Right { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax left, Microsoft.CodeAnalysis.SyntaxToken operatorToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax right) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax WithLeft(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax left) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax WithOperatorToken(Microsoft.CodeAnalysis.SyntaxToken operatorToken) { throw null; }
@@ -3230,7 +3230,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OperatorToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax Right { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BinaryPatternSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax left, Microsoft.CodeAnalysis.SyntaxToken operatorToken, Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax right) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BinaryPatternSyntax WithLeft(Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax left) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BinaryPatternSyntax WithOperatorToken(Microsoft.CodeAnalysis.SyntaxToken operatorToken) { throw null; }
@@ -3244,7 +3244,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenBraceToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax> Statements { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax AddStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken openBraceToken, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax> statements, Microsoft.CodeAnalysis.SyntaxToken closeBraceToken) { throw null; }
@@ -3261,7 +3261,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken CloseBracketToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenBracketToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax AddArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openBracketToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax> arguments, Microsoft.CodeAnalysis.SyntaxToken closeBracketToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax WithArguments(Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax> arguments) { throw null; }
@@ -3275,7 +3275,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenBracketToken { get { throw null; } }
         public override Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ParameterSyntax> Parameters { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.BracketedParameterListSyntax AddParameters(params Microsoft.CodeAnalysis.CSharp.Syntax.ParameterSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BracketedParameterListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openBracketToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ParameterSyntax> parameters, Microsoft.CodeAnalysis.SyntaxToken closeBracketToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BracketedParameterListSyntax WithCloseBracketToken(Microsoft.CodeAnalysis.SyntaxToken closeBracketToken) { throw null; }
@@ -3296,7 +3296,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken BreakKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.BreakStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BreakStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken breakKeyword, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BreakStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken breakKeyword, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
@@ -3312,7 +3312,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax Pattern { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WhenClauseSyntax? WhenClause { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CasePatternSwitchLabelSyntax Update(Microsoft.CodeAnalysis.SyntaxToken keyword, Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax pattern, Microsoft.CodeAnalysis.CSharp.Syntax.WhenClauseSyntax? whenClause, Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.CasePatternSwitchLabelSyntax WithColonToken(Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.CasePatternSwitchLabelSyntax WithKeyword(Microsoft.CodeAnalysis.SyntaxToken keyword) { throw null; }
@@ -3326,7 +3326,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken Keyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Value { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CaseSwitchLabelSyntax Update(Microsoft.CodeAnalysis.SyntaxToken keyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax value, Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.CaseSwitchLabelSyntax WithColonToken(Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.CaseSwitchLabelSyntax WithKeyword(Microsoft.CodeAnalysis.SyntaxToken keyword) { throw null; }
@@ -3340,7 +3340,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CastExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CastExpressionSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CastExpressionSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
@@ -3355,7 +3355,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.CatchDeclarationSyntax? Declaration { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CatchFilterClauseSyntax? Filter { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CatchClauseSyntax AddBlockAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CatchClauseSyntax AddBlockStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CatchClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken catchKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.CatchDeclarationSyntax? declaration, Microsoft.CodeAnalysis.CSharp.Syntax.CatchFilterClauseSyntax? filter, Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax block) { throw null; }
@@ -3372,7 +3372,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CatchDeclarationSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CatchDeclarationSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CatchDeclarationSyntax WithIdentifier(Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
@@ -3387,7 +3387,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken WhenKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CatchFilterClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken whenKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax filterExpression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CatchFilterClauseSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CatchFilterClauseSyntax WithFilterExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax filterExpression) { throw null; }
@@ -3402,7 +3402,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Keyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CheckedExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken keyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CheckedExpressionSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CheckedExpressionSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
@@ -3416,7 +3416,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax Block { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken Keyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.CheckedStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CheckedStatementSyntax AddBlockAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CheckedStatementSyntax AddBlockStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
@@ -3441,7 +3441,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax? TypeParameterList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ClassDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ClassDeclarationSyntax AddBaseListTypes(params Microsoft.CodeAnalysis.CSharp.Syntax.BaseTypeSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ClassDeclarationSyntax AddConstraintClauses(params Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax[] items) { throw null; }
@@ -3467,7 +3467,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ClassOrStructKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken QuestionToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ClassOrStructConstraintSyntax Update(Microsoft.CodeAnalysis.SyntaxToken classOrStructKeyword) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ClassOrStructConstraintSyntax Update(Microsoft.CodeAnalysis.SyntaxToken classOrStructKeyword, Microsoft.CodeAnalysis.SyntaxToken questionToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ClassOrStructConstraintSyntax WithClassOrStructKeyword(Microsoft.CodeAnalysis.SyntaxToken classOrStructKeyword) { throw null; }
@@ -3502,7 +3502,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.MemberDeclarationSyntax> Members { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax> Usings { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CompilationUnitSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CompilationUnitSyntax AddExterns(params Microsoft.CodeAnalysis.CSharp.Syntax.ExternAliasDirectiveSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CompilationUnitSyntax AddMembers(params Microsoft.CodeAnalysis.CSharp.Syntax.MemberDeclarationSyntax[] items) { throw null; }
@@ -3523,7 +3523,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OperatorToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax WhenNotNull { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConditionalAccessExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken operatorToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax whenNotNull) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConditionalAccessExpressionSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConditionalAccessExpressionSyntax WithOperatorToken(Microsoft.CodeAnalysis.SyntaxToken operatorToken) { throw null; }
@@ -3545,7 +3545,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax WhenFalse { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax WhenTrue { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConditionalExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition, Microsoft.CodeAnalysis.SyntaxToken questionToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax whenTrue, Microsoft.CodeAnalysis.SyntaxToken colonToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax whenFalse) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConditionalExpressionSyntax WithColonToken(Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConditionalExpressionSyntax WithCondition(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition) { throw null; }
@@ -3558,7 +3558,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal ConstantPatternSyntax() { }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConstantPatternSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConstantPatternSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
     }
@@ -3569,7 +3569,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken NewKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorConstraintSyntax Update(Microsoft.CodeAnalysis.SyntaxToken newKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorConstraintSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorConstraintSyntax WithNewKeyword(Microsoft.CodeAnalysis.SyntaxToken newKeyword) { throw null; }
@@ -3587,7 +3587,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax ParameterList { get { throw null; } }
         public override Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorDeclarationSyntax AddBodyAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorDeclarationSyntax AddBodyStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
@@ -3611,7 +3611,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ColonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken ThisOrBaseKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorInitializerSyntax AddArgumentListArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorInitializerSyntax Update(Microsoft.CodeAnalysis.SyntaxToken colonToken, Microsoft.CodeAnalysis.SyntaxToken thisOrBaseKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax argumentList) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConstructorInitializerSyntax WithArgumentList(Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax argumentList) { throw null; }
@@ -3625,7 +3625,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ContinueKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ContinueStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ContinueStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken continueKeyword, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ContinueStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken continueKeyword, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
@@ -3646,7 +3646,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ConversionOperatorDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ConversionOperatorDeclarationSyntax AddBodyAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ConversionOperatorDeclarationSyntax AddBodyStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
@@ -3671,7 +3671,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterListSyntax? Parameters { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConversionOperatorMemberCrefSyntax AddParametersParameters(params Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConversionOperatorMemberCrefSyntax Update(Microsoft.CodeAnalysis.SyntaxToken implicitOrExplicitKeyword, Microsoft.CodeAnalysis.SyntaxToken operatorKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterListSyntax? parameters) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ConversionOperatorMemberCrefSyntax WithImplicitOrExplicitKeyword(Microsoft.CodeAnalysis.SyntaxToken implicitOrExplicitKeyword) { throw null; }
@@ -3686,7 +3686,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenBracketToken { get { throw null; } }
         public override Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax> Parameters { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.CrefBracketedParameterListSyntax AddParameters(params Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CrefBracketedParameterListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openBracketToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax> parameters, Microsoft.CodeAnalysis.SyntaxToken closeBracketToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CrefBracketedParameterListSyntax WithCloseBracketToken(Microsoft.CodeAnalysis.SyntaxToken closeBracketToken) { throw null; }
@@ -3700,7 +3700,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public override Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax> Parameters { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterListSyntax AddParameters(params Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax> parameters, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterListSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
@@ -3714,7 +3714,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken RefOrOutKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax Update(Microsoft.CodeAnalysis.SyntaxToken refKindKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax WithRefKindKeyword(Microsoft.CodeAnalysis.SyntaxToken refKindKeyword) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax WithRefOrOutKeyword(Microsoft.CodeAnalysis.SyntaxToken refOrOutKeyword) { throw null; }
@@ -3730,7 +3730,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax Designation { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DeclarationExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax designation) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DeclarationExpressionSyntax WithDesignation(Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax designation) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DeclarationExpressionSyntax WithType(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
@@ -3741,7 +3741,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax Designation { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DeclarationPatternSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax designation) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DeclarationPatternSyntax WithDesignation(Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax designation) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DeclarationPatternSyntax WithType(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
@@ -3751,7 +3751,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal DefaultConstraintSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxToken DefaultKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DefaultConstraintSyntax Update(Microsoft.CodeAnalysis.SyntaxToken defaultKeyword) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DefaultConstraintSyntax WithDefaultKeyword(Microsoft.CodeAnalysis.SyntaxToken defaultKeyword) { throw null; }
     }
@@ -3763,7 +3763,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DefaultExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken keyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DefaultExpressionSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DefaultExpressionSyntax WithKeyword(Microsoft.CodeAnalysis.SyntaxToken keyword) { throw null; }
@@ -3776,7 +3776,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken ColonToken { get { throw null; } }
         public override Microsoft.CodeAnalysis.SyntaxToken Keyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DefaultSwitchLabelSyntax Update(Microsoft.CodeAnalysis.SyntaxToken keyword, Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.DefaultSwitchLabelSyntax WithColonToken(Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.DefaultSwitchLabelSyntax WithKeyword(Microsoft.CodeAnalysis.SyntaxToken keyword) { throw null; }
@@ -3790,7 +3790,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override bool IsActive { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken Name { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DefineDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken defineKeyword, Microsoft.CodeAnalysis.SyntaxToken name, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DefineDirectiveTriviaSyntax WithDefineKeyword(Microsoft.CodeAnalysis.SyntaxToken defineKeyword) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.DefineDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
@@ -3812,7 +3812,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax? TypeParameterList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.DelegateDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DelegateDeclarationSyntax AddConstraintClauses(params Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.DelegateDeclarationSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
@@ -3841,7 +3841,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken TildeToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.DestructorDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.DestructorDeclarationSyntax AddBodyAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.DestructorDeclarationSyntax AddBodyStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
@@ -3876,7 +3876,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal DiscardDesignationSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxToken UnderscoreToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DiscardDesignationSyntax Update(Microsoft.CodeAnalysis.SyntaxToken underscoreToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DiscardDesignationSyntax WithUnderscoreToken(Microsoft.CodeAnalysis.SyntaxToken underscoreToken) { throw null; }
     }
@@ -3885,7 +3885,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal DiscardPatternSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxToken UnderscoreToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DiscardPatternSyntax Update(Microsoft.CodeAnalysis.SyntaxToken underscoreToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DiscardPatternSyntax WithUnderscoreToken(Microsoft.CodeAnalysis.SyntaxToken underscoreToken) { throw null; }
     }
@@ -3895,7 +3895,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax> Content { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken EndOfComment { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DocumentationCommentTriviaSyntax AddContent(params Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DocumentationCommentTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax> content, Microsoft.CodeAnalysis.SyntaxToken endOfComment) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DocumentationCommentTriviaSyntax WithContent(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax> content) { throw null; }
@@ -3913,7 +3913,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax Statement { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken WhileKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.DoStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DoStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken doKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement, Microsoft.CodeAnalysis.SyntaxToken whileKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.DoStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken doKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement, Microsoft.CodeAnalysis.SyntaxToken whileKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
@@ -3932,7 +3932,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax ArgumentList { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElementAccessExpressionSyntax AddArgumentListArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElementAccessExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax argumentList) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElementAccessExpressionSyntax WithArgumentList(Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax argumentList) { throw null; }
@@ -3943,7 +3943,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal ElementBindingExpressionSyntax() { }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax ArgumentList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElementBindingExpressionSyntax AddArgumentListArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElementBindingExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax argumentList) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElementBindingExpressionSyntax WithArgumentList(Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax argumentList) { throw null; }
@@ -3959,7 +3959,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken HashToken { get { throw null; } }
         public override bool IsActive { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElifDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken elifKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive, bool branchTaken, bool conditionValue) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElifDirectiveTriviaSyntax WithBranchTaken(bool branchTaken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ElifDirectiveTriviaSyntax WithCondition(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition) { throw null; }
@@ -3975,7 +3975,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ElseKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax Statement { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElseClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken elseKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElseClauseSyntax WithElseKeyword(Microsoft.CodeAnalysis.SyntaxToken elseKeyword) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElseClauseSyntax WithStatement(Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
@@ -3989,7 +3989,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken HashToken { get { throw null; } }
         public override bool IsActive { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElseDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken elseKeyword, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive, bool branchTaken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElseDirectiveTriviaSyntax WithBranchTaken(bool branchTaken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ElseDirectiveTriviaSyntax WithElseKeyword(Microsoft.CodeAnalysis.SyntaxToken elseKeyword) { throw null; }
@@ -4003,7 +4003,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> AttributeLists { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EmptyStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.EmptyStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.EmptyStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
@@ -4018,7 +4018,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken HashToken { get { throw null; } }
         public override bool IsActive { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.EndIfDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken endIfKeyword, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.EndIfDirectiveTriviaSyntax WithEndIfKeyword(Microsoft.CodeAnalysis.SyntaxToken endIfKeyword) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EndIfDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
@@ -4033,7 +4033,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken HashToken { get { throw null; } }
         public override bool IsActive { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.EndRegionDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken endRegionKeyword, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EndRegionDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.EndRegionDirectiveTriviaSyntax WithEndRegionKeyword(Microsoft.CodeAnalysis.SyntaxToken endRegionKeyword) { throw null; }
@@ -4053,7 +4053,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken OpenBraceToken { get { throw null; } }
         public override Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EnumDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EnumDeclarationSyntax AddBaseListTypes(params Microsoft.CodeAnalysis.CSharp.Syntax.BaseTypeSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.EnumDeclarationSyntax AddMembers(params Microsoft.CodeAnalysis.CSharp.Syntax.EnumMemberDeclarationSyntax[] items) { throw null; }
@@ -4077,7 +4077,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public override Microsoft.CodeAnalysis.SyntaxTokenList Modifiers { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EnumMemberDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EnumMemberDeclarationSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.EnumMemberDeclarationSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.CSharp.Syntax.EqualsValueClauseSyntax equalsValue) { throw null; }
@@ -4093,7 +4093,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken EqualsToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Value { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.EqualsValueClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken equalsToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax value) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.EqualsValueClauseSyntax WithEqualsToken(Microsoft.CodeAnalysis.SyntaxToken equalsToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.EqualsValueClauseSyntax WithValue(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax value) { throw null; }
@@ -4106,7 +4106,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken HashToken { get { throw null; } }
         public override bool IsActive { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ErrorDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken errorKeyword, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ErrorDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ErrorDirectiveTriviaSyntax WithErrorKeyword(Microsoft.CodeAnalysis.SyntaxToken errorKeyword) { throw null; }
@@ -4125,7 +4125,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EventDeclarationSyntax AddAccessorListAccessors(params Microsoft.CodeAnalysis.CSharp.Syntax.AccessorDeclarationSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EventDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EventDeclarationSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
@@ -4150,7 +4150,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxTokenList Modifiers { get { throw null; } }
         public override Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EventFieldDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EventFieldDeclarationSyntax AddDeclarationVariables(params Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclaratorSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.EventFieldDeclarationSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
@@ -4167,7 +4167,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken DotToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax Name { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax name, Microsoft.CodeAnalysis.SyntaxToken dotToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax WithDotToken(Microsoft.CodeAnalysis.SyntaxToken dotToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExplicitInterfaceSpecifierSyntax WithName(Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax name) { throw null; }
@@ -4184,7 +4184,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionStatementSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
@@ -4204,7 +4204,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExternAliasDirectiveSyntax Update(Microsoft.CodeAnalysis.SyntaxToken externKeyword, Microsoft.CodeAnalysis.SyntaxToken aliasKeyword, Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExternAliasDirectiveSyntax WithAliasKeyword(Microsoft.CodeAnalysis.SyntaxToken aliasKeyword) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExternAliasDirectiveSyntax WithExternKeyword(Microsoft.CodeAnalysis.SyntaxToken externKeyword) { throw null; }
@@ -4219,7 +4219,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxTokenList Modifiers { get { throw null; } }
         public override Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.FieldDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.FieldDeclarationSyntax AddDeclarationVariables(params Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclaratorSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.FieldDeclarationSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
@@ -4235,7 +4235,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax Block { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken FinallyKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FinallyClauseSyntax AddBlockAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FinallyClauseSyntax AddBlockStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FinallyClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken finallyKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax block) { throw null; }
@@ -4252,7 +4252,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax Statement { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.FixedStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FixedStatementSyntax AddDeclarationVariables(params Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclaratorSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FixedStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken fixedKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclarationSyntax declaration, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
@@ -4278,7 +4278,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax Statement { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ForEachStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ForEachStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken awaitKeyword, Microsoft.CodeAnalysis.SyntaxToken forEachKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.SyntaxToken inKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ForEachStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken forEachKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.SyntaxToken inKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
@@ -4307,7 +4307,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax Statement { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Variable { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ForEachVariableStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ForEachVariableStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken awaitKeyword, Microsoft.CodeAnalysis.SyntaxToken forEachKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax variable, Microsoft.CodeAnalysis.SyntaxToken inKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ForEachVariableStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken forEachKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax variable, Microsoft.CodeAnalysis.SyntaxToken inKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
@@ -4337,7 +4337,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken SecondSemicolonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax Statement { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ForStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ForStatementSyntax AddIncrementors(params Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ForStatementSyntax AddInitializers(params Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax[] items) { throw null; }
@@ -4364,7 +4364,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken InKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax? Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FromClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken fromKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax? type, Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.SyntaxToken inKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FromClauseSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FromClauseSyntax WithFromKeyword(Microsoft.CodeAnalysis.SyntaxToken fromKeyword) { throw null; }
@@ -4378,7 +4378,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ManagedOrUnmanagedKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionListSyntax? UnmanagedCallingConventionList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerCallingConventionSyntax AddUnmanagedCallingConventionListCallingConventions(params Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerCallingConventionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken managedOrUnmanagedKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionListSyntax? unmanagedCallingConventionList) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerCallingConventionSyntax WithManagedOrUnmanagedKeyword(Microsoft.CodeAnalysis.SyntaxToken managedOrUnmanagedKeyword) { throw null; }
@@ -4391,7 +4391,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken LessThanToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterSyntax> Parameters { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterListSyntax AddParameters(params Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken lessThanToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterSyntax> parameters, Microsoft.CodeAnalysis.SyntaxToken greaterThanToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterListSyntax WithGreaterThanToken(Microsoft.CodeAnalysis.SyntaxToken greaterThanToken) { throw null; }
@@ -4405,7 +4405,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxTokenList Modifiers { get { throw null; } }
         public override Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxTokenList modifiers, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
@@ -4421,7 +4421,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken DelegateKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterListSyntax ParameterList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerTypeSyntax AddParameterListParameters(params Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerTypeSyntax Update(Microsoft.CodeAnalysis.SyntaxToken delegateKeyword, Microsoft.CodeAnalysis.SyntaxToken asteriskToken, Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerCallingConventionSyntax? callingConvention, Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerParameterListSyntax parameterList) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerTypeSyntax WithAsteriskToken(Microsoft.CodeAnalysis.SyntaxToken asteriskToken) { throw null; }
@@ -4436,7 +4436,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken CloseBracketToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenBracketToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionListSyntax AddCallingConventions(params Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openBracketToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionSyntax> callingConventions, Microsoft.CodeAnalysis.SyntaxToken closeBracketToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionListSyntax WithCallingConventions(Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionSyntax> callingConventions) { throw null; }
@@ -4448,7 +4448,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal FunctionPointerUnmanagedCallingConventionSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxToken Name { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken name) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FunctionPointerUnmanagedCallingConventionSyntax WithName(Microsoft.CodeAnalysis.SyntaxToken name) { throw null; }
     }
@@ -4459,7 +4459,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public bool IsUnboundGenericName { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeArgumentListSyntax TypeArgumentList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.GenericNameSyntax AddTypeArgumentListArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.GenericNameSyntax Update(Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.CSharp.Syntax.TypeArgumentListSyntax typeArgumentList) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.GenericNameSyntax WithIdentifier(Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
@@ -4472,7 +4472,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxTokenList Modifiers { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax Statement { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.GlobalStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.GlobalStatementSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.GlobalStatementSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
@@ -4490,7 +4490,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken GotoKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.GotoStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.GotoStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken gotoKeyword, Microsoft.CodeAnalysis.SyntaxToken caseOrDefaultKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax? expression, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.GotoStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken gotoKeyword, Microsoft.CodeAnalysis.SyntaxToken caseOrDefaultKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
@@ -4508,7 +4508,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax GroupExpression { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken GroupKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.GroupClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken groupKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax groupExpression, Microsoft.CodeAnalysis.SyntaxToken byKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax byExpression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.GroupClauseSyntax WithByExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax byExpression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.GroupClauseSyntax WithByKeyword(Microsoft.CodeAnalysis.SyntaxToken byKeyword) { throw null; }
@@ -4520,7 +4520,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal IdentifierNameSyntax() { }
         public override Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax Update(Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax WithIdentifier(Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
     }
@@ -4535,7 +4535,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken IfKeyword { get { throw null; } }
         public override bool IsActive { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IfDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken ifKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive, bool branchTaken, bool conditionValue) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IfDirectiveTriviaSyntax WithBranchTaken(bool branchTaken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.IfDirectiveTriviaSyntax WithCondition(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition) { throw null; }
@@ -4556,7 +4556,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax Statement { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.IfStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IfStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken ifKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement, Microsoft.CodeAnalysis.CSharp.Syntax.ElseClauseSyntax? @else) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IfStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken ifKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement, Microsoft.CodeAnalysis.CSharp.Syntax.ElseClauseSyntax @else) { throw null; }
@@ -4577,7 +4577,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken NewKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenBracketToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitArrayCreationExpressionSyntax AddCommas(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitArrayCreationExpressionSyntax AddInitializerExpressions(params Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitArrayCreationExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken newKeyword, Microsoft.CodeAnalysis.SyntaxToken openBracketToken, Microsoft.CodeAnalysis.SyntaxTokenList commas, Microsoft.CodeAnalysis.SyntaxToken closeBracketToken, Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax initializer) { throw null; }
@@ -4592,7 +4592,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal ImplicitElementAccessSyntax() { }
         public Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax ArgumentList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitElementAccessSyntax AddArgumentListArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitElementAccessSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax argumentList) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitElementAccessSyntax WithArgumentList(Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax argumentList) { throw null; }
@@ -4604,7 +4604,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax? Initializer { get { throw null; } }
         public override Microsoft.CodeAnalysis.SyntaxToken NewKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitObjectCreationExpressionSyntax AddArgumentListArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitObjectCreationExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken newKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax argumentList, Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax? initializer) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitObjectCreationExpressionSyntax WithArgumentList(Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax argumentList) { throw null; }
@@ -4619,7 +4619,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenBracketToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken StackAllocKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitStackAllocArrayCreationExpressionSyntax AddInitializerExpressions(params Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitStackAllocArrayCreationExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken stackAllocKeyword, Microsoft.CodeAnalysis.SyntaxToken openBracketToken, Microsoft.CodeAnalysis.SyntaxToken closeBracketToken, Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax initializer) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ImplicitStackAllocArrayCreationExpressionSyntax WithCloseBracketToken(Microsoft.CodeAnalysis.SyntaxToken closeBracketToken) { throw null; }
@@ -4634,7 +4634,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxTokenList Modifiers { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax? Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.IncompleteMemberSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.IncompleteMemberSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IncompleteMemberSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxTokenList modifiers, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax? type) { throw null; }
@@ -4657,7 +4657,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ThisKeyword { get { throw null; } }
         public override Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.IndexerDeclarationSyntax AddAccessorListAccessors(params Microsoft.CodeAnalysis.CSharp.Syntax.AccessorDeclarationSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.IndexerDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.IndexerDeclarationSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
@@ -4681,7 +4681,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.CrefBracketedParameterListSyntax? Parameters { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken ThisKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IndexerMemberCrefSyntax AddParametersParameters(params Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IndexerMemberCrefSyntax Update(Microsoft.CodeAnalysis.SyntaxToken thisKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.CrefBracketedParameterListSyntax? parameters) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IndexerMemberCrefSyntax WithParameters(Microsoft.CodeAnalysis.CSharp.Syntax.CrefBracketedParameterListSyntax? parameters) { throw null; }
@@ -4694,7 +4694,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax> Expressions { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenBraceToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax AddExpressions(params Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openBraceToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax> expressions, Microsoft.CodeAnalysis.SyntaxToken closeBraceToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax WithCloseBraceToken(Microsoft.CodeAnalysis.SyntaxToken closeBraceToken) { throw null; }
@@ -4720,7 +4720,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax? TypeParameterList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.InterfaceDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.InterfaceDeclarationSyntax AddBaseListTypes(params Microsoft.CodeAnalysis.CSharp.Syntax.BaseTypeSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.InterfaceDeclarationSyntax AddConstraintClauses(params Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax[] items) { throw null; }
@@ -4751,7 +4751,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken StringEndToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken StringStartToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolatedStringExpressionSyntax AddContents(params Microsoft.CodeAnalysis.CSharp.Syntax.InterpolatedStringContentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolatedStringExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken stringStartToken, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.InterpolatedStringContentSyntax> contents, Microsoft.CodeAnalysis.SyntaxToken stringEndToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolatedStringExpressionSyntax WithContents(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.InterpolatedStringContentSyntax> contents) { throw null; }
@@ -4763,7 +4763,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal InterpolatedStringTextSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxToken TextToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolatedStringTextSyntax Update(Microsoft.CodeAnalysis.SyntaxToken textToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolatedStringTextSyntax WithTextToken(Microsoft.CodeAnalysis.SyntaxToken textToken) { throw null; }
     }
@@ -4773,7 +4773,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken CommaToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Value { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationAlignmentClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken commaToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax value) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationAlignmentClauseSyntax WithCommaToken(Microsoft.CodeAnalysis.SyntaxToken commaToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationAlignmentClauseSyntax WithValue(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax value) { throw null; }
@@ -4784,7 +4784,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ColonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken FormatStringToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationFormatClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken colonToken, Microsoft.CodeAnalysis.SyntaxToken formatStringToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationFormatClauseSyntax WithColonToken(Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationFormatClauseSyntax WithFormatStringToken(Microsoft.CodeAnalysis.SyntaxToken formatStringToken) { throw null; }
@@ -4798,7 +4798,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationFormatClauseSyntax? FormatClause { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenBraceToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openBraceToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationAlignmentClauseSyntax? alignmentClause, Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationFormatClauseSyntax? formatClause, Microsoft.CodeAnalysis.SyntaxToken closeBraceToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationSyntax WithAlignmentClause(Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationAlignmentClauseSyntax? alignmentClause) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InterpolationSyntax WithCloseBraceToken(Microsoft.CodeAnalysis.SyntaxToken closeBraceToken) { throw null; }
@@ -4812,7 +4812,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax ArgumentList { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InvocationExpressionSyntax AddArgumentListArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InvocationExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax argumentList) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.InvocationExpressionSyntax WithArgumentList(Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax argumentList) { throw null; }
@@ -4825,7 +4825,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken IsKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax Pattern { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IsPatternExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken isKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax pattern) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IsPatternExpressionSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IsPatternExpressionSyntax WithIsKeyword(Microsoft.CodeAnalysis.SyntaxToken isKeyword) { throw null; }
@@ -4845,7 +4845,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax RightExpression { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax? Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.JoinClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken joinKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax? type, Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.SyntaxToken inKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax inExpression, Microsoft.CodeAnalysis.SyntaxToken onKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax leftExpression, Microsoft.CodeAnalysis.SyntaxToken equalsKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax rightExpression, Microsoft.CodeAnalysis.CSharp.Syntax.JoinIntoClauseSyntax? into) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.JoinClauseSyntax WithEqualsKeyword(Microsoft.CodeAnalysis.SyntaxToken equalsKeyword) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.JoinClauseSyntax WithIdentifier(Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
@@ -4864,7 +4864,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken IntoKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.JoinIntoClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken intoKeyword, Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.JoinIntoClauseSyntax WithIdentifier(Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.JoinIntoClauseSyntax WithIntoKeyword(Microsoft.CodeAnalysis.SyntaxToken intoKeyword) { throw null; }
@@ -4877,7 +4877,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax Statement { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.LabeledStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LabeledStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.SyntaxToken colonToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LabeledStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.SyntaxToken colonToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
@@ -4908,7 +4908,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken LetKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LetClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken letKeyword, Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.SyntaxToken equalsToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LetClauseSyntax WithEqualsToken(Microsoft.CodeAnalysis.SyntaxToken equalsToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LetClauseSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
@@ -4925,7 +4925,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Line { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken LineKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LineDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken lineKeyword, Microsoft.CodeAnalysis.SyntaxToken line, Microsoft.CodeAnalysis.SyntaxToken file, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.LineDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LineDirectiveTriviaSyntax WithFile(Microsoft.CodeAnalysis.SyntaxToken file) { throw null; }
@@ -4939,7 +4939,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal LiteralExpressionSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxToken Token { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LiteralExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken token) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LiteralExpressionSyntax WithToken(Microsoft.CodeAnalysis.SyntaxToken token) { throw null; }
     }
@@ -4952,7 +4952,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override bool IsActive { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken LoadKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LoadDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken loadKeyword, Microsoft.CodeAnalysis.SyntaxToken file, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.LoadDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LoadDirectiveTriviaSyntax WithFile(Microsoft.CodeAnalysis.SyntaxToken file) { throw null; }
@@ -4971,7 +4971,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken UsingKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax AddDeclarationVariables(params Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclaratorSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
@@ -4999,7 +4999,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax? TypeParameterList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.LocalFunctionStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LocalFunctionStatementSyntax AddBodyAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LocalFunctionStatementSyntax AddBodyStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
@@ -5030,7 +5030,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax Statement { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.LockStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LockStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken lockKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.LockStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken lockKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
@@ -5049,7 +5049,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Keyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.MakeRefExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken keyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.MakeRefExpressionSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.MakeRefExpressionSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
@@ -5063,7 +5063,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax Name { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OperatorToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.MemberAccessExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken operatorToken, Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax name) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.MemberAccessExpressionSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.MemberAccessExpressionSyntax WithName(Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax name) { throw null; }
@@ -5075,7 +5075,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax Name { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OperatorToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.MemberBindingExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken operatorToken, Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax name) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.MemberBindingExpressionSyntax WithName(Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax name) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.MemberBindingExpressionSyntax WithOperatorToken(Microsoft.CodeAnalysis.SyntaxToken operatorToken) { throw null; }
@@ -5110,7 +5110,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax? TypeParameterList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax AddBodyAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.MethodDeclarationSyntax AddBodyStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
@@ -5137,7 +5137,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ColonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax Name { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameColonSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax name, Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameColonSyntax WithColonToken(Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameColonSyntax WithName(Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax name) { throw null; }
@@ -5148,7 +5148,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken EqualsToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax Name { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameEqualsSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax name, Microsoft.CodeAnalysis.SyntaxToken equalsToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameEqualsSyntax WithEqualsToken(Microsoft.CodeAnalysis.SyntaxToken equalsToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameEqualsSyntax WithName(Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax name) { throw null; }
@@ -5159,7 +5159,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Name { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterListSyntax? Parameters { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameMemberCrefSyntax AddParametersParameters(params Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameMemberCrefSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax name, Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterListSyntax? parameters) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameMemberCrefSyntax WithName(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax name) { throw null; }
@@ -5179,7 +5179,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax> Usings { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax AddExterns(params Microsoft.CodeAnalysis.CSharp.Syntax.ExternAliasDirectiveSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NamespaceDeclarationSyntax AddMembers(params Microsoft.CodeAnalysis.CSharp.Syntax.MemberDeclarationSyntax[] items) { throw null; }
@@ -5213,7 +5213,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken SettingToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken TargetToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NullableDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken nullableKeyword, Microsoft.CodeAnalysis.SyntaxToken settingToken, Microsoft.CodeAnalysis.SyntaxToken targetToken, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.NullableDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.NullableDirectiveTriviaSyntax WithHashToken(Microsoft.CodeAnalysis.SyntaxToken hashToken) { throw null; }
@@ -5228,7 +5228,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax ElementType { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken QuestionToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NullableTypeSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax elementType, Microsoft.CodeAnalysis.SyntaxToken questionToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NullableTypeSyntax WithElementType(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax elementType) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.NullableTypeSyntax WithQuestionToken(Microsoft.CodeAnalysis.SyntaxToken questionToken) { throw null; }
@@ -5241,7 +5241,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken NewKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ObjectCreationExpressionSyntax AddArgumentListArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ObjectCreationExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken newKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax? argumentList, Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax? initializer) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ObjectCreationExpressionSyntax WithArgumentList(Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax? argumentList) { throw null; }
@@ -5254,7 +5254,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal OmittedArraySizeExpressionSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxToken OmittedArraySizeExpressionToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OmittedArraySizeExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken omittedArraySizeExpressionToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OmittedArraySizeExpressionSyntax WithOmittedArraySizeExpressionToken(Microsoft.CodeAnalysis.SyntaxToken omittedArraySizeExpressionToken) { throw null; }
     }
@@ -5263,7 +5263,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal OmittedTypeArgumentSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxToken OmittedTypeArgumentToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OmittedTypeArgumentSyntax Update(Microsoft.CodeAnalysis.SyntaxToken omittedTypeArgumentToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OmittedTypeArgumentSyntax WithOmittedTypeArgumentToken(Microsoft.CodeAnalysis.SyntaxToken omittedTypeArgumentToken) { throw null; }
     }
@@ -5280,7 +5280,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax ReturnType { get { throw null; } }
         public override Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.OperatorDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.OperatorDeclarationSyntax AddBodyAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.OperatorDeclarationSyntax AddBodyStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
@@ -5304,7 +5304,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OperatorToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterListSyntax? Parameters { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OperatorMemberCrefSyntax AddParametersParameters(params Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OperatorMemberCrefSyntax Update(Microsoft.CodeAnalysis.SyntaxToken operatorKeyword, Microsoft.CodeAnalysis.SyntaxToken operatorToken, Microsoft.CodeAnalysis.CSharp.Syntax.CrefParameterListSyntax? parameters) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OperatorMemberCrefSyntax WithOperatorKeyword(Microsoft.CodeAnalysis.SyntaxToken operatorKeyword) { throw null; }
@@ -5317,7 +5317,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OrderByKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.OrderingSyntax> Orderings { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OrderByClauseSyntax AddOrderings(params Microsoft.CodeAnalysis.CSharp.Syntax.OrderingSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OrderByClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken orderByKeyword, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.OrderingSyntax> orderings) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OrderByClauseSyntax WithOrderByKeyword(Microsoft.CodeAnalysis.SyntaxToken orderByKeyword) { throw null; }
@@ -5329,7 +5329,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken AscendingOrDescendingKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OrderingSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken ascendingOrDescendingKeyword) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OrderingSyntax WithAscendingOrDescendingKeyword(Microsoft.CodeAnalysis.SyntaxToken ascendingOrDescendingKeyword) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.OrderingSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
@@ -5341,7 +5341,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public override Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ParameterSyntax> Parameters { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax AddParameters(params Microsoft.CodeAnalysis.CSharp.Syntax.ParameterSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ParameterSyntax> parameters, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
@@ -5357,7 +5357,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxTokenList Modifiers { get { throw null; } }
         public override Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax? Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ParameterSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ParameterSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParameterSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxTokenList modifiers, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax? type, Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.CSharp.Syntax.EqualsValueClauseSyntax? @default) { throw null; }
@@ -5374,7 +5374,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedExpressionSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedExpressionSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
@@ -5390,7 +5390,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxTokenList Modifiers { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParameterListSyntax ParameterList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedLambdaExpressionSyntax AddBlockAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedLambdaExpressionSyntax AddBlockStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedLambdaExpressionSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
@@ -5413,7 +5413,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax Pattern { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedPatternSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax pattern, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedPatternSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedPatternSyntax WithOpenParenToken(Microsoft.CodeAnalysis.SyntaxToken openParenToken) { throw null; }
@@ -5426,7 +5426,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax> Variables { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedVariableDesignationSyntax AddVariables(params Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedVariableDesignationSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax> variables, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParenthesizedVariableDesignationSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
@@ -5443,7 +5443,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken AsteriskToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax ElementType { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PointerTypeSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax elementType, Microsoft.CodeAnalysis.SyntaxToken asteriskToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PointerTypeSyntax WithAsteriskToken(Microsoft.CodeAnalysis.SyntaxToken asteriskToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PointerTypeSyntax WithElementType(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax elementType) { throw null; }
@@ -5455,7 +5455,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax> Subpatterns { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PositionalPatternClauseSyntax AddSubpatterns(params Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PositionalPatternClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax> subpatterns, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PositionalPatternClauseSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
@@ -5468,7 +5468,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Operand { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OperatorToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PostfixUnaryExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax operand, Microsoft.CodeAnalysis.SyntaxToken operatorToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PostfixUnaryExpressionSyntax WithOperand(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax operand) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PostfixUnaryExpressionSyntax WithOperatorToken(Microsoft.CodeAnalysis.SyntaxToken operatorToken) { throw null; }
@@ -5485,7 +5485,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override bool IsActive { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken PragmaKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PragmaChecksumDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken pragmaKeyword, Microsoft.CodeAnalysis.SyntaxToken checksumKeyword, Microsoft.CodeAnalysis.SyntaxToken file, Microsoft.CodeAnalysis.SyntaxToken guid, Microsoft.CodeAnalysis.SyntaxToken bytes, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PragmaChecksumDirectiveTriviaSyntax WithBytes(Microsoft.CodeAnalysis.SyntaxToken bytes) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PragmaChecksumDirectiveTriviaSyntax WithChecksumKeyword(Microsoft.CodeAnalysis.SyntaxToken checksumKeyword) { throw null; }
@@ -5507,7 +5507,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken PragmaKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken WarningKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PragmaWarningDirectiveTriviaSyntax AddErrorCodes(params Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PragmaWarningDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken pragmaKeyword, Microsoft.CodeAnalysis.SyntaxToken warningKeyword, Microsoft.CodeAnalysis.SyntaxToken disableOrRestoreKeyword, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax> errorCodes, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PragmaWarningDirectiveTriviaSyntax WithDisableOrRestoreKeyword(Microsoft.CodeAnalysis.SyntaxToken disableOrRestoreKeyword) { throw null; }
@@ -5523,7 +5523,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal PredefinedTypeSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxToken Keyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PredefinedTypeSyntax Update(Microsoft.CodeAnalysis.SyntaxToken keyword) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PredefinedTypeSyntax WithKeyword(Microsoft.CodeAnalysis.SyntaxToken keyword) { throw null; }
     }
@@ -5533,7 +5533,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Operand { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OperatorToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PrefixUnaryExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken operatorToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax operand) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PrefixUnaryExpressionSyntax WithOperand(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax operand) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PrefixUnaryExpressionSyntax WithOperatorToken(Microsoft.CodeAnalysis.SyntaxToken operatorToken) { throw null; }
@@ -5544,7 +5544,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax ArgumentList { get { throw null; } }
         public override Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PrimaryConstructorBaseTypeSyntax AddArgumentListArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PrimaryConstructorBaseTypeSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax argumentList) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PrimaryConstructorBaseTypeSyntax WithArgumentList(Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentListSyntax argumentList) { throw null; }
@@ -5565,7 +5565,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.PropertyDeclarationSyntax AddAccessorListAccessors(params Microsoft.CodeAnalysis.CSharp.Syntax.AccessorDeclarationSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.PropertyDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.PropertyDeclarationSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
@@ -5589,7 +5589,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenBraceToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax> Subpatterns { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PropertyPatternClauseSyntax AddSubpatterns(params Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PropertyPatternClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openBraceToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax> subpatterns, Microsoft.CodeAnalysis.SyntaxToken closeBraceToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PropertyPatternClauseSyntax WithCloseBraceToken(Microsoft.CodeAnalysis.SyntaxToken closeBraceToken) { throw null; }
@@ -5603,7 +5603,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken DotToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.MemberCrefSyntax Member { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedCrefSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax container, Microsoft.CodeAnalysis.SyntaxToken dotToken, Microsoft.CodeAnalysis.CSharp.Syntax.MemberCrefSyntax member) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedCrefSyntax WithContainer(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax container) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedCrefSyntax WithDotToken(Microsoft.CodeAnalysis.SyntaxToken dotToken) { throw null; }
@@ -5616,7 +5616,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax Left { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax Right { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax left, Microsoft.CodeAnalysis.SyntaxToken dotToken, Microsoft.CodeAnalysis.CSharp.Syntax.SimpleNameSyntax right) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax WithDotToken(Microsoft.CodeAnalysis.SyntaxToken dotToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QualifiedNameSyntax WithLeft(Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax left) { throw null; }
@@ -5629,7 +5629,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.QueryContinuationSyntax? Continuation { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SelectOrGroupClauseSyntax SelectOrGroup { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QueryBodySyntax AddClauses(params Microsoft.CodeAnalysis.CSharp.Syntax.QueryClauseSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QueryBodySyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.QueryClauseSyntax> clauses, Microsoft.CodeAnalysis.CSharp.Syntax.SelectOrGroupClauseSyntax selectOrGroup, Microsoft.CodeAnalysis.CSharp.Syntax.QueryContinuationSyntax? continuation) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QueryBodySyntax WithClauses(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.QueryClauseSyntax> clauses) { throw null; }
@@ -5647,7 +5647,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken IntoKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QueryContinuationSyntax AddBodyClauses(params Microsoft.CodeAnalysis.CSharp.Syntax.QueryClauseSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QueryContinuationSyntax Update(Microsoft.CodeAnalysis.SyntaxToken intoKeyword, Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.CSharp.Syntax.QueryBodySyntax body) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QueryContinuationSyntax WithBody(Microsoft.CodeAnalysis.CSharp.Syntax.QueryBodySyntax body) { throw null; }
@@ -5660,7 +5660,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.QueryBodySyntax Body { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.FromClauseSyntax FromClause { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QueryExpressionSyntax AddBodyClauses(params Microsoft.CodeAnalysis.CSharp.Syntax.QueryClauseSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QueryExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.FromClauseSyntax fromClause, Microsoft.CodeAnalysis.CSharp.Syntax.QueryBodySyntax body) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.QueryExpressionSyntax WithBody(Microsoft.CodeAnalysis.CSharp.Syntax.QueryBodySyntax body) { throw null; }
@@ -5673,7 +5673,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OperatorToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax? RightOperand { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RangeExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax? leftOperand, Microsoft.CodeAnalysis.SyntaxToken operatorToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax? rightOperand) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RangeExpressionSyntax WithLeftOperand(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax? leftOperand) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RangeExpressionSyntax WithOperatorToken(Microsoft.CodeAnalysis.SyntaxToken operatorToken) { throw null; }
@@ -5695,7 +5695,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax? TypeParameterList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.RecordDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.RecordDeclarationSyntax AddBaseListTypes(params Microsoft.CodeAnalysis.CSharp.Syntax.BaseTypeSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.RecordDeclarationSyntax AddConstraintClauses(params Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax[] items) { throw null; }
@@ -5725,7 +5725,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.PropertyPatternClauseSyntax? PropertyPatternClause { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax? Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RecursivePatternSyntax AddPositionalPatternClauseSubpatterns(params Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RecursivePatternSyntax AddPropertyPatternClauseSubpatterns(params Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RecursivePatternSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax? type, Microsoft.CodeAnalysis.CSharp.Syntax.PositionalPatternClauseSyntax? positionalPatternClause, Microsoft.CodeAnalysis.CSharp.Syntax.PropertyPatternClauseSyntax? propertyPatternClause, Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax? designation) { throw null; }
@@ -5743,7 +5743,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override bool IsActive { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken ReferenceKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ReferenceDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken referenceKeyword, Microsoft.CodeAnalysis.SyntaxToken file, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ReferenceDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ReferenceDirectiveTriviaSyntax WithFile(Microsoft.CodeAnalysis.SyntaxToken file) { throw null; }
@@ -5757,7 +5757,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken RefKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RefExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken refKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RefExpressionSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RefExpressionSyntax WithRefKeyword(Microsoft.CodeAnalysis.SyntaxToken refKeyword) { throw null; }
@@ -5770,7 +5770,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Keyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RefTypeExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken keyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RefTypeExpressionSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RefTypeExpressionSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
@@ -5784,7 +5784,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken RefKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RefTypeSyntax Update(Microsoft.CodeAnalysis.SyntaxToken refKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RefTypeSyntax Update(Microsoft.CodeAnalysis.SyntaxToken refKeyword, Microsoft.CodeAnalysis.SyntaxToken readOnlyKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RefTypeSyntax WithReadOnlyKeyword(Microsoft.CodeAnalysis.SyntaxToken readOnlyKeyword) { throw null; }
@@ -5801,7 +5801,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RefValueExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken keyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken comma, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RefValueExpressionSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RefValueExpressionSyntax WithComma(Microsoft.CodeAnalysis.SyntaxToken comma) { throw null; }
@@ -5818,7 +5818,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override bool IsActive { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken RegionKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RegionDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken regionKeyword, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.RegionDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.RegionDirectiveTriviaSyntax WithHashToken(Microsoft.CodeAnalysis.SyntaxToken hashToken) { throw null; }
@@ -5831,7 +5831,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OperatorToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RelationalPatternSyntax Update(Microsoft.CodeAnalysis.SyntaxToken operatorToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RelationalPatternSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.RelationalPatternSyntax WithOperatorToken(Microsoft.CodeAnalysis.SyntaxToken operatorToken) { throw null; }
@@ -5844,7 +5844,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ReturnKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ReturnStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ReturnStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken returnKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax? expression, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ReturnStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken returnKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
@@ -5859,7 +5859,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken SelectKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SelectClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken selectKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SelectClauseSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SelectClauseSyntax WithSelectKeyword(Microsoft.CodeAnalysis.SyntaxToken selectKeyword) { throw null; }
@@ -5876,7 +5876,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken HashToken { get { throw null; } }
         public override bool IsActive { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ShebangDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken exclamationToken, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ShebangDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ShebangDirectiveTriviaSyntax WithExclamationToken(Microsoft.CodeAnalysis.SyntaxToken exclamationToken) { throw null; }
@@ -5888,7 +5888,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal SimpleBaseTypeSyntax() { }
         public override Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SimpleBaseTypeSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.SimpleBaseTypeSyntax WithType(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
     }
@@ -5902,7 +5902,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxTokenList Modifiers { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ParameterSyntax Parameter { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.SimpleLambdaExpressionSyntax AddBlockAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.SimpleLambdaExpressionSyntax AddBlockStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.SimpleLambdaExpressionSyntax AddModifiers(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
@@ -5930,7 +5930,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal SingleVariableDesignationSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SingleVariableDesignationSyntax Update(Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SingleVariableDesignationSyntax WithIdentifier(Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
     }
@@ -5942,7 +5942,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SizeOfExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken keyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SizeOfExpressionSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SizeOfExpressionSyntax WithKeyword(Microsoft.CodeAnalysis.SyntaxToken keyword) { throw null; }
@@ -5954,7 +5954,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal SkippedTokensTriviaSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxTokenList Tokens { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SkippedTokensTriviaSyntax AddTokens(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SkippedTokensTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxTokenList tokens) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SkippedTokensTriviaSyntax WithTokens(Microsoft.CodeAnalysis.SyntaxTokenList tokens) { throw null; }
@@ -5966,7 +5966,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken StackAllocKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.StackAllocArrayCreationExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken stackAllocKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.StackAllocArrayCreationExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken stackAllocKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax? initializer) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.StackAllocArrayCreationExpressionSyntax WithInitializer(Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax? initializer) { throw null; }
@@ -5995,7 +5995,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public override Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax? TypeParameterList { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.StructDeclarationSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.StructDeclarationSyntax AddBaseListTypes(params Microsoft.CodeAnalysis.CSharp.Syntax.BaseTypeSyntax[] items) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.StructDeclarationSyntax AddConstraintClauses(params Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax[] items) { throw null; }
@@ -6026,7 +6026,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.NameColonSyntax? NameColon { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax Pattern { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.NameColonSyntax? nameColon, Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax pattern) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax WithNameColon(Microsoft.CodeAnalysis.CSharp.Syntax.NameColonSyntax? nameColon) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SubpatternSyntax WithPattern(Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax pattern) { throw null; }
@@ -6039,7 +6039,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax Pattern { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WhenClauseSyntax? WhenClause { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SwitchExpressionArmSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax pattern, Microsoft.CodeAnalysis.CSharp.Syntax.WhenClauseSyntax? whenClause, Microsoft.CodeAnalysis.SyntaxToken equalsGreaterThanToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SwitchExpressionArmSyntax WithEqualsGreaterThanToken(Microsoft.CodeAnalysis.SyntaxToken equalsGreaterThanToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SwitchExpressionArmSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
@@ -6055,7 +6055,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenBraceToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken SwitchKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SwitchExpressionSyntax AddArms(params Microsoft.CodeAnalysis.CSharp.Syntax.SwitchExpressionArmSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SwitchExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax governingExpression, Microsoft.CodeAnalysis.SyntaxToken switchKeyword, Microsoft.CodeAnalysis.SyntaxToken openBraceToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.SwitchExpressionArmSyntax> arms, Microsoft.CodeAnalysis.SyntaxToken closeBraceToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SwitchExpressionSyntax WithArms(Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.SwitchExpressionArmSyntax> arms) { throw null; }
@@ -6078,7 +6078,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.SwitchLabelSyntax> Labels { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax> Statements { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SwitchSectionSyntax AddLabels(params Microsoft.CodeAnalysis.CSharp.Syntax.SwitchLabelSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SwitchSectionSyntax AddStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SwitchSectionSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.SwitchLabelSyntax> labels, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax> statements) { throw null; }
@@ -6097,7 +6097,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.SwitchSectionSyntax> Sections { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken SwitchKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.SwitchStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SwitchStatementSyntax AddSections(params Microsoft.CodeAnalysis.CSharp.Syntax.SwitchSectionSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.SwitchStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken switchKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.SyntaxToken openBraceToken, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.SwitchSectionSyntax> sections, Microsoft.CodeAnalysis.SyntaxToken closeBraceToken) { throw null; }
@@ -6116,7 +6116,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal ThisExpressionSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxToken Token { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ThisExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken token) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ThisExpressionSyntax WithToken(Microsoft.CodeAnalysis.SyntaxToken token) { throw null; }
     }
@@ -6126,7 +6126,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Expression { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken ThrowKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ThrowExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken throwKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ThrowExpressionSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ThrowExpressionSyntax WithThrowKeyword(Microsoft.CodeAnalysis.SyntaxToken throwKeyword) { throw null; }
@@ -6139,7 +6139,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken ThrowKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.ThrowStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ThrowStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken throwKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax? expression, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.ThrowStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken throwKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
@@ -6157,7 +6157,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.FinallyClauseSyntax? Finally { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken TryKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.TryStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TryStatementSyntax AddBlockAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TryStatementSyntax AddBlockStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
@@ -6176,7 +6176,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TupleElementSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TupleElementSyntax WithIdentifier(Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TupleElementSyntax WithType(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
@@ -6188,7 +6188,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken CloseParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TupleExpressionSyntax AddArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TupleExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax> arguments, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TupleExpressionSyntax WithArguments(Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax> arguments) { throw null; }
@@ -6202,7 +6202,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.TupleElementSyntax> Elements { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TupleTypeSyntax AddElements(params Microsoft.CodeAnalysis.CSharp.Syntax.TupleElementSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TupleTypeSyntax Update(Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.TupleElementSyntax> elements, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TupleTypeSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
@@ -6216,7 +6216,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken GreaterThanToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken LessThanToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeArgumentListSyntax AddArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeArgumentListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken lessThanToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax> arguments, Microsoft.CodeAnalysis.SyntaxToken greaterThanToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeArgumentListSyntax WithArguments(Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax> arguments) { throw null; }
@@ -6228,7 +6228,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal TypeConstraintSyntax() { }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeConstraintSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeConstraintSyntax WithType(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
     }
@@ -6237,7 +6237,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal TypeCrefSyntax() { }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeCrefSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeCrefSyntax WithType(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
     }
@@ -6275,7 +6275,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OpenParenToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeOfExpressionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken keyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeOfExpressionSyntax WithCloseParenToken(Microsoft.CodeAnalysis.SyntaxToken closeParenToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeOfExpressionSyntax WithKeyword(Microsoft.CodeAnalysis.SyntaxToken keyword) { throw null; }
@@ -6290,7 +6290,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax Name { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken WhereKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax AddConstraints(params Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken whereKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax name, Microsoft.CodeAnalysis.SyntaxToken colonToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintSyntax> constraints) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterConstraintClauseSyntax WithColonToken(Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
@@ -6309,7 +6309,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken LessThanToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterSyntax> Parameters { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax AddParameters(params Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax Update(Microsoft.CodeAnalysis.SyntaxToken lessThanToken, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterSyntax> parameters, Microsoft.CodeAnalysis.SyntaxToken greaterThanToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterListSyntax WithGreaterThanToken(Microsoft.CodeAnalysis.SyntaxToken greaterThanToken) { throw null; }
@@ -6323,7 +6323,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken VarianceKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken varianceKeyword, Microsoft.CodeAnalysis.SyntaxToken identifier) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeParameterSyntax WithAttributeLists(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists) { throw null; }
@@ -6335,7 +6335,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal TypePatternSyntax() { }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypePatternSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypePatternSyntax WithType(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
     }
@@ -6354,7 +6354,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken OperatorToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax Pattern { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.UnaryPatternSyntax Update(Microsoft.CodeAnalysis.SyntaxToken operatorToken, Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax pattern) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.UnaryPatternSyntax WithOperatorToken(Microsoft.CodeAnalysis.SyntaxToken operatorToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.UnaryPatternSyntax WithPattern(Microsoft.CodeAnalysis.CSharp.Syntax.PatternSyntax pattern) { throw null; }
@@ -6368,7 +6368,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Name { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken UndefKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.UndefDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken undefKeyword, Microsoft.CodeAnalysis.SyntaxToken name, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.UndefDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.UndefDirectiveTriviaSyntax WithHashToken(Microsoft.CodeAnalysis.SyntaxToken hashToken) { throw null; }
@@ -6383,7 +6383,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.BlockSyntax Block { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken UnsafeKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.UnsafeStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.UnsafeStatementSyntax AddBlockAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.UnsafeStatementSyntax AddBlockStatements(params Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax[] items) { throw null; }
@@ -6402,7 +6402,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken StaticKeyword { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken UsingKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax Update(Microsoft.CodeAnalysis.SyntaxToken usingKeyword, Microsoft.CodeAnalysis.SyntaxToken staticKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.NameEqualsSyntax? alias, Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax name, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax WithAlias(Microsoft.CodeAnalysis.CSharp.Syntax.NameEqualsSyntax? alias) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.UsingDirectiveSyntax WithName(Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax name) { throw null; }
@@ -6422,7 +6422,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax Statement { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken UsingKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.UsingStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.UsingStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken awaitKeyword, Microsoft.CodeAnalysis.SyntaxToken usingKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclarationSyntax? declaration, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax? expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.UsingStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken usingKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclarationSyntax declaration, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
@@ -6442,7 +6442,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax Type { get { throw null; } }
         public Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclaratorSyntax> Variables { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclarationSyntax AddVariables(params Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclaratorSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclarationSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type, Microsoft.CodeAnalysis.SeparatedSyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclaratorSyntax> variables) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclarationSyntax WithType(Microsoft.CodeAnalysis.CSharp.Syntax.TypeSyntax type) { throw null; }
@@ -6455,7 +6455,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken Identifier { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.EqualsValueClauseSyntax? Initializer { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclaratorSyntax AddArgumentListArguments(params Microsoft.CodeAnalysis.CSharp.Syntax.ArgumentSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclaratorSyntax Update(Microsoft.CodeAnalysis.SyntaxToken identifier, Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax? argumentList, Microsoft.CodeAnalysis.CSharp.Syntax.EqualsValueClauseSyntax? initializer) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.VariableDeclaratorSyntax WithArgumentList(Microsoft.CodeAnalysis.CSharp.Syntax.BracketedArgumentListSyntax? argumentList) { throw null; }
@@ -6472,7 +6472,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax Designation { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken VarKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.VarPatternSyntax Update(Microsoft.CodeAnalysis.SyntaxToken varKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax designation) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.VarPatternSyntax WithDesignation(Microsoft.CodeAnalysis.CSharp.Syntax.VariableDesignationSyntax designation) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.VarPatternSyntax WithVarKeyword(Microsoft.CodeAnalysis.SyntaxToken varKeyword) { throw null; }
@@ -6485,7 +6485,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override bool IsActive { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken WarningKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WarningDirectiveTriviaSyntax Update(Microsoft.CodeAnalysis.SyntaxToken hashToken, Microsoft.CodeAnalysis.SyntaxToken warningKeyword, Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken, bool isActive) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.WarningDirectiveTriviaSyntax WithEndOfDirectiveToken(Microsoft.CodeAnalysis.SyntaxToken endOfDirectiveToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.WarningDirectiveTriviaSyntax WithHashToken(Microsoft.CodeAnalysis.SyntaxToken hashToken) { throw null; }
@@ -6498,7 +6498,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Condition { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken WhenKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WhenClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken whenKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WhenClauseSyntax WithCondition(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WhenClauseSyntax WithWhenKeyword(Microsoft.CodeAnalysis.SyntaxToken whenKeyword) { throw null; }
@@ -6509,7 +6509,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax Condition { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken WhereKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WhereClauseSyntax Update(Microsoft.CodeAnalysis.SyntaxToken whereKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WhereClauseSyntax WithCondition(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WhereClauseSyntax WithWhereKeyword(Microsoft.CodeAnalysis.SyntaxToken whereKeyword) { throw null; }
@@ -6524,7 +6524,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax Statement { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken WhileKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.WhileStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WhileStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken whileKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WhileStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken whileKeyword, Microsoft.CodeAnalysis.SyntaxToken openParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax condition, Microsoft.CodeAnalysis.SyntaxToken closeParenToken, Microsoft.CodeAnalysis.CSharp.Syntax.StatementSyntax statement) { throw null; }
@@ -6542,7 +6542,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax Initializer { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken WithKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WithExpressionSyntax AddInitializerExpressions(params Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WithExpressionSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken withKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.InitializerExpressionSyntax initializer) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.WithExpressionSyntax WithExpression(Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression) { throw null; }
@@ -6568,7 +6568,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken StartCDataToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxTokenList TextTokens { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlCDataSectionSyntax AddTextTokens(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlCDataSectionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken startCDataToken, Microsoft.CodeAnalysis.SyntaxTokenList textTokens, Microsoft.CodeAnalysis.SyntaxToken endCDataToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlCDataSectionSyntax WithEndCDataToken(Microsoft.CodeAnalysis.SyntaxToken endCDataToken) { throw null; }
@@ -6582,7 +6582,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken MinusMinusGreaterThanToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxTokenList TextTokens { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlCommentSyntax AddTextTokens(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlCommentSyntax Update(Microsoft.CodeAnalysis.SyntaxToken lessThanExclamationMinusMinusToken, Microsoft.CodeAnalysis.SyntaxTokenList textTokens, Microsoft.CodeAnalysis.SyntaxToken minusMinusGreaterThanToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlCommentSyntax WithLessThanExclamationMinusMinusToken(Microsoft.CodeAnalysis.SyntaxToken lessThanExclamationMinusMinusToken) { throw null; }
@@ -6598,7 +6598,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax Name { get { throw null; } }
         public override Microsoft.CodeAnalysis.SyntaxToken StartQuoteToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlCrefAttributeSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax name, Microsoft.CodeAnalysis.SyntaxToken equalsToken, Microsoft.CodeAnalysis.SyntaxToken startQuoteToken, Microsoft.CodeAnalysis.CSharp.Syntax.CrefSyntax cref, Microsoft.CodeAnalysis.SyntaxToken endQuoteToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlCrefAttributeSyntax WithCref(Microsoft.CodeAnalysis.CSharp.Syntax.CrefSyntax cref) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.XmlCrefAttributeSyntax WithEndQuoteToken(Microsoft.CodeAnalysis.SyntaxToken endQuoteToken) { throw null; }
@@ -6613,7 +6613,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken LessThanSlashToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax Name { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementEndTagSyntax Update(Microsoft.CodeAnalysis.SyntaxToken lessThanSlashToken, Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax name, Microsoft.CodeAnalysis.SyntaxToken greaterThanToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementEndTagSyntax WithGreaterThanToken(Microsoft.CodeAnalysis.SyntaxToken greaterThanToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementEndTagSyntax WithLessThanSlashToken(Microsoft.CodeAnalysis.SyntaxToken lessThanSlashToken) { throw null; }
@@ -6627,7 +6627,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken LessThanToken { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax Name { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementStartTagSyntax AddAttributes(params Microsoft.CodeAnalysis.CSharp.Syntax.XmlAttributeSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementStartTagSyntax Update(Microsoft.CodeAnalysis.SyntaxToken lessThanToken, Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax name, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.XmlAttributeSyntax> attributes, Microsoft.CodeAnalysis.SyntaxToken greaterThanToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementStartTagSyntax WithAttributes(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.XmlAttributeSyntax> attributes) { throw null; }
@@ -6642,7 +6642,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementEndTagSyntax EndTag { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementStartTagSyntax StartTag { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementSyntax AddContent(params Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementSyntax AddStartTagAttributes(params Microsoft.CodeAnalysis.CSharp.Syntax.XmlAttributeSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementStartTagSyntax startTag, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.XmlNodeSyntax> content, Microsoft.CodeAnalysis.CSharp.Syntax.XmlElementEndTagSyntax endTag) { throw null; }
@@ -6658,7 +6658,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax Name { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken SlashGreaterThanToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlEmptyElementSyntax AddAttributes(params Microsoft.CodeAnalysis.CSharp.Syntax.XmlAttributeSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlEmptyElementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken lessThanToken, Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax name, Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.XmlAttributeSyntax> attributes, Microsoft.CodeAnalysis.SyntaxToken slashGreaterThanToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlEmptyElementSyntax WithAttributes(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.XmlAttributeSyntax> attributes) { throw null; }
@@ -6682,7 +6682,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax Name { get { throw null; } }
         public override Microsoft.CodeAnalysis.SyntaxToken StartQuoteToken { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameAttributeSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax name, Microsoft.CodeAnalysis.SyntaxToken equalsToken, Microsoft.CodeAnalysis.SyntaxToken startQuoteToken, Microsoft.CodeAnalysis.CSharp.Syntax.IdentifierNameSyntax identifier, Microsoft.CodeAnalysis.SyntaxToken endQuoteToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameAttributeSyntax WithEndQuoteToken(Microsoft.CodeAnalysis.SyntaxToken endQuoteToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameAttributeSyntax WithEqualsToken(Microsoft.CodeAnalysis.SyntaxToken equalsToken) { throw null; }
@@ -6696,7 +6696,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken LocalName { get { throw null; } }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlPrefixSyntax? Prefix { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.XmlPrefixSyntax? prefix, Microsoft.CodeAnalysis.SyntaxToken localName) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax WithLocalName(Microsoft.CodeAnalysis.SyntaxToken localName) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax WithPrefix(Microsoft.CodeAnalysis.CSharp.Syntax.XmlPrefixSyntax? prefix) { throw null; }
@@ -6711,7 +6711,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken ColonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken Prefix { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlPrefixSyntax Update(Microsoft.CodeAnalysis.SyntaxToken prefix, Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlPrefixSyntax WithColonToken(Microsoft.CodeAnalysis.SyntaxToken colonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlPrefixSyntax WithPrefix(Microsoft.CodeAnalysis.SyntaxToken prefix) { throw null; }
@@ -6724,7 +6724,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken StartProcessingInstructionToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxTokenList TextTokens { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlProcessingInstructionSyntax AddTextTokens(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlProcessingInstructionSyntax Update(Microsoft.CodeAnalysis.SyntaxToken startProcessingInstructionToken, Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax name, Microsoft.CodeAnalysis.SyntaxTokenList textTokens, Microsoft.CodeAnalysis.SyntaxToken endProcessingInstructionToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlProcessingInstructionSyntax WithEndProcessingInstructionToken(Microsoft.CodeAnalysis.SyntaxToken endProcessingInstructionToken) { throw null; }
@@ -6741,7 +6741,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public override Microsoft.CodeAnalysis.SyntaxToken StartQuoteToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxTokenList TextTokens { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlTextAttributeSyntax AddTextTokens(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlTextAttributeSyntax Update(Microsoft.CodeAnalysis.CSharp.Syntax.XmlNameSyntax name, Microsoft.CodeAnalysis.SyntaxToken equalsToken, Microsoft.CodeAnalysis.SyntaxToken startQuoteToken, Microsoft.CodeAnalysis.SyntaxTokenList textTokens, Microsoft.CodeAnalysis.SyntaxToken endQuoteToken) { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.XmlTextAttributeSyntax WithEndQuoteToken(Microsoft.CodeAnalysis.SyntaxToken endQuoteToken) { throw null; }
@@ -6755,7 +6755,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         internal XmlTextSyntax() { }
         public Microsoft.CodeAnalysis.SyntaxTokenList TextTokens { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlTextSyntax AddTextTokens(params Microsoft.CodeAnalysis.SyntaxToken[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlTextSyntax Update(Microsoft.CodeAnalysis.SyntaxTokenList textTokens) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.XmlTextSyntax WithTextTokens(Microsoft.CodeAnalysis.SyntaxTokenList textTokens) { throw null; }
@@ -6769,7 +6769,7 @@ namespace Microsoft.CodeAnalysis.CSharp.Syntax
         public Microsoft.CodeAnalysis.SyntaxToken SemicolonToken { get { throw null; } }
         public Microsoft.CodeAnalysis.SyntaxToken YieldKeyword { get { throw null; } }
         public override void Accept(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor visitor) { }
-        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) { throw null; }
+        public override TResult? Accept<TResult>(Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor<TResult> visitor) where TResult : default { throw null; }
         public new Microsoft.CodeAnalysis.CSharp.Syntax.YieldStatementSyntax AddAttributeLists(params Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax[] items) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.YieldStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxList<Microsoft.CodeAnalysis.CSharp.Syntax.AttributeListSyntax> attributeLists, Microsoft.CodeAnalysis.SyntaxToken yieldKeyword, Microsoft.CodeAnalysis.SyntaxToken returnOrBreakKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax? expression, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
         public Microsoft.CodeAnalysis.CSharp.Syntax.YieldStatementSyntax Update(Microsoft.CodeAnalysis.SyntaxToken yieldKeyword, Microsoft.CodeAnalysis.SyntaxToken returnOrBreakKeyword, Microsoft.CodeAnalysis.CSharp.Syntax.ExpressionSyntax expression, Microsoft.CodeAnalysis.SyntaxToken semicolonToken) { throw null; }
