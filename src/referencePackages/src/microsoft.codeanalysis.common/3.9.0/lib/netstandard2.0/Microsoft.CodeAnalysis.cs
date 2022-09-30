@@ -22,9 +22,11 @@ using System.Security;
 [assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
 [assembly: AssemblyFileVersion("3.900.21.12420")]
 [assembly: AssemblyInformationalVersion("3.900.21.12420 built by: SOURCEBUILD")]
-[assembly: CLSCompliant(true)]
+[assembly: CLSCompliant(false)]
 [assembly: AssemblyMetadata("", "")]
 [assembly: AssemblyVersion("3.9.0.0")]
+[assembly: InternalsVisibleTo("Microsoft.CodeAnalysis.CSharp, PublicKey=0024000004800000940000000602000000240000525341310004000001000100b5fc90e7027f67871e773a8fde8938c81dd402ba65b9201d60593e96c492651e889cc13f1415ebb53fac1131ae0bd333c5ee6021672d9718ea31a8aebd0da0072f25d87dba6fc90ffd598ed4da35e44c398c454307e8e33b8426143daec9f596836f97c8f74750e5975c64e2189f45def46b2a2b1247adc3652bf5c308055da9")]
+[assembly: InternalsVisibleTo("Microsoft.CodeAnalysis.VisualBasic, PublicKey=0024000004800000940000000602000000240000525341310004000001000100b5fc90e7027f67871e773a8fde8938c81dd402ba65b9201d60593e96c492651e889cc13f1415ebb53fac1131ae0bd333c5ee6021672d9718ea31a8aebd0da0072f25d87dba6fc90ffd598ed4da35e44c398c454307e8e33b8426143daec9f596836f97c8f74750e5975c64e2189f45def46b2a2b1247adc3652bf5c308055da9")]
 
 
 
@@ -4885,5 +4887,63 @@ namespace Microsoft.CodeAnalysis.Text
         public Microsoft.CodeAnalysis.Text.TextSpan? Overlap(Microsoft.CodeAnalysis.Text.TextSpan span) { throw null; }
         public bool OverlapsWith(Microsoft.CodeAnalysis.Text.TextSpan span) { throw null; }
         public override string ToString() { throw null; }
+    }
+}
+
+
+// The following code was manually created to workaround api generator limitations.
+// --------------------------------------------------------------------------------
+
+namespace Microsoft.CodeAnalysis
+{
+    internal readonly struct DeclarationInfo
+    {
+    }
+
+    internal class CommonMessageProvider
+    {
+    }
+
+    internal class StrongNameKeys
+    {
+    }
+
+    internal class StrongNameFileSystem
+    {
+    }
+
+    public partial class DesktopStrongNameProvider : Microsoft.CodeAnalysis.StrongNameProvider
+    {
+        internal override StrongNameFileSystem FileSystem { get => throw null; }
+        internal override StrongNameKeys CreateKeys(string keyFilePath, string keyContainerName, bool hasCounterSignature, CommonMessageProvider messageProvider) { throw null; }
+        internal override void SignFile(StrongNameKeys keys, string filePath) { }
+        internal override void SignBuilder(Microsoft.Cci.ExtendedPEBuilder peBuilder, System.Reflection.Metadata.BlobBuilder peBlob, System.Security.Cryptography.RSAParameters privateKey) { }
+        internal virtual Microsoft.CodeAnalysis.Interop.IClrStrongName GetStrongNameInterface() { throw null; }
+    }
+
+    public sealed partial class UnresolvedMetadataReference : Microsoft.CodeAnalysis.MetadataReference
+    {
+        internal override MetadataReference WithPropertiesImplReturningMetadataReference(MetadataReferenceProperties properties) { throw null; }
+    }
+}
+
+namespace Microsoft.CodeAnalysis.Interop
+{
+    internal interface IClrStrongName
+    {
+    }
+}
+
+namespace Microsoft.Cci
+{
+    internal class ExtendedPEBuilder
+    {
+    }
+}
+
+namespace Microsoft.CodeAnalysis.PooledObjects
+{
+    internal struct ArrayBuilder<T> 
+    {
     }
 }

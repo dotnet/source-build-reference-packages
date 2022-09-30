@@ -22,7 +22,7 @@ using System.Security;
 [assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
 [assembly: AssemblyFileVersion("3.900.21.12420")]
 [assembly: AssemblyInformationalVersion("3.900.21.12420 built by: SOURCEBUILD")]
-[assembly: CLSCompliant(true)]
+[assembly: CLSCompliant(false)]
 [assembly: AssemblyMetadata("", "")]
 [assembly: AssemblyVersion("3.9.0.0")]
 
