@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))/dir.props" />
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.1</TargetFrameworks>
+    <NuspecFile>$(ArtifactsBinDir)microsoft.codeanalysis.workspaces.common/3.9.0/microsoft.codeanalysis.workspaces.common.nuspec</NuspecFile>
+    <StrongNameKeyId>MicrosoftShared</StrongNameKeyId>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputPath>$(ArtifactsBinDir)microsoft.codeanalysis.workspaces.common/3.9.0/ref/</OutputPath>
+    <IntermediateOutputPath>$(ArtifactsObjDir)microsoft.codeanalysis.workspaces.common/3.9.0</IntermediateOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <OutputPath>$(ArtifactsBinDir)microsoft.codeanalysis.workspaces.common/3.9.0/lib/</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+    <OutputPath>$(ArtifactsBinDir)microsoft.codeanalysis.workspaces.common/3.9.0/lib/</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="**/ref/$(TargetFramework)/*.cs" />
+    <Compile Include="**/lib/$(TargetFramework)/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="[3.9.0, 3.9.0]" />
+    <PackageReference Include="Humanizer.Core" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="5.0.0" />
+    <PackageReference Include="System.Composition" Version="1.0.31" />
+    <PackageReference Include="System.IO.Pipelines" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="[3.9.0, 3.9.0]" />
+    <PackageReference Include="Humanizer.Core" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="5.0.0" />
+    <PackageReference Include="System.Composition" Version="1.0.31" />
+    <PackageReference Include="System.IO.Pipelines" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>
