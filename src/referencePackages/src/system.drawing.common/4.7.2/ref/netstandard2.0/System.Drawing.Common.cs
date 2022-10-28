@@ -20,11 +20,11 @@ using System.Security;
 [assembly: AssemblyCompany("Microsoft Corporation")]
 [assembly: AssemblyProduct("Microsoft® .NET Framework")]
 [assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: AssemblyFileVersion("4.6.26919.02")]
-[assembly: AssemblyInformationalVersion("4.6.26919.02 built by: SOURCEBUILD")]
+[assembly: AssemblyFileVersion("4.6.29719.01")]
+[assembly: AssemblyInformationalVersion("4.6.29719.01 built by: SOURCEBUILD")]
 [assembly: CLSCompliant(true)]
 [assembly: AssemblyMetadata("", "")]
-[assembly: AssemblyVersion("4.0.0.1")]
+[assembly: AssemblyVersion("4.0.0.2")]
 
 
 
