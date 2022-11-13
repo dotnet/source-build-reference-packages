@@ -1254,7 +1254,7 @@
     </member>
     <member name="M:System.Net.Sockets.Socket.Close(System.Int32)">
       <summary>Closes the <see cref="T:System.Net.Sockets.Socket"></see> connection and releases all associated resources with a specified timeout to allow queued data to be sent.</summary>
-      <param name="timeout">Wait up to timeout seconds to send any remaining data, then close the socket.</param>
+      <param name="timeout">Wait up to timeout milliseconds to send any remaining data, then close the socket.</param>
     </member>
     <member name="M:System.Net.Sockets.Socket.Close">
       <summary>Closes the <see cref="T:System.Net.Sockets.Socket"></see> connection and releases all associated resources.</summary>
