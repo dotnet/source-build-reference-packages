@@ -11,6 +11,10 @@
     <IntermediateOutputPath>$(ArtifactsObjDir)system.data.sqlclient/4.8.5</IntermediateOutputPath>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.1' ">
+    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />
     <Compile Include="**/lib/$(TargetFramework)/*.cs" />
@@ -27,7 +31,8 @@
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.7.0" />
     <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
     <PackageReference Include="System.Net.NameResolution" Version="4.3.0" />
-    <PackageReference Include="System.Net.Security" Version="4.3.0" />
+    <!-- Manually updated version from 4.3.0 to address CVE-2017-0247 -->
+    <PackageReference Include="System.Net.Security" Version="4.3.1" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.7.0" />
     <PackageReference Include="System.Security.Principal" Version="4.3.0" />
     <PackageReference Include="System.Security.Principal.Windows" Version="4.7.0" />

@@ -864,7 +864,7 @@ namespace System.Data.SqlClient
         public override void Commit() { }
         protected override void Dispose(bool disposing) { }
         public override void Rollback() { }
-        public new void Rollback(string transactionName) { }
-        public new void Save(string savePointName) { }
+        public void Rollback(string transactionName) { }
+        public void Save(string savePointName) { }
     }
 }

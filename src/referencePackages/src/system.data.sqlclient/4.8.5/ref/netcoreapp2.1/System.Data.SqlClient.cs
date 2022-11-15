@@ -91,7 +91,7 @@ namespace Microsoft.SqlServer.Server
         public virtual string GetDataTypeName(int ordinal) { throw null; }
         public virtual System.DateTime GetDateTime(int ordinal) { throw null; }
         public virtual System.DateTimeOffset GetDateTimeOffset(int ordinal) { throw null; }
-        public virtual decimal GetDecimal(int ordinal) { throw null; }
+        public virtual System.Decimal GetDecimal(int ordinal) { throw null; }
         public virtual double GetDouble(int ordinal) { throw null; }
         public virtual System.Type GetFieldType(int ordinal) { throw null; }
         public virtual float GetFloat(int ordinal) { throw null; }
@@ -134,7 +134,7 @@ namespace Microsoft.SqlServer.Server
         public virtual void SetDateTime(int ordinal, System.DateTime value) { }
         public virtual void SetDateTimeOffset(int ordinal, System.DateTimeOffset value) { }
         public virtual void SetDBNull(int ordinal) { }
-        public virtual void SetDecimal(int ordinal, decimal value) { }
+        public virtual void SetDecimal(int ordinal, System.Decimal value) { }
         public virtual void SetDouble(int ordinal, double value) { }
         public virtual void SetFloat(int ordinal, float value) { }
         public virtual void SetGuid(int ordinal, System.Guid value) { }
@@ -243,7 +243,7 @@ namespace Microsoft.SqlServer.Server
         public System.Data.SqlTypes.SqlXml Adjust(System.Data.SqlTypes.SqlXml value) { throw null; }
         public System.DateTime Adjust(System.DateTime value) { throw null; }
         public System.DateTimeOffset Adjust(System.DateTimeOffset value) { throw null; }
-        public decimal Adjust(decimal value) { throw null; }
+        public System.Decimal Adjust(System.Decimal value) { throw null; }
         public double Adjust(double value) { throw null; }
         public System.Guid Adjust(System.Guid value) { throw null; }
         public short Adjust(short value) { throw null; }
@@ -643,7 +643,7 @@ namespace System.Data.SqlClient
         public override string GetDataTypeName(int i) { throw null; }
         public override System.DateTime GetDateTime(int i) { throw null; }
         public virtual System.DateTimeOffset GetDateTimeOffset(int i) { throw null; }
-        public override decimal GetDecimal(int i) { throw null; }
+        public override System.Decimal GetDecimal(int i) { throw null; }
         public override double GetDouble(int i) { throw null; }
         public override System.Collections.IEnumerator GetEnumerator() { throw null; }
         public override System.Type GetFieldType(int i) { throw null; }
@@ -906,8 +906,8 @@ namespace System.Data.SqlClient
         public override void Commit() { }
         protected override void Dispose(bool disposing) { }
         public override void Rollback() { }
-        public new void Rollback(string transactionName) { }
-        public new void Save(string savePointName) { }
+        public void Rollback(string transactionName) { }
+        public void Save(string savePointName) { }
     }
 }
 namespace System.Data.SqlTypes

@@ -45,7 +45,7 @@ namespace Microsoft.SqlServer.Server
         public virtual string GetDataTypeName(int ordinal) { throw null; }
         public virtual System.DateTime GetDateTime(int ordinal) { throw null; }
         public virtual System.DateTimeOffset GetDateTimeOffset(int ordinal) { throw null; }
-        public virtual decimal GetDecimal(int ordinal) { throw null; }
+        public virtual System.Decimal GetDecimal(int ordinal) { throw null; }
         public virtual double GetDouble(int ordinal) { throw null; }
         public virtual System.Type GetFieldType(int ordinal) { throw null; }
         public virtual float GetFloat(int ordinal) { throw null; }
@@ -88,7 +88,7 @@ namespace Microsoft.SqlServer.Server
         public virtual void SetDateTime(int ordinal, System.DateTime value) { }
         public virtual void SetDateTimeOffset(int ordinal, System.DateTimeOffset value) { }
         public virtual void SetDBNull(int ordinal) { }
-        public virtual void SetDecimal(int ordinal, decimal value) { }
+        public virtual void SetDecimal(int ordinal, System.Decimal value) { }
         public virtual void SetDouble(int ordinal, double value) { }
         public virtual void SetFloat(int ordinal, float value) { }
         public virtual void SetGuid(int ordinal, System.Guid value) { }
@@ -169,7 +169,7 @@ namespace Microsoft.SqlServer.Server
         public System.Data.SqlTypes.SqlXml Adjust(System.Data.SqlTypes.SqlXml value) { throw null; }
         public System.DateTime Adjust(System.DateTime value) { throw null; }
         public System.DateTimeOffset Adjust(System.DateTimeOffset value) { throw null; }
-        public decimal Adjust(decimal value) { throw null; }
+        public System.Decimal Adjust(System.Decimal value) { throw null; }
         public double Adjust(double value) { throw null; }
         public System.Guid Adjust(System.Guid value) { throw null; }
         public short Adjust(short value) { throw null; }
@@ -451,7 +451,7 @@ namespace System.Data.SqlClient
         public override string GetDataTypeName(int i) { throw null; }
         public override System.DateTime GetDateTime(int i) { throw null; }
         public virtual System.DateTimeOffset GetDateTimeOffset(int i) { throw null; }
-        public override decimal GetDecimal(int i) { throw null; }
+        public override System.Decimal GetDecimal(int i) { throw null; }
         public override double GetDouble(int i) { throw null; }
         public override System.Collections.IEnumerator GetEnumerator() { throw null; }
         public override System.Type GetFieldType(int i) { throw null; }
@@ -627,8 +627,8 @@ namespace System.Data.SqlClient
         public override void Commit() { }
         protected override void Dispose(bool disposing) { }
         public override void Rollback() { }
-        public new void Rollback(string transactionName) { }
-        public new void Save(string savePointName) { }
+        public void Rollback(string transactionName) { }
+        public void Save(string savePointName) { }
     }
 }
 namespace System.Data.SqlTypes
@@ -908,7 +908,7 @@ namespace System.Data.SqlTypes
         public static readonly System.Data.SqlTypes.SqlDecimal Null;
         public SqlDecimal(byte bPrecision, byte bScale, bool fPositive, int data1, int data2, int data3, int data4) { throw null; }
         public SqlDecimal(byte bPrecision, byte bScale, bool fPositive, int[] bits) { throw null; }
-        public SqlDecimal(decimal value) { throw null; }
+        public SqlDecimal(System.Decimal value) { throw null; }
         public SqlDecimal(double dVal) { throw null; }
         public SqlDecimal(int value) { throw null; }
         public SqlDecimal(long value) { throw null; }
@@ -918,7 +918,7 @@ namespace System.Data.SqlTypes
         public bool IsPositive { get { throw null; } }
         public byte Precision { get { throw null; } }
         public byte Scale { get { throw null; } }
-        public decimal Value { get { throw null; } }
+        public System.Decimal Value { get { throw null; } }
         public static System.Data.SqlTypes.SqlDecimal Abs(System.Data.SqlTypes.SqlDecimal n) { throw null; }
         public static System.Data.SqlTypes.SqlDecimal Add(System.Data.SqlTypes.SqlDecimal x, System.Data.SqlTypes.SqlDecimal y) { throw null; }
         public static System.Data.SqlTypes.SqlDecimal AdjustScale(System.Data.SqlTypes.SqlDecimal n, int digits, bool fRound) { throw null; }
@@ -941,7 +941,7 @@ namespace System.Data.SqlTypes
         public static System.Data.SqlTypes.SqlDecimal operator /(System.Data.SqlTypes.SqlDecimal x, System.Data.SqlTypes.SqlDecimal y) { throw null; }
         public static System.Data.SqlTypes.SqlBoolean operator ==(System.Data.SqlTypes.SqlDecimal x, System.Data.SqlTypes.SqlDecimal y) { throw null; }
         public static explicit operator System.Data.SqlTypes.SqlDecimal (System.Data.SqlTypes.SqlBoolean x) { throw null; }
-        public static explicit operator decimal (System.Data.SqlTypes.SqlDecimal x) { throw null; }
+        public static explicit operator System.Decimal (System.Data.SqlTypes.SqlDecimal x) { throw null; }
         public static explicit operator System.Data.SqlTypes.SqlDecimal (System.Data.SqlTypes.SqlDouble x) { throw null; }
         public static explicit operator System.Data.SqlTypes.SqlDecimal (System.Data.SqlTypes.SqlSingle x) { throw null; }
         public static explicit operator System.Data.SqlTypes.SqlDecimal (System.Data.SqlTypes.SqlString x) { throw null; }
@@ -953,7 +953,7 @@ namespace System.Data.SqlTypes
         public static implicit operator System.Data.SqlTypes.SqlDecimal (System.Data.SqlTypes.SqlInt32 x) { throw null; }
         public static implicit operator System.Data.SqlTypes.SqlDecimal (System.Data.SqlTypes.SqlInt64 x) { throw null; }
         public static implicit operator System.Data.SqlTypes.SqlDecimal (System.Data.SqlTypes.SqlMoney x) { throw null; }
-        public static implicit operator System.Data.SqlTypes.SqlDecimal (decimal x) { throw null; }
+        public static implicit operator System.Data.SqlTypes.SqlDecimal (System.Decimal x) { throw null; }
         public static implicit operator System.Data.SqlTypes.SqlDecimal (long x) { throw null; }
         public static System.Data.SqlTypes.SqlBoolean operator !=(System.Data.SqlTypes.SqlDecimal x, System.Data.SqlTypes.SqlDecimal y) { throw null; }
         public static System.Data.SqlTypes.SqlBoolean operator <(System.Data.SqlTypes.SqlDecimal x, System.Data.SqlTypes.SqlDecimal y) { throw null; }
@@ -1281,12 +1281,12 @@ namespace System.Data.SqlTypes
         public static readonly System.Data.SqlTypes.SqlMoney MinValue;
         public static readonly System.Data.SqlTypes.SqlMoney Null;
         public static readonly System.Data.SqlTypes.SqlMoney Zero;
-        public SqlMoney(decimal value) { throw null; }
+        public SqlMoney(System.Decimal value) { throw null; }
         public SqlMoney(double value) { throw null; }
         public SqlMoney(int value) { throw null; }
         public SqlMoney(long value) { throw null; }
         public bool IsNull { get { throw null; } }
-        public decimal Value { get { throw null; } }
+        public System.Decimal Value { get { throw null; } }
         public static System.Data.SqlTypes.SqlMoney Add(System.Data.SqlTypes.SqlMoney x, System.Data.SqlTypes.SqlMoney y) { throw null; }
         public int CompareTo(System.Data.SqlTypes.SqlMoney value) { throw null; }
         public int CompareTo(object value) { throw null; }
@@ -1306,7 +1306,7 @@ namespace System.Data.SqlTypes
         public static explicit operator System.Data.SqlTypes.SqlMoney (System.Data.SqlTypes.SqlBoolean x) { throw null; }
         public static explicit operator System.Data.SqlTypes.SqlMoney (System.Data.SqlTypes.SqlDecimal x) { throw null; }
         public static explicit operator System.Data.SqlTypes.SqlMoney (System.Data.SqlTypes.SqlDouble x) { throw null; }
-        public static explicit operator decimal (System.Data.SqlTypes.SqlMoney x) { throw null; }
+        public static explicit operator System.Decimal (System.Data.SqlTypes.SqlMoney x) { throw null; }
         public static explicit operator System.Data.SqlTypes.SqlMoney (System.Data.SqlTypes.SqlSingle x) { throw null; }
         public static explicit operator System.Data.SqlTypes.SqlMoney (System.Data.SqlTypes.SqlString x) { throw null; }
         public static explicit operator System.Data.SqlTypes.SqlMoney (double x) { throw null; }
@@ -1316,7 +1316,7 @@ namespace System.Data.SqlTypes
         public static implicit operator System.Data.SqlTypes.SqlMoney (System.Data.SqlTypes.SqlInt16 x) { throw null; }
         public static implicit operator System.Data.SqlTypes.SqlMoney (System.Data.SqlTypes.SqlInt32 x) { throw null; }
         public static implicit operator System.Data.SqlTypes.SqlMoney (System.Data.SqlTypes.SqlInt64 x) { throw null; }
-        public static implicit operator System.Data.SqlTypes.SqlMoney (decimal x) { throw null; }
+        public static implicit operator System.Data.SqlTypes.SqlMoney (System.Decimal x) { throw null; }
         public static implicit operator System.Data.SqlTypes.SqlMoney (long x) { throw null; }
         public static System.Data.SqlTypes.SqlBoolean operator !=(System.Data.SqlTypes.SqlMoney x, System.Data.SqlTypes.SqlMoney y) { throw null; }
         public static System.Data.SqlTypes.SqlBoolean operator <(System.Data.SqlTypes.SqlMoney x, System.Data.SqlTypes.SqlMoney y) { throw null; }
@@ -1326,7 +1326,7 @@ namespace System.Data.SqlTypes
         public static System.Data.SqlTypes.SqlMoney operator -(System.Data.SqlTypes.SqlMoney x) { throw null; }
         public static System.Data.SqlTypes.SqlMoney Parse(string s) { throw null; }
         public static System.Data.SqlTypes.SqlMoney Subtract(System.Data.SqlTypes.SqlMoney x, System.Data.SqlTypes.SqlMoney y) { throw null; }
-        public decimal ToDecimal() { throw null; }
+        public System.Decimal ToDecimal() { throw null; }
         public double ToDouble() { throw null; }
         public int ToInt32() { throw null; }
         public long ToInt64() { throw null; }
