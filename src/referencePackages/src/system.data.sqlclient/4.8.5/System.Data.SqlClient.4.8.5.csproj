@@ -3,16 +3,12 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard1.2;netstandard1.3;netstandard2.0;netcoreapp2.1;net451;net46;net461</TargetFrameworks>
-    <NuspecFile>$(ArtifactsBinDir)system.data.sqlclient/4.8.3/system.data.sqlclient.nuspec</NuspecFile>
+    <NuspecFile>$(ArtifactsBinDir)system.data.sqlclient/4.8.5/system.data.sqlclient.nuspec</NuspecFile>
   </PropertyGroup>
 
   <PropertyGroup>
-    <OutputPath>$(ArtifactsBinDir)system.data.sqlclient/4.8.3/ref/</OutputPath>
-    <IntermediateOutputPath>$(ArtifactsObjDir)system.data.sqlclient/4.8.3</IntermediateOutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.1' ">
-    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
+    <OutputPath>$(ArtifactsBinDir)system.data.sqlclient/4.8.5/ref/</OutputPath>
+    <IntermediateOutputPath>$(ArtifactsObjDir)system.data.sqlclient/4.8.5</IntermediateOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,8 +27,7 @@
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.7.0" />
     <PackageReference Include="System.IO.Pipes" Version="4.3.0" />
     <PackageReference Include="System.Net.NameResolution" Version="4.3.0" />
-    <!-- Manually updated version from 4.3.0 to address CVE-2017-0247 -->
-    <PackageReference Include="System.Net.Security" Version="4.3.1" />
+    <PackageReference Include="System.Net.Security" Version="4.3.0" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.7.0" />
     <PackageReference Include="System.Security.Principal" Version="4.3.0" />
     <PackageReference Include="System.Security.Principal.Windows" Version="4.7.0" />

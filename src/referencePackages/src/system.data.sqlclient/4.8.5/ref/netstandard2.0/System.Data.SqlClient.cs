@@ -22,11 +22,11 @@ using System.Security;
 [assembly: AssemblyCompany("Microsoft Corporation")]
 [assembly: AssemblyProduct("Microsoft® .NET Framework")]
 [assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: AssemblyFileVersion("4.700.21.41603")]
-[assembly: AssemblyInformationalVersion("4.700.21.41603 built by: SOURCEBUILD")]
+[assembly: AssemblyFileVersion("4.700.22.51706")]
+[assembly: AssemblyInformationalVersion("4.700.22.51706 built by: SOURCEBUILD")]
 [assembly: CLSCompliant(true)]
 [assembly: AssemblyMetadata("", "")]
-[assembly: AssemblyVersion("4.6.1.3")]
+[assembly: AssemblyVersion("4.6.1.5")]
 
 
 
@@ -864,7 +864,7 @@ namespace System.Data.SqlClient
         public override void Commit() { }
         protected override void Dispose(bool disposing) { }
         public override void Rollback() { }
-        public void Rollback(string transactionName) { }
-        public void Save(string savePointName) { }
+        public new void Rollback(string transactionName) { }
+        public new void Save(string savePointName) { }
     }
 }
