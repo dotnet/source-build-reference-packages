@@ -12,7 +12,6 @@ scriptroot="$( cd -P "$( dirname "$source" )" && pwd )"
 RED='\033[0;31m'
 NC='\033[0m'
 
-backend="cci"
 
 usage() {
     echo "usage: $0 [options]"
@@ -37,10 +36,11 @@ usage() {
     echo "  --dest <pathToDestRepo>            A path to the root of the repo to copy source into."
     echo "  --type <packageType>               Type of the package to generate. Accepted values: ref (default) | text."
     echo "  --feeds <nugetFeeds>               A semicolon-separated list of additional NuGet feeds to use during restore."
-    echo "  --genapi-backend                   The GenAPI backend used to generate reference assemblies [cci|roslyn]. Default is '$backend'."
+    echo "  --genapi-backend                   The GenAPI backend used to generate reference assemblies. Accepted values: cci (default) | roslyn."
     echo ""
 }
 
+backend="cci"
 packageVersion=
 defaultPathToCSV="$scriptroot/artifacts/targetPackages.csv"
 pathToCSV=
