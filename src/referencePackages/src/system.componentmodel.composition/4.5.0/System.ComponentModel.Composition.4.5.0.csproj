@@ -12,10 +12,6 @@
     <IntermediateOutputPath>$(ArtifactsObjDir)system.componentmodel.composition/4.5.0</IntermediateOutputPath>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
-    <OutputPath>$(ArtifactsBinDir)system.componentmodel.composition/4.5.0/lib/</OutputPath>
-  </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />
     <Compile Include="**/lib/$(TargetFramework)/*.cs" />
@@ -23,10 +19,6 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
-    <PackageReference Include="System.Security.Permissions" Version="4.5.0" />
   </ItemGroup>
 
 </Project>
