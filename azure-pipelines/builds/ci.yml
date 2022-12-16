@@ -11,6 +11,10 @@ pr:
     - main
     - release/*
 
+variables:
+  - name: Codeql.Enabled
+    value: true
+
 stages:
 - stage: build
   displayName: Build
@@ -36,6 +40,3 @@ stages:
       enableSigningValidation: false
       enableNugetValidation: false
 
-variables:
-  - name: Codeql.Enabled
-    value: true
