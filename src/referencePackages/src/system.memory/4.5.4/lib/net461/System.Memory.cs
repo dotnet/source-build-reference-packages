@@ -252,7 +252,7 @@ namespace System.Buffers
     public static partial class BuffersExtensions
     {
         public static void CopyTo<T>(this in System.Buffers.ReadOnlySequence<T> source, System.Span<T> destination) { }
-        public static System.Nullable<System.SequencePosition> PositionOf<T>(this in System.Buffers.ReadOnlySequence<T> source, T value) where T : System.IEquatable<T> { throw null; }
+        public static System.SequencePosition? PositionOf<T>(this in System.Buffers.ReadOnlySequence<T> source, T value) where T : System.IEquatable<T> { throw null; }
         public static T[] ToArray<T>(this in System.Buffers.ReadOnlySequence<T> sequence) { throw null; }
         public static void Write<T>(this System.Buffers.IBufferWriter<T> writer, System.ReadOnlySpan<T> value) { }
     }
@@ -305,10 +305,10 @@ namespace System.Buffers
     }
     public enum OperationStatus
     {
-        DestinationTooSmall = 1,
         Done = 0,
-        InvalidData = 3,
+        DestinationTooSmall = 1,
         NeedMoreData = 2,
+        InvalidData = 3,
     }
     public abstract partial class ReadOnlySequenceSegment<T>
     {
@@ -320,6 +320,7 @@ namespace System.Buffers
     public readonly partial struct ReadOnlySequence<T>
     {
         private readonly object _dummy;
+        private readonly int _dummyPrimitive;
         public static readonly System.Buffers.ReadOnlySequence<T> Empty;
         public ReadOnlySequence(System.Buffers.ReadOnlySequenceSegment<T> startSegment, int startIndex, System.Buffers.ReadOnlySequenceSegment<T> endSegment, int endIndex) { throw null; }
         public ReadOnlySequence(System.ReadOnlyMemory<T> memory) { throw null; }
@@ -348,6 +349,7 @@ namespace System.Buffers
         public partial struct Enumerator
         {
             private object _dummy;
+            private int _dummyPrimitive;
             public Enumerator(in System.Buffers.ReadOnlySequence<T> sequence) { throw null; }
             public System.ReadOnlyMemory<T> Current { get { throw null; } }
             public bool MoveNext() { throw null; }
@@ -481,7 +483,7 @@ namespace System.Buffers.Text
         public static bool TryFormat(byte value, System.Span<byte> destination, out int bytesWritten, System.Buffers.StandardFormat format = default(System.Buffers.StandardFormat)) { throw null; }
         public static bool TryFormat(System.DateTime value, System.Span<byte> destination, out int bytesWritten, System.Buffers.StandardFormat format = default(System.Buffers.StandardFormat)) { throw null; }
         public static bool TryFormat(System.DateTimeOffset value, System.Span<byte> destination, out int bytesWritten, System.Buffers.StandardFormat format = default(System.Buffers.StandardFormat)) { throw null; }
-        public static bool TryFormat(decimal value, System.Span<byte> destination, out int bytesWritten, System.Buffers.StandardFormat format = default(System.Buffers.StandardFormat)) { throw null; }
+        public static bool TryFormat(System.Decimal value, System.Span<byte> destination, out int bytesWritten, System.Buffers.StandardFormat format = default(System.Buffers.StandardFormat)) { throw null; }
         public static bool TryFormat(double value, System.Span<byte> destination, out int bytesWritten, System.Buffers.StandardFormat format = default(System.Buffers.StandardFormat)) { throw null; }
         public static bool TryFormat(System.Guid value, System.Span<byte> destination, out int bytesWritten, System.Buffers.StandardFormat format = default(System.Buffers.StandardFormat)) { throw null; }
         public static bool TryFormat(short value, System.Span<byte> destination, out int bytesWritten, System.Buffers.StandardFormat format = default(System.Buffers.StandardFormat)) { throw null; }
@@ -504,7 +506,7 @@ namespace System.Buffers.Text
         public static bool TryParse(System.ReadOnlySpan<byte> source, out byte value, out int bytesConsumed, char standardFormat = '\0') { throw null; }
         public static bool TryParse(System.ReadOnlySpan<byte> source, out System.DateTime value, out int bytesConsumed, char standardFormat = '\0') { throw null; }
         public static bool TryParse(System.ReadOnlySpan<byte> source, out System.DateTimeOffset value, out int bytesConsumed, char standardFormat = '\0') { throw null; }
-        public static bool TryParse(System.ReadOnlySpan<byte> source, out decimal value, out int bytesConsumed, char standardFormat = '\0') { throw null; }
+        public static bool TryParse(System.ReadOnlySpan<byte> source, out System.Decimal value, out int bytesConsumed, char standardFormat = '\0') { throw null; }
         public static bool TryParse(System.ReadOnlySpan<byte> source, out double value, out int bytesConsumed, char standardFormat = '\0') { throw null; }
         public static bool TryParse(System.ReadOnlySpan<byte> source, out System.Guid value, out int bytesConsumed, char standardFormat = '\0') { throw null; }
         public static bool TryParse(System.ReadOnlySpan<byte> source, out short value, out int bytesConsumed, char standardFormat = '\0') { throw null; }

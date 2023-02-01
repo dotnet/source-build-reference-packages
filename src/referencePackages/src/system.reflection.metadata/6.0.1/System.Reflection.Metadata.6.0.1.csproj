@@ -2,25 +2,21 @@
   <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))/dir.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netcoreapp3.1;net461</TargetFrameworks>
-    <NuspecFile>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.nuspec</NuspecFile>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <NuspecFile>$(ArtifactsBinDir)system.reflection.metadata/6.0.1/system.reflection.metadata.nuspec</NuspecFile>
   </PropertyGroup>
 
   <PropertyGroup>
-    <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/ref/</OutputPath>
-    <IntermediateOutputPath>$(ArtifactsObjDir)system.runtime.compilerservices.unsafe/6.0.0</IntermediateOutputPath>
+    <OutputPath>$(ArtifactsBinDir)system.reflection.metadata/6.0.1/ref/</OutputPath>
+    <IntermediateOutputPath>$(ArtifactsObjDir)system.reflection.metadata/6.0.1</IntermediateOutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/lib/</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
-    <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/lib/</OutputPath>
+    <OutputPath>$(ArtifactsBinDir)system.reflection.metadata/6.0.1/lib/</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net461' ">
-    <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/lib/</OutputPath>
+    <OutputPath>$(ArtifactsBinDir)system.reflection.metadata/6.0.1/lib/</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,9 +26,11 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
     <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />
+    <PackageReference Include="System.Collections.Immutable" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+    <PackageReference Include="System.Collections.Immutable" Version="6.0.0" />
     <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net461" Version="1.0.2" />
   </ItemGroup>
 

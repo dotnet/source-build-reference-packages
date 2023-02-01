@@ -6,6 +6,7 @@
     <authors>Microsoft</authors>
     <license type="expression">MIT</license>
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>Icon.png</icon>
     <projectUrl>https://dot.net/</projectUrl>
     <description>Provides the System.Runtime.CompilerServices.Unsafe class, which provides generic, low-level functionality for manipulating pointers.
 
@@ -17,6 +18,7 @@ System.Runtime.CompilerServices.Unsafe</description>
     <repository type="git" url="https://github.com/dotnet/runtime" commit="4822e3c3aa77eb82b2fb33c9321f923cf11ddde6" />
     <dependencies>
       <group targetFramework=".NETFramework4.6.1" />
+      <group targetFramework=".NETCoreApp3.1" />
       <group targetFramework="net6.0" />
       <group targetFramework=".NETStandard2.0" />
     </dependencies>
