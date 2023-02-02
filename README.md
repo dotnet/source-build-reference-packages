@@ -12,7 +12,7 @@ targeting a specific library version without having the full implementation asse
 1. Targeting - A bundle of reference packages that target a specific .NET TFM.
 1. Text only - Packages that contain text-only assets.
 
-This repo and it's reference packages are oftened referred to as SBRPs. You will see acronym used from time
+This repo and it's reference packages are oftened referred to as SBRPs. This acronym is used from time
 to time in issues and some documentation.
 
 ## Supported Platforms
@@ -29,8 +29,8 @@ to time in issues and some documentation.
 
 New packages are needed from time to time as
 [existing dependency versions are upgraded](https://github.com/dotnet/source-build/blob/main/Documentation/sourcebuild-in-repos/update-dependencies.md)
-and [new dependencies are added](https://github.com/dotnet/source-build/blob/main/Documentation/sourcebuild-in-repos/new-dependencies.md).
-The [generate script](https://github.com/dotnet/source-build-reference-packages/blob/main/generate.sh) supports
+and [new dependencies are added](https://github.com/dotnet/source-build/blob/main/Documentation/sourcebuild-in-repos/new-dependencies.md)
+to .NET. The [generate script](https://github.com/dotnet/source-build-reference-packages/blob/main/generate.sh) supports
 generating new packages. Run `generate.sh -h` for usage details.
 
 When generating a package(s), the tooling will detect and generate all dependent packages.
