@@ -26,9 +26,9 @@
       <Uri>https://github.com/dotnet/sdk</Uri>
       <Sha>838eecc0bfa6729f3b9bab61f0901afc9ceba917</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.SourceLink.GitHub" Version="1.2.0-beta-23105-01" CoherentParentDependency="Microsoft.DotNet.Arcade.Sdk">
+    <Dependency Name="Microsoft.SourceLink.GitHub" Version="1.2.0-beta-23108-02" CoherentParentDependency="Microsoft.DotNet.Arcade.Sdk">
       <Uri>https://github.com/dotnet/sourcelink</Uri>
-      <Sha>763c618bbc4cc6481d37d122dc0dd3c2cafbcd49</Sha>
+      <Sha>c04d69885e3b294e712f9101a11918a8a4a8d8cf</Sha>
       <SourceBuild RepoName="sourcelink" ManagedOnly="true" />
     </Dependency>
     <Dependency Name="Microsoft.NETCore.ILAsm" Version="5.0.0-preview.4.20202.18">
