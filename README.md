@@ -57,6 +57,23 @@ The tooling has evolved over time and therefore when generating new packages, yo
 This is because the new package has a dependency on an existing package, it was regenerated and changes were detected from
 when it was originally generated.
 
+#### Backends
+The tooling support two backends for generating reference assemblies: [the Cci-based GenAPI](https://github.com/dotnet/arcade/tree/main/src/Microsoft.DotNet.GenAPI) and [the Roslyn-based GenAPI](https://github.com/dotnet/sdk/tree/main/src/GenAPI). The default one is Roslyn-based. You can switch between backends using the `--genapi-backend` parameter that supports `cci` and `roslyn` values.
+
+```bash
+./generate.sh --pkg system.buffers,4.5.1 --genapi-backend roslyn --dest <destination path>
+```
+
+The cci-based GenAPI has lack of support as Common Compiler Infrastructure (cci) is deprecated. On the other hand, the Roslyn-based GenAPI is built on top of `Microsoft.CodeAnalysis.Workspaces` and has better support for the latest language features. The cci-based GenAPI will be part of the SBRP generator as a fallback solution.
+
+#### Best practices
+Currently, the tooling cannot generate 100% compilable reference assemblies, and manual modification of the generated source code is required. The best approach is to:
+* Generate reference package and its depencencies running the `./generate.sh --pkg <package>,<version>` script.
+* Build each generated reference package running the `./build.sh --projects <path to .csproj file>` command.
+* Solve the compilation issues for a each TFM one by one (comment other in the .csproj file).
+
+You can search for a known issues for the Roslyn-based backend in the [dotnet/sdk](https://github.com/dotnet/sdk/issues/30082) repository.
+
 ### Targeting
 
 Generating new targeting packages is not supported. No new targeting packs should be needed/added. If you feel a new
