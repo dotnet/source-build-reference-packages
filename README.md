@@ -69,7 +69,7 @@ The cci-based GenAPI has lack of support as Common Compiler Infrastructure (cci)
 #### Best practices
 Currently, the tooling cannot generate 100% compilable reference assemblies, and manual modification of the generated source code is required. The best approach is to:
 * Generate reference package and its depencencies running the `./generate.sh --pkg <package>,<version>` script.
-* ...reset...
+* Revert changes for packages that were already merged in the repository.
 * Run build with the `./build.sh -sb` command.
 * If the compilation produces numerous compilation issue - run the `./build.sh --projects <path to .csproj file>` command for each generated reference package separately.
 
