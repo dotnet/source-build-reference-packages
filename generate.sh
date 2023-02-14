@@ -27,9 +27,10 @@ usage() {
     echo "  Either --pkg or --pkgCsv must be specified"
     echo ""
     echo "options:"
-    echo "  --pkg <packageName,version[,tfm]>  A package and version, no spaces, separated by comma.  If optional semicolon-separated"
+    echo "  --pkg <packageName,version[,tfms]>  A package and version, no spaces, separated by comma.  If optional semicolon-separated"
     echo "                                       TFMs are specified, they will be used in the project that restores the package."
-    echo "                                       Example: System.Text.Json,4.7.0,nestandard2.0;net461"
+    echo "                                       Examples: System.Collections,4.3.0"
+    echo "                                                 System.Text.Json,4.7.0,nestandard2.0;net461"
     echo "  --pkgCsv <pathToCSV>               A path to a csv file of packages to generate. Format is the same as the --pkg"
     echo "                                       option above, one per line.  If specified, the --pkg option is ignored."
     echo "  --dest <pathToDestRepo>            A path to the root of the repo to copy source into."
@@ -139,7 +140,7 @@ INPUT="$pathToCSV"
 OLDIFS=$IFS
 IFS=,
 
-tfmAttr="TargetFramework"
+TfmPropertyName="TargetFramework"
 
 restoreProjectsDir="$scriptroot/artifacts/targetRestoreProjects"
 targetPackageTemplate="$scriptroot/src/referencePackageSourceGenerator/GenerateSource/targetPackage.csproj.template"
@@ -155,7 +156,7 @@ do
     
     if [ "$tfm" != "" ]; then
         if [[ "$tfm" == *";"* ]]; then
-            tfmAttr="TargetFrameworks"
+            TfmPropertyName="TargetFrameworks"
         fi
 
         sed -i "s/##Tfm##/${tfm}/g" "$restoreProjectsDir/$pkgName.$pkgVersion.csproj"
@@ -163,7 +164,7 @@ do
         sed -i "s/##Tfm##/${DEFAULT_TFM}/g" "$restoreProjectsDir/$pkgName.$pkgVersion.csproj"
     fi
 
-    sed -i "s/##TfmAttr##/${tfmAttr}/g" "$restoreProjectsDir/$pkgName.$pkgVersion.csproj"
+    sed -i "s/##TfmPropertyName##/${TfmPropertyName}/g" "$restoreProjectsDir/$pkgName.$pkgVersion.csproj"
 done < "$INPUT"
 IFS=$OLDIFS
 
