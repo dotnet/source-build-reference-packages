@@ -45,7 +45,7 @@ public readonly partial struct IncrementalValueProvider<TValue>
 ```
 Workaround: remove the synthesized field.
 
-## Class without implicit constructor defined
+## Class without defined implicit constructor
 Tracking PR: https://github.com/dotnet/sdk/pull/30594
 
 Example
