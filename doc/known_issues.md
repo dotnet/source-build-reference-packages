@@ -1,11 +1,11 @@
 # Known issues
 
-## Unable to resolve assembly reference
+## SBRP generator error. Unable to resolve assembly reference
 Tracking issue: https://github.com/dotnet/source-build/issues/3237
 ```
 Microsoft.DotNet.GenAPI.Task.targets(44,5): error CP1002: AssemblyLoadWarning: 'Could not resolve reference 'System.Security.Permissions.dll' in any of the provided search directories.'
 ```
-Workaround: n/a. Try to compile reference packages and solve compilation errors.
+Workaround: Try to compile reference packages and solve compilation errors.
 
 ## Unsupported `netcoreapp3.1` TFM
 Reference packages for TFM `netcoreapp3.1` is not supported. You may get numerous compilation issues like:
@@ -76,4 +76,4 @@ Tracking issue: https://github.com/dotnet/source-build/issues/3237
 error CS0539: 'ImmutableArray<T>.Item' in explicit interface declaration is not found among members of the interface that can be implemented
 error CS0683: 'ImmutableDictionary<TKey, TValue>.get_Item(TKey)' explicit method implementation cannot implement 'IDictionary<TKey, TValue>.this[TKey].get' because it is an accessor
 ```
-Workaround: the issue mus be fixed after https://github.com/dotnet/source-build/issues/3237 and is related to incorrect assembly references passed during reference resolution. You must manually add indexer, add explicit interface declaration methods and remove wrong one.
+Workaround: manually add indexer, explicit interface declaration methods and remove wrong one as suggest by the compiler.
