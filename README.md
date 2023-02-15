@@ -57,24 +57,20 @@ The tooling has evolved over time and therefore when generating new packages, yo
 This is because the new package has a dependency on an existing package, it was regenerated and changes were detected from
 when it was originally generated.
 
+#### Workflow
+* Generate reference package and its depencencies running the `./generate.sh --pkg <package>,<version>` script.
+* Revert changes for packages that were already existed in the repository.
+* Run build with the `./build.sh -sb` command.
+* If the compilation produces numerous compilation issue - run the `./build.sh --projects <path to .csproj file>` command for each generated reference package separately.
+
+You can search for known issues in the `doc/known_issues.md`.
+
 #### Backends
 The tooling support two backends for generating reference assemblies: [the Cci-based GenAPI](https://github.com/dotnet/arcade/tree/main/src/Microsoft.DotNet.GenAPI) and [the Roslyn-based GenAPI](https://github.com/dotnet/sdk/tree/main/src/GenAPI). The default one is Roslyn-based. You can switch between backends using the `--genapi-backend` parameter that supports `cci` and `roslyn` values.
 
 ```bash
-./generate.sh --pkg system.buffers,4.5.1 --genapi-backend roslyn --dest <destination path>
+./generate.sh --pkg system.buffers,4.5.1 --genapi-backend cci
 ```
-
-The cci-based GenAPI has lack of support as Common Compiler Infrastructure (cci) is deprecated. On the other hand, the Roslyn-based GenAPI is built on top of `Microsoft.CodeAnalysis.Workspaces` and has better support for the latest language features. The cci-based GenAPI will be part of the SBRP generator as a fallback solution.
-
-#### Best practices
-Currently, the tooling cannot generate 100% compilable reference assemblies, and manual modification of the generated source code is required. The best approach is to:
-* Generate reference package and its depencencies running the `./generate.sh --pkg <package>,<version>` script.
-* Revert changes for packages that were already merged in the repository.
-* Run build with the `./build.sh -sb` command.
-* If the compilation produces numerous compilation issue - run the `./build.sh --projects <path to .csproj file>` command for each generated reference package separately.
-
-You can search for a known issues for the Roslyn-based backend in the [dotnet/sdk](https://github.com/dotnet/sdk/issues/30082) repository.
-
 ### Targeting
 
 Generating new targeting packages is not supported. No new targeting packs should be needed/added. If you feel a new
