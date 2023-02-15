@@ -5,10 +5,10 @@ Tracking issue: https://github.com/dotnet/source-build/issues/3237
 ```
 Microsoft.DotNet.GenAPI.Task.targets(44,5): error CP1002: AssemblyLoadWarning: 'Could not resolve reference 'System.Security.Permissions.dll' in any of the provided search directories.'
 ```
-Workaround: n/a. Affects the quality of generated reference assemblies
+Workaround: n/a. Try to compile reference packages and solve compilation errors.
 
 ## Unsupported `netcoreapp3.1` TFM
-Reference packages for TFM `netcoreapp3.1` is not supported. You may get numerous compilation issue like:
+Reference packages for TFM `netcoreapp3.1` is not supported. You may get numerous compilation issues like:
 ```
 */lib/netcoreapp3.1/*: error CS0246: The type or namespace name 'DebuggableAttribute' could not be found
 */lib/netcoreapp3.1/*: error CS0518: Predefined type 'System.String' is not defined or imported
@@ -19,7 +19,7 @@ Workaround: update the `*.csproj` file:
 * remove the `lib\netcoreapp3.1` folder
 
 ## CLSCompliant assembly attributes
-By default it set to true and it may produces compilation errors like:
+By default, it is set to true and it may produce compilation errors like:
 ```
 error CS3015: ... has no accessible constructors which use only CLS-compliant types
 error CS3016: Arrays as attribute arguments is not CLS-compliant
@@ -30,7 +30,7 @@ Workaround: update the assembly attribute `[assembly: CLSCompliant(true)]` and s
 ```
 error CS8138: Cannot reference 'System.Runtime.CompilerServices.TupleElementNamesAttribute' explicitly. Use the tuple syntax to define tuple names.
 ```
-Workaround: update the declaraion using tuple syntax to define tuple names. Or comment/remove this attribute.
+Workaround: update the declaration  using tuple syntax to define tuple names. Or comment/remove this attribute.
 
 ## Synthesized dummy generic field of filtered type
 Reported issue: https://github.com/dotnet/sdk/issues/30627
