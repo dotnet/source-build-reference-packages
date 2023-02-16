@@ -58,19 +58,22 @@ This is because the new package has a dependency on an existing package, it was 
 when it was originally generated.
 
 #### Workflow
+
 * Generate reference package and its depencencies running the `./generate.sh --pkg <package>,<version>` script.
 * Revert changes for packages that were already existed in the repository.
 * Run build with the `./build.sh -sb` command.
 * If the compilation produces numerous compilation issue - run the `./build.sh --projects <path to .csproj file>` command for each generated reference package separately.
 
-You can search for known issues in the `doc/known_issues.md`.
+You can search for known issues in the `docs/known_generator_issues.md`.
 
 #### Backends
+
 The tooling support two backends for generating reference assemblies: [the Cci-based GenAPI](https://github.com/dotnet/arcade/tree/main/src/Microsoft.DotNet.GenAPI) and [the Roslyn-based GenAPI](https://github.com/dotnet/sdk/tree/main/src/GenAPI). The default one is Roslyn-based. You can switch between backends using the `--genapi-backend` parameter that supports `cci` and `roslyn` values.
 
 ```bash
 ./generate.sh --pkg system.buffers,4.5.1 --genapi-backend cci
 ```
+
 ### Targeting
 
 Generating new targeting packages is not supported. No new targeting packs should be needed/added. If you feel a new
