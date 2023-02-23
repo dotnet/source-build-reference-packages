@@ -66,14 +66,6 @@ when it was originally generated.
 
 You can search for known issues in the `docs/known_generator_issues.md`.
 
-#### Backends
-
-The tooling support two backends for generating reference assemblies: [the Cci-based GenAPI](https://github.com/dotnet/arcade/tree/main/src/Microsoft.DotNet.GenAPI) and [the Roslyn-based GenAPI](https://github.com/dotnet/sdk/tree/main/src/GenAPI). The default one is Roslyn-based. You can switch between backends using the `--genapi-backend` parameter that supports `cci` and `roslyn` values.
-
-```bash
-./generate.sh --pkg system.buffers,4.5.1 --genapi-backend cci
-```
-
 ### Targeting
 
 Generating new targeting packages is not supported. No new targeting packs should be needed/added. If you feel a new

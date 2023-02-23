@@ -36,11 +36,11 @@ usage() {
     echo "  --dest <pathToDestRepo>            A path to the root of the repo to copy source into."
     echo "  --type <packageType>               Type of the package to generate. Accepted values: ref (default) | text."
     echo "  --feeds <nugetFeeds>               A semicolon-separated list of additional NuGet feeds to use during restore."
-    echo "  --genapi-backend                   The GenAPI backend used to generate reference assemblies. Accepted values: cci | roslyn (default)."
+    echo "  --genapi-backend                   The GenAPI backend used to generate reference assemblies. Accepted values: cci(default) | roslyn."
     echo ""
 }
 
-backend="roslyn"
+backend="cci"
 packageVersion=
 defaultPathToCSV="$scriptroot/artifacts/targetPackages.csv"
 pathToCSV=
