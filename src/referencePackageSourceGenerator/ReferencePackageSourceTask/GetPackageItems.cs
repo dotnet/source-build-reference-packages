@@ -70,6 +70,12 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         [Output]
         public ITaskItem[] FrameworkReferences { get; set; }
 
+        /// <summary>
+        /// The package id.
+        /// </summary>
+        [Output]
+        public string PackageId { get; set; }
+
         public override bool Execute()
         {
             Regex[] includeTargetFrameworks = TransformPatternsToRegexList(IncludeTargetFrameworks).ToArray();
@@ -112,6 +118,8 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             SetCompileItems(packageArchiveReader, isTargetFrameworkIncluded);
             SetPackageDependencies(packageArchiveReader, isTargetFrameworkIncluded);
             SetFrameworkReferences(packageArchiveReader, isTargetFrameworkIncluded);
+
+            PackageId = packageArchiveReader.GetIdentity().Id;
 
             return true;
         }
@@ -162,14 +170,16 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                     else
                     {
                         // Retrieve the strong name key information and add it to the compile item as metadata.
-                        string fullAssemblyPath = Path.Combine(Path.GetDirectoryName(PackagePath), compileItem.Path);
-                        if (TryGetStrongNameData(fullAssemblyPath, out StrongNameData strongNameData))
+                        string assemblyPath = Path.Combine(Path.GetDirectoryName(PackagePath), compileItem.Path);
+                        AssemblyName assemblyName = AssemblyName.GetAssemblyName(assemblyPath);
+                        if (TryGetStrongNameData(assemblyName, out StrongNameData strongNameData))
                         {
                             compileTaskItem.SetMetadata(SharedMetadata.StrongNameKeyMetadataName, strongNameData.Key);
                             compileTaskItem.SetMetadata(SharedMetadata.StrongNameIdMetadataName, strongNameData.Id);
                             compileTaskItem.SetMetadata(SharedMetadata.StrongNameFilenameMetadataName, strongNameData.Filename);
                         }
 
+                        compileTaskItem.SetMetadata(SharedMetadata.AssemblyNameMetadataName, assemblyName.Name);
                         compileTaskItems.Add(compileTaskItem);
                     }
                 }
@@ -246,10 +256,9 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         [GeneratedRegex(@"PublicKeyToken=([\w]*)")]
         private static partial Regex StrongNameKeyRegex();
 
-        private static bool TryGetStrongNameData(string assemblyPath, out StrongNameData strongNameData)
+        private static bool TryGetStrongNameData(AssemblyName assemblyName, out StrongNameData strongNameData)
         {
-            string fullName = AssemblyName.GetAssemblyName(assemblyPath).FullName;
-            Match match = StrongNameKeyRegex().Match(fullName);
+            Match match = StrongNameKeyRegex().Match(assemblyName.FullName);
             if (!match.Success)
             {
                 strongNameData = default;
@@ -263,7 +272,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 return true;
             }
 
-            throw new ArgumentException($"Found strong name key that doesn't map: Key={strongNameKey}, Assembly={assemblyPath}");
+            throw new ArgumentException($"Found strong name key that doesn't map: Key={strongNameKey}, Assembly={assemblyName.Name}");
         }
     }
 }

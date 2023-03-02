@@ -10,5 +10,6 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         public const string StrongNameFilenameMetadataName = "StrongNameFilename";
         public const string TargetFrameworkMetadataName = "TargetFramework";
         public const string VersionMetadataName = "Version";
+        public const string AssemblyNameMetadataName = "AssemblyName";
     }
 }
