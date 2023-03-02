@@ -33,9 +33,6 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         public string TargetPath { get; set; }
 
         [Required]
-        public int GeneratorVersion { get; set; }
-
-        [Required]
         public string ProjectTemplate { get; set; }
 
         public override bool Execute()
@@ -56,9 +53,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             foreach (string targetFramework in orderedTargetFrameworks)
             {
                 string packageReferences = "";
-                string netStandardTag = GeneratorVersion == 1 ?
-                    "NETStandardLibraryPackageVersion" :
-                    "NETStandardImplicitPackageVersion";
+                string netStandardTag = "NETStandardImplicitPackageVersion";
 
                 if (targetFramework == "netstandard2.0" && !includesNetStandard21 && !includesNetCoreApp30)
                 {
@@ -150,17 +145,10 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
 
             // If necessary, write the strong name key into the project file.
             string keyFileTag = "";
-            if (strongNameData != default)
+            // Don't generate StrongNameKeyId for MSFT key
+            if (strongNameData != default && strongNameData.Filename != "MSFT")
             {
-                if (GeneratorVersion == 1)
-                {
-                    keyFileTag = $"\n    <AssemblyOriginatorKeyFile>$(KeyFileDir){strongNameData.Filename}.snk</AssemblyOriginatorKeyFile>";
-                }
-                // Don't generate StrongNameKeyId for MSFT key for V2 Generator
-                else if (strongNameData.Filename != "MSFT")
-                {
-                    keyFileTag = $"\n    <StrongNameKeyId>{strongNameData.Id}</StrongNameKeyId>";
-                }
+                keyFileTag = $"\n    <StrongNameKeyId>{strongNameData.Id}</StrongNameKeyId>";
             }
 
             string enableImplicitReferencesTag = "";

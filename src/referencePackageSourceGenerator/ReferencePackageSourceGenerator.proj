@@ -5,7 +5,6 @@
     <ReferencePackageSourceTaskAssembly>$(ArtifactsBinDir)ReferencePackageSourceTask\$(Configuration)\$(NetCurrent)\ReferencePackageSourceTask.dll</ReferencePackageSourceTaskAssembly>
     <!-- The reference packages output directory. -->
     <PackagesTargetDirectory>$(RepoRoot)src\referencePackages\src\</PackagesTargetDirectory>
-    <GeneratorVersion>2</GeneratorVersion>
     <!-- The following target frameworks aren't buildable with the current SDK. -->
     <ExcludeTargetFrameworks>netcore50;net463;portable-%2A</ExcludeTargetFrameworks>
   </PropertyGroup>
@@ -152,7 +151,6 @@
                      FrameworkReferences="@(PackageFrameworkReference)"
                      BaseTargetPath="$(PackagesTargetDirectory)"
                      TargetPath="$(ReferencePackageProjectTargetPath)"
-                     GeneratorVersion="$(GeneratorVersion)"
                      ProjectTemplate="$(ReferencePackageProjectTemplate)" />
 
     <Message Text="$(MSBuildProjectName) -> $(ReferencePackageProjectTargetPath)"
@@ -199,8 +197,7 @@
 
   <!-- Generate Directory.Build.props supplemental build file. -->
   <Target Name="CreateDirectoryBuildPropsFile"
-          DependsOnTargets="GetPackageItems"
-          Condition="'$(GeneratorVersion)' == '2'">
+          DependsOnTargets="GetPackageItems">
     <PropertyGroup>
       <DirectoryBuildPropsTemplate>DirectoryBuildPropsTemplate.xml</DirectoryBuildPropsTemplate>
       <DirectoryBuildPropsTargetPath>$(BasePackageTargetDirectory)Directory.Build.props</DirectoryBuildPropsTargetPath>
