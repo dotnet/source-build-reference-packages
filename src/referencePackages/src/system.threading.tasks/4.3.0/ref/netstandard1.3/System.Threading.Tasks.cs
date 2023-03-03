@@ -224,7 +224,7 @@ namespace System.Threading.Tasks
         public object AsyncState { get { throw null; } }
         public static System.Threading.Tasks.Task CompletedTask { get { throw null; } }
         public System.Threading.Tasks.TaskCreationOptions CreationOptions { get { throw null; } }
-        public static int? CurrentId { get { throw null; } }
+        public static System.Nullable<int> CurrentId { get { throw null; } }
         public System.AggregateException Exception { get { throw null; } }
         public static System.Threading.Tasks.TaskFactory Factory { get { throw null; } }
         public int Id { get { throw null; } }
@@ -330,31 +330,31 @@ namespace System.Threading.Tasks
     [System.FlagsAttribute]
     public enum TaskContinuationOptions
     {
-        None = 0,
-        PreferFairness = 1,
-        LongRunning = 2,
         AttachedToParent = 4,
         DenyChildAttach = 8,
+        ExecuteSynchronously = 524288,
         HideScheduler = 16,
         LazyCancellation = 32,
-        RunContinuationsAsynchronously = 64,
-        NotOnRanToCompletion = 65536,
-        NotOnFaulted = 131072,
-        OnlyOnCanceled = 196608,
+        LongRunning = 2,
+        None = 0,
         NotOnCanceled = 262144,
+        NotOnFaulted = 131072,
+        NotOnRanToCompletion = 65536,
+        OnlyOnCanceled = 196608,
         OnlyOnFaulted = 327680,
         OnlyOnRanToCompletion = 393216,
-        ExecuteSynchronously = 524288,
+        PreferFairness = 1,
+        RunContinuationsAsynchronously = 64,
     }
     [System.FlagsAttribute]
     public enum TaskCreationOptions
     {
-        None = 0,
-        PreferFairness = 1,
-        LongRunning = 2,
         AttachedToParent = 4,
         DenyChildAttach = 8,
         HideScheduler = 16,
+        LongRunning = 2,
+        None = 0,
+        PreferFairness = 1,
         RunContinuationsAsynchronously = 64,
     }
     public static partial class TaskExtensions
@@ -515,14 +515,14 @@ namespace System.Threading.Tasks
     }
     public enum TaskStatus
     {
-        Created = 0,
-        WaitingForActivation = 1,
-        WaitingToRun = 2,
-        Running = 3,
-        WaitingForChildrenToComplete = 4,
-        RanToCompletion = 5,
         Canceled = 6,
+        Created = 0,
         Faulted = 7,
+        RanToCompletion = 5,
+        Running = 3,
+        WaitingForActivation = 1,
+        WaitingForChildrenToComplete = 4,
+        WaitingToRun = 2,
     }
     public partial class Task<TResult> : System.Threading.Tasks.Task
     {
