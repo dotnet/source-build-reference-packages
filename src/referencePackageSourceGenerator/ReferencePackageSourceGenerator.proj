@@ -5,8 +5,9 @@
     <ReferencePackageSourceTaskAssembly>$(ArtifactsBinDir)ReferencePackageSourceTask\$(Configuration)\$(NetCurrent)\ReferencePackageSourceTask.dll</ReferencePackageSourceTaskAssembly>
     <!-- The reference packages output directory. -->
     <PackagesTargetDirectory>$(RepoRoot)src\referencePackages\src\</PackagesTargetDirectory>
-    <!-- The following target frameworks aren't buildable with the current SDK. -->
-    <ExcludeTargetFrameworks>netcore50;net463;portable-%2A</ExcludeTargetFrameworks>
+    <!-- The following target frameworks aren't buildable with the current SDK and as they don't contribute to the set of
+         source build target verticals, can be safely excluded. -->
+    <ExcludeTargetFrameworks>netcore50;net463;portable-*;xamarin*;MonoTouch</ExcludeTargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(PackageName)' != '' and '$(PackageVersion)' != ''">
@@ -34,7 +35,7 @@
     <MSBuild Projects="$(MSBuildProjectFile)"
              Properties="PackageName=%(PackageInfo.PackageName);
                          PackageVersion=%(PackageInfo.PackageVersion);
-                         PackageTargetFrameworks=%(PackageVersion.PackageTargetFrameworks)"
+                         PackageTargetFrameworks=%(PackageInfo.PackageTargetFrameworks)"
              RemoveProperties="PackageCSV"
              BuildInParallel="false" />
   </Target>

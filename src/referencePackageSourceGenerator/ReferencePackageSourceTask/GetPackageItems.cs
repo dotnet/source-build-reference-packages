@@ -109,6 +109,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                             targetFramework);
                         excludedTargetFrameworkLogBag.Add(targetFramework);
                     }
+
                     return false;
                 }
 
@@ -118,7 +119,6 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             SetCompileItems(packageArchiveReader, isTargetFrameworkIncluded);
             SetPackageDependencies(packageArchiveReader, isTargetFrameworkIncluded);
             SetFrameworkReferences(packageArchiveReader, isTargetFrameworkIncluded);
-
             PackageId = packageArchiveReader.GetIdentity().Id;
 
             return true;
@@ -208,7 +208,8 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                         continue;
 
                     TaskItem packageDependencyTaskItem = new(packageDependency.Id);
-                    packageDependencyTaskItem.SetMetadata(SharedMetadata.VersionMetadataName, packageDependency.VersionRange.ToShortString());
+                    // Try to create a fixed version from the package dependency's version range.
+                    packageDependencyTaskItem.SetMetadata(SharedMetadata.VersionMetadataName, packageDependency.VersionRange.ToShortString().Trim('[', ']'));
                     packageDependencyTaskItem.SetMetadata(SharedMetadata.TargetFrameworkMetadataName, targetFramework);
                     packageDependencyTaskItems.Add(packageDependencyTaskItem);
                 }
@@ -248,9 +249,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             string[] patternsSplit = patterns.Split(TargetFrameworkDelimiter, StringSplitOptions.RemoveEmptyEntries);
 
             foreach (string pattern in patternsSplit)
-            {
                 yield return new Regex(pattern, RegexOptions.NonBacktracking | RegexOptions.Compiled);
-            }
         }
 
         [GeneratedRegex(@"PublicKeyToken=([\w]*)")]

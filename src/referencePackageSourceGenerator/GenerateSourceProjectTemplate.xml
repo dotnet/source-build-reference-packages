@@ -46,6 +46,8 @@
     <GenAPIHeaderFile>$(ReferencePackageSourceGeneratorDirectory)LicenseHeader.txt</GenAPIHeaderFile>
     <GenAPIIncludeAssemblyAttributes>true</GenAPIIncludeAssemblyAttributes>
     <GenAPIVerbosity>high</GenAPIVerbosity>
+    <!-- Detected package downgrades are intentional when generating a lower bound version of a package that exists in the dependency graph. -->
+    <NoWarn>$(NoWarn);NU1605</NoWarn>
   </PropertyGroup>
 
   <!-- GenAPI settings -->
