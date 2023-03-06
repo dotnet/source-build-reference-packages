@@ -2546,31 +2546,9 @@ namespace Microsoft.Build.Globbing.Extensions
 
 namespace Microsoft.Build.Graph
 {
-    public partial class GraphBuildOptions : System.IEquatable<GraphBuildOptions>
+    public record GraphBuildOptions
     {
-        public GraphBuildOptions() { }
-
-        protected GraphBuildOptions(GraphBuildOptions original) { }
-
-        public bool Build { get { throw null; } set { } }
-
-        protected virtual System.Type EqualityContract { get { throw null; } }
-
-        public virtual GraphBuildOptions <Clone>$() { throw null; }
-
-        public virtual bool Equals(GraphBuildOptions? other) { throw null; }
-
-        public override bool Equals(object? obj) { throw null; }
-
-        public override int GetHashCode() { throw null; }
-
-        public static bool operator ==(GraphBuildOptions? r1, GraphBuildOptions? r2) { throw null; }
-
-        public static bool operator !=(GraphBuildOptions? r1, GraphBuildOptions? r2) { throw null; }
-
-        protected virtual bool PrintMembers(System.Text.StringBuilder builder) { throw null; }
-
-        public override string ToString() { throw null; }
+        public bool Build { get; init; } = true;
     }
 
     public sealed partial class GraphBuildRequestData
