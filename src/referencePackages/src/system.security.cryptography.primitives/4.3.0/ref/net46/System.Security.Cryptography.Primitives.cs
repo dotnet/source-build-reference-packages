@@ -4,42 +4,30 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-
-using System;
-using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Security;
-using System.Security.Cryptography;
-
-[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: AllowPartiallyTrustedCallers]
-[assembly: ReferenceAssembly]
-[assembly: AssemblyTitle("System.Security.Cryptography.Primitives")]
-[assembly: AssemblyDescription("System.Security.Cryptography.Primitives")]
-[assembly: AssemblyDefaultAlias("System.Security.Cryptography.Primitives")]
-[assembly: AssemblyCompany("Microsoft Corporation")]
-[assembly: AssemblyProduct("Microsoft® .NET Framework")]
-[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: AssemblyFileVersion("4.6.24705.01")]
-[assembly: AssemblyInformationalVersion("4.6.24705.01 built by: SOURCEBUILD")]
-[assembly: CLSCompliant(true)]
-[assembly: AssemblyMetadata("", "")]
-[assembly: AssemblyVersion("4.0.1.0")]
-
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.AsymmetricAlgorithm))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.CipherMode))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.CryptographicException))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.CryptoStream))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.CryptoStreamMode))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.HashAlgorithm))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.HashAlgorithmName))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.HMAC))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.ICryptoTransform))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.KeyedHashAlgorithm))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.KeySizes))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.PaddingMode))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.SymmetricAlgorithm))]
-
-
-
+[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
+[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
+[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: System.Reflection.AssemblyTitle("System.Security.Cryptography.Primitives")]
+[assembly: System.Reflection.AssemblyDescription("System.Security.Cryptography.Primitives")]
+[assembly: System.Reflection.AssemblyDefaultAlias("System.Security.Cryptography.Primitives")]
+[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
+[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: System.Reflection.AssemblyFileVersion("4.6.24705.01")]
+[assembly: System.Reflection.AssemblyInformationalVersion("4.6.24705.01. Commit Hash: 4d1af962ca0fede10beb01d197367c2f90e92c97")]
+[assembly: System.CLSCompliant(true)]
+[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
+[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.AsymmetricAlgorithm))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.CipherMode))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.CryptographicException))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.CryptoStream))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.CryptoStreamMode))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.HashAlgorithm))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.HashAlgorithmName))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.HMAC))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.ICryptoTransform))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.KeyedHashAlgorithm))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.KeySizes))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.PaddingMode))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.SymmetricAlgorithm))]

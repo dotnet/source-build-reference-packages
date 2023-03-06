@@ -4,35 +4,23 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-
-using System;
-using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Security;
-using System.Security.Cryptography;
-
-[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: AllowPartiallyTrustedCallers]
-[assembly: ReferenceAssembly]
-[assembly: AssemblyTitle("System.Security.Cryptography.Csp")]
-[assembly: AssemblyDescription("System.Security.Cryptography.Csp")]
-[assembly: AssemblyDefaultAlias("System.Security.Cryptography.Csp")]
-[assembly: AssemblyCompany("Microsoft Corporation")]
-[assembly: AssemblyProduct("Microsoft® .NET Framework")]
-[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: AssemblyFileVersion("4.6.24705.01")]
-[assembly: AssemblyInformationalVersion("4.6.24705.01 built by: SOURCEBUILD")]
-[assembly: CLSCompliant(true)]
-[assembly: AssemblyMetadata("", "")]
-[assembly: AssemblyVersion("4.0.1.0")]
-
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.CspKeyContainerInfo))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.CspParameters))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.CspProviderFlags))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.ICspAsymmetricAlgorithm))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.KeyNumber))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.RSACryptoServiceProvider))]
-
-
-
+[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
+[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
+[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: System.Reflection.AssemblyTitle("System.Security.Cryptography.Csp")]
+[assembly: System.Reflection.AssemblyDescription("System.Security.Cryptography.Csp")]
+[assembly: System.Reflection.AssemblyDefaultAlias("System.Security.Cryptography.Csp")]
+[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
+[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: System.Reflection.AssemblyFileVersion("4.6.24705.01")]
+[assembly: System.Reflection.AssemblyInformationalVersion("4.6.24705.01. Commit Hash: 4d1af962ca0fede10beb01d197367c2f90e92c97")]
+[assembly: System.CLSCompliant(true)]
+[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
+[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.CspKeyContainerInfo))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.CspParameters))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.CspProviderFlags))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.ICspAsymmetricAlgorithm))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.KeyNumber))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.RSACryptoServiceProvider))]

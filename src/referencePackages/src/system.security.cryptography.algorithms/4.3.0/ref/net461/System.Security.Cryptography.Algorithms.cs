@@ -4,65 +4,59 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-
-using System;
-using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Security;
-using System.Security.Cryptography;
-
-[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: AllowPartiallyTrustedCallers]
-[assembly: ReferenceAssembly]
-[assembly: AssemblyTitle("System.Security.Cryptography.Algorithms")]
-[assembly: AssemblyDescription("System.Security.Cryptography.Algorithms")]
-[assembly: AssemblyDefaultAlias("System.Security.Cryptography.Algorithms")]
-[assembly: AssemblyCompany("Microsoft Corporation")]
-[assembly: AssemblyProduct("Microsoft® .NET Framework")]
-[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: AssemblyFileVersion("4.6.24705.01")]
-[assembly: AssemblyInformationalVersion("4.6.24705.01 built by: SOURCEBUILD")]
-[assembly: CLSCompliant(true)]
-[assembly: AssemblyMetadata("", "")]
-[assembly: AssemblyVersion("4.1.0.0")]
-
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.Aes))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.DeriveBytes))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.ECDsa))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.HMACMD5))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.HMACSHA1))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.HMACSHA256))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.HMACSHA384))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.HMACSHA512))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.MD5))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.RandomNumberGenerator))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.Rfc2898DeriveBytes))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.RSA))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.RSAEncryptionPadding))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.RSAEncryptionPaddingMode))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.RSAParameters))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.RSASignaturePadding))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.RSASignaturePaddingMode))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.SHA1))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.SHA256))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.SHA384))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.SHA512))]
-[assembly: TypeForwardedTo(typeof(System.Security.Cryptography.TripleDES))]
-
-
-
+[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
+[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
+[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: System.Resources.NeutralResourcesLanguage("en-US")]
+[assembly: System.Reflection.AssemblyTitle("System.Security.Cryptography.Algorithms")]
+[assembly: System.Reflection.AssemblyDescription("System.Security.Cryptography.Algorithms")]
+[assembly: System.Reflection.AssemblyDefaultAlias("System.Security.Cryptography.Algorithms")]
+[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
+[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: System.Reflection.AssemblyFileVersion("4.6.24705.01")]
+[assembly: System.Reflection.AssemblyInformationalVersion("4.6.24705.01. Commit Hash: 4d1af962ca0fede10beb01d197367c2f90e92c97")]
+[assembly: System.CLSCompliant(true)]
+[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
+[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.Aes))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.DeriveBytes))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.ECDsa))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.HMACMD5))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.HMACSHA1))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.HMACSHA256))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.HMACSHA384))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.HMACSHA512))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.MD5))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.RandomNumberGenerator))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.Rfc2898DeriveBytes))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.RSA))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.RSAEncryptionPadding))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.RSAEncryptionPaddingMode))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.RSAParameters))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.RSASignaturePadding))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.RSASignaturePaddingMode))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.SHA1))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.SHA256))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.SHA384))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.SHA512))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Cryptography.TripleDES))]
 namespace System.Security.Cryptography
 {
-    public sealed partial class IncrementalHash : System.IDisposable
+    public sealed partial class IncrementalHash : IDisposable
     {
-        internal IncrementalHash() { }
-        public System.Security.Cryptography.HashAlgorithmName AlgorithmName { get { throw null; } }
-        public void AppendData(byte[] data) { }
+        public HashAlgorithmName AlgorithmName { get { throw null; } }
+
         public void AppendData(byte[] data, int offset, int count) { }
-        public static System.Security.Cryptography.IncrementalHash CreateHash(System.Security.Cryptography.HashAlgorithmName hashAlgorithm) { throw null; }
-        public static System.Security.Cryptography.IncrementalHash CreateHMAC(System.Security.Cryptography.HashAlgorithmName hashAlgorithm, byte[] key) { throw null; }
+
+        public void AppendData(byte[] data) { }
+
+        public static IncrementalHash CreateHash(HashAlgorithmName hashAlgorithm) { throw null; }
+
+        public static IncrementalHash CreateHMAC(HashAlgorithmName hashAlgorithm, byte[] key) { throw null; }
+
         public void Dispose() { }
+
         public byte[] GetHashAndReset() { throw null; }
     }
 }

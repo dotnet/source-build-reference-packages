@@ -82,7 +82,6 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Runtime.Handles.4.3.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Diagnostics.Debug.4.3.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Win32.Primitives.4.3.0.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.NETCore.Platforms.3.1.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Principal.4.3.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Runtime.Extensions.4.3.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Reflection.Primitives.4.3.0.csproj" />
@@ -93,8 +92,6 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.IO.4.3.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Globalization.4.3.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Runtime.4.3.0.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.NETCore.Targets.1.1.0.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.NETCore.Platforms.1.1.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Collections.4.3.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Claims.4.3.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Principal.Windows.4.7.0.csproj" />
@@ -102,6 +99,25 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Permissions.4.7.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Build.Framework.16.10.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Build.16.10.0.csproj" />
+
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.Xml.4.7.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.Cng.4.7.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.OpenSsl.4.3.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.Csp.4.3.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.Cng.4.3.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.IO.FileSystem.Primitives.4.3.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.IO.FileSystem.4.3.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Globalization.Calendars.4.3.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Runtime.Numerics.4.3.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.Algorithms.4.3.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.X509Certificates.4.3.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.Primitives.4.3.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.Encoding.4.3.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.Pkcs.4.7.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.CodeDom.4.4.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Build.Utilities.Core.16.10.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Build.Framework.16.10.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Build.Tasks.Core.16.10.0.csproj" />
 
   </ItemGroup>
 

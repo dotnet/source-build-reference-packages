@@ -4,33 +4,21 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-
-using System;
-using System.Diagnostics;
-using System.IO;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Security;
-
-[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: AllowPartiallyTrustedCallers]
-[assembly: ReferenceAssembly]
-[assembly: AssemblyTitle("System.IO.FileSystem.Primitives")]
-[assembly: AssemblyDescription("System.IO.FileSystem.Primitives")]
-[assembly: AssemblyDefaultAlias("System.IO.FileSystem.Primitives")]
-[assembly: AssemblyCompany("Microsoft Corporation")]
-[assembly: AssemblyProduct("Microsoft® .NET Framework")]
-[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: AssemblyFileVersion("4.6.24705.01")]
-[assembly: AssemblyInformationalVersion("4.6.24705.01 built by: SOURCEBUILD")]
-[assembly: CLSCompliant(true)]
-[assembly: AssemblyMetadata("", "")]
-[assembly: AssemblyVersion("4.0.2.0")]
-
-[assembly: TypeForwardedTo(typeof(System.IO.FileAccess))]
-[assembly: TypeForwardedTo(typeof(System.IO.FileAttributes))]
-[assembly: TypeForwardedTo(typeof(System.IO.FileMode))]
-[assembly: TypeForwardedTo(typeof(System.IO.FileShare))]
-
-
-
+[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
+[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
+[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: System.Reflection.AssemblyTitle("System.IO.FileSystem.Primitives")]
+[assembly: System.Reflection.AssemblyDescription("System.IO.FileSystem.Primitives")]
+[assembly: System.Reflection.AssemblyDefaultAlias("System.IO.FileSystem.Primitives")]
+[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
+[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: System.Reflection.AssemblyFileVersion("4.6.24705.01")]
+[assembly: System.Reflection.AssemblyInformationalVersion("4.6.24705.01. Commit Hash: 4d1af962ca0fede10beb01d197367c2f90e92c97")]
+[assembly: System.CLSCompliant(true)]
+[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
+[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.FileAccess))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.FileAttributes))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.FileMode))]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.FileShare))]
