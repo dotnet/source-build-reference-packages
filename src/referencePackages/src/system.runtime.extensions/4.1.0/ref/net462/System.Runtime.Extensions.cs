@@ -4,31 +4,44 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
-[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
-[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: System.Resources.NeutralResourcesLanguage("en-US")]
-[assembly: System.Reflection.AssemblyTitle("System.Runtime.Extensions")]
-[assembly: System.Reflection.AssemblyDescription("System.Runtime.Extensions")]
-[assembly: System.Reflection.AssemblyDefaultAlias("System.Runtime.Extensions")]
-[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
-[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
-[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: System.Reflection.AssemblyFileVersion("1.0.24212.01")]
-[assembly: System.Reflection.AssemblyInformationalVersion("1.0.24212.01. Commit Hash: 9688ddbb62c04189cac4c4a06e31e93377dccd41")]
-[assembly: System.CLSCompliant(true)]
-[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
-[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.BitConverter))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Convert))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Diagnostics.Stopwatch))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Environment))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.Path))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Math))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.MidpointRounding))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Net.WebUtility))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Progress<>))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Random))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Runtime.Versioning.FrameworkName))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.StringComparer))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.UriBuilder))]
+
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Net;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
+using System.Security;
+
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: AllowPartiallyTrustedCallers]
+[assembly: ReferenceAssembly]
+[assembly: AssemblyTitle("System.Runtime.Extensions")]
+[assembly: AssemblyDescription("System.Runtime.Extensions")]
+[assembly: AssemblyDefaultAlias("System.Runtime.Extensions")]
+[assembly: AssemblyCompany("Microsoft Corporation")]
+[assembly: AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: AssemblyFileVersion("1.0.24212.01")]
+[assembly: AssemblyInformationalVersion("1.0.24212.01 built by: SOURCEBUILD")]
+[assembly: CLSCompliant(true)]
+[assembly: AssemblyMetadata("", "")]
+[assembly: AssemblyVersion("4.1.0.0")]
+
+[assembly: TypeForwardedTo(typeof(System.BitConverter))]
+[assembly: TypeForwardedTo(typeof(System.Convert))]
+[assembly: TypeForwardedTo(typeof(System.Diagnostics.Stopwatch))]
+[assembly: TypeForwardedTo(typeof(System.Environment))]
+[assembly: TypeForwardedTo(typeof(System.IO.Path))]
+[assembly: TypeForwardedTo(typeof(System.Math))]
+[assembly: TypeForwardedTo(typeof(System.MidpointRounding))]
+[assembly: TypeForwardedTo(typeof(System.Net.WebUtility))]
+[assembly: TypeForwardedTo(typeof(System.Progress<>))]
+[assembly: TypeForwardedTo(typeof(System.Random))]
+[assembly: TypeForwardedTo(typeof(System.Runtime.Versioning.FrameworkName))]
+[assembly: TypeForwardedTo(typeof(System.StringComparer))]
+[assembly: TypeForwardedTo(typeof(System.UriBuilder))]
+
+
+

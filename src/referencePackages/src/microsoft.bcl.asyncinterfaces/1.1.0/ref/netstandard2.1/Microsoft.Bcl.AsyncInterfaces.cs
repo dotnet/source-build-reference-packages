@@ -4,29 +4,31 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
-[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
-[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: System.Reflection.AssemblyDefaultAlias("Microsoft.Bcl.AsyncInterfaces")]
-[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
-[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
-[assembly: System.Reflection.AssemblyMetadata("PreferInbox", "True")]
-[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
-[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation. All rights reserved.")]
-[assembly: System.Reflection.AssemblyDescription("Microsoft.Bcl.AsyncInterfaces")]
-[assembly: System.Reflection.AssemblyFileVersion("4.700.19.56404")]
-[assembly: System.Reflection.AssemblyInformationalVersion("3.1.0+0f7f38c4fd323b26da10cce95f857f77f0f09b48")]
-[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Core")]
-[assembly: System.Reflection.AssemblyTitle("Microsoft.Bcl.AsyncInterfaces")]
-[assembly: System.Runtime.CompilerServices.ReferenceAssembly]
-[assembly: System.CLSCompliant(true)]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Collections.Generic.IAsyncEnumerable<>))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Collections.Generic.IAsyncEnumerator<>))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IAsyncDisposable))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Runtime.CompilerServices.AsyncIteratorMethodBuilder))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Runtime.CompilerServices.AsyncIteratorStateMachineAttribute))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Runtime.CompilerServices.ConfiguredAsyncDisposable))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable<>))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Runtime.CompilerServices.EnumeratorCancellationAttribute))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Threading.Tasks.Sources.ManualResetValueTaskSourceCore<>))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Threading.Tasks.TaskAsyncEnumerableExtensions))]
+
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security;
+using System.Threading.Tasks;
+using System.Threading.Tasks.Sources;
+
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: AllowPartiallyTrustedCallers]
+[assembly: ReferenceAssembly]
+[assembly: AssemblyTitle("Microsoft.Bcl.AsyncInterfaces")]
+[assembly: AssemblyDescription("Microsoft.Bcl.AsyncInterfaces")]
+[assembly: AssemblyDefaultAlias("Microsoft.Bcl.AsyncInterfaces")]
+[assembly: AssemblyCompany("Microsoft Corporation")]
+[assembly: AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: AssemblyFileVersion("4.700.19.56404")]
+[assembly: AssemblyInformationalVersion("4.700.19.56404 built by: SOURCEBUILD")]
+[assembly: CLSCompliant(true)]
+[assembly: AssemblyMetadata("", "")]
+[assembly: AssemblyVersion("1.0.0.0")]
+
+
+
+

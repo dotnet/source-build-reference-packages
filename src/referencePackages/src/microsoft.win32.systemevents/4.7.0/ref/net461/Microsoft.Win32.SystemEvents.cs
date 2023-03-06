@@ -4,37 +4,48 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
-[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
-[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: System.Reflection.AssemblyDefaultAlias("Microsoft.Win32.SystemEvents")]
-[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
-[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
-[assembly: System.Reflection.AssemblyMetadata("PreferInbox", "True")]
-[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
-[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation. All rights reserved.")]
-[assembly: System.Reflection.AssemblyDescription("Microsoft.Win32.SystemEvents")]
-[assembly: System.Reflection.AssemblyFileVersion("4.700.19.56404")]
-[assembly: System.Reflection.AssemblyInformationalVersion("3.1.0+0f7f38c4fd323b26da10cce95f857f77f0f09b48")]
-[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Core")]
-[assembly: System.Reflection.AssemblyTitle("Microsoft.Win32.SystemEvents")]
-[assembly: System.CLSCompliant(true)]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.PowerModeChangedEventArgs))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.PowerModeChangedEventHandler))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.PowerModes))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.SessionEndedEventArgs))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.SessionEndedEventHandler))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.SessionEndingEventArgs))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.SessionEndingEventHandler))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.SessionEndReasons))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.SessionSwitchEventArgs))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.SessionSwitchEventHandler))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.SessionSwitchReason))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.SystemEvents))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.TimerElapsedEventArgs))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.TimerElapsedEventHandler))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.UserPreferenceCategory))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.UserPreferenceChangedEventArgs))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.UserPreferenceChangedEventHandler))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.UserPreferenceChangingEventArgs))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(Microsoft.Win32.UserPreferenceChangingEventHandler))]
+
+using Microsoft.Win32;
+using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security;
+
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: AllowPartiallyTrustedCallers]
+[assembly: ReferenceAssembly]
+[assembly: AssemblyTitle("Microsoft.Win32.SystemEvents")]
+[assembly: AssemblyDescription("Microsoft.Win32.SystemEvents")]
+[assembly: AssemblyDefaultAlias("Microsoft.Win32.SystemEvents")]
+[assembly: AssemblyCompany("Microsoft Corporation")]
+[assembly: AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: AssemblyFileVersion("4.700.19.56404")]
+[assembly: AssemblyInformationalVersion("4.700.19.56404 built by: SOURCEBUILD")]
+[assembly: CLSCompliant(true)]
+[assembly: AssemblyMetadata("", "")]
+[assembly: AssemblyVersion("4.0.2.0")]
+
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.PowerModeChangedEventArgs))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.PowerModeChangedEventHandler))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.PowerModes))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.SessionEndedEventArgs))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.SessionEndedEventHandler))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.SessionEndingEventArgs))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.SessionEndingEventHandler))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.SessionEndReasons))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.SessionSwitchEventArgs))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.SessionSwitchEventHandler))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.SessionSwitchReason))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.SystemEvents))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.TimerElapsedEventArgs))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.TimerElapsedEventHandler))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.UserPreferenceCategory))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.UserPreferenceChangedEventArgs))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.UserPreferenceChangedEventHandler))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.UserPreferenceChangingEventArgs))]
+[assembly: TypeForwardedTo(typeof(Microsoft.Win32.UserPreferenceChangingEventHandler))]
+
+
+

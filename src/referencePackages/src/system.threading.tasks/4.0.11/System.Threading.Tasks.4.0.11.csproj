@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+  <Import Project="$([MSBuild]::GetDirectoryNameOfFileAbove($(MSBuildThisFileDirectory), dir.props))/dir.props" />
   <PropertyGroup>
     <TargetFrameworks>netstandard1.0;netstandard1.3</TargetFrameworks>
     <NuspecFile>$(ArtifactsBinDir)system.threading.tasks/4.0.11/system.threading.tasks.nuspec</NuspecFile>
-  </PropertyGroup>
+   </PropertyGroup>
 
   <PropertyGroup>
     <OutputPath>$(ArtifactsBinDir)system.threading.tasks/4.0.11/ref/</OutputPath>
@@ -15,16 +15,16 @@
     <Compile Include="**/lib/$(TargetFramework)/*.cs" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.0.1" />
-    <PackageReference Include="Microsoft.NETCore.Targets" Version="1.0.1" />
-    <PackageReference Include="System.Runtime" Version="4.1.0" />
-  </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
+        <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.0.1" />
+        <PackageReference Include="Microsoft.NETCore.Targets" Version="1.0.1" />
+        <PackageReference Include="System.Runtime" Version="4.1.0" />
+    </ItemGroup>
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
+        <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.0.1" />
+        <PackageReference Include="Microsoft.NETCore.Targets" Version="1.0.1" />
+        <PackageReference Include="System.Runtime" Version="4.1.0" />
+    </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.3' ">
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.0.1" />
-    <PackageReference Include="Microsoft.NETCore.Targets" Version="1.0.1" />
-    <PackageReference Include="System.Runtime" Version="4.1.0" />
-  </ItemGroup>
-
+  
 </Project>

@@ -4,33 +4,45 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
-[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
-[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: System.Reflection.AssemblyTitle("System.Globalization.Calendars")]
-[assembly: System.Reflection.AssemblyDescription("System.Globalization.Calendars")]
-[assembly: System.Reflection.AssemblyDefaultAlias("System.Globalization.Calendars")]
-[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
-[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
-[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: System.Reflection.AssemblyFileVersion("4.6.24705.01")]
-[assembly: System.Reflection.AssemblyInformationalVersion("4.6.24705.01. Commit Hash: 4d1af962ca0fede10beb01d197367c2f90e92c97")]
-[assembly: System.CLSCompliant(true)]
-[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
-[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.ChineseLunisolarCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.EastAsianLunisolarCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.GregorianCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.GregorianCalendarTypes))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.HebrewCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.HijriCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.JapaneseCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.JapaneseLunisolarCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.JulianCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.KoreanCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.KoreanLunisolarCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.PersianCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.TaiwanCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.TaiwanLunisolarCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.ThaiBuddhistCalendar))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Globalization.UmAlQuraCalendar))]
+
+using System;
+using System.Diagnostics;
+using System.Globalization;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security;
+
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: AllowPartiallyTrustedCallers]
+[assembly: ReferenceAssembly]
+[assembly: AssemblyTitle("System.Globalization.Calendars")]
+[assembly: AssemblyDescription("System.Globalization.Calendars")]
+[assembly: AssemblyDefaultAlias("System.Globalization.Calendars")]
+[assembly: AssemblyCompany("Microsoft Corporation")]
+[assembly: AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: AssemblyFileVersion("4.6.24705.01")]
+[assembly: AssemblyInformationalVersion("4.6.24705.01 built by: SOURCEBUILD")]
+[assembly: CLSCompliant(true)]
+[assembly: AssemblyMetadata("", "")]
+[assembly: AssemblyVersion("4.0.2.0")]
+
+[assembly: TypeForwardedTo(typeof(System.Globalization.ChineseLunisolarCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.EastAsianLunisolarCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.GregorianCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.GregorianCalendarTypes))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.HebrewCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.HijriCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.JapaneseCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.JapaneseLunisolarCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.JulianCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.KoreanCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.KoreanLunisolarCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.PersianCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.TaiwanCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.TaiwanLunisolarCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.ThaiBuddhistCalendar))]
+[assembly: TypeForwardedTo(typeof(System.Globalization.UmAlQuraCalendar))]
+
+
+

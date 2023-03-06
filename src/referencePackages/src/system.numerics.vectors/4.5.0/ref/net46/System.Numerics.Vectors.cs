@@ -4,351 +4,192 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
-[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
-[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: System.Security.AllowPartiallyTrustedCallers]
-[assembly: System.Runtime.CompilerServices.ReferenceAssembly]
-[assembly: System.Reflection.AssemblyTitle("System.Numerics.Vectors")]
-[assembly: System.Reflection.AssemblyDescription("System.Numerics.Vectors")]
-[assembly: System.Reflection.AssemblyDefaultAlias("System.Numerics.Vectors")]
-[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
-[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
-[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: System.Reflection.AssemblyFileVersion("4.6.26515.06")]
-[assembly: System.Reflection.AssemblyInformationalVersion("4.6.26515.06 @BuiltBy: dlab-DDVSOWINAGE059 @Branch: release/2.1 @SrcCode: https://github.com/dotnet/corefx/tree/30ab651fcb4354552bd4891619a0bdd81e0ebdbf")]
-[assembly: System.CLSCompliant(true)]
-[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
-[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
-[assembly: System.Reflection.AssemblyMetadata("PreferInbox", "True")]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Numerics.Matrix3x2))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Numerics.Matrix4x4))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Numerics.Plane))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Numerics.Quaternion))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Numerics.Vector2))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Numerics.Vector3))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Numerics.Vector4))]
+
+using System;
+using System.Diagnostics;
+using System.Numerics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security;
+
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: AllowPartiallyTrustedCallers]
+[assembly: ReferenceAssembly]
+[assembly: AssemblyTitle("System.Numerics.Vectors")]
+[assembly: AssemblyDescription("System.Numerics.Vectors")]
+[assembly: AssemblyDefaultAlias("System.Numerics.Vectors")]
+[assembly: AssemblyCompany("Microsoft Corporation")]
+[assembly: AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: AssemblyFileVersion("4.6.26515.06")]
+[assembly: AssemblyInformationalVersion("4.6.26515.06 built by: SOURCEBUILD")]
+[assembly: CLSCompliant(true)]
+[assembly: AssemblyMetadata("", "")]
+[assembly: AssemblyVersion("4.1.4.0")]
+
+[assembly: TypeForwardedTo(typeof(System.Numerics.Matrix3x2))]
+[assembly: TypeForwardedTo(typeof(System.Numerics.Matrix4x4))]
+[assembly: TypeForwardedTo(typeof(System.Numerics.Plane))]
+[assembly: TypeForwardedTo(typeof(System.Numerics.Quaternion))]
+[assembly: TypeForwardedTo(typeof(System.Numerics.Vector2))]
+[assembly: TypeForwardedTo(typeof(System.Numerics.Vector3))]
+[assembly: TypeForwardedTo(typeof(System.Numerics.Vector4))]
+
+
+
 namespace System.Numerics
 {
     public static partial class Vector
     {
         public static bool IsHardwareAccelerated { get { throw null; } }
-
-        public static Vector<T> Abs<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        public static Vector<T> Add<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<T> AndNot<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<byte> AsVectorByte<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        public static Vector<double> AsVectorDouble<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        public static Vector<short> AsVectorInt16<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        public static Vector<int> AsVectorInt32<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        public static Vector<long> AsVectorInt64<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        [CLSCompliant(false)]
-        public static Vector<sbyte> AsVectorSByte<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        public static Vector<float> AsVectorSingle<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        [CLSCompliant(false)]
-        public static Vector<ushort> AsVectorUInt16<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        [CLSCompliant(false)]
-        public static Vector<uint> AsVectorUInt32<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        [CLSCompliant(false)]
-        public static Vector<ulong> AsVectorUInt64<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        public static Vector<T> BitwiseAnd<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<T> BitwiseOr<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<float> ConditionalSelect(Vector<int> condition, Vector<float> left, Vector<float> right) { throw null; }
-
-        public static Vector<double> ConditionalSelect(Vector<long> condition, Vector<double> left, Vector<double> right) { throw null; }
-
-        public static Vector<T> ConditionalSelect<T>(Vector<T> condition, Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<double> ConvertToDouble(Vector<long> value) { throw null; }
-
-        [CLSCompliant(false)]
-        public static Vector<double> ConvertToDouble(Vector<ulong> value) { throw null; }
-
-        public static Vector<int> ConvertToInt32(Vector<float> value) { throw null; }
-
-        public static Vector<long> ConvertToInt64(Vector<double> value) { throw null; }
-
-        public static Vector<float> ConvertToSingle(Vector<int> value) { throw null; }
-
-        [CLSCompliant(false)]
-        public static Vector<float> ConvertToSingle(Vector<uint> value) { throw null; }
-
-        [CLSCompliant(false)]
-        public static Vector<uint> ConvertToUInt32(Vector<float> value) { throw null; }
-
-        [CLSCompliant(false)]
-        public static Vector<ulong> ConvertToUInt64(Vector<double> value) { throw null; }
-
-        public static Vector<T> Divide<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static T Dot<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<long> Equals(Vector<double> left, Vector<double> right) { throw null; }
-
-        public static Vector<int> Equals(Vector<int> left, Vector<int> right) { throw null; }
-
-        public static Vector<long> Equals(Vector<long> left, Vector<long> right) { throw null; }
-
-        public static Vector<int> Equals(Vector<float> left, Vector<float> right) { throw null; }
-
-        public static Vector<T> Equals<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static bool EqualsAll<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static bool EqualsAny<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<long> GreaterThan(Vector<double> left, Vector<double> right) { throw null; }
-
-        public static Vector<int> GreaterThan(Vector<int> left, Vector<int> right) { throw null; }
-
-        public static Vector<long> GreaterThan(Vector<long> left, Vector<long> right) { throw null; }
-
-        public static Vector<int> GreaterThan(Vector<float> left, Vector<float> right) { throw null; }
-
-        public static Vector<T> GreaterThan<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static bool GreaterThanAll<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static bool GreaterThanAny<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<long> GreaterThanOrEqual(Vector<double> left, Vector<double> right) { throw null; }
-
-        public static Vector<int> GreaterThanOrEqual(Vector<int> left, Vector<int> right) { throw null; }
-
-        public static Vector<long> GreaterThanOrEqual(Vector<long> left, Vector<long> right) { throw null; }
-
-        public static Vector<int> GreaterThanOrEqual(Vector<float> left, Vector<float> right) { throw null; }
-
-        public static Vector<T> GreaterThanOrEqual<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static bool GreaterThanOrEqualAll<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static bool GreaterThanOrEqualAny<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<long> LessThan(Vector<double> left, Vector<double> right) { throw null; }
-
-        public static Vector<int> LessThan(Vector<int> left, Vector<int> right) { throw null; }
-
-        public static Vector<long> LessThan(Vector<long> left, Vector<long> right) { throw null; }
-
-        public static Vector<int> LessThan(Vector<float> left, Vector<float> right) { throw null; }
-
-        public static Vector<T> LessThan<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static bool LessThanAll<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static bool LessThanAny<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<long> LessThanOrEqual(Vector<double> left, Vector<double> right) { throw null; }
-
-        public static Vector<int> LessThanOrEqual(Vector<int> left, Vector<int> right) { throw null; }
-
-        public static Vector<long> LessThanOrEqual(Vector<long> left, Vector<long> right) { throw null; }
-
-        public static Vector<int> LessThanOrEqual(Vector<float> left, Vector<float> right) { throw null; }
-
-        public static Vector<T> LessThanOrEqual<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static bool LessThanOrEqualAll<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static bool LessThanOrEqualAny<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<T> Max<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<T> Min<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<T> Multiply<T>(T left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<T> Multiply<T>(Vector<T> left, T right)
-            where T : struct { throw null; }
-
-        public static Vector<T> Multiply<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        public static Vector<float> Narrow(Vector<double> source1, Vector<double> source2) { throw null; }
-
-        [CLSCompliant(false)]
-        public static Vector<sbyte> Narrow(Vector<short> source1, Vector<short> source2) { throw null; }
-
-        public static Vector<short> Narrow(Vector<int> source1, Vector<int> source2) { throw null; }
-
-        public static Vector<int> Narrow(Vector<long> source1, Vector<long> source2) { throw null; }
-
-        [CLSCompliant(false)]
-        public static Vector<byte> Narrow(Vector<ushort> source1, Vector<ushort> source2) { throw null; }
-
-        [CLSCompliant(false)]
-        public static Vector<ushort> Narrow(Vector<uint> source1, Vector<uint> source2) { throw null; }
-
-        [CLSCompliant(false)]
-        public static Vector<uint> Narrow(Vector<ulong> source1, Vector<ulong> source2) { throw null; }
-
-        public static Vector<T> Negate<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        public static Vector<T> OnesComplement<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        public static Vector<T> SquareRoot<T>(Vector<T> value)
-            where T : struct { throw null; }
-
-        public static Vector<T> Subtract<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
-
-        [CLSCompliant(false)]
-        public static void Widen(Vector<byte> source, out Vector<ushort> dest1, out Vector<ushort> dest2) { throw null; }
-
-        public static void Widen(Vector<short> source, out Vector<int> dest1, out Vector<int> dest2) { throw null; }
-
-        public static void Widen(Vector<int> source, out Vector<long> dest1, out Vector<long> dest2) { throw null; }
-
-        [CLSCompliant(false)]
-        public static void Widen(Vector<sbyte> source, out Vector<short> dest1, out Vector<short> dest2) { throw null; }
-
-        public static void Widen(Vector<float> source, out Vector<double> dest1, out Vector<double> dest2) { throw null; }
-
-        [CLSCompliant(false)]
-        public static void Widen(Vector<ushort> source, out Vector<uint> dest1, out Vector<uint> dest2) { throw null; }
-
-        [CLSCompliant(false)]
-        public static void Widen(Vector<uint> source, out Vector<ulong> dest1, out Vector<ulong> dest2) { throw null; }
-
-        public static Vector<T> Xor<T>(Vector<T> left, Vector<T> right)
-            where T : struct { throw null; }
+        public static System.Numerics.Vector<T> Abs<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> Add<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> AndNot<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Byte> AsVectorByte<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Double> AsVectorDouble<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Int16> AsVectorInt16<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Int32> AsVectorInt32<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Int64> AsVectorInt64<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static System.Numerics.Vector<System.SByte> AsVectorSByte<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Single> AsVectorSingle<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static System.Numerics.Vector<System.UInt16> AsVectorUInt16<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static System.Numerics.Vector<System.UInt32> AsVectorUInt32<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static System.Numerics.Vector<System.UInt64> AsVectorUInt64<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> BitwiseAnd<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> BitwiseOr<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Single> ConditionalSelect(System.Numerics.Vector<System.Int32> condition, System.Numerics.Vector<System.Single> left, System.Numerics.Vector<System.Single> right) { throw null; }
+        public static System.Numerics.Vector<System.Double> ConditionalSelect(System.Numerics.Vector<System.Int64> condition, System.Numerics.Vector<System.Double> left, System.Numerics.Vector<System.Double> right) { throw null; }
+        public static System.Numerics.Vector<T> ConditionalSelect<T>(System.Numerics.Vector<T> condition, System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Double> ConvertToDouble(System.Numerics.Vector<System.Int64> value) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static System.Numerics.Vector<System.Double> ConvertToDouble(System.Numerics.Vector<System.UInt64> value) { throw null; }
+        public static System.Numerics.Vector<System.Int32> ConvertToInt32(System.Numerics.Vector<System.Single> value) { throw null; }
+        public static System.Numerics.Vector<System.Int64> ConvertToInt64(System.Numerics.Vector<System.Double> value) { throw null; }
+        public static System.Numerics.Vector<System.Single> ConvertToSingle(System.Numerics.Vector<System.Int32> value) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static System.Numerics.Vector<System.Single> ConvertToSingle(System.Numerics.Vector<System.UInt32> value) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static System.Numerics.Vector<System.UInt32> ConvertToUInt32(System.Numerics.Vector<System.Single> value) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static System.Numerics.Vector<System.UInt64> ConvertToUInt64(System.Numerics.Vector<System.Double> value) { throw null; }
+        public static System.Numerics.Vector<T> Divide<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static T Dot<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Int64> Equals(System.Numerics.Vector<System.Double> left, System.Numerics.Vector<System.Double> right) { throw null; }
+        public static System.Numerics.Vector<System.Int32> Equals(System.Numerics.Vector<System.Int32> left, System.Numerics.Vector<System.Int32> right) { throw null; }
+        public static System.Numerics.Vector<System.Int64> Equals(System.Numerics.Vector<System.Int64> left, System.Numerics.Vector<System.Int64> right) { throw null; }
+        public static System.Numerics.Vector<System.Int32> Equals(System.Numerics.Vector<System.Single> left, System.Numerics.Vector<System.Single> right) { throw null; }
+        public static bool EqualsAll<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static bool EqualsAny<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> Equals<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Int64> GreaterThan(System.Numerics.Vector<System.Double> left, System.Numerics.Vector<System.Double> right) { throw null; }
+        public static System.Numerics.Vector<System.Int32> GreaterThan(System.Numerics.Vector<System.Int32> left, System.Numerics.Vector<System.Int32> right) { throw null; }
+        public static System.Numerics.Vector<System.Int64> GreaterThan(System.Numerics.Vector<System.Int64> left, System.Numerics.Vector<System.Int64> right) { throw null; }
+        public static System.Numerics.Vector<System.Int32> GreaterThan(System.Numerics.Vector<System.Single> left, System.Numerics.Vector<System.Single> right) { throw null; }
+        public static bool GreaterThanAll<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static bool GreaterThanAny<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Int64> GreaterThanOrEqual(System.Numerics.Vector<System.Double> left, System.Numerics.Vector<System.Double> right) { throw null; }
+        public static System.Numerics.Vector<System.Int32> GreaterThanOrEqual(System.Numerics.Vector<System.Int32> left, System.Numerics.Vector<System.Int32> right) { throw null; }
+        public static System.Numerics.Vector<System.Int64> GreaterThanOrEqual(System.Numerics.Vector<System.Int64> left, System.Numerics.Vector<System.Int64> right) { throw null; }
+        public static System.Numerics.Vector<System.Int32> GreaterThanOrEqual(System.Numerics.Vector<System.Single> left, System.Numerics.Vector<System.Single> right) { throw null; }
+        public static bool GreaterThanOrEqualAll<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static bool GreaterThanOrEqualAny<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> GreaterThanOrEqual<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> GreaterThan<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Int64> LessThan(System.Numerics.Vector<System.Double> left, System.Numerics.Vector<System.Double> right) { throw null; }
+        public static System.Numerics.Vector<System.Int32> LessThan(System.Numerics.Vector<System.Int32> left, System.Numerics.Vector<System.Int32> right) { throw null; }
+        public static System.Numerics.Vector<System.Int64> LessThan(System.Numerics.Vector<System.Int64> left, System.Numerics.Vector<System.Int64> right) { throw null; }
+        public static System.Numerics.Vector<System.Int32> LessThan(System.Numerics.Vector<System.Single> left, System.Numerics.Vector<System.Single> right) { throw null; }
+        public static bool LessThanAll<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static bool LessThanAny<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Int64> LessThanOrEqual(System.Numerics.Vector<System.Double> left, System.Numerics.Vector<System.Double> right) { throw null; }
+        public static System.Numerics.Vector<System.Int32> LessThanOrEqual(System.Numerics.Vector<System.Int32> left, System.Numerics.Vector<System.Int32> right) { throw null; }
+        public static System.Numerics.Vector<System.Int64> LessThanOrEqual(System.Numerics.Vector<System.Int64> left, System.Numerics.Vector<System.Int64> right) { throw null; }
+        public static System.Numerics.Vector<System.Int32> LessThanOrEqual(System.Numerics.Vector<System.Single> left, System.Numerics.Vector<System.Single> right) { throw null; }
+        public static bool LessThanOrEqualAll<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static bool LessThanOrEqualAny<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> LessThanOrEqual<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> LessThan<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> Max<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> Min<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> Multiply<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> Multiply<T>(System.Numerics.Vector<T> left, T right) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> Multiply<T>(T left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        public static System.Numerics.Vector<System.Single> Narrow(System.Numerics.Vector<System.Double> source1, System.Numerics.Vector<System.Double> source2) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static System.Numerics.Vector<System.SByte> Narrow(System.Numerics.Vector<System.Int16> source1, System.Numerics.Vector<System.Int16> source2) { throw null; }
+        public static System.Numerics.Vector<System.Int16> Narrow(System.Numerics.Vector<System.Int32> source1, System.Numerics.Vector<System.Int32> source2) { throw null; }
+        public static System.Numerics.Vector<System.Int32> Narrow(System.Numerics.Vector<System.Int64> source1, System.Numerics.Vector<System.Int64> source2) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static System.Numerics.Vector<System.Byte> Narrow(System.Numerics.Vector<System.UInt16> source1, System.Numerics.Vector<System.UInt16> source2) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static System.Numerics.Vector<System.UInt16> Narrow(System.Numerics.Vector<System.UInt32> source1, System.Numerics.Vector<System.UInt32> source2) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static System.Numerics.Vector<System.UInt32> Narrow(System.Numerics.Vector<System.UInt64> source1, System.Numerics.Vector<System.UInt64> source2) { throw null; }
+        public static System.Numerics.Vector<T> Negate<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> OnesComplement<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> SquareRoot<T>(System.Numerics.Vector<T> value) where T : struct { throw null; }
+        public static System.Numerics.Vector<T> Subtract<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static void Widen(System.Numerics.Vector<System.Byte> source, out System.Numerics.Vector<System.UInt16> dest1, out System.Numerics.Vector<System.UInt16> dest2) { throw null; }
+        public static void Widen(System.Numerics.Vector<System.Int16> source, out System.Numerics.Vector<System.Int32> dest1, out System.Numerics.Vector<System.Int32> dest2) { throw null; }
+        public static void Widen(System.Numerics.Vector<System.Int32> source, out System.Numerics.Vector<System.Int64> dest1, out System.Numerics.Vector<System.Int64> dest2) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static void Widen(System.Numerics.Vector<System.SByte> source, out System.Numerics.Vector<System.Int16> dest1, out System.Numerics.Vector<System.Int16> dest2) { throw null; }
+        public static void Widen(System.Numerics.Vector<System.Single> source, out System.Numerics.Vector<System.Double> dest1, out System.Numerics.Vector<System.Double> dest2) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static void Widen(System.Numerics.Vector<System.UInt16> source, out System.Numerics.Vector<System.UInt32> dest1, out System.Numerics.Vector<System.UInt32> dest2) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static void Widen(System.Numerics.Vector<System.UInt32> source, out System.Numerics.Vector<System.UInt64> dest1, out System.Numerics.Vector<System.UInt64> dest2) { throw null; }
+        public static System.Numerics.Vector<T> Xor<T>(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) where T : struct { throw null; }
     }
-
-    public partial struct Vector<T> : IEquatable<Vector<T>>, IFormattable where T : struct
+    public partial struct Vector<T> : System.IEquatable<System.Numerics.Vector<T>>, System.IFormattable where T : struct
     {
         private int _dummyPrimitive;
-        public Vector(T value) { }
-
-        public Vector(T[] values, int index) { }
-
-        public Vector(T[] values) { }
-
+        public Vector(T value) { throw null; }
+        public Vector(T[] values) { throw null; }
+        public Vector(T[] values, int index) { throw null; }
         public static int Count { get { throw null; } }
-
         public T this[int index] { get { throw null; } }
-
-        public static Vector<T> One { get { throw null; } }
-
-        public static Vector<T> Zero { get { throw null; } }
-
-        public void CopyTo(T[] destination, int startIndex) { }
-
+        public static System.Numerics.Vector<T> One { get { throw null; } }
+        public static System.Numerics.Vector<T> Zero { get { throw null; } }
         public void CopyTo(T[] destination) { }
-
-        public bool Equals(Vector<T> other) { throw null; }
-
+        public void CopyTo(T[] destination, int startIndex) { }
+        public bool Equals(System.Numerics.Vector<T> other) { throw null; }
         public override bool Equals(object obj) { throw null; }
-
         public override int GetHashCode() { throw null; }
-
-        public static Vector<T> operator +(Vector<T> left, Vector<T> right) { throw null; }
-
-        public static Vector<T> operator &(Vector<T> left, Vector<T> right) { throw null; }
-
-        public static Vector<T> operator |(Vector<T> left, Vector<T> right) { throw null; }
-
-        public static Vector<T> operator /(Vector<T> left, Vector<T> right) { throw null; }
-
-        public static bool operator ==(Vector<T> left, Vector<T> right) { throw null; }
-
-        public static Vector<T> operator ^(Vector<T> left, Vector<T> right) { throw null; }
-
-        public static explicit operator Vector<byte>(Vector<T> value) { throw null; }
-
-        public static explicit operator Vector<double>(Vector<T> value) { throw null; }
-
-        public static explicit operator Vector<short>(Vector<T> value) { throw null; }
-
-        public static explicit operator Vector<int>(Vector<T> value) { throw null; }
-
-        public static explicit operator Vector<long>(Vector<T> value) { throw null; }
-
-        [CLSCompliant(false)]
-        public static explicit operator Vector<sbyte>(Vector<T> value) { throw null; }
-
-        public static explicit operator Vector<float>(Vector<T> value) { throw null; }
-
-        [CLSCompliant(false)]
-        public static explicit operator Vector<ushort>(Vector<T> value) { throw null; }
-
-        [CLSCompliant(false)]
-        public static explicit operator Vector<uint>(Vector<T> value) { throw null; }
-
-        [CLSCompliant(false)]
-        public static explicit operator Vector<ulong>(Vector<T> value) { throw null; }
-
-        public static bool operator !=(Vector<T> left, Vector<T> right) { throw null; }
-
-        public static Vector<T> operator *(T factor, Vector<T> value) { throw null; }
-
-        public static Vector<T> operator *(Vector<T> value, T factor) { throw null; }
-
-        public static Vector<T> operator *(Vector<T> left, Vector<T> right) { throw null; }
-
-        public static Vector<T> operator ~(Vector<T> value) { throw null; }
-
-        public static Vector<T> operator -(Vector<T> left, Vector<T> right) { throw null; }
-
-        public static Vector<T> operator -(Vector<T> value) { throw null; }
-
+        public static System.Numerics.Vector<T> operator +(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) { throw null; }
+        public static System.Numerics.Vector<T> operator &(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) { throw null; }
+        public static System.Numerics.Vector<T> operator |(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) { throw null; }
+        public static System.Numerics.Vector<T> operator /(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) { throw null; }
+        public static bool operator ==(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) { throw null; }
+        public static System.Numerics.Vector<T> operator ^(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) { throw null; }
+        public static explicit operator System.Numerics.Vector<System.Byte> (System.Numerics.Vector<T> value) { throw null; }
+        public static explicit operator System.Numerics.Vector<System.Double> (System.Numerics.Vector<T> value) { throw null; }
+        public static explicit operator System.Numerics.Vector<System.Int16> (System.Numerics.Vector<T> value) { throw null; }
+        public static explicit operator System.Numerics.Vector<System.Int32> (System.Numerics.Vector<T> value) { throw null; }
+        public static explicit operator System.Numerics.Vector<System.Int64> (System.Numerics.Vector<T> value) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static explicit operator System.Numerics.Vector<System.SByte> (System.Numerics.Vector<T> value) { throw null; }
+        public static explicit operator System.Numerics.Vector<System.Single> (System.Numerics.Vector<T> value) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static explicit operator System.Numerics.Vector<System.UInt16> (System.Numerics.Vector<T> value) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static explicit operator System.Numerics.Vector<System.UInt32> (System.Numerics.Vector<T> value) { throw null; }
+        [System.CLSCompliantAttribute(false)]
+        public static explicit operator System.Numerics.Vector<System.UInt64> (System.Numerics.Vector<T> value) { throw null; }
+        public static bool operator !=(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) { throw null; }
+        public static System.Numerics.Vector<T> operator *(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) { throw null; }
+        public static System.Numerics.Vector<T> operator *(System.Numerics.Vector<T> value, T factor) { throw null; }
+        public static System.Numerics.Vector<T> operator *(T factor, System.Numerics.Vector<T> value) { throw null; }
+        public static System.Numerics.Vector<T> operator ~(System.Numerics.Vector<T> value) { throw null; }
+        public static System.Numerics.Vector<T> operator -(System.Numerics.Vector<T> left, System.Numerics.Vector<T> right) { throw null; }
+        public static System.Numerics.Vector<T> operator -(System.Numerics.Vector<T> value) { throw null; }
         public override string ToString() { throw null; }
-
-        public string ToString(string format, IFormatProvider formatProvider) { throw null; }
-
         public string ToString(string format) { throw null; }
+        public string ToString(string format, System.IFormatProvider formatProvider) { throw null; }
     }
 }

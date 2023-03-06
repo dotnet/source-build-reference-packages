@@ -4,33 +4,45 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
-[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
-[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: System.Reflection.AssemblyTitle("System.IO")]
-[assembly: System.Reflection.AssemblyDescription("System.IO")]
-[assembly: System.Reflection.AssemblyDefaultAlias("System.IO")]
-[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
-[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
-[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: System.Reflection.AssemblyFileVersion("1.0.24212.01")]
-[assembly: System.Reflection.AssemblyInformationalVersion("1.0.24212.01. Commit Hash: 9688ddbb62c04189cac4c4a06e31e93377dccd41")]
-[assembly: System.CLSCompliant(true)]
-[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
-[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.BinaryReader))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.BinaryWriter))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.BufferedStream))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.EndOfStreamException))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.FileNotFoundException))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.InvalidDataException))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.IOException))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.MemoryStream))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.SeekOrigin))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.Stream))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.StreamReader))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.StreamWriter))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.StringReader))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.StringWriter))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.TextReader))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.IO.TextWriter))]
+
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security;
+
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: AllowPartiallyTrustedCallers]
+[assembly: ReferenceAssembly]
+[assembly: AssemblyTitle("System.IO")]
+[assembly: AssemblyDescription("System.IO")]
+[assembly: AssemblyDefaultAlias("System.IO")]
+[assembly: AssemblyCompany("Microsoft Corporation")]
+[assembly: AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: AssemblyFileVersion("1.0.24212.01")]
+[assembly: AssemblyInformationalVersion("1.0.24212.01 built by: SOURCEBUILD")]
+[assembly: CLSCompliant(true)]
+[assembly: AssemblyMetadata("", "")]
+[assembly: AssemblyVersion("4.1.0.0")]
+
+[assembly: TypeForwardedTo(typeof(System.IO.BinaryReader))]
+[assembly: TypeForwardedTo(typeof(System.IO.BinaryWriter))]
+[assembly: TypeForwardedTo(typeof(System.IO.BufferedStream))]
+[assembly: TypeForwardedTo(typeof(System.IO.EndOfStreamException))]
+[assembly: TypeForwardedTo(typeof(System.IO.FileNotFoundException))]
+[assembly: TypeForwardedTo(typeof(System.IO.InvalidDataException))]
+[assembly: TypeForwardedTo(typeof(System.IO.IOException))]
+[assembly: TypeForwardedTo(typeof(System.IO.MemoryStream))]
+[assembly: TypeForwardedTo(typeof(System.IO.SeekOrigin))]
+[assembly: TypeForwardedTo(typeof(System.IO.Stream))]
+[assembly: TypeForwardedTo(typeof(System.IO.StreamReader))]
+[assembly: TypeForwardedTo(typeof(System.IO.StreamWriter))]
+[assembly: TypeForwardedTo(typeof(System.IO.StringReader))]
+[assembly: TypeForwardedTo(typeof(System.IO.StringWriter))]
+[assembly: TypeForwardedTo(typeof(System.IO.TextReader))]
+[assembly: TypeForwardedTo(typeof(System.IO.TextWriter))]
+
+
+

@@ -4,25 +4,37 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
-[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
-[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: System.Resources.NeutralResourcesLanguage("en-US")]
-[assembly: System.Reflection.AssemblyTitle("System.Security.Claims")]
-[assembly: System.Reflection.AssemblyDescription("System.Security.Claims")]
-[assembly: System.Reflection.AssemblyDefaultAlias("System.Security.Claims")]
-[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
-[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
-[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: System.Reflection.AssemblyFileVersion("4.6.24705.01")]
-[assembly: System.Reflection.AssemblyInformationalVersion("4.6.24705.01. Commit Hash: 4d1af962ca0fede10beb01d197367c2f90e92c97")]
-[assembly: System.CLSCompliant(true)]
-[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
-[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Claims.Claim))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Claims.ClaimsIdentity))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Claims.ClaimsPrincipal))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Claims.ClaimTypes))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Claims.ClaimValueTypes))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Principal.GenericIdentity))]
-[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Security.Principal.GenericPrincipal))]
+
+using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security;
+using System.Security.Claims;
+using System.Security.Principal;
+
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: AllowPartiallyTrustedCallers]
+[assembly: ReferenceAssembly]
+[assembly: AssemblyTitle("System.Security.Claims")]
+[assembly: AssemblyDescription("System.Security.Claims")]
+[assembly: AssemblyDefaultAlias("System.Security.Claims")]
+[assembly: AssemblyCompany("Microsoft Corporation")]
+[assembly: AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: AssemblyFileVersion("4.6.24705.01")]
+[assembly: AssemblyInformationalVersion("4.6.24705.01 built by: SOURCEBUILD")]
+[assembly: CLSCompliant(true)]
+[assembly: AssemblyMetadata("", "")]
+[assembly: AssemblyVersion("4.0.2.0")]
+
+[assembly: TypeForwardedTo(typeof(System.Security.Claims.Claim))]
+[assembly: TypeForwardedTo(typeof(System.Security.Claims.ClaimsIdentity))]
+[assembly: TypeForwardedTo(typeof(System.Security.Claims.ClaimsPrincipal))]
+[assembly: TypeForwardedTo(typeof(System.Security.Claims.ClaimTypes))]
+[assembly: TypeForwardedTo(typeof(System.Security.Claims.ClaimValueTypes))]
+[assembly: TypeForwardedTo(typeof(System.Security.Principal.GenericIdentity))]
+[assembly: TypeForwardedTo(typeof(System.Security.Principal.GenericPrincipal))]
+
+
+

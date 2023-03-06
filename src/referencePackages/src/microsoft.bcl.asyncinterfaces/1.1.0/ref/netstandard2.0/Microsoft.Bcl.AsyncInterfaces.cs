@@ -4,119 +4,104 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
-[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
-[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: System.Reflection.AssemblyDefaultAlias("Microsoft.Bcl.AsyncInterfaces")]
-[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
-[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
-[assembly: System.Reflection.AssemblyMetadata("PreferInbox", "True")]
-[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
-[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation. All rights reserved.")]
-[assembly: System.Reflection.AssemblyDescription("Microsoft.Bcl.AsyncInterfaces")]
-[assembly: System.Reflection.AssemblyFileVersion("4.700.19.56404")]
-[assembly: System.Reflection.AssemblyInformationalVersion("3.1.0+0f7f38c4fd323b26da10cce95f857f77f0f09b48")]
-[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Core")]
-[assembly: System.Reflection.AssemblyTitle("Microsoft.Bcl.AsyncInterfaces")]
-[assembly: System.Runtime.CompilerServices.ReferenceAssembly]
-[assembly: System.CLSCompliant(true)]
+
+using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security;
+
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: AllowPartiallyTrustedCallers]
+[assembly: ReferenceAssembly]
+[assembly: AssemblyTitle("Microsoft.Bcl.AsyncInterfaces")]
+[assembly: AssemblyDescription("Microsoft.Bcl.AsyncInterfaces")]
+[assembly: AssemblyDefaultAlias("Microsoft.Bcl.AsyncInterfaces")]
+[assembly: AssemblyCompany("Microsoft Corporation")]
+[assembly: AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: AssemblyFileVersion("4.700.19.56404")]
+[assembly: AssemblyInformationalVersion("4.700.19.56404 built by: SOURCEBUILD")]
+[assembly: CLSCompliant(true)]
+[assembly: AssemblyMetadata("", "")]
+[assembly: AssemblyVersion("1.0.0.0")]
+
+
+
+
 namespace System
 {
     public partial interface IAsyncDisposable
     {
-        Threading.Tasks.ValueTask DisposeAsync();
+        System.Threading.Tasks.ValueTask DisposeAsync();
     }
 }
-
 namespace System.Collections.Generic
 {
     public partial interface IAsyncEnumerable<out T>
     {
-        IAsyncEnumerator<T> GetAsyncEnumerator(Threading.CancellationToken cancellationToken = default);
+        System.Collections.Generic.IAsyncEnumerator<T> GetAsyncEnumerator(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
     }
-
-    public partial interface IAsyncEnumerator<out T> : IAsyncDisposable
+    public partial interface IAsyncEnumerator<out T> : System.IAsyncDisposable
     {
         T Current { get; }
-
-        Threading.Tasks.ValueTask<bool> MoveNextAsync();
+        System.Threading.Tasks.ValueTask<bool> MoveNextAsync();
     }
 }
-
 namespace System.Runtime.CompilerServices
 {
     public partial struct AsyncIteratorMethodBuilder
     {
         private object _dummy;
         private int _dummyPrimitive;
-        public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
-            where TAwaiter : INotifyCompletion where TStateMachine : IAsyncStateMachine { }
-
-        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine)
-            where TAwaiter : ICriticalNotifyCompletion where TStateMachine : IAsyncStateMachine { }
-
+        public void AwaitOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : System.Runtime.CompilerServices.INotifyCompletion where TStateMachine : System.Runtime.CompilerServices.IAsyncStateMachine { }
+        public void AwaitUnsafeOnCompleted<TAwaiter, TStateMachine>(ref TAwaiter awaiter, ref TStateMachine stateMachine) where TAwaiter : System.Runtime.CompilerServices.ICriticalNotifyCompletion where TStateMachine : System.Runtime.CompilerServices.IAsyncStateMachine { }
         public void Complete() { }
-
-        public static AsyncIteratorMethodBuilder Create() { throw null; }
-
-        public void MoveNext<TStateMachine>(ref TStateMachine stateMachine)
-            where TStateMachine : IAsyncStateMachine { }
+        public static System.Runtime.CompilerServices.AsyncIteratorMethodBuilder Create() { throw null; }
+        public void MoveNext<TStateMachine>(ref TStateMachine stateMachine) where TStateMachine : System.Runtime.CompilerServices.IAsyncStateMachine { }
     }
-
-    [AttributeUsage(AttributeTargets.Method, Inherited = false, AllowMultiple = false)]
-    public sealed partial class AsyncIteratorStateMachineAttribute : StateMachineAttribute
+    [System.AttributeUsageAttribute(System.AttributeTargets.Method, Inherited=false, AllowMultiple=false)]
+    public sealed partial class AsyncIteratorStateMachineAttribute : System.Runtime.CompilerServices.StateMachineAttribute
     {
-        public AsyncIteratorStateMachineAttribute(Type stateMachineType) : base(default!) { }
+        public AsyncIteratorStateMachineAttribute(System.Type stateMachineType) : base (default(System.Type)) { }
     }
-
     public readonly partial struct ConfiguredAsyncDisposable
     {
         private readonly object _dummy;
         private readonly int _dummyPrimitive;
-        public readonly ConfiguredValueTaskAwaitable DisposeAsync() { throw null; }
+        public System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable DisposeAsync() { throw null; }
     }
-
     public readonly partial struct ConfiguredCancelableAsyncEnumerable<T>
     {
         private readonly object _dummy;
         private readonly int _dummyPrimitive;
-        public readonly ConfiguredCancelableAsyncEnumerable<T> ConfigureAwait(bool continueOnCapturedContext) { throw null; }
-
-        public readonly ConfiguredCancelableAsyncEnumerable<T>.Enumerator GetAsyncEnumerator() { throw null; }
-
-        public readonly ConfiguredCancelableAsyncEnumerable<T> WithCancellation(Threading.CancellationToken cancellationToken) { throw null; }
-
+        public System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable<T> ConfigureAwait(bool continueOnCapturedContext) { throw null; }
+        public System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable<T>.Enumerator GetAsyncEnumerator() { throw null; }
+        public System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable<T> WithCancellation(System.Threading.CancellationToken cancellationToken) { throw null; }
         public readonly partial struct Enumerator
         {
             private readonly object _dummy;
             private readonly int _dummyPrimitive;
             public T Current { get { throw null; } }
-
-            public readonly ConfiguredValueTaskAwaitable DisposeAsync() { throw null; }
-
-            public readonly ConfiguredValueTaskAwaitable<bool> MoveNextAsync() { throw null; }
+            public System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable DisposeAsync() { throw null; }
+            public System.Runtime.CompilerServices.ConfiguredValueTaskAwaitable<bool> MoveNextAsync() { throw null; }
         }
     }
-
-    [AttributeUsage(AttributeTargets.Parameter, Inherited = false)]
-    public sealed partial class EnumeratorCancellationAttribute : Attribute
+    [System.AttributeUsageAttribute(System.AttributeTargets.Parameter, Inherited=false)]
+    public sealed partial class EnumeratorCancellationAttribute : System.Attribute
     {
         public EnumeratorCancellationAttribute() { }
     }
 }
-
 namespace System.Threading.Tasks
 {
     public static partial class TaskAsyncEnumerableExtensions
     {
-        public static Runtime.CompilerServices.ConfiguredAsyncDisposable ConfigureAwait(this IAsyncDisposable source, bool continueOnCapturedContext) { throw null; }
-
-        public static Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable<T> ConfigureAwait<T>(this Collections.Generic.IAsyncEnumerable<T> source, bool continueOnCapturedContext) { throw null; }
-
-        public static Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable<T> WithCancellation<T>(this Collections.Generic.IAsyncEnumerable<T> source, CancellationToken cancellationToken) { throw null; }
+        public static System.Runtime.CompilerServices.ConfiguredAsyncDisposable ConfigureAwait(this System.IAsyncDisposable source, bool continueOnCapturedContext) { throw null; }
+        public static System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable<T> ConfigureAwait<T>(this System.Collections.Generic.IAsyncEnumerable<T> source, bool continueOnCapturedContext) { throw null; }
+        public static System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable<T> WithCancellation<T>(this System.Collections.Generic.IAsyncEnumerable<T> source, System.Threading.CancellationToken cancellationToken) { throw null; }
     }
 }
-
 namespace System.Threading.Tasks.Sources
 {
     public partial struct ManualResetValueTaskSourceCore<TResult>
@@ -125,19 +110,12 @@ namespace System.Threading.Tasks.Sources
         private object _dummy;
         private int _dummyPrimitive;
         public bool RunContinuationsAsynchronously { get { throw null; } set { } }
-
         public short Version { get { throw null; } }
-
         public TResult GetResult(short token) { throw null; }
-
-        public ValueTaskSourceStatus GetStatus(short token) { throw null; }
-
-        public void OnCompleted(Action<object> continuation, object state, short token, ValueTaskSourceOnCompletedFlags flags) { }
-
+        public System.Threading.Tasks.Sources.ValueTaskSourceStatus GetStatus(short token) { throw null; }
+        public void OnCompleted(System.Action<object> continuation, object state, short token, System.Threading.Tasks.Sources.ValueTaskSourceOnCompletedFlags flags) { }
         public void Reset() { }
-
-        public void SetException(Exception error) { }
-
+        public void SetException(System.Exception error) { }
         public void SetResult(TResult result) { }
     }
 }

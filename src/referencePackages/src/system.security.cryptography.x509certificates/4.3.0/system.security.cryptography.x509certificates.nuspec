@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata minClientVersion="2.12">
     <id>System.Security.Cryptography.X509Certificates</id>
@@ -7,7 +7,7 @@
     <authors>Microsoft</authors>
     <owners>microsoft,dotnetframework</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <licenseUrl>http://go.microsoft.com/fwlink/?LinkId=329770</licenseUrl>
+    <licenseUrl>https://microsoft.mit-license.org/</licenseUrl>
     <projectUrl>https://dot.net/</projectUrl>
     <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
     <description>Provides types for reading, exporting and verifying Authenticode X.509 v3 certificates. These certificates are signed with a private key that uniquely and positively identifies the holder of the certificate.
@@ -73,9 +73,6 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       </group>
       <group targetFramework=".NETStandard1.6">
         <dependency id="Microsoft.NETCore.Platforms" version="1.1.0" />
-        <dependency id="runtime.native.System" version="4.3.0" exclude="Compile" />
-        <dependency id="runtime.native.System.Net.Http" version="4.3.0" exclude="Compile" />
-        <dependency id="runtime.native.System.Security.Cryptography.OpenSsl" version="4.3.0" exclude="Compile" />
         <dependency id="System.Collections" version="4.3.0" exclude="Compile" />
         <dependency id="System.Diagnostics.Debug" version="4.3.0" exclude="Compile" />
         <dependency id="System.Globalization" version="4.3.0" exclude="Compile" />

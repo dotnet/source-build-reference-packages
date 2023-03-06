@@ -4,71 +4,77 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
-[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
-[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: System.Security.AllowPartiallyTrustedCallers]
-[assembly: System.Runtime.CompilerServices.ReferenceAssembly]
-[assembly: System.Reflection.AssemblyTitle("System.IO.FileSystem.Primitives")]
-[assembly: System.Reflection.AssemblyDescription("System.IO.FileSystem.Primitives")]
-[assembly: System.Reflection.AssemblyDefaultAlias("System.IO.FileSystem.Primitives")]
-[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
-[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
-[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: System.Reflection.AssemblyFileVersion("1.0.24212.01")]
-[assembly: System.Reflection.AssemblyInformationalVersion("1.0.24212.01. Commit Hash: 9688ddbb62c04189cac4c4a06e31e93377dccd41")]
-[assembly: System.CLSCompliant(true)]
-[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
-[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
+
+using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security;
+
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: AllowPartiallyTrustedCallers]
+[assembly: ReferenceAssembly]
+[assembly: AssemblyTitle("System.IO.FileSystem.Primitives")]
+[assembly: AssemblyDescription("System.IO.FileSystem.Primitives")]
+[assembly: AssemblyDefaultAlias("System.IO.FileSystem.Primitives")]
+[assembly: AssemblyCompany("Microsoft Corporation")]
+[assembly: AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: AssemblyFileVersion("1.0.24212.01")]
+[assembly: AssemblyInformationalVersion("1.0.24212.01 built by: SOURCEBUILD")]
+[assembly: CLSCompliant(true)]
+[assembly: AssemblyMetadata("", "")]
+[assembly: AssemblyVersion("4.0.1.0")]
+
+
+
+
 namespace System.IO
 {
-    [Flags]
+    [System.FlagsAttribute]
     public enum FileAccess
     {
         Read = 1,
+        ReadWrite = 3,
         Write = 2,
-        ReadWrite = 3
     }
-
-    [Flags]
+    [System.FlagsAttribute]
     public enum FileAttributes
     {
-        ReadOnly = 1,
-        Hidden = 2,
-        System = 4,
-        Directory = 16,
         Archive = 32,
-        Device = 64,
-        Normal = 128,
-        Temporary = 256,
-        SparseFile = 512,
-        ReparsePoint = 1024,
         Compressed = 2048,
-        Offline = 4096,
-        NotContentIndexed = 8192,
+        Device = 64,
+        Directory = 16,
         Encrypted = 16384,
+        Hidden = 2,
         IntegrityStream = 32768,
-        NoScrubData = 131072
+        Normal = 128,
+        NoScrubData = 131072,
+        NotContentIndexed = 8192,
+        Offline = 4096,
+        ReadOnly = 1,
+        ReparsePoint = 1024,
+        SparseFile = 512,
+        System = 4,
+        Temporary = 256,
     }
-
     public enum FileMode
     {
-        CreateNew = 1,
+        Append = 6,
         Create = 2,
+        CreateNew = 1,
         Open = 3,
         OpenOrCreate = 4,
         Truncate = 5,
-        Append = 6
     }
-
-    [Flags]
+    [System.FlagsAttribute]
     public enum FileShare
     {
+        Delete = 4,
+        Inheritable = 16,
         None = 0,
         Read = 1,
-        Write = 2,
         ReadWrite = 3,
-        Delete = 4,
-        Inheritable = 16
+        Write = 2,
     }
 }

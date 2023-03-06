@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata minClientVersion="2.12">
     <id>System.Linq</id>
@@ -7,7 +7,7 @@
     <authors>Microsoft</authors>
     <owners>microsoft,dotnetframework</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <licenseUrl>http://go.microsoft.com/fwlink/?LinkId=329770</licenseUrl>
+    <licenseUrl>https://microsoft.mit-license.org/</licenseUrl>
     <projectUrl>https://dot.net/</projectUrl>
     <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
     <description>Provides classes and interfaces that supports queries that use Language-Integrated Query (LINQ).
