@@ -4,96 +4,134 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-
-using System;
-using System.Diagnostics;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Security;
-
-[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: AllowPartiallyTrustedCallers]
-[assembly: ReferenceAssembly]
-[assembly: AssemblyTitle("System.Reflection.TypeExtensions")]
-[assembly: AssemblyDescription("System.Reflection.TypeExtensions")]
-[assembly: AssemblyDefaultAlias("System.Reflection.TypeExtensions")]
-[assembly: AssemblyCompany("Microsoft Corporation")]
-[assembly: AssemblyProduct("Microsoft® .NET Framework")]
-[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
-[assembly: AssemblyFileVersion("4.6.23123.00")]
-[assembly: AssemblyInformationalVersion("4.6.23123.00 built by: SOURCEBUILD")]
-[assembly: CLSCompliant(true)]
-[assembly: AssemblyMetadata("", "")]
-[assembly: AssemblyVersion("4.0.0.0")]
-
-[assembly: TypeForwardedTo(typeof(System.Reflection.BindingFlags))]
-
-
-
+[assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
+[assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
+[assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: System.Reflection.AssemblyTitle("System.Reflection.TypeExtensions")]
+[assembly: System.Reflection.AssemblyDescription("System.Reflection.TypeExtensions")]
+[assembly: System.Reflection.AssemblyDefaultAlias("System.Reflection.TypeExtensions")]
+[assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
+[assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: System.Reflection.AssemblyFileVersion("4.6.23123.00")]
+[assembly: System.Reflection.AssemblyInformationalVersion("4.6.23123.00 built by: PROJECTKREL")]
+[assembly: System.Resources.NeutralResourcesLanguage("en-US")]
+[assembly: System.CLSCompliant(true)]
+[assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
+[assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
+[assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Reflection.BindingFlags))]
 namespace System.Reflection
 {
     public static partial class AssemblyExtensions
     {
-        public static System.Type[] GetExportedTypes(System.Reflection.Assembly assembly) { throw null; }
-        public static System.Reflection.Module[] GetModules(System.Reflection.Assembly assembly) { throw null; }
-        public static System.Type[] GetTypes(System.Reflection.Assembly assembly) { throw null; }
+        public static Type[] GetExportedTypes(Assembly assembly) { throw null; }
+
+        public static Module[] GetModules(Assembly assembly) { throw null; }
+
+        public static Type[] GetTypes(Assembly assembly) { throw null; }
     }
+
     public static partial class EventInfoExtensions
     {
-        public static System.Reflection.MethodInfo GetAddMethod(System.Reflection.EventInfo eventInfo) { throw null; }
-        public static System.Reflection.MethodInfo GetAddMethod(System.Reflection.EventInfo eventInfo, bool nonPublic) { throw null; }
-        public static System.Reflection.MethodInfo GetRaiseMethod(System.Reflection.EventInfo eventInfo) { throw null; }
-        public static System.Reflection.MethodInfo GetRaiseMethod(System.Reflection.EventInfo eventInfo, bool nonPublic) { throw null; }
-        public static System.Reflection.MethodInfo GetRemoveMethod(System.Reflection.EventInfo eventInfo) { throw null; }
-        public static System.Reflection.MethodInfo GetRemoveMethod(System.Reflection.EventInfo eventInfo, bool nonPublic) { throw null; }
+        public static MethodInfo GetAddMethod(EventInfo eventInfo, bool nonPublic) { throw null; }
+
+        public static MethodInfo GetAddMethod(EventInfo eventInfo) { throw null; }
+
+        public static MethodInfo GetRaiseMethod(EventInfo eventInfo, bool nonPublic) { throw null; }
+
+        public static MethodInfo GetRaiseMethod(EventInfo eventInfo) { throw null; }
+
+        public static MethodInfo GetRemoveMethod(EventInfo eventInfo, bool nonPublic) { throw null; }
+
+        public static MethodInfo GetRemoveMethod(EventInfo eventInfo) { throw null; }
     }
+
     public static partial class MethodInfoExtensions
     {
-        public static System.Reflection.MethodInfo GetBaseDefinition(System.Reflection.MethodInfo method) { throw null; }
+        public static MethodInfo GetBaseDefinition(MethodInfo method) { throw null; }
     }
+
     public static partial class PropertyInfoExtensions
     {
-        public static System.Reflection.MethodInfo[] GetAccessors(System.Reflection.PropertyInfo property) { throw null; }
-        public static System.Reflection.MethodInfo[] GetAccessors(System.Reflection.PropertyInfo property, bool nonPublic) { throw null; }
-        public static System.Reflection.MethodInfo GetGetMethod(System.Reflection.PropertyInfo property) { throw null; }
-        public static System.Reflection.MethodInfo GetGetMethod(System.Reflection.PropertyInfo property, bool nonPublic) { throw null; }
-        public static System.Reflection.MethodInfo GetSetMethod(System.Reflection.PropertyInfo property) { throw null; }
-        public static System.Reflection.MethodInfo GetSetMethod(System.Reflection.PropertyInfo property, bool nonPublic) { throw null; }
+        public static MethodInfo[] GetAccessors(PropertyInfo property, bool nonPublic) { throw null; }
+
+        public static MethodInfo[] GetAccessors(PropertyInfo property) { throw null; }
+
+        public static MethodInfo GetGetMethod(PropertyInfo property, bool nonPublic) { throw null; }
+
+        public static MethodInfo GetGetMethod(PropertyInfo property) { throw null; }
+
+        public static MethodInfo GetSetMethod(PropertyInfo property, bool nonPublic) { throw null; }
+
+        public static MethodInfo GetSetMethod(PropertyInfo property) { throw null; }
     }
+
     public static partial class TypeExtensions
     {
-        public static System.Reflection.ConstructorInfo GetConstructor(System.Type type, System.Type[] types) { throw null; }
-        public static System.Reflection.ConstructorInfo[] GetConstructors(System.Type type) { throw null; }
-        public static System.Reflection.ConstructorInfo[] GetConstructors(System.Type type, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Reflection.MemberInfo[] GetDefaultMembers(System.Type type) { throw null; }
-        public static System.Reflection.EventInfo GetEvent(System.Type type, string name) { throw null; }
-        public static System.Reflection.EventInfo GetEvent(System.Type type, string name, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Reflection.EventInfo[] GetEvents(System.Type type) { throw null; }
-        public static System.Reflection.EventInfo[] GetEvents(System.Type type, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Reflection.FieldInfo GetField(System.Type type, string name) { throw null; }
-        public static System.Reflection.FieldInfo GetField(System.Type type, string name, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Reflection.FieldInfo[] GetFields(System.Type type) { throw null; }
-        public static System.Reflection.FieldInfo[] GetFields(System.Type type, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Type[] GetGenericArguments(System.Type type) { throw null; }
-        public static System.Type[] GetInterfaces(System.Type type) { throw null; }
-        public static System.Reflection.MemberInfo[] GetMember(System.Type type, string name) { throw null; }
-        public static System.Reflection.MemberInfo[] GetMember(System.Type type, string name, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Reflection.MemberInfo[] GetMembers(System.Type type) { throw null; }
-        public static System.Reflection.MemberInfo[] GetMembers(System.Type type, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Reflection.MethodInfo GetMethod(System.Type type, string name) { throw null; }
-        public static System.Reflection.MethodInfo GetMethod(System.Type type, string name, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Reflection.MethodInfo GetMethod(System.Type type, string name, System.Type[] types) { throw null; }
-        public static System.Reflection.MethodInfo[] GetMethods(System.Type type) { throw null; }
-        public static System.Reflection.MethodInfo[] GetMethods(System.Type type, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Type GetNestedType(System.Type type, string name, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Type[] GetNestedTypes(System.Type type, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Reflection.PropertyInfo[] GetProperties(System.Type type) { throw null; }
-        public static System.Reflection.PropertyInfo[] GetProperties(System.Type type, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Reflection.PropertyInfo GetProperty(System.Type type, string name) { throw null; }
-        public static System.Reflection.PropertyInfo GetProperty(System.Type type, string name, System.Reflection.BindingFlags bindingAttr) { throw null; }
-        public static System.Reflection.PropertyInfo GetProperty(System.Type type, string name, System.Type returnType) { throw null; }
-        public static System.Reflection.PropertyInfo GetProperty(System.Type type, string name, System.Type returnType, System.Type[] types) { throw null; }
-        public static bool IsAssignableFrom(System.Type type, System.Type c) { throw null; }
-        public static bool IsInstanceOfType(System.Type type, object o) { throw null; }
+        public static ConstructorInfo GetConstructor(Type type, Type[] types) { throw null; }
+
+        public static ConstructorInfo[] GetConstructors(Type type, BindingFlags bindingAttr) { throw null; }
+
+        public static ConstructorInfo[] GetConstructors(Type type) { throw null; }
+
+        public static MemberInfo[] GetDefaultMembers(Type type) { throw null; }
+
+        public static EventInfo GetEvent(Type type, string name, BindingFlags bindingAttr) { throw null; }
+
+        public static EventInfo GetEvent(Type type, string name) { throw null; }
+
+        public static EventInfo[] GetEvents(Type type, BindingFlags bindingAttr) { throw null; }
+
+        public static EventInfo[] GetEvents(Type type) { throw null; }
+
+        public static FieldInfo GetField(Type type, string name, BindingFlags bindingAttr) { throw null; }
+
+        public static FieldInfo GetField(Type type, string name) { throw null; }
+
+        public static FieldInfo[] GetFields(Type type, BindingFlags bindingAttr) { throw null; }
+
+        public static FieldInfo[] GetFields(Type type) { throw null; }
+
+        public static Type[] GetGenericArguments(Type type) { throw null; }
+
+        public static Type[] GetInterfaces(Type type) { throw null; }
+
+        public static MemberInfo[] GetMember(Type type, string name, BindingFlags bindingAttr) { throw null; }
+
+        public static MemberInfo[] GetMember(Type type, string name) { throw null; }
+
+        public static MemberInfo[] GetMembers(Type type, BindingFlags bindingAttr) { throw null; }
+
+        public static MemberInfo[] GetMembers(Type type) { throw null; }
+
+        public static MethodInfo GetMethod(Type type, string name, BindingFlags bindingAttr) { throw null; }
+
+        public static MethodInfo GetMethod(Type type, string name, Type[] types) { throw null; }
+
+        public static MethodInfo GetMethod(Type type, string name) { throw null; }
+
+        public static MethodInfo[] GetMethods(Type type, BindingFlags bindingAttr) { throw null; }
+
+        public static MethodInfo[] GetMethods(Type type) { throw null; }
+
+        public static Type GetNestedType(Type type, string name, BindingFlags bindingAttr) { throw null; }
+
+        public static Type[] GetNestedTypes(Type type, BindingFlags bindingAttr) { throw null; }
+
+        public static PropertyInfo[] GetProperties(Type type, BindingFlags bindingAttr) { throw null; }
+
+        public static PropertyInfo[] GetProperties(Type type) { throw null; }
+
+        public static PropertyInfo GetProperty(Type type, string name, BindingFlags bindingAttr) { throw null; }
+
+        public static PropertyInfo GetProperty(Type type, string name, Type returnType, Type[] types) { throw null; }
+
+        public static PropertyInfo GetProperty(Type type, string name, Type returnType) { throw null; }
+
+        public static PropertyInfo GetProperty(Type type, string name) { throw null; }
+
+        public static bool IsAssignableFrom(Type type, Type c) { throw null; }
+
+        public static bool IsInstanceOfType(Type type, object o) { throw null; }
     }
 }
