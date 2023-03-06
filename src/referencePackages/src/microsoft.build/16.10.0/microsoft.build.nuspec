@@ -24,18 +24,7 @@
         <dependency id="System.Text.Json" version="4.7.0" exclude="Build,Analyzers" />
         <dependency id="System.Threading.Tasks.Dataflow" version="4.9.0" exclude="Build,Analyzers" />
       </group>
-      <group targetFramework="net5.0">
-        <dependency id="Microsoft.Build.Framework" version="16.10.0" exclude="Build,Analyzers" />
-        <dependency id="Microsoft.NET.StringTools" version="1.0.0" exclude="Build,Analyzers" />
-        <dependency id="Microsoft.Win32.Registry" version="4.3.0" exclude="Build,Analyzers" />
-        <dependency id="System.Collections.Immutable" version="5.0.0" exclude="Build,Analyzers" />
-        <dependency id="System.Configuration.ConfigurationManager" version="4.7.0" exclude="Build,Analyzers" />
-        <dependency id="System.Reflection.Metadata" version="1.6.0" exclude="Build,Analyzers" />
-        <dependency id="System.Security.Principal.Windows" version="4.7.0" exclude="Build,Analyzers" />
-        <dependency id="System.Text.Encoding.CodePages" version="4.0.1" exclude="Build,Analyzers" />
-        <dependency id="System.Text.Json" version="4.7.0" exclude="Build,Analyzers" />
-        <dependency id="System.Threading.Tasks.Dataflow" version="4.9.0" exclude="Build,Analyzers" />
-      </group>
+      <group targetFramework="net5.0" />
     </dependencies>
     <frameworkAssemblies>
       <frameworkAssembly assemblyName="System.IO.Compression" targetFramework=".NETFramework4.7.2" />
