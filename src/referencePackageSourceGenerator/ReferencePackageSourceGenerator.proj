@@ -88,7 +88,7 @@
           DependsOnTargets="GenerateAndInvokeGenerateSourceProject;
                             GenerateReferencePackageProject;
                             CopyPlaceholderFiles;
-                            CopyNuspec;
+                            RewriteNuspec;
                             CreateDirectoryBuildPropsFile" />
 
   <!-- Generate an intermediate multi-targeting wrapper project that retrieves the reference assemblies and invokes GenAPI. -->
@@ -172,7 +172,7 @@
 
   <!-- Copy nuspec to target directory and remove icon element from it. -->
   <UsingTask TaskName="RewriteNuspec" AssemblyFile="$(ReferencePackageSourceTaskAssembly)" />
-  <Target Name="CopyNuspec">
+  <Target Name="RewriteNuspec">
     <PropertyGroup>
       <NuspecPath>$(PackageSourceDirectory)$(PackageName.ToLowerInvariant()).nuspec</NuspecPath>
       <NuspecTargetPath>$(PackageTargetDirectory)$([System.IO.Path]::GetFileName('$(NuspecPath)'))</NuspecTargetPath>
