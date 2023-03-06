@@ -2546,9 +2546,9 @@ namespace Microsoft.Build.Globbing.Extensions
 
 namespace Microsoft.Build.Graph
 {
-    public record GraphBuildOptions
+    public class GraphBuildOptions
     {
-        public bool Build { get; init; } = true;
+        public bool Build { get; set; } = true;
     }
 
     public sealed partial class GraphBuildRequestData
