@@ -170,7 +170,7 @@
              Condition="'@(PackagePlaceholderFile)' != ''" />
   </Target>
 
-  <!-- Copy nuspec to target directory and remove icon element from it. -->
+  <!-- Rewrite nuspec and copy to target directory. -->
   <UsingTask TaskName="RewriteNuspec" AssemblyFile="$(ReferencePackageSourceTaskAssembly)" />
   <Target Name="RewriteNuspec">
     <PropertyGroup>
