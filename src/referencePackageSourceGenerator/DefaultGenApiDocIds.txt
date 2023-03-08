@@ -48,3 +48,5 @@ T:System.Xml.Serialization.XmlEnumAttribute
 T:System.Xml.Serialization.XmlIgnoreAttribute
 T:System.Xml.Serialization.XmlRootAttribute
 T:System.Windows.Markup.ContentPropertyAttribute
+T:System.Reflection.AssemblyKeyFileAttribute
+T:System.Reflection.AssemblyDelaySignAttribute
