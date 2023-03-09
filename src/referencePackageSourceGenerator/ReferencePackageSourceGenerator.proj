@@ -7,7 +7,7 @@
     <PackagesTargetDirectory>$(RepoRoot)src\referencePackages\src\</PackagesTargetDirectory>
     <!-- The following target frameworks aren't buildable with the current SDK and as they don't contribute to the set of
          source build target verticals, can be safely excluded. -->
-    <ExcludeTargetFrameworks>netcore50;net463;portable-*;xamarin*;monotouch*;monoandroid*;win8;wp8;wpa81</ExcludeTargetFrameworks>
+    <ExcludeTargetFrameworks>netcoreapp3.1;netcore50;net463;portable-*;xamarin*;monotouch*;monoandroid*;win8;wp8;wpa81</ExcludeTargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(PackageName)' != '' and '$(PackageVersion)' != ''">
