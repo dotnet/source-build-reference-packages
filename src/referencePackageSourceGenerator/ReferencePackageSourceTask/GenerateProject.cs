@@ -40,7 +40,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             string projectTemplateContent = File.ReadAllText(ProjectTemplate);
             string pkgProjectOutput = projectTemplateContent;
             string packageReferenceIncludes = "\n";
-            string outputPathByTfm = "\n";
+            string propertiesByTfm = "\n";
 
             // Make sure that we always use the same directory separator.
             string relativePath = Path.GetRelativePath(BaseTargetPath, Path.GetDirectoryName(TargetPath)).Replace('\\', '/');
@@ -135,12 +135,19 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                     }
                 }
 
+                propertiesByTfm += $"  <PropertyGroup Condition=\" '$(TargetFramework)' == '{targetFramework}' \">\n";
                 if (subPath == "lib")
                 {
-                    outputPathByTfm += $"  <PropertyGroup Condition=\" '$(TargetFramework)' == '{targetFramework}' \">\n";
-                    outputPathByTfm += $"    <OutputPath>$(ArtifactsBinDir){relativePath}/{subPath}/</OutputPath>\n";
-                    outputPathByTfm += $"  </PropertyGroup>\n\n";
+                    propertiesByTfm += $"    <OutputPath>$(ArtifactsBinDir){relativePath}/{subPath}/</OutputPath>\n";
                 }
+                if (targetFramework == "netstandard2.0" ||
+                    targetFramework == "netstandard2.1" ||
+                    targetFramework == "netcoreapp3.0" ||
+                    targetFramework == "net6.0")
+                {
+                    propertiesByTfm += "    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>\n";
+                }
+                propertiesByTfm += $"  </PropertyGroup>\n\n";
             }
 
             // If necessary, write the strong name key into the project file.
@@ -151,19 +158,12 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 keyFileTag = $"\n    <StrongNameKeyId>{strongNameData.Id}</StrongNameKeyId>";
             }
 
-            string enableImplicitReferencesTag = "";
-            if (includesNetStandard21 || includesNetCoreApp30)
-            {
-                enableImplicitReferencesTag = "\n    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>";
-            }
-
             pkgProjectOutput = pkgProjectOutput.Replace("$$LowerCaseFileName$$", PackageId.ToLowerInvariant());
-            pkgProjectOutput = pkgProjectOutput.Replace("$$OutputPathByTfm$$", outputPathByTfm);
+            pkgProjectOutput = pkgProjectOutput.Replace("$$PropertiesByTfm$$", propertiesByTfm);
             pkgProjectOutput = pkgProjectOutput.Replace("$$RelativePath$$", relativePath);
             pkgProjectOutput = pkgProjectOutput.Replace("$$PackageReferences$$", packageReferenceIncludes);
             pkgProjectOutput = pkgProjectOutput.Replace("$$TargetFrameworks$$", string.Join(';', orderedTargetFrameworks));
             pkgProjectOutput = pkgProjectOutput.Replace("$$KeyFileTag$$", keyFileTag);
-            pkgProjectOutput = pkgProjectOutput.Replace("$$EnableImplicitReferencesTag$$", enableImplicitReferencesTag);
 
             // Generate the project file
             Directory.CreateDirectory(Path.GetDirectoryName(TargetPath));
