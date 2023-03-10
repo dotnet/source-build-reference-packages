@@ -20,10 +20,6 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <group targetFramework=".NETFramework4.6.1">
         <dependency id="System.Security.AccessControl" version="4.7.0" />
       </group>
-      <group targetFramework=".NETCoreApp3.0">
-        <dependency id="System.Security.AccessControl" version="4.7.0" />
-        <dependency id="System.Windows.Extensions" version="4.7.0" />
-      </group>
       <group targetFramework=".NETStandard2.0">
         <dependency id="System.Security.AccessControl" version="4.7.0" />
       </group>

@@ -33,10 +33,6 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         <dependency id="Microsoft.NETCore.Platforms" version="3.1.4" />
         <dependency id="Microsoft.Win32.SystemEvents" version="4.7.0" exclude="Compile" />
       </group>
-      <group targetFramework=".NETCoreApp3.0">
-        <dependency id="Microsoft.NETCore.Platforms" version="3.1.4" />
-        <dependency id="Microsoft.Win32.SystemEvents" version="4.7.0" exclude="Compile" />
-      </group>
       <group targetFramework=".NETStandard2.0" />
       <group targetFramework="Xamarin.iOS1.0" />
       <group targetFramework="Xamarin.Mac2.0" />

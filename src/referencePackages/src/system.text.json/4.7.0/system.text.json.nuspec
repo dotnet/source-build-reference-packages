@@ -59,10 +59,7 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
         <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.7.0" />
         <dependency id="System.Text.Encodings.Web" version="4.7.0" />
       </group>
-      <group targetFramework=".NETCoreApp3.0">
-        <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.7.0" />
-        <dependency id="System.Text.Encodings.Web" version="4.7.0" />
-      </group>
+
       <group targetFramework=".NETCoreApp3.1" />
       <group targetFramework=".NETStandard2.0">
         <dependency id="Microsoft.Bcl.AsyncInterfaces" version="1.1.0" />
