@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0</TargetFrameworks>
+    <NuspecFile>$(ArtifactsBinDir)system.windows.extensions/6.0.0/system.windows.extensions.nuspec</NuspecFile>
+    <StrongNameKeyId>Open</StrongNameKeyId>
+    <DisableImplicitFrameworkReferences Condition=" '$(TargetFramework)' == 'net6.0' ">false</DisableImplicitFrameworkReferences>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputPath>$(ArtifactsBinDir)system.windows.extensions/6.0.0/ref/</OutputPath>
+    <IntermediateOutputPath>$(ArtifactsObjDir)system.windows.extensions/6.0.0</IntermediateOutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+    <OutputPath>$(ArtifactsBinDir)system.windows.extensions/6.0.0/lib/</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="**/ref/$(TargetFramework)/*.cs" />
+    <Compile Include="**/lib/$(TargetFramework)/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>

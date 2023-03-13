@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net472;net6.0;netstandard2.0</TargetFrameworks>
+    <NuspecFile>$(ArtifactsBinDir)microsoft.build.framework/17.3.2/microsoft.build.framework.nuspec</NuspecFile>
+    <DisableImplicitFrameworkReferences Condition=" '$(TargetFramework)' == 'net6.0' ">false</DisableImplicitFrameworkReferences>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputPath>$(ArtifactsBinDir)microsoft.build.framework/17.3.2/ref/</OutputPath>
+    <IntermediateOutputPath>$(ArtifactsObjDir)microsoft.build.framework/17.3.2</IntermediateOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="**/ref/$(TargetFramework)/*.cs" />
+    <Compile Include="**/lib/$(TargetFramework)/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net472" Version="1.0.2" />
+    <Reference Include="System" />
+    <Reference Include="System.Xaml" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+    <PackageReference Include="System.Security.Permissions" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+    <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />
+    <PackageReference Include="System.Security.Permissions" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>
