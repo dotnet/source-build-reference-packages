@@ -1,4 +1,10 @@
 <Project>
 
   <Import Project="$([MSBuild]::GetPathOfFileAbove(Directory.Build.targets, $(MSBuildThisFileDirectory)..))" />
+
+  <ItemGroup>
+    <KnownFrameworkReference
+      Update="@(KnownFrameworkReference->HasMetadata('TargetingPackVersion')->HasMetadata('DefaultRuntimeFrameworkVersion'))"
+      TargetingPackVersion="%(KnownFrameworkReference.DefaultRuntimeFrameworkVersion)" />
+  </ItemGroup>
 </Project>
