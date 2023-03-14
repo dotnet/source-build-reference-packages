@@ -9,7 +9,7 @@
     <OutputPath>$(ArtifactsBinDir)$$RelativePath$$/ref/</OutputPath>
     <IntermediateOutputPath>$(ArtifactsObjDir)$$RelativePath$$</IntermediateOutputPath>
   </PropertyGroup>
-$$PropertiesByTfm$$  <ItemGroup>
+$$TfmSpecificProperties$$  <ItemGroup>
     <Compile Include="**/ref/$(TargetFramework)/*.cs" />
     <Compile Include="**/lib/$(TargetFramework)/*.cs" />
   </ItemGroup>
