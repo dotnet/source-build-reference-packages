@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>$$TargetFrameworks$$</TargetFrameworks>
+    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
     <NuspecFile>$(ArtifactsBinDir)$$RelativePath$$/$$LowerCaseFileName$$.nuspec</NuspecFile>$$KeyFileTag$$
   </PropertyGroup>
 
