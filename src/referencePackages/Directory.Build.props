@@ -14,7 +14,7 @@
     <AssemblyName Condition="'$(AssemblyName)' == ''">$([MSBuild]::MakeRelative('$(MSBuildThisFileDirectory)src', '$(ProjectParentDir)'))</AssemblyName>
   </PropertyGroup>
 
-  <Import Project="$([MSBuild]::GetPathOfFileAbove(Directory.Build.props, $(MSBuildThisFileDirectory)..))" />
+  <Import Project="..\Directory.Build.props" />
 
   <PropertyGroup>
     <!-- Common properties for all Reference Packages -->
@@ -25,6 +25,7 @@
     <KeyFileDir>$(RepoRoot)src/referencePackages/snk/</KeyFileDir>
     <SignAssembly>true</SignAssembly>
     <PublicSign>true</PublicSign>
+    <FullAssemblySigningSupported Condition="('$(FullAssemblySigningSupported)' == '') and ('$(OS)' != 'Windows_NT')">false</FullAssemblySigningSupported>
 
     <StrongNameKeyId>Microsoft</StrongNameKeyId>
 

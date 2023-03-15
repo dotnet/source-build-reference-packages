@@ -1,10 +1,53 @@
 <Project>
 
-  <Import Project="$([MSBuild]::GetPathOfFileAbove(Directory.Build.targets, $(MSBuildThisFileDirectory)..))" />
+  <Import Project="..\Directory.Build.targets" />
+
+  <!--
+    ### Targeting Packs section ###
+    Keep in sync with available targeting packs under src/targetPacks/ILsrc.
+  -->
+
+  <PropertyGroup>
+    <MicrosoftNETFrameworkReferenceAssembliesLatestPackageVersion>1.0.2</MicrosoftNETFrameworkReferenceAssembliesLatestPackageVersion>
+    <!-- The SDK already sets the NETStandardImplicitPackageVersion and we don't expect it to change anymore. Hence, we don't encode it here. -->
+  </PropertyGroup>
 
   <ItemGroup>
-    <KnownFrameworkReference
-      Update="@(KnownFrameworkReference->HasMetadata('TargetingPackVersion')->HasMetadata('DefaultRuntimeFrameworkVersion'))"
-      TargetingPackVersion="%(KnownFrameworkReference.DefaultRuntimeFrameworkVersion)" />
+    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'Microsoft.NETCore.App'))">
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'netcoreapp3.0'">3.0.0</TargetingPackVersion>
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'netcoreapp3.1'">3.1.0</TargetingPackVersion>
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'net5.0'">5.0.0</TargetingPackVersion>
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'net6.0'">6.0.0</TargetingPackVersion>
+    </KnownFrameworkReference>
+
+    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'Microsoft.AspNetCore.App'))">
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'netcoreapp3.0'">3.0.1</TargetingPackVersion>
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'netcoreapp3.1'">3.1.10</TargetingPackVersion>
+    </KnownFrameworkReference>
+
+    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'NETStandard.Library'))">
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'netstandard2.1'">2.1.0</TargetingPackVersion>
+    </KnownFrameworkReference>
   </ItemGroup>
+
+  <!-- Filter out conflicting implicit assembly references. -->
+  <Target Name="FilterImplicitAssemblyReferences"
+          Condition="'$(DisableImplicitFrameworkReferences)' != 'true'"
+          DependsOnTargets="ResolveProjectReferences"
+          AfterTargets="ResolveTargetingPackAssets">
+    <ItemGroup>
+      <_targetingPackReferenceExclusion Include="$(TargetName)" />
+      <_targetingPackReferenceExclusion Include="@(_ResolvedProjectReferencePaths->Metadata('Filename'))" />
+    </ItemGroup>
+    <ItemGroup>
+      <_targetingPackReferenceWithProjectName Include="@(Reference->WithMetadataValue('ExternallyResolved', 'true')->Metadata('Filename'))"
+                                              OriginalIdentity="%(Identity)" />
+      <_targetingPackIncludedReferenceWithProjectName Include="@(_targetingPackReferenceWithProjectName)"
+                                                      Exclude="@(_targetingPackReferenceExclusion)" />
+      <_targetingPackExcludedReferenceWithProjectName Include="@(_targetingPackReferenceWithProjectName)"
+                                                      Exclude="@(_targetingPackIncludedReferenceWithProjectName)" />
+      <Reference Remove="@(_targetingPackExcludedReferenceWithProjectName->Metadata('OriginalIdentity'))" />
+    </ItemGroup>
+  </Target>
+
 </Project>

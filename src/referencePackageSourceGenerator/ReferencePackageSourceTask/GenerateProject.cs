@@ -40,48 +40,25 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             string projectTemplateContent = File.ReadAllText(ProjectTemplate);
             string pkgProjectOutput = projectTemplateContent;
             string packageReferenceIncludes = "\n";
-            string outputPathByTfm = "\n";
+            string tfmSpecificProperties = "\n";
 
             // Make sure that we always use the same directory separator.
             string relativePath = Path.GetRelativePath(BaseTargetPath, Path.GetDirectoryName(TargetPath)).Replace('\\', '/');
             StrongNameData strongNameData = default;
-
-            bool includesNetStandard21 = TargetFrameworks.Contains("netstandard2.1");
-            bool includesNetCoreApp30 = TargetFrameworks.Contains("netcoreapp3.0");
             string[] orderedTargetFrameworks = TargetFrameworks.Order().ToArray();
 
             foreach (string targetFramework in orderedTargetFrameworks)
             {
                 string packageReferences = "";
-                string netStandardTag = "NETStandardImplicitPackageVersion";
-
-                if (targetFramework == "netstandard2.0" && !includesNetStandard21 && !includesNetCoreApp30)
-                {
-                    packageReferences += $"    <PackageReference Include=\"NETStandard.Library\" Version=\"$({netStandardTag})\" />\n";
-                }
 
                 // Add package dependencies
                 foreach (ITaskItem packageDependency in PackageDependencies.Where(packageDependency => packageDependency.GetMetadata("TargetFramework") == targetFramework))
                 {
-                    // TODO: Generate a lookup table from source-build/PackageVersions.props.  For now, there is only one...
+                    // Don't emit package references for targeting packs as those are added implicitly by the SDK.
                     if (packageDependency.ItemSpec == "NETStandard.Library")
-                    {
-                        if (!includesNetStandard21 && !includesNetCoreApp30)
-                        {
-                            packageReferences += $"    <PackageReference Include=\"{packageDependency.ItemSpec}\" Version=\"$({netStandardTag})\" />\n";
-                        }
-                    }
-                    else
-                    {
-                        string version = packageDependency.GetMetadata("Version");
-                        packageReferences += $"    <PackageReference Include=\"{packageDependency.ItemSpec}\" Version=\"{version}\" />\n";
-                    }
-                }
+                        continue;
 
-                // Add .NET Framework targeting pack reference
-                if (targetFramework.StartsWith("net4"))
-                {
-                    packageReferences += $"    <PackageReference Include=\"Microsoft.NETFramework.ReferenceAssemblies.{targetFramework}\" Version=\"1.0.2\" />\n";
+                    packageReferences += $"    <PackageReference Include=\"{packageDependency.ItemSpec}\" Version=\"{packageDependency.GetMetadata("Version")}\" />\n";
                 }
 
                 // Add framework references
@@ -135,12 +112,12 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                     }
                 }
 
+                tfmSpecificProperties += $"  <PropertyGroup Condition=\" '$(TargetFramework)' == '{targetFramework}' \">\n";
                 if (subPath == "lib")
                 {
-                    outputPathByTfm += $"  <PropertyGroup Condition=\" '$(TargetFramework)' == '{targetFramework}' \">\n";
-                    outputPathByTfm += $"    <OutputPath>$(ArtifactsBinDir){relativePath}/{subPath}/</OutputPath>\n";
-                    outputPathByTfm += $"  </PropertyGroup>\n\n";
+                    tfmSpecificProperties += $"    <OutputPath>$(ArtifactsBinDir){relativePath}/{subPath}/</OutputPath>\n";
                 }
+                tfmSpecificProperties += $"  </PropertyGroup>\n\n";
             }
 
             // If necessary, write the strong name key into the project file.
@@ -151,19 +128,12 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 keyFileTag = $"\n    <StrongNameKeyId>{strongNameData.Id}</StrongNameKeyId>";
             }
 
-            string enableImplicitReferencesTag = "";
-            if (includesNetStandard21 || includesNetCoreApp30)
-            {
-                enableImplicitReferencesTag = "\n    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>";
-            }
-
             pkgProjectOutput = pkgProjectOutput.Replace("$$LowerCaseFileName$$", PackageId.ToLowerInvariant());
-            pkgProjectOutput = pkgProjectOutput.Replace("$$OutputPathByTfm$$", outputPathByTfm);
+            pkgProjectOutput = pkgProjectOutput.Replace("$$TfmSpecificProperties$$", tfmSpecificProperties);
             pkgProjectOutput = pkgProjectOutput.Replace("$$RelativePath$$", relativePath);
             pkgProjectOutput = pkgProjectOutput.Replace("$$PackageReferences$$", packageReferenceIncludes);
             pkgProjectOutput = pkgProjectOutput.Replace("$$TargetFrameworks$$", string.Join(';', orderedTargetFrameworks));
             pkgProjectOutput = pkgProjectOutput.Replace("$$KeyFileTag$$", keyFileTag);
-            pkgProjectOutput = pkgProjectOutput.Replace("$$EnableImplicitReferencesTag$$", enableImplicitReferencesTag);
 
             // Generate the project file
             Directory.CreateDirectory(Path.GetDirectoryName(TargetPath));
