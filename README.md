@@ -64,7 +64,7 @@ when it was originally generated.
 * Run build with the `./build.sh -sb` command.
 * If the compilation produces numerous compilation issue - run the `./build.sh --projects <path to .csproj file>` command for each generated reference package separately.
 
-You can search for known issues in the `docs/known_generator_issues.md`.
+You can search for known issues in the [Known Generator Issues Markdown file](docs/known_generator_issues.md).
 
 ### Targeting
 
