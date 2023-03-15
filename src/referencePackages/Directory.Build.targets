@@ -13,14 +13,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'Microsoft.NETCore.App')->WithMetadataValue('TargetFramework', 'netcoreapp3.0'))" TargetingPackVersion="3.0.0" />
-    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'Microsoft.NETCore.App')->WithMetadataValue('TargetFramework', 'netcoreapp3.1'))" TargetingPackVersion="3.1.0" />
-    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'Microsoft.NETCore.App')->WithMetadataValue('TargetFramework', 'net5.0'))" TargetingPackVersion="5.0.0" />
-    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'Microsoft.NETCore.App')->WithMetadataValue('TargetFramework', 'net6.0'))" TargetingPackVersion="6.0.0" />
-    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'Microsoft.AspNetCore.App')->WithMetadataValue('TargetFramework', 'netcoreapp3.0'))" TargetingPackVersion="3.0.1" />
-    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'Microsoft.AspNetCore.App')->WithMetadataValue('TargetFramework', 'netcoreapp3.1'))" TargetingPackVersion="3.1.10" />
-    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'Microsoft.AspNetCore.App')->WithMetadataValue('TargetFramework', 'net6.0'))" TargetingPackVersion="6.0.0" />
-    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'NETStandard.Library')->WithMetadataValue('TargetFramework', 'netstandard2.1'))" TargetingPackVersion="2.1.0" />
+    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'Microsoft.NETCore.App'))">
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'netcoreapp3.0'">3.0.0</TargetingPackVersion>
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'netcoreapp3.1'">3.1.0</TargetingPackVersion>
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'net5.0'">5.0.0</TargetingPackVersion>
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'net6.0'">6.0.0</TargetingPackVersion>
+    </KnownFrameworkReference>
+
+    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'Microsoft.AspNetCore.App'))">
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'netcoreapp3.0'">3.0.1</TargetingPackVersion>
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'netcoreapp3.1'">3.1.10</TargetingPackVersion>
+    </KnownFrameworkReference>
+
+    <KnownFrameworkReference Update="@(KnownFrameworkReference->WithMetadataValue('Identity', 'NETStandard.Library'))">
+      <TargetingPackVersion Condition="'%(TargetFramework)' == 'netstandard2.1'">2.1.0</TargetingPackVersion>
+    </KnownFrameworkReference>
   </ItemGroup>
 
   <!-- Filter out conflicting implicit assembly references. -->
