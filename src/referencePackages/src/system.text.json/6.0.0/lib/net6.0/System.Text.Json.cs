@@ -7,8 +7,6 @@
 [assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
 [assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
 [assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-// Commenting out because JsonSerializerOptionsUpdateHandler is an internal type (https://github.com/dotnet/sdk/issues/31098)
-//[assembly: System.Reflection.Metadata.MetadataUpdateHandler(typeof(JsonSerializerOptionsUpdateHandler))]
 [assembly: System.Runtime.Versioning.TargetFramework(".NETCoreApp,Version=v6.0", FrameworkDisplayName = "")]
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Reflection.AssemblyDefaultAlias("System.Text.Json")]
