@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net461;net6.0;netstandard2.0</TargetFrameworks>
+    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
     <NuspecFile>$(ArtifactsBinDir)system.text.json/6.0.0/system.text.json.nuspec</NuspecFile>
     <StrongNameKeyId>Open</StrongNameKeyId>
   </PropertyGroup>
@@ -16,10 +17,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
-    <!-- Don't warn on CS0436 - Classes in System.Text.Json included in net6.0 conflict with src -->
-    <NoWarn>$(NoWarn);CS0436</NoWarn>
     <OutputPath>$(ArtifactsBinDir)system.text.json/6.0.0/lib/</OutputPath>
-    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
@@ -40,7 +38,6 @@
     <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies.net461" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
@@ -49,7 +46,6 @@
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <PackageReference Include="NETStandard.Library" Version="$(NETStandardImplicitPackageVersion)" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="6.0.0" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
     <PackageReference Include="System.Text.Encodings.Web" Version="6.0.0" />
