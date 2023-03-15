@@ -45,43 +45,20 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             // Make sure that we always use the same directory separator.
             string relativePath = Path.GetRelativePath(BaseTargetPath, Path.GetDirectoryName(TargetPath)).Replace('\\', '/');
             StrongNameData strongNameData = default;
-
-            bool includesNetStandard21 = TargetFrameworks.Contains("netstandard2.1");
-            bool includesNetCoreApp30 = TargetFrameworks.Contains("netcoreapp3.0");
             string[] orderedTargetFrameworks = TargetFrameworks.Order().ToArray();
 
             foreach (string targetFramework in orderedTargetFrameworks)
             {
                 string packageReferences = "";
-                string netStandardTag = "NETStandardImplicitPackageVersion";
-
-                if (targetFramework == "netstandard2.0")
-                {
-                    packageReferences += $"    <PackageReference Include=\"NETStandard.Library\" Version=\"$({netStandardTag})\" />\n";
-                }
 
                 // Add package dependencies
                 foreach (ITaskItem packageDependency in PackageDependencies.Where(packageDependency => packageDependency.GetMetadata("TargetFramework") == targetFramework))
                 {
-                    // TODO: Generate a lookup table from source-build/PackageVersions.props.  For now, there is only one...
+                    // Don't emit package references for targeting packs as those are added implicitly by the SDK.
                     if (packageDependency.ItemSpec == "NETStandard.Library")
-                    {
-                        if (!includesNetStandard21 && !includesNetCoreApp30)
-                        {
-                            packageReferences += $"    <PackageReference Include=\"{packageDependency.ItemSpec}\" Version=\"$({netStandardTag})\" />\n";
-                        }
-                    }
-                    else
-                    {
-                        string version = packageDependency.GetMetadata("Version");
-                        packageReferences += $"    <PackageReference Include=\"{packageDependency.ItemSpec}\" Version=\"{version}\" />\n";
-                    }
-                }
+                        continue;
 
-                // Add .NET Framework targeting pack reference
-                if (targetFramework.StartsWith("net4"))
-                {
-                    packageReferences += $"    <PackageReference Include=\"Microsoft.NETFramework.ReferenceAssemblies.{targetFramework}\" Version=\"1.0.2\" />\n";
+                    packageReferences += $"    <PackageReference Include=\"{packageDependency.ItemSpec}\" Version=\"{packageDependency.GetMetadata("Version")}\" />\n";
                 }
 
                 // Add framework references
@@ -139,12 +116,6 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 if (subPath == "lib")
                 {
                     tfmSpecificProperties += $"    <OutputPath>$(ArtifactsBinDir){relativePath}/{subPath}/</OutputPath>\n";
-                }
-                if (targetFramework == "netstandard2.1" ||
-                    targetFramework == "netcoreapp3.0" ||
-                    targetFramework == "net6.0")
-                {
-                    tfmSpecificProperties += "    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>\n";
                 }
                 tfmSpecificProperties += $"  </PropertyGroup>\n\n";
             }
