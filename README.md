@@ -46,9 +46,6 @@ After generating new reference packages, all new projects must be referenced as 
 These must be defined in dependency order. There is a [tracking issue](https://github.com/dotnet/source-build/issues/1690)
 to address this manual step.
 
-The tooling will not pull in icons referenced by the nuspec so they will have to be manually removed. There is a
-[tracking issue](https://github.com/dotnet/source-build/issues/1957) to address this manual step.
-
 The tooling does not handle all situations and sometimes the generated code will need manual tweeks to get it to compile.
 If this occurs when generating a newer version of an existing package, it can be helpful to regenerate the older version
 to see what changes were made.
