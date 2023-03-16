@@ -2,6 +2,20 @@
 
   <Import Project="..\Directory.Build.targets" />
 
+  <!-- Setting that are dependent on the project template version. -->
+  <Choose>
+    <When Condition="'$(ProjectTemplateVersion)' == '2'">
+      <PropertyGroup>
+        <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
+      </PropertyGroup>
+
+      <ItemGroup>
+        <Compile Include="ref/$(TargetFramework)/*$(DefaultLanguageSourceExtension)" />
+        <Compile Include="lib/$(TargetFramework)/*$(DefaultLanguageSourceExtension)" />
+      </ItemGroup>
+    </When>
+  </Choose>
+
   <!--
     ### Targeting Packs section ###
     Keep in sync with available targeting packs under src/targetPacks/ILsrc.

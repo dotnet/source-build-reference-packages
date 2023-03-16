@@ -27,9 +27,6 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         public ITaskItem[] FrameworkReferences { get; set; }
 
         [Required]
-        public string BaseTargetPath { get; set; }
-
-        [Required]
         public string TargetPath { get; set; }
 
         [Required]
@@ -37,13 +34,9 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
 
         public override bool Execute()
         {
-            string projectTemplateContent = File.ReadAllText(ProjectTemplate);
-            string pkgProjectOutput = projectTemplateContent;
-            string packageReferenceIncludes = "\n";
-            string tfmSpecificProperties = "\n";
+            string pkgProjectOutput = File.ReadAllText(ProjectTemplate);
+            string packageReferenceIncludes = "";
 
-            // Make sure that we always use the same directory separator.
-            string relativePath = Path.GetRelativePath(BaseTargetPath, Path.GetDirectoryName(TargetPath)).Replace('\\', '/');
             StrongNameData strongNameData = default;
             string[] orderedTargetFrameworks = TargetFrameworks.Order().ToArray();
 
@@ -52,7 +45,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 string packageReferences = "";
 
                 // Add package dependencies
-                foreach (ITaskItem packageDependency in PackageDependencies.Where(packageDependency => packageDependency.GetMetadata("TargetFramework") == targetFramework))
+                foreach (ITaskItem packageDependency in PackageDependencies.Where(packageDependency => packageDependency.GetMetadata(SharedMetadata.TargetFrameworkMetadataName) == targetFramework))
                 {
                     // Don't emit package references for targeting packs as those are added implicitly by the SDK.
                     if (packageDependency.ItemSpec == "NETStandard.Library")
@@ -62,7 +55,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 }
 
                 // Add framework references
-                foreach (ITaskItem frameworkReference in FrameworkReferences.Where(frameworkReference => frameworkReference.GetMetadata("TargetFramework") == targetFramework))
+                foreach (ITaskItem frameworkReference in FrameworkReferences.Where(frameworkReference => frameworkReference.GetMetadata(SharedMetadata.TargetFrameworkMetadataName) == targetFramework))
                 {
                     if (frameworkReference.ItemSpec != "mscorlib")
                     {
@@ -73,18 +66,17 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 // Write the gathered package references into the project file.
                 if (packageReferences != "")
                 {
-                    packageReferenceIncludes += $"  <ItemGroup Condition=\" '$(TargetFramework)' == '{targetFramework}' \">\n";
+                    packageReferenceIncludes += $"  <ItemGroup Condition=\"'$(TargetFramework)' == '{targetFramework}'\">\n";
                     packageReferenceIncludes += packageReferences;
                     packageReferenceIncludes += $"  </ItemGroup>\n\n";
                 }
 
-                // Retrieve the target framework's sub path and strong name data. For historical reasons,
+                // Retrieve the target framework's strong name data. For historical reasons,
                 // we just use the first item that has the data available.
-                string subPath = null;
-                ITaskItem[] compileItems = CompileItems.Where(compileItem => compileItem.GetMetadata("TargetFramework") == targetFramework).ToArray();
-                foreach (ITaskItem compileItem in compileItems)
+                if (strongNameData == default)
                 {
-                    if (strongNameData == default)
+                    ITaskItem[] compileItems = CompileItems.Where(compileItem => compileItem.GetMetadata(SharedMetadata.TargetFrameworkMetadataName) == targetFramework).ToArray();
+                    foreach (ITaskItem compileItem in compileItems)
                     {
                         string strongNameKey = compileItem.GetMetadata(SharedMetadata.StrongNameKeyMetadataName);
                         string strongNameId = compileItem.GetMetadata(SharedMetadata.StrongNameIdMetadataName);
@@ -95,29 +87,10 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                             !string.IsNullOrWhiteSpace(strongNameFilename))
                         {
                             strongNameData = new(strongNameKey, strongNameId, strongNameFilename);
+                            break;
                         }
                     }
-
-                    if (subPath is null)
-                    {
-                        string relativeCompileItemPath = compileItem.ItemSpec;
-                        string[] splitParts = relativeCompileItemPath.Split('/');
-                        if (splitParts.Length < 3)
-                        {
-                            Log.LogWarning("Path '{0}' does not have expected depth", relativeCompileItemPath);
-                            continue;
-                        }
-
-                        subPath = splitParts[0];
-                    }
                 }
-
-                tfmSpecificProperties += $"  <PropertyGroup Condition=\" '$(TargetFramework)' == '{targetFramework}' \">\n";
-                if (subPath == "lib")
-                {
-                    tfmSpecificProperties += $"    <OutputPath>$(ArtifactsBinDir){relativePath}/{subPath}/</OutputPath>\n";
-                }
-                tfmSpecificProperties += $"  </PropertyGroup>\n\n";
             }
 
             // If necessary, write the strong name key into the project file.
@@ -128,12 +101,19 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 keyFileTag = $"\n    <StrongNameKeyId>{strongNameData.Id}</StrongNameKeyId>";
             }
 
-            pkgProjectOutput = pkgProjectOutput.Replace("$$LowerCaseFileName$$", PackageId.ToLowerInvariant());
-            pkgProjectOutput = pkgProjectOutput.Replace("$$TfmSpecificProperties$$", tfmSpecificProperties);
-            pkgProjectOutput = pkgProjectOutput.Replace("$$RelativePath$$", relativePath);
-            pkgProjectOutput = pkgProjectOutput.Replace("$$PackageReferences$$", packageReferenceIncludes);
+            // Calculate the assembly name from the compile items assembly name metadata. If more than one
+            // distinct name is found (i.e. multi assembly package), use the PackageId instead.
+            string[] assemblyNames = CompileItems.Select(compileItem => compileItem.GetMetadata(SharedMetadata.AssemblyNameMetadataName))
+                .Distinct()
+                .ToArray();
+            string assemblyName = assemblyNames.Length == 1 ?
+                assemblyNames[0] :
+                PackageId;
+
             pkgProjectOutput = pkgProjectOutput.Replace("$$TargetFrameworks$$", string.Join(';', orderedTargetFrameworks));
             pkgProjectOutput = pkgProjectOutput.Replace("$$KeyFileTag$$", keyFileTag);
+            pkgProjectOutput = pkgProjectOutput.Replace("$$AssemblyName$$", assemblyName);
+            pkgProjectOutput = pkgProjectOutput.Replace("$$PackageReferences$$", packageReferenceIncludes);
 
             // Generate the project file
             Directory.CreateDirectory(Path.GetDirectoryName(TargetPath));

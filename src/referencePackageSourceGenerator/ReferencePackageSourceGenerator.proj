@@ -91,8 +91,7 @@
           DependsOnTargets="GenerateAndInvokeGenerateSourceProject;
                             GenerateReferencePackageProject;
                             CopyPlaceholderFiles;
-                            RewriteNuspec;
-                            CreateDirectoryBuildPropsFile" />
+                            RewriteNuspec" />
 
   <!-- Generate an intermediate multi-targeting wrapper project that retrieves the reference assemblies and invokes GenAPI. -->
   <Target Name="GenerateAndInvokeGenerateSourceProject"
@@ -153,7 +152,6 @@
                      CompileItems="@(PackageCompileItem)"
                      PackageDependencies="@(PackageDependency)"
                      FrameworkReferences="@(PackageFrameworkReference)"
-                     BaseTargetPath="$(PackagesTargetDirectory)"
                      TargetPath="$(ReferencePackageProjectTargetPath)"
                      ProjectTemplate="$(ReferencePackageProjectTemplate)" />
 
@@ -189,34 +187,6 @@
                    RemoveRuntimeSpecificDependencies="true" />
 
     <Message Text="$(MSBuildProjectName) -> $(NuspecTargetPath)"
-             Importance="high" />
-  </Target>
-
-  <!-- Generate Directory.Build.props supplemental build file. -->
-  <Target Name="CreateDirectoryBuildPropsFile"
-          DependsOnTargets="GetPackageItems">
-    <PropertyGroup>
-      <DirectoryBuildPropsTemplate>DirectoryBuildPropsTemplate.xml</DirectoryBuildPropsTemplate>
-      <DirectoryBuildPropsTargetPath>$(BasePackageTargetDirectory)Directory.Build.props</DirectoryBuildPropsTargetPath>
-    </PropertyGroup>
-
-    <!-- Calculate the assembly name from the compile items assembly name metadata. If more than one
-         distinct name is found (i.e. multi assembly package), use the PackageId instead. -->
-    <ItemGroup>
-      <PackageAssemblyName Include="@(PackageCompileItem->Metadata('AssemblyName')->Distinct())" />
-    </ItemGroup>
-
-    <PropertyGroup>
-      <PackageAssemblyName Condition="@(PackageAssemblyName->Count()) > 1">$(RealPackageId)</PackageAssemblyName>
-      <PackageAssemblyName Condition="'$(PackageAssemblyName)' == ''">%(PackageAssemblyName.Identity)</PackageAssemblyName>
-    </PropertyGroup>
-
-    <WriteLinesToFile File="$(DirectoryBuildPropsTargetPath)"
-                      Lines="$([System.IO.File]::ReadAllText('$(DirectoryBuildPropsTemplate)')
-                               .Replace('$$AssemblyName$$', '$(PackageAssemblyName)'))"
-                      Overwrite="true" />
-
-    <Message Text="$(MSBuildProjectName) -> $(DirectoryBuildPropsTargetPath)"
              Importance="high" />
   </Target>
 

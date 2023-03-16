@@ -2,16 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>$$TargetFrameworks$$</TargetFrameworks>
-    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
-    <NuspecFile>$(ArtifactsBinDir)$$RelativePath$$/$$LowerCaseFileName$$.nuspec</NuspecFile>$$KeyFileTag$$
+    <AssemblyName>$$AssemblyName$$</AssemblyName>
+    <ProjectTemplateVersion>2</ProjectTemplateVersion>$$KeyFileTag$$
   </PropertyGroup>
 
-  <PropertyGroup>
-    <OutputPath>$(ArtifactsBinDir)$$RelativePath$$/ref/</OutputPath>
-    <IntermediateOutputPath>$(ArtifactsObjDir)$$RelativePath$$</IntermediateOutputPath>
-  </PropertyGroup>
-$$TfmSpecificProperties$$  <ItemGroup>
-    <Compile Include="**/ref/$(TargetFramework)/*.cs" />
-    <Compile Include="**/lib/$(TargetFramework)/*.cs" />
-  </ItemGroup>
 $$PackageReferences$$</Project>
