@@ -2,48 +2,24 @@
 
   <PropertyGroup>
     <TargetFrameworks>net461;net6.0;netstandard2.0</TargetFrameworks>
-    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
-    <NuspecFile>$(ArtifactsBinDir)system.text.encodings.web/6.0.0/system.text.encodings.web.nuspec</NuspecFile>
+    <AssemblyName>System.Text.Encodings.Web</AssemblyName>
+    <ProjectTemplateVersion>2</ProjectTemplateVersion>
     <StrongNameKeyId>Open</StrongNameKeyId>
     <!-- Don't warn on CS3011 - Some types have abstract members that are not CLS-compliant -->
     <NoWarn>$(NoWarn);CS3011</NoWarn>
   </PropertyGroup>
 
-  <PropertyGroup>
-    <OutputPath>$(ArtifactsBinDir)system.text.encodings.web/6.0.0/ref/</OutputPath>
-    <IntermediateOutputPath>$(ArtifactsObjDir)system.text.encodings.web/6.0.0</IntermediateOutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net461' ">
-    <OutputPath>$(ArtifactsBinDir)system.text.encodings.web/6.0.0/lib/</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
-    <!-- Don't warn on CS0436 - Classes in System.Text.Encodings.Web included in net6.0 conflict with src -->
-    <NoWarn>$(NoWarn);CS0436</NoWarn>
-    <OutputPath>$(ArtifactsBinDir)system.text.encodings.web/6.0.0/lib/</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <OutputPath>$(ArtifactsBinDir)system.text.encodings.web/6.0.0/lib/</OutputPath>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="**/ref/$(TargetFramework)/*.cs" />
-    <Compile Include="**/lib/$(TargetFramework)/*.cs" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
     <PackageReference Include="System.Buffers" Version="4.5.1" />
     <PackageReference Include="System.Memory" Version="4.5.4" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
     <PackageReference Include="System.Buffers" Version="4.5.1" />
     <PackageReference Include="System.Memory" Version="4.5.4" />

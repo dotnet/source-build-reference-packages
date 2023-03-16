@@ -2,30 +2,8 @@
 
   <PropertyGroup>
     <TargetFrameworks>net461;net6.0;netstandard2.0</TargetFrameworks>
-    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
-    <NuspecFile>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.nuspec</NuspecFile>
+    <AssemblyName>System.Runtime.CompilerServices.Unsafe</AssemblyName>
+    <ProjectTemplateVersion>2</ProjectTemplateVersion>
   </PropertyGroup>
-
-  <PropertyGroup>
-    <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/ref/</OutputPath>
-    <IntermediateOutputPath>$(ArtifactsObjDir)system.runtime.compilerservices.unsafe/6.0.0</IntermediateOutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net461' ">
-    <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/lib/</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
-    <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/lib/</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
-    <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/6.0.0/lib/</OutputPath>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Include="**/ref/$(TargetFramework)/*.cs" />
-    <Compile Include="**/lib/$(TargetFramework)/*.cs" />
-  </ItemGroup>
 
 </Project>
