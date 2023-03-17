@@ -23,6 +23,9 @@
 [assembly: System.Reflection.AssemblyProduct("Microsoft® .NET")]
 [assembly: System.Reflection.AssemblyTitle("System.Text.Encodings.Web")]
 [assembly: System.Reflection.AssemblyMetadata("RepositoryUrl", "https://github.com/dotnet/runtime")]
+[assembly: System.Reflection.AssemblyVersionAttribute("6.0.0.0")]
+[assembly: System.Runtime.CompilerServices.ReferenceAssembly]
+[assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace System.Text.Encodings.Web
 {
     public abstract partial class HtmlEncoder : TextEncoder
