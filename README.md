@@ -17,7 +17,7 @@ to time in issues and some documentation.
 
 ## Supported Platforms
 
-.NET source build currently only supports Linux.
+.NET source build currently only supports Linux but generating a source-build reference or text-only package is supported on both Windows and Unix based operating systems.
 
 ## Building
 
