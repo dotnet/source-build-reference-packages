@@ -7,22 +7,27 @@
 [assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
 [assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
 [assembly: System.Diagnostics.Debuggable(System.Diagnostics.DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
-[assembly: System.Runtime.Versioning.TargetFramework(".NETStandard,Version=v2.0", FrameworkDisplayName = "")]
-[assembly: System.Runtime.CompilerServices.ReferenceAssembly]
+[assembly: System.Runtime.Versioning.TargetFramework(".NETCoreApp,Version=v6.0", FrameworkDisplayName = "")]
 [assembly: System.CLSCompliant(true)]
+[assembly: System.Runtime.InteropServices.DefaultDllImportSearchPaths(System.Runtime.InteropServices.DllImportSearchPath.AssemblyDirectory | System.Runtime.InteropServices.DllImportSearchPath.System32)]
+[assembly: System.Runtime.Versioning.SupportedOSPlatform("windows")]
 [assembly: System.Reflection.AssemblyDefaultAlias("System.Security.AccessControl")]
+[assembly: System.Resources.NeutralResourcesLanguage("en-US")]
+[assembly: System.Reflection.AssemblyMetadata("NotSupported", "True")]
 [assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
 [assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
 [assembly: System.Reflection.AssemblyMetadata("PreferInbox", "True")]
+[assembly: System.Reflection.AssemblyMetadata("IsTrimmable", "True")]
 [assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
 [assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation. All rights reserved.")]
-[assembly: System.Reflection.AssemblyDescription("System.Security.AccessControl")]
-[assembly: System.Reflection.AssemblyFileVersion("5.0.20.51904")]
-[assembly: System.Reflection.AssemblyInformationalVersion("5.0.0+cf258a14b70ad9069470a108f13765e0e5988f51")]
+[assembly: System.Reflection.AssemblyDescription("Provides base classes that enable managing access and audit control lists on securable objects.\r\n\r\nCommonly Used Types:\r\nSystem.Security.AccessControl.AccessRule\r\nSystem.Security.AccessControl.AuditRule\r\nSystem.Security.AccessControl.ObjectAccessRule\r\nSystem.Security.AccessControl.ObjectAuditRule\r\nSystem.Security.AccessControl.ObjectSecurity")]
+[assembly: System.Reflection.AssemblyFileVersion("6.0.21.52210")]
+[assembly: System.Reflection.AssemblyInformationalVersion("6.0.0+4822e3c3aa77eb82b2fb33c9321f923cf11ddde6")]
 [assembly: System.Reflection.AssemblyProduct("Microsoft® .NET")]
 [assembly: System.Reflection.AssemblyTitle("System.Security.AccessControl")]
-[assembly: System.Reflection.AssemblyMetadata("RepositoryUrl", "git://github.com/dotnet/runtime")]
-[assembly: System.Reflection.AssemblyVersionAttribute("5.0.0.0")]
+[assembly: System.Reflection.AssemblyMetadata("RepositoryUrl", "https://github.com/dotnet/runtime")]
+[assembly: System.Reflection.AssemblyVersionAttribute("6.0.0.0")]
+[assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace System.Security.AccessControl
 {
@@ -823,5 +828,74 @@ namespace System.Security.AccessControl
         public void SetAudit(AuditFlags auditFlags, Principal.SecurityIdentifier sid, int accessMask, InheritanceFlags inheritanceFlags, PropagationFlags propagationFlags) { }
 
         public void SetAudit(Principal.SecurityIdentifier sid, ObjectAuditRule rule) { }
+    }
+}
+
+namespace System.Security.Policy
+{
+    public sealed partial class Evidence : Collections.ICollection, Collections.IEnumerable
+    {
+        public Evidence() { }
+
+        [Obsolete("This constructor is obsolete. Please use the constructor which takes arrays of EvidenceBase instead.")]
+        public Evidence(object[] hostEvidence, object[] assemblyEvidence) { }
+
+        public Evidence(Evidence evidence) { }
+
+        public Evidence(EvidenceBase[] hostEvidence, EvidenceBase[] assemblyEvidence) { }
+
+        [Obsolete("Evidence should not be treated as an ICollection. Please use GetHostEnumerator and GetAssemblyEnumerator to iterate over the evidence to collect a count.")]
+        public int Count { get { throw null; } }
+
+        public bool IsReadOnly { get { throw null; } }
+
+        public bool IsSynchronized { get { throw null; } }
+
+        public bool Locked { get { throw null; } set { } }
+
+        public object SyncRoot { get { throw null; } }
+
+        [Obsolete("This method is obsolete. Please use AddAssemblyEvidence instead.")]
+        public void AddAssembly(object id) { }
+
+        public void AddAssemblyEvidence<T>(T evidence)
+            where T : EvidenceBase { }
+
+        [Obsolete("This method is obsolete. Please use AddHostEvidence instead.")]
+        public void AddHost(object id) { }
+
+        public void AddHostEvidence<T>(T evidence)
+            where T : EvidenceBase { }
+
+        public void Clear() { }
+
+        public Evidence? Clone() { throw null; }
+
+        [Obsolete("Evidence should not be treated as an ICollection. Please use the GetHostEnumerator and GetAssemblyEnumerator methods rather than using CopyTo.")]
+        public void CopyTo(Array array, int index) { }
+
+        public Collections.IEnumerator GetAssemblyEnumerator() { throw null; }
+
+        public T? GetAssemblyEvidence<T>()
+            where T : EvidenceBase { throw null; }
+
+        [Obsolete("GetEnumerator is obsolete. Please use GetAssemblyEnumerator and GetHostEnumerator instead.")]
+        public Collections.IEnumerator GetEnumerator() { throw null; }
+
+        public Collections.IEnumerator GetHostEnumerator() { throw null; }
+
+        public T? GetHostEvidence<T>()
+            where T : EvidenceBase { throw null; }
+
+        public void Merge(Evidence evidence) { }
+
+        public void RemoveType(Type t) { }
+    }
+
+    public abstract partial class EvidenceBase
+    {
+        protected EvidenceBase() { }
+
+        public virtual EvidenceBase? Clone() { throw null; }
     }
 }
