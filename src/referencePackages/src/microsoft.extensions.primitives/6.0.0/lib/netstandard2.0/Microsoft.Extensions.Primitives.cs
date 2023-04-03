@@ -228,9 +228,9 @@ namespace Microsoft.Extensions.Primitives
 
         public string this[int index] { get { throw null; } }
 
-        bool System.Collections.Generic.ICollection<string>.IsReadOnly { get { throw null; } }
+        string System.Collections.Generic.IList<System.String>.this[int index] { get { throw null; } set { } }
 
-        string System.Collections.Generic.IList<string>.Item { get { throw null; } set { } }
+        bool System.Collections.Generic.ICollection<string>.IsReadOnly { get { throw null; } }
 
         public static StringValues Concat(StringValues values1, StringValues values2) { throw null; }
 
@@ -310,15 +310,11 @@ namespace Microsoft.Extensions.Primitives
 
         readonly System.Collections.Generic.IEnumerator<string> System.Collections.Generic.IEnumerable<string>.GetEnumerator() { throw null; }
 
-        readonly string System.Collections.Generic.IList<string>.get_Item(int index) { throw null; }
-
         readonly int System.Collections.Generic.IList<string>.IndexOf(string item) { throw null; }
 
         readonly void System.Collections.Generic.IList<string>.Insert(int index, string item) { }
 
         readonly void System.Collections.Generic.IList<string>.RemoveAt(int index) { }
-
-        readonly void System.Collections.Generic.IList<string>.set_Item(int index, string value) { }
 
         readonly System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator() { throw null; }
 
