@@ -21,7 +21,5 @@
     <MicrosoftNETCoreILDAsmVersion>6.0.0-preview.6.21352.12</MicrosoftNETCoreILDAsmVersion>
     <!-- SDK dependencies -->
     <MicrosoftDotNetGenAPITaskPackageVersion>8.0.100-preview.4.23177.4</MicrosoftDotNetGenAPITaskPackageVersion>
-    <!-- Source-Build dependencies -->
-    <MicrosoftSourceBuildIntermediatesourcebuildexternalsVersion>8.0.0-alpha.1.23203.1</MicrosoftSourceBuildIntermediatesourcebuildexternalsVersion>
   </PropertyGroup>
 </Project>
