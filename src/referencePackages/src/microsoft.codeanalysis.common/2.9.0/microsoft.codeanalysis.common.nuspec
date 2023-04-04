@@ -22,7 +22,6 @@
     <repository type="git" url="https://github.com/dotnet/roslyn" commit="958f2354c4d83dbb0e7723d0a8079a0dfbc33f25" />
     <dependencies>
       <group targetFramework=".NETStandard1.3">
-        <dependency id="Microsoft.CodeAnalysis.Analyzers" version="2.6.1" />
         <dependency id="System.AppContext" version="4.3.0" />
         <dependency id="System.Collections" version="4.3.0" />
         <dependency id="System.Collections.Concurrent" version="4.3.0" />
