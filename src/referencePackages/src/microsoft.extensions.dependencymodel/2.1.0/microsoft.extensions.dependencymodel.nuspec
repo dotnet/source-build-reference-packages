@@ -13,11 +13,6 @@
     <serviceable>true</serviceable>
     <repository type="git" url="git://github.com/dotnet/core-setup" />
     <dependencies>
-      <group targetFramework=".NETFramework4.5.1">
-        <dependency id="Microsoft.DotNet.PlatformAbstractions" version="2.1.0" exclude="Build,Analyzers" />
-        <!-- Manually updated version from 9.0.1 to address https://github.com/advisories/GHSA-5crp-9r3c-p9vr -->
-        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
-      </group>
       <group targetFramework=".NETStandard1.3">
         <dependency id="Microsoft.DotNet.PlatformAbstractions" version="2.1.0" exclude="Build,Analyzers" />
         <!-- Manually updated version from 9.0.1 to address https://github.com/advisories/GHSA-5crp-9r3c-p9vr -->
