@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net46;netstandard1.3</TargetFrameworks>
+    <TargetFrameworks>netstandard1.3</TargetFrameworks>
     <AssemblyName>Microsoft.Build.Framework</AssemblyName>
     <ProjectTemplateVersion>2</ProjectTemplateVersion>
   </PropertyGroup>
@@ -14,10 +14,6 @@
     <PackageReference Include="System.Runtime.InteropServices" Version="4.1.0" />
     <PackageReference Include="System.Threading" Version="4.0.11" />
     <PackageReference Include="System.Threading.Thread" Version="4.0.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
-    <Reference Include="System.Xaml" />
   </ItemGroup>
 
 </Project>

@@ -1,14 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net46;netstandard1.3</TargetFrameworks>
+    <TargetFrameworks>netstandard1.3</TargetFrameworks>
     <AssemblyName>Microsoft.Build.Utilities.Core</AssemblyName>
     <ProjectTemplateVersion>2</ProjectTemplateVersion>
   </PropertyGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net46'">
-    <PackageReference Include="Microsoft.Build.Framework" Version="15.1.1012" />
-  </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3'">
     <PackageReference Include="Microsoft.Build.Framework" Version="15.1.1012" />
