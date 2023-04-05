@@ -16,4 +16,8 @@
     <PackageReference Include="System.Threading.Thread" Version="4.0.0" />
   </ItemGroup>
 
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
+    <Reference Include="System.Xaml" />
+  </ItemGroup>
+
 </Project>
