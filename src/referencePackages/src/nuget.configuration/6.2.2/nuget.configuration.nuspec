@@ -14,9 +14,6 @@
     <serviceable>true</serviceable>
     <repository type="git" url="https://github.com/NuGet/NuGet.Client" commit="027ca8b8ef4b4dc94995f87b9c441d2bcf742c1d" />
     <dependencies>
-      <group targetFramework=".NETFramework4.5">
-        <dependency id="NuGet.Common" version="6.2.2" exclude="Build,Analyzers" />
-      </group>
       <group targetFramework=".NETFramework4.7.2">
         <dependency id="NuGet.Common" version="6.2.2" exclude="Build,Analyzers" />
       </group>
@@ -26,9 +23,9 @@
       </group>
     </dependencies>
     <frameworkAssemblies>
-      <frameworkAssembly assemblyName="System.Security" targetFramework=".NETFramework4.5, .NETFramework4.7.2" />
-      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework4.5, .NETFramework4.7.2" />
-      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework=".NETFramework4.5, .NETFramework4.7.2" />
+      <frameworkAssembly assemblyName="System.Security" targetFramework=".NETFramework4.7.2" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework4.7.2" />
+      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework=".NETFramework4.7.2" />
     </frameworkAssemblies>
   </metadata>
 </package>
