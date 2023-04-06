@@ -26,7 +26,7 @@ namespace NuGet.Frameworks
 {
     public partial class AssetTargetFallbackFramework : NuGetFramework, System.IEquatable<AssetTargetFallbackFramework>
     {
-        public AssetTargetFallbackFramework(NuGetFramework framework, System.Collections.Generic.IReadOnlyList<NuGetFramework> fallbackFrameworks) : base(default!) { }
+        public AssetTargetFallbackFramework(NuGetFramework framework, System.Collections.Generic.IReadOnlyList<NuGetFramework> fallbackFrameworks) : base((NuGetFramework)default!) { }
 
         public System.Collections.Generic.IReadOnlyList<NuGetFramework> Fallback { get { throw null; } }
 
@@ -139,7 +139,7 @@ namespace NuGet.Frameworks
 
     public partial class DualCompatibilityFramework : NuGetFramework
     {
-        public DualCompatibilityFramework(NuGetFramework framework, NuGetFramework secondaryFramework) : base(default!) { }
+        public DualCompatibilityFramework(NuGetFramework framework, NuGetFramework secondaryFramework) : base((NuGetFramework)default!) { }
 
         public NuGetFramework RootFramework { get { throw null; } }
 
@@ -156,7 +156,7 @@ namespace NuGet.Frameworks
 
     public partial class FallbackFramework : NuGetFramework, System.IEquatable<FallbackFramework>
     {
-        public FallbackFramework(NuGetFramework framework, System.Collections.Generic.IReadOnlyList<NuGetFramework> fallbackFrameworks) : base(default!) { }
+        public FallbackFramework(NuGetFramework framework, System.Collections.Generic.IReadOnlyList<NuGetFramework> fallbackFrameworks) : base((NuGetFramework)default!) { }
 
         public System.Collections.Generic.IReadOnlyList<NuGetFramework> Fallback { get { throw null; } }
 
