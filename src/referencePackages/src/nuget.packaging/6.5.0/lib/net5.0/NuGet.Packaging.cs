@@ -796,17 +796,17 @@ namespace NuGet.Packaging
 
     public partial class NuspecReader : Core.NuspecCoreReaderBase
     {
-        public NuspecReader(System.IO.Stream stream, Frameworks.IFrameworkNameProvider frameworkProvider, bool leaveStreamOpen) : base(default!) { }
+        public NuspecReader(System.IO.Stream stream, Frameworks.IFrameworkNameProvider frameworkProvider, bool leaveStreamOpen) : base((System.IO.Stream)default!) { }
 
-        public NuspecReader(System.IO.Stream stream) : base(default!) { }
+        public NuspecReader(System.IO.Stream stream) : base((System.IO.Stream)default!) { }
 
-        public NuspecReader(string path, Frameworks.IFrameworkNameProvider frameworkProvider) : base(default!) { }
+        public NuspecReader(string path, Frameworks.IFrameworkNameProvider frameworkProvider) : base((string)default!) { }
 
-        public NuspecReader(string path) : base(default!) { }
+        public NuspecReader(string path) : base((string)default!) { }
 
-        public NuspecReader(System.Xml.Linq.XDocument xml, Frameworks.IFrameworkNameProvider frameworkProvider) : base(default!) { }
+        public NuspecReader(System.Xml.Linq.XDocument xml, Frameworks.IFrameworkNameProvider frameworkProvider) : base((System.Xml.Linq.XDocument)default!) { }
 
-        public NuspecReader(System.Xml.Linq.XDocument xml) : base(default!) { }
+        public NuspecReader(System.Xml.Linq.XDocument xml) : base((System.Xml.Linq.XDocument)default!) { }
 
         public string GetAuthors() { throw null; }
 
@@ -1788,9 +1788,9 @@ namespace NuGet.Packaging.Core
 
     public partial class NuspecCoreReader : NuspecCoreReaderBase
     {
-        public NuspecCoreReader(System.IO.Stream stream) : base(default!) { }
+        public NuspecCoreReader(System.IO.Stream stream) : base((System.IO.Stream)default!) { }
 
-        public NuspecCoreReader(System.Xml.Linq.XDocument xml) : base(default!) { }
+        public NuspecCoreReader(System.Xml.Linq.XDocument xml) : base((System.Xml.Linq.XDocument)default!) { }
 
         public virtual System.Collections.Generic.IEnumerable<PackageDependency> GetDependencies() { throw null; }
     }
@@ -3130,7 +3130,7 @@ namespace NuGet.Packaging.Signing
 
     public partial class SignedPackageArchive : PackageArchiveReader, ISignedPackage, ISignedPackageReader, System.IDisposable, ISignedPackageWriter
     {
-        public SignedPackageArchive(System.IO.Stream packageReadStream, System.IO.Stream packageWriteStream) : base(default!) { }
+        public SignedPackageArchive(System.IO.Stream packageReadStream, System.IO.Stream packageWriteStream) : base((System.IO.Stream)default!) { }
 
         public System.Threading.Tasks.Task AddSignatureAsync(System.IO.Stream signatureStream, System.Threading.CancellationToken token) { throw null; }
 
