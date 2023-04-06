@@ -31,8 +31,8 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <group targetFramework=".NETStandard2.0" />
     </dependencies>
     <frameworkAssemblies>
-      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.7.2" />
-      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.7.2" />
+      <frameworkAssembly assemblyName="mscorlib" targetFramework=".NETFramework4.6.1" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.6.1" />
     </frameworkAssemblies>
   </metadata>
 </package>
