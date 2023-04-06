@@ -2753,11 +2753,11 @@ namespace NuGet.Protocol.Core.Types
 
     public partial class SourcePackageDependencyInfo : Packaging.Core.PackageDependencyInfo
     {
-        public SourcePackageDependencyInfo(Packaging.Core.PackageIdentity identity, System.Collections.Generic.IEnumerable<Packaging.Core.PackageDependency> dependencies, bool listed, SourceRepository source, System.Uri downloadUri, string packageHash) : base(default!, default!) { }
+        public SourcePackageDependencyInfo(Packaging.Core.PackageIdentity identity, System.Collections.Generic.IEnumerable<Packaging.Core.PackageDependency> dependencies, bool listed, SourceRepository source, System.Uri downloadUri, string packageHash) : base((Packaging.Core.PackageIdentity)default!, (System.Collections.Generic.IEnumerable<Packaging.Core.PackageDependency>)default!) { }
 
-        public SourcePackageDependencyInfo(string id, Versioning.NuGetVersion version, System.Collections.Generic.IEnumerable<Packaging.Core.PackageDependency> dependencies, bool listed, SourceRepository source, System.Uri downloadUri, string packageHash) : base(default!, default!) { }
+        public SourcePackageDependencyInfo(string id, Versioning.NuGetVersion version, System.Collections.Generic.IEnumerable<Packaging.Core.PackageDependency> dependencies, bool listed, SourceRepository source, System.Uri downloadUri, string packageHash) : base((string)default!, (Versioning.NuGetVersion)default!) { }
 
-        public SourcePackageDependencyInfo(string id, Versioning.NuGetVersion version, System.Collections.Generic.IEnumerable<Packaging.Core.PackageDependency> dependencies, bool listed, SourceRepository source) : base(default!, default!) { }
+        public SourcePackageDependencyInfo(string id, Versioning.NuGetVersion version, System.Collections.Generic.IEnumerable<Packaging.Core.PackageDependency> dependencies, bool listed, SourceRepository source) : base((string)default!, (Versioning.NuGetVersion)default!) { }
 
         public System.Uri DownloadUri { get { throw null; } }
 
