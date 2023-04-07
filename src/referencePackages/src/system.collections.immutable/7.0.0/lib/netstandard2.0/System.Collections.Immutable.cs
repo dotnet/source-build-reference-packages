@@ -172,11 +172,11 @@ namespace System.Collections.Immutable
 
         bool Generic.ICollection<T>.IsReadOnly { get { throw null; } }
 
-        T Generic.IList<T>.Item { get { throw null; } set { } }
+        T Generic.IList<T>.this[int index] { get { throw null; } set { } }
 
         int Generic.IReadOnlyCollection<T>.Count { get { throw null; } }
 
-        T Generic.IReadOnlyList<T>.Item { get { throw null; } }
+        T Generic.IReadOnlyList<T>.this[int index] { get { throw null; } }
 
         int ICollection.Count { get { throw null; } }
 
@@ -188,7 +188,7 @@ namespace System.Collections.Immutable
 
         bool IList.IsReadOnly { get { throw null; } }
 
-        object? IList.Item { get { throw null; } set { } }
+        object? IList.this[int index] { get { throw null; } set { } }
 
         public readonly ImmutableArray<T> Add(T item) { throw null; }
 
@@ -331,15 +331,9 @@ namespace System.Collections.Immutable
 
         readonly Generic.IEnumerator<T> Generic.IEnumerable<T>.GetEnumerator() { throw null; }
 
-        readonly T Generic.IList<T>.get_Item(int index) { throw null; }
-
         readonly void Generic.IList<T>.Insert(int index, T item) { }
 
         readonly void Generic.IList<T>.RemoveAt(int index) { }
-
-        readonly void Generic.IList<T>.set_Item(int index, T value) { }
-
-        readonly T Generic.IReadOnlyList<T>.get_Item(int index) { throw null; }
 
         readonly void ICollection.CopyTo(Array array, int index) { }
 
@@ -351,8 +345,6 @@ namespace System.Collections.Immutable
 
         readonly bool IList.Contains(object value) { throw null; }
 
-        readonly object IList.get_Item(int index) { throw null; }
-
         readonly int IList.IndexOf(object value) { throw null; }
 
         readonly void IList.Insert(int index, object value) { }
@@ -360,8 +352,6 @@ namespace System.Collections.Immutable
         readonly void IList.Remove(object value) { }
 
         readonly void IList.RemoveAt(int index) { }
-
-        readonly void IList.set_Item(int index, object value) { }
 
         readonly IImmutableList<T> IImmutableList<T>.Add(T value) { throw null; }
 
