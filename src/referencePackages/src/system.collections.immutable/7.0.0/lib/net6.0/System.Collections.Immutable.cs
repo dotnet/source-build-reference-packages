@@ -574,7 +574,7 @@ namespace System.Collections.Immutable
 
         bool Generic.ICollection<Generic.KeyValuePair<TKey, TValue>>.IsReadOnly { get { throw null; } }
 
-        TValue Generic.IDictionary<TKey, TValue>.Item { get { throw null; } set { } }
+        TValue Generic.IDictionary<TKey, TValue>.this[TKey key] { get { throw null; } set { } }
 
         Generic.ICollection<TKey> Generic.IDictionary<TKey, TValue>.Keys { get { throw null; } }
 
@@ -588,7 +588,7 @@ namespace System.Collections.Immutable
 
         bool IDictionary.IsReadOnly { get { throw null; } }
 
-        object? IDictionary.Item { get { throw null; } set { } }
+        object? IDictionary.this[object key] { get { throw null; } set { } }
 
         ICollection IDictionary.Keys { get { throw null; } }
 
@@ -630,11 +630,7 @@ namespace System.Collections.Immutable
 
         void Generic.IDictionary<TKey, TValue>.Add(TKey key, TValue value) { }
 
-        TValue Generic.IDictionary<TKey, TValue>.get_Item(TKey key) { throw null; }
-
         bool Generic.IDictionary<TKey, TValue>.Remove(TKey key) { throw null; }
-
-        void Generic.IDictionary<TKey, TValue>.set_Item(TKey key, TValue value) { }
 
         Generic.IEnumerator<Generic.KeyValuePair<TKey, TValue>> Generic.IEnumerable<Generic.KeyValuePair<TKey, TValue>>.GetEnumerator() { throw null; }
 
@@ -646,13 +642,9 @@ namespace System.Collections.Immutable
 
         bool IDictionary.Contains(object key) { throw null; }
 
-        object IDictionary.get_Item(object key) { throw null; }
-
         IDictionaryEnumerator IDictionary.GetEnumerator() { throw null; }
 
         void IDictionary.Remove(object key) { }
-
-        void IDictionary.set_Item(object key, object value) { }
 
         IEnumerator IEnumerable.GetEnumerator() { throw null; }
 
@@ -704,7 +696,7 @@ namespace System.Collections.Immutable
 
             bool IDictionary.IsReadOnly { get { throw null; } }
 
-            object? IDictionary.Item { get { throw null; } set { } }
+            object? IDictionary.this[object key] { get { throw null; } set { } }
 
             ICollection IDictionary.Keys { get { throw null; } }
 
@@ -750,13 +742,9 @@ namespace System.Collections.Immutable
 
             bool IDictionary.Contains(object key) { throw null; }
 
-            object IDictionary.get_Item(object key) { throw null; }
-
             IDictionaryEnumerator IDictionary.GetEnumerator() { throw null; }
 
             void IDictionary.Remove(object key) { }
-
-            void IDictionary.set_Item(object key, object value) { }
 
             IEnumerator IEnumerable.GetEnumerator() { throw null; }
 
@@ -1061,7 +1049,7 @@ namespace System.Collections.Immutable
 
         bool Generic.ICollection<T>.IsReadOnly { get { throw null; } }
 
-        T Generic.IList<T>.Item { get { throw null; } set { } }
+        T Generic.IList<T>.this[int index] { get { throw null; } set { } }
 
         bool ICollection.IsSynchronized { get { throw null; } }
 
@@ -1071,7 +1059,7 @@ namespace System.Collections.Immutable
 
         bool IList.IsReadOnly { get { throw null; } }
 
-        object? IList.Item { get { throw null; } set { } }
+        object? IList.this[int index] { get { throw null; } set { } }
 
         public ImmutableList<T> Add(T value) { throw null; }
 
@@ -1173,13 +1161,9 @@ namespace System.Collections.Immutable
 
         Generic.IEnumerator<T> Generic.IEnumerable<T>.GetEnumerator() { throw null; }
 
-        T Generic.IList<T>.get_Item(int index) { throw null; }
-
         void Generic.IList<T>.Insert(int index, T item) { }
 
         void Generic.IList<T>.RemoveAt(int index) { }
-
-        void Generic.IList<T>.set_Item(int index, T value) { }
 
         void ICollection.CopyTo(Array array, int arrayIndex) { }
 
@@ -1191,8 +1175,6 @@ namespace System.Collections.Immutable
 
         bool IList.Contains(object value) { throw null; }
 
-        object IList.get_Item(int index) { throw null; }
-
         int IList.IndexOf(object value) { throw null; }
 
         void IList.Insert(int index, object value) { }
@@ -1200,8 +1182,6 @@ namespace System.Collections.Immutable
         void IList.Remove(object value) { }
 
         void IList.RemoveAt(int index) { }
-
-        void IList.set_Item(int index, object value) { }
 
         IImmutableList<T> IImmutableList<T>.Add(T value) { throw null; }
 
@@ -1247,7 +1227,7 @@ namespace System.Collections.Immutable
 
             bool IList.IsReadOnly { get { throw null; } }
 
-            object? IList.Item { get { throw null; } set { } }
+            object? IList.this[int index] { get { throw null; } set { } }
 
             public void Add(T item) { }
 
@@ -1361,15 +1341,11 @@ namespace System.Collections.Immutable
 
             bool IList.Contains(object value) { throw null; }
 
-            object IList.get_Item(int index) { throw null; }
-
             int IList.IndexOf(object value) { throw null; }
 
             void IList.Insert(int index, object value) { }
 
             void IList.Remove(object value) { }
-
-            void IList.set_Item(int index, object value) { }
 
             public ImmutableList<T> ToImmutable() { throw null; }
 
@@ -1757,7 +1733,7 @@ namespace System.Collections.Immutable
 
         bool Generic.ICollection<T>.IsReadOnly { get { throw null; } }
 
-        T Generic.IList<T>.Item { get { throw null; } set { } }
+        T Generic.IList<T>.this[int index] { get { throw null; } set { } }
 
         bool ICollection.IsSynchronized { get { throw null; } }
 
@@ -1767,7 +1743,7 @@ namespace System.Collections.Immutable
 
         bool IList.IsReadOnly { get { throw null; } }
 
-        object? IList.Item { get { throw null; } set { } }
+        object? IList.this[int index] { get { throw null; } set { } }
 
         public ImmutableSortedSet<T> Add(T value) { throw null; }
 
@@ -1813,13 +1789,9 @@ namespace System.Collections.Immutable
 
         Generic.IEnumerator<T> Generic.IEnumerable<T>.GetEnumerator() { throw null; }
 
-        T Generic.IList<T>.get_Item(int index) { throw null; }
-
         void Generic.IList<T>.Insert(int index, T item) { }
 
         void Generic.IList<T>.RemoveAt(int index) { }
-
-        void Generic.IList<T>.set_Item(int index, T value) { }
 
         bool Generic.ISet<T>.Add(T item) { throw null; }
 
@@ -1841,8 +1813,6 @@ namespace System.Collections.Immutable
 
         bool IList.Contains(object value) { throw null; }
 
-        object IList.get_Item(int index) { throw null; }
-
         int IList.IndexOf(object value) { throw null; }
 
         void IList.Insert(int index, object value) { }
@@ -1850,8 +1820,6 @@ namespace System.Collections.Immutable
         void IList.Remove(object value) { }
 
         void IList.RemoveAt(int index) { }
-
-        void IList.set_Item(int index, object value) { }
 
         IImmutableSet<T> IImmutableSet<T>.Add(T value) { throw null; }
 
