@@ -25,7 +25,6 @@ System.Threading.Tasks.ValueTask&lt;TResult&gt;
       <group targetFramework=".NETFramework4.6.1">
         <dependency id="System.Runtime.CompilerServices.Unsafe" version="4.5.3" />
       </group>
-      <group targetFramework=".NETCoreApp2.1" />
       <group targetFramework=".NETStandard1.0">
         <dependency id="System.Collections" version="4.3.0" />
         <dependency id="System.Runtime" version="4.3.0" />
