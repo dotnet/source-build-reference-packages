@@ -283,7 +283,7 @@ namespace Microsoft.DiaSymReader
         int GetMethodsInDocument(ISymUnmanagedDocument document, int bufferLength, out int count, ISymUnmanagedMethod[] methods);
         int GetMethodVersion(ISymUnmanagedMethod method, out int version);
         int GetNamespaces(int bufferLength, out int count, ISymUnmanagedNamespace[] namespaces);
-        int GetPortableDebugMetadata(out byte* metadata, out int size);
+        unsafe int GetPortableDebugMetadata(out byte* metadata, out int size);
         unsafe int GetPortableDebugMetadataByVersion(int version, out byte* metadata, out int size);
         unsafe int GetSourceServerData(out byte* data, out int size);
         int GetSymAttribute(int methodToken, string name, int bufferLength, out int count, byte[] customDebugInformation);
