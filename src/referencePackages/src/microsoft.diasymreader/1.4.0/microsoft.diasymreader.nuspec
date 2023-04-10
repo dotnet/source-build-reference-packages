@@ -15,7 +15,6 @@
     <serviceable>true</serviceable>
     <repository type="git" url="https://github.com/dotnet/symreader" commit="636a10b9d0aa317736c57d95f80e1c0849450715" />
     <dependencies>
-      <group targetFramework=".NETFramework2.0" />
       <group targetFramework=".NETStandard1.1">
         <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
       </group>
