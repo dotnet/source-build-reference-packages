@@ -42,7 +42,7 @@ namespace Microsoft.DiaSymReader
 
     public partial interface ISymReaderMetadataProvider
     {
-        bool TryGetStandaloneSignature(int standaloneSignatureToken, out byte* signature, out int length);
+        unsafe bool TryGetStandaloneSignature(int standaloneSignatureToken, out byte* signature, out int length);
         bool TryGetTypeDefinitionInfo(int typeDefinitionToken, out string namespaceName, out string typeName, out System.Reflection.TypeAttributes attributes);
         bool TryGetTypeReferenceInfo(int typeReferenceToken, out string namespaceName, out string typeName);
     }
@@ -254,8 +254,8 @@ namespace Microsoft.DiaSymReader
         int GetMethodsInDocument(ISymUnmanagedDocument document, int bufferLength, out int count, ISymUnmanagedMethod[] methods);
         int GetMethodVersion(ISymUnmanagedMethod method, out int version);
         int GetNamespaces(int bufferLength, out int count, ISymUnmanagedNamespace[] namespaces);
-        int GetPortableDebugMetadata(out byte* metadata, out int size);
-        int GetSourceServerData(out byte* data, out int size);
+        unsafe int GetPortableDebugMetadata(out byte* metadata, out int size);
+        unsafe int GetSourceServerData(out byte* data, out int size);
         int GetSymAttribute(int methodToken, string name, int bufferLength, out int count, byte[] customDebugInformation);
         int GetSymAttributeByVersion(int methodToken, int version, string name, int bufferLength, out int count, byte[] customDebugInformation);
         int GetSymAttributeByVersionPreRemap(int methodToken, int version, string name, int bufferLength, out int count, byte[] customDebugInformation);
@@ -284,8 +284,8 @@ namespace Microsoft.DiaSymReader
         int GetMethodVersion(ISymUnmanagedMethod method, out int version);
         int GetNamespaces(int bufferLength, out int count, ISymUnmanagedNamespace[] namespaces);
         int GetPortableDebugMetadata(out byte* metadata, out int size);
-        int GetPortableDebugMetadataByVersion(int version, out byte* metadata, out int size);
-        int GetSourceServerData(out byte* data, out int size);
+        unsafe int GetPortableDebugMetadataByVersion(int version, out byte* metadata, out int size);
+        unsafe int GetSourceServerData(out byte* data, out int size);
         int GetSymAttribute(int methodToken, string name, int bufferLength, out int count, byte[] customDebugInformation);
         int GetSymAttributeByVersion(int methodToken, int version, string name, int bufferLength, out int count, byte[] customDebugInformation);
         int GetSymAttributeByVersionPreRemap(int methodToken, int version, string name, int bufferLength, out int count, byte[] customDebugInformation);
@@ -327,7 +327,7 @@ namespace Microsoft.DiaSymReader
 
     public partial interface ISymUnmanagedSourceServerModule
     {
-        int GetSourceServerData(out int length, out byte* data);
+        unsafe int GetSourceServerData(out int length, out byte* data);
     }
 
     public partial interface ISymUnmanagedVariable
