@@ -312,7 +312,7 @@ namespace System.Security.Cryptography.Xml
 
         public object SyncRoot { get { throw null; } }
 
-        object Collections.IList.Item { get { throw null; } set { } }
+        object Collections.IList.this[int index] { get { throw null; } set { } }
 
         public int Add(EncryptionProperty value) { throw null; }
 
@@ -340,15 +340,11 @@ namespace System.Security.Cryptography.Xml
 
         bool Collections.IList.Contains(object value) { throw null; }
 
-        object Collections.IList.get_Item(int index) { throw null; }
-
         int Collections.IList.IndexOf(object value) { throw null; }
 
         void Collections.IList.Insert(int index, object value) { }
 
         void Collections.IList.Remove(object value) { }
-
-        void Collections.IList.set_Item(int index, object value) { }
     }
 
     public partial interface IRelDecryptor
@@ -526,7 +522,7 @@ namespace System.Security.Cryptography.Xml
 
         bool Collections.IList.IsReadOnly { get { throw null; } }
 
-        object Collections.IList.Item { get { throw null; } set { } }
+        object Collections.IList.this[int index] { get { throw null; } set { } }
 
         public int Add(object value) { throw null; }
 
@@ -547,10 +543,6 @@ namespace System.Security.Cryptography.Xml
         public void Remove(object value) { }
 
         public void RemoveAt(int index) { }
-
-        object Collections.IList.get_Item(int index) { throw null; }
-
-        void Collections.IList.set_Item(int index, object value) { }
     }
 
     public partial class RSAKeyValue : KeyInfoClause
