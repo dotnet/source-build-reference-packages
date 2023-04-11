@@ -14,10 +14,6 @@
     <serviceable>true</serviceable>
     <repository type="git" url="https://github.com/NuGet/NuGet.Client" commit="027ca8b8ef4b4dc94995f87b9c441d2bcf742c1d" />
     <dependencies>
-      <group targetFramework=".NETFramework4.7.2">
-        <dependency id="NuGet.Common" version="6.2.2" exclude="Build,Analyzers" />
-        <dependency id="NuGet.Versioning" version="6.2.2" exclude="Build,Analyzers" />
-      </group>
       <group targetFramework=".NETStandard2.0">
         <dependency id="NuGet.Common" version="6.2.2" exclude="Build,Analyzers" />
         <dependency id="NuGet.Versioning" version="6.2.2" exclude="Build,Analyzers" />
