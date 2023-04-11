@@ -308,6 +308,7 @@ namespace System.Security.Cryptography.Xml
 
         public bool IsSynchronized { get { throw null; } }
 
+        [System.Runtime.CompilerServices.IndexerName("ItemOf")]
         public EncryptionProperty this[int index] { get { throw null; } set { } }
 
         public object SyncRoot { get { throw null; } }
@@ -514,6 +515,7 @@ namespace System.Security.Cryptography.Xml
 
         public bool IsSynchronized { get { throw null; } }
 
+        [System.Runtime.CompilerServices.IndexerName("ItemOf")]
         public EncryptedReference this[int index] { get { throw null; } set { } }
 
         public object SyncRoot { get { throw null; } }

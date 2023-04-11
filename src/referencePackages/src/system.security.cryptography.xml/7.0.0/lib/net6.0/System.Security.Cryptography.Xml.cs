@@ -311,11 +311,12 @@ namespace System.Security.Cryptography.Xml
 
         public bool IsSynchronized { get { throw null; } }
 
+        [System.Runtime.CompilerServices.IndexerName("ItemOf")]
         public EncryptionProperty this[int index] { get { throw null; } set { } }
 
         public object SyncRoot { get { throw null; } }
 
-        object Collections.IList.this [int index] { get { throw null; } set { } }
+        object Collections.IList.this[int index] { get { throw null; } set { } }
 
         public int Add(EncryptionProperty value) { throw null; }
 
@@ -517,6 +518,7 @@ namespace System.Security.Cryptography.Xml
 
         public bool IsSynchronized { get { throw null; } }
 
+        [System.Runtime.CompilerServices.IndexerName("ItemOf")]
         public EncryptedReference this[int index] { get { throw null; } set { } }
 
         public object SyncRoot { get { throw null; } }
