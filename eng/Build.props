@@ -117,6 +117,32 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Composition.TypedParts.7.0.0.csproj" />
 
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.DiaSymReader.1.4.0.csproj" />
+
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Extensions.FileProviders.Abstractions.6.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Extensions.FileSystemGlobbing.6.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.CodeDom.7.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Composition.AttributeModel.6.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Composition.Convention.6.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Composition.Runtime.6.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Composition.Hosting.6.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Composition.TypedParts.6.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Principal.Windows.5.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Diagnostics.EventLog.7.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Buffers.4.5.1.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Memory.4.5.5.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Formats.Asn1.7.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Reflection.MetadataLoadContext.7.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Resources.Extensions.7.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.Cng.5.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.Pkcs.7.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.ProtectedData.7.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.AccessControl.6.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.Xml.7.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.ServiceProcess.ServiceController.7.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Threading.Tasks.DataFlow.7.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Drawing.Common.7.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Windows.Extensions.7.0.0.csproj" />
+
   </ItemGroup>
 
   <ItemGroup Condition="'$(BuildDependencyPackageProjects)' == 'true'">
