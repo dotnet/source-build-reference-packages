@@ -60,16 +60,6 @@
     -->
     <NoWarn>$(NoWarn);CS0809</NoWarn>
 
-    <!--
-      Disable NU5130: some packages have intentional target framework mismatches between nuspec and
-      ref. One particular case is the 'net463' TFM. It's present in the packages on the nuget
-      gallery, but no targeting pack exists for 4.6.3, so we have trouble building it. We instead
-      build net462 and leave 'net463' in the nuspec, triggering this warning.
-
-      Discussion and more info: https://github.com/dotnet/source-build/issues/1615
-    -->
-    <NoWarn>$(NoWarn);NU5130</NoWarn>
-
     <!-- Disable NU5128 -->
     <NoWarn>$(NoWarn);NU5128</NoWarn>
     <!-- Disable NU5131: unclear warning caused by ref-only (https://github.com/NuGet/Home/issues/8684) -->
