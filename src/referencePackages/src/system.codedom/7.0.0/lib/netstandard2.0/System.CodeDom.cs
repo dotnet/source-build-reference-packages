@@ -829,7 +829,7 @@ namespace System.CodeDom
 
         bool Collections.IList.IsReadOnly { get { throw null; } }
 
-        object Collections.IList.Item { get { throw null; } set { } }
+        object Collections.IList.this[int index] { get { throw null; } set { } }
 
         public void Add(CodeNamespaceImport value) { }
 
@@ -849,8 +849,6 @@ namespace System.CodeDom
 
         bool Collections.IList.Contains(object value) { throw null; }
 
-        object Collections.IList.get_Item(int index) { throw null; }
-
         int Collections.IList.IndexOf(object value) { throw null; }
 
         void Collections.IList.Insert(int index, object value) { }
@@ -858,8 +856,6 @@ namespace System.CodeDom
         void Collections.IList.Remove(object value) { }
 
         void Collections.IList.RemoveAt(int index) { }
-
-        void Collections.IList.set_Item(int index, object value) { }
     }
 
     public partial class CodeObject
