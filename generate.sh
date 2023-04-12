@@ -49,7 +49,17 @@ while [[ $# > 0 ]]; do
     opt="$(echo "${1/#--/-}" | tr "[:upper:]" "[:lower:]")"
     case "$opt" in
         -p|-package)
+            if [ -z ${2+x} ]; then
+                echo -e "${RED}ERROR: No package information supplied.${NC}"
+                exit 1
+            fi
+
             IFS=, read -r packageName packageVersion packageTargetFrameworks <<< $2
+            if [ -z ${packageVersion} ]; then
+                echo -e "${RED}ERROR: No package version supplied.${NC}"
+                exit 1
+            fi
+
             arguments="$arguments /p:PackageName=$packageName /p:PackageVersion=$packageVersion"
             if [ -n "$packageTargetFrameworks" ]; then
                 arguments="$arguments /p:PackageTargetFrameworks=\"$packageTargetFrameworks\""
@@ -58,7 +68,7 @@ while [[ $# > 0 ]]; do
             ;;
         -c|-csv)
             if [ ! -f "$2" ]; then
-                echo -e "${RED}ERROR: CSV file not found - $2${NC}"
+                echo -e "${RED}ERROR: CSV file not found: '$2'${NC}"
                 exit 1
             fi
             packageCSV="$(cd "$(dirname "$2")"; pwd)/$(basename "$2")"
@@ -67,7 +77,7 @@ while [[ $# > 0 ]]; do
             ;;
         -d|-destination)
             if [ ! -d "$2" ]; then
-                echo -e "${RED}ERROR: dest not found - $2${NC}"
+                echo -e "${RED}ERROR: Destination not found: '$2'${NC}"
                 exit 1
             fi
             packagesTargetDirectory="$(cd -P "$2" && pwd)"
@@ -77,8 +87,7 @@ while [[ $# > 0 ]]; do
         -t|-type)
             type="$2"
             if [[ ! "$type" =~ ^(text|ref)$ ]]; then
-                echo -e "${RED}ERROR: unknown package type - $2${NC}"
-                usage
+                echo -e "${RED}ERROR: Unknown package type: '$type'${NC}"
                 exit 1
             fi
             arguments="$arguments /p:PackageType=$type"
@@ -89,9 +98,12 @@ while [[ $# > 0 ]]; do
             shift 1
             ;;
         -f|-feeds)
+            if [ -z ${2+x} ]; then
+                echo -e "${RED}ERROR: No feed supplied.${NC}"
+                exit 1
+            fi
             # -p:RestoreAdditionalProjectSources -> specifies additional Nuget package sources, including feeds: https://docs.microsoft.com/en-us/nuget/reference/msbuild-targets#restore-properties
-            feeds="$2"
-            arguments="$arguments /p:RestoreAdditionalProjectSources=\"$feeds\""
+            arguments="$arguments /p:RestoreAdditionalProjectSources=\"$2\""
             shift 2
             ;;
         "-?"|-h|-help)
