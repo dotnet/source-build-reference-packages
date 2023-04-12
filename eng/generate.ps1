@@ -4,7 +4,7 @@ Param(
   [string][Alias('c')]$csv,
   [string][Alias('d')]$destination,
   [ValidateSet('ref','text')][string][Alias('t')]$type,
-  [switch][Alias('e')]$excludeDependencies,
+  [switch]$excludeDependencies,
   [string][Alias('f')]$feeds,
   [switch][Alias('h')]$help,
   [Parameter(ValueFromRemainingArguments=$true)][String[]]$properties
