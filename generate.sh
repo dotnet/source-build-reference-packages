@@ -32,7 +32,7 @@ usage() {
     echo "                                                option above, one per line.  If specified, the --package option is ignored."
     echo "  -d|--destination                              A path to the root of the repo to copy source into."
     echo "  -t|--type                                     Type of the package to generate. Accepted values: ref (default) | text."
-    echo "  -x|--excludeDependencies                         Determines if package dependencies should be excluded. Default is false."
+    echo "  -x|--excludeDependencies                      Determines if package dependencies should be excluded. Default is false."
     echo "  -f|--feeds                                    A semicolon-separated list of additional NuGet feeds to use during restore."
     echo "  -h|--help                                     Print help and exit."
 }
