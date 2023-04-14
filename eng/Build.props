@@ -155,6 +155,7 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Permissions.7.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Configuration.Configurationmanager.7.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.Xml.7.0.1.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Threading.Channels.6.0.0.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(BuildDependencyPackageProjects)' == 'true'">
