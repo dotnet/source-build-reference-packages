@@ -20,6 +20,9 @@
       Format:
       <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Extensions.Options.5.0.0.csproj" />
     -->
+    <DependencyPackageProjects Include="$(RepoRoot)src\targetPacks\ILsrc\**\Microsoft.NETCore.App.Ref.7.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\targetPacks\ILsrc\**\Microsoft.AspNetCore.App.Ref.7.0.0.csproj" />
+
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Text.Encoding.CodePages.6.0.0.csproj" />
     
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Win32.SystemEvents.6.0.0.csproj" />
@@ -151,6 +154,14 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.CodeAnalysis.Workspaces.Common.4.4.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.CodeAnalysis.CSharp.Workspaces.4.4.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.CodeAnalysis.VisualBasic.Workspaces.4.4.0.csproj" />
+
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Frameworks.6.5.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Common.6.5.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Configuration.6.5.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Versioning.6.5.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Packaging.6.5.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Protocol.6.5.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Credentials.6.5.0.csproj" />
 
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Permissions.7.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Configuration.Configurationmanager.7.0.0.csproj" />
