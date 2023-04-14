@@ -1513,9 +1513,9 @@ namespace System.Data.SqlClient
 
         public override void Rollback() { }
 
-        public void Rollback(string transactionName) { }
+        public override void Rollback(string transactionName) { }
 
-        public void Save(string savePointName) { }
+        public override void Save(string savePointName) { }
     }
 }
 
