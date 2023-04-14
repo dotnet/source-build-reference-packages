@@ -890,13 +890,13 @@ namespace System.Security
 
     public sealed partial class NamedPermissionSet : PermissionSet
     {
-        public NamedPermissionSet(NamedPermissionSet permSet) : base(default) { }
+        public NamedPermissionSet(NamedPermissionSet permSet) : base(permSet) { }
 
-        public NamedPermissionSet(string name, Permissions.PermissionState state) : base(default) { }
+        public NamedPermissionSet(string name, Permissions.PermissionState state) : base(state) { }
 
-        public NamedPermissionSet(string name, PermissionSet permSet) : base(default) { }
+        public NamedPermissionSet(string name, PermissionSet permSet) : base(permSet) { }
 
-        public NamedPermissionSet(string name) : base(default) { }
+        public NamedPermissionSet(string name) : base(null) { }
 
         public string Description { get { throw null; } set { } }
 
