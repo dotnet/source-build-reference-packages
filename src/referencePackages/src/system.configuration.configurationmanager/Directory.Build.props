@@ -1,0 +1,9 @@
+<Project>
+
+  <Import Project="$([MSBuild]::GetPathOfFileAbove(Directory.Build.props, $(MSBuildThisFileDirectory)..))" />
+
+  <PropertyGroup>
+    <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
+  </PropertyGroup>
+
+</Project>
