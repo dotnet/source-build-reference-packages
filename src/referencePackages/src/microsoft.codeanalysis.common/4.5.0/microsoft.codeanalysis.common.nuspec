@@ -19,7 +19,6 @@
     <repository type="git" url="https://github.com/dotnet/roslyn" commit="6a5a63bbc9f4449d9bd1e95a8f9624939c3ccdc3" />
     <dependencies>
       <group targetFramework=".NETStandard2.0">
-        <dependency id="Microsoft.CodeAnalysis.Analyzers" version="3.3.3" />
         <dependency id="System.Collections.Immutable" version="6.0.0" exclude="Build,Analyzers" />
         <dependency id="System.Memory" version="4.5.5" exclude="Build,Analyzers" />
         <dependency id="System.Reflection.Metadata" version="6.0.1" exclude="Build,Analyzers" />
