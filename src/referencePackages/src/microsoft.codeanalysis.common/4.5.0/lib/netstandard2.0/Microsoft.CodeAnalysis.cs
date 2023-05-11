@@ -1857,12 +1857,10 @@ namespace Microsoft.CodeAnalysis
 
         public System.TimeSpan ElapsedTime { get { throw null; } }
 
-        [System.Runtime.CompilerServices.TupleElementNames(new[] { "Source", "OutputIndex" })]
         public System.Collections.Immutable.ImmutableArray<(IncrementalGeneratorRunStep Source, int OutputIndex)> Inputs { get { throw null; } }
 
         public string? Name { get { throw null; } }
 
-        [System.Runtime.CompilerServices.TupleElementNames(new[] { "Value", "Reason" })]
         public System.Collections.Immutable.ImmutableArray<(object Value, IncrementalStepRunReason Reason)> Outputs { get { throw null; } }
     }
 
