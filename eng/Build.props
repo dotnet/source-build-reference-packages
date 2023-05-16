@@ -135,16 +135,6 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Threading.Tasks.DataFlow.7.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Drawing.Common.7.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Windows.Extensions.7.0.0.csproj" />
-    
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Frameworks.6.2.2.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Common.6.2.2.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Versioning.6.2.2.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Configuration.6.2.2.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Packaging.6.2.2.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.LibraryModel.6.2.2.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Protocol.6.2.2.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.DependencyResolver.Core.6.2.2.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.ProjectModel.6.2.2.csproj" />
 
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.CodeAnalysis.Common.4.4.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.CodeAnalysis.CSharp.4.4.0.csproj" />
