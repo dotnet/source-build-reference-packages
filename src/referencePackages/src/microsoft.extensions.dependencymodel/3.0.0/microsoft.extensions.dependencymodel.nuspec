@@ -5,9 +5,8 @@
     <version>3.0.0</version>
     <authors>Microsoft</authors>
     <owners>Microsoft</owners>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>
-    <license type="file">LICENSE.TXT</license>
-    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/dotnet/core-setup/blob/master/LICENSE.TXT</licenseUrl>
     <projectUrl>https://dot.net/</projectUrl>
     <description>Abstractions for reading `.deps` files.</description>
     <copyright>© Microsoft Corporation. All rights reserved.</copyright>
@@ -15,7 +14,8 @@
     <repository type="git" url="git://github.com/dotnet/core-setup" commit="7d57652f33493fa022125b7f63aad0d70c52d810" />
     <dependencies>
       <group targetFramework=".NETStandard1.3">
-        <dependency id="Newtonsoft.Json" version="9.0.1" exclude="Build,Analyzers" />
+        <!-- Manually updated version from 9.0.1 to address https://github.com/advisories/GHSA-5crp-9r3c-p9vr -->
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
         <dependency id="System.AppContext" version="4.1.0" exclude="Build,Analyzers" />
         <dependency id="System.Diagnostics.Debug" version="4.0.11" exclude="Build,Analyzers" />
         <dependency id="System.Dynamic.Runtime" version="4.0.11" exclude="Build,Analyzers" />
@@ -24,7 +24,8 @@
         <dependency id="System.Runtime.InteropServices.RuntimeInformation" version="4.0.0" exclude="Build,Analyzers" />
       </group>
       <group targetFramework=".NETStandard1.6">
-        <dependency id="Newtonsoft.Json" version="9.0.1" exclude="Build,Analyzers" />
+        <!-- Manually updated version from 9.0.1 to address https://github.com/advisories/GHSA-5crp-9r3c-p9vr -->
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
         <dependency id="System.AppContext" version="4.1.0" exclude="Build,Analyzers" />
         <dependency id="System.Diagnostics.Debug" version="4.0.11" exclude="Build,Analyzers" />
         <dependency id="System.Dynamic.Runtime" version="4.0.11" exclude="Build,Analyzers" />
