@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <AssemblyName>Microsoft.CodeAnalysis.VisualBasic</AssemblyName>
+    <AssemblyName>System.Security.Permissions</AssemblyName>
     <ProjectTemplateVersion>2</ProjectTemplateVersion>
-    <StrongNameKeyId>MicrosoftShared</StrongNameKeyId>
+    <StrongNameKeyId>Open</StrongNameKeyId>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <ProjectReference Include="..\..\microsoft.codeanalysis.common\4.0.1\Microsoft.CodeAnalysis.Common.4.0.1.csproj" />
+    <PackageReference Include="System.Security.AccessControl" Version="4.5.0" />
   </ItemGroup>
 
 </Project>
