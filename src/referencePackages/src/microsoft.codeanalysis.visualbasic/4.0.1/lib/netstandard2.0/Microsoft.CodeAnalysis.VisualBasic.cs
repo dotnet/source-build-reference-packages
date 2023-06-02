@@ -47,10 +47,8 @@
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace Microsoft.CodeAnalysis
 {
-    public sealed partial class VisualBasicExtensions
+    public static partial class VisualBasicExtensions
     {
-        internal VisualBasicExtensions() { }
-
         public static bool Any(this SyntaxTokenList list, VisualBasic.SyntaxKind kind) { throw null; }
 
         public static bool Any(this SyntaxTriviaList list, VisualBasic.SyntaxKind kind) { throw null; }
@@ -307,10 +305,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public static string ToMinimalDisplayString(ISymbol symbol, SemanticModel semanticModel, int position, SymbolDisplayFormat format = null) { throw null; }
     }
 
-    public sealed partial class SyntaxExtensions
+    public static partial class SyntaxExtensions
     {
-        internal SyntaxExtensions() { }
-
         public static SyntaxList<Syntax.AttributeListSyntax> Attributes(this Syntax.AsClauseSyntax asClauseSyntax) { throw null; }
 
         public static SyntaxToken NormalizeWhitespace(this SyntaxToken token, string indentation, bool elasticTrivia) { throw null; }
@@ -3525,10 +3521,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         ConflictMarkerTrivia = 792
     }
 
-    public sealed partial class TypedConstantExtensions
+    public static partial class TypedConstantExtensions
     {
-        internal TypedConstantExtensions() { }
-
         public static string ToVisualBasicString(this TypedConstant constant) { throw null; }
     }
 
@@ -3882,10 +3876,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public static VisualBasicDiagnosticFormatter Instance { get { throw null; } }
     }
 
-    public sealed partial class VisualBasicExtensions
+    public static partial class VisualBasicExtensions
     {
-        internal VisualBasicExtensions() { }
-
         public static SyntaxTokenList Add(this SyntaxTokenList list, params SyntaxToken[] items) { throw null; }
 
         public static System.Collections.Immutable.ImmutableArray<IAliasSymbol> AliasImports(this Compilation compilation) { throw null; }
