@@ -2692,7 +2692,7 @@ namespace Microsoft.Build.Globbing.Extensions
 
 namespace Microsoft.Build.Graph
 {
-    public record GraphBuildOptions : object, System.IEquatable<GraphBuildOptions>
+    public partial class GraphBuildOptions : System.IEquatable<GraphBuildOptions>
     {
         public GraphBuildOptions() { }
 
