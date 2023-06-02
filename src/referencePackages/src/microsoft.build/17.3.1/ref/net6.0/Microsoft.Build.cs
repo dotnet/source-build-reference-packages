@@ -2702,7 +2702,7 @@ namespace Microsoft.Build.Graph
 
         protected virtual System.Type EqualityContract { get { throw null; } }
 
-        public virtual GraphBuildOptions <Clone>$() { throw null; }
+        public virtual GraphBuildOptions Clone() { throw null; }
 
         public virtual bool Equals(GraphBuildOptions? other) { throw null; }
 
