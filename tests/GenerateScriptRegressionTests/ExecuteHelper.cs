@@ -16,7 +16,6 @@ internal static class ExecuteHelper
         string fileName,
         string args,
         ITestOutputHelper outputHelper,
-        string workingDirectory = "",
         bool logOutput = false,
         Action<Process>? configure = null,
         int millisecondTimeout = -1)
@@ -32,7 +31,6 @@ internal static class ExecuteHelper
                 Arguments = args,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
-                WorkingDirectory = workingDirectory,
             }
         };
 
