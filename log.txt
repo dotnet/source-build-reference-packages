@@ -1,0 +1,14 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  Determining projects to restore...
+  Restored /datadrive/source/source-build-reference-packages/src/referencePackages/src/nuget.credentials/6.2.2/NuGet.Credentials.6.2.2.csproj (in 175 ms).
+  NuGet.Credentials.6.2.2 -> /datadrive/source/source-build-reference-packages/artifacts/bin/NuGet.Credentials.6.2.2/Debug/netstandard2.0/NuGet.Credentials.dll
+  NuGet.Credentials.6.2.2 -> /datadrive/source/source-build-reference-packages/artifacts/bin/NuGet.Credentials.6.2.2/Debug/net5.0/NuGet.Credentials.dll
+  The package NuGet.Credentials.6.2.2 is missing a readme. Go to https://aka.ms/nuget/authoring-best-practices/readme to learn why package readmes are important.
+  Successfully created package '/datadrive/source/source-build-reference-packages/artifacts/packages/Debug/Shipping/NuGet.Credentials.6.2.2.nupkg'.
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:02.22
