@@ -17,6 +17,7 @@ public class GenerateScriptTests
         Reference,
         Text
     }
+
     public static IEnumerable<object[]> Data => new List<object[]>
     {
         new object[] { "Microsoft.CodeAnalysis.CSharp.Workspaces", "4.5.0", PackageType.Reference },
@@ -42,20 +43,21 @@ public class GenerateScriptTests
     public void VerifyGenerateScript(string package, string version, PackageType type)
     {
         string command = Path.Combine(RepoRoot, RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "generate.cmd" : "generate.sh");
-        string arguments = string.Format("-p {0} -x -d {1}",string.Format("{0},{1}", package, version), SandboxDirectory);
-        string packageSrcDirectory = Path.Combine(RepoRoot, "src");
+        string arguments = $"-p {package},{version} -x -d {SandboxDirectory}";
+        string packageSrcDirectory = string.Empty;
         string sandboxPackageGeneratedDirecotry = Path.Combine(SandboxDirectory, package.ToLower(), version);
+
         switch (type)
         {
             case PackageType.Reference:
-                packageSrcDirectory = Path.Combine(packageSrcDirectory, "referencePackages", "src");
+                packageSrcDirectory = Path.Combine(RepoRoot, "src", "referencePackages", "src", package.ToLower(), version);
                 break;
             case PackageType.Text:
                 arguments += " -t text";
-                packageSrcDirectory = Path.Combine(packageSrcDirectory, "textOnlyPackages", "src");
+                packageSrcDirectory = Path.Combine(RepoRoot, "src", "textOnlyPackages", "src", package.ToLower(), version);
                 break;
         }
-        packageSrcDirectory = Path.Combine(packageSrcDirectory, package.ToLower(), version);
+
         ExecuteHelper.ExecuteProcess(command, arguments, output);
         Assert.True(CompareDirs.Compare(packageSrcDirectory, sandboxPackageGeneratedDirecotry, output), $"{type.ToString()} package {package},{version} failed in the test!");        
     }

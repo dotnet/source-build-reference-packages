@@ -8,11 +8,10 @@ using Xunit.Abstractions;
 
 namespace GenerateScriptTests;
 
-public class CompareDirs
+internal class CompareDirs
 {
     public static bool Compare(string pathA, string pathB, ITestOutputHelper outputHelper)
     {
-
         DirectoryInfo dir1 = new DirectoryInfo(pathA);
         DirectoryInfo dir2 = new DirectoryInfo(pathB);
 
@@ -98,7 +97,7 @@ public class CompareDirs
     }
 }
 
-public class FileInfoComparer : IEqualityComparer<FileInfo>
+internal class FileInfoComparer : IEqualityComparer<FileInfo>
 {
     public FileInfoComparer() { }
 
