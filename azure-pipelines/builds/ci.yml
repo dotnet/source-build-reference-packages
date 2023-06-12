@@ -24,6 +24,7 @@ stages:
       enablePublishUsingPipelines: true
       enablePublishBuildArtifacts: true
       enablePublishBuildAssets: true
+      enablePublishTestResults: true
       publishAssetsImmediately: true
       artifacts:
         publish:
