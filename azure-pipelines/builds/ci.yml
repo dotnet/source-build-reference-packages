@@ -24,7 +24,6 @@ stages:
       enablePublishUsingPipelines: true
       enablePublishBuildArtifacts: true
       enablePublishBuildAssets: true
-      enablePublishTestResults: true
       publishAssetsImmediately: true
       artifacts:
         publish:
@@ -43,17 +42,7 @@ stages:
         - script: build.cmd
             -test
           displayName: Windows Test
-        - task: PublishTestResults@2
-          displayName: Publish .NET Test Results
-          inputs:
-            testRunTitle: 'Windows_NT generate script test'
-            testRunner: XUnit
-            testResultsFiles: '*.*'
-            mergeTestResults: true
-          continueOnError: true
-          condition: always()
       - job: Linux
-        container: LinuxContainer
         pool:
           vmImage: ubuntu-latest
         preSteps:
@@ -63,15 +52,6 @@ stages:
         - script: build.sh
             --test
           displayName: Unix Test
-        - task: PublishTestResults@2
-          displayName: Publish .NET Test Results
-          inputs:
-            testRunTitle: 'Unix generate script test'
-            testRunner: XUnit
-            testResultsFiles: '*.*'
-            mergeTestResults: true
-          continueOnError: true
-          condition: always()
 
 # Based on - https://github.com/dotnet/arcade/blob/9b3f304c7bc9fd4d11be9ca0b466b83e98d2a191/Documentation/CorePackages/Publishing.md#moving-away-from-the-legacy-pushtoblobfeed-task
 - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
