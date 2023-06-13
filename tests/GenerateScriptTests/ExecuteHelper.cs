@@ -33,13 +33,6 @@ internal static class ExecuteHelper
             }
         };
 
-        // The `dotnet test` execution context sets a number of dotnet related ENVs that cause issues when executing
-        // dotnet commands.  Clear these to avoid side effects.
-        foreach (string key in process.StartInfo.Environment.Keys.Where(key => key != "HOME").ToList())
-        {
-            process.StartInfo.Environment.Remove(key);
-        }
-
         configure?.Invoke(process);
 
         StringBuilder stdOutput = new();
