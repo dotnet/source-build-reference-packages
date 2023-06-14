@@ -34,19 +34,19 @@ jobs:
     - checkout: self
       clean: true
     - ${{ if eq(parameters.agentOs, 'Windows_NT') }}:
-      - script: build.cmd
+      - script: $(Build.SourcesDirectory)/build.cmd
                   -test
         displayName: Windows NT Tests
 
     - ${{ if eq(parameters.agentOs, 'Linux') }}:
-      - script: build.sh
+      - script: $(Build.SourcesDirectory)/build.sh
                   --test
         displayName: Linux Tests
 
     - task: PublishTestResults@2
       displayName: Publish Test Results
       inputs:
-        testRunner: XUnit
+        testRunner: VSTest
         testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.*'
         testRunTitle: '$(_AgentOSName)_$(Agent.JobName)'
         configuration: '${{ parameters.buildConfiguration }}'
