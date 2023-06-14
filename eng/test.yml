@@ -36,6 +36,7 @@ jobs:
         publish:
           artifacts: true
           logs: true
+    _BuildConfig: Debug
 
     steps:
     - checkout: self

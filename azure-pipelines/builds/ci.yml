@@ -30,7 +30,6 @@ stages:
           artifacts: true
           manifests: true
       enableSourceBuild: true
-      enablePublishTestResults: true
   - template: /eng/test.yml
     parameters:
        agentOs: Windows_NT
