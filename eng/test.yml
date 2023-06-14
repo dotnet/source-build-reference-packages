@@ -29,6 +29,13 @@ jobs:
     ${{ if eq(parameters.agentOs, 'Linux') }}:
       pool:
           vmImage: ubuntu-latest
+    enablePublishBuildArtifacts: true
+    enablePublishTestResults: true
+    testResultsFormat: VSTest    
+    artifacts:
+        publish:
+          artifacts: true
+          logs: true
 
     steps:
     - checkout: self
@@ -43,22 +50,22 @@ jobs:
                   --test
         displayName: Linux Tests
 
-    - task: PublishTestResults@2
-      displayName: Publish Test Results
-      inputs:
-        testRunner: VSTest
-        testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.trx'
-        testRunTitle: '$(_AgentOSName)_$(Agent.JobName)'
-        configuration: '${{ parameters.buildConfiguration }}'
-      condition: always()
+    # - task: PublishTestResults@2
+    #   displayName: Publish Test Results
+    #   inputs:
+    #     testRunner: VSTest
+    #     testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.trx'
+    #     testRunTitle: '$(_AgentOSName)_$(Agent.JobName)'
+    #     configuration: '${{ parameters.buildConfiguration }}'
+    #   condition: always()
 
-    - task: CopyFiles@2
-      displayName: Gather Logs
-      inputs:
-        SourceFolder: 'artifacts'
-        Contents: |
-         log/${{ parameters.buildConfiguration }}/**/*
-         TestResults/${{ parameters.buildConfiguration }}/**/*
-        TargetFolder: '$(Build.ArtifactStagingDirectory)'
-      continueOnError: true
-      condition: always()
+    # - task: CopyFiles@2
+    #   displayName: Gather Logs
+    #   inputs:
+    #     SourceFolder: 'artifacts'
+    #     Contents: |
+    #      log/${{ parameters.buildConfiguration }}/**/*
+    #      TestResults/${{ parameters.buildConfiguration }}/**/*
+    #     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    #   continueOnError: true
+    #   condition: always()
