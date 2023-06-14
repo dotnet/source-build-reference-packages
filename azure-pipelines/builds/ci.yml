@@ -37,17 +37,15 @@ stages:
         pool:
           vmImage: windows-latest
         steps:
-        - task: BatchScript@1
-          inputs:
-            filename: build.cmd
-            arguments: -test
+        - script: $(Build.SourcesDirectory)/build.cmd
+                    -test --ci --publish
+          displayName: Windows NT Tests
         - task: PublishTestResults@2
           displayName: Publish Test Results
           inputs:
             testRunTitle: 'Windows generate test'
             testRunner: XUnit
-            testResultsFiles:
-              artifacts/TestResults/**/*.trx
+            testResultsFiles: 'artifacts/TestResults/**/*.trx'
             publishRunAttachments: true
             mergeTestResults: true
           continueOnError: true
@@ -56,17 +54,15 @@ stages:
         pool:
           vmImage: ubuntu-latest
         steps:
-        - task: Bash@3
-          inputs:
-            filename: build.sh
-            arguments: --test
+        - script: $(Build.SourcesDirectory)/build.sh
+                    --test --ci --publish
+          displayName: Linux Tests
         - task: PublishTestResults@2
           displayName: Publish Test Results
           inputs:
             testRunTitle: 'Linux generate test'
             testRunner: XUnit
-            testResultsFiles:
-              artifacts/TestResults/**/*.trx
+            testResultsFiles: '$(Build.SourcesDirectory)/artifacts/TestResults/**/*.trx'
             publishRunAttachments: true
             mergeTestResults: true
           continueOnError: true
