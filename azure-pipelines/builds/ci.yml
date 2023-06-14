@@ -31,42 +31,52 @@ stages:
           manifests: true
       enableSourceBuild: true
       enablePublishTestResults: true
-      jobs:
-      - job: Windows_NT_Tests
-        timeoutInMinutes: 90
-        pool:
-          vmImage: windows-latest
-        steps:
-        - script: $(Build.SourcesDirectory)/build.cmd
-                    -test --ci --publish
-          displayName: Windows NT Tests
-        - task: PublishTestResults@2
-          displayName: Publish Test Results
-          inputs:
-            testRunTitle: 'Windows generate test'
-            testRunner: XUnit
-            testResultsFiles: 'artifacts/TestResults/**/*.trx'
-            publishRunAttachments: true
-            mergeTestResults: true
-          continueOnError: true
-          condition: always()
-      - job: Linux_Tests
-        pool:
-          vmImage: ubuntu-latest
-        steps:
-        - script: $(Build.SourcesDirectory)/build.sh
-                    --test --ci --publish
-          displayName: Linux Tests
-        - task: PublishTestResults@2
-          displayName: Publish Test Results
-          inputs:
-            testRunTitle: 'Linux generate test'
-            testRunner: XUnit
-            testResultsFiles: '$(Build.SourcesDirectory)/artifacts/TestResults/**/*.trx'
-            publishRunAttachments: true
-            mergeTestResults: true
-          continueOnError: true
-          condition: always()
+  - template: /eng/test.yml
+    parameters:
+       agentOs: Windows_NT
+       jobName: Tests
+       buildConfiguration: Debug
+  - template: /eng/test.yml
+    parameters:
+       agentOs: Linux
+       jobName: Tests
+       buildConfiguration: Debug
+      # jobs:
+      # - job: Windows_NT_Tests
+      #   timeoutInMinutes: 90
+      #   pool:
+      #     vmImage: windows-latest
+      #   steps:
+      #   - script: build.cmd
+      #               -test
+      #     displayName: Windows NT Tests
+      #   - task: PublishTestResults@2
+      #     displayName: Publish Test Results
+      #     inputs:
+      #       testRunTitle: 'Windows generate test'
+      #       testRunner: XUnit
+      #       testResultsFiles: 'artifacts/TestResults/**/*.trx'
+      #       publishRunAttachments: true
+      #       mergeTestResults: true
+      #     continueOnError: true
+      #     condition: always()
+      # - job: Linux_Tests
+      #   pool:
+      #     vmImage: ubuntu-latest
+      #   steps:
+      #   - script: build.sh
+      #               --test
+      #     displayName: Linux Tests
+      #   - task: PublishTestResults@2
+      #     displayName: Publish Test Results
+      #     inputs:
+      #       testRunTitle: 'Linux generate test'
+      #       testRunner: XUnit
+      #       testResultsFiles: '$(Build.SourcesDirectory)/artifacts/TestResults/**/*.trx'
+      #       publishRunAttachments: true
+      #       mergeTestResults: true
+      #     continueOnError: true
+      #     condition: always()
 
 # Based on - https://github.com/dotnet/arcade/blob/9b3f304c7bc9fd4d11be9ca0b466b83e98d2a191/Documentation/CorePackages/Publishing.md#moving-away-from-the-legacy-pushtoblobfeed-task
 - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:

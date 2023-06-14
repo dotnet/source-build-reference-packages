@@ -1,0 +1,65 @@
+parameters:
+  # Agent OS identifier and used as job name
+- name: agentOs
+  type: string
+
+  # Job name
+- name: jobName
+  type: string
+
+# Build configuration (Debug, Release)
+- name: buildConfiguration
+  type: string
+  values:
+  - Debug
+  - Release
+
+
+jobs:
+- template: common/templates/job/job.yml
+  parameters:
+    # Set up the name of the job.
+    ${{ if not(parameters.pgoInstrument) }}:
+      name: ${{ parameters.agentOs }}_${{ parameters.jobName }}
+    
+    ## Set up the pool/machine info to be used based on the Agent OS
+    ${{ if eq(parameters.agentOs, 'Windows_NT') }}:
+      enableMicrobuild: true
+      pool:
+          vmImage: windows-latest
+    ${{ if eq(parameters.agentOs, 'Linux') }}:
+      pool:
+          vmImage: ubuntu-latest
+
+    steps:
+    - checkout: self
+      clean: true
+    - ${{ if eq(parameters.agentOs, 'Windows_NT') }}:
+      - script: build.cmd
+                  -test
+        displayName: Windows NT Tests
+
+    - ${{ if eq(parameters.agentOs, 'Linux') }}:
+      - script: build.sh
+                  --test
+        displayName: Linux Tests
+
+    - task: PublishTestResults@2
+      displayName: Publish Test Results
+      inputs:
+        testRunner: XUnit
+        testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.*'
+        testRunTitle: '$(_AgentOSName)_$(Agent.JobName)'
+        configuration: '${{ parameters.buildConfiguration }}'
+      condition: always()
+
+    - task: CopyFiles@2
+      displayName: Gather Logs
+      inputs:
+        SourceFolder: 'artifacts'
+        Contents: |
+         log/${{ parameters.buildConfiguration }}/**/*
+         TestResults/${{ parameters.buildConfiguration }}/**/*
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+      continueOnError: true
+      condition: always()
