@@ -19,8 +19,7 @@ jobs:
 - template: common/templates/job/job.yml
   parameters:
     # Set up the name of the job.
-    ${{ if not(parameters.pgoInstrument) }}:
-      name: ${{ parameters.agentOs }}_${{ parameters.jobName }}
+    name: ${{ parameters.agentOs }}_${{ parameters.jobName }}
     
     ## Set up the pool/machine info to be used based on the Agent OS
     ${{ if eq(parameters.agentOs, 'Windows_NT') }}:
