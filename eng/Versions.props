@@ -7,7 +7,6 @@
     <PreReleaseVersionIteration>1</PreReleaseVersionIteration>
     <!-- Opt-out repo features -->
     <UsingToolXliff>false</UsingToolXliff>
-    <UseVSTestRunner>true</UseVSTestRunner>
   </PropertyGroup>
   <PropertyGroup>
     <!-- Arcade dependencies -->
