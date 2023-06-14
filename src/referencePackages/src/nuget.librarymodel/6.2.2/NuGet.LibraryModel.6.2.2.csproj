@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="NuGet.Common" Version="6.2.2" />
+    <PackageReference Include="NuGet.Common" Version="6.2.4" />
     <PackageReference Include="NuGet.Versioning" Version="6.2.2" />
   </ItemGroup>
 
