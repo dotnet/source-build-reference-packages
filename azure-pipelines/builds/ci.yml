@@ -30,46 +30,43 @@ stages:
           artifacts: true
           manifests: true
       enableSourceBuild: true
+      enablePublishTestResults: true
       jobs:
-      - job: Windows_NT
+      - job: Windows_NT Tests
         timeoutInMinutes: 90
         pool:
           vmImage: windows-latest
-        preSteps:
-        - checkout: self
-          clean: true
         steps:
-        - script: build.cmd
-            -test
-          displayName: Windows Test
+        - task: BatchScript@1
+          inputs:
+            filename: build.cmd
+            arguments: -test
         - task: PublishTestResults@2
           displayName: Publish Test Results
           inputs:
             testRunTitle: 'Windows generate test'
             testRunner: XUnit
             testResultsFiles:
-              artifacts/TestResults/**/*.*
+              artifacts/TestResults/**/*.trx
             publishRunAttachments: true
             mergeTestResults: true
           continueOnError: true
           condition: always()
-      - job: Linux
+      - job: Linux Tests
         pool:
           vmImage: ubuntu-latest
-        preSteps:
-        - checkout: self
-          clean: true
         steps:
-        - bash: build.sh
-            --test
-          displayName: Linux Test
+        - task: Bash@3
+          inputs:
+            filename: build.sh
+            arguments: --test
         - task: PublishTestResults@2
           displayName: Publish Test Results
           inputs:
             testRunTitle: 'Linux generate test'
             testRunner: XUnit
             testResultsFiles:
-              artifacts/TestResults/**/*.*
+              artifacts/TestResults/**/*.trx
             publishRunAttachments: true
             mergeTestResults: true
           continueOnError: true
