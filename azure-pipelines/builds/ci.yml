@@ -32,7 +32,7 @@ stages:
       enableSourceBuild: true
       enablePublishTestResults: true
       jobs:
-      - job: Windows_NT Tests
+      - job: Windows_NT_Tests
         timeoutInMinutes: 90
         pool:
           vmImage: windows-latest
@@ -52,7 +52,7 @@ stages:
             mergeTestResults: true
           continueOnError: true
           condition: always()
-      - job: Linux Tests
+      - job: Linux_Tests
         pool:
           vmImage: ubuntu-latest
         steps:
