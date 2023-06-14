@@ -47,7 +47,7 @@ jobs:
       displayName: Publish Test Results
       inputs:
         testRunner: VSTest
-        testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.*'
+        testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.trx'
         testRunTitle: '$(_AgentOSName)_$(Agent.JobName)'
         configuration: '${{ parameters.buildConfiguration }}'
       condition: always()
