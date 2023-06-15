@@ -8,11 +8,11 @@ parameters:
   type: string
 
 # # Build configuration (Debug, Release)
-# - name: buildConfiguration
-#   type: string
-#   values:
-#   - Debug
-#   - Release
+- name: buildConfiguration
+  type: string
+  values:
+  - Debug
+  - Release
 
 
 jobs:
@@ -53,14 +53,14 @@ jobs:
                   --test
         displayName: Linux Tests
 
-    # - task: PublishTestResults@2
-    #   displayName: Publish Test Results
-    #   inputs:
-    #     testRunner: xUnit
-    #     testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.xml'
-    #     testRunTitle: '$(_AgentOSName)_$(Agent.JobName)'
-    #     configuration: '${{ parameters.buildConfiguration }}'
-    #   condition: always()
+    - task: PublishTestResults@2
+      displayName: Publish Test Results
+      inputs:
+        testRunner: xUnit
+        testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.xml'
+        testRunTitle: '$(_AgentOSName)_$(Agent.JobName)'
+        configuration: '${{ parameters.buildConfiguration }}'
+      condition: always()
 
     # - task: CopyFiles@2
     #   displayName: Gather Logs
