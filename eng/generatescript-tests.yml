@@ -13,7 +13,12 @@ jobs:
   parameters:
     # Set up the name of the job.
     name: ${{ parameters.agentOs }}_${{ parameters.jobName }}
-    
+    enablePublishBuildArtifacts: true
+    artifacts:
+        publish:
+          artifacts: true
+          manifests: true
+    enablePublishTestResults: true
     ## Set up the pool/machine info to be used based on the Agent OS
     ${{ if eq(parameters.agentOs, 'Windows_NT') }}:
       pool:
