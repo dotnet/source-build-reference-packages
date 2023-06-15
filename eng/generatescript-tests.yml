@@ -7,6 +7,12 @@ parameters:
 - name: jobName
   type: string
 
+  # Build configuration (Debug, Release)
+- name: buildConfiguration
+  type: string
+  values:
+  - Debug
+  - Release
 
 jobs:
 - template: common/templates/job/job.yml
