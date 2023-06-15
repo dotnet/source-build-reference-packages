@@ -30,16 +30,16 @@ stages:
           artifacts: true
           manifests: true
       enableSourceBuild: true
-  - template: /eng/test.yml
+  - template: /eng/generatescript-tests.yml
     parameters:
        agentOs: Windows_NT
        jobName: Tests
-       buildConfiguration: Debug
+       # buildConfiguration: Debug
   - template: /eng/test.yml
     parameters:
        agentOs: Linux
        jobName: Tests
-       buildConfiguration: Debug
+       # buildConfiguration: Debug
       # jobs:
       # - job: Windows_NT_Tests
       #   timeoutInMinutes: 90

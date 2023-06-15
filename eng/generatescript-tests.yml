@@ -7,12 +7,12 @@ parameters:
 - name: jobName
   type: string
 
-# Build configuration (Debug, Release)
-- name: buildConfiguration
-  type: string
-  values:
-  - Debug
-  - Release
+# # Build configuration (Debug, Release)
+# - name: buildConfiguration
+#   type: string
+#   values:
+#   - Debug
+#   - Release
 
 
 jobs:
@@ -35,7 +35,10 @@ jobs:
         publish:
           artifacts: true
           logs: true
-    _BuildConfig: Debug
+ 
+    variables:
+      -name: _BuildConfig
+      -value: Debug
 
     steps:
     - checkout: self
@@ -50,22 +53,22 @@ jobs:
                   --test
         displayName: Linux Tests
 
-    - task: PublishTestResults@2
-      displayName: Publish Test Results
-      inputs:
-        testRunner: xUnit
-        testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.xml'
-        testRunTitle: '$(_AgentOSName)_$(Agent.JobName)'
-        configuration: '${{ parameters.buildConfiguration }}'
-      condition: always()
+    # - task: PublishTestResults@2
+    #   displayName: Publish Test Results
+    #   inputs:
+    #     testRunner: xUnit
+    #     testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.xml'
+    #     testRunTitle: '$(_AgentOSName)_$(Agent.JobName)'
+    #     configuration: '${{ parameters.buildConfiguration }}'
+    #   condition: always()
 
-    - task: CopyFiles@2
-      displayName: Gather Logs
-      inputs:
-        SourceFolder: 'artifacts'
-        Contents: |
-         log/${{ parameters.buildConfiguration }}/**/*
-         TestResults/${{ parameters.buildConfiguration }}/**/*
-        TargetFolder: '$(Build.ArtifactStagingDirectory)'
-      continueOnError: true
-      condition: always()
+    # - task: CopyFiles@2
+    #   displayName: Gather Logs
+    #   inputs:
+    #     SourceFolder: 'artifacts'
+    #     Contents: |
+    #      log/${{ parameters.buildConfiguration }}/**/*
+    #      TestResults/${{ parameters.buildConfiguration }}/**/*
+    #     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    #   continueOnError: true
+    #   condition: always()
