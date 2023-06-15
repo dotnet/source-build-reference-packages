@@ -13,12 +13,6 @@ jobs:
   parameters:
     # Set up the name of the job.
     name: ${{ parameters.agentOs }}_${{ parameters.jobName }}
-    enablePublishBuildArtifacts: true
-    artifacts:
-        publish:
-          artifacts: true
-          manifests: true
-    enablePublishTestResults: true
     ## Set up the pool/machine info to be used based on the Agent OS
     ${{ if eq(parameters.agentOs, 'Windows_NT') }}:
       pool:
@@ -38,3 +32,11 @@ jobs:
       - script: $(Build.SourcesDirectory)/build.sh
                   --test
         displayName: Linux Tests
+    - task: PublishTestResults@2
+      displayName: Publish Test Results
+      inputs:
+        testRunner: xUnit
+        testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.xml'
+        testRunTitle: '$(_AgentOSName)_$(Agent.JobName)'
+        configuration: '${{ parameters.buildConfiguration }}'
+      condition: always()
