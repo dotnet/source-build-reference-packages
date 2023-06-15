@@ -37,8 +37,8 @@ jobs:
           logs: true
  
     variables:
-      -name: _BuildConfig
-      -value: Debug
+      - name: _BuildConfig
+      - value: Debug
 
     steps:
     - checkout: self
