@@ -2,6 +2,11 @@
 
   <Import Project="..\Directory.Build.targets" />
 
+  <!-- Setting that are dependent on the project template version. -->
+  <PropertyGroup>
+    <DisableImplicitFrameworkReferences Condition="'$(ProjectTemplateVersion)' != '2'">true</DisableImplicitFrameworkReferences>
+  </PropertyGroup>
+
   <!--
     Disable Arcade util that populates PackTask properties. For these projects, the nuspec already
     contains everything. It's generated when the package is initially deconstructed and tends to be

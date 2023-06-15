@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
     <IsPackable>true</IsPackable>
     <!--
       Arcade defaults Serviceable to 'true'. Reset it, to use the value in the nuspec. Improves

@@ -6,7 +6,7 @@
   <Choose>
     <When Condition="'$(ProjectTemplateVersion)' == '2'">
       <PropertyGroup>
-        <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
+        <DisableImplicitFrameworkReferences Condition="'$(DisableImplicitFrameworkReferences)' == ''">false</DisableImplicitFrameworkReferences>
       </PropertyGroup>
 
       <ItemGroup>
