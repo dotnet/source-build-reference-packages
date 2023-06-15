@@ -35,7 +35,7 @@ stages:
        agentOs: Windows_NT
        jobName: Tests
        # buildConfiguration: Debug
-  - template: /eng/test.yml
+  - template: /eng/generatescript-tests.yml
     parameters:
        agentOs: Linux
        jobName: Tests
