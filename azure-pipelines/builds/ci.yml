@@ -34,12 +34,10 @@ stages:
     parameters:
        agentOs: Windows_NT
        jobName: Tests
-       buildConfiguration: Debug
   - template: /eng/generatescript-tests.yml
     parameters:
        agentOs: Linux
        jobName: Tests
-       buildConfiguration: Debug
 
 # Based on - https://github.com/dotnet/arcade/blob/9b3f304c7bc9fd4d11be9ca0b466b83e98d2a191/Documentation/CorePackages/Publishing.md#moving-away-from-the-legacy-pushtoblobfeed-task
 - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:

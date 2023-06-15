@@ -7,13 +7,6 @@ parameters:
 - name: jobName
   type: string
 
-# # Build configuration (Debug, Release)
-- name: buildConfiguration
-  type: string
-  values:
-  - Debug
-  - Release
-
 
 jobs:
 - template: common/templates/job/job.yml
@@ -23,18 +16,11 @@ jobs:
     
     ## Set up the pool/machine info to be used based on the Agent OS
     ${{ if eq(parameters.agentOs, 'Windows_NT') }}:
-      enableMicrobuild: true
       pool:
           vmImage: windows-latest
     ${{ if eq(parameters.agentOs, 'Linux') }}:
       pool:
           vmImage: ubuntu-latest
-    enablePublishBuildArtifacts: true
-    artifacts:
-        publish:
-          artifacts: true
-          logs: true
-
     steps:
     - checkout: self
       clean: true
@@ -47,12 +33,3 @@ jobs:
       - script: $(Build.SourcesDirectory)/build.sh
                   --test
         displayName: Linux Tests
-
-    - task: PublishTestResults@2
-      displayName: Publish Test Results
-      inputs:
-        testRunner: xUnit
-        testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.xml'
-        testRunTitle: '$(_AgentOSName)_$(Agent.JobName)'
-        configuration: '${{ parameters.buildConfiguration }}'
-      condition: always()
