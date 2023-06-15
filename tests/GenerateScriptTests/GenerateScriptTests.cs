@@ -33,7 +33,7 @@ public class GenerateScriptTests
     public GenerateScriptTests(ITestOutputHelper output)
     {
         this.output = output;
-        RepoRoot = Environment.CurrentDirectory.Substring(0, Environment.CurrentDirectory.IndexOf("source-build-reference-packages") + 31);
+        RepoRoot = Environment.CurrentDirectory.Substring(0, Environment.CurrentDirectory.IndexOf("artifacts"));
         SandboxDirectory = Path.Combine(Environment.CurrentDirectory, $"GenerateTests-{DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString()}");
         Directory.CreateDirectory(SandboxDirectory);
     }
