@@ -3,10 +3,6 @@ parameters:
 - name: agentOs
   type: string
 
-  # Job name
-- name: jobName
-  type: string
-
   # Build configuration (Debug, Release)
 - name: buildConfiguration
   type: string
@@ -18,7 +14,7 @@ jobs:
 - template: common/templates/job/job.yml
   parameters:
     # Set up the name of the job.
-    name: ${{ parameters.agentOs }}_${{ parameters.jobName }}
+    name: ${{ parameters.agentOs }}_GenerateScript_Tests
     ## Set up the pool/machine info to be used based on the Agent OS
     ${{ if eq(parameters.agentOs, 'Windows_NT') }}:
       pool:
@@ -32,17 +28,17 @@ jobs:
     - ${{ if eq(parameters.agentOs, 'Windows_NT') }}:
       - script: $(Build.SourcesDirectory)/build.cmd
                   -test
-        displayName: Windows NT Tests
+        displayName: Windows NT GenerateScript Tests
 
     - ${{ if eq(parameters.agentOs, 'Linux') }}:
       - script: $(Build.SourcesDirectory)/build.sh
                   --test
-        displayName: Linux Tests
+        displayName: Linux GenerateScript Tests
     - task: PublishTestResults@2
       displayName: Publish Test Results
       inputs:
         testRunner: xUnit
         testResultsFiles: 'artifacts/TestResults/${{ parameters.buildConfiguration }}/*.xml'
-        testRunTitle: '$(_AgentOSName)_$(Agent.JobName)'
+        testRunTitle: '$(agentOs)_GenerateScript_tests'
         configuration: '${{ parameters.buildConfiguration }}'
       condition: always()
