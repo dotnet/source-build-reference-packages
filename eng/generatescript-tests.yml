@@ -21,16 +21,15 @@ jobs:
   steps:
   - checkout: self
     clean: true
-  - ${{ if eq($(agentOs), 'Windows_NT') }}:
-    - script: $(Build.SourcesDirectory)/build.cmd
-                -test
-      displayName: Windows NT GenerateScript Tests
+  - script: $(Build.SourcesDirectory)/build.cmd
+              -test
+    displayName: Windows NT GenerateScript Tests
+    condition: eq($(agentOs), "Windows_NT")
 
-  - ${{ if eq(parameters.agentOs, 'Linux') }}:
-    - script: $(Build.SourcesDirectory)/build.sh
-                --test
-      displayName: Linux GenerateScript Tests
-
+  - script: $(Build.SourcesDirectory)/build.sh
+              --test
+    displayName: Linux GenerateScript Tests
+    condition: eq($(agentOs), "Linux")
   - task: PublishTestResults@2
     displayName: Publish Test Results
     inputs:
