@@ -30,17 +30,9 @@ stages:
           artifacts: true
           manifests: true
       enableSourceBuild: true
-  - job: test
-    strategy:
-      matrix:
-        Windows_NT:
-          agentOs: Windows_NT
-        Linux:
-          agentOs: Linux
-    steps:
-      - template: /eng/generatescript-tests.yml
-        parameters:
-          buildConfiguration: Debug
+  - template: /eng/generatescript-tests.yml
+    parameters:
+      buildConfiguration: Debug
     
 
 # Based on - https://github.com/dotnet/arcade/blob/9b3f304c7bc9fd4d11be9ca0b466b83e98d2a191/Documentation/CorePackages/Publishing.md#moving-away-from-the-legacy-pushtoblobfeed-task
