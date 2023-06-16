@@ -2,6 +2,10 @@
 
   <Import Project="Sdk.targets" Sdk="Microsoft.DotNet.Arcade.Sdk" />
 
+  <PropertyGroup>
+    <TFMPackTempOutputDir>$([MSBuild]::NormalizeDirectory('$(BaseOutputPath)', 'pack'))</TFMPackTempOutputDir>
+  </PropertyGroup>
+
   <!--
     Disable Arcade util that populates PackTask properties. For these projects, the nuspec already
     contains everything. It's generated when the package is initially deconstructed and tends to be
@@ -76,7 +80,7 @@
   </Target>
 
   <Target Name="CopyStaticAssetsToOutput"
-          BeforeTargets="Pack;GenerateNuspec"
+          BeforeTargets="GenerateNuspec"
           DependsOnTargets="GetProjectSrc">
     <!-- Ensure TFMPackTempOutputDir defined, to avoid globbing entire machine... -->
     <Error Condition="'$(TFMPackTempOutputDir)' == ''" Text="TFMPackTempOutputDir not defined" />

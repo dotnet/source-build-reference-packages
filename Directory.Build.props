@@ -19,8 +19,4 @@
     <Serviceable />
   </PropertyGroup>
 
-  <PropertyGroup>
-    <TFMPackTempOutputDir>$([MSBuild]::NormalizeDirectory('$(BaseOutputPath)', 'pack'))</TFMPackTempOutputDir>
-  </PropertyGroup>
-
 </Project>
