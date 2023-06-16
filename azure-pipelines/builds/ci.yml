@@ -30,10 +30,13 @@ stages:
           artifacts: true
           manifests: true
       enableSourceBuild: true
-  - job:
+  - job: test
     strategy:
       matrix:
-        agentOs: [Windows_NT, Linux]
+        Windows_NT:
+          agentOs: Windows_NT
+        Linux:
+          agentOs: Linux
     steps:
       - template: /eng/generatescript-tests.yml
         parameters:
