@@ -10,7 +10,7 @@ parameters:
   - Debug
   - Release
 
-jobs:
+job:
 - template: common/templates/job/job.yml
   parameters:
     # Set up the name of the job.
