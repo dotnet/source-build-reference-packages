@@ -30,7 +30,7 @@ stages:
           artifacts: true
           manifests: true
       enableSourceBuild: true
-  - job: Test
+  - job:
     strategy:
       matrix:
         agentOs: [Windows_NT, Linux]
