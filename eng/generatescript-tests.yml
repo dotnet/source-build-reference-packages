@@ -5,31 +5,29 @@ parameters:
   - Debug
   - Release
 
-job:
-  strategy:
-    matrix:
-      Windows_NT:
-        agentOs: Windows_NT
-        imageName: "windows-latest"
-      Linux:
-        agentOs: Linux
-        imageName: "ubuntu-latest"
+strategy:
+  matrix:
+    Windows_NT:
+      agentOs: Windows_NT
+      imageName: "windows-latest"
+    Linux:
+      agentOs: Linux
+      imageName: "ubuntu-latest"
           
-  pool:
-    vmImage: $(imageName)
+pool:
+  vmImage: $(imageName)
 
-  steps:
-  - checkout: self
-    clean: true
-  - ${{ if eq($(agentOs), 'Windows_NT') }}:
-    - script: $(Build.SourcesDirectory)/build.cmd
-                -test
-      displayName: Windows NT GenerateScript Tests
-
-  - ${{ if eq(parameters.agentOs, 'Linux') }}:
-    - script: $(Build.SourcesDirectory)/build.sh
-                --test
-      displayName: Linux GenerateScript Tests
+steps:
+- checkout: self
+  clean: true
+- ${{ if eq($(agentOs), 'Windows_NT') }}:
+  - script: $(Build.SourcesDirectory)/build.cmd
+              -test
+    displayName: Windows NT GenerateScript Tests
+- ${{ if eq(parameters.agentOs, 'Linux') }}:
+  - script: $(Build.SourcesDirectory)/build.sh
+              --test
+    displayName: Linux GenerateScript Tests
   - task: PublishTestResults@2
     displayName: Publish Test Results
     inputs:
