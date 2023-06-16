@@ -4,9 +4,6 @@
     <TargetFrameworks>netstandard1.0;netstandard1.3</TargetFrameworks>
     <AssemblyName>System.Xml.ReaderWriter</AssemblyName>
     <ProjectTemplateVersion>2</ProjectTemplateVersion>
-
-    <!-- Required to avoid circular dependency with targeting pack -->
-    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.0'">
