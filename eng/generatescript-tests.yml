@@ -24,12 +24,12 @@ jobs:
   - script: $(Build.SourcesDirectory)/build.cmd
               -test
     displayName: Windows NT GenerateScript Tests
-    condition: eq(variables.agentOs, "Windows_NT")
+    condition: eq(variables.agentOs, 'Windows_NT')
 
   - script: $(Build.SourcesDirectory)/build.sh
               --test
     displayName: Linux GenerateScript Tests
-    condition: eq(variables.agentOs, "Linux")
+    condition: eq(variables.agentOs, 'Linux')
   - task: PublishTestResults@2
     displayName: Publish Test Results
     inputs:
