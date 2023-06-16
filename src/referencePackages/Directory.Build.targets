@@ -66,7 +66,7 @@
     </When>
     <Otherwise>
       <PropertyGroup>
-        <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+        <DisableImplicitFrameworkReferences Condition="'$(DisableImplicitFrameworkReferences)' == ''">true</DisableImplicitFrameworkReferences>
       </PropertyGroup>
     </Otherwise>
   </Choose>
