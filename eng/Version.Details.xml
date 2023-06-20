@@ -6,23 +6,23 @@
       <Sha>33edde07d61cf7606d76ada765335fb81f1cbb71</Sha>
       <SourceBuild RepoName="source-build-externals" ManagedOnly="true" />
     </Dependency>
-    <Dependency Name="Microsoft.SourceBuild.Intermediate.source-build-reference-packages" Version="8.0.0-alpha.1.23226.1">
+    <Dependency Name="Microsoft.SourceBuild.Intermediate.source-build-reference-packages" Version="8.0.0-alpha.1.23274.2">
       <Uri>https://github.com/dotnet/source-build-reference-packages</Uri>
-      <Sha>9bd919efa1924f2684e63079a9e1106a4ce52b11</Sha>
+      <Sha>db0cbe78748b71b00df05aff15cac2c8ce870cfd</Sha>
       <SourceBuild RepoName="source-build-reference-packages" ManagedOnly="true" />
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="8.0.0-beta.23302.3">
+    <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="8.0.0-beta.23316.6">
       <Uri>https://github.com/dotnet/arcade</Uri>
-      <Sha>234e0726c7384ee84bf08550f2d16a1ff2d5c543</Sha>
+      <Sha>e2334b2be36919347923d0ec872a46acddb1e385</Sha>
       <SourceBuild RepoName="arcade" ManagedOnly="true" />
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.GenAPI.Task" Version="8.0.100-preview.6.23305.4">
+    <Dependency Name="Microsoft.DotNet.GenAPI.Task" Version="8.0.100-preview.6.23319.8">
       <Uri>https://github.com/dotnet/sdk</Uri>
-      <Sha>77f5be14af1b1d0e440e297d82b091ca854e3988</Sha>
+      <Sha>1e2e060424ddee16b9ac1ca56c28aeff96647f24</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.SourceLink.GitHub" Version="8.0.0-beta.23252.2" CoherentParentDependency="Microsoft.DotNet.Arcade.Sdk">
+    <Dependency Name="Microsoft.SourceLink.GitHub" Version="8.0.0-beta.23314.2" CoherentParentDependency="Microsoft.DotNet.Arcade.Sdk">
       <Uri>https://github.com/dotnet/sourcelink</Uri>
-      <Sha>54eb3b811c57f5e94617d31a102fc9cb664ccdd5</Sha>
+      <Sha>4d2c8bf58e8cb7900ec2d9077c155572e2d3cd88</Sha>
       <SourceBuild RepoName="sourcelink" ManagedOnly="true" />
     </Dependency>
     <Dependency Name="Microsoft.NETCore.ILAsm" Version="5.0.0-preview.4.20202.18">

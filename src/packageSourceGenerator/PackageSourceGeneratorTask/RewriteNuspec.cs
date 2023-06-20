@@ -12,6 +12,8 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
 {
     public partial class RewriteNuspec : Task
     {
+        private const string MicrosoftMitLicenseUrl = "https://microsoft.mit-license.org/";
+
         [Required]
         public string? NuspecPath { get; set; }
 
@@ -78,6 +80,12 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             {
                 nuspecContent = GetRuntimeSpecificDependenciesRegex().Replace(nuspecContent, string.Empty);
             }
+
+            // Ensure that the nuspec's line endings match the current environment
+            nuspecContent = nuspecContent.ReplaceLineEndings();
+
+            nuspecContent = nuspecContent.Replace("http://go.microsoft.com/fwlink/?LinkId=529443", MicrosoftMitLicenseUrl);
+            nuspecContent = nuspecContent.Replace("http://go.microsoft.com/fwlink/?LinkId=329770", MicrosoftMitLicenseUrl);
 
             File.WriteAllText(TargetPath!, nuspecContent);
             return true;
