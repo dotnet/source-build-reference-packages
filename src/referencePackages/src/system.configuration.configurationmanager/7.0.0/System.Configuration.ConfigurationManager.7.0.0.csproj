@@ -5,6 +5,7 @@
     <AssemblyName>System.Configuration.ConfigurationManager</AssemblyName>
     <ProjectTemplateVersion>2</ProjectTemplateVersion>
     <StrongNameKeyId>Open</StrongNameKeyId>
+    <NoWarn>$(NoWarn);SYSLIB0003</NoWarn>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
