@@ -1,16 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFrameworks>netstandard1.0</TargetFrameworks>
-    <AssemblyName>System.Reflection.Extensions</AssemblyName>
-    <ProjectTemplateVersion>2</ProjectTemplateVersion>
+    <NuspecFile>$(ArtifactsBinDir)system.reflection.extensions/4.3.0/system.reflection.extensions.nuspec</NuspecFile>
+   </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputPath>$(ArtifactsBinDir)system.reflection.extensions/4.3.0/ref/</OutputPath>
+    <IntermediateOutputPath>$(ArtifactsObjDir)system.reflection.extensions/4.3.0</IntermediateOutputPath>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.0'">
-    <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
-    <PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
-    <PackageReference Include="System.Reflection" Version="4.3.0" />
-    <PackageReference Include="System.Runtime" Version="4.3.0" />
+  <ItemGroup>
+    <Compile Include="**/ref/$(TargetFramework)/*.cs" />
+    <Compile Include="**/lib/$(TargetFramework)/*.cs" />
   </ItemGroup>
 
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard1.0' ">
+        <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
+        <PackageReference Include="Microsoft.NETCore.Targets" Version="1.1.0" />
+        <PackageReference Include="System.Reflection" Version="4.3.0" />
+        <PackageReference Include="System.Runtime" Version="4.3.0" />
+    </ItemGroup>
+
+  
 </Project>
