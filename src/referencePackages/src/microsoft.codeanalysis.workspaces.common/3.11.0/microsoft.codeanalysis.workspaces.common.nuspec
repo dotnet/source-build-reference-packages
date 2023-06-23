@@ -22,7 +22,11 @@
         <dependency id="Microsoft.CodeAnalysis.Common" version="[3.11.0, 3.11.0]" exclude="Build,Analyzers" />
         <dependency id="Humanizer.Core" version="2.2.0" include="Runtime,Build,Native,ContentFiles,Analyzers,BuildTransitive" />
         <dependency id="Microsoft.Bcl.AsyncInterfaces" version="5.0.0" exclude="Build,Analyzers" />
-        <dependency id="System.Composition" version="1.0.31" exclude="Build,Analyzers" />
+        <dependency id="System.Composition.AttributedModel" version="1.0.31" exclude="Build,Analyzers" />
+        <dependency id="System.Composition.Convention" version="1.0.31" exclude="Build,Analyzers" />
+        <dependency id="System.Composition.Hosting" version="1.0.31" exclude="Build,Analyzers" />
+        <dependency id="System.Composition.Runtime" version="1.0.31" exclude="Build,Analyzers" />
+        <dependency id="System.Composition.TypedParts" version="1.0.31" exclude="Build,Analyzers" />
         <dependency id="System.IO.Pipelines" version="5.0.1" exclude="Build,Analyzers" />
       </group>
     </dependencies>
