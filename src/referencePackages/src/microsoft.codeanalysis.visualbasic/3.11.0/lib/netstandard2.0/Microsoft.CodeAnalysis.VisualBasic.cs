@@ -47,10 +47,8 @@
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace Microsoft.CodeAnalysis
 {
-    public sealed partial class VisualBasicExtensions
+    public static partial class VisualBasicExtensions
     {
-        internal VisualBasicExtensions() { }
-
         public static bool Any(this SyntaxTokenList list, VisualBasic.SyntaxKind kind) { throw null; }
 
         public static bool Any(this SyntaxTriviaList list, VisualBasic.SyntaxKind kind) { throw null; }
@@ -158,7 +156,7 @@ namespace Microsoft.CodeAnalysis.VisualBasic
 
         public static bool operator !=(Conversion left, Conversion right) { throw null; }
 
-        Operations.CommonConversion IConvertibleConversion.ToCommonConversion() { throw null; }
+        Operations.CommonConversion ToCommonConversion() { throw null; }
 
         public override string ToString() { throw null; }
     }
@@ -182,10 +180,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public IMethodSymbol MoveNextMethod { get { throw null; } }
     }
 
-    public sealed partial class GeneratedExtensionSyntaxFacts
+    public static partial class GeneratedExtensionSyntaxFacts
     {
-        internal GeneratedExtensionSyntaxFacts() { }
-
         public static string GetText(this SyntaxKind kind) { throw null; }
     }
 
@@ -255,10 +251,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         Latest = int.MaxValue
     }
 
-    public sealed partial class LanguageVersionFacts
+    public static partial class LanguageVersionFacts
     {
-        internal LanguageVersionFacts() { }
-
         public static LanguageVersion MapSpecifiedToEffectiveVersion(this LanguageVersion version) { throw null; }
 
         public static string ToDisplayString(this LanguageVersion version) { throw null; }
@@ -271,7 +265,9 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         private int _dummyPrimitive;
         public override string ToString() { throw null; }
 
-        string System.IFormattable.ToString_IFormattable(string format, System.IFormatProvider formatProvider) { throw null; }
+        string ToString_IFormattable(string format, System.IFormatProvider formatProvider) { throw null; }
+
+        string System.IFormattable.ToString(string format, System.IFormatProvider formatProvider) { throw null; }
     }
 
     public enum OptionStrict : byte
@@ -307,10 +303,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public static string ToMinimalDisplayString(ISymbol symbol, SemanticModel semanticModel, int position, SymbolDisplayFormat format = null) { throw null; }
     }
 
-    public sealed partial class SyntaxExtensions
+    public static partial class SyntaxExtensions
     {
-        internal SyntaxExtensions() { }
-
         public static SyntaxList<Syntax.AttributeListSyntax> Attributes(this Syntax.AsClauseSyntax asClauseSyntax) { throw null; }
 
         public static SyntaxToken NormalizeWhitespace(this SyntaxToken token, string indentation, bool elasticTrivia) { throw null; }
@@ -3525,10 +3519,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         ConflictMarkerTrivia = 792
     }
 
-    public sealed partial class TypedConstantExtensions
+    public static partial class TypedConstantExtensions
     {
-        internal TypedConstantExtensions() { }
-
         public static string ToVisualBasicString(this TypedConstant constant) { throw null; }
     }
 
@@ -3882,10 +3874,8 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public static VisualBasicDiagnosticFormatter Instance { get { throw null; } }
     }
 
-    public sealed partial class VisualBasicExtensions
+    public static partial class VisualBasicExtensions
     {
-        internal VisualBasicExtensions() { }
-
         public static SyntaxTokenList Add(this SyntaxTokenList list, params SyntaxToken[] items) { throw null; }
 
         public static System.Collections.Immutable.ImmutableArray<IAliasSymbol> AliasImports(this Compilation compilation) { throw null; }
@@ -4221,27 +4211,27 @@ namespace Microsoft.CodeAnalysis.VisualBasic
 
         public new SyntaxTriviaList GetTrailingTrivia() { throw null; }
 
-        protected override SyntaxNode InsertNodesInListCore(SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<SyntaxNode> nodesToInsert, bool insertBefore) { throw null; }
+        protected internal override SyntaxNode InsertNodesInListCore(SyntaxNode nodeInList, System.Collections.Generic.IEnumerable<SyntaxNode> nodesToInsert, bool insertBefore) { throw null; }
 
-        protected override SyntaxNode InsertTokensInListCore(SyntaxToken originalToken, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens, bool insertBefore) { throw null; }
+        protected internal override SyntaxNode InsertTokensInListCore(SyntaxToken originalToken, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens, bool insertBefore) { throw null; }
 
-        protected override SyntaxNode InsertTriviaInListCore(SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia, bool insertBefore) { throw null; }
+        protected internal override SyntaxNode InsertTriviaInListCore(SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia, bool insertBefore) { throw null; }
 
         protected override bool IsEquivalentToCore(SyntaxNode node, bool topLevel = false) { throw null; }
 
         public SyntaxKind Kind() { throw null; }
 
-        protected override SyntaxNode NormalizeWhitespaceCore(string indentation, string eol, bool elasticTrivia) { throw null; }
+        protected internal override SyntaxNode NormalizeWhitespaceCore(string indentation, string eol, bool elasticTrivia) { throw null; }
 
-        protected override SyntaxNode RemoveNodesCore(System.Collections.Generic.IEnumerable<SyntaxNode> nodes, SyntaxRemoveOptions options) { throw null; }
+        protected internal override SyntaxNode RemoveNodesCore(System.Collections.Generic.IEnumerable<SyntaxNode> nodes, SyntaxRemoveOptions options) { throw null; }
 
-        protected override SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode> nodes = null, System.Func<TNode, TNode, SyntaxNode> computeReplacementNode = null, System.Collections.Generic.IEnumerable<SyntaxToken> tokens = null, System.Func<SyntaxToken, SyntaxToken, SyntaxToken> computeReplacementToken = null, System.Collections.Generic.IEnumerable<SyntaxTrivia> trivia = null, System.Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia> computeReplacementTrivia = null) { throw null; }
+        protected internal override SyntaxNode ReplaceCore<TNode>(System.Collections.Generic.IEnumerable<TNode> nodes = null, System.Func<TNode, TNode, SyntaxNode> computeReplacementNode = null, System.Collections.Generic.IEnumerable<SyntaxToken> tokens = null, System.Func<SyntaxToken, SyntaxToken, SyntaxToken> computeReplacementToken = null, System.Collections.Generic.IEnumerable<SyntaxTrivia> trivia = null, System.Func<SyntaxTrivia, SyntaxTrivia, SyntaxTrivia> computeReplacementTrivia = null) { throw null; }
 
-        protected override SyntaxNode ReplaceNodeInListCore(SyntaxNode originalNode, System.Collections.Generic.IEnumerable<SyntaxNode> replacementNodes) { throw null; }
+        protected internal override SyntaxNode ReplaceNodeInListCore(SyntaxNode originalNode, System.Collections.Generic.IEnumerable<SyntaxNode> replacementNodes) { throw null; }
 
-        protected override SyntaxNode ReplaceTokenInListCore(SyntaxToken originalToken, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens) { throw null; }
+        protected internal override SyntaxNode ReplaceTokenInListCore(SyntaxToken originalToken, System.Collections.Generic.IEnumerable<SyntaxToken> newTokens) { throw null; }
 
-        protected override SyntaxNode ReplaceTriviaInListCore(SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia) { throw null; }
+        protected internal override SyntaxNode ReplaceTriviaInListCore(SyntaxTrivia originalTrivia, System.Collections.Generic.IEnumerable<SyntaxTrivia> newTrivia) { throw null; }
     }
 
     public abstract partial class VisualBasicSyntaxRewriter : VisualBasicSyntaxVisitor<SyntaxNode>
@@ -4821,7 +4811,7 @@ namespace Microsoft.CodeAnalysis.VisualBasic
         public static SyntaxTree ParseText(string text, VisualBasicParseOptions options, string path, System.Text.Encoding encoding, System.Threading.CancellationToken cancellationToken) { throw null; }
 
         public abstract bool TryGetRoot(ref VisualBasicSyntaxNode root);
-        protected override bool TryGetRootCore(ref SyntaxNode root) { throw null; }
+        protected bool TryGetRootCore(ref SyntaxNode root) { throw null; }
 
         public override SyntaxTree WithChangedText(Text.SourceText newText) { throw null; }
     }
@@ -6733,13 +6723,11 @@ namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
 
     public sealed partial class CompilationUnitSyntax : VisualBasicSyntaxNode, ICompilationUnitSyntax
     {
-        internal CompilationUnitSyntax() { }
-
         public SyntaxList<AttributesStatementSyntax> Attributes { get { throw null; } }
 
         public SyntaxToken EndOfFileToken { get { throw null; } }
 
-        SyntaxToken ICompilationUnitSyntax.ICompilationUnitSyntax_EndOfFileToken { get { throw null; } }
+        SyntaxToken ICompilationUnitSyntax_EndOfFileToken { get { throw null; } }
 
         public SyntaxList<ImportsStatementSyntax> Imports { get { throw null; } }
 
@@ -11090,9 +11078,7 @@ namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
 
     public sealed partial class SkippedTokensTriviaSyntax : StructuredTriviaSyntax, ISkippedTokensTriviaSyntax
     {
-        internal SkippedTokensTriviaSyntax() { }
-
-        SyntaxTokenList ISkippedTokensTriviaSyntax.ISkippedTokensTriviaSyntax_Tokens { get { throw null; } }
+        SyntaxTokenList ISkippedTokensTriviaSyntax_Tokens { get { throw null; } }
 
         public SyntaxTokenList Tokens { get { throw null; } }
 
@@ -11203,7 +11189,7 @@ namespace Microsoft.CodeAnalysis.VisualBasic.Syntax
     {
         internal StructuredTriviaSyntax() { }
 
-        override SyntaxTrivia IStructuredTriviaSyntax.ParentTrivia { get { throw null; } }
+        SyntaxTrivia IStructuredTriviaSyntax.ParentTrivia { get { throw null; } }
     }
 
     public sealed partial class StructureStatementSyntax : TypeStatementSyntax
