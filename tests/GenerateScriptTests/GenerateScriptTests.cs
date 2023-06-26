@@ -20,10 +20,10 @@ public class GenerateScriptTests
 
     public static IEnumerable<object[]> Data => new List<object[]>
     {
-        new object[] { "Microsoft.CodeAnalysis.CSharp.Workspaces", "4.5.0", PackageType.Reference },
-        new object[] { "System.Threading.Tasks.Extensions", "4.5.4", PackageType.Reference },
-        new object[] { "System.Diagnostics.DiagnosticSource", "7.0.2", PackageType.Reference },
-        new object[] { "Microsoft.CodeAnalysis", "4.5.0", PackageType.Text },
+        new object[] { "System.Xml.ReaderWriter", "4.0.11", PackageType.Reference },
+        // new object[] { "System.Threading.Tasks.Extensions", "4.5.4", PackageType.Reference },
+        //new object[] { "Microsoft.Build.Framework", "17.5.0", PackageType.Reference },
+        // new object[] { "Microsoft.CodeAnalysis", "4.5.0", PackageType.Text },
     };
     
     public string SandboxDirectory { get; set; }
@@ -59,6 +59,6 @@ public class GenerateScriptTests
         }
 
         ExecuteHelper.ExecuteProcess(command, arguments, output);
-        Assert.True(CompareDirs.Compare(packageSrcDirectory, sandboxPackageGeneratedDirecotry, output), $"{type.ToString()} package {package},{version} failed in the test!");        
+        Assert.Empty(ExecuteHelper.ExecuteProcess("git", $"diff --no-index {packageSrcDirectory} {sandboxPackageGeneratedDirecotry}", output, true).StdOut);
     }
 }

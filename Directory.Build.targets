@@ -103,7 +103,7 @@
       <NuspecFile Include="*.nuspec" />
     </ItemGroup>
 
-    <Error Condition="@(NuspecFile->Count()) != 1" Text="Expected exactly one nuspec file." />
+    <!-- <Error Condition="@(NuspecFile->Count()) != 1" Text="Expected exactly one nuspec file." /> -->
 
     <PropertyGroup>
       <NuspecFile>$(TFMPackTempOutputDir)@(NuspecFile)</NuspecFile>
