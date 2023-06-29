@@ -24,7 +24,6 @@ jobs:
   - script: $(Build.SourcesDirectory)/test.cmd
     displayName: Windows NT GenerateScript Tests
     condition: eq(variables.agentOs, 'Windows_NT')
-
   - script: $(Build.SourcesDirectory)/test.sh
     displayName: Linux GenerateScript Tests
     condition: eq(variables.agentOs, 'Linux')
