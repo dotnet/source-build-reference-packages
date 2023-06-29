@@ -21,13 +21,11 @@ jobs:
   steps:
   - checkout: self
     clean: true
-  - script: $(Build.SourcesDirectory)/build.cmd
-              -test
+  - script: $(Build.SourcesDirectory)/test.cmd
     displayName: Windows NT GenerateScript Tests
     condition: eq(variables.agentOs, 'Windows_NT')
 
-  - script: $(Build.SourcesDirectory)/build.sh
-              --test
+  - script: $(Build.SourcesDirectory)/test.sh
     displayName: Linux GenerateScript Tests
     condition: eq(variables.agentOs, 'Linux')
   - task: PublishTestResults@2

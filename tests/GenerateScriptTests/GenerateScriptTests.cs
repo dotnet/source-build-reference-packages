@@ -21,9 +21,9 @@ public class GenerateScriptTests
     public static IEnumerable<object[]> Data => new List<object[]>
     {
         new object[] { "System.Xml.ReaderWriter", "4.0.11", PackageType.Reference },
-        // new object[] { "System.Threading.Tasks.Extensions", "4.5.4", PackageType.Reference },
-        //new object[] { "Microsoft.Build.Framework", "17.5.0", PackageType.Reference },
-        // new object[] { "Microsoft.CodeAnalysis", "4.5.0", PackageType.Text },
+        new object[] { "Microsoft.Extensions.Logging.Abstractions", "7.0.1", PackageType.Reference },
+        new object[] { "Microsoft.CodeAnalysis.CSharp", "3.11.0", PackageType.Reference },
+        new object[] { "System.Security.Cryptography.Pkcs", "7.0.2", PackageType.Reference },
     };
     
     public string SandboxDirectory { get; set; }
