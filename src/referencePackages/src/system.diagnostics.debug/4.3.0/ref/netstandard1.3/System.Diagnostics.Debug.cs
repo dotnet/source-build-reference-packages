@@ -82,10 +82,63 @@ namespace System.Diagnostics
         public static bool Launch() { throw null; }
     }
 
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
+    public sealed partial class DebuggerBrowsableAttribute : Attribute
+    {
+        public DebuggerBrowsableAttribute(DebuggerBrowsableState state) { }
+
+        public DebuggerBrowsableState State { get { throw null; } }
+    }
+
     public enum DebuggerBrowsableState
     {
         Never = 0,
         Collapsed = 2,
         RootHidden = 3
+    }
+
+    [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Delegate, AllowMultiple = true)]
+    public sealed partial class DebuggerDisplayAttribute : Attribute
+    {
+        public DebuggerDisplayAttribute(string value) { }
+
+        public string Name { get { throw null; } set { } }
+
+        public Type Target { get { throw null; } set { } }
+
+        public string TargetTypeName { get { throw null; } set { } }
+
+        public string Type { get { throw null; } set { } }
+
+        public string Value { get { throw null; } }
+    }
+
+    [AttributeUsage(AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property, Inherited = false)]
+    public sealed partial class DebuggerHiddenAttribute : Attribute
+    {
+    }
+
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Constructor | AttributeTargets.Method | AttributeTargets.Property, Inherited = false)]
+    public sealed partial class DebuggerNonUserCodeAttribute : Attribute
+    {
+    }
+
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Constructor | AttributeTargets.Method, Inherited = false)]
+    public sealed partial class DebuggerStepThroughAttribute : Attribute
+    {
+    }
+
+    [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct, AllowMultiple = true)]
+    public sealed partial class DebuggerTypeProxyAttribute : Attribute
+    {
+        public DebuggerTypeProxyAttribute(string typeName) { }
+
+        public DebuggerTypeProxyAttribute(Type type) { }
+
+        public string ProxyTypeName { get { throw null; } }
+
+        public Type Target { get { throw null; } set { } }
+
+        public string TargetTypeName { get { throw null; } set { } }
     }
 }
