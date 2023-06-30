@@ -303,7 +303,7 @@ namespace System
         public readonly bool TryCopyTo(Memory<T> destination) { throw null; }
     }
 
-    public readonly partial struct ReadOnlySpan<T>
+    public readonly ref partial struct ReadOnlySpan<T>
     {
         private readonly object _dummy;
         private readonly int _dummyPrimitive;
@@ -352,7 +352,7 @@ namespace System
 
         public readonly bool TryCopyTo(Span<T> destination) { throw null; }
 
-        public partial struct Enumerator
+        public ref partial struct Enumerator
         {
             private ReadOnlySpan<T> _span;
             private object _dummy;
@@ -380,7 +380,7 @@ namespace System
         public readonly object GetObject() { throw null; }
     }
 
-    public readonly partial struct Span<T>
+    public readonly ref partial struct Span<T>
     {
         private readonly object _dummy;
         private readonly int _dummyPrimitive;
@@ -435,7 +435,7 @@ namespace System
 
         public readonly bool TryCopyTo(Span<T> destination) { throw null; }
 
-        public partial struct Enumerator
+        public ref partial struct Enumerator
         {
             private Span<T> _span;
             private object _dummy;
