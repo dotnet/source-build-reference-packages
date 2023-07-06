@@ -7748,3 +7748,24 @@ namespace Microsoft.CodeAnalysis.Text
         public override readonly string ToString() { throw null; }
     }
 }
+
+namespace Microsoft.CodeAnalysis.Interop
+{
+    internal interface IClrStrongName
+    {
+    }
+}
+
+namespace Microsoft.Cci
+{
+    internal class ExtendedPEBuilder
+    {
+    }
+}
+
+namespace Microsoft.CodeAnalysis.PooledObjects
+{
+    internal struct ArrayBuilder<T> 
+    {
+    }
+}
