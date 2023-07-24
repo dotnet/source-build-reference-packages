@@ -19,9 +19,3 @@
 [submodule "src/docker-creds-provider"]
 	path = src/docker-creds-provider
 	url = https://github.com/mthalman/docker-creds-provider
-[submodule "xunit"]
-	path = src/xunit
-	url = https://github.com/xunit/xunit
-[submodule "src/abstractions-xunit"]
-	path = src/abstractions-xunit
-	url = https://github.com/xunit/abstractions.xunit
