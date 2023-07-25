@@ -30,7 +30,7 @@ stages:
           artifacts: true
           manifests: true
       enableSourceBuild: true
-  - template: /generatescript-tests.yml
+  - template: /azure-pipelines/builds/generatescript-tests.yml
     parameters:
       buildConfiguration: Debug
 
