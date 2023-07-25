@@ -30,7 +30,7 @@ stages:
           artifacts: true
           manifests: true
       enableSourceBuild: true
-  - template: /eng/generatescript-tests.yml
+  - template: /generatescript-tests.yml
     parameters:
       buildConfiguration: Debug
 
