@@ -38,6 +38,7 @@
       System.Runtime.InteropServices.RuntimeInformation;
       System.Runtime.Numerics;
       System.Security.Cryptography.Algorithms;
+      System.Security.Cryptography.Cng;
       System.Security.Cryptography.Encoding;
       System.Security.Cryptography.Primitives;
       System.Security.Cryptography.OpenSsl;
