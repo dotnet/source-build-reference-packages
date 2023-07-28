@@ -39,6 +39,7 @@
       System.Security.Cryptography.Algorithms;
       System.Security.Cryptography.Encoding;
       System.Security.Cryptography.Primitives;
+      System.Security.Cryptography.OpenSsl;
       System.Security.Cryptography.X509Certificates;
       System.Text.Encoding;
       System.Text.Encoding.Extensions;
