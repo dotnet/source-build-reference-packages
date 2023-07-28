@@ -64,6 +64,8 @@ namespace System.Collections.ObjectModel
 
         protected virtual event ComponentModel.PropertyChangedEventHandler PropertyChanged { add { } remove { } }
 
+        event System.ComponentModel.PropertyChangedEventHandler System.ComponentModel.INotifyPropertyChanged.PropertyChanged { add { } remove { } }
+
         protected IDisposable BlockReentrancy() { throw null; }
 
         protected void CheckReentrancy() { }
@@ -99,7 +101,7 @@ namespace System.Collections.ObjectModel
 
         bool Generic.ICollection<Generic.KeyValuePair<TKey, TValue>>.IsReadOnly { get { throw null; } }
 
-        TValue Generic.IDictionary<TKey, TValue>.Item { get { throw null; } set { } }
+        TValue System.Collections.Generic.IDictionary<TKey,TValue>.this[TKey key] { get { throw null; } set { } }
 
         Generic.ICollection<TKey> Generic.IDictionary<TKey, TValue>.Keys { get { throw null; } }
 
@@ -117,7 +119,7 @@ namespace System.Collections.ObjectModel
 
         bool IDictionary.IsReadOnly { get { throw null; } }
 
-        object IDictionary.Item { get { throw null; } set { } }
+        object System.Collections.IDictionary.this[object key] { get { throw null; } set { } }
 
         ICollection IDictionary.Keys { get { throw null; } }
 
@@ -141,11 +143,7 @@ namespace System.Collections.ObjectModel
 
         void Generic.IDictionary<TKey, TValue>.Add(TKey key, TValue value) { }
 
-        TValue Generic.IDictionary<TKey, TValue>.get_Item(TKey key) { throw null; }
-
         bool Generic.IDictionary<TKey, TValue>.Remove(TKey key) { throw null; }
-
-        void Generic.IDictionary<TKey, TValue>.set_Item(TKey key, TValue value) { }
 
         void ICollection.CopyTo(Array array, int index) { }
 
@@ -155,13 +153,9 @@ namespace System.Collections.ObjectModel
 
         bool IDictionary.Contains(object key) { throw null; }
 
-        object IDictionary.get_Item(object key) { throw null; }
-
         IDictionaryEnumerator IDictionary.GetEnumerator() { throw null; }
 
         void IDictionary.Remove(object key) { }
-
-        void IDictionary.set_Item(object key, object value) { }
 
         IEnumerator IEnumerable.GetEnumerator() { throw null; }
 
@@ -233,6 +227,9 @@ namespace System.Collections.ObjectModel
         protected virtual event Specialized.NotifyCollectionChangedEventHandler CollectionChanged { add { } remove { } }
 
         protected virtual event ComponentModel.PropertyChangedEventHandler PropertyChanged { add { } remove { } }
+
+        event System.Collections.Specialized.NotifyCollectionChangedEventHandler System.Collections.Specialized.INotifyCollectionChanged.CollectionChanged { add { } remove { } }
+        event System.ComponentModel.PropertyChangedEventHandler System.ComponentModel.INotifyPropertyChanged.PropertyChanged { add { } remove { } }
 
         protected virtual void OnCollectionChanged(Specialized.NotifyCollectionChangedEventArgs args) { }
 

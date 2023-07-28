@@ -229,11 +229,13 @@ namespace System.Dynamic
 
         bool Collections.Generic.ICollection<Collections.Generic.KeyValuePair<string, object>>.IsReadOnly { get { throw null; } }
 
-        object Collections.Generic.IDictionary<string, object>.Item { get { throw null; } set { } }
+        object System.Collections.Generic.IDictionary<System.String,System.Object>.this[string key] { get { throw null; } set { } }
 
         Collections.Generic.ICollection<string> Collections.Generic.IDictionary<string, object>.Keys { get { throw null; } }
 
         Collections.Generic.ICollection<object> Collections.Generic.IDictionary<string, object>.Values { get { throw null; } }
+
+        event System.ComponentModel.PropertyChangedEventHandler System.ComponentModel.INotifyPropertyChanged.PropertyChanged { add { } remove { } }
 
         void Collections.Generic.ICollection<Collections.Generic.KeyValuePair<string, object>>.Add(Collections.Generic.KeyValuePair<string, object> item) { }
 
@@ -249,11 +251,7 @@ namespace System.Dynamic
 
         bool Collections.Generic.IDictionary<string, object>.ContainsKey(string key) { throw null; }
 
-        object Collections.Generic.IDictionary<string, object>.get_Item(string key) { throw null; }
-
         bool Collections.Generic.IDictionary<string, object>.Remove(string key) { throw null; }
-
-        void Collections.Generic.IDictionary<string, object>.set_Item(string key, object value) { }
 
         bool Collections.Generic.IDictionary<string, object>.TryGetValue(string key, out object value) { throw null; }
 
