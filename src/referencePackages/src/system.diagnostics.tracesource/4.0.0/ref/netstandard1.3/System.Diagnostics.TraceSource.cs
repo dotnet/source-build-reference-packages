@@ -297,7 +297,7 @@ namespace System.Diagnostics
 
         bool Collections.IList.IsReadOnly { get { throw null; } }
 
-        object Collections.IList.Item { get { throw null; } set { } }
+        object System.Collections.IList.this[int index] { get { throw null; } set { } }
 
         public int Add(TraceListener listener) { throw null; }
 
@@ -329,15 +329,11 @@ namespace System.Diagnostics
 
         bool Collections.IList.Contains(object value) { throw null; }
 
-        object Collections.IList.get_Item(int index) { throw null; }
-
         int Collections.IList.IndexOf(object value) { throw null; }
 
         void Collections.IList.Insert(int index, object value) { }
 
         void Collections.IList.Remove(object value) { }
-
-        void Collections.IList.set_Item(int index, object value) { }
     }
 
     [Flags]
