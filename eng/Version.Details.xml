@@ -16,9 +16,9 @@
       <Sha>602351e3681015ea789b2aeaa7b2a9156a8baf38</Sha>
       <SourceBuild RepoName="arcade" ManagedOnly="true" />
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.GenAPI.Task" Version="8.0.100-rc.1.23374.2">
+    <Dependency Name="Microsoft.DotNet.GenAPI.Task" Version="8.0.100-rc.1.23381.2">
       <Uri>https://github.com/dotnet/sdk</Uri>
-      <Sha>13b8781fe194a26bc51f1bf766a2f85c04e6298a</Sha>
+      <Sha>dff005cfa5943f677858ec3d6e29b27574e25a12</Sha>
     </Dependency>
     <Dependency Name="Microsoft.SourceLink.GitHub" Version="8.0.0-beta.23361.2" CoherentParentDependency="Microsoft.DotNet.Arcade.Sdk">
       <Uri>https://github.com/dotnet/sourcelink</Uri>
