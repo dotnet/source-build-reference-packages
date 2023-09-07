@@ -3470,8 +3470,8 @@
     } // end of method '<>c'::.ctor
 
     .method /*0600030C*/ assembly hidebysig 
-            instance void  '<CreateInitializer>b__7_0'(class [System.ComponentModel/*23000005*/]System.IServiceProvider/*0100003A*/ _,
-                                                       class Microsoft.AspNetCore.Components.IComponent/*02000021*/ _) cil managed
+            instance void  '<CreateInitializer>b__7_0'(class [System.ComponentModel/*23000005*/]System.IServiceProvider/*0100003A*/ serviceProvider,
+                                                       class Microsoft.AspNetCore.Components.IComponent/*02000021*/ component) cil managed
     // SIG: 20 02 01 12 80 E9 12 80 84
     {
       // Method begins at RVA 0x4050
