@@ -25,6 +25,7 @@
 [assembly: System.Reflection.AssemblyTitle("System.Threading.Tasks.Dataflow")]
 [assembly: System.Reflection.AssemblyMetadata("RepositoryUrl", "https://github.com/dotnet/runtime")]
 [assembly: System.Reflection.AssemblyVersionAttribute("7.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("7.0.0.0 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace System.Threading.Tasks.Dataflow

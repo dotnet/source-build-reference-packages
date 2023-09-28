@@ -24,6 +24,7 @@
 [assembly: System.Reflection.AssemblyTitle("System.Security.Permissions")]
 [assembly: System.Reflection.AssemblyMetadata("RepositoryUrl", "https://github.com/dotnet/runtime")]
 [assembly: System.Reflection.AssemblyVersionAttribute("6.0.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("6.0.0.0 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 #pragma warning disable SYSLIB0003 // CAS obsoletions -> https://github.com/dotnet/runtime/blob/main/src/libraries/System.Security.Permissions/ref/System.Security.Permissions.Forwards.cs

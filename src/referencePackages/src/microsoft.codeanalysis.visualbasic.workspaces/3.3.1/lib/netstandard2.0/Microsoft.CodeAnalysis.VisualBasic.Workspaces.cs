@@ -32,5 +32,6 @@
 [assembly: System.Reflection.AssemblyTitle("Microsoft.CodeAnalysis.VisualBasic.Workspaces")]
 [assembly: System.Resources.NeutralResourcesLanguage("en-US")]
 [assembly: System.Reflection.AssemblyVersionAttribute("3.3.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("3.3.0.0 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]

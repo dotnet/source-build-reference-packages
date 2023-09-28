@@ -37,6 +37,7 @@
 [assembly: System.Reflection.AssemblyTitle("Microsoft.CodeAnalysis.CSharp.Workspaces")]
 [assembly: System.Resources.NeutralResourcesLanguage("en-US")]
 [assembly: System.Reflection.AssemblyVersionAttribute("3.7.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("3.7.0.0 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace Microsoft.CodeAnalysis.CSharp.Formatting

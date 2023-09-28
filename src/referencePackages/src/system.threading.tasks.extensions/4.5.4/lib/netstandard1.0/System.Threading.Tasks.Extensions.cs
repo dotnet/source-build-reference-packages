@@ -20,6 +20,7 @@
 [assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
 [assembly: System.Reflection.AssemblyMetadata("PreferInbox", "True")]
 [assembly: System.Reflection.AssemblyVersionAttribute("4.2.0.1")]
+[assembly: System.Reflection.AssemblyInformationalVersion("4.2.0.1 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace System.Runtime.CompilerServices

@@ -22,6 +22,7 @@
 [assembly: System.Reflection.AssemblyMetadata("PreferInbox", "True")]
 [assembly: System.Runtime.InteropServices.DefaultDllImportSearchPaths(System.Runtime.InteropServices.DllImportSearchPath.AssemblyDirectory | System.Runtime.InteropServices.DllImportSearchPath.System32)]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.4.3.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("1.4.3.0 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace System.Reflection

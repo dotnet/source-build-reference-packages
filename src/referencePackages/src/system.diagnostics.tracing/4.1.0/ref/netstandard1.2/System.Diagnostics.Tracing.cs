@@ -20,6 +20,7 @@
 [assembly: System.Reflection.AssemblyMetadata("BuildBranch", "Release\\ReferenceAssemblies\\1.0")]
 [assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
 [assembly: System.Reflection.AssemblyVersionAttribute("4.0.10.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("4.0.10.0 originated from source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace System.Diagnostics.Tracing
 {

@@ -21,6 +21,7 @@
 [assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
 [assembly: System.Reflection.AssemblyMetadata("PreferInbox", "True")]
 [assembly: System.Reflection.AssemblyVersionAttribute("4.0.3.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("4.0.3.0 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace System.Text.Encodings.Web

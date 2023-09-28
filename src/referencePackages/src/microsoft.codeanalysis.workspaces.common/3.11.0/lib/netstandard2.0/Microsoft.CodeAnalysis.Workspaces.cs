@@ -108,6 +108,7 @@
 [assembly: System.Reflection.AssemblyMetadata("RepositoryUrl", "https://github.com/dotnet/roslyn")]
 [assembly: System.Resources.NeutralResourcesLanguage("en-US")]
 [assembly: System.Reflection.AssemblyVersionAttribute("3.11.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("3.11.0.0 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace Microsoft.CodeAnalysis

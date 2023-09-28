@@ -21,6 +21,7 @@
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Reflection.AssemblyVersionAttribute("4.0.2.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("4.0.2.0 originated from source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace Microsoft.Win32
 {

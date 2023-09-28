@@ -22,6 +22,7 @@
 [assembly: System.Reflection.AssemblyTitle("Microsoft.Build.Tasks.Core.dll")]
 [assembly: System.Reflection.AssemblyMetadata("RepositoryUrl", "https://github.com/dotnet/msbuild")]
 [assembly: System.Reflection.AssemblyVersionAttribute("15.1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("15.1.0.0 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace Microsoft.Build.Tasks
