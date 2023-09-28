@@ -22,6 +22,7 @@
 [assembly: System.Reflection.AssemblyMetadata(".NETFrameworkAssembly", "")]
 [assembly: System.Reflection.AssemblyMetadata("Serviceable", "True")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.2.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("1.2.0.0 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace System.Collections.Immutable

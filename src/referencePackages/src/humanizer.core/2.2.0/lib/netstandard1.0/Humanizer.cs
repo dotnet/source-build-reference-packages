@@ -18,6 +18,7 @@
 [assembly: System.Reflection.AssemblyProduct("Humanizer (netstandard1.0)")]
 [assembly: System.Reflection.AssemblyTitle("Humanizer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("2.2.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("2.2.0.0 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace Humanizer

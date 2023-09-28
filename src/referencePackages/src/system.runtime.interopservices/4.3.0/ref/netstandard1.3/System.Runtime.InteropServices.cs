@@ -20,6 +20,7 @@
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Reflection.AssemblyMetadata("", "")]
 [assembly: System.Reflection.AssemblyVersionAttribute("4.0.20.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("4.0.20.0 originated from source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 [assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Runtime.InteropServices.CriticalHandle))]
 [assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Runtime.InteropServices.SafeHandle))]

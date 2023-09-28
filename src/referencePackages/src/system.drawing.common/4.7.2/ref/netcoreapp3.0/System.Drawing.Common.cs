@@ -22,6 +22,7 @@
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Runtime.InteropServices.DefaultDllImportSearchPaths(System.Runtime.InteropServices.DllImportSearchPath.AssemblyDirectory | System.Runtime.InteropServices.DllImportSearchPath.System32)]
 [assembly: System.Reflection.AssemblyVersionAttribute("4.0.2.2")]
+[assembly: System.Reflection.AssemblyInformationalVersion("4.0.2.2 originated from source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 [assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Drawing.ColorTranslator))]
 [assembly: System.Runtime.CompilerServices.TypeForwardedTo(typeof(System.Drawing.SystemColors))]

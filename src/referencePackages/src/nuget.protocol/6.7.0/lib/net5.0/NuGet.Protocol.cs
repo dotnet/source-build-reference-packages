@@ -29,6 +29,7 @@
 [assembly: System.Reflection.AssemblyMetadata("RepositoryUrl", "https://github.com/NuGet/NuGet.Client")]
 [assembly: System.Resources.NeutralResourcesLanguage("en-US")]
 [assembly: System.Reflection.AssemblyVersionAttribute("6.7.0.127")]
+[assembly: System.Reflection.AssemblyInformationalVersion("6.7.0.127 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace NuGet.Protocol

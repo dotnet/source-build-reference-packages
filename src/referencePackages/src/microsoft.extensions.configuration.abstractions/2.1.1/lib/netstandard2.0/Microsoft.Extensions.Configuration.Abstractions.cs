@@ -21,6 +21,7 @@
 [assembly: System.Reflection.AssemblyTitle("Microsoft.Extensions.Configuration.Abstractions")]
 [assembly: System.Resources.NeutralResourcesLanguage("en-US")]
 [assembly: System.Reflection.AssemblyVersionAttribute("2.1.1.0")]
+[assembly: System.Reflection.AssemblyInformationalVersion("2.1.1.0 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace Microsoft.Extensions.Configuration
