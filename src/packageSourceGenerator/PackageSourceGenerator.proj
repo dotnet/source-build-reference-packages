@@ -79,6 +79,7 @@
                             GenerateReferencePackageSource;
                             GenerateTextOnlyPackageSource;
                             GeneratePackageProject;
+                            AddSbrpAttribute;
                             RewriteNuspec;
                             EndGeneratePackageSource;
                             InvokePackageDependencies" />
@@ -283,6 +284,22 @@
 
     <Message Text="$(MSBuildProjectName) -> $(PackageProjectTargetPath)"
              Importance="high" />
+  </Target>
+
+  <!-- Add SBRP attribute to CSharp file and copy to target directory. -->
+  <UsingTask TaskName="AddSbrpAttribute" AssemblyFile="$(PackageSourceGeneratorTaskAssembly)" />
+  <Target Name="AddSbrpAttribute"
+          Condition="'@(PackageCompileItem)' != '' or '$(PackageType)' == 'text'">
+
+    <ItemGroup>
+      <PackageCSharpFiles Include="$(PackageTargetDirectory)**/*.cs" />
+    </ItemGroup>
+
+    <AddSbrpAttribute CSharpPaths="@(PackageCSharpFiles)" />
+
+    <Message Text="$(MSBuildProjectName) -> @(PackageCSharpFiles)"
+             Importance="high" />
+
   </Target>
 
   <!-- Rewrite nuspec and copy to target directory. -->
