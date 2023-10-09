@@ -4,6 +4,7 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
+[assembly: System.Reflection.AssemblyMetadata("source", "source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyMetadata("BuildBranch", "Release\\ReferenceAssemblies\\1.0")]
 [assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
 [assembly: System.CLSCompliant(true)]
@@ -20,7 +21,6 @@
 [assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
 [assembly: System.Reflection.AssemblyFileVersion("4.0.40013.0")]
 [assembly: System.Reflection.AssemblyVersionAttribute("4.0.10.0")]
-[assembly: System.Reflection.AssemblyInformationalVersion("4.0.10.0 originated from source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace System
 {

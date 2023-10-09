@@ -4,6 +4,7 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
+[assembly: System.Reflection.AssemblyMetadata("source", "source-build-reference-packages")]
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Security.AllowPartiallyTrustedCallers]
 [assembly: System.Reflection.AssemblyDescription("System.Threading.dll")]
@@ -18,7 +19,6 @@
 [assembly: System.Reflection.AssemblyCompany("Microsoft Corporation")]
 [assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
 [assembly: System.Reflection.AssemblyVersionAttribute("4.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersion("4.0.0.0 originated from source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace System.Threading
 {
