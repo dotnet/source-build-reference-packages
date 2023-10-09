@@ -4,6 +4,7 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
+[assembly: System.Reflection.AssemblyMetadata("source", "source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyTitle("System.Text.Encodings.Web")]
 [assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Core")]
 [assembly: System.Reflection.AssemblyInformationalVersion("3.0.0+4ac4c0367003fe3973a3648eb0715ddb0e3bbcea")]
@@ -20,7 +21,6 @@
 [assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
 [assembly: System.CLSCompliant(true)]
 [assembly: System.Reflection.AssemblyVersionAttribute("4.0.4.0")]
-[assembly: System.Reflection.AssemblyInformationalVersion("4.0.4.0 originated from source-build-reference-packages")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace System.Text.Encodings.Web

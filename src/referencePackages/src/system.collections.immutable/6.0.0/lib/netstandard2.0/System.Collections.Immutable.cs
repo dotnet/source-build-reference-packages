@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security;
 
+[assembly: AssemblyMetadata("source", "source-build-reference-packages")]
 [assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
 [assembly: AllowPartiallyTrustedCallers]
 [assembly: ReferenceAssembly]
@@ -21,9 +22,7 @@ using System.Security;
 [assembly: AssemblyProduct("Microsoft® .NET Framework")]
 [assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
 [assembly: AssemblyFileVersion("6.0.21.52210")]
-[assembly: AssemblyInformationalVersion("6.0.21.52210 built by: SOURCEBUILD")]
 [assembly: CLSCompliant(true)]
-[assembly: AssemblyMetadata("", "")]
 [assembly: AssemblyVersion("6.0.0.0")]
 
 

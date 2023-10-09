@@ -4,6 +4,7 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
+[assembly: System.Reflection.AssemblyMetadata("source", "source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyFileVersion("4.0.30319.17929")]
 [assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
 [assembly: System.Reflection.AssemblyTitle("System.ObjectModel.dll")]
@@ -18,7 +19,6 @@
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
 [assembly: System.Reflection.AssemblyVersionAttribute("4.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersion("4.0.0.0 originated from source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
 namespace System.Collections.ObjectModel
 {
