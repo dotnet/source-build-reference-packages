@@ -46,11 +46,9 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 .ToArray();
 
             string attributesToAppend = string.Join(Environment.NewLine, attributesNotInFile);
-            string replacement = "]" + Environment.NewLine + attributesToAppend + Environment.NewLine + "namespace";
+            string replacement = Environment.NewLine + attributesToAppend + "\n[assembly:";
 
-            Log.LogMessage(MessageImportance.Low, $"Adding newline {replacement} to {CSharpPath}");
-
-            string modifiedContent = GetEndOfAttributesRegex().Replace(fileContent, replacement);
+            string modifiedContent = GetBeginningOfAttributesRegex().Replace(fileContent, replacement, 1);
 
             File.WriteAllText(CSharpPath, modifiedContent);
 
@@ -61,7 +59,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             return true;
         }
 
-        [GeneratedRegex(@"\]\nnamespace")]
-        private static partial Regex GetEndOfAttributesRegex();
+        [GeneratedRegex(@"\n\[assembly:")]
+        private static partial Regex GetBeginningOfAttributesRegex();
     }
 }
