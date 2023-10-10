@@ -1,6 +1,11 @@
 <Project>
 
   <Import Project="..\..\Directory.Build.props" />
+  
+  <ItemGroup>
+    <!-- Attributes for all Reference Packages -->
+    <AssemblyMetadata Include="source" Value="source-build-reference-packages" />
+  </ItemGroup>
 
   <PropertyGroup>
     <!-- Common properties for all Reference Packages -->

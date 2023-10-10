@@ -4,7 +4,6 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Reflection.AssemblyMetadata("source", "source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyTitle("System.Text.Encoding.Extensions.dll")]
 [assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
 [assembly: System.Reflection.AssemblyDescription("System.Text.Encoding.Extensions.dll")]

@@ -4,7 +4,6 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Reflection.AssemblyMetadata("source", "source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyProduct("Microsoft® .NET Framework")]
 [assembly: System.Reflection.AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
 [assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]

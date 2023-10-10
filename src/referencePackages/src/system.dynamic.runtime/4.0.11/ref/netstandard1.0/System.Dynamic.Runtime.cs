@@ -4,7 +4,6 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Reflection.AssemblyMetadata("source", "source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyDescription("System.Dynamic.Runtime.dll")]
 [assembly: System.Reflection.AssemblyDefaultAlias("System.Dynamic.Runtime.dll")]
 [assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]

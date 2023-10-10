@@ -4,7 +4,6 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Reflection.AssemblyMetadata("source", "source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyInformationalVersion("4.0.30319.17929")]
 [assembly: System.Reflection.AssemblyFileVersion("4.0.30319.17929")]
 [assembly: System.CLSCompliant(true)]
