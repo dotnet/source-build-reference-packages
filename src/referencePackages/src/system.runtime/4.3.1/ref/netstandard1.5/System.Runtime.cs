@@ -11,7 +11,6 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Security;
 
-[assembly: AssemblyMetadata("source", "source-build-reference-packages")]
 [assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
 [assembly: AllowPartiallyTrustedCallers]
 [assembly: ReferenceAssembly]

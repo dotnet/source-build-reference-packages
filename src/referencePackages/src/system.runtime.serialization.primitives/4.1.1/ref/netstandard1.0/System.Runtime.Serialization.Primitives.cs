@@ -4,7 +4,6 @@
 // ------------------------------------------------------------------------------
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
-[assembly: System.Reflection.AssemblyMetadata("source", "source-build-reference-packages")]
 [assembly: System.Reflection.AssemblyDescription("System.Runtime.Serialization.Primitives.dll")]
 [assembly: System.Reflection.AssemblyDefaultAlias("System.Runtime.Serialization.Primitives.dll")]
 [assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows = true)]
