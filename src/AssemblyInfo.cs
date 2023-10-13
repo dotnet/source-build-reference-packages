@@ -1,0 +1,1 @@
+[assembly: System.Reflection.AssemblyMetadata("source", "source-build-reference-packages")]
