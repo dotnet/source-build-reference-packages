@@ -120,6 +120,11 @@
 
   <Target Name="CopyBuildOutputToTempOutput"
           AfterTargets="CopyFilesToOutputDirectory">
+
+    <ItemGroup>
+      <Compile Remove="$(RepoRoot)src\AssemblyInfo.cs" />
+    </ItemGroup>
+
     <Error
       Condition="@(Compile->Count()) != 1"
       Text="Number of Compile items != 1. We need just one, to determine the path of the resulting DLL in the package including ref/lib and TFM." />
