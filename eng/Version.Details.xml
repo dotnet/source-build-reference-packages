@@ -16,9 +16,9 @@
       <Sha>0e89c8d7ddbb54510d9d0a757fda5126021b79f0</Sha>
       <SourceBuild RepoName="arcade" ManagedOnly="true" />
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.GenAPI.Task" Version="8.0.100-rtm.23507.1">
+    <Dependency Name="Microsoft.DotNet.GenAPI.Task" Version="8.0.100-rtm.23512.35">
       <Uri>https://github.com/dotnet/sdk</Uri>
-      <Sha>a2f763aaf0fcb749ca05eea3f409ef34e5ca07b2</Sha>
+      <Sha>107b1082338d2ad7eb85b826959b49f00dd5a28b</Sha>
     </Dependency>
     <Dependency Name="Microsoft.NETCore.ILAsm" Version="5.0.0-preview.4.20202.18">
       <Uri>https://github.com/dotnet/runtime</Uri>
