@@ -24,6 +24,25 @@
       Format:
       <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Extensions.Options.5.0.0.csproj" />
     -->
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Frameworks.6.2.4.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Common.6.2.4.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Versioning.6.2.4.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Configuration.6.2.4.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Packaging.6.2.4.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Protocol.6.2.4.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Credentials.6.2.4.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.DependencyResolver.Core.6.2.4.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.ProjectModel.6.2.4.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Commands.6.2.4.csproj" />
+
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Frameworks.6.6.1.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Common.6.6.1.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Versioning.6.6.1.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Configuration.6.6.1.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Packaging.6.6.1.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Protocol.6.6.1.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Credentials.6.6.1.csproj" />
+
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Frameworks.6.7.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Common.6.7.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Versioning.6.7.0.csproj" />
@@ -52,7 +71,7 @@
   </Target>
 
   <ItemGroup Condition="'$(GeneratePackageSource)' != 'true' and '$(BuildDependencyPackageProjects)' != 'true' and '$(Test)' != 'true'">
-    <TargetingPackageProject Include="$(RepoRoot)src\targetPacks\ILsrc\**\*.csproj" />
+    <!-- <TargetingPackageProject Include="$(RepoRoot)src\targetPacks\ILsrc\**\*.csproj" />
     <ProjectToBuild Include="@(TargetingPackageProject)" />
 
     <TextOnlyPackageProject Include="$(RepoRoot)src\textOnlyPackages\src\*\*\*.csproj" />
@@ -61,7 +80,7 @@
     <ReferencePackageProject Include="$(RepoRoot)src\referencePackages\src\**\*.csproj" />
     <ProjectToBuild Include="@(ReferencePackageProject)" />
 
-    <ProjectToBuild Remove="@(DependencyPackageProjects)" />
+    <ProjectToBuild Remove="@(DependencyPackageProjects)" /> -->
   </ItemGroup>
 
   <!--
