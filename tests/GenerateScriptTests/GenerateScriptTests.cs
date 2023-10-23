@@ -46,7 +46,7 @@ public class GenerateScriptTests
         string command = Path.Combine(RepoRoot, RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "generate.cmd" : "generate.sh");
         string arguments = $"-p {package},{version} -x -d {SandboxDirectory}";
         string packageSrcDirectory = string.Empty;
-        string sandboxPackageGeneratedDirecotry = Path.Combine(SandboxDirectory, package.ToLower(), version);
+        string sandboxPackageGeneratedDirectory = Path.Combine(SandboxDirectory, package.ToLower(), version);
 
         switch (type)
         {
@@ -60,6 +60,14 @@ public class GenerateScriptTests
         }
 
         ExecuteHelper.ExecuteProcessValidateExitCode(command, arguments, output);
-        Assert.Empty(ExecuteHelper.ExecuteProcess("git", $"diff --no-index {packageSrcDirectory} {sandboxPackageGeneratedDirecotry}", output, true).StdOut);
+
+        string diff = ExecuteHelper.ExecuteProcess("git", $"diff --no-index {packageSrcDirectory} {sandboxPackageGeneratedDirectory}", output, true).StdOut;
+        if (diff != string.Empty)
+        {
+            string message = $"{Environment.NewLine}Regenerated package '{package}' does not match the checked-in content.  {Environment.NewLine}"
+                    + $"{diff}{Environment.NewLine}";
+
+            Assert.Fail(message);
+        }
     }
 }
