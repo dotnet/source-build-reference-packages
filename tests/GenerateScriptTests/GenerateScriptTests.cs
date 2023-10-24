@@ -64,7 +64,7 @@ public class GenerateScriptTests
         string diff = ExecuteHelper.ExecuteProcess("git", $"diff --no-index {pkgSrcDirectory} {pkgSandboxDirectory}", output, true).StdOut;
         if (diff != string.Empty)
         {
-            Assert.Fail($"{Environment.NewLine}Regenerated package '{package}' does not match the checked-in content.  {Environment.NewLine}"
+            Assert.Fail($"Regenerated package '{package}' does not match the checked-in content.  {Environment.NewLine}"
                     + $"{diff}{Environment.NewLine}");
         }
     }
