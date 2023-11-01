@@ -54,8 +54,14 @@ regenerate the older version to see what customizations to the generated code we
 #### Workflow
 
 * Generate reference package and its depencencies running the `./generate.sh --package <package>,<version>` script.
-* Revert any changes to packages that already existed in the repository.
-This is likely reverting a necessary source modification to the generated code.
+* Inspect any changes to packages that already existed in the repository. There are two reasons why previously
+generated packages show changes when being regenerated.
+    1. The package contains intentional code modifications on top of the generated code. This may be upgrading a
+    project reference to address a CVE or code fixups because the generate tooling does not support a scenario.
+    When this occurs, there should be code comments explaining why the code modification was made. If this is
+    the case, the changes to the existing package should be reverted.
+    2. The generate tooling has changed since the last time this package was generated. The new changes should
+    be considered better/correct and should be committed.
 * Add `DependencyPackageProjects` for all new projects in the
 [eng/Build.props](https://github.com/dotnet/source-build-reference-packages/blob/main/eng/Build.props#L9)
 in the correct dependency order.
