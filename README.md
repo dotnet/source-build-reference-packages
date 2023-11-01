@@ -48,22 +48,21 @@ to address this manual step.
 
 The tooling does not handle all situations and sometimes the generated code will need manual tweeks to get it to compile.
 If this occurs when generating a newer version of an existing package, it can be helpful to regenerate the older version
-to see what changes were made.
-
-The tooling has evolved over time and therefore when generating new packages, you may see edits made to existing packages.
-This is because the new package has a dependency on an existing package, it was regenerated and changes were detected from
-when it was originally generated.
+to see what customizations to the generated code were made.
 
 #### Workflow
 
 * Generate reference package and its depencencies running the `./generate.sh --package <package>,<version>` script.
-* Revert changes for packages that were already existed in the repository.
-* Add `DependencyPackageProjects` for all new projects in the [eng/Build.props](https://github.com/dotnet/source-build-reference-packages/blob/main/eng/Build.props#L9)
+* Revert any changes to packages that already existed in the repository.
+This is likely reverting a necessary source modification to the generated code.
+* Add `DependencyPackageProjects` for all new projects in the
+[eng/Build.props](https://github.com/dotnet/source-build-reference-packages/blob/main/eng/Build.props#L9)
 in the correct dependency order.
 * Run build with the `./build.sh -sb` command.
 * If the compilation produces numerous compilation issue - run the `./build.sh --projects <path to .csproj file>` command for each
 generated reference package separately. It may be necessary to manually tweak the code to address compilation issues. When this occurs,
 please ensure there is an [tracking issue](#filing-issues) to address the underlying problem with the generator.
+* Add comments calling out any modifications to the generated code that were necessary.
 
 You can search for known issues in the [Known Generator Issues Markdown file](docs/known_generator_issues.md).
 
