@@ -6,6 +6,7 @@
 
   <ItemGroup Condition="'$(Test)' == 'true'">
     <ProjectToBuild Include="$(RepoRoot)tests\GenerateScriptTests\GenerateScript.Tests.csproj" Test="$(Test)" />
+    <ProjectToBuild Include="$(RepoRoot)tests\ValidateSbrpTests\ValidateSbrp.Tests.csproj" Test="$(Test)" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(GeneratePackageSource)' != 'true' and '$(Test)' != 'true'">
