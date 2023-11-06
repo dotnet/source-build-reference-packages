@@ -70,7 +70,7 @@ public class ValidationTests
         foreach (var package in filteredPackages)
         {
             string tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName(), Path.GetFileNameWithoutExtension(package));
-            
+
             try
             {
                 Directory.CreateDirectory(tempDirectory);
