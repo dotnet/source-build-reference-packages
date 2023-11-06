@@ -3,8 +3,6 @@
   <PropertyGroup>
     <TargetFramework>$(NetCurrent)</TargetFramework>
     <Nullable>enable</Nullable>
-    <NoWarn>$(NoWarn);CS8602</NoWarn>
-    <NoWarn>$(NoWarn);CS8603</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

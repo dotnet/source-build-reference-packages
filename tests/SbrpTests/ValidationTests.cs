@@ -18,71 +18,69 @@ using NuGet.Packaging.Signing;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace ValidateSbrpTests;
+namespace SbrpTests;
 
-public class ValidateSbrpTests
+public class ValidationTests
 {
-    private string[] Packages { get; set; }
-
     private const string SbrpAttributeType = "System.Reflection.AssemblyMetadataAttribute";
+    private const string VersionPattern = @"(\.\d)+([\-\w])*";
+    private readonly string[] Packages = Array.Empty<string>();
+    public ITestOutputHelper Output { get; set; }
 
-    private const string VerionPattern = @"(\.\d)+([\-\w])*";
-
-    private string RepoRoot { get; set; }
-
-    public ITestOutputHelper output { get; set; }
-
-    public ValidateSbrpTests(ITestOutputHelper _output)
+    public ValidationTests(ITestOutputHelper output)
     {
-        output = _output;
-
-        RepoRoot = Environment.CurrentDirectory.Substring(0, Environment.CurrentDirectory.IndexOf("artifacts"));
-
-        string buildPackagesDirectory = Path.Combine(RepoRoot, "artifacts/source-build/self/src/artifacts/packages/Release/Shipping");
+        Utilities.ValidateConfigParameters(new string[] { Config.RepoRootEnv, Config.BuildTypeEnv });
+    
+        Output = output;
+        string buildPackagesDirectory = Path.Combine(Config.RepoRoot, "artifacts/source-build/self/src/artifacts/packages", Config.BuildType, "Shipping");
 
         if (!Directory.Exists(buildPackagesDirectory))
         {
-            throw new DirectoryNotFoundException($"Directory {buildPackagesDirectory} does not exist. Try building with './build.sh -sb' first.");
+            throw new DirectoryNotFoundException($"Directory {buildPackagesDirectory} does not exist, try building with './build.sh'.");
         }
 
         Packages = Directory.GetFiles(buildPackagesDirectory, "*.nupkg", SearchOption.AllDirectories);
+
+        if (Packages.Length == 0)
+        {
+            throw new FileNotFoundException($"No packages found in {buildPackagesDirectory}");
+        }
     }
 
     [Fact]
     public void CheckForSbrpAttribute()
     {
-        string[] targetPacks = Directory.GetDirectories(Path.Combine(RepoRoot, "src/targetPacks/ILsrc")).Select(x => Path.GetFileName(x).ToLower()).ToArray();
-        string[] textOnlyPackages = Directory.GetDirectories(Path.Combine(RepoRoot, "src/textOnlyPackages/src")).Select(x => Path.GetFileName(x).ToLower()).ToArray();
+        string[] targetPacks = Directory.GetDirectories(Path.Combine(Config.RepoRoot, "src/targetPacks/ILsrc"))
+            .Select(x => Path.GetFileName(x).ToLower())
+            .ToArray();
+        string[] textOnlyPackages = Directory.GetDirectories(Path.Combine(Config.RepoRoot, "src/textOnlyPackages/src"))
+            .Select(x => Path.GetFileName(x).ToLower())
+            .ToArray();
 
-        var filteredPackages = new List<string>();
-        
-        foreach (var package in Packages)
-        {
-            string packageName = Path.GetFileNameWithoutExtension(package).ToLower();
-            packageName = Regex.Replace(packageName, VerionPattern, string.Empty);
-            if (!targetPacks.Contains(packageName) && !textOnlyPackages.Contains(packageName))
+        var filteredPackages = Packages
+            .Where(package =>
             {
-                filteredPackages.Add(package);
-            }
-        }
+                string packageName = Path.GetFileNameWithoutExtension(package).ToLower();
+                packageName = Regex.Replace(packageName, VersionPattern, string.Empty);
+                return !targetPacks.Contains(packageName) && !textOnlyPackages.Contains(packageName);
+            });
+
+        Output.WriteLine($"Checking {filteredPackages.Count()} packages for SBRP attribute.");
 
         foreach (var package in filteredPackages)
         {
             string tempDirectory = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName(), Path.GetFileNameWithoutExtension(package));
-
+            
             try
             {
                 Directory.CreateDirectory(tempDirectory);
-
                 ZipFile.ExtractToDirectory(package, tempDirectory);
-
                 var dlls = Directory.GetFiles(tempDirectory, "*.dll", SearchOption.AllDirectories);
 
                 foreach (var dll in dlls)
                 {
                     using var stream = new FileStream(dll, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
                     using var peReader = new PEReader(stream);
-
                     MetadataReader reader = peReader.GetMetadataReader();
 
                     Assert.True(HasSbrpAttribute(reader), $"{package}/{Path.GetRelativePath(tempDirectory, dll)} does not contain the {SbrpAttributeType} attribute with key='source' and value='source-build-reference-packages'.");
@@ -96,27 +94,25 @@ public class ValidateSbrpTests
     }
 
     [Fact]
-    public async Task CheckForSignature()
+    public async Task CheckForSignatureAsync()
     {
-        var trustProviders = new List<ISignatureVerificationProvider>()
-        {
-            new SignatureTrustAndValidityVerificationProvider()
-        };
+        ISignatureVerificationProvider[] trustProviders = [new SignatureTrustAndValidityVerificationProvider()];
         var verifier = new PackageSignatureVerifier(trustProviders);
-
         var settings = SignedPackageVerifierSettings.GetDefault();
+
+        Output.WriteLine($"Checking {Packages.Count()} packages for signatures.");
 
         foreach (var package in Packages)
         {
-            bool isSigned = await IsPackageSigned(package, verifier, settings);
+            bool isSigned = await IsPackageSignedAsync(package, verifier, settings);
             Assert.False(isSigned, $"{package} is signed. Signed packages are not allowed in source-build-reference-packages.");
         }
     }
 
-    private bool HasSbrpAttribute(MetadataReader reader)
-    {
-        return reader.CustomAttributes.Select(attrHandle => reader.GetCustomAttribute(attrHandle)).Any(attr => IsAttributeSbrp(reader, attr));
-    }
+    private bool HasSbrpAttribute(MetadataReader reader) =>
+        reader.CustomAttributes
+            .Select(attrHandle => reader.GetCustomAttribute(attrHandle))
+            .Any(attr => IsAttributeSbrp(reader, attr));
 
     private bool IsAttributeSbrp(MetadataReader reader, CustomAttribute attr)
     {
@@ -148,7 +144,7 @@ public class ValidateSbrpTests
             var decodedValue = attr.DecodeValue(DummyAttributeTypeProvider.Instance);
             try
             {
-                return decodedValue.FixedArguments[0].Value.ToString() == "source" && decodedValue.FixedArguments[1].Value.ToString() == "source-build-reference-packages";
+                return decodedValue.FixedArguments[0].Value?.ToString() == "source" && decodedValue.FixedArguments[1].Value?.ToString() == "source-build-reference-packages";
             }
             catch
             {
@@ -159,12 +155,10 @@ public class ValidateSbrpTests
         return false;
     }
 
-    public async Task<bool> IsPackageSigned(string packagePath, PackageSignatureVerifier verifier, SignedPackageVerifierSettings settings)
+    public async Task<bool> IsPackageSignedAsync(string packagePath, PackageSignatureVerifier verifier, SignedPackageVerifierSettings settings)
     {
-        using (var packageReader = new PackageArchiveReader(packagePath))
-        {
-            var result = await verifier.VerifySignaturesAsync(packageReader, settings, CancellationToken.None);
-            return result.IsSigned;
-        }
+        using var packageReader = new PackageArchiveReader(packagePath);
+        var result = await verifier.VerifySignaturesAsync(packageReader, settings, CancellationToken.None);
+        return result.IsSigned;
     }
 }
