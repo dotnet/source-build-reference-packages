@@ -36,7 +36,7 @@ public class ValidationTests
 
         if (!Directory.Exists(buildPackagesDirectory))
         {
-            throw new DirectoryNotFoundException($"Directory {buildPackagesDirectory} does not exist, try building with './build.sh'.");
+            throw new DirectoryNotFoundException($"Directory {buildPackagesDirectory} does not exist, try building with './build.sh -sb'.");
         }
 
         Packages = Directory.GetFiles(buildPackagesDirectory, "*.nupkg", SearchOption.AllDirectories);
@@ -50,19 +50,18 @@ public class ValidationTests
     [Fact]
     public void CheckForSbrpAttribute()
     {
-        string[] targetPacks = Directory.GetDirectories(Path.Combine(Config.RepoRoot, "src/targetPacks/ILsrc"))
-            .Select(x => Path.GetFileName(x).ToLower())
-            .ToArray();
-        string[] textOnlyPackages = Directory.GetDirectories(Path.Combine(Config.RepoRoot, "src/textOnlyPackages/src"))
-            .Select(x => Path.GetFileName(x).ToLower())
-            .ToArray();
+        HashSet<string> targetAndTextOnlyPacks = new HashSet<string>(
+            Directory.GetDirectories(Path.Combine(Config.RepoRoot, "src/targetPacks/ILsrc"))
+                .Union(Directory.GetDirectories(Path.Combine(Config.RepoRoot, "src/textOnlyPackages/src")))
+                .Select(x => Path.GetFileName(x).ToLower())
+        );
 
         var filteredPackages = Packages
             .Where(package =>
             {
                 string packageName = Path.GetFileNameWithoutExtension(package).ToLower();
                 packageName = Regex.Replace(packageName, VersionPattern, string.Empty);
-                return !targetPacks.Contains(packageName) && !textOnlyPackages.Contains(packageName);
+                return !targetAndTextOnlyPacks.Contains(packageName);
             });
 
         Output.WriteLine($"Checking {filteredPackages.Count()} packages for SBRP attribute.");

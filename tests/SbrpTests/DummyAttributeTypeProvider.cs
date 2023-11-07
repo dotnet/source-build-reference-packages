@@ -8,23 +8,23 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace SbrpTests;
 
-internal class DummyAttributeTypeProvider : ICustomAttributeTypeProvider<Type>
+internal class DummyAttributeTypeProvider : ICustomAttributeTypeProvider<Type?>
 {
     public static readonly DummyAttributeTypeProvider Instance = new();
 
-    public Type GetPrimitiveType(PrimitiveTypeCode typeCode) => default(Type)!;
+    public Type? GetPrimitiveType(PrimitiveTypeCode typeCode) => default(Type);
 
-    public Type GetSystemType() => default(Type)!;
+    public Type? GetSystemType() => default(Type);
 
-    public Type GetSZArrayType(Type elementType) => default(Type)!;
+    public Type? GetSZArrayType(Type? elementType) => default(Type);
 
-    public Type GetTypeFromDefinition(MetadataReader reader, TypeDefinitionHandle handle, byte rawTypeKind) => default(Type)!;
+    public Type? GetTypeFromDefinition(MetadataReader reader, TypeDefinitionHandle handle, byte rawTypeKind) => default(Type);
 
-    public Type GetTypeFromReference(MetadataReader reader, TypeReferenceHandle handle, byte rawTypeKind) => default(Type)!;
+    public Type? GetTypeFromReference(MetadataReader reader, TypeReferenceHandle handle, byte rawTypeKind) => default(Type);
 
-    public Type GetTypeFromSerializedName(string name) => default(Type)!;
+    public Type? GetTypeFromSerializedName(string name) => default(Type);
 
-    public PrimitiveTypeCode GetUnderlyingEnumType(Type type) => default(PrimitiveTypeCode)!;
+    public PrimitiveTypeCode GetUnderlyingEnumType(Type? type) => default(PrimitiveTypeCode);
     
-    public bool IsSystemType(Type type) => default(bool);
+    public bool IsSystemType(Type? type) => default(bool);
 }
