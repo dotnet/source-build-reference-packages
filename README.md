@@ -37,7 +37,7 @@ supports generating new packages. Run `generate.sh --help` for usage details.
 When generating a package(s), the tooling will detect and generate all dependent packages.
 
 **Note:** All new packages should be for released stable versions. Adding preview/release candidate
-packages require approval from [dotnet/source-build-internal](https://github.com/orgs/dotnet/teams/source-build-internal).
+packages are for exceptional cases only and require approval from [dotnet/source-build-internal](https://github.com/orgs/dotnet/teams/source-build-internal).
 
 ### Reference
 
