@@ -104,8 +104,6 @@ public class ValidationTests
 
     private async Task CheckForSignatureAsync()
     {
-        Skip.If(RuntimeInformation.IsOSPlatform(OSPlatform.Windows), "This test is not supported on Windows.");
-
         ISignatureVerificationProvider[] trustProviders = [new SignatureTrustAndValidityVerificationProvider()];
         var verifier = new PackageSignatureVerifier(trustProviders);
         var settings = SignedPackageVerifierSettings.GetDefault();
