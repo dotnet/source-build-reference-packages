@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using Xunit.Abstractions;
 
-namespace SbrpTests;
+namespace GenerateScriptTests;
 
 internal static class ExecuteHelper
 {

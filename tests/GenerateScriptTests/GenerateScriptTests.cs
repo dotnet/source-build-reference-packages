@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SbrpTests;
+namespace GenerateScriptTests;
 
 public class GenerateScriptTests
 {
@@ -28,13 +28,13 @@ public class GenerateScriptTests
     };
     
     public string SandboxDirectory { get; set; }
-    public ITestOutputHelper Output { get; set; }
+    public string RepoRoot { get; set; }
+    public ITestOutputHelper output { get; set; }
 
     public GenerateScriptTests(ITestOutputHelper output)
     {
-        Utilities.ValidateConfigParameters(new string[] { Config.RepoRootEnv });
-
-        Output = output;
+        this.output = output;
+        RepoRoot = Environment.CurrentDirectory.Substring(0, Environment.CurrentDirectory.IndexOf("artifacts"));
         SandboxDirectory = Path.Combine(Environment.CurrentDirectory, $"GenerateTests-{DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString()}");
         Directory.CreateDirectory(SandboxDirectory);
     }
@@ -43,7 +43,7 @@ public class GenerateScriptTests
     [MemberData(nameof(GenerateScriptTests.Data), MemberType = typeof(GenerateScriptTests))]
     public void VerifyGenerateScript(string package, string version, PackageType type)
     {
-        string command = Path.Combine(Config.RepoRoot, RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "generate.cmd" : "generate.sh");
+        string command = Path.Combine(RepoRoot, RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "generate.cmd" : "generate.sh");
         string arguments = $"-p {package},{version} -x -d {SandboxDirectory}";
         string pkgSrcDirectory = string.Empty;
         string pkgSandboxDirectory = Path.Combine(SandboxDirectory, package.ToLower(), version);
@@ -51,17 +51,17 @@ public class GenerateScriptTests
         switch (type)
         {
             case PackageType.Reference:
-                pkgSrcDirectory = Path.Combine(Config.RepoRoot, "src", "referencePackages", "src", package.ToLower(), version);
+                pkgSrcDirectory = Path.Combine(RepoRoot, "src", "referencePackages", "src", package.ToLower(), version);
                 break;
             case PackageType.Text:
                 arguments += " -t text";
-                pkgSrcDirectory = Path.Combine(Config.RepoRoot, "src", "textOnlyPackages", "src", package.ToLower(), version);
+                pkgSrcDirectory = Path.Combine(RepoRoot, "src", "textOnlyPackages", "src", package.ToLower(), version);
                 break;
         }
 
-        ExecuteHelper.ExecuteProcessValidateExitCode(command, arguments, Output);
+        ExecuteHelper.ExecuteProcessValidateExitCode(command, arguments, output);
 
-        string diff = ExecuteHelper.ExecuteProcess("git", $"diff --no-index {pkgSrcDirectory} {pkgSandboxDirectory}", Output, true).StdOut;
+        string diff = ExecuteHelper.ExecuteProcess("git", $"diff --no-index {pkgSrcDirectory} {pkgSandboxDirectory}", output, true).StdOut;
         if (diff != string.Empty)
         {
             Assert.Fail($"Regenerated package '{package}' does not match the checked-in content.  {Environment.NewLine}"
