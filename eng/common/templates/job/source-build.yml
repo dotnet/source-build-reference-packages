@@ -33,7 +33,7 @@ parameters:
 
 jobs:
 - job: ${{ parameters.jobNamePrefix }}_${{ parameters.platform.name }}
-  displayName: Source-Build (${{ parameters.platform.name }})
+  displayName: ${{ parameters.displayName }}
 
   ${{ each property in parameters.platform.jobProperties }}:
     ${{ property.key }}: ${{ property.value }}

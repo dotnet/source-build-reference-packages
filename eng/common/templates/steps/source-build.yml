@@ -97,6 +97,16 @@ steps:
       /p:AssetManifestFileName=$assetManifestFileName
   displayName: Build
 
+- script: $(Build.SourcesDirectory)/test.sh
+  displayName: Run Tests
+- task: PublishTestResults@2
+  displayName: Publish Test Results
+  inputs:
+    testRunner: xUnit
+    testResultsFiles: '**/artifacts/TestResults/Debug/*.xml'
+    testRunTitle: 'SourceBuild_tests'
+  condition: always()
+
 # Upload build logs for diagnosis.
 - task: CopyFiles@2
   displayName: Prepare BuildLogs staging directory
