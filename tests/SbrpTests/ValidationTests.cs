@@ -24,14 +24,26 @@ public class ValidationTests
 {
     private const string SbrpAttributeType = "System.Reflection.AssemblyMetadataAttribute";
     private const string VersionPattern = @"(\.\d)+([\-\w])*";
-    private readonly string[] Packages = Array.Empty<string>();
+    private string[] Packages = Array.Empty<string>();
     public ITestOutputHelper Output { get; set; }
 
-    public ValidationTests(ITestOutputHelper output)
+    public ValidationTests(ITestOutputHelper output) => Output = output;
+
+    [SkippableFact]
+    public async void ValidateSbrp()
+    {
+        Skip.If(RuntimeInformation.IsOSPlatform(OSPlatform.Windows), "This test is not supported on Windows.");
+        
+        InitializeValidationTests();
+
+        CheckForSbrpAttribute();
+        await CheckForSignatureAsync();
+    }
+
+    private void InitializeValidationTests()
     {
         Utilities.ValidateConfigParameters(new string[] { Config.RepoRootEnv, Config.BuildTypeEnv });
     
-        Output = output;
         string buildPackagesDirectory = Path.Combine(Config.RepoRoot, "artifacts/source-build/self/src/artifacts/packages", Config.BuildType, "Shipping");
 
         if (!Directory.Exists(buildPackagesDirectory))
@@ -46,9 +58,7 @@ public class ValidationTests
             throw new FileNotFoundException($"No packages found in {buildPackagesDirectory}");
         }
     }
-
-    [Fact]
-    public void CheckForSbrpAttribute()
+    private void CheckForSbrpAttribute()
     {
         HashSet<string> targetAndTextOnlyPacks = new HashSet<string>(
             Directory.GetDirectories(Path.Combine(Config.RepoRoot, "src/targetPacks/ILsrc"))
@@ -92,9 +102,10 @@ public class ValidationTests
         }
     }
 
-    [Fact]
-    public async Task CheckForSignatureAsync()
+    private async Task CheckForSignatureAsync()
     {
+        Skip.If(RuntimeInformation.IsOSPlatform(OSPlatform.Windows), "This test is not supported on Windows.");
+
         ISignatureVerificationProvider[] trustProviders = [new SignatureTrustAndValidityVerificationProvider()];
         var verifier = new PackageSignatureVerifier(trustProviders);
         var settings = SignedPackageVerifierSettings.GetDefault();
