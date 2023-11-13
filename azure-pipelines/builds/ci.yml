@@ -32,29 +32,28 @@ stages:
           logs: true
       enableSourceBuild: true
       sourceBuildParameters:
-        displayName: SourceBuild_Linux
+        displayName: Linux
 
   ## The job below is a temporary workaround for running the tests on Windows.
-  ## Currently, the source-build-reference-packages repository does not support building on Windows, but it is capable of running the tests on Windows.
+  ## Currently, the source-build-reference-packages repository does not support building on Windows, but it is capable of running the generate tooling tests on Windows.
   ## This job should be modified once the source-build-reference-packages repository supports building on Windows by transitioning to the template above.
-  - job: Test_Windows
-    strategy:
-      matrix:
-        Windows:
-          agentOs: Windows_NT
-          imageName: "windows-latest"
+  - job: Windows
     pool:
-      vmImage: $(imageName)
+      vmImage: windows-latest
     steps:
     - checkout: self
       clean: true
+  
     - script: $(Build.SourcesDirectory)/test.cmd
       displayName: Run Tests
+  
     - task: PublishTestResults@2
       displayName: Publish Test Results
       inputs:
         testResultsFormat: 'xUnit'
         testResultsFiles: '**/artifacts/TestResults/Debug/*.xml'
+        testRunTitle: 'Windows_SBRP_tests'
+      condition: always()
 
 # Based on - https://github.com/dotnet/arcade/blob/9b3f304c7bc9fd4d11be9ca0b466b83e98d2a191/Documentation/CorePackages/Publishing.md#moving-away-from-the-legacy-pushtoblobfeed-task
 - ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
