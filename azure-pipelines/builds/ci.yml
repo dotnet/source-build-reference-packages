@@ -19,20 +19,23 @@ stages:
 - stage: build
   displayName: Build
   jobs:
-  - template: /eng/common/templates/jobs/jobs.yml
-    parameters:
-      enablePublishUsingPipelines: true
-      enablePublishBuildArtifacts: true
-      enablePublishBuildAssets: true
-      publishAssetsImmediately: true
-      artifacts:
-        publish:
-          artifacts: true
-          manifests: true
-          logs: true
-      enableSourceBuild: true
-      sourceBuildParameters:
-        displayName: Linux
+  - job: Linux
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - template: /eng/common/templates/steps/source-build.yml
+
+    - script: $(Build.SourcesDirectory)/test.sh
+      displayName: Run Tests
+    
+    - task: PublishTestResults@2
+      displayName: Publish Test Results
+      inputs:
+        testResultsFormat: 'xUnit'
+        testResultsFiles: '**/artifacts/TestResults/Debug/*.xml'
+        testRunTitle: 'Linux_SBRP_tests'
+      condition: always()
+
 
   ## The job below is a temporary workaround for running the tests on Windows.
   ## Currently, the source-build-reference-packages repository does not support building on Windows, but it is capable of running the generate tooling tests on Windows.
