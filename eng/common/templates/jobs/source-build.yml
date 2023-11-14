@@ -21,8 +21,6 @@ parameters:
   # one job runs on 'defaultManagedPlatform'.
   platforms: []
 
-  displayName: 'Source-Build'
-
 jobs:
 
 - ${{ if ne(parameters.allCompletedJobId, '') }}:
@@ -38,13 +36,11 @@ jobs:
 - ${{ each platform in parameters.platforms }}:
   - template: /eng/common/templates/job/source-build.yml
     parameters:
-      displayName: ${{ parameters.displayName }}
       jobNamePrefix: ${{ parameters.jobNamePrefix }}
       platform: ${{ platform }}
 
 - ${{ if eq(length(parameters.platforms), 0) }}:
   - template: /eng/common/templates/job/source-build.yml
     parameters:
-      displayName: ${{ parameters.displayName }}
       jobNamePrefix: ${{ parameters.jobNamePrefix }}
       platform: ${{ parameters.defaultManagedPlatform }}
