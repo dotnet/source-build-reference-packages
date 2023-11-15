@@ -15,13 +15,33 @@ variables:
   - name: Codeql.Enabled
     value: true
 
+  - name: defaultPoolName
+    ${{ if eq(variables['System.TeamProject'], 'public') }}:
+      value: $[replace(replace(eq(contains(coalesce(variables['System.PullRequest.TargetBranch'], variables['Build.SourceBranch'], 'refs/heads/main'), 'release'), 'true'), True, 'NetCore-Svc-Public' ), False, 'NetCore-Public')]
+    ${{ if eq(variables['System.TeamProject'], 'internal') }}:
+      value: $[replace(replace(eq(contains(coalesce(variables['System.PullRequest.TargetBranch'], variables['Build.SourceBranch'], 'refs/heads/main'), 'release'), 'true'), True, 'NetCore1ESPool-Svc-Internal'), False, 'NetCore1ESPool-Internal')]
+
+  - name: defaultPoolDemandsLinux
+    ${{ if eq(variables['System.TeamProject'], 'public') }}:
+      value: ImageOverride -equals Build.Ubuntu.1804.Amd64.Open
+    ${{ if eq(variables['System.TeamProject'], 'internal') }}:
+      value: ImageOverride -equals Build.Ubuntu.1804.Amd64
+
+  - name: defaultPoolDemandsWindows
+    ${{ if eq(variables['System.TeamProject'], 'public') }}:
+      value: ImageOverride -equals 1es-windows-2022-open
+    ${{ if eq(variables['System.TeamProject'], 'internal') }}:
+      value: ImageOverride -equals 1es-windows-2022
+
+
 stages:
 - stage: build
   displayName: Build
   jobs:
   - job: Linux
     pool:
-      vmImage: ubuntu-latest
+      name: ${{ variables.defaultPoolName }}
+      demands: ${{ variables.defaultPoolDemandsLinux }}
     steps:
     - template: /eng/common/templates/steps/source-build.yml
 
@@ -42,7 +62,8 @@ stages:
   ## This job should be modified once the source-build-reference-packages repository supports building on Windows by transitioning to the template above.
   - job: Windows
     pool:
-      vmImage: windows-latest
+      name: ${{ variables.defaultPoolName }}
+      demands: ${{ variables.defaultPoolDemandsWindows }}
     steps:
     - checkout: self
       clean: true
