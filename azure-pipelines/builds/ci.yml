@@ -33,7 +33,6 @@ variables:
     ${{ if eq(variables['System.TeamProject'], 'internal') }}:
       value: ImageOverride -equals 1es-windows-2022
 
-
 stages:
 - stage: build
   displayName: Build
@@ -42,6 +41,7 @@ stages:
     pool:
       name: ${{ variables.defaultPoolName }}
       demands: ${{ variables.defaultPoolDemandsLinux }}
+    container: mcr.microsoft.com/dotnet-buildtools/prereqs:centos-stream8
     steps:
     - template: /eng/common/templates/steps/source-build.yml
 
@@ -56,7 +56,6 @@ stages:
         testRunTitle: 'Linux_SBRP_tests'
       condition: always()
 
-
   ## The job below is a temporary workaround for running the tests on Windows.
   ## Currently, the source-build-reference-packages repository does not support building on Windows, but it is capable of running the generate tooling tests on Windows.
   ## This job should be modified once the source-build-reference-packages repository supports building on Windows by transitioning to the template above.
@@ -64,6 +63,7 @@ stages:
     pool:
       name: ${{ variables.defaultPoolName }}
       demands: ${{ variables.defaultPoolDemandsWindows }}
+    container: mcr.microsoft.com/windows/servercore:ltsc2022
     steps:
     - checkout: self
       clean: true
