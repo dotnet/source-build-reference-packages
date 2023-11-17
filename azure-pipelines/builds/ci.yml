@@ -12,26 +12,10 @@ pr:
     - release/*
 
 variables:
+  - template: /eng/common/templates/variables/pool-providers.yml
+
   - name: Codeql.Enabled
     value: true
-
-  - name: defaultPoolName
-    ${{ if eq(variables['System.TeamProject'], 'public') }}:
-      value: $[replace(replace(eq(contains(coalesce(variables['System.PullRequest.TargetBranch'], variables['Build.SourceBranch'], 'refs/heads/main'), 'release'), 'true'), True, 'NetCore-Svc-Public' ), False, 'NetCore-Public')]
-    ${{ if eq(variables['System.TeamProject'], 'internal') }}:
-      value: $[replace(replace(eq(contains(coalesce(variables['System.PullRequest.TargetBranch'], variables['Build.SourceBranch'], 'refs/heads/main'), 'release'), 'true'), True, 'NetCore1ESPool-Svc-Internal'), False, 'NetCore1ESPool-Internal')]
-
-  - name: defaultPoolDemandsLinux
-    ${{ if eq(variables['System.TeamProject'], 'public') }}:
-      value: ImageOverride -equals Build.Ubuntu.1804.Amd64.Open
-    ${{ if eq(variables['System.TeamProject'], 'internal') }}:
-      value: ImageOverride -equals Build.Ubuntu.1804.Amd64
-
-  - name: defaultPoolDemandsWindows
-    ${{ if eq(variables['System.TeamProject'], 'public') }}:
-      value: ImageOverride -equals 1es-windows-2022-open
-    ${{ if eq(variables['System.TeamProject'], 'internal') }}:
-      value: ImageOverride -equals 1es-windows-2022
 
 stages:
 - stage: build
@@ -39,8 +23,12 @@ stages:
   jobs:
   - job: Linux
     pool:
-      name: ${{ variables.defaultPoolName }}
-      demands: ${{ variables.defaultPoolDemandsLinux }}
+      ${{ if eq(variables['System.TeamProject'], 'public') }}:
+        name: $(DncEngPublicBuildPool)
+        demands: ImageOverride -equals Build.Ubuntu.1804.Amd64.Open
+      ${{ else }}:
+        name: $(DncEngInternalBuildPool)
+        demands: ImageOverride -equals Build.Ubuntu.1804.Amd64
     container: mcr.microsoft.com/dotnet-buildtools/prereqs:centos-stream8
     steps:
     - template: /eng/common/templates/steps/source-build.yml
@@ -61,8 +49,12 @@ stages:
   ## This job should be modified once the source-build-reference-packages repository supports building on Windows by transitioning to the template above.
   - job: Windows
     pool:
-      name: ${{ variables.defaultPoolName }}
-      demands: ${{ variables.defaultPoolDemandsWindows }}
+      ${{ if eq(variables['System.TeamProject'], 'public') }}:
+        name: $(DncEngPublicBuildPool)
+        demands: ImageOverride -equals 1es-windows-2022-open
+      ${{ else }}:
+        name: $(DncEngInternalBuildPool)
+        demands: ImageOverride -equals 1es-windows-2022
     container: mcr.microsoft.com/windows/servercore:ltsc2022
     steps:
     - checkout: self
