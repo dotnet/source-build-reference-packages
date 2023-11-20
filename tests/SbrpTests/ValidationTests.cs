@@ -24,49 +24,32 @@ public class ValidationTests
 {
     private const string SbrpAttributeType = "System.Reflection.AssemblyMetadataAttribute";
     private const string VersionPattern = @"(\.\d)+([\-\w])*";
-    private string[] Packages = Array.Empty<string>();
     public ITestOutputHelper Output { get; set; }
 
-    public ValidationTests(ITestOutputHelper output) => Output = output;
+    public ValidationTests(ITestOutputHelper output)
+    {
+        Output = output;
+        
+        if (string.IsNullOrWhiteSpace(Config.RepoRoot))
+        {
+            throw new InvalidOperationException($"Environment variable {Config.RepoRootEnv} cannot be null, empty, or whitespace.");
+        }
+    }
 
     [SkippableFact]
-    public async void ValidateSbrp()
+    public void ValidateSbrpAttribute()
     {
         Skip.If(RuntimeInformation.IsOSPlatform(OSPlatform.Windows), "This test is not supported on Windows.");
         
-        InitializeValidationTests();
+        string[] packages = GetPackages();
 
-        CheckForSbrpAttribute();
-        await CheckForSignatureAsync();
-    }
-
-    private void InitializeValidationTests()
-    {
-        Utilities.ValidateConfigParameters(new string[] { Config.RepoRootEnv, Config.BuildTypeEnv });
-    
-        string buildPackagesDirectory = Path.Combine(Config.RepoRoot, "artifacts/source-build/self/src/artifacts/packages", Config.BuildType, "Shipping");
-
-        if (!Directory.Exists(buildPackagesDirectory))
-        {
-            throw new DirectoryNotFoundException($"Directory {buildPackagesDirectory} does not exist, try building with './build.sh -sb'.");
-        }
-
-        Packages = Directory.GetFiles(buildPackagesDirectory, "*.nupkg", SearchOption.AllDirectories);
-
-        if (Packages.Length == 0)
-        {
-            throw new FileNotFoundException($"No packages found in {buildPackagesDirectory}");
-        }
-    }
-    private void CheckForSbrpAttribute()
-    {
-        HashSet<string> targetAndTextOnlyPacks = new HashSet<string>(
+        HashSet<string> targetAndTextOnlyPacks = new (
             Directory.GetDirectories(Path.Combine(Config.RepoRoot, "src/targetPacks/ILsrc"))
                 .Union(Directory.GetDirectories(Path.Combine(Config.RepoRoot, "src/textOnlyPackages/src")))
                 .Select(x => Path.GetFileName(x).ToLower())
         );
 
-        var filteredPackages = Packages
+        var filteredPackages = packages
             .Where(package =>
             {
                 string packageName = Path.GetFileNameWithoutExtension(package).ToLower();
@@ -88,8 +71,8 @@ public class ValidationTests
 
                 foreach (var dll in dlls)
                 {
-                    using var stream = new FileStream(dll, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
-                    using var peReader = new PEReader(stream);
+                    using FileStream stream = new (dll, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                    using PEReader peReader = new (stream);
                     MetadataReader reader = peReader.GetMetadataReader();
 
                     Assert.True(HasSbrpAttribute(reader), $"{package}/{Path.GetRelativePath(tempDirectory, dll)} does not contain the {SbrpAttributeType} attribute with key='source' and value='source-build-reference-packages'.");
@@ -102,19 +85,42 @@ public class ValidationTests
         }
     }
 
-    private async Task CheckForSignatureAsync()
+    [SkippableFact]
+    public async Task ValidateSignatures()
     {
+        Skip.If(RuntimeInformation.IsOSPlatform(OSPlatform.Windows), "This test is not supported on Windows.");
+
+        string[] packages = GetPackages();
+
         ISignatureVerificationProvider[] trustProviders = [new SignatureTrustAndValidityVerificationProvider()];
-        var verifier = new PackageSignatureVerifier(trustProviders);
+        PackageSignatureVerifier verifier = new (trustProviders);
         var settings = SignedPackageVerifierSettings.GetDefault();
 
-        Output.WriteLine($"Checking {Packages.Count()} packages for signatures.");
+        Output.WriteLine($"Checking {packages.Count()} packages for signatures.");
 
-        foreach (var package in Packages)
+        foreach (var package in packages)
         {
             bool isSigned = await IsPackageSignedAsync(package, verifier, settings);
             Assert.False(isSigned, $"{package} is signed. Signed packages are not allowed in source-build-reference-packages.");
         }
+    }
+
+    private string[] GetPackages()
+    {
+        string buildPackagesDirectory = Path.Combine(Config.RepoRoot, "artifacts/source-build/self/src/artifacts/packages", Config.BuildType, "Shipping");
+
+        if (!Directory.Exists(buildPackagesDirectory))
+        {
+            throw new DirectoryNotFoundException($"Directory {buildPackagesDirectory} does not exist, try building with './build.sh -sb'.");
+        }
+
+        string[] packages = Directory.GetFiles(buildPackagesDirectory, "*.nupkg", SearchOption.AllDirectories);
+
+        if (packages.Length == 0)
+        {
+            throw new FileNotFoundException($"No packages found in {buildPackagesDirectory}");
+        }
+        return packages;
     }
 
     private bool HasSbrpAttribute(MetadataReader reader) =>
@@ -163,9 +169,9 @@ public class ValidationTests
         return false;
     }
 
-    public async Task<bool> IsPackageSignedAsync(string packagePath, PackageSignatureVerifier verifier, SignedPackageVerifierSettings settings)
+    private async Task<bool> IsPackageSignedAsync(string packagePath, PackageSignatureVerifier verifier, SignedPackageVerifierSettings settings)
     {
-        using var packageReader = new PackageArchiveReader(packagePath);
+        using PackageArchiveReader packageReader = new (packagePath);
         var result = await verifier.VerifySignaturesAsync(packageReader, settings, CancellationToken.None);
         return result.IsSigned;
     }

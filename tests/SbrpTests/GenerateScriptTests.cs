@@ -32,7 +32,10 @@ public class GenerateScriptTests
 
     public GenerateScriptTests(ITestOutputHelper output)
     {
-        Utilities.ValidateConfigParameters(new string[] { Config.RepoRootEnv });
+        if (string.IsNullOrWhiteSpace(Config.RepoRoot))
+        {
+            throw new InvalidOperationException($"Environment variable {Config.RepoRootEnv} cannot be null, empty, or whitespace.");
+        }
 
         Output = output;
         SandboxDirectory = Path.Combine(Environment.CurrentDirectory, $"GenerateTests-{DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString()}");
