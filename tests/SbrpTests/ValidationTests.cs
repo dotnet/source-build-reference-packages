@@ -23,6 +23,7 @@ namespace SbrpTests;
 public class ValidationTests
 {
     private const string SbrpAttributeType = "System.Reflection.AssemblyMetadataAttribute";
+    private const string SbrpRepoIdentifier = "source-build-reference-packages";
     private const string VersionPattern = @"(\.\d)+([\-\w])*";
     public ITestOutputHelper Output { get; set; }
 
@@ -75,7 +76,7 @@ public class ValidationTests
                     using PEReader peReader = new (stream);
                     MetadataReader reader = peReader.GetMetadataReader();
 
-                    Assert.True(HasSbrpAttribute(reader), $"{package}/{Path.GetRelativePath(tempDirectory, dll)} does not contain the {SbrpAttributeType} attribute with key='source' and value='source-build-reference-packages'.");
+                    Assert.True(HasSbrpAttribute(reader), $"{package}/{Path.GetRelativePath(tempDirectory, dll)} does not contain the {SbrpAttributeType} attribute with key='source' and value='{SbrpRepoIdentifier}'.");
                 }
             }
             finally
@@ -101,7 +102,7 @@ public class ValidationTests
         foreach (var package in packages)
         {
             bool isSigned = await IsPackageSignedAsync(package, verifier, settings);
-            Assert.False(isSigned, $"{package} is signed. Signed packages are not allowed in source-build-reference-packages.");
+            Assert.False(isSigned, $"{package} is signed. Signed packages are not allowed in {SbrpRepoIdentifier}.");
         }
     }
 
@@ -158,7 +159,7 @@ public class ValidationTests
             var decodedValue = attr.DecodeValue(DummyAttributeTypeProvider.Instance);
             try
             {
-                return decodedValue.FixedArguments[0].Value?.ToString() == "source" && decodedValue.FixedArguments[1].Value?.ToString() == "source-build-reference-packages";
+                return decodedValue.FixedArguments[0].Value?.ToString() == "source" && decodedValue.FixedArguments[1].Value?.ToString() == SbrpRepoIdentifier;
             }
             catch
             {
