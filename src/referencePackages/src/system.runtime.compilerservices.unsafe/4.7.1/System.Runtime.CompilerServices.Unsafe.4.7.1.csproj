@@ -13,6 +13,7 @@
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.0' ">
     <OutputPath>$(ArtifactsBinDir)system.runtime.compilerservices.unsafe/4.7.1/lib/</OutputPath>
+    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
   </PropertyGroup>
 
   <ItemGroup>
