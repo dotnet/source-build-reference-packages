@@ -18,6 +18,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
+    <!-- Don't warn on CS0436 - Classes in System.Text.Json included in netcoreapp3.0 conflict with src -->
+    <NoWarn>$(NoWarn);CS0436</NoWarn>
     <OutputPath>$(ArtifactsBinDir)system.text.json/4.7.2/lib/</OutputPath>
   </PropertyGroup>
 
