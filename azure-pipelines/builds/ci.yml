@@ -71,14 +71,11 @@ stages:
         testRunTitle: 'Windows_SBRP_tests'
       condition: always()
 
-# Based on - https://github.com/dotnet/arcade/blob/9b3f304c7bc9fd4d11be9ca0b466b83e98d2a191/Documentation/CorePackages/Publishing.md#moving-away-from-the-legacy-pushtoblobfeed-task
-- ${{ if and(ne(variables['System.TeamProject'], 'public'), notin(variables['Build.Reason'], 'PullRequest')) }}:
-  - template: /eng/common/templates/post-build/post-build.yml
+  - template: /eng/common/templates/job/publish-build-assets.yml
     parameters:
-      publishingInfraVersion: 3
+      dependsOn:
+      - Linux
+      - Windows
+      publishUsingPipelines: true
       publishAssetsImmediately: true
-      enableSourceLinkValidation: false
-      #Nuget and Signing Validation are not needed as we only produce a transport package.
-      enableSigningValidation: false
-      enableNugetValidation: false
-
+      enablePublishBuildArtifacts: true
