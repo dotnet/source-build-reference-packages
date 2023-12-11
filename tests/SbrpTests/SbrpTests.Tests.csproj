@@ -10,4 +10,19 @@
     <PackageReference Include="Xunit.SkippableFact" Version="$(XunitSkippableFactVersion)" />
   </ItemGroup>
 
+  <ItemGroup>
+
+    <RuntimeHostConfigurationOption Include="SbrpTests.RepoRoot">
+      <Value>$(RepoRoot)</Value>
+    </RuntimeHostConfigurationOption>
+
+    <RuntimeHostConfigurationOption Include="SbrpTests.Configuration">
+      <Value>$(Configuration)</Value>
+    </RuntimeHostConfigurationOption>
+
+    <RuntimeHostConfigurationOption Include="SbrpTests.ArtifactsDir">
+      <Value>$(ArtifactsDir)</Value>
+    </RuntimeHostConfigurationOption>
+  </ItemGroup>
+
 </Project>

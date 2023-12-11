@@ -27,15 +27,7 @@ public class ValidationTests
     private const string VersionPattern = @"(\.\d)+([\-\w])*";
     public ITestOutputHelper Output { get; set; }
 
-    public ValidationTests(ITestOutputHelper output)
-    {
-        Output = output;
-        
-        if (string.IsNullOrWhiteSpace(Config.RepoRoot))
-        {
-            throw new InvalidOperationException($"Environment variable {Config.RepoRootEnv} cannot be null, empty, or whitespace.");
-        }
-    }
+    public ValidationTests(ITestOutputHelper output) => Output = output;
 
     [SkippableFact]
     public void ValidateSbrpAttribute()
@@ -45,8 +37,8 @@ public class ValidationTests
         string[] packages = GetPackages();
 
         HashSet<string> targetAndTextOnlyPacks = new (
-            Directory.GetDirectories(Path.Combine(Config.RepoRoot, "src/targetPacks/ILsrc"))
-                .Union(Directory.GetDirectories(Path.Combine(Config.RepoRoot, "src/textOnlyPackages/src")))
+            Directory.GetDirectories(Path.Combine(PathUtilities.GetSourceBuildRepoRoot(), "src/targetPacks/ILsrc"))
+                .Union(Directory.GetDirectories(Path.Combine(PathUtilities.GetSourceBuildRepoRoot(), "src/textOnlyPackages/src")))
                 .Select(x => Path.GetFileName(x).ToLower())
         );
 
@@ -108,12 +100,7 @@ public class ValidationTests
 
     private string[] GetPackages()
     {
-        string buildPackagesDirectory = Path.Combine(Config.RepoRoot, "artifacts/source-build/self/src/artifacts/packages", Config.BuildType, "Shipping");
-
-        if (!Directory.Exists(buildPackagesDirectory))
-        {
-            throw new DirectoryNotFoundException($"Directory {buildPackagesDirectory} does not exist, try building with './build.sh -sb'.");
-        }
+        string buildPackagesDirectory = PathUtilities.GetSourceBuildPackagesShippingDir();
 
         string[] packages = Directory.GetFiles(buildPackagesDirectory, "*.nupkg", SearchOption.AllDirectories);
 
