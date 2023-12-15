@@ -27,13 +27,15 @@ public class ValidationTests
     private const string VersionPattern = @"(\.\d)+([\-\w])*";
     public ITestOutputHelper Output { get; set; }
 
-    public ValidationTests(ITestOutputHelper output) => Output = output;
+    public ValidationTests(ITestOutputHelper output)
+    {
+        Output = output;
+        Skip.If(RuntimeInformation.IsOSPlatform(OSPlatform.Windows), "Validation tests are not supported on Windows.");
+    }
 
     [SkippableFact]
     public void ValidateSbrpAttribute()
-    {
-        Skip.If(RuntimeInformation.IsOSPlatform(OSPlatform.Windows), "This test is not supported on Windows.");
-        
+    {      
         string[] packages = GetPackages();
 
         HashSet<string> targetAndTextOnlyPacks = new (
@@ -81,8 +83,6 @@ public class ValidationTests
     [SkippableFact]
     public async Task ValidateSignatures()
     {
-        Skip.If(RuntimeInformation.IsOSPlatform(OSPlatform.Windows), "This test is not supported on Windows.");
-
         string[] packages = GetPackages();
 
         ISignatureVerificationProvider[] trustProviders = [new SignatureTrustAndValidityVerificationProvider()];
@@ -98,7 +98,7 @@ public class ValidationTests
         }
     }
 
-    private string[] GetPackages()
+    private static string[] GetPackages()
     {
         string buildPackagesDirectory = PathUtilities.GetSourceBuildPackagesShippingDir();
 
@@ -111,12 +111,12 @@ public class ValidationTests
         return packages;
     }
 
-    private bool HasSbrpAttribute(MetadataReader reader) =>
+    private static bool HasSbrpAttribute(MetadataReader reader) =>
         reader.CustomAttributes
             .Select(attrHandle => reader.GetCustomAttribute(attrHandle))
             .Any(attr => IsAttributeSbrp(reader, attr));
 
-    private bool IsAttributeSbrp(MetadataReader reader, CustomAttribute attr)
+    private static bool IsAttributeSbrp(MetadataReader reader, CustomAttribute attr)
     {
         string attributeType = string.Empty;
 
@@ -157,7 +157,7 @@ public class ValidationTests
         return false;
     }
 
-    private async Task<bool> IsPackageSignedAsync(string packagePath, PackageSignatureVerifier verifier, SignedPackageVerifierSettings settings)
+    private static async Task<bool> IsPackageSignedAsync(string packagePath, PackageSignatureVerifier verifier, SignedPackageVerifierSettings settings)
     {
         using PackageArchiveReader packageReader = new (packagePath);
         var result = await verifier.VerifySignaturesAsync(packageReader, settings, CancellationToken.None);
