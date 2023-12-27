@@ -63,6 +63,7 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Extensions.DependencyInjection.Abstractions.8.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Extensions.Logging.Abstractions.8.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.IO.Hashing.8.0.0.csproj" />
+
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Collections.Immutable.8.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Reflection.Metadata.8.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Threading.Tasks.Dataflow.8.0.0.csproj" />
