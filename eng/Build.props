@@ -70,6 +70,11 @@
 
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.CodeAnalysis.Common.4.6.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.CodeAnalysis.CSharp.4.6.0.csproj" />
+
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\xunit.abstractions.2.0.3.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\xunit.assert.2.6.1.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\xunit.extensibility.core.2.6.1.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\xunit.extensibility.execution.2.6.1.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(BuildDependencyPackageProjects)' == 'true'">

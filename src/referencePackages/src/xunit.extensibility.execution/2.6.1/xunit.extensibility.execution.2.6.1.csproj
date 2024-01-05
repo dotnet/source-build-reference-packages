@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.1</TargetFrameworks>
+    <AssemblyName>xunit.execution.dotnet</AssemblyName>
+    <StrongNameKeyId>XUnit.Core</StrongNameKeyId>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.1'">
+    <PackageReference Include="xunit.extensibility.core" Version="2.6.1" />
+  </ItemGroup>
+
+</Project>
