@@ -4,6 +4,11 @@
     <TargetFrameworks>net6.0;net7.0;net8.0;netstandard2.0</TargetFrameworks>
     <AssemblyName>System.Text.Encodings.Web</AssemblyName>
     <StrongNameKeyId>Open</StrongNameKeyId>
+    <!-- Copied from dotnet/runtime to supress the build warning
+    https://github.com/dotnet/runtime/blob/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Text.Encodings.Web/src/System.Text.Encodings.Web.csproj#L7 -->
+    <!-- CS3011: Only CLS-compliant members can be abstract -->
+    <!-- CS3019: CLS attributes on internal types. Some shared source files are internal in this project. -->
+    <NoWarn>$(NoWarn);CS3011;CS3019</NoWarn>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
