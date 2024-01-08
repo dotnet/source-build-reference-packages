@@ -103,6 +103,16 @@ namespace System.Runtime.InteropServices
         ThisCall = 4
     }
 
+    [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class, Inherited = false)]
+    public sealed partial class ClassInterfaceAttribute : Attribute
+    {
+        public ClassInterfaceAttribute(short classInterfaceType) { }
+
+        public ClassInterfaceAttribute(ClassInterfaceType classInterfaceType) { }
+
+        public ClassInterfaceType Value { get { throw null; } }
+    }
+
     public enum ClassInterfaceType
     {
         None = 0,
@@ -132,12 +142,14 @@ namespace System.Runtime.InteropServices
         public override void AddEventHandler(object target, Delegate handler) { }
 
         public override void RemoveEventHandler(object target, Delegate handler) { }
+    }
 
-        public override Reflection.MethodInfo GetAddMethod(bool nonPublic) { throw null; }
+    [AttributeUsage(AttributeTargets.Class, Inherited = false)]
+    public sealed partial class ComDefaultInterfaceAttribute : Attribute
+    {
+        public ComDefaultInterfaceAttribute(Type defaultInterface) { }
 
-        public override Reflection.MethodInfo GetRaiseMethod(bool nonPublic) { throw null; }
-
-        public override Reflection.MethodInfo GetRemoveMethod(bool nonPublic) { throw null; }
+        public Type Value { get { throw null; } }
     }
 
     [AttributeUsage(AttributeTargets.Interface, Inherited = false)]
@@ -351,6 +363,14 @@ namespace System.Runtime.InteropServices
         Pinned = 3
     }
 
+    [AttributeUsage(AttributeTargets.Assembly | AttributeTargets.Class | AttributeTargets.Struct | AttributeTargets.Enum | AttributeTargets.Interface | AttributeTargets.Delegate, Inherited = false)]
+    public sealed partial class GuidAttribute : Attribute
+    {
+        public GuidAttribute(string guid) { }
+
+        public string Value { get { throw null; } }
+    }
+
     public sealed partial class HandleCollector
     {
         public HandleCollector(string name, int initialThreshold, int maximumThreshold) { }
@@ -385,6 +405,16 @@ namespace System.Runtime.InteropServices
     [AttributeUsage(AttributeTargets.Parameter, Inherited = false)]
     public sealed partial class InAttribute : Attribute
     {
+    }
+
+    [AttributeUsage(AttributeTargets.Interface, Inherited = false)]
+    public sealed partial class InterfaceTypeAttribute : Attribute
+    {
+        public InterfaceTypeAttribute(short interfaceType) { }
+
+        public InterfaceTypeAttribute(ComInterfaceType interfaceType) { }
+
+        public ComInterfaceType Value { get { throw null; } }
     }
 
     public partial class InvalidComObjectException : Exception
