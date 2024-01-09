@@ -15,15 +15,6 @@
       Format:
       <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Extensions.Options.5.0.0.csproj" />
     -->
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Build.Framework.16.5.0.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Build.Utilities.Core.16.5.0.csproj" />
-
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Security.Cryptography.X509Certificates.4.1.2.csproj" />
-
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Diagnostics.DiagnosticSource.5.0.0.csproj" />
-
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Data.SqlClient.4.8.4.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Data.SqlClient.4.8.5.csproj" />
 
     <TargetingPackageProject Include="$(RepoRoot)src\targetPacks\ILsrc\**\*.csproj" />
     <ProjectToBuild Include="@(TargetingPackageProject)" />
