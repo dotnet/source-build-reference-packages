@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Dependencies>
   <ToolsetDependencies>
-    <Dependency Name="Microsoft.SourceBuild.Intermediate.source-build-reference-packages" Version="6.0.0-alpha.1.21519.4">
+    <Dependency Name="Microsoft.SourceBuild.Intermediate.source-build-reference-packages" Version="6.0.0-servicing.22570.2">
       <Uri>https://github.com/dotnet/source-build-reference-packages</Uri>
-      <Sha>2e0273e0bcdc70087adf893795a323f191c93dcc</Sha>
+      <Sha>38385bc8b19cebe7ae7d20771646158785ee5bdc</Sha>
       <SourceBuild RepoName="source-build-reference-packages" ManagedOnly="true" />
     </Dependency>
     <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="6.0.0-beta.22571.3">
