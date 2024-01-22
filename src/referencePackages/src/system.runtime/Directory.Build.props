@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Usings.cs" />
+    <Using Include="System" />
+    <Using Include="System.Reflection" />
+    <Using Include="System.Runtime.CompilerServices" />
   </ItemGroup>
 
 </Project>
