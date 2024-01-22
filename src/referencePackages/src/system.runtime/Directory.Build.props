@@ -6,4 +6,8 @@
     <AssemblyName>System.Runtime</AssemblyName>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="Usings.cs" />
+  </ItemGroup>
+
 </Project>
