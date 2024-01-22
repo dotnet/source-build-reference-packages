@@ -32,7 +32,7 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Composition.AttributedModel.8.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Composition.Convention.8.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Composition.TypedParts.8.0.0.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Composition.8.0.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\textOnlyPackages\src\**\System.Composition.8.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.IO.Pipelines.8.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Text.Encoding.CodePages.8.0.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Threading.Channels.8.0.0.csproj" />
