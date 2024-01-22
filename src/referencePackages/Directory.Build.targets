@@ -112,8 +112,7 @@
           AfterTargets="CopyFilesToOutputDirectory">
 
     <ItemGroup>
-      <CompileForRelativePath Include="@(Compile)" />
-      <CompileForRelativePath Remove="$(RepoRoot)src\SourceBuildAssemblyMetdata.cs" />
+      <CompileWithRelativePath Include="@(Compile)" Condition="!$([System.String]::new('%(Identity)').StartsWith('/'))" />
     </ItemGroup>
 
     <Error
