@@ -303,7 +303,7 @@ namespace System
         public readonly bool TryCopyTo(Memory<T> destination) { throw null; }
     }
 
-    public readonly ref partial struct ReadOnlySpan<T>
+    public readonly partial struct ReadOnlySpan<T>
     {
         private readonly object _dummy;
         private readonly int _dummyPrimitive;
@@ -327,7 +327,7 @@ namespace System
         [Obsolete("Equals() on ReadOnlySpan will always throw an exception. Use == instead.")]
         public override readonly bool Equals(object obj) { throw null; }
 
-        public readonly ReadOnlySpan<T>.Enumerator GetEnumerator() { throw null; }
+        public readonly Enumerator GetEnumerator() { throw null; }
 
         [Obsolete("GetHashCode() on ReadOnlySpan will always throw an exception.")]
         public override readonly int GetHashCode() { throw null; }
@@ -352,7 +352,7 @@ namespace System
 
         public readonly bool TryCopyTo(Span<T> destination) { throw null; }
 
-        public ref partial struct Enumerator
+        public partial struct Enumerator
         {
             private ReadOnlySpan<T> _span;
             private object _dummy;
@@ -380,7 +380,7 @@ namespace System
         public readonly object GetObject() { throw null; }
     }
 
-    public readonly ref partial struct Span<T>
+    public readonly partial struct Span<T>
     {
         private readonly object _dummy;
         private readonly int _dummyPrimitive;
@@ -408,7 +408,7 @@ namespace System
 
         public readonly void Fill(T value) { }
 
-        public readonly Span<T>.Enumerator GetEnumerator() { throw null; }
+        public readonly Enumerator GetEnumerator() { throw null; }
 
         [Obsolete("GetHashCode() on Span will always throw an exception.")]
         public override readonly int GetHashCode() { throw null; }
@@ -435,7 +435,7 @@ namespace System
 
         public readonly bool TryCopyTo(Span<T> destination) { throw null; }
 
-        public ref partial struct Enumerator
+        public partial struct Enumerator
         {
             private Span<T> _span;
             private object _dummy;
@@ -562,7 +562,7 @@ namespace System.Buffers
 
         public SequencePosition Start { get { throw null; } }
 
-        public readonly ReadOnlySequence<T>.Enumerator GetEnumerator() { throw null; }
+        public readonly Enumerator GetEnumerator() { throw null; }
 
         public readonly SequencePosition GetPosition(long offset, SequencePosition origin) { throw null; }
 
