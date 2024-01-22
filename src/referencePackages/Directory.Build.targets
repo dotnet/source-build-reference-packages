@@ -116,11 +116,11 @@
     </ItemGroup>
 
     <Error
-      Condition="@(CompileForRelativePath->Count()) != 1"
+      Condition="@(CompileWithRelativePath->Count()) != 1"
       Text="Number of Compile items != 1. We need just one, to determine the path of the resulting DLL in the package including ref/lib and TFM." />
 
     <ItemGroup>
-      <FullCompileDir Include="$([System.IO.Directory]::GetParent('%(CompileForRelativePath.Identity)'))" />
+      <FullCompileDir Include="$([System.IO.Directory]::GetParent('%(CompileWithRelativePath.Identity)'))" />
       <RelativeCompileDir Include="$([MSBuild]::MakeRelative('$(MSBuildProjectDirectory)\', '%(FullCompileDir.Identity)'))" />
     </ItemGroup>
 
