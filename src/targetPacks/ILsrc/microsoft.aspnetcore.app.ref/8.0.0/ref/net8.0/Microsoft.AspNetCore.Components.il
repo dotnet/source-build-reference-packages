@@ -8081,7 +8081,7 @@
 
     .method /*060004DE*/ assembly hidebysig 
             instance void  '<CreatePropertyInjector>b__9_0'(class [System.ComponentModel/*23000005*/]System.IServiceProvider/*01000027*/ _,
-                                                            class Microsoft.AspNetCore.Components.IComponent/*02000059*/ _) cil managed
+                                                            class Microsoft.AspNetCore.Components.IComponent/*02000059*/ component) cil managed
     // SIG: 20 02 01 12 80 9D 12 81 64
     {
       // Method begins at RVA 0x4050
