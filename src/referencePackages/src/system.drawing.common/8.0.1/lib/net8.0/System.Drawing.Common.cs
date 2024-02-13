@@ -4264,12 +4264,6 @@ namespace System.Drawing.Interop
         public int lfWidth;
         [Diagnostics.CodeAnalysis.UnscopedRef]
         public Span<char> lfFaceName { get { throw null; } }
-
-        [Runtime.CompilerServices.UnsafeValueType]
-        public partial struct <_lfFaceName>e__FixedBuffer
-        {
-            public char FixedElementField;
-        }
     }
 }
 
