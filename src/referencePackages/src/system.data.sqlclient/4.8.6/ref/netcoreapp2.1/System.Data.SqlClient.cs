@@ -5,7 +5,55 @@
 // Changes to this file must follow the http://aka.ms/api-review process.
 // ------------------------------------------------------------------------------
 
-#AssemblyVersionAttributes#
+using System;
+using System.Data;
+using System.Data.SqlTypes;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security;
+
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints)]
+[assembly: AllowPartiallyTrustedCallers]
+[assembly: ReferenceAssembly]
+[assembly: AssemblyTitle("System.Data.SqlClient")]
+[assembly: AssemblyDescription("System.Data.SqlClient")]
+[assembly: AssemblyDefaultAlias("System.Data.SqlClient")]
+[assembly: AssemblyCompany("Microsoft Corporation")]
+[assembly: AssemblyProduct("Microsoft® .NET Framework")]
+[assembly: AssemblyCopyright("© Microsoft Corporation.  All rights reserved.")]
+[assembly: AssemblyFileVersion("4.700.22.51706")]
+[assembly: AssemblyInformationalVersion("4.700.22.51706 built by: SOURCEBUILD")]
+[assembly: CLSCompliant(true)]
+[assembly: AssemblyMetadata("", "")]
+[assembly: AssemblyVersion("4.6.1.5")]
+
+[assembly: TypeForwardedTo(typeof(System.Data.SqlDbType))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.INullable))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlBinary))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlBoolean))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlByte))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlBytes))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlChars))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlCompareOptions))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlDateTime))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlDecimal))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlDouble))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlGuid))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlInt16))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlInt32))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlInt64))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlMoney))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlNullValueException))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlSingle))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlString))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlTruncateException))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlTypeException))]
+[assembly: TypeForwardedTo(typeof(System.Data.SqlTypes.SqlXml))]
+[assembly: TypeForwardedTo(typeof(System.Data.StatementCompletedEventArgs))]
+[assembly: TypeForwardedTo(typeof(System.Data.StatementCompletedEventHandler))]
+
+
 
 namespace Microsoft.SqlServer.Server
 {
