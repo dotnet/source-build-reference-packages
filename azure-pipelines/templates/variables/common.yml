@@ -1,0 +1,14 @@
+variables:
+- name: EngCommonTemplatesDir
+  ${{ if eq(variables['System.TeamProject'], 'public') }}:
+    value: /eng/common/templates
+  ${{ if eq(variables['System.TeamProject'], 'internal') }}:
+    value: /eng/common/templates-official
+- name: Codeql.Enabled
+  value: true
+- name: TeamName
+  value: DotNetSourceBuild
+- name: DncEngInternalBuildPool
+  value: NetCore1ESPool-Svc-Internal
+- name: DncEngPublicBuildPool
+  value: NetCore-Svc-Public
