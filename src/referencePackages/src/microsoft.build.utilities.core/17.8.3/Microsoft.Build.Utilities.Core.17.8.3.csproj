@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net8.0;netstandard2.0</TargetFrameworks>
     <AssemblyName>Microsoft.Build.Utilities.Core</AssemblyName>
+    <ProjectTemplateVersion>2</ProjectTemplateVersion>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
