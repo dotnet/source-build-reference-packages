@@ -49,7 +49,12 @@
           Outputs="%(DependencyPackageProjects.Identity)">
     <MSBuild Condition="'@(DependencyPackageProjects)' != ''"
              Projects="@(DependencyPackageProjects)"
-             Targets="Restore;Build;Pack" />
+             Targets="Restore"
+             Properties="MSBuildRestoreSessionId=$([System.Guid]::NewGuid())" />
+
+    <MSBuild Condition="'@(DependencyPackageProjects)' != ''"
+             Projects="@(DependencyPackageProjects)"
+             Targets="Build;Pack" />
 
     <Copy Condition="'$(LocalNuGetPackageCacheDirectory)' != ''"
           SourceFiles="@(DependencyPackageProjects->'$(ArtifactsShippingPackagesDir)%(FileName).nupkg')"
