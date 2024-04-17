@@ -5,4 +5,20 @@
     <SourceBuildManagedOnly>true</SourceBuildManagedOnly>
   </PropertyGroup>
 
+  <Target Name="TriggerBuildDependencyPackageProjects"
+          Condition="'$(ArcadeInnerBuildFromSource)' == 'true'"
+          BeforeTargets="Execute">
+    <PropertyGroup>
+      <LocalNuGetPackageCacheDirectory Condition="'$(LocalNuGetPackageCacheDirectory)' == ''">$(CurrentRepoSourceBuiltNupkgCacheDir)</LocalNuGetPackageCacheDirectory>
+    </PropertyGroup>
+
+    <MakeDir Condition="'$(LocalNuGetPackageCacheDirectory)' != ''"
+             Directories="$(LocalNuGetPackageCacheDirectory)" />
+
+    <Exec
+      Command="./build.sh --configuration $(Configuration) /bl:$(ArtifactsDir)sourcebuild-dependency-projects.binlog /p:LocalNuGetPackageCacheDirectory=$(LocalNuGetPackageCacheDirectory) /p:BuildDependencyPackageProjects=true /p:SetUpSourceBuildIntermediateNupkgCache=true /p:DotNetBuildFromSource=true /p:ArcadeInnerBuildFromSource=true"
+      WorkingDirectory="$(InnerSourceBuildRepoRoot)"
+      EnvironmentVariables="@(InnerBuildEnv)" />
+  </Target>
+
 </Project>

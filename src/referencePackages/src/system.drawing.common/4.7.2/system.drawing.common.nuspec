@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata minClientVersion="2.12">
     <id>System.Drawing.Common</id>
-    <version>4.7.0</version>
+    <version>4.7.2</version>
     <title>System.Drawing.Common</title>
     <authors>Microsoft</authors>
     <owners>microsoft,dotnetframework</owners>
@@ -30,11 +30,11 @@ When using NuGet 3.x this package requires at least version 3.4.</description>
       <group targetFramework="MonoTouch1.0" />
       <group targetFramework=".NETFramework4.6.1" />
       <group targetFramework=".NETCoreApp2.0">
-        <dependency id="Microsoft.NETCore.Platforms" version="3.1.0" />
+        <dependency id="Microsoft.NETCore.Platforms" version="3.1.4" />
         <dependency id="Microsoft.Win32.SystemEvents" version="4.7.0" exclude="Compile" />
       </group>
       <group targetFramework=".NETCoreApp3.0">
-        <dependency id="Microsoft.NETCore.Platforms" version="3.1.0" />
+        <dependency id="Microsoft.NETCore.Platforms" version="3.1.4" />
         <dependency id="Microsoft.Win32.SystemEvents" version="4.7.0" exclude="Compile" />
       </group>
       <group targetFramework=".NETStandard2.0" />
