@@ -2093,7 +2093,9 @@ namespace System.Configuration.Internal
 
         public virtual string GetConfigTypeName(Type t) { throw null; }
 
+#pragma warning disable SYSLIB0003
         public virtual void GetRestrictedPermissions(IInternalConfigRecord configRecord, out Security.PermissionSet permissionSet, out bool isHostReady) { throw null; }
+#pragma warning restore SYSLIB0003
 
         public virtual string GetStreamName(string configPath) { throw null; }
 
@@ -2234,7 +2236,9 @@ namespace System.Configuration.Internal
         string GetConfigPathFromLocationSubPath(string configPath, string locationSubPath);
         Type GetConfigType(string typeName, bool throwOnError);
         string GetConfigTypeName(Type t);
+#pragma warning disable SYSLIB0003
         void GetRestrictedPermissions(IInternalConfigRecord configRecord, out Security.PermissionSet permissionSet, out bool isHostReady);
+#pragma warning restore SYSLIB0003
         string GetStreamName(string configPath);
         string GetStreamNameForConfigSource(string streamName, string configSource);
         object GetStreamVersion(string streamName);
