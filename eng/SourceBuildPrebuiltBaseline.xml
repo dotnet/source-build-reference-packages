@@ -11,11 +11,6 @@
     dependencies on it are removed from the previous-source-built packages. -->
     <UsagePattern IdentityGlob="Newtonsoft.Json/13.0.1" />
 
-    <!-- Neccessary to work around NuGet non-determinism with online builds/feed. Can be removed
-    after https://github.com/dotnet/source-build-reference-packages/pull/1053 has flowed in and sef-reference
-    has been updated. -->
-    <UsagePattern IdentityGlob="Microsoft.NetCore.Platforms/3.1.0" />
-
   </IgnorePatterns>
   <Usages/>
 </UsageData>
