@@ -23,7 +23,6 @@
       <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Extensions.Options.5.0.0.csproj" />
     -->
 
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Microsoft.Bcl.HashCode.6.0.0-preview.1.24529.4.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Frameworks.6.11.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Common.6.11.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\NuGet.Configuration.6.11.0.csproj" />
@@ -35,12 +34,12 @@
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Nuget.Credentials.6.11.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Nuget.ProjectModel.6.11.0.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\Nuget.Commands.6.11.0.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Text.Json.8.0.5.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\textOnlyPackages\src\**\Microsoft.NetCore.Platforms.3.1.0.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Text.Json.8.0.5.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Buffers.4.6.0-preview.1.24529.4.csproj" />
-    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Memory.4.6.0-preview.1.24529.4.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Numerics.Vectors.4.6.0-preview.1.24529.4.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Runtime.CompilerServices.Unsafe.6.1.0-preview.1.24529.4.csproj" />
+    <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Memory.4.6.0-preview.1.24529.4.csproj" />
     <DependencyPackageProjects Include="$(RepoRoot)src\referencePackages\src\**\System.Threading.Tasks.Extensions.4.6.0-preview.1.24529.4.csproj" />
   </ItemGroup>
 
