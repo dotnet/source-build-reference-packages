@@ -3,7 +3,6 @@
     <MajorVersion>10</MajorVersion>
     <MinorVersion>0</MinorVersion>
     <PatchVersion>0</PatchVersion>
-    <PreReleaseVersionIteration>1</PreReleaseVersionIteration>
     <SkipPackagePublishingVersionChecks>true</SkipPackagePublishingVersionChecks>
     <!-- Opt-out repo features -->
     <UsingToolXliff>false</UsingToolXliff>
