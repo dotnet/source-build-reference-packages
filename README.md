@@ -90,6 +90,8 @@ You can search for known issues in the [Known Generator Issues Markdown file](do
 Generating new targeting packages is not supported. No new targeting packs should be needed/added. If you feel
 a new targeting pack is needed, please [open a new issue](#filing-issues) to discuss.
 
+When adding targeting packs, the `analyzers` directory should be excluded.
+
 ### Text Only
 
 ``` bash
