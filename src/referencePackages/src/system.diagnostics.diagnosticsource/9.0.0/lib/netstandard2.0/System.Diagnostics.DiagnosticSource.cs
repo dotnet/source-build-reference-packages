@@ -548,7 +548,7 @@ namespace System.Diagnostics
     {
         private object _dummy;
         private int _dummyPrimitive;
-        public TagList(scoped params ReadOnlySpan<Collections.Generic.KeyValuePair<string, object?>> tagList) { }
+        public TagList(params ReadOnlySpan<Collections.Generic.KeyValuePair<string, object?>> tagList) { }
 
         public int Count { get { throw null; } }
 
@@ -612,7 +612,7 @@ namespace System.Diagnostics.Metrics
 
         public void Add(T delta, in TagList tagList) { }
 
-        public void Add(T delta, scoped params ReadOnlySpan<Collections.Generic.KeyValuePair<string, object?>> tags) { }
+        public void Add(T delta, params ReadOnlySpan<Collections.Generic.KeyValuePair<string, object?>> tags) { }
 
         public void Add(T delta) { }
     }
@@ -631,7 +631,7 @@ namespace System.Diagnostics.Metrics
 
         public void Record(T value, in TagList tagList) { }
 
-        public void Record(T value, scoped params ReadOnlySpan<Collections.Generic.KeyValuePair<string, object?>> tags) { }
+        public void Record(T value, params ReadOnlySpan<Collections.Generic.KeyValuePair<string, object?>> tags) { }
 
         public void Record(T value) { }
     }
@@ -650,7 +650,7 @@ namespace System.Diagnostics.Metrics
 
         public void Record(T value, in TagList tagList) { }
 
-        public void Record(T value, scoped params ReadOnlySpan<Collections.Generic.KeyValuePair<string, object?>> tags) { }
+        public void Record(T value, params ReadOnlySpan<Collections.Generic.KeyValuePair<string, object?>> tags) { }
 
         public void Record(T value) { }
     }
@@ -730,7 +730,7 @@ namespace System.Diagnostics.Metrics
 
         public Measurement(T value, in TagList tags) { }
 
-        public Measurement(T value, scoped params ReadOnlySpan<Collections.Generic.KeyValuePair<string, object?>> tags) { }
+        public Measurement(T value, params ReadOnlySpan<Collections.Generic.KeyValuePair<string, object?>> tags) { }
 
         public Measurement(T value) { }
 
@@ -930,7 +930,7 @@ namespace System.Diagnostics.Metrics
 
         public void Add(T delta, in TagList tagList) { }
 
-        public void Add(T delta, scoped params ReadOnlySpan<Collections.Generic.KeyValuePair<string, object?>> tags) { }
+        public void Add(T delta, params ReadOnlySpan<Collections.Generic.KeyValuePair<string, object?>> tags) { }
 
         public void Add(T delta) { }
     }
