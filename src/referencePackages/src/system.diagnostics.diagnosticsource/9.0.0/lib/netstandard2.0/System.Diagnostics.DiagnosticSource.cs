@@ -26,6 +26,13 @@
 [assembly: System.Reflection.AssemblyVersionAttribute("9.0.0.0")]
 [assembly: System.Runtime.CompilerServices.ReferenceAssembly]
 [assembly: System.Reflection.AssemblyFlagsAttribute((System.Reflection.AssemblyNameFlags)0x70)]
+
+// to resolve error CS0518: Predefined type 'System.Runtime.CompilerServices.IsExternalInit' is not defined or imported
+namespace System.Runtime.CompilerServices
+{
+    internal static class IsExternalInit {}
+}
+
 namespace System.Diagnostics
 {
     public partial class Activity : IDisposable
