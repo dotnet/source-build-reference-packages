@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Compile Include="$(CommonSrc)IsExternalInit.cs" />
+    <Compile Include="$(CommonSrc)RequiredMemberAttributes.cs" />
   </ItemGroup>
 
 </Project>
