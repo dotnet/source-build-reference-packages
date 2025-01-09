@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <AssemblyName>NuGet.Configuration</AssemblyName>
+    <AssemblyName>NuGet.LibraryModel</AssemblyName>
     <StrongNameKeyId>MicrosoftShared</StrongNameKeyId>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="NuGet.Common" Version="6.11.0" />
-    <PackageReference Include="System.Security.Cryptography.ProtectedData" Version="4.4.0" />
+    <PackageReference Include="NuGet.Common" Version="6.12.1" />
+    <PackageReference Include="NuGet.Versioning" Version="6.12.1" />
   </ItemGroup>
 
   <ItemGroup>
