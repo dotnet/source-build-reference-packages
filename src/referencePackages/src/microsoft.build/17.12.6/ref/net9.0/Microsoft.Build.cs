@@ -3584,7 +3584,11 @@ namespace Microsoft.Build.Logging
 
         public int MinimumReaderVersion { get { throw null; } }
 
+        public event System.Action<ArchiveFileEventArgs>? ArchiveFileEncountered { add { } remove { } }
+
         public event System.Action<BinaryLogReaderErrorEventArgs>? RecoverableReadError { add { } remove { } }
+
+        public event System.Action<StringReadEventArgs>? StringReadDone { add { } remove { } }
 
         public static BuildEventArgsReader OpenBuildEventsReader(System.IO.BinaryReader binaryReader, bool closeInput, bool allowForwardCompatibility = false) { throw null; }
 
