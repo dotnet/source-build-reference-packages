@@ -23,7 +23,7 @@ public class GenerateScriptTests
         new object[] { "System.Xml.ReaderWriter", "4.0.11", PackageType.Reference },
         new object[] { "Microsoft.Extensions.Logging.Abstractions", "7.0.1", PackageType.Reference },
         new object[] { "Microsoft.CodeAnalysis.CSharp", "3.11.0", PackageType.Reference },
-        new object[] { "System.Security.Cryptography.Pkcs", "7.0.2", PackageType.Reference },
+        new object[] { "System.Security.Cryptography.Encoding", "4.3.0", PackageType.Reference },
         new object[] { "Microsoft.Build.NoTargets", "3.7.0", PackageType.Text },
     };
     
