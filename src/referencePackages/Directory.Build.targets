@@ -124,6 +124,7 @@
     <ItemGroup>
       <CompileForRelativePath Include="@(Compile)" />
       <CompileForRelativePath Remove="$(RepoRoot)src\SourceBuildAssemblyMetdata.cs" />
+      <CompileForRelativePath Remove="$(RepoRoot)src\referencePackages\common\IsExternalInit.cs" />
     </ItemGroup>
 
     <Error
