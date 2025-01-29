@@ -1,0 +1,6 @@
+<Project>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp1.1' or '$(TargetFramework)' == 'netstandard1.5'">
+    <!-- Needs additional APIs that don't exist in the contract. -->
+    <Compile Include="$(MSBuildThisFileDirectory)Customizations.cs" />
+  </ItemGroup>
+</Project>

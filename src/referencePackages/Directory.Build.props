@@ -1,7 +1,13 @@
 <Project>
 
   <Import Project="..\..\Directory.Build.props" />
-  
+
+  <PropertyGroup>
+    <CustomizationsPropsPath>$(MSBuildProjectDirectory)\$(CustomizationsPropsFile)</CustomizationsPropsPath>
+  </PropertyGroup>
+
+  <Import Project="$(CustomizationsPropsPath)" Condition="Exists('$(CustomizationsPropsPath)')" />
+
   <ItemGroup>
     <!-- Attributes for all Reference Packages -->
     <Compile Include="$(RepoRoot)src\SourceBuildAssemblyMetdata.cs" />
