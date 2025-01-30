@@ -84,7 +84,7 @@ in the correct dependency order.
   When making changes to the generated artifacts, it is recommended to utilize the following pre-defined constructs if possible.
 
   * Customizations.props - Automatically imported by the generated project. Use it for additive changes such as NoWarns or additional source files.
-  * Customizations.cs - This is not automatically included by the generated project. Use it to add new types or members to partial classes.
+  * Customizations.cs - Automatically included by the generated project. Use it to add new types or members to partial classes.
 
   You can search the code base to see example usages.
   The benefit of using these files is that they will be preserved when the packages are regenerated.
