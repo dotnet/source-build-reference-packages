@@ -229,13 +229,11 @@ namespace System.Dynamic
 
         bool Collections.Generic.ICollection<Collections.Generic.KeyValuePair<string, object>>.IsReadOnly { get { throw null; } }
 
-        object System.Collections.Generic.IDictionary<System.String,System.Object>.this[string key] { get { throw null; } set { } }
+        object Collections.Generic.IDictionary<string, object>.this[string key] { get { throw null; } set { } }
 
         Collections.Generic.ICollection<string> Collections.Generic.IDictionary<string, object>.Keys { get { throw null; } }
 
         Collections.Generic.ICollection<object> Collections.Generic.IDictionary<string, object>.Values { get { throw null; } }
-
-        event System.ComponentModel.PropertyChangedEventHandler System.ComponentModel.INotifyPropertyChanged.PropertyChanged { add { } remove { } }
 
         void Collections.Generic.ICollection<Collections.Generic.KeyValuePair<string, object>>.Add(Collections.Generic.KeyValuePair<string, object> item) { }
 
@@ -479,7 +477,7 @@ namespace System.Runtime.CompilerServices
 
         public TValue GetOrCreateValue(TKey key) { throw null; }
 
-        public TValue GetValue(TKey key, ConditionalWeakTable<TKey, TValue>.CreateValueCallback createValueCallback) { throw null; }
+        public TValue GetValue(TKey key, CreateValueCallback createValueCallback) { throw null; }
 
         public bool Remove(TKey key) { throw null; }
 

@@ -67,8 +67,8 @@ regenerate the older version to see what customizations to the generated code we
 * Generate reference package and its depencencies running the `./generate.sh --package <package>,<version>` script.
 * Inspect any changes to packages that already existed in the repository. There are two reasons why previously
 generated packages show changes when being regenerated.
-    1. The package contains intentional code modifications on top of the generated code. This may be upgrading a
-    project reference to address a CVE or code fixups because the generate tooling does not support a scenario.
+    1. The package contains intentional code modifications on top of the generated code.
+    This may be code fixups because the generate tooling does not support a scenario.
     When this occurs, there should be code comments explaining why the code modification was made. If this is
     the case, the changes to the existing package should be reverted.
     2. The generate tooling has changed since the last time this package was generated. The new changes should
@@ -78,9 +78,16 @@ generated packages show changes when being regenerated.
 in the correct dependency order.
 * Run build with the `./build.sh -sb` command.
 * If the compilation produces numerous compilation issue - run the `./build.sh --projects <path to .csproj file>`
-command for each generated reference package separately. It may be necessary to manually tweak the code to
-address compilation issues. When this occurs, please ensure there is an [tracking issue](#filing-issues) to
-address the underlying problem with the generator.
+  command for each generated reference package separately.
+  It may be necessary to manually tweak the generated artifacts to address compilation issues.
+  When this occurs, please ensure there is an [tracking issue](#filing-issues) to address the underlying problem with the generator.
+  When making changes to the generated artifacts, it is recommended to utilize the following pre-defined constructs if possible.
+
+  * Customizations.props - Automatically imported by the generated project. Use it for additive changes such as NoWarns or additional source files.
+  * Customizations.cs - Automatically included by the generated project. Use it to add new types or members to partial classes.
+
+  You can search the code base to see example usages.
+  The benefit of using these files is that they will be preserved when the packages are regenerated.
 * Add comments calling out any modifications to the generated code that were necessary.
 
 You can search for known issues in the [Known Generator Issues Markdown file](docs/known_generator_issues.md).
@@ -96,21 +103,21 @@ a new targeting pack is needed, please [open a new issue](#filing-issues) to dis
 ./generate.sh --type text --package microsoft.build.traversal,3.1.6
 ```
 
-## Vulnerable Packages
+## Regenerating all Packages
 
-CVEs may exist for reference packages included in this repo. If they are mitigated by a newer version, the
-newer version should be added, the vulnerable version should be removed (only if there are no product repo 
-references to it), and references to the vulnerable package within other reference packages should be upgraded.
-A comment should be added to indicate when packages were manually upgraded in both the csproj and nuspec files.
+As bugs are fixed or enhancements are made to the generate tooling, it may be desirable or necessary to
+regenerate the existing packages. The following commands can be used to generate all of the reference packages.
 
-``` xml
-    <!-- Manual upgrade from 4.3.0 to address CVE-2017-0247 -->
-    <PackageReference Include="System.Net.Security" Version="4.3.1" />
+``` bash
+find src/referencePackages/src -mindepth 2 -maxdepth 2 -type d | awk -F'/' '{print $(NF-1)","$NF}' > packages.csv
+./generate.sh -x -c packages.csv
 ```
 
-All packages that contain a manually upgraded reference must be added to the eng/build.props as a
-DependencyPackageProjects in order to prevent the n-1 version from getting loaded which would still
-reference the vulnerable version.
+## Vulnerable Packages
+
+CVEs may exist for reference packages included in this repo. Because the packages do not contain any
+implementation, they do not pose a security risk. CG is configured in this repo to ignore the reference
+packages. If product repos migrate off these vulnerable packages, they can be [removed](#cleanup).
 
 ## Filing Issues
 
