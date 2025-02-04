@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>$(NetCurrent)</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <PackageSourceGeneratorTaskAssembly>$(ArtifactsBinDir)PackageSourceGeneratorTask\$(Configuration)\$(NetCurrent)\PackageSourceGeneratorTask.dll</PackageSourceGeneratorTaskAssembly>
     <!-- The packages output directory. -->
     <PackagesTargetDirectory Condition="'$(PackageType)' != 'text'">$(RepoRoot)src\referencePackages\src\</PackagesTargetDirectory>
