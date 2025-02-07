@@ -87,7 +87,7 @@ stages:
       workingDirectory: $(RepoRoot)
       displayName: Initialize Repo
       env:
-        GH_TOKEN: ${{ parameters.githubPat }}
+        GH_TOKEN: $(BotAccount-dotnet-sb-bot-pat)
 
     - script: |
         json_file="$(Pipeline.Workspace)/artifacts/log/Release/sbrpPackageUsage.json"
@@ -125,18 +125,7 @@ stages:
         git commit -m "Remove unreferenced packages"
         git push -u origin $(InitializeRepo.CleanupBranch)
 
-        # echo "TargetRepo: $(InitializeRepo.TargetRepo)"
-        # echo "SdkVersion: $(SdkVersions.SbSdkVersion)"
-        # echo "Title: $title"
-        # echo "Body: $body"
-
-        # gh pr create \
-        #   --head "$(RELEASE_ORG):$(InitializeRepo.RebootstrapBranch)" \
-        #   --repo "$(InitializeRepo.TargetRepo)" \
-        #   --base "${{ parameters.targetBranch }}" \
-        #   --title "$title" \
-        #   --body "$body"
       displayName: Open PR
       workingDirectory: $(RepoRoot)
       env:
-        GH_TOKEN: ${{ parameters.githubPat }}
+        GH_TOKEN: $(BotAccount-dotnet-sb-bot-pat)
