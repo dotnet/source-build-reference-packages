@@ -30,13 +30,24 @@ jobs:
       buildVersionToDownload: specific
       project: internal
       definition: $(resources.pipeline.dotnet-source-build.pipelineName)
-      pipelineId: $(resources.pipeline.dotnet-source-build.pipelineID)
+      pipelineId: $(resources.pipeline.dotnet-source-build.runID)
       artifactName: ${{ parameters.artifactName }}
       itemPattern: '**/sbrpPackageUsage.json'
       targetPath: $(Pipeline.Workspace)/Artifacts
       allowPartiallySucceededBuilds: true
       allowFailedBuilds: true
-      checkDownloadedFiles: true
+
+          buildType: specific
+    buildVersionToDownload: specific
+    project: internal
+    pipeline: ${{ parameters.pipeline }}
+    buildId: ${{ parameters.buildId }}
+    artifact: ${{ parameters.artifact }}
+    patterns: ${{ parameters.patterns }}
+    allowPartiallySucceededBuilds: true
+    allowFailedBuilds: true
+    downloadPath: $(Pipeline.Workspace)/Artifacts
+    checkDownloadedFiles: true
 
   - script: |
       echo "Downloaded artifact files:"
