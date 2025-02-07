@@ -22,63 +22,121 @@ resources:
     name: 1ESPipelineTemplates/1ESPipelineTemplates
     ref: refs/tags/release
 
-jobs:
-- job: DownloadArtifact
-  displayName: Download Artifact from Dependency Pipeline
-  pool:
-    vmImage: ubuntu-latest
+# pool:
+#   name: NetCore1ESPool-Svc-Internal
+#   demands: ImageOverride -equals 1es-ubuntu-2004
 
-  steps:
-  - task: DownloadPipelineArtifact@2
-    inputs:
-      buildType: specific
-      buildVersionToDownload: specific
-      project: internal
-      definition: $(resources.pipeline.dotnet-source-build.pipelineName)
-      pipelineId: $(resources.pipeline.dotnet-source-build.runID)
-      artifactName: ${{ parameters.artifactName }}
-      itemPattern: '**/sbrpPackageUsage.json'
-      targetPath: $(Pipeline.Workspace)
-      allowPartiallySucceededBuilds: true
-      allowFailedBuilds: true
+stages:
+- stage: Cleanup
+  displayName: Cleanup
 
-  - script: |
-      if [ -f "$(Pipeline.Workspace)/artifacts/log/Release/sbrpPackageUsage.json" ]; then
-        echo "sbrpPackageUsage.json file found."
-        cat "$(Pipeline.Workspace)/artifacts/log/Release/sbrpPackageUsage.json"
-      else
-        echo "sbrpPackageUsage.json file not found."
-      fi
-    displayName: Check and display sbrpPackageUsage.json
+  variables:
+  - name: RepoRoot
+    value: $(Build.SourcesDirectory)/source-build-reference-packages
 
-  - script: |
-      json_file="$(Pipeline.Workspace)/artifacts/log/Release/sbrpPackageUsage.json"
-      repo_root="$(Build.SourcesDirectory)/source-build-reference-packages"
-      unreferenced_paths=$(jq -r '.UnreferencedSbrps[]' "$json_file")
-      skip_packages_array=(${{ parameters.skipPackages }})
+  # https://dev.azure.com/dnceng/internal/_library?itemType=VariableGroups&view=VariableGroupView&variableGroupId=177&path=DotNet-Source-Build-Bot-Secrets-MVP
+  # GH access token for SB bot - BotAccount-dotnet-sb-bot-pat
+  - group: DotNet-Source-Build-Bot-Secrets-MVP
 
-      for path in $unreferenced_paths; do
-        skip=false
-        for skip_package in "${skip_packages_array[@]}"; do
-          if [[ "$path" == *"$skip_package" ]]; then
-            echo "Skipping $path as it matches skip package $skip_package"
-            skip=true
-            break
+  jobs:
+  - job: DownloadArtifact
+    displayName: Download Artifact from Dependency Pipeline
+    pool:
+      vmImage: ubuntu-latest
+
+    steps:
+    - task: DownloadPipelineArtifact@2
+      inputs:
+        buildType: specific
+        buildVersionToDownload: specific
+        project: internal
+        definition: $(resources.pipeline.dotnet-source-build.pipelineName)
+        pipelineId: $(resources.pipeline.dotnet-source-build.runID)
+        artifactName: ${{ parameters.artifactName }}
+        itemPattern: '**/sbrpPackageUsage.json'
+        targetPath: $(Pipeline.Workspace)
+        allowPartiallySucceededBuilds: true
+        allowFailedBuilds: true
+
+    - script: |
+        if [ -f "$(Pipeline.Workspace)/artifacts/log/Release/sbrpPackageUsage.json" ]; then
+          echo "sbrpPackageUsage.json file found."
+          cat "$(Pipeline.Workspace)/artifacts/log/Release/sbrpPackageUsage.json"
+        else
+          echo "sbrpPackageUsage.json file not found."
+        fi
+      displayName: Check and display sbrpPackageUsage.json
+
+    - script: |
+        time="$(date +%s)"
+        monthYear=$(date +"%b%Y" | sed 's/.*/\L&/')
+
+        git_user="dotnet-sb-bot"
+
+        git config --global user.name $git_user
+        git config --global user.email "$git_user@microsoft.com"
+
+        git remote add GH "https://$git_user:${GH_TOKEN}@github.com/dotnet/source-build-reference-packages.git"
+        git fetch GH
+
+        cleanup_branch="${monthYear}-reference-package-cleanup-${time}"
+        git checkout -b "${cleanup_branch}"
+
+        echo "##vso[task.setvariable variable=CleanupBranch;isOutput=true]$cleanup_branch"
+      name: InitializeRepo
+      workingDirectory: $(RepoRoot)
+      displayName: Initialize Repo
+      env:
+        GH_TOKEN: ${{ parameters.githubPat }}
+
+    - script: |
+        json_file="$(Pipeline.Workspace)/artifacts/log/Release/sbrpPackageUsage.json"
+        unreferenced_paths=$(jq -r '.UnreferencedSbrps[]' "$json_file")
+        skip_packages_array=(${{ parameters.skipPackages }})
+
+        for path in $unreferenced_paths; do
+          skip=false
+          for skip_package in "${skip_packages_array[@]}"; do
+            if [[ "$path" == *"$skip_package" ]]; then
+              echo "Skipping $path as it matches skip package $skip_package"
+              skip=true
+              break
+            fi
+          done
+
+          if [ "$skip" = true ]; then
+            continue
           fi
+
+          # textOnlyPackage usage detection has false positives and should be skipped
+          if [[ "$path" == *"textOnlyPackage"* ]]; then
+            echo "Skipping $path as it contains 'textOnlyPackage'"
+            continue
+          fi
+
+          package_path="$(RepoRoot)${path#/__w/1/s/src/source-build-reference-packages}"
+          echo "Deleting $package_path"
+          rm -rf "$package_path"
         done
+      displayName: Delete Unreferenced Packages
 
-        if [ "$skip" = true ]; then
-          continue
-        fi
+    - script: |
+        git add .
+        git commit -m "Remove unreferenced packages"
+        git push -u origin $(InitializeRepo.CleanupBranch)
 
-        # textOnlyPackage usage detection has false positives and should be skipped
-        if [[ "$path" == *"textOnlyPackage"* ]]; then
-          echo "Skipping $path as it contains 'textOnlyPackage'"
-          continue
-        fi
+        # echo "TargetRepo: $(InitializeRepo.TargetRepo)"
+        # echo "SdkVersion: $(SdkVersions.SbSdkVersion)"
+        # echo "Title: $title"
+        # echo "Body: $body"
 
-        package_path="$repo_root${path#/__w/1/s/src/source-build-reference-packages}"
-        echo "Deleting $package_path"
-        rm -rf "$package_path"
-      done
-    displayName: Delete Unreferenced Packages
+        # gh pr create \
+        #   --head "$(RELEASE_ORG):$(InitializeRepo.RebootstrapBranch)" \
+        #   --repo "$(InitializeRepo.TargetRepo)" \
+        #   --base "${{ parameters.targetBranch }}" \
+        #   --title "$title" \
+        #   --body "$body"
+      displayName: Open PR
+      workingDirectory: $(RepoRoot)
+      env:
+        GH_TOKEN: ${{ parameters.githubPat }}
