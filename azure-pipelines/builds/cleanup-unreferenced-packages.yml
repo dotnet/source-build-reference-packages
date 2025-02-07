@@ -33,19 +33,19 @@ jobs:
       pipelineId: $(resources.pipeline.dotnet-source-build.runID)
       artifactName: ${{ parameters.artifactName }}
       itemPattern: '**/sbrpPackageUsage.json'
-      targetPath: $(Pipeline.Workspace)/Artifacts
+      targetPath: $(Pipeline.Workspace)
       allowPartiallySucceededBuilds: true
       allowFailedBuilds: true
 
   - script: |
       echo "Downloaded artifact files:"
-      ls -R $(Pipeline.Workspace)/Artifacts
+      ls -R $(Pipeline.Workspace)/artifacts
     displayName: 'List downloaded artifact files'
 
   - script: |
-      if [ -f "$(Pipeline.Workspace)/Artifacts/sbrpPackageUsage.json" ]; then
+      if [ -f "$(Pipeline.Workspace)/artifacts/log/Release/sbrpPackageUsage.json" ]; then
         echo "sbrpPackageUsage.json file found."
-        cat "$(Pipeline.Workspace)/Artifacts/sbrpPackageUsage.json"
+        cat "$(Pipeline.Workspace)/artifacts/log/Release/sbrpPackageUsage.json"
       else
         echo "sbrpPackageUsage.json file not found."
       fi
