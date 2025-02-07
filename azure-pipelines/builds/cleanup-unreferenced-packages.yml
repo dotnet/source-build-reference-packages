@@ -29,8 +29,8 @@ jobs:
       buildType: specific
       buildVersionToDownload: specific
       project: internal
-      definition: ${{ resources.pipeline['dotnet-source-build'].pipelineName }}
-      pipelineId: ${{ resources.pipeline['dotnet-source-build'].pipelineID }}
+      definition: ${{ resources.pipeline.dotnet-source-build.pipelineName }}
+      pipelineId: ${{ resources.pipeline.dotnet-source-build.pipelineID }}
       artifactName: ${{ parameters.artifactName }}
       itemPattern: '**/sbrpPackageUsage.json'
       targetPath: $(Pipeline.Workspace)/Artifacts
