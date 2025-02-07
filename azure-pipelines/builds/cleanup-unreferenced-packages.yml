@@ -21,7 +21,7 @@ jobs:
 - job: DownloadArtifact
   displayName: Download Artifact from Dependency Pipeline
   pool:
-    vmImage: 'ubuntu-latest'
+    vmImage: ubuntu-latest
 
   steps:
   - task: DownloadPipelineArtifact@2
@@ -40,7 +40,7 @@ jobs:
   - script: |
       echo "Downloaded artifact files:"
       ls -R $(Pipeline.Workspace)/artifacts
-    displayName: 'List downloaded artifact files'
+    displayName: List downloaded artifact files
 
   - script: |
       if [ -f "$(Pipeline.Workspace)/artifacts/log/Release/sbrpPackageUsage.json" ]; then
@@ -49,4 +49,16 @@ jobs:
       else
         echo "sbrpPackageUsage.json file not found."
       fi
-    displayName: 'Check and display sbrpPackageUsage.json'
+    displayName: Check and display sbrpPackageUsage.json
+
+  - script: |
+      json_file="$(Pipeline.Workspace)/artifacts/log/Release/sbrpPackageUsage.json"
+      repo_root="$(Build.SourcesDirectory)/source-build-reference-packages"
+      unreferenced_paths=$(jq -r '.UnreferencedSbrps[]' "$json_file")
+
+      for path in $unreferenced_paths; do
+        full_path="$repo_root${path#/__w/1/s/src/source-build-reference-packages}"
+        echo "Deleting $full_path"
+        rm -rf "$full_path"
+      done
+    displayName: Delete Unreferenced Packages
