@@ -1,0 +1,53 @@
+trigger: none
+
+parameters:
+- name: artifactName
+  type: string
+  default: CentOSStream9_Online_MsftSdk_x64_BuildLogs_Attempt1
+  displayName: (Optional) Source Build Artrifact Name to retrieve sbrpPackageUsage.json from
+
+resources:
+  pipelines:
+  - pipeline: dotnet-source-build
+    source: dotnet-source-build-lite
+
+  repositories:
+  - repository: 1ESPipelineTemplates
+    type: git
+    name: 1ESPipelineTemplates/1ESPipelineTemplates
+    ref: refs/tags/release
+
+jobs:
+- job: DownloadArtifact
+  displayName: Download Artifact from Dependency Pipeline
+  pool:
+    vmImage: 'ubuntu-latest'
+
+  steps:
+  - task: DownloadPipelineArtifact@2
+    inputs:
+      buildType: specific
+      buildVersionToDownload: specific
+      project: internal
+      definition: ${{ resources.pipeline['dotnet-source-build'].pipelineName }}
+      pipelineId: ${{ resources.pipeline['dotnet-source-build'].pipelineID }}
+      artifactName: ${{ parameters.artifactName }}
+      itemPattern: '**/sbrpPackageUsage.json'
+      targetPath: $(Pipeline.Workspace)/Artifacts
+      allowPartiallySucceededBuilds: true
+      allowFailedBuilds: true
+      checkDownloadedFiles: true
+
+  - script: |
+      echo "Downloaded artifact files:"
+      ls -R $(Pipeline.Workspace)/Artifacts
+    displayName: 'List downloaded artifact files'
+
+  - script: |
+      if [ -f "$(Pipeline.Workspace)/Artifacts/sbrpPackageUsage.json" ]; then
+        echo "sbrpPackageUsage.json file found."
+        cat "$(Pipeline.Workspace)/Artifacts/sbrpPackageUsage.json"
+      else
+        echo "sbrpPackageUsage.json file not found."
+      fi
+    displayName: 'Check and display sbrpPackageUsage.json'
