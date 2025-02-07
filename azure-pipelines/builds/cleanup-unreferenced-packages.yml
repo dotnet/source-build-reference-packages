@@ -37,18 +37,6 @@ jobs:
       allowPartiallySucceededBuilds: true
       allowFailedBuilds: true
 
-          buildType: specific
-    buildVersionToDownload: specific
-    project: internal
-    pipeline: ${{ parameters.pipeline }}
-    buildId: ${{ parameters.buildId }}
-    artifact: ${{ parameters.artifact }}
-    patterns: ${{ parameters.patterns }}
-    allowPartiallySucceededBuilds: true
-    allowFailedBuilds: true
-    downloadPath: $(Pipeline.Workspace)/Artifacts
-    checkDownloadedFiles: true
-
   - script: |
       echo "Downloaded artifact files:"
       ls -R $(Pipeline.Workspace)/Artifacts
