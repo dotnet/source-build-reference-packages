@@ -146,21 +146,21 @@ stages:
 
         if [ -f "$(Pipeline.Workspace)/deleted_packages.txt" ]; then
           deleted_packages=$(cat $(Pipeline.Workspace)/deleted_packages.txt)
-          echo "##vso[task.setvariable variable=PrBody;isOutput=true]$(PrBody)$deleted_packages"
+          pr_body="$(PrBody)$deleted_packages"
         fi
 
-        echo "$(GitHubRemoteName):$(InitializeRepo.CleanupBranch)"
-        echo "$(GitHubRemoteName)/$(TargetRepo)"
-        echo "$(GitHubRemoteName):${{ parameters.targetBranch }}"
-        echo "$(PrTitle)"
-        echo "$(PrBody)"
+        echo "head: $(GitHubRemoteName):$(InitializeRepo.CleanupBranch)"
+        echo "repo: $(TargetRepo)"
+        echo "base: $(GitHubRemoteName):${{ parameters.targetBranch }}"
+        echo "title: $(PrTitle)"
+        echo "body: $(PrBody)"
 
         gh pr create \
           --head "$(GitHubRemoteName):$(InitializeRepo.CleanupBranch)" \
           --repo "$(TargetRepo)" \
           --base "$(GitHubRemoteName):${{ parameters.targetBranch }}" \
           --title "$(PrTitle)" \
-          --body "$(PrBody)"
+          --body "$pr_body"
       displayName: Open PR
       workingDirectory: $(RepoRoot)
       env:
