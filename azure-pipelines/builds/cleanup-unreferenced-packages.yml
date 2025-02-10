@@ -138,6 +138,8 @@ stages:
       displayName: Delete Unreferenced Packages
 
     - script: |
+        gh auth setup-git
+
         git add .
         git commit -m "Remove unreferenced packages"
         git push -u GH $(InitializeRepo.CleanupBranch)
