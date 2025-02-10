@@ -11,6 +11,11 @@ parameters:
   default: ' '
   displayName: (Optional) List of packages (<name>/<version>) to skip from deletion (comma separated)
 
+- name: targetBranch
+  type: string
+  default: main
+  displayName: (Optional) Branch to open the cleanup PR against
+
 resources:
   pipelines:
   - pipeline: dotnet-source-build
@@ -70,19 +75,21 @@ stages:
     - script: |
         time="$(date +%s)"
         monthYear=$(date +"%b%Y" | sed 's/.*/\L&/')
+        target_rep= dotnet/source-build-reference-packages.git
 
         git_user="dotnet-sb-bot"
 
         git config --global user.name $git_user
         git config --global user.email "$git_user@microsoft.com"
 
-        git remote add GH "https://$git_user:${GH_TOKEN}@github.com/dotnet/source-build-reference-packages.git"
+        git remote add GH "https://$git_user:${GH_TOKEN}@github.com/$target_repo"
         git fetch GH
 
         cleanup_branch="${monthYear}-reference-package-cleanup-${time}"
         git checkout -b "${cleanup_branch}"
 
         echo "##vso[task.setvariable variable=CleanupBranch;isOutput=true]$cleanup_branch"
+        echo "##vso[task.setvariable variable=TargetRepo;isOutput=true]$target_repo"
       name: InitializeRepo
       workingDirectory: $(RepoRoot)
       displayName: Initialize Repo
@@ -126,7 +133,12 @@ stages:
         git commit -m "Remove unreferenced packages"
         git push -u GH $(InitializeRepo.CleanupBranch)
 
-
+        gh pr create \
+          --head "$(RELEASE_ORG):$(InitializeRepo.CleanupBranch)" \
+          --repo "$(InitializeRepo.TargetRepo)" \
+          --base "${{ parameters.targetBranch }}" \
+          --title "Test" \
+          --body "Test"
       displayName: Open PR
       workingDirectory: $(RepoRoot)
       env:
