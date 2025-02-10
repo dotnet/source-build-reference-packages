@@ -36,6 +36,8 @@ stages:
   displayName: Cleanup
 
   variables:
+  - name: DeletedPackagesLogFilePath
+    value: $(Pipeline.Workspace)/deleted_packages.txt
   - name: GitHubRemoteName
     value: GH
   - name: PrBody
@@ -133,7 +135,7 @@ stages:
 
           echo "Deleting $package_path"
           rm -rf "$package_path"
-          echo "$package_path" >> $(Pipeline.Workspace)/deleted_packages.txt
+          echo "$package_path" >> $(DeletedPackagesLogFilePath)
         done
       displayName: Delete Unreferenced Packages
 
@@ -144,9 +146,9 @@ stages:
         git commit -m "Remove unreferenced packages"
         git push -u GH $(InitializeRepo.CleanupBranch)
 
-        if [ -f "$(Pipeline.Workspace)/deleted_packages.txt" ]; then
+        if [ -f "$(DeletedPackagesLogFilePath)" ]; then
           echo "Here"
-          pr_body="$(PrBody)$(cat $(Pipeline.Workspace)/deleted_packages.txt)"
+          pr_body="$(PrBody)$(cat $(DeletedPackagesLogFilePath))"
         fi
 
         echo "head: $(GitHubRemoteName):$(InitializeRepo.CleanupBranch)"
