@@ -152,19 +152,19 @@ stages:
           echo "Here"
           echo "$(cat $(DeletedPackagesLogFilePath))"
           pr_body="$(PrBody)$(cat $(DeletedPackagesLogFilePath))"
-          echo "$(pr_body)"
+          echo "$pr_body"
         fi
 
         echo "head: $(GitHubRemoteName):$(InitializeRepo.CleanupBranch)"
         echo "repo: $(TargetRepo)"
         echo "base: ${{ parameters.targetBranch }}"
         echo "title: $(PrTitle)"
-        echo "body: $(PrBody)"
+        echo "body: $pr_body"
 
         gh pr create \
           --head "$(GitHubRemoteName):$(InitializeRepo.CleanupBranch)" \
           --repo "$(TargetRepo)" \
-          --base "$(GitHubRemoteName):${{ parameters.targetBranch }}" \
+          --base "${{ parameters.targetBranch }}" \
           --title "$(PrTitle)" \
           --body "$pr_body"
       displayName: Open PR
