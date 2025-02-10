@@ -36,10 +36,14 @@ stages:
   displayName: Cleanup
 
   variables:
+  - name: PrBody
+    value: "Removed packages which were detected as unreferenced."
+  - name: PrTitle
+    value: "[${{ parameters.targetBranch }}] Remove unreferenced packages"
   - name: RepoRoot
     value: $(Build.SourcesDirectory)
   - name: TargetRepo
-    value: dotnet/source-build-reference-packages.git
+    value: dotnet/source-build-reference-packages
 
   # https://dev.azure.com/dnceng/internal/_library?itemType=VariableGroups&view=VariableGroupView&variableGroupId=177&path=DotNet-Source-Build-Bot-Secrets-MVP
   # GH access token for SB bot - BotAccount-dotnet-sb-bot-pat
@@ -137,8 +141,8 @@ stages:
           --head "GH:$(InitializeRepo.CleanupBranch)" \
           --repo "$(TargetRepo)" \
           --base "${{ parameters.targetBranch }}" \
-          --title "[${{ parameters.targetBranch }}] Remove unreferenced packages" \
-          --body "Removed packages which were detected as unreferenced."
+          --title "$(PrTitle)" \
+          --body "$(PrBody)"
       displayName: Open PR
       workingDirectory: $(RepoRoot)
       env:
