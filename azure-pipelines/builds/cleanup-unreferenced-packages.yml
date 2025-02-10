@@ -36,6 +36,8 @@ stages:
   displayName: Cleanup
 
   variables:
+  - name: CommitMessage
+    value: "Remove unreferenced packages"
   - name: DeletedPackagesLogFilePath
     value: $(Pipeline.Workspace)/deleted_packages.txt
   - name: GitHubRemoteName
@@ -44,6 +46,7 @@ stages:
     value: |
       Removed the following packages which were detected as unreferenced:
       
+
   - name: PrTitle
     value: "[${{ parameters.targetBranch }}] Remove unreferenced packages"
   - name: RepoRoot
@@ -135,7 +138,7 @@ stages:
 
           echo "Deleting $package_path"
           rm -rf "$package_path"
-          echo "$package_path" >> $(DeletedPackagesLogFilePath)
+          echo "${package_path#$(RepoRoot)/src/referencePackages/src/}" >> $(DeletedPackagesLogFilePath)
         done
       displayName: Delete Unreferenced Packages
 
@@ -143,14 +146,14 @@ stages:
         gh auth setup-git
 
         git add .
-        git commit -m "Remove unreferenced packages"
-        git push -u GH $(InitializeRepo.CleanupBranch)
+        git commit -m "$(CommitMessage)"
+        git push -u $(GitHubRemoteName) $(InitializeRepo.CleanupBranch)
 
         if [ -f "$(DeletedPackagesLogFilePath)" ]; then
           pr_body="$(PrBody)$(cat $(DeletedPackagesLogFilePath))"
         fi
 
-        echo "head: $(GitHubRemoteName):$(InitializeRepo.CleanupBranch)"
+        echo "head: $(InitializeRepo.CleanupBranch)"
         echo "repo: $(TargetRepo)"
         echo "base: ${{ parameters.targetBranch }}"
         echo "title: $(PrTitle)"
