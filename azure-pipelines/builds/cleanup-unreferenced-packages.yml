@@ -145,6 +145,12 @@ stages:
           echo "##vso[task.setvariable variable=PrBody;isOutput=true]$(PrBody)\n$deleted_packages"
         fi
 
+        echo "$(GitHubRemoteName):$(InitializeRepo.CleanupBranch)"
+        echo "$(GitHubRemoteName)/$(TargetRepo)"
+        echo "$(GitHubRemoteName):${{ parameters.targetBranch }}"
+        echo "$(PrTitle)"
+        echo "$(PrBody)"
+
         gh pr create \
           --head "$(GitHubRemoteName):$(InitializeRepo.CleanupBranch)" \
           --repo "$(GitHubRemoteName)/$(TargetRepo)" \
