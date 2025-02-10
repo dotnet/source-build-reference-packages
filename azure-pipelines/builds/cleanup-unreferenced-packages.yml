@@ -126,17 +126,7 @@ stages:
         git commit -m "Remove unreferenced packages"
         git push -u GH $(InitializeRepo.CleanupBranch)
 
-      echo "TargetRepo: $(InitializeTargetRepo.TargetRepo)"
-      echo "SdkVersion: $(SdkVersions.SbSdkVersion)"
-      echo "Title: $title"
-      echo "Body: $body"
-      
-      gh pr create \
-        --head "$(RELEASE_ORG):$(InitializeTargetRepo.RebootstrapBranch)" \
-        --repo "$(InitializeTargetRepo.TargetRepo)" \
-        --base "${{ parameters.targetBranch }}" \
-        --title "$title" \
-        --body "$body"
+
       displayName: Open PR
       workingDirectory: $(RepoRoot)
       env:
