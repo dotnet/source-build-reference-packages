@@ -39,7 +39,7 @@ stages:
   - name: GitHubRemoteName
     value: GH
   - name: PrBody
-    value: "Removed packages which were detected as unreferenced."
+    value: "Removed the following packages which were detected as unreferenced.:"
   - name: PrTitle
     value: "[${{ parameters.targetBranch }}] Remove unreferenced packages"
   - name: RepoRoot
@@ -131,6 +131,7 @@ stages:
 
           echo "Deleting $package_path"
           rm -rf "$package_path"
+          echo "$package_path" >> $(Pipeline.Workspace)/deleted_packages.txt
         done
       displayName: Delete Unreferenced Packages
 
@@ -138,6 +139,11 @@ stages:
         git add .
         git commit -m "Remove unreferenced packages"
         git push -u GH $(InitializeRepo.CleanupBranch)
+
+        if [ -f "$(Pipeline.Workspace)/deleted_packages.txt" ]; then
+          deleted_packages=$(cat $(Pipeline.Workspace)/deleted_packages.txt)
+          echo "##vso[task.setvariable variable=PrBody;isOutput=true]$(PrBody)\n$deleted_packages"
+        fi
 
         gh pr create \
           --head "$(GitHubRemoteName):$(InitializeRepo.CleanupBranch)" \
