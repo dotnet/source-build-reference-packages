@@ -137,6 +137,8 @@ stages:
           rm -rf "$package_path"
           echo "$package_path" >> $(DeletedPackagesLogFilePath)
         done
+
+        echo "$(cat $(DeletedPackagesLogFilePath))"
       displayName: Delete Unreferenced Packages
 
     - script: |
