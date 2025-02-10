@@ -32,7 +32,7 @@ stages:
 
   variables:
   - name: RepoRoot
-    value: $(Build.SourcesDirectory)/source-build-reference-packages
+    value: $(Build.SourcesDirectory)
 
   # https://dev.azure.com/dnceng/internal/_library?itemType=VariableGroups&view=VariableGroupView&variableGroupId=177&path=DotNet-Source-Build-Bot-Secrets-MVP
   # GH access token for SB bot - BotAccount-dotnet-sb-bot-pat
@@ -95,10 +95,12 @@ stages:
         skip_packages_array=(${{ parameters.skipPackages }})
 
         for path in $unreferenced_paths; do
+          package_path="$(RepoRoot)${path#/__w/1/s/src/source-build-reference-packages}"
+
           skip=false
           for skip_package in "${skip_packages_array[@]}"; do
-            if [[ "$path" == *"$skip_package" ]]; then
-              echo "Skipping $path as it matches skip package $skip_package"
+            if [[ "$package_path" == *"$skip_package" ]]; then
+              echo "Skipping $package_path as it matches skip package $skip_package"
               skip=true
               break
             fi
@@ -109,12 +111,11 @@ stages:
           fi
 
           # textOnlyPackage usage detection has false positives and should be skipped
-          if [[ "$path" == *"textOnlyPackage"* ]]; then
-            echo "Skipping $path as it contains 'textOnlyPackage'"
+          if [[ "$package_path" == *"textOnlyPackage"* ]]; then
+            echo "Skipping $package_path as it contains 'textOnlyPackage'"
             continue
           fi
 
-          package_path="$(RepoRoot)${path#/__w/1/s/src/source-build-reference-packages}"
           echo "Deleting $package_path"
           rm -rf "$package_path"
         done
@@ -123,8 +124,19 @@ stages:
     - script: |
         git add .
         git commit -m "Remove unreferenced packages"
-        git push -u origin $(InitializeRepo.CleanupBranch)
+        git push -u GH $(InitializeRepo.CleanupBranch)
 
+      echo "TargetRepo: $(InitializeTargetRepo.TargetRepo)"
+      echo "SdkVersion: $(SdkVersions.SbSdkVersion)"
+      echo "Title: $title"
+      echo "Body: $body"
+      
+      gh pr create \
+        --head "$(RELEASE_ORG):$(InitializeTargetRepo.RebootstrapBranch)" \
+        --repo "$(InitializeTargetRepo.TargetRepo)" \
+        --base "${{ parameters.targetBranch }}" \
+        --title "$title" \
+        --body "$body"
       displayName: Open PR
       workingDirectory: $(RepoRoot)
       env:
