@@ -140,7 +140,7 @@ stages:
         gh pr create \
           --head "GH:$(InitializeRepo.CleanupBranch)" \
           --repo "$(TargetRepo)" \
-          --base "${{ parameters.targetBranch }}" \
+          --base "GH:${{ parameters.targetBranch }}" \
           --title "$(PrTitle)" \
           --body "$(PrBody)"
       displayName: Open PR
