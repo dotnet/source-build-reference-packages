@@ -134,11 +134,11 @@ stages:
         git push -u GH $(InitializeRepo.CleanupBranch)
 
         gh pr create \
-          --head "$(RELEASE_ORG):$(InitializeRepo.CleanupBranch)" \
+          --head "dotnet:$(InitializeRepo.CleanupBranch)" \
           --repo "$(InitializeRepo.TargetRepo)" \
           --base "${{ parameters.targetBranch }}" \
-          --title "Test" \
-          --body "Test"
+          --title "[${{ parameters.targetBranch }}] Remove unreferenced packages" \
+          --body "Removing the following packages which were detected as unreferenced: $unreferenced_paths"
       displayName: Open PR
       workingDirectory: $(RepoRoot)
       env:
