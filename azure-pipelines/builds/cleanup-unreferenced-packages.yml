@@ -38,6 +38,8 @@ stages:
   variables:
   - name: RepoRoot
     value: $(Build.SourcesDirectory)
+  - name: TargetRepo
+    value: dotnet/source-build-reference-packages.git
 
   # https://dev.azure.com/dnceng/internal/_library?itemType=VariableGroups&view=VariableGroupView&variableGroupId=177&path=DotNet-Source-Build-Bot-Secrets-MVP
   # GH access token for SB bot - BotAccount-dotnet-sb-bot-pat
@@ -75,21 +77,19 @@ stages:
     - script: |
         time="$(date +%s)"
         monthYear=$(date +"%b%Y" | sed 's/.*/\L&/')
-        target_rep= dotnet/source-build-reference-packages.git
 
         git_user="dotnet-sb-bot"
 
         git config --global user.name $git_user
         git config --global user.email "$git_user@microsoft.com"
 
-        git remote add GH "https://$git_user:${GH_TOKEN}@github.com/$target_repo"
+        git remote add GH "https://$git_user:${GH_TOKEN}@github.com/$(TargetRepo)"
         git fetch GH
 
         cleanup_branch="${monthYear}-reference-package-cleanup-${time}"
         git checkout -b "${cleanup_branch}"
 
         echo "##vso[task.setvariable variable=CleanupBranch;isOutput=true]$cleanup_branch"
-        echo "##vso[task.setvariable variable=TargetRepo;isOutput=true]$target_repo"
       name: InitializeRepo
       workingDirectory: $(RepoRoot)
       displayName: Initialize Repo
@@ -134,11 +134,11 @@ stages:
         git push -u GH $(InitializeRepo.CleanupBranch)
 
         gh pr create \
-          --head "dotnet:$(InitializeRepo.CleanupBranch)" \
-          --repo "$(InitializeRepo.TargetRepo)" \
+          --head "GH:$(InitializeRepo.CleanupBranch)" \
+          --repo "$(TargetRepo)" \
           --base "${{ parameters.targetBranch }}" \
           --title "[${{ parameters.targetBranch }}] Remove unreferenced packages" \
-          --body "Removing the following packages which were detected as unreferenced: $unreferenced_paths"
+          --body "Removed packages which were detected as unreferenced."
       displayName: Open PR
       workingDirectory: $(RepoRoot)
       env:
