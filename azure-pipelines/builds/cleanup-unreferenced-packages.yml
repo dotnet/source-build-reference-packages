@@ -145,8 +145,8 @@ stages:
         git push -u GH $(InitializeRepo.CleanupBranch)
 
         if [ -f "$(Pipeline.Workspace)/deleted_packages.txt" ]; then
-          deleted_packages=$(cat $(Pipeline.Workspace)/deleted_packages.txt)
-          pr_body="$(PrBody)$deleted_packages"
+          echo "Here"
+          pr_body="$(PrBody)$(cat $(Pipeline.Workspace)/deleted_packages.txt)"
         fi
 
         echo "head: $(GitHubRemoteName):$(InitializeRepo.CleanupBranch)"
