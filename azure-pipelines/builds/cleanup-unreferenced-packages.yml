@@ -137,8 +137,6 @@ stages:
           rm -rf "$package_path"
           echo "$package_path" >> $(DeletedPackagesLogFilePath)
         done
-
-        echo "$(cat $(DeletedPackagesLogFilePath))"
       displayName: Delete Unreferenced Packages
 
     - script: |
@@ -149,10 +147,7 @@ stages:
         git push -u GH $(InitializeRepo.CleanupBranch)
 
         if [ -f "$(DeletedPackagesLogFilePath)" ]; then
-          echo "Here"
-          echo "$(cat $(DeletedPackagesLogFilePath))"
           pr_body="$(PrBody)$(cat $(DeletedPackagesLogFilePath))"
-          echo "$pr_body"
         fi
 
         echo "head: $(GitHubRemoteName):$(InitializeRepo.CleanupBranch)"
@@ -162,7 +157,7 @@ stages:
         echo "body: $pr_body"
 
         gh pr create \
-          --head "$(GitHubRemoteName):$(InitializeRepo.CleanupBranch)" \
+          --head "$(InitializeRepo.CleanupBranch)" \
           --repo "$(TargetRepo)" \
           --base "${{ parameters.targetBranch }}" \
           --title "$(PrTitle)" \
