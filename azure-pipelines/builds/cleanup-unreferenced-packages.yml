@@ -150,12 +150,14 @@ stages:
 
         if [ -f "$(DeletedPackagesLogFilePath)" ]; then
           echo "Here"
+          echo "$(cat $(DeletedPackagesLogFilePath))"
           pr_body="$(PrBody)$(cat $(DeletedPackagesLogFilePath))"
+          echo "$(pr_body)"
         fi
 
         echo "head: $(GitHubRemoteName):$(InitializeRepo.CleanupBranch)"
         echo "repo: $(TargetRepo)"
-        echo "base: $(GitHubRemoteName):${{ parameters.targetBranch }}"
+        echo "base: ${{ parameters.targetBranch }}"
         echo "title: $(PrTitle)"
         echo "body: $(PrBody)"
 
