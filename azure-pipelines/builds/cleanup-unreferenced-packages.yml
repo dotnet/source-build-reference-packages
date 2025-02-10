@@ -36,6 +36,8 @@ stages:
   displayName: Cleanup
 
   variables:
+  - name: GitHubRemoteName
+    value: GH
   - name: PrBody
     value: "Removed packages which were detected as unreferenced."
   - name: PrTitle
@@ -87,8 +89,8 @@ stages:
         git config --global user.name $git_user
         git config --global user.email "$git_user@microsoft.com"
 
-        git remote add GH "https://$git_user:${GH_TOKEN}@github.com/$(TargetRepo)"
-        git fetch GH
+        git remote add $(GitHubRemoteName) "https://$git_user:${GH_TOKEN}@github.com/$(TargetRepo)"
+        git fetch $(GitHubRemoteName)
 
         cleanup_branch="${monthYear}-reference-package-cleanup-${time}"
         git checkout -b "${cleanup_branch}"
@@ -138,9 +140,9 @@ stages:
         git push -u GH $(InitializeRepo.CleanupBranch)
 
         gh pr create \
-          --head "GH:$(InitializeRepo.CleanupBranch)" \
-          --repo "GH/$(TargetRepo)" \
-          --base "GH:${{ parameters.targetBranch }}" \
+          --head "$(GitHubRemoteName):$(InitializeRepo.CleanupBranch)" \
+          --repo "$(GitHubRemoteName)/$(TargetRepo)" \
+          --base "$(GitHubRemoteName):${{ parameters.targetBranch }}" \
           --title "$(PrTitle)" \
           --body "$(PrBody)"
       displayName: Open PR
