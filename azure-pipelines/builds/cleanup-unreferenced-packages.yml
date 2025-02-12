@@ -9,7 +9,7 @@ parameters:
 - name: skipPackages
   type: string
   default: ' '
-  displayName: (Optional) List of packages (<name>/<version>) to skip from deletion (comma separated)
+  displayName: (Optional) List of packages (<name>[/<version>]) to skip from deletion (space separated)
 
 pool:
   name: NetCore1ESPool-Svc-Internal
@@ -98,14 +98,14 @@ stages:
     - script: |
         json_file="$(Pipeline.Workspace)/artifacts/log/Release/sbrpPackageUsage.json"
         unreferenced_paths=$(jq -r '.UnreferencedSbrps[]' "$json_file")
-        skip_packages_array=(${{ parameters.skipPackages }})
+        skip_packages_array=(${{ lower(parameters.skipPackages) }})
 
         for path in $unreferenced_paths; do
           package_path="$(RepoRoot)${path#/__w/1/s/src/source-build-reference-packages}"
 
           skip=false
           for skip_package in "${skip_packages_array[@]}"; do
-            if [[ "$package_path" == *"$skip_package" ]]; then
+            if [[ "$package_path" == *"$skip_package"* ]]; then
               echo "Skipping $package_path as it matches skip package $skip_package"
               skip=true
               break
