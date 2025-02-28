@@ -78,7 +78,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                     if (packageDependency.ItemSpec == "NETStandard.Library")
                         continue;
 
-                    references += $"    <PackageReference Include=\"{packageDependency.ItemSpec}\" Version=\"{packageDependency.GetMetadata("Version")}\" />{Environment.NewLine}";
+                    references += $"    <ProjectReference Include=\"../../{packageDependency.GetMetadata("Version")}/{packageDependency.ItemSpec}.{packageDependency.GetMetadata("Version")}.csproj\" />{Environment.NewLine}";
                 }
 
                 // Add framework references
