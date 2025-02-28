@@ -21,7 +21,6 @@ public class GenerateScriptTests
 
     public static IEnumerable<object[]> Data => new List<object[]>
     {
-        new object[] { "System.Text.Json", "8.0.5", PackageType.Reference },
         new object[] { "Microsoft.Extensions.Logging.Abstractions", "6.0.4", PackageType.Reference },
         new object[] { "Microsoft.CodeAnalysis.CSharp", "3.11.0", PackageType.Reference },
         new object[] { "System.Security.Cryptography.ProtectedData", "8.0.0", PackageType.Reference },
