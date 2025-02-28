@@ -34,6 +34,9 @@
     <LangVersion>latest</LangVersion>
 
     <CommonSrc>$([MSBuild]::NormalizeDirectory('$(MSBuildThisFileDirectory)', 'common'))</CommonSrc>
+
+    <!-- Make RAR not unify assembly dependencies. This is necessary to make P2Ps with same package ids but different versions work. -->
+    <_FindDependencies>false</_FindDependencies>
   </PropertyGroup>
 
   <PropertyGroup>

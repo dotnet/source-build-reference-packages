@@ -344,6 +344,7 @@
     <GenerateProject PackageId="$(RealPackageId)"
                      PackageVersion="$(PackageVersion)"
                      ProjectTemplate="$(PackageProjectTemplate)"
+                     ProjectRoot="$(PackagesTargetDirectory)"
                      TargetPath="$(PackageProjectTargetPath)"
                      CompileItems="@(PackageCompileItem)"
                      PackageDependencies="@(PackageDependency)"

@@ -35,6 +35,12 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         [Required]
         public required string TargetPath { get; set; }
 
+        /// <summary>
+        /// The root directory that the projects are written into.
+        /// </summary>
+        [Required]
+        public required string ProjectRoot { get; set; }
+
        /// <summary>
         /// The package's compile items, including target framework metadata.
         /// </summary>
@@ -77,18 +83,31 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
 
             foreach (string targetFramework in targetFrameworks)
             {
-                string references = string.Empty;
+                string packageReferences = string.Empty;
+                string projectReferences = string.Empty;
 
                 // Add package dependencies
                 foreach (ITaskItem packageDependency in PackageDependencies.Where(packageDependency => packageDependency.GetMetadata(SharedMetadata.TargetFrameworkMetadataName) == targetFramework))
                 {
-                    references += $"    <PackageReference Include=\"{packageDependency.ItemSpec}\" Version=\"{packageDependency.GetMetadata("Version")}\" />{Environment.NewLine}";
+                    string dependencyVersion = packageDependency.GetMetadata("Version");
+                    string dependencyProjectRelativePath = Path.Combine(packageDependency.ItemSpec.ToLowerInvariant(), dependencyVersion, $"{packageDependency.ItemSpec}.{dependencyVersion}.csproj"); 
+
+                    // If the dependency doesn't exist, emit a package reference (i.e. for source-build-externals packages like Newtonsoft.Json). Otherwise, emit a project reference.
+                    if (!File.Exists(Path.Combine(ProjectRoot, dependencyProjectRelativePath)))
+                    {
+                        packageReferences += $"    <PackageReference Include=\"{packageDependency.ItemSpec}\" Version=\"{dependencyVersion}\" />{Environment.NewLine}";
+                    }
+                    else
+                    {
+                        // Make sure that the path always uses forward slashes, even on Windows.
+                        projectReferences += $"    <ProjectReference Include=\"../../{dependencyProjectRelativePath.Replace('\\', '/')}\" />{Environment.NewLine}";
+                    }
                 }
 
-                if (references != string.Empty)
+                if (packageReferences != string.Empty || projectReferences != string.Empty)
                 {
                     referenceIncludes += $"  <ItemGroup Condition=\"'$(TargetFramework)' == '{targetFramework}'\">{Environment.NewLine}";
-                    referenceIncludes += references;
+                    referenceIncludes += packageReferences + projectReferences;
                     referenceIncludes += $"  </ItemGroup>{Environment.NewLine}{Environment.NewLine}";
                 }
 
