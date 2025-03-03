@@ -342,6 +342,7 @@
     </PropertyGroup>
 
     <GenerateProject PackageId="$(RealPackageId)"
+                     PackageVersion="$(PackageVersion)"
                      ProjectTemplate="$(PackageProjectTemplate)"
                      TargetPath="$(PackageProjectTargetPath)"
                      CompileItems="@(PackageCompileItem)"
