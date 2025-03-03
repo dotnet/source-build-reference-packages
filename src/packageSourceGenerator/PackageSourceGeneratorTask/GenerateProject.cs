@@ -18,6 +18,12 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         public string? PackageId { get; set; }
 
         /// <summary>
+        /// The package version.
+        /// </summary>
+        [Required]
+        public required string PackageVersion { get; set; }
+
+        /// <summary>
         /// The path to the project template that is being transformed.
         /// </summary>
         [Required]
@@ -66,6 +72,8 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             // If no target framework is supplied, fallback to netstandard2.0.
             projectContent = projectContent.Replace("$$TargetFrameworks$$", 
                 targetFrameworks.Length > 0 ? string.Join(';', targetFrameworks) : "netstandard2.0");
+
+            projectContent = projectContent.Replace("$$PackageVersion$$", PackageVersion);
 
             foreach (string targetFramework in targetFrameworks)
             {
