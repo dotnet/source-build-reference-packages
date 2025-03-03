@@ -81,15 +81,6 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                     references += $"    <PackageReference Include=\"{packageDependency.ItemSpec}\" Version=\"{packageDependency.GetMetadata("Version")}\" />{Environment.NewLine}";
                 }
 
-                // Add framework references
-                foreach (ITaskItem frameworkReference in FrameworkReferences.Where(frameworkReference => frameworkReference.GetMetadata(SharedMetadata.TargetFrameworkMetadataName) == targetFramework))
-                {
-                    if (frameworkReference.ItemSpec != "mscorlib")
-                    {
-                        references += $"    <Reference Include=\"{frameworkReference.ItemSpec}\" />{Environment.NewLine}";
-                    }
-                }
-
                 if (references != string.Empty)
                 {
                     referenceIncludes += $"  <ItemGroup Condition=\"'$(TargetFramework)' == '{targetFramework}'\">{Environment.NewLine}";
