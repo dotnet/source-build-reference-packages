@@ -74,10 +74,6 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 // Add package dependencies
                 foreach (ITaskItem packageDependency in PackageDependencies.Where(packageDependency => packageDependency.GetMetadata(SharedMetadata.TargetFrameworkMetadataName) == targetFramework))
                 {
-                    // Don't emit package references for targeting packs as those are added implicitly by the SDK.
-                    if (packageDependency.ItemSpec == "NETStandard.Library")
-                        continue;
-
                     references += $"    <PackageReference Include=\"{packageDependency.ItemSpec}\" Version=\"{packageDependency.GetMetadata("Version")}\" />{Environment.NewLine}";
                 }
 
