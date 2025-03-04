@@ -56,6 +56,11 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         /// </summary>
         public ITaskItem[] FrameworkReferences { get; set; } = Array.Empty<ITaskItem>();
 
+        /// <summary>
+        /// The list of dependencies (package id) that should get emitted as PackageReference items.
+        /// </summary>
+        public string[]? AllowedPackageReference { get; set; }
+
         public override bool Execute()
         {
             string referenceIncludes = "";
@@ -92,8 +97,8 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                     string dependencyVersion = packageDependency.GetMetadata("Version");
                     string dependencyProjectRelativePath = Path.Combine(packageDependency.ItemSpec.ToLowerInvariant(), dependencyVersion, $"{packageDependency.ItemSpec}.{dependencyVersion}.csproj"); 
 
-                    // If the dependency doesn't exist, emit a package reference (i.e. for source-build-externals packages like Newtonsoft.Json). Otherwise, emit a project reference.
-                    if (!File.Exists(Path.Combine(ProjectRoot, dependencyProjectRelativePath)))
+                    // If the dependency is on the package reference allowed list (i.e. for source-build-externals packages like Newtonsoft.Json), emit a package reference. Otherwise, emit a project reference.
+                    if (AllowedPackageReference is not null && AllowedPackageReference.Contains(packageDependency.ItemSpec))
                     {
                         packageReferences += $"    <PackageReference Include=\"{packageDependency.ItemSpec}\" Version=\"{dependencyVersion}\" />{Environment.NewLine}";
                     }

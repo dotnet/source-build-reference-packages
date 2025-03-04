@@ -26,6 +26,11 @@
     <PackageTargetDirectory>$([MSBuild]::NormalizeDirectory('$(BasePackageTargetDirectory)', '$(PackageVersion)'))</PackageTargetDirectory>
   </PropertyGroup>
 
+  <!-- The list of allowed external dependencies -->
+  <ItemGroup>
+    <AllowedPackageReference Include="Newtonsoft.Json" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="PackageSourceGeneratorTask\PackageSourceGeneratorTask.csproj"
                       ReferenceOutputAssembly="false"
@@ -368,7 +373,8 @@
                    ExcludeTargetFrameworks="$(ExcludeTargetFrameworks)"
                    RemoveIcon="true"
                    RemoveReadMe="true"
-                   RemoveRuntimeSpecificDependencies="true" />
+                   RemoveRuntimeSpecificDependencies="true"
+                   AllowedPackageReference="@(AllowedPackageReference)" />
 
     <Message Text="$(MSBuildProjectName) -> $(NuspecTargetPath)"
              Importance="high" />
