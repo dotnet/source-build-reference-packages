@@ -353,7 +353,8 @@
                      TargetPath="$(PackageProjectTargetPath)"
                      CompileItems="@(PackageCompileItem)"
                      PackageDependencies="@(PackageDependency)"
-                     FrameworkReferences="@(PackageFrameworkReference)" />
+                     FrameworkReferences="@(PackageFrameworkReference)"
+                     AllowedPackageReference="@(AllowedPackageReference)" />
 
     <Message Text="$(MSBuildProjectName) -> $(PackageProjectTargetPath)"
              Importance="high" />
@@ -373,8 +374,7 @@
                    ExcludeTargetFrameworks="$(ExcludeTargetFrameworks)"
                    RemoveIcon="true"
                    RemoveReadMe="true"
-                   RemoveRuntimeSpecificDependencies="true"
-                   AllowedPackageReference="@(AllowedPackageReference)" />
+                   RemoveRuntimeSpecificDependencies="true" />
 
     <Message Text="$(MSBuildProjectName) -> $(NuspecTargetPath)"
              Importance="high" />
@@ -409,13 +409,9 @@
     
     <!-- External packages aren't visited as they shouldn't be added to SBRP. --> 
     <ItemGroup>
-      <ExternalPackage Include="Newtonsoft.Json" />
-    </ItemGroup>
-
-    <ItemGroup>
       <FilteredPackageDependency Include="@(PackageDependency)"
                                  Exclude="@(TargetingPackage);
-                                          @(ExternalPackage)" />
+                                          @(AllowedPackageReference)" />
     </ItemGroup>
 
     <MSBuild Projects="$(MSBuildThisFileFullPath)"
