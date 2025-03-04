@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
-    <PackageReference Include="Microsoft.VisualStudio.Setup.Configuration.Interop" Version="3.2.2146" />
     <ProjectReference Include="../../microsoft.build.framework/17.8.3/Microsoft.Build.Framework.17.8.3.csproj" />
     <ProjectReference Include="../../microsoft.net.stringtools/17.8.3/Microsoft.NET.StringTools.17.8.3.csproj" />
     <ProjectReference Include="../../microsoft.build.utilities.core/17.8.3/Microsoft.Build.Utilities.Core.17.8.3.csproj" />
@@ -16,6 +15,7 @@
     <ProjectReference Include="../../system.resources.extensions/7.0.0/System.Resources.Extensions.7.0.0.csproj" />
     <ProjectReference Include="../../system.security.cryptography.pkcs/7.0.2/System.Security.Cryptography.Pkcs.7.0.2.csproj" />
     <ProjectReference Include="../../system.security.cryptography.xml/7.0.1/System.Security.Cryptography.Xml.7.0.1.csproj" />
+    <ProjectReference Include="../../microsoft.visualstudio.setup.configuration.interop/3.2.2146/Microsoft.VisualStudio.Setup.Configuration.Interop.3.2.2146.csproj" />
     <ProjectReference Include="../../system.configuration.configurationmanager/7.0.0/System.Configuration.ConfigurationManager.7.0.0.csproj" />
   </ItemGroup>
 
