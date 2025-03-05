@@ -18,7 +18,7 @@
     <Compile Include="$(CustomizationsSourcePath)" Condition="Exists('$(CustomizationsSourcePath)')" />
   </ItemGroup>
 
-    <!-- Customization extension point -->
+  <!-- Customization extension point -->
   <Import Project="$(CustomizationsPropsPath)" Condition="Exists('$(CustomizationsPropsPath)')" />
 
   <!--
@@ -43,14 +43,22 @@
     </KnownFrameworkReference>
   </ItemGroup>
 
+  <!-- Conflict resolution doesn't see P2Ps: https://github.com/dotnet/sdk/issues/2674. -->
+  <Target Name="PassProjectReferencesToConflictResolution"
+          BeforeTargets="_HandlePackageFileConflicts"
+          DependsOnTargets="ResolveProjectReferences">
+    <ItemGroup>
+      <Reference Include="@(_ResolvedProjectReferencePaths)" />
+      <_ResolvedProjectReferencePaths Remove="@(_ResolvedProjectReferencePaths)" />
+    </ItemGroup>
+  </Target>
+
   <!-- Filter out conflicting implicit assembly references. -->
   <Target Name="FilterImplicitAssemblyReferences"
-          Condition="'$(DisableImplicitFrameworkReferences)' != 'true'"
           DependsOnTargets="ResolveProjectReferences"
           AfterTargets="ResolveTargetingPackAssets">
     <ItemGroup>
       <_targetingPackReferenceExclusion Include="$(TargetName)" />
-      <_targetingPackReferenceExclusion Include="@(_ResolvedProjectReferencePaths->Metadata('Filename'))" />
     </ItemGroup>
     <ItemGroup>
       <_targetingPackReferenceWithProjectName Include="@(Reference->WithMetadataValue('ExternallyResolved', 'true')->Metadata('Filename'))"
