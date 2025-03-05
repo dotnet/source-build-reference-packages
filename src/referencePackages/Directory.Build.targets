@@ -2,7 +2,22 @@
 
   <Import Project="..\..\Directory.Build.targets" />
 
+  <!-- netstandard2.0's targeting pack uses the old package reference model which doesn't support using a local layout.
+       Therefore disable the package reference download via DisableImplicitFrameworkReferences and manually import the
+       packages' targets file to receive the references. -->
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <NETStandardLibraryArtifactsDir>$(ArtifactsBinDir)NETStandard.Library.2.0.3\pack\</NETStandardLibraryArtifactsDir>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+  </PropertyGroup>
+  <Import Project="$(NETStandardLibraryArtifactsDir)build\netstandard2.0\NETStandard.Library.targets" Condition="'$(TargetFramework)' == 'netstandard2.0' and '$(ExcludeRestorePackageImports)' != 'true' and Exists('$(NETStandardLibraryArtifactsDir)')" />
+
   <PropertyGroup>
+    <EnableTargetingPackDownload>false</EnableTargetingPackDownload>
+    <GenerateErrorForMissingTargetingPacks>false</GenerateErrorForMissingTargetingPacks>
+
+    <!-- Avoid transitive framework reference downloads to minimize the number of targeting packs and prebuilts. -->
+    <DisableTransitiveFrameworkReferenceDownloads>true</DisableTransitiveFrameworkReferenceDownloads>
+
     <!-- Disable RAR from transitively discovering dependencies for references. This is required as we don't copy
          dependencies over into the output directory which means RAR can't resolve them.
          This is also necessary to make P2Ps with same package ids but different versions work. -->
@@ -32,12 +47,6 @@
 
   <!-- Customization extension point -->
   <Import Project="$(CustomizationsPropsPath)" Condition="Exists('$(CustomizationsPropsPath)')" />
-
-  <PropertyGroup>
-    <!-- Avoid transitive framework reference downloads to minimize the number of targeting packs and prebuilts. -->
-    <DisableTransitiveFrameworkReferenceDownloads>true</DisableTransitiveFrameworkReferenceDownloads>
-    <!-- The SDK already sets the NETStandardImplicitPackageVersion and we don't expect it to change anymore. Hence, we don't encode it here. -->
-  </PropertyGroup>
 
   <!-- Keep in sync with available targeting packs under src/targetPacks/ILsrc. -->
   <ItemGroup>
@@ -96,6 +105,15 @@
         '$(TFMPackTempOutputDir)',
         '%(RelativeCompileDir.Identity)',
         '$(TargetFileName)'))" />
+  </Target>
+
+  <!-- Use local targeting packs -->
+  <Target Name="UseLocalTargetingPack" AfterTargets="ResolveFrameworkReferences">
+    <ItemGroup>
+      <ResolvedTargetingPack Path="$(ArtifactsBinDir)%(ResolvedTargetingPack.NuGetPackageId).%(ResolvedTargetingPack.NuGetPackageVersion)\pack"
+                             PackageDirectory="$(ArtifactsBinDir)%(ResolvedTargetingPack.NuGetPackageId).%(ResolvedTargetingPack.NuGetPackageVersion)\pack" />
+      <ResolvedFrameworkReference TargetingPackPath="$(ArtifactsBinDir)%(ResolvedFrameworkReference.TargetingPackName).%(ResolvedFrameworkReference.TargetingPackVersion)\pack" />
+    </ItemGroup>
   </Target>
 
 </Project>
