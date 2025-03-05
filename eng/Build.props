@@ -9,16 +9,10 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(GeneratePackageSource)' != 'true' and '$(Test)' != 'true'">
-    <TargetingPackageProject Include="$(RepoRoot)src\targetPacks\ILsrc\**\*.csproj" />
-    <ProjectToBuild Include="@(TargetingPackageProject)" />
-
-    <TextOnlyPackageProject Include="$(RepoRoot)src\textOnlyPackages\src\*\*\*.csproj" />
-    <ProjectToBuild Include="@(TextOnlyPackageProject)" />
-
-    <ReferencePackageProject Include="$(RepoRoot)src\referencePackages\src\**\*.csproj" />
-    <ProjectToBuild Include="@(ReferencePackageProject)" />
-
-    <ProjectToBuild Remove="@(DependencyPackageProjects)" />
+    <!-- The BuildStep attribute makes the targeting packs build first. -->
+    <ProjectToBuild Include="$(RepoRoot)src\targetPacks\ILsrc\**\*.csproj" BuildStep="targetingpacks" />
+    <ProjectToBuild Include="$(RepoRoot)src\textOnlyPackages\src\*\*\*.csproj" />
+    <ProjectToBuild Include="$(RepoRoot)src\referencePackages\src\**\*.csproj" />
   </ItemGroup>
 
   <!--
