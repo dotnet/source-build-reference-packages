@@ -23,7 +23,7 @@ public class GenerateScriptTests
     {
         new object[] { "Microsoft.Build.NoTargets", "3.7.0", PackageType.Text },
         new object[] { "Microsoft.Extensions.Logging.Abstractions", "6.0.4", PackageType.Reference },
-        new object[] { "NuGet.Protocol", "6.12.1", PackageType.Reference },
+        new object[] { "NuGet.Packaging", "6.12.1", PackageType.Reference },
         new object[] { "System.Buffers", "4.6.0", PackageType.Reference },
         new object[] { "System.Security.Cryptography.ProtectedData", "8.0.0", PackageType.Reference },
     };
@@ -64,6 +64,19 @@ public class GenerateScriptTests
 
         ExecuteHelper.ExecuteProcessValidateExitCode(command, arguments, Output);
 
+        // Copy any customization files from the source directory to the sandbox directory.
+        // This is necessary becauxe git diff doesn't support exclusions when comparing files outside of the repository.
+        string[] customFiles = { "Customizations.cs", "Customizations.props" };
+        foreach (string customFile in customFiles)
+        {
+            string srcFile = Path.Combine(pkgSrcDirectory, customFile);
+            if (File.Exists(srcFile))
+            {
+                string destFile = Path.Combine(pkgSandboxDirectory, customFile);
+                File.Copy(srcFile, destFile);
+            }
+        }
+
         (Process Process, string StdOut, string StdErr) result = 
             ExecuteHelper.ExecuteProcess("git", $"diff --no-index {pkgSrcDirectory} {pkgSandboxDirectory}", Output, true);
 
@@ -71,7 +84,7 @@ public class GenerateScriptTests
         if (diff != string.Empty)
         {
             Assert.Fail($"Regenerated package '{package}, {version}' does not match the checked-in content.  {Environment.NewLine}"
-                    + $"{diff}{Environment.NewLine}");
+                + $"{diff}{Environment.NewLine}");
         }
         else if (result.Process.ExitCode != 0)
         {
