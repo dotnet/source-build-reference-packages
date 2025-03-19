@@ -65,7 +65,7 @@ public class GenerateScriptTests
         ExecuteHelper.ExecuteProcessValidateExitCode(command, arguments, Output);
 
         // Copy any customization files from the source directory to the sandbox directory.
-        // This is necessary becauxe git diff doesn't support exclusions when comparing files outside of the repository.
+        // This is necessary because git diff doesn't support exclusions when comparing files outside of the repository.
         string[] customFiles = { "Customizations.cs", "Customizations.props" };
         foreach (string customFile in customFiles)
         {
