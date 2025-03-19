@@ -27,7 +27,7 @@ public class GenerateScriptTests
         new object[] { "System.Buffers", "4.6.0", PackageType.Reference },
         new object[] { "System.Security.Cryptography.ProtectedData", "8.0.0", PackageType.Reference },
     };
-    
+
     public string SandboxDirectory { get; set; }
     public ITestOutputHelper Output { get; set; }
 
@@ -38,7 +38,7 @@ public class GenerateScriptTests
         Directory.CreateDirectory(SandboxDirectory);
     }
 
-    [Theory]    
+    [Theory]
     [MemberData(nameof(GenerateScriptTests.Data), MemberType = typeof(GenerateScriptTests))]
     public void VerifyGenerateScript(string package, string version, PackageType type)
     {
@@ -77,7 +77,7 @@ public class GenerateScriptTests
             }
         }
 
-        (Process Process, string StdOut, string StdErr) result = 
+        (Process Process, string StdOut, string StdErr) result =
             ExecuteHelper.ExecuteProcess("git", $"diff --no-index {pkgSrcDirectory} {pkgSandboxDirectory}", Output, true);
 
         string diff = result.StdOut;
