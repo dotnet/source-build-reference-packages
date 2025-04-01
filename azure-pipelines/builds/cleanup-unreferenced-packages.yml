@@ -123,7 +123,7 @@ stages:
 
           echo "Deleting $package_path"
           rm -rf "$package_path"
-          echo "${package_path#$(RepoRoot)/src/referencePackages/src/}" >> $(DeletedPackagesLogFilePath)
+          echo "${package_path#$(RepoRoot)/src/}" >> $(DeletedPackagesLogFilePath)
         done
       displayName: Delete Unreferenced Packages
 
