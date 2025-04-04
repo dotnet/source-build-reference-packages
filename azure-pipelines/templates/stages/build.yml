@@ -41,6 +41,7 @@ stages:
         name: $(DncEngInternalBuildPool)
         image: 1es-windows-2022
         os: windows
+    # Use .NET sdk image as a convienent way to get pwsh on nanoserver.
     container: mcr.microsoft.com/dotnet/sdk:10.0-preview-nanoserver-ltsc2022
     steps:
     - checkout: self
