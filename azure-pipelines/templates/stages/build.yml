@@ -41,7 +41,7 @@ stages:
         name: $(DncEngInternalBuildPool)
         image: 1es-windows-2022
         os: windows
-    container: mcr.microsoft.com/windows/nanoserver:ltsc2022
+    container: mcr.microsoft.com/dotnet/sdk:10.0-preview-nanoserver-ltsc2022
     steps:
     - checkout: self
       clean: true
