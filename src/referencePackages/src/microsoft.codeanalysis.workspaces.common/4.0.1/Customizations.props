@@ -3,6 +3,10 @@
   <ItemGroup>
     <!-- Humanizer is provided through source-build-externals -->
     <ProjectReference Remove="../../humanizer.core/2.2.0/Humanizer.Core.2.2.0.csproj" />
+
+    <!-- Upgrade System.Composition to a version that has netstandard2.0 -->
+    <ProjectReference Remove="../../system.composition/1.0.31/System.Composition.1.0.31.csproj" />
+    <ProjectReference Include="../../../../textOnlyPackages/src/system.composition/1.1.0/System.Composition.1.1.0.csproj" />
   </ItemGroup>
 
 </Project>

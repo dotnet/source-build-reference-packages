@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata minClientVersion="2.12">
+    <id>System.Composition.TypedParts</id>
+    <version>1.1.0</version>
+    <title>System.Composition.TypedParts</title>
+    <authors>Microsoft</authors>
+    <owners>microsoft,dotnetframework</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/dotnet/corefx/blob/master/LICENSE.TXT</licenseUrl>
+    <projectUrl>https://dot.net/</projectUrl>
+    <iconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</iconUrl>
+    <description>Provides some extension methods for the Managed Extensibility Framework.
+
+Commonly Used Types:
+System.Composition.CompositionContextExtensions
+System.Composition.Hosting.ContainerConfiguration
+ 
+8321c729934c0f8be754953439b88e6e1c120c24 
+When using NuGet 3.x this package requires at least version 3.4.</description>
+    <releaseNotes>https://go.microsoft.com/fwlink/?LinkID=799421</releaseNotes>
+    <copyright>© Microsoft Corporation.  All rights reserved.</copyright>
+    <serviceable>true</serviceable>
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="System.Composition.AttributedModel" version="1.1.0" />
+        <dependency id="System.Composition.Hosting" version="1.1.0" />
+        <dependency id="System.Composition.Runtime" version="1.1.0" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
