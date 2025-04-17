@@ -1,0 +1,8 @@
+<Project>
+
+  <ItemGroup>
+    <!-- Humanizer is provided through source-build-externals -->
+    <ProjectReference Remove="../../humanizer.core/2.2.0/Humanizer.Core.2.2.0.csproj" />
+  </ItemGroup>
+
+</Project>
