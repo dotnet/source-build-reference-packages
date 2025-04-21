@@ -8,6 +8,7 @@
     <UsingToolXliff>false</UsingToolXliff>
   </PropertyGroup>
   <PropertyGroup>
+    <HumanizerCoreVersion>2.14.1</HumanizerCoreVersion>
     <!-- MSBuild dependencies -->
     <MicrosoftBuildUtilitiesCoreVersion>17.8.3</MicrosoftBuildUtilitiesCoreVersion>
     <!-- NuGet dependencies -->
