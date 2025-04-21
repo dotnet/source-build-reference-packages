@@ -4,6 +4,7 @@
     <!-- Replace Humanizer reference with the one provided by source-build-externals -->
     <ProjectReference Remove="../../humanizer.core/2.2.0/Humanizer.Core.2.2.0.csproj" />
     <PackageReference Include="Humanizer.Core" Version="$(HumanizerCoreVersion)" />
+    <NuspecProperty Include="HumanizerCoreVersion=$(HumanizerCoreVersion)" />
   </ItemGroup>
 
 </Project>
