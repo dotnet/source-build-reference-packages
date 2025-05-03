@@ -55,12 +55,3 @@ stages:
         testResultsFiles: '**/artifacts/TestResults/Release/*.xml'
         testRunTitle: 'Windows_SBRP_tests'
       condition: always()
-  - ${{ if and(eq(variables['System.TeamProject'], 'internal'), notin(variables['Build.Reason'], 'PullRequest')) }}:
-    - template: /eng/common/templates-official/job/publish-build-assets.yml@self
-      parameters:
-        dependsOn:
-        - Linux
-        - Windows
-        publishUsingPipelines: true
-        publishAssetsImmediately: true
-        enablePublishBuildArtifacts: true
