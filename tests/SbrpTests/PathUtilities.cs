@@ -12,5 +12,5 @@ internal static class PathUtilities
     public static string GetRepoRoot() => (string)AppContext.GetData("SbrpTests.RepoRoot")!;
 
     public static string GetArtifactsShippingPackagesDir() =>
-        (string)AppContext.GetData("SbrpTests.ArtifactsShippingPackagesDir")!
+        (string)AppContext.GetData("SbrpTests.ArtifactsShippingPackagesDir")!;
 }
