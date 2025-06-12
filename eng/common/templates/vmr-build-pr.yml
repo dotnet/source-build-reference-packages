@@ -16,11 +16,11 @@ resources:
     type: github
     name: dotnet/dotnet
     endpoint: dotnet
-    ref: refs/heads/VmrVerification.SourceOnly
+    ref: refs/heads/vmrverification.list
 
 stages:
 - template: /eng/pipelines/templates/stages/vmr-build.yml@vmr
   parameters:
     isBuiltFromVmr: false
-    isSourceOnlyBuild: $(isSourceOnlyBuild)
+    verifications: [ "source-build" ]
     scope: lite
