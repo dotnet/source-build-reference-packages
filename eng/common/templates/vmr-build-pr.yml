@@ -1,14 +1,5 @@
 trigger: none
-pr:
-  branches:
-    include:
-    - main
-    - release/*
-  paths:
-    exclude:
-    - documentation/*
-    - README.md
-    - CODEOWNERS
+pr: none
 
 variables:
 - template: /eng/common/templates/variables/pool-providers.yml@self
@@ -25,6 +16,7 @@ resources:
     type: github
     name: dotnet/dotnet
     endpoint: dotnet
+    ref: refs/heads/vmrverification.list
 
 stages:
 - template: /eng/pipelines/templates/stages/vmr-build.yml@vmr
