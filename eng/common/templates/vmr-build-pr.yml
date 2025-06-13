@@ -22,5 +22,4 @@ stages:
 - template: /eng/pipelines/templates/stages/vmr-build.yml@vmr
   parameters:
     isBuiltFromVmr: false
-    verifications: [ "unified-build-browser-wasm" ]
     scope: lite
