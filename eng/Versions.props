@@ -23,7 +23,6 @@
   <PropertyGroup>
     <!-- External package dependencies -->
     <HumanizerCoreVersion>$(HumanizerReleaseVersion)</HumanizerCoreVersion>
-    <XunitSkippableFactVersion>$(XunitReleaseVersion)</XunitSkippableFactVersion>
     <!-- MSBuild dependencies -->
     <MicrosoftBuildVersion>17.15.0-preview-25316-103</MicrosoftBuildVersion>
     <MicrosoftBuildUtilitiesCoreVersion>17.15.0-preview-25316-103</MicrosoftBuildUtilitiesCoreVersion>
@@ -34,6 +33,8 @@
     <MicrosoftNETCoreILDAsmVersion>6.0.0-preview.6.21352.12</MicrosoftNETCoreILDAsmVersion>
     <!-- SDK dependencies -->
     <MicrosoftDotNetGenAPITaskPackageVersion>10.0.100-preview.7.25330.103</MicrosoftDotNetGenAPITaskPackageVersion>
+    <!-- xUnit dependencies -->
+    <XunitSkippableFactVersion>1.4.13</XunitSkippableFactVersion>
   </PropertyGroup>
 
 </Project>
