@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="$(MSBuildThisFileDirectory)\ILsrc\**\*.csproj" BuildInParallel="true" />
+    <ProjectReference Include="$(MSBuildThisFileDirectory)\ILsrc\**\*.csproj" />
   </ItemGroup>
 
 </Project>
