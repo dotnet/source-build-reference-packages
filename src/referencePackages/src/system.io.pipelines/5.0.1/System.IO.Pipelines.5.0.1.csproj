@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <PackageVersion>5.0.1</PackageVersion>
+    <AssemblyName>System.IO.Pipelines</AssemblyName>
+    <StrongNameKeyId>Open</StrongNameKeyId>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <ProjectReference Include="../../system.buffers/4.5.1/System.Buffers.4.5.1.csproj" />
+  </ItemGroup>
+
+</Project>
