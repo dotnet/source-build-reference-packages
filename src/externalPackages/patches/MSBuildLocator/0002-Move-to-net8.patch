@@ -1,14 +1,14 @@
-From 3caa46657682be1fa6557c517f63977ade63920c Mon Sep 17 00:00:00 2001
+From 762b92d0d2cf90fe7990a0f5b9c2629bc402176f Mon Sep 17 00:00:00 2001
 From: Tanner Gooding <tagoo@outlook.com>
-Date: Mon, 11 Aug 2025 10:12:24 -0700
-Subject: [PATCH] Update TFMs
+Date: Mon, 11 Aug 2025 17:24:17 +0000
+Subject: [PATCH] Move to net8
 
 ---
- src/MSBuildLocator/Microsoft.Build.Locator.csproj | 8 ++++++--
- 1 file changed, 6 insertions(+), 2 deletions(-)
+ src/MSBuildLocator/Microsoft.Build.Locator.csproj | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
 
 diff --git a/src/MSBuildLocator/Microsoft.Build.Locator.csproj b/src/MSBuildLocator/Microsoft.Build.Locator.csproj
-index 2df3750..54a13ac 100644
+index 2df3750..c5b8125 100644
 --- a/src/MSBuildLocator/Microsoft.Build.Locator.csproj
 +++ b/src/MSBuildLocator/Microsoft.Build.Locator.csproj
 @@ -2,7 +2,7 @@
@@ -16,19 +16,10 @@ index 2df3750..54a13ac 100644
    <PropertyGroup>
      <OutputType>Library</OutputType>
 -    <TargetFrameworks>net46;net6.0</TargetFrameworks>
-+    <TargetFrameworks>net7.0;net8.0</TargetFrameworks>
++    <TargetFrameworks>net7;net8</TargetFrameworks>
      <DebugType>full</DebugType>
 
      <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
-@@ -15,7 +15,7 @@
-     <Title>MSBuild Locator</Title>
-     <Description>Package that assists in locating and using a copy of MSBuild installed as part of Visual Studio 2017 or higher or .NET Core SDK 2.1 or higher.</Description>
- 	<PackageTags>msbuildlocator;locator;buildlocator</PackageTags>
--
-+
-     <EnablePackageValidation>true</EnablePackageValidation>
-     <PackageValidationBaselineVersion>1.6.1</PackageValidationBaselineVersion>
-   </PropertyGroup>
 @@ -24,6 +24,10 @@
      <DefineConstants>$(DefineConstants);FEATURE_VISUALSTUDIOSETUP</DefineConstants>
    </PropertyGroup>
@@ -41,5 +32,5 @@ index 2df3750..54a13ac 100644
      <PackageReference Include="Microsoft.VisualStudio.Setup.Configuration.Interop" Version="3.12.2149" PrivateAssets="all" />
      <PackageReference Include="Microsoft.VisualStudio.SDK.EmbedInteropTypes" Version="15.0.36" PrivateAssets="all" />
 --
-2.50.1.windows.1
+2.43.0
 
