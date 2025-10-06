@@ -2,6 +2,7 @@ From 75791e299a84b72a68150cd3a6e5435c47886cbc Mon Sep 17 00:00:00 2001
 From: Tom Deseyn <tom.deseyn@gmail.com>
 Date: Mon, 6 Oct 2025 17:36:58 +0200
 Subject: [PATCH 1/1] Remove MicroBuild signing
+Backport: https://github.com/dotnet/arcade/issues/16057
 
 ---
  .../Microsoft.Build.Locator.csproj               | 16 ----------------
