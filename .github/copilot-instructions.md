@@ -40,8 +40,8 @@ find src/referencePackages/src/package.name/version -name "Customizations.*"
 ### When Build Fails
 
 1. Try building individual package: `./build.sh -sb --projects /full/path/to/package.csproj`
-2. Check for compilation errors that need Customizations.props (NoWarn entries)
-3. Look for API issues that need Customizations.cs (partial class additions)
+2. Check for compilation errors that need `Customizations.props` (NoWarn entries)
+3. Look for API issues that need `Customizations.cs` (partial class additions)
 4. Always add explanatory comments for manual fixes needed in the generated source files outside of Customizations files
 
 ## Decision Support
