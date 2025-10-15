@@ -27,8 +27,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             { "adb9793829ddae60", ("MicrosoftAspNetCore", "AspNetCore") },
             { "b77a5c561934e089", ("ECMA", "ECMA") },
             { "cc7b13ffcd2ddd51", ("Open", "Open") },
-            { "979442b78dfc278e", ("Humanizer", "Humanizer") },
-            { "9dff12846e04bfbd", ("MSBuildLocator", "MSBuildLocator") }
+            { "979442b78dfc278e", ("Humanizer", "Humanizer") }
         };
 
         /// <summary>
