@@ -242,7 +242,6 @@ namespace System.Security.Cryptography.Xml
         public bool IsReadOnly { get { throw null; } }
         public bool IsSynchronized { get { throw null; } }
 
-        [System.Runtime.CompilerServices.IndexerName("ItemOf")]
         public EncryptionProperty this[int index] { get { throw null; } set { } }
 
         public object SyncRoot { get { throw null; } }
@@ -257,7 +256,8 @@ namespace System.Security.Cryptography.Xml
         public Collections.IEnumerator GetEnumerator() { throw null; }
         public int IndexOf(EncryptionProperty value) { throw null; }
         public void Insert(int index, EncryptionProperty value) { }
-        public EncryptionProperty Item(int index) { throw null; }
+        // Manual fix: Item method commented out due to conflict with indexer (CS0102)
+        // public EncryptionProperty Item(int index) { throw null; }
         public void Remove(EncryptionProperty value) { }
         public void RemoveAt(int index) { }
         int Collections.IList.Add(object value) { throw null; }
@@ -385,7 +385,6 @@ namespace System.Security.Cryptography.Xml
         public int Count { get { throw null; } }
         public bool IsSynchronized { get { throw null; } }
 
-        [System.Runtime.CompilerServices.IndexerName("ItemOf")]
         public EncryptedReference this[int index] { get { throw null; } set { } }
 
         public object SyncRoot { get { throw null; } }
@@ -403,7 +402,8 @@ namespace System.Security.Cryptography.Xml
         public Collections.IEnumerator GetEnumerator() { throw null; }
         public int IndexOf(object? value) { throw null; }
         public void Insert(int index, object? value) { }
-        public EncryptedReference? Item(int index) { throw null; }
+        // Manual fix: Item method commented out due to conflict with indexer (CS0102)
+        // public EncryptedReference? Item(int index) { throw null; }
         public void Remove(object? value) { }
         public void RemoveAt(int index) { }
     }
