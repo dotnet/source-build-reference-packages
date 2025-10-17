@@ -303,6 +303,7 @@ namespace System.Security.Cryptography.Xml
 
         public bool IsSynchronized { get { throw null; } }
 
+        [System.Runtime.CompilerServices.IndexerName("ItemOf")] // Adding attribute manually as GenAPI filters it out
         public EncryptionProperty this[int index] { get { throw null; } set { } }
 
         public object SyncRoot { get { throw null; } }
@@ -503,6 +504,7 @@ namespace System.Security.Cryptography.Xml
 
         public bool IsSynchronized { get { throw null; } }
 
+        [System.Runtime.CompilerServices.IndexerName("ItemOf")] // Adding attribute manually as GenAPI filters it out
         public EncryptedReference this[int index] { get { throw null; } set { } }
 
         public object SyncRoot { get { throw null; } }
