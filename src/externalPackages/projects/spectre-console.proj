@@ -10,6 +10,8 @@
     <PropertyGroup>
       <BuildCommandArgs>$(ProjectDirectory)src/Spectre.Console/Spectre.Console.csproj</BuildCommandArgs>
       <BuildCommandArgs>$(BuildCommandArgs) /p:Configuration=$(Configuration)</BuildCommandArgs>
+      <BuildCommandArgs>$(BuildCommandArgs) /p:DelaySign=$(DelaySign)</BuildCommandArgs>
+      <BuildCommandArgs>$(BuildCommandArgs) /p:PublicSign=$(PublicSign)</BuildCommandArgs>
       <BuildCommandArgs>$(BuildCommandArgs) /v:$(LogVerbosity)</BuildCommandArgs>
       <BuildCommandArgs>$(BuildCommandArgs) $(RedirectRepoOutputToLog)</BuildCommandArgs>
       <BuildCommandArgs>$(BuildCommandArgs) /p:Version=$(SpectreConsoleReleaseVersion)</BuildCommandArgs>
