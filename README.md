@@ -104,7 +104,7 @@ to .NET. The following sections describe how to add/upgrade the various types of
 
 1. Trigger a full source build within the VMR from your PR by adding a `/azp run source-build-reference-packages-unified-build` comment.
    This will validate the new version will build without adding prebuilts.
-   It will also ensure the vew version does not contain prohibitted checked-in binaries.
+   It will also ensure the new version does not contain prohibited checked-in binaries.
 
 1. After the PR is merged to update a component, coordination is often needed in the darc dependency flows.
    The source-build-reference-packages source may need to flow in at the same time as the cooresponding changes in product repos which take a dependency on the new component version.
