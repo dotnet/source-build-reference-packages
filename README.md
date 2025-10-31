@@ -70,7 +70,7 @@ to .NET. The following sections describe how to add/upgrade the various types of
 
 1. Trigger a full source build within the VMR from your PR by adding a `/azp run source-build-reference-packages-unified-build` comment.
    This will validate the new external will build without adding prebuilts.
-   It will also ensure the external does not contain prohibitted checked-in binaries.
+   It will also ensure the external does not contain prohibited checked-in binaries.
 
 #### Updating an External Component to a Newer Version
 
