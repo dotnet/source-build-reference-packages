@@ -3,7 +3,7 @@ trigger: none
 parameters:
 - name: artifactName
   type: string
-  default: CentOSStream10_Online_MsftSdk_x64_BuildLogs_Attempt1
+  default: SB_CentOSStream10_Online_MsftSdk_x64_BuildLogs_Attempt1
   displayName: (Optional) Source Build Artrifact Name to retrieve sbrpPackageUsage.json from
 
 - name: skipPackages
