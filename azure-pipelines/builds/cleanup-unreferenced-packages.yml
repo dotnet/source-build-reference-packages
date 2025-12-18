@@ -13,7 +13,7 @@ parameters:
 
 - name: knownFalsePositives
   type: string
-  default: 'microsoft.netcore.app.ref/6.0.0 microsoft.netcore.app.ref/9.0.0 microsoft.build.notargets/3.7.0 microsoft.build.traversal/3.4.0'
+  default: 'microsoft.build.notargets/3.7.0 microsoft.build.traversal/3.4.0'
   displayName: List of known false positives (<name>[/<version>]) in the sbrpPackageUsage.json to skip from deletion (space separated)
 
 pool:
