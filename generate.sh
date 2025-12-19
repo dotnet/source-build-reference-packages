@@ -38,9 +38,38 @@ usage() {
     echo "  -h|--help                                     Print help and exit."
 }
 
+setup_package_regeneration() {
+    echo "Discovering packages for regeneration..."
+
+    tempCsv=$(mktemp "${TMPDIR:-/tmp}/packages.XXXXXX.csv")
+
+    trap "rm -f '$tempCsv'" EXIT INT TERM
+
+    if [ "$type" = "ref" ]; then
+        packagesDir="$scriptroot/src/referencePackages/src"
+    elif [ "$type" = "text" ]; then
+        packagesDir="$scriptroot/src/textOnlyPackages/src"
+    fi
+
+    if [ -d "$packagesDir" ]; then
+        find "$packagesDir" -mindepth 2 -maxdepth 2 -type d | \
+            awk -F'/' '{print $(NF-1)","$NF}' >> "$tempCsv"
+    fi
+
+    packageCount=$(wc -l < "$tempCsv")
+    if [ "$packageCount" -eq 0 ]; then
+        echo -e "${RED}ERROR: No packages found to regenerate${NC}"
+        exit 1
+    fi
+
+    echo "Found $packageCount package(s) to regenerate"
+
+    arguments="$arguments /p:PackageCSV=\"$tempCsv\" /p:ExcludePackageDependencies=true"
+}
+
 if [[ $# -le 0 ]]; then
-	usage
-	exit 0
+    usage
+    exit 0
 fi
 
 arguments=''
@@ -125,32 +154,7 @@ while [[ $# > 0 ]]; do
 done
 
 if [ "$regenerateAll" = true ]; then
-    echo "Discovering packages for regeneration..."
-
-    tempCsv=$(mktemp "${TMPDIR:-/tmp}/packages.XXXXXX.csv")
-
-    trap "rm -f '$tempCsv'" EXIT INT TERM
-
-    if [ "$type" = "ref" ]; then
-        packagesDir="$scriptroot/src/referencePackages/src"
-    elif [ "$type" = "text" ]; then
-        packagesDir="$scriptroot/src/textOnlyPackages/src"
-    fi
-
-    if [ -d "$packagesDir" ]; then
-        find "$packagesDir" -mindepth 2 -maxdepth 2 -type d | \
-            awk -F'/' '{print $(NF-1)","$NF}' >> "$tempCsv"
-    fi
-
-    packageCount=$(wc -l < "$tempCsv")
-    if [ "$packageCount" -eq 0 ]; then
-        echo -e "${RED}ERROR: No packages found to regenerate${NC}"
-        exit 1
-    fi
-
-    echo "Found $packageCount package(s) to regenerate"
-
-    arguments="$arguments /p:PackageCSV=\"$tempCsv\" /p:ExcludePackageDependencies=true"
+    setup_package_regeneration
 fi
 
 # Build the projects to generate text only or reference package source

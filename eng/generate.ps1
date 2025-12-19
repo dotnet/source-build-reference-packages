@@ -39,6 +39,36 @@ function Get-Help() {
   Write-Host "  -h|-help                                     Print help and exit."
 }
 
+function Initialize-PackageRegeneration {
+  Write-Host "Discovering packages for regeneration..."
+
+  $script:tempCsv = [System.IO.Path]::GetTempFileName()
+  $packages = @()
+
+  if ($type -eq "ref") {
+    $packagesDir = Join-Path $PSScriptRoot "..\src\referencePackages\src"
+  } elseif ($type -eq "text") {
+    $packagesDir = Join-Path $PSScriptRoot "..\src\textOnlyPackages\src"
+  }
+
+  if (Test-Path $packagesDir) {
+    $packages = Get-ChildItem $packagesDir -Directory | ForEach-Object {
+      $pkg = $_.Name
+      Get-ChildItem $_.FullName -Directory | ForEach-Object { "$pkg,$($_.Name)" }
+    }
+  }
+
+  $packages | Out-File -FilePath $script:tempCsv -Encoding utf8
+  if ($packages.Count -eq 0) {
+    Write-Error "No packages found to regenerate"
+    exit -1
+  }
+
+  Write-Host "Found $($packages.Count) package(s) to regenerate"
+
+  $script:arguments += " /p:PackageCSV=`"$script:tempCsv`" /p:ExcludePackageDependencies=true"
+}
+
 if ($help -or $($PSBoundParameters.Count) -eq 0) {
   Get-Help
   exit 0
@@ -74,33 +104,7 @@ $tempCsv = $null
 
 try {
   if ($regenerateAll) {
-    Write-Host "Discovering packages for regeneration..."
-
-    $tempCsv = [System.IO.Path]::GetTempFileName()
-    $packages = @()
-
-    if ($type -eq "ref") {
-      $packagesDir = Join-Path $PSScriptRoot "..\src\referencePackages\src"
-    } elseif ($type -eq "text") {
-      $packagesDir = Join-Path $PSScriptRoot "..\src\textOnlyPackages\src"
-    }
-
-    if (Test-Path $packagesDir) {
-      $packages = Get-ChildItem $packagesDir -Directory | ForEach-Object {
-        $pkg = $_.Name
-        Get-ChildItem $_.FullName -Directory | ForEach-Object { "$pkg,$($_.Name)" }
-      }
-    }
-
-    $packages | Out-File -FilePath $tempCsv -Encoding utf8
-    if ($packages.Count -eq 0) {
-      Write-Error "No packages found to regenerate"
-      exit -1
-    }
-
-    Write-Host "Found $($packages.Count) package(s) to regenerate"
-
-    $arguments += " /p:PackageCSV=`"$tempCsv`" /p:ExcludePackageDependencies=true"
+    Initialize-PackageRegeneration
   }
 
   Invoke-Expression "& `"$PSScriptRoot\common\build.ps1`" -restore -build -warnaserror 0 /p:GeneratePackageSource=true $arguments"
