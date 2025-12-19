@@ -58,7 +58,7 @@ function Initialize-PackageRegeneration {
     }
   }
 
-  $packages | Out-File -FilePath $script:tempCsv -Encoding utf8
+  [System.IO.File]::WriteAllLines($script:tempCsv, $packages)
   if ($packages.Count -eq 0) {
     Write-Error "No packages found to regenerate"
     exit -1
