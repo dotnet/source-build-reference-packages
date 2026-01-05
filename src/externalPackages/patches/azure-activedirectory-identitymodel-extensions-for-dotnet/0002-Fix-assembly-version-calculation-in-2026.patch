@@ -3,6 +3,8 @@ From: Viktor Hofer <viktor.hofer@microsoft.com>
 Date: Mon, 5 Jan 2026 11:43:26 +0100
 Subject: [PATCH] Fix FileVersion calculation in 2026
 
+Issue: https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/issues/3388
+
 ---
  build/common.props | 19 ++++++++++++++++++-
  1 file changed, 18 insertions(+), 1 deletion(-)
