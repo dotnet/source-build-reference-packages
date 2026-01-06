@@ -5,13 +5,15 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace SbrpTests;
 
-public class GenerateScriptTests
+public partial class GenerateScriptTests
 {
     public static IEnumerable<object[]> Data => new List<object[]>
     {
@@ -21,6 +23,7 @@ public class GenerateScriptTests
         new object[] { "System.Threading.Channels", "8.0.0", PackageType.Reference }, // Reference package w/numerous TFMs
         new object[] { "NuGet.Packaging", "6.13.2", PackageType.Reference }, // Package w/Customizations.props
         new object[] { "System.Collections.Immutable", "8.0.0", PackageType.Reference }, // Package w/Customizations.cs
+        new object[] { "Microsoft.NETCore.App.Ref", "10.0.0", PackageType.Target }, // Target pack
     };
 
     public string SandboxDirectory { get; set; }
@@ -38,15 +41,34 @@ public class GenerateScriptTests
     public void VerifyGenerateScript(string package, string version, PackageType type)
     {
         string command = Path.Combine(PathUtilities.GetRepoRoot(), RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "generate.cmd" : "generate.sh");
-        string arguments = $"-p {package},{version} -x -d {SandboxDirectory}"
-            + (type == PackageType.Text ? " -t text" : string.Empty);
-        string pkgDirectory = Path.Combine(PathUtilities.GetPackageTypeDir(type), "src", package.ToLower(), version);
+        string typeArg = type switch
+        {
+            PackageType.Text => " -t text",
+            PackageType.Target => " -t target",
+            _ => string.Empty
+        };
+        string arguments = $"-p {package},{version} -x -d {SandboxDirectory}{typeArg}";
+        string pkgDirectory = type == PackageType.Target
+            ? Path.Combine(PathUtilities.GetPackageTypeDir(type), package.ToLower(), version)
+            : Path.Combine(PathUtilities.GetPackageTypeDir(type), "src", package.ToLower(), version);
         string pkgSrcDirectory = Path.Combine(PathUtilities.GetRepoRoot(), "src", pkgDirectory);
         string pkgSandboxDirectory = Path.Combine(SandboxDirectory, pkgDirectory);
 
         Assert.True(Directory.Exists(pkgSrcDirectory), $"Source directory '{pkgSrcDirectory}' does not exist.");
 
         ExecuteHelper.ExecuteProcessValidateExitCode(command, arguments, Output);
+
+        // For target packs, we need to normalize IL files before comparison to remove IL disassembler
+        // version and image base comments that vary between different ILDasm versions and runs.
+        // We create a temporary normalized copy of the source directory to avoid modifying checked-in files.
+        string normalizedSrcDirectory = pkgSrcDirectory;
+        if (type == PackageType.Target)
+        {
+            normalizedSrcDirectory = Path.Combine(SandboxDirectory, "normalized-src", pkgDirectory);
+            PathUtilities.CopyDirectory(pkgSrcDirectory, normalizedSrcDirectory);
+            NormalizeILFiles(normalizedSrcDirectory);
+            NormalizeILFiles(pkgSandboxDirectory);
+        }
 
         // Copy any customization files from the source directory to the sandbox directory.
         // This is necessary because git diff doesn't support exclusions when comparing files outside of the repository.
@@ -62,7 +84,7 @@ public class GenerateScriptTests
         }
 
         (Process Process, string StdOut, string StdErr) result =
-            ExecuteHelper.ExecuteProcess("git", $"diff --no-index {pkgSrcDirectory} {pkgSandboxDirectory}", Output, true);
+            ExecuteHelper.ExecuteProcess("git", $"diff --no-index {normalizedSrcDirectory} {pkgSandboxDirectory}", Output, true);
 
         string diff = result.StdOut;
         if (diff != string.Empty)
@@ -73,6 +95,31 @@ public class GenerateScriptTests
         else if (result.Process.ExitCode != 0)
         {
             Assert.Fail($"Unexpected git diff failure on '{package}, {version}'.  {Environment.NewLine}{result.StdErr}{Environment.NewLine}");
+        }
+    }
+
+    [GeneratedRegex(@"^//\s+\.NET IL Disassembler\.\s+Version")]
+    private static partial Regex ILDisassemblerVersionRegex();
+
+    [GeneratedRegex(@"^//\s+Image base:")]
+    private static partial Regex ImageBaseRegex();
+
+    /// <summary>
+    /// Normalizes IL files by removing IL disassembler version and image base comments
+    /// that vary between different ILDasm versions and runs.
+    /// </summary>
+    private static void NormalizeILFiles(string directory)
+    {
+        var ilFiles = Directory.GetFiles(directory, "*.il", SearchOption.AllDirectories);
+        foreach (var ilFile in ilFiles)
+        {
+            var lines = File.ReadAllLines(ilFile);
+            var normalizedLines = lines
+                .Where(line => !ILDisassemblerVersionRegex().IsMatch(line))
+                // TODO: Remove this normalization once https://github.com/dotnet/runtime/issues/122912 is fixed.
+                .Where(line => !ImageBaseRegex().IsMatch(line))
+                .ToArray();
+            File.WriteAllLines(ilFile, normalizedLines);
         }
     }
 }
