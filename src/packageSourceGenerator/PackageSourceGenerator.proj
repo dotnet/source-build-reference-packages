@@ -321,7 +321,12 @@
     <!-- Get all generated IL files -->
     <ItemGroup>
       <GeneratedILFile Include="$(PackageTargetDirectory)**\*.il" />
+      <!-- ILDasm on Windows creates .res (Win32 resource) files which we don't want to check in -->
+      <GeneratedResFile Include="$(PackageTargetDirectory)**\*.res" />
     </ItemGroup>
+
+    <!-- Delete .res files created by ILDasm on Windows to ensure consistent output across platforms -->
+    <Delete Files="@(GeneratedResFile)" Condition="'@(GeneratedResFile)' != ''" />
 
     <!-- Process IL files: remove resources and add SBRP attribute -->
     <RemoveResources ILFileNames="@(GeneratedILFile)" Condition="'@(GeneratedILFile)' != ''" />
