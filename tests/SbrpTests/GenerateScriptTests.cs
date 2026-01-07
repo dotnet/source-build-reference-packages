@@ -106,6 +106,9 @@ public partial class GenerateScriptTests
     [GeneratedRegex(@"^//\s+Image base:")]
     private static partial Regex ImageBaseRegex();
 
+    [GeneratedRegex(@"//\s*-nan\(ind\)")]
+    private static partial Regex NanIndRegex();
+
     /// <summary>
     /// Normalizes IL files by removing IL disassembler version and image base comments
     /// that vary between different ILDasm versions and runs.
@@ -120,6 +123,9 @@ public partial class GenerateScriptTests
                 .Where(line => !ILDisassemblerVersionRegex().IsMatch(line))
                 // TODO: Remove this normalization once https://github.com/dotnet/runtime/issues/122912 is fixed.
                 .Where(line => !ImageBaseRegex().IsMatch(line))
+                // Normalize NaN formatting: Windows uses "-nan(ind)" while Linux uses "-nan"
+                // TODO: Remove once https://github.com/dotnet/runtime/issues/122976 is fixed.
+                .Select(line => NanIndRegex().Replace(line, "// -nan"))
                 .ToArray();
             File.WriteAllLines(ilFile, normalizedLines);
         }
@@ -132,6 +138,7 @@ public partial class GenerateScriptTests
     /// </summary>
     private static void NormalizeFilePermissions(string directory)
     {
+        // TODO: Remove once https://github.com/dotnet/source-build-reference-packages/issues/1531 is fixed.
         if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
         {
             var process = Process.Start(new ProcessStartInfo
