@@ -2,33 +2,9 @@
   <!-- Shared targets for acquiring and resolving ILAsm/ILDasm tooling. -->
 
   <Target Name="GetILToolPackageReferences">
-    <!-- Detect if we're running on musl-based Linux (Alpine, etc.) -->
-    <Exec IgnoreExitCode="true" Command="ldd --version 2&gt;&amp;1 | grep -q musl" Condition="$([MSBuild]::IsOSPlatform('linux'))">
-      <Output TaskParameter="ExitCode" PropertyName="OSPlatformIsMuslCheck" />
-    </Exec>
-
     <PropertyGroup>
-      <OSPlatformIsMusl Condition="$(OSPlatformIsMuslCheck) == '0'">true</OSPlatformIsMusl>
-      <OSPlatformIsMusl Condition="$(OSPlatformIsMusl) == ''">false</OSPlatformIsMusl>
-    </PropertyGroup>
-
-    <!-- Determine OS platform -->
-    <PropertyGroup>
-      <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('windows'))">win</_OSPlatform>
-      <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('linux'))">linux</_OSPlatform>
-      <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('linux')) and '$(OSPlatformIsMusl)' == 'true'">linux-musl</_OSPlatform>
-      <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('osx'))">osx</_OSPlatform>
-      <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('freebsd'))">freebsd</_OSPlatform>
-      <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('netbsd'))">netbsd</_OSPlatform>
-      <_OSPlatform Condition="$([MSBuild]::IsOSPlatform('sunos'))">sunos</_OSPlatform>
-      <_OSArchitecture>$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)</_OSArchitecture>
-    </PropertyGroup>
-
-    <!-- Construct runtime identifier and package names -->
-    <PropertyGroup>
-      <MicrosoftNetCoreIlasmPackageRuntimeId Condition="'$(MicrosoftNetCoreIlasmPackageRuntimeId)' == ''">$(_OSPlatform)-$(_OSArchitecture.ToLower())</MicrosoftNetCoreIlasmPackageRuntimeId>
-      <MicrosoftNetCoreIlasmPackageName>runtime.$(MicrosoftNetCoreIlasmPackageRuntimeId).microsoft.netcore.ilasm</MicrosoftNetCoreIlasmPackageName>
-      <MicrosoftNetCoreIldasmPackageName>runtime.$(MicrosoftNetCoreIlasmPackageRuntimeId).microsoft.netcore.ildasm</MicrosoftNetCoreIldasmPackageName>
+      <MicrosoftNetCoreIlasmPackageName>runtime.$(NetCoreSdkRuntimeIdentifier).microsoft.netcore.ilasm</MicrosoftNetCoreIlasmPackageName>
+      <MicrosoftNetCoreIldasmPackageName>runtime.$(NetCoreSdkRuntimeIdentifier).microsoft.netcore.ildasm</MicrosoftNetCoreIldasmPackageName>
 
       <!-- Allow manual override via properties -->
       <IlasmDir Condition="'$(ILAsmToolPath)' != ''">$([MSBuild]::NormalizeDirectory($(ILAsmToolPath)))</IlasmDir>
@@ -51,7 +27,7 @@
 
     <!-- Resolve paths to native executables in NuGet packages -->
     <ItemGroup>
-      <_IlToolPackageReference NativePath="$(NuGetPackageRoot)%(Identity)\%(Version)\runtimes\$(MicrosoftNetCoreIlasmPackageRuntimeId)\native" />
+      <_IlToolPackageReference NativePath="$(NuGetPackageRoot)%(Identity)\%(Version)\runtimes\$(NetCoreSdkRuntimeIdentifier)\native" />
     </ItemGroup>
 
     <!-- Validate that packages were restored -->
