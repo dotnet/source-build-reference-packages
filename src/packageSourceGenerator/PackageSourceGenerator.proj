@@ -8,6 +8,7 @@
     <PackageSourceGeneratorTaskAssembly>$(ArtifactsBinDir)PackageSourceGeneratorTask\$(Configuration)\$(NetCurrent)\PackageSourceGeneratorTask.dll</PackageSourceGeneratorTaskAssembly>
     <PackagesSrcDirectory Condition="'$(PackagesSrcDirectory)' == ''">$(RepoRoot)src\</PackagesSrcDirectory>
     <PackageType Condition="'$(PackageType)' == ''">ref</PackageType>
+    <RestoreIlTooling Condition="'$(PackageType)' == 'target'">true</RestoreIlTooling>
     <ReferencePackagesSrcDirectory>$([MSBuild]::NormalizeDirectory('$(PackagesSrcDirectory)', 'referencePackages', 'src'))</ReferencePackagesSrcDirectory>
     <TextOnlyPackagesSrcDirectory>$([MSBuild]::NormalizeDirectory('$(PackagesSrcDirectory)', 'textOnlyPackages', 'src'))</TextOnlyPackagesSrcDirectory>
     <TargetPacksILSrcDirectory>$([MSBuild]::NormalizeDirectory('$(PackagesSrcDirectory)', 'targetPacks', 'ILsrc'))</TargetPacksILSrcDirectory>
