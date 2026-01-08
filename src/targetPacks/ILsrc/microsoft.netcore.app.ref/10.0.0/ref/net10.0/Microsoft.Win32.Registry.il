@@ -1,5 +1,4 @@
 
-//  .NET IL Disassembler.  Version 11.0.0-alpha.1.26057.107
 
 
 // ----- DOS Header:
