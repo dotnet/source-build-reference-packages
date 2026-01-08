@@ -68,8 +68,6 @@ public partial class GenerateScriptTests
             PathUtilities.CopyDirectory(pkgSrcDirectory, normalizedSrcDirectory);
             NormalizeILFiles(normalizedSrcDirectory);
             NormalizeILFiles(pkgSandboxDirectory);
-            NormalizeFilePermissions(normalizedSrcDirectory);
-            NormalizeFilePermissions(pkgSandboxDirectory);
         }
 
         // Copy any customization files from the source directory to the sandbox directory.
@@ -131,25 +129,4 @@ public partial class GenerateScriptTests
         }
     }
 
-    /// <summary>
-    /// Normalizes file permissions by removing executable bits from non-script files.
-    /// This is needed because source files may have been checked in with execute permissions,
-    /// but generated files are created with default permissions.
-    /// </summary>
-    private static void NormalizeFilePermissions(string directory)
-    {
-        // TODO: Remove once https://github.com/dotnet/source-build-reference-packages/issues/1531 is fixed.
-        if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-        {
-            var process = Process.Start(new ProcessStartInfo
-            {
-                FileName = "find",
-                Arguments = $"\"{directory}\" -type f -exec chmod 644 {{}} +",
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
-                UseShellExecute = false
-            });
-            process?.WaitForExit();
-        }
-    }
 }
