@@ -101,9 +101,6 @@ public partial class GenerateScriptTests
     [GeneratedRegex(@"^//\s+\.NET IL Disassembler\.\s+Version")]
     private static partial Regex ILDisassemblerVersionRegex();
 
-    [GeneratedRegex(@"^//\s+Image base:")]
-    private static partial Regex ImageBaseRegex();
-
     [GeneratedRegex(@"//\s*-nan\(ind\)")]
     private static partial Regex NanIndRegex();
 
@@ -119,8 +116,6 @@ public partial class GenerateScriptTests
             var lines = File.ReadAllLines(ilFile);
             var normalizedLines = lines
                 .Where(line => !ILDisassemblerVersionRegex().IsMatch(line))
-                // TODO: Remove this normalization once https://github.com/dotnet/runtime/issues/122912 is fixed.
-                .Where(line => !ImageBaseRegex().IsMatch(line))
                 // Normalize NaN formatting: Windows uses "-nan(ind)" while Linux uses "-nan"
                 // TODO: Remove once https://github.com/dotnet/runtime/issues/122976 is fixed.
                 .Select(line => NanIndRegex().Replace(line, "// -nan"))
