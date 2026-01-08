@@ -294,7 +294,7 @@
   </Target>
 
   <!-- The entry point for generating target package source using ILDasm. -->
-  <UsingTask TaskName="RemoveResources" AssemblyFile="$(PackageSourceGeneratorTaskAssembly)" TaskFactory="TaskHostFactory" />
+  <UsingTask TaskName="NormalizeIL" AssemblyFile="$(PackageSourceGeneratorTaskAssembly)" TaskFactory="TaskHostFactory" />
   <UsingTask TaskName="AddSbrpAttribute" AssemblyFile="$(PackageSourceGeneratorTaskAssembly)" TaskFactory="TaskHostFactory" />
   <UsingTask TaskName="UpdateFrameworkList" AssemblyFile="$(PackageSourceGeneratorTaskAssembly)" TaskFactory="TaskHostFactory" />
   <Target Name="GenerateTargetPackageSource"
@@ -328,8 +328,7 @@
     <!-- Delete .res files created by ILDasm on Windows to ensure consistent output across platforms -->
     <Delete Files="@(GeneratedResFile)" Condition="'@(GeneratedResFile)' != ''" />
 
-    <!-- Process IL files: remove resources and add SBRP attribute -->
-    <RemoveResources ILFileNames="@(GeneratedILFile)" Condition="'@(GeneratedILFile)' != ''" />
+    <NormalizeIL ILFileNames="@(GeneratedILFile)" Condition="'@(GeneratedILFile)' != ''" />
     <AddSbrpAttribute ILFileNames="@(GeneratedILFile)" Condition="'@(GeneratedILFile)' != ''" />
 
     <Message Text="$(MSBuildProjectName) -> $([MSBuild]::NormalizePath('%(GeneratedILFile.Identity)'))"
