@@ -53,6 +53,15 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                         continue;
                     }
 
+                    // Skip ILDasm version line that varies between different ILDasm versions.
+                    // This helps make it easier to spot real differences when regenerating IL files.
+                    // If the version is needed, look at the Version.Details at the point in time
+                    // when the IL files were checked in/generated.
+                    if (trimmedLine.StartsWith("//  .NET IL Disassembler.  Version"))
+                    {
+                        continue;
+                    }
+
                     if (line.StartsWith(".mresource") || line.Contains(" static pinvokeimpl"))
                     {
                         insideResource = true;
