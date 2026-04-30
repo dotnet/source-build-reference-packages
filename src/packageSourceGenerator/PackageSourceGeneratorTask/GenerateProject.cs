@@ -2,15 +2,37 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
+using System.Xml;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
+using NuGet.Packaging;
+using NuGet.Packaging.Core;
 
 namespace Microsoft.DotNet.SourceBuild.Tasks
 {
     public class GenerateProject : Task
     {
+        // Centralized defaults set by src/referencePackages/Directory.Build.props.
+        // When a nuspec value matches one of these (after normalization), the
+        // corresponding property is omitted from the generated csproj.
+        private const string CentralizedAuthors = "Microsoft";
+        private const string CentralizedServiceable = "true";
+        private const string CentralizedCopyright = "© Microsoft Corporation. All rights reserved.";
+
+        // License URL rewrites that match the legacy fwlink URLs replaced by
+        // RewriteNuspec.cs. Kept in sync with that task so that values surfaced
+        // into the csproj match what the historical nuspec rewrite produced.
+        private const string MicrosoftMitLicenseUrl = "https://microsoft.mit-license.org/";
+        private static readonly (string From, string To)[] LicenseUrlRewrites =
+        [
+            ("http://go.microsoft.com/fwlink/?LinkId=529443", MicrosoftMitLicenseUrl),
+            ("http://go.microsoft.com/fwlink/?LinkId=329770", MicrosoftMitLicenseUrl),
+        ];
+
         /// <summary>
         /// The package id.
         /// </summary>
@@ -63,9 +85,24 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         public ITaskItem[] FrameworkReferences { get; set; } = Array.Empty<ITaskItem>();
 
         /// <summary>
+        /// Placeholder files (e.g. <c>lib/&lt;tfm&gt;/_._</c>) discovered in the source package, with target framework metadata.
+        /// Their TFMs are added to TargetFrameworks and a conditional import of <c>placeholderpackaging.targets</c> is emitted
+        /// for each so that the produced package retains the empty per-TFM dependency groups and <c>lib/&lt;tfm&gt;/_._</c>
+        /// content of the source package.
+        /// </summary>
+        public ITaskItem[] PlaceholderFiles { get; set; } = Array.Empty<ITaskItem>();
+
+        /// <summary>
         /// The list of dependencies (package id) that should get emitted as PackageReference items.
         /// </summary>
         public string[]? AllowedPackageReference { get; set; }
+
+        /// <summary>
+        /// Optional path to the source nuspec. When provided, per-package metadata (Description, license,
+        /// repository, etc.) is extracted and emitted into the generated csproj instead of being copied into a
+        /// hand-authored nuspec. Used for reference packages; left empty for text-only and targeting packages.
+        /// </summary>
+        public string? PackageNuspecPath { get; set; }
 
         public override bool Execute()
         {
@@ -74,8 +111,11 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             string projectContent = File.ReadAllText(ProjectTemplate);
             string projectDirectory = Path.GetDirectoryName(TargetPath)!;
 
-            // Calculate the target frameworks based on the passed-in items.
-            string[] targetFrameworks = CompileItems.Select(compileItem => compileItem.GetMetadata(SharedMetadata.TargetFrameworkMetadataName)).ToArray();
+            // Calculate the target frameworks based on the passed-in items. Placeholder TFMs are
+            // included so that they appear in <TargetFrameworks> alongside the real TFMs.
+            string[] targetFrameworks = CompileItems.Select(compileItem => compileItem.GetMetadata(SharedMetadata.TargetFrameworkMetadataName))
+                .Concat(PlaceholderFiles.Select(placeholderFile => placeholderFile.GetMetadata(SharedMetadata.TargetFrameworkMetadataName)))
+                .ToArray();
 
             if (targetFrameworks.Length == 0)
                 targetFrameworks = PackageDependencies.Select(packageDependency => packageDependency.GetMetadata(SharedMetadata.TargetFrameworkMetadataName)).ToArray();
@@ -164,11 +204,240 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             projectContent = projectContent.Replace("$$AssemblyName$$",
                  assemblyNames.Length == 1 ? assemblyNames[0] : PackageId);
 
+            // Always emit <PackageId> so the package id is independent of <AssemblyName>.
+            // Without this, multi-assembly-named packages (e.g. microsoft.codeanalysis.common
+            // whose assembly is Microsoft.CodeAnalysis.dll) would pack under the AssemblyName
+            // instead of the original package id.
+            projectContent = projectContent.Replace("$$PackageId$$", PackageId);
+
+            // Detect whether the source assemblies were originally shipped under `ref/` (instead of
+            // `lib/`). Reference-only packages (e.g. Microsoft.Build, Microsoft.Build.Framework) ship
+            // their assemblies under `ref/<tfm>/` to indicate they are reference assemblies. MSBuild
+            // Pack defaults to `lib/<tfm>/`, which would silently change the package layout.
+            string buildOutputTargetFolderTag = string.Empty;
+            if (CompileItems.Length > 0 && CompileItems.All(c => c.ItemSpec.Replace('\\', '/').StartsWith("ref/", StringComparison.OrdinalIgnoreCase)))
+            {
+                buildOutputTargetFolderTag = $"{Environment.NewLine}    <BuildOutputTargetFolder>ref</BuildOutputTargetFolder>";
+            }
+            projectContent = projectContent.Replace("$$BuildOutputTargetFolderTag$$", buildOutputTargetFolderTag);
+
+            // Embed per-package nuspec metadata into the csproj when a source nuspec is provided.
+            // For text-only and targeting packages, no nuspec path is passed so the tokens collapse to empty.
+            string extraProperties = BuildNuspecMetadata() + BuildPlaceholderInPropertyGroup();
+            projectContent = projectContent.Replace("$$ExtraProperties$$", extraProperties);
+
             // Generate the project file
             Directory.CreateDirectory(projectDirectory);
             File.WriteAllText(TargetPath, projectContent);
 
             return true;
         }
+
+        private string BuildNuspecMetadata()
+        {
+            if (string.IsNullOrEmpty(PackageNuspecPath) || !File.Exists(PackageNuspecPath))
+                return string.Empty;
+
+            NuspecReader nuspecReader = new(PackageNuspecPath);
+            StringBuilder builder = new();
+
+            // Authors / Serviceable / Copyright are centralized — only emit overrides when the
+            // value differs from the centralized default. Copyright is compared
+            // whitespace-insensitively so the four packages with double-space variants are
+            // treated as equivalent and not re-emitted per-csproj.
+            string authors = nuspecReader.GetAuthors();
+            if (!string.IsNullOrEmpty(authors) && authors != CentralizedAuthors)
+                AppendProperty(builder, "Authors", authors);
+
+            string? serviceable = ReadMetadataValue(nuspecReader, "serviceable");
+            if (!string.IsNullOrEmpty(serviceable) &&
+                !string.Equals(serviceable, CentralizedServiceable, StringComparison.OrdinalIgnoreCase))
+            {
+                AppendProperty(builder, "Serviceable", serviceable);
+            }
+
+            string copyright = nuspecReader.GetCopyright();
+            if (!string.IsNullOrEmpty(copyright) &&
+                !NormalizeWhitespace(copyright).Equals(NormalizeWhitespace(CentralizedCopyright), StringComparison.Ordinal))
+            {
+                AppendProperty(builder, "Copyright", copyright);
+            }
+
+            // Per-package metadata — emit whatever the source nuspec contains.
+            string description = nuspecReader.GetDescription();
+            if (!string.IsNullOrEmpty(description))
+                AppendProperty(builder, "Description", description);
+
+            string title = nuspecReader.GetTitle();
+            if (!string.IsNullOrEmpty(title))
+                AppendProperty(builder, "Title", title);
+
+            string projectUrl = nuspecReader.GetProjectUrl();
+            if (!string.IsNullOrEmpty(projectUrl))
+                AppendProperty(builder, "PackageProjectUrl", projectUrl);
+
+            string licenseUrl = nuspecReader.GetLicenseUrl();
+            // <license type="expression"> / <license type="file"> / PackageLicenseFile
+            // are mutually exclusive with PackageLicenseUrl (NU5035). When the source
+            // nuspec carries a structured <license> element, prefer that and drop the
+            // legacy <licenseUrl>; MSBuild Pack auto-fills the resulting nuspec's
+            // <licenseUrl> from the structured element on its own.
+            //
+            // For older packages that only ship a <licenseUrl> pointing to corefx's
+            // LICENSE.TXT (which is MIT) or one of the deprecated fwlink URLs we know to
+            // be MIT, upgrade to a structured MIT expression. Arcade's Workarounds.targets
+            // requires every packable project to have a structured license; without this
+            // upgrade 9 packages would fail to pack.
+            LicenseMetadata? licenseMetadata = nuspecReader.GetLicenseMetadata();
+            if (licenseMetadata is not null)
+            {
+                switch (licenseMetadata.Type)
+                {
+                    case LicenseType.Expression:
+                        AppendProperty(builder, "PackageLicenseExpression", licenseMetadata.License);
+                        break;
+                    case LicenseType.File:
+                        AppendProperty(builder, "PackageLicenseFile", licenseMetadata.License);
+                        break;
+                }
+            }
+            else if (!string.IsNullOrEmpty(licenseUrl))
+            {
+                if (IsKnownMitLicenseUrl(licenseUrl))
+                {
+                    AppendProperty(builder, "PackageLicenseExpression", "MIT");
+                }
+                else
+                {
+                    AppendProperty(builder, "PackageLicenseUrl", RewriteLicenseUrl(licenseUrl));
+                    AppendProperty(builder, "PackageLicenseExpression", string.Empty);
+                }
+            }
+
+            string iconUrl = nuspecReader.GetIconUrl();
+            if (!string.IsNullOrEmpty(iconUrl))
+                AppendProperty(builder, "PackageIconUrl", iconUrl);
+
+            string releaseNotes = nuspecReader.GetReleaseNotes();
+            if (!string.IsNullOrEmpty(releaseNotes))
+                AppendProperty(builder, "PackageReleaseNotes", releaseNotes);
+
+            string tags = nuspecReader.GetTags();
+            if (!string.IsNullOrEmpty(tags))
+                AppendProperty(builder, "PackageTags", tags);
+
+            // <requireLicenseAcceptance> is omitted-by-default in the nuspec; only emit when present
+            // and only when it differs from the centralized default (false). NuGet's default is also
+            // false but Arcade's ProjectDefaults.props overrides to true, so the centralized default in
+            // src/referencePackages/Directory.Build.props re-asserts false.
+            string? requireLicenseAcceptance = ReadMetadataValue(nuspecReader, "requireLicenseAcceptance");
+            if (!string.IsNullOrEmpty(requireLicenseAcceptance) &&
+                !string.Equals(requireLicenseAcceptance, "false", StringComparison.OrdinalIgnoreCase))
+            {
+                AppendProperty(builder, "PackageRequireLicenseAcceptance", requireLicenseAcceptance);
+            }
+
+            // <repository type="git" url="..." commit="..." /> is intentionally NOT emitted.
+            // Arcade fills in RepositoryUrl/RepositoryType/RepositoryCommit from the current
+            // build's git context, which is the desired behavior — the produced reference
+            // package's <repository> reflects the SBRP commit that produced it, not the
+            // upstream commit of the original NuGet package.
+
+            // Note: <owners> is intentionally not emitted — NuGet has deprecated it and
+            // there is no MSBuild Pack property that maps to it.
+
+            return builder.ToString();
+        }
+
+        private string[] GetPlaceholderTfms() => PlaceholderFiles
+            .Select(placeholderFile => placeholderFile.GetMetadata(SharedMetadata.TargetFrameworkMetadataName))
+            .Where(tfm => !string.IsNullOrEmpty(tfm))
+            .Distinct()
+            .Order()
+            .ToArray();
+
+        private string BuildPlaceholderInPropertyGroup()
+        {
+            string[] placeholderTfms = GetPlaceholderTfms();
+            if (placeholderTfms.Length == 0)
+                return string.Empty;
+
+            // <PlaceholderTargetFrameworks> is read by src/referencePackages/Directory.Build.targets
+            // to (a) strip these TFMs from `_TargetFrameworkInfo` in the cross-targeting outer build
+            // so referencing projects never resolve a placeholder via FrameworkReducer, and (b) gate
+            // the eng/placeholderpackaging.targets import on per-TFM inner builds (which no-ops
+            // CoreCompile and contributes `lib/<tfm>/_._` to the produced package).
+            StringBuilder builder = new();
+            builder.Append(Environment.NewLine)
+                   .Append("    <PlaceholderTargetFrameworks>")
+                   .Append(string.Join(';', placeholderTfms))
+                   .Append("</PlaceholderTargetFrameworks>");
+            return builder.ToString();
+        }
+
+        private static void AppendProperty(StringBuilder builder, string name, string value)
+        {
+            builder.Append(Environment.NewLine)
+                   .Append("    <")
+                   .Append(name)
+                   .Append('>')
+                   .Append(EscapeXml(value))
+                   .Append("</")
+                   .Append(name)
+                   .Append('>');
+        }
+
+        private static string EscapeXml(string value) =>
+            new XmlDocument().CreateTextNode(value).OuterXml;
+
+        private static string NormalizeWhitespace(string value)
+        {
+            StringBuilder normalized = new(value.Length);
+            bool lastWasSpace = false;
+            foreach (char c in value)
+            {
+                if (char.IsWhiteSpace(c))
+                {
+                    if (!lastWasSpace)
+                    {
+                        normalized.Append(' ');
+                        lastWasSpace = true;
+                    }
+                }
+                else
+                {
+                    normalized.Append(c);
+                    lastWasSpace = false;
+                }
+            }
+            return normalized.ToString().Trim();
+        }
+
+        private static string RewriteLicenseUrl(string licenseUrl)
+        {
+            foreach ((string from, string to) in LicenseUrlRewrites)
+            {
+                if (string.Equals(licenseUrl, from, StringComparison.OrdinalIgnoreCase))
+                    return to;
+            }
+            return licenseUrl;
+        }
+
+        // URLs known to point to MIT-licensed projects. Older legacy packages without a
+        // structured <license> element get upgraded to <license type="expression">MIT</license>.
+        private static readonly string[] s_knownMitLicenseUrls =
+        [
+            "https://github.com/dotnet/corefx/blob/master/LICENSE.TXT",
+            "http://go.microsoft.com/fwlink/?LinkId=529443",
+            "http://go.microsoft.com/fwlink/?LinkId=329770",
+        ];
+
+        private static bool IsKnownMitLicenseUrl(string licenseUrl) =>
+            s_knownMitLicenseUrls.Any(u => string.Equals(u, licenseUrl, StringComparison.OrdinalIgnoreCase));
+
+        // NuspecReader exposes most fields via dedicated accessors but not arbitrary
+        // metadata elements. Read them directly from the underlying XDocument.
+        private static string? ReadMetadataValue(NuspecReader nuspecReader, string elementName) =>
+            nuspecReader.GetMetadataValue(elementName);
     }
 }

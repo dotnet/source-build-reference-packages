@@ -198,9 +198,14 @@
              Condition="'$(PackageCompileItemsTargetFrameworks)' != ''" />
   </Target>
 
-  <!-- Copy placeholder files (_._) -->
+  <!-- Copy placeholder files (_._).
+       For PackageType=ref the placeholder content is contributed at pack time by
+       eng/placeholderpackaging.targets (using the centralized eng/_._ file imported per
+       placeholder TargetFramework), so the per-package files are skipped to avoid two
+       sources contributing the same lib/<tfm>/_._ entry. -->
   <Target Name="CopyPlaceholderFiles"
-          DependsOnTargets="GetPackageItems">
+          DependsOnTargets="GetPackageItems"
+          Condition="'$(PackageType)' != 'ref'">
     <Copy SourceFiles="@(PackagePlaceholderFile->'$(RestoredPackageDirectory)%(Identity)')"
           DestinationFiles="@(PackagePlaceholderFile->'$(PackageTargetDirectory)%(Identity)')"
           SkipUnchangedFiles="true" />
@@ -377,6 +382,10 @@
       <PackageProjectTargetPath>$(PackageTargetDirectory)$(RealPackageId).$(PackageVersion).csproj</PackageProjectTargetPath>
     </PropertyGroup>
 
+    <PropertyGroup>
+      <_GenerateProjectNuspecPath Condition="'$(PackageType)' == 'ref'">$(RestoredPackageNuspec)</_GenerateProjectNuspecPath>
+    </PropertyGroup>
+
     <GenerateProject PackageId="$(RealPackageId)"
                      PackageVersion="$(PackageVersion)"
                      ProjectTemplate="$(PackageProjectTemplate)"
@@ -386,17 +395,21 @@
                      CompileItems="@(PackageCompileItem)"
                      PackageDependencies="@(PackageDependency)"
                      FrameworkReferences="@(PackageFrameworkReference)"
-                     AllowedPackageReference="@(AllowedPackageReference)" />
+                     PlaceholderFiles="@(PackagePlaceholderFile)"
+                     AllowedPackageReference="@(AllowedPackageReference)"
+                     PackageNuspecPath="$(_GenerateProjectNuspecPath)" />
 
     <Message Text="$(MSBuildProjectName) -> $(PackageProjectTargetPath)"
              Importance="high" />
   </Target>
 
-  <!-- Rewrite nuspec and copy to target directory. -->
+  <!-- Rewrite nuspec and copy to target directory.
+       For PackageType=ref, the metadata is now embedded directly into the generated csproj,
+       so MSBuild's Pack target produces the nuspec dynamically. -->
   <UsingTask TaskName="RewriteNuspec" AssemblyFile="$(PackageSourceGeneratorTaskAssembly)" TaskFactory="TaskHostFactory" />
   <UsingTask TaskName="AddFileListToNuspecs" AssemblyFile="$(PackageSourceGeneratorTaskAssembly)" TaskFactory="TaskHostFactory" />
   <Target Name="RewriteNuspec"
-          Condition="'@(PackageCompileItem)' != '' or '$(PackageType)' == 'text' or '$(PackageType)' == 'target'">
+          Condition="('@(PackageCompileItem)' != '' and '$(PackageType)' != 'ref') or '$(PackageType)' == 'text' or '$(PackageType)' == 'target'">
     <PropertyGroup>
       <NuspecTargetPath>$(PackageTargetDirectory)$([System.IO.Path]::GetFileName('$(RestoredPackageNuspec)'))</NuspecTargetPath>
       <!-- Target packs should keep icon and readme, other types should remove them -->

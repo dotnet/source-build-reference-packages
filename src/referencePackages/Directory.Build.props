@@ -33,6 +33,18 @@
     <Nullable>Disable</Nullable>
     <LangVersion>latest</LangVersion>
 
+    <!-- Centralized package metadata. The per-package values that used to live in each
+         hand-authored .nuspec are now embedded in the individual .csproj files; the values
+         below are the only ones that are constant across all reference packages. -->
+    <Authors>Microsoft</Authors>
+    <Serviceable>true</Serviceable>
+    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+    <!-- Override Arcade defaults: original NuGet packages predominantly do not require
+         license acceptance and ship without an icon. -->
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageIcon></PackageIcon>
+    <PackageIconFullPath></PackageIconFullPath>
+
     <CommonSrc>$([MSBuild]::NormalizeDirectory('$(MSBuildThisFileDirectory)', 'common'))</CommonSrc>
 
     <IsShippingPackage>false</IsShippingPackage>
