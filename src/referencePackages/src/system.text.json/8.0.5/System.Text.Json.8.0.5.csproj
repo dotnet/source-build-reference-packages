@@ -20,9 +20,11 @@ The System.Text.Json library is built-in as part of the shared framework in .NET
     <ProjectReference Include="../../system.text.encodings.web/8.0.0/System.Text.Encodings.Web.8.0.0.csproj" />
     <ProjectReference Include="../../system.runtime.compilerservices.unsafe/6.0.0/System.Runtime.CompilerServices.Unsafe.6.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
     <ProjectReference Include="../../system.text.encodings.web/8.0.0/System.Text.Encodings.Web.8.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <ProjectReference Include="../../microsoft.bcl.asyncinterfaces/8.0.0/Microsoft.Bcl.AsyncInterfaces.8.0.0.csproj" />
     <ProjectReference Include="../../system.text.encodings.web/8.0.0/System.Text.Encodings.Web.8.0.0.csproj" />

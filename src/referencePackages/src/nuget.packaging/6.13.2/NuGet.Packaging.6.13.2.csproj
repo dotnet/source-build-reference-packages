@@ -22,6 +22,7 @@
     <ProjectReference Include="../../system.formats.asn1/8.0.1/System.Formats.Asn1.8.0.1.csproj" />
     <ProjectReference Include="../../system.security.cryptography.pkcs/6.0.4/System.Security.Cryptography.Pkcs.6.0.4.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <ProjectReference Include="../../nuget.configuration/6.13.2/NuGet.Configuration.6.13.2.csproj" />

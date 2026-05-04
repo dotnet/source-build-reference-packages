@@ -22,6 +22,7 @@
     <ProjectReference Include="../../system.collections.immutable/8.0.0/System.Collections.Immutable.8.0.0.csproj" />
     <ProjectReference Include="../../system.configuration.configurationmanager/8.0.0/System.Configuration.ConfigurationManager.8.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <ProjectReference Include="../../microsoft.build.framework/17.11.48/Microsoft.Build.Framework.17.11.48.csproj" />
     <ProjectReference Include="../../microsoft.net.stringtools/17.11.48/Microsoft.NET.StringTools.17.11.48.csproj" />

@@ -19,16 +19,19 @@
     <ProjectReference Include="../../microsoft.extensions.logging.abstractions/10.0.0/Microsoft.Extensions.Logging.Abstractions.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.options/10.0.0/Microsoft.Extensions.Options.10.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection/10.0.0/Microsoft.Extensions.DependencyInjection.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.logging.abstractions/10.0.0/Microsoft.Extensions.Logging.Abstractions.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.options/10.0.0/Microsoft.Extensions.Options.10.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection/10.0.0/Microsoft.Extensions.DependencyInjection.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.logging.abstractions/10.0.0/Microsoft.Extensions.Logging.Abstractions.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.options/10.0.0/Microsoft.Extensions.Options.10.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <ProjectReference Include="../../microsoft.bcl.asyncinterfaces/10.0.0/Microsoft.Bcl.AsyncInterfaces.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection/10.0.0/Microsoft.Extensions.DependencyInjection.10.0.0.csproj" />
@@ -36,6 +39,7 @@
     <ProjectReference Include="../../microsoft.extensions.options/10.0.0/Microsoft.Extensions.Options.10.0.0.csproj" />
     <ProjectReference Include="../../system.diagnostics.diagnosticsource/10.0.0/System.Diagnostics.DiagnosticSource.10.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection/10.0.0/Microsoft.Extensions.DependencyInjection.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.logging.abstractions/10.0.0/Microsoft.Extensions.Logging.Abstractions.10.0.0.csproj" />

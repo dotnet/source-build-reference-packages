@@ -20,6 +20,7 @@
     <ProjectReference Include="../../nuget.librarymodel/6.14.0/NuGet.LibraryModel.6.14.0.csproj" />
     <ProjectReference Include="../../nuget.protocol/6.14.0/NuGet.Protocol.6.14.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <ProjectReference Include="../../nuget.configuration/6.14.0/NuGet.Configuration.6.14.0.csproj" />
     <ProjectReference Include="../../nuget.librarymodel/6.14.0/NuGet.LibraryModel.6.14.0.csproj" />

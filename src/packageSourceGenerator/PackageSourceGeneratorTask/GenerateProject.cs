@@ -188,7 +188,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 {
                     referenceIncludes += $"  <ItemGroup Condition=\"'$(TargetFramework)' == '{targetFramework}'\">{Environment.NewLine}";
                     referenceIncludes += packageReferences + projectReferences;
-                    referenceIncludes += $"  </ItemGroup>{Environment.NewLine}";
+                    referenceIncludes += $"  </ItemGroup>{Environment.NewLine}{Environment.NewLine}";
                 }
 
                 // Retrieve the target framework's strong name data. For historical reasons,

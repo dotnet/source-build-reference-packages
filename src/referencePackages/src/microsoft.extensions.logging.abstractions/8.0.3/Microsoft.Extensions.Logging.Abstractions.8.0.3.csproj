@@ -26,12 +26,15 @@ Microsoft.Extensions.Logging.Abstractions.NullLogger</Description>
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/8.0.2/Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/8.0.2/Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/8.0.2/Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/8.0.2/Microsoft.Extensions.DependencyInjection.Abstractions.8.0.2.csproj" />
     <ProjectReference Include="../../system.buffers/4.5.1/System.Buffers.4.5.1.csproj" />

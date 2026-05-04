@@ -18,12 +18,15 @@ The System.Reflection.Metadata library is built-in as part of the shared framewo
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
     <ProjectReference Include="../../system.collections.immutable/8.0.0/System.Collections.Immutable.8.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">
     <ProjectReference Include="../../system.collections.immutable/8.0.0/System.Collections.Immutable.8.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <ProjectReference Include="../../system.collections.immutable/8.0.0/System.Collections.Immutable.8.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <ProjectReference Include="../../system.collections.immutable/8.0.0/System.Collections.Immutable.8.0.0.csproj" />
     <ProjectReference Include="../../system.memory/4.5.5/System.Memory.4.5.5.csproj" />

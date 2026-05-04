@@ -25,16 +25,19 @@ Microsoft.Extensions.Diagnostics.Metrics.MetricsOptions</Description>
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/10.0.0/Microsoft.Extensions.DependencyInjection.Abstractions.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.options/10.0.0/Microsoft.Extensions.Options.10.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/10.0.0/Microsoft.Extensions.DependencyInjection.Abstractions.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.options/10.0.0/Microsoft.Extensions.Options.10.0.0.csproj" />
     <ProjectReference Include="../../system.diagnostics.diagnosticsource/10.0.0/System.Diagnostics.DiagnosticSource.10.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/10.0.0/Microsoft.Extensions.DependencyInjection.Abstractions.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.options/10.0.0/Microsoft.Extensions.Options.10.0.0.csproj" />
     <ProjectReference Include="../../system.diagnostics.diagnosticsource/10.0.0/System.Diagnostics.DiagnosticSource.10.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/10.0.0/Microsoft.Extensions.DependencyInjection.Abstractions.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.options/10.0.0/Microsoft.Extensions.Options.10.0.0.csproj" />

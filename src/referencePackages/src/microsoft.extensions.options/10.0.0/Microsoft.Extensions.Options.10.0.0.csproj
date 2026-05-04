@@ -18,19 +18,23 @@
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/10.0.0/Microsoft.Extensions.DependencyInjection.Abstractions.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.primitives/10.0.0/Microsoft.Extensions.Primitives.10.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/10.0.0/Microsoft.Extensions.DependencyInjection.Abstractions.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.primitives/10.0.0/Microsoft.Extensions.Primitives.10.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/10.0.0/Microsoft.Extensions.DependencyInjection.Abstractions.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.primitives/10.0.0/Microsoft.Extensions.Primitives.10.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/10.0.0/Microsoft.Extensions.DependencyInjection.Abstractions.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.primitives/10.0.0/Microsoft.Extensions.Primitives.10.0.0.csproj" />
     <ProjectReference Include="../../system.componentmodel.annotations/5.0.0/System.ComponentModel.Annotations.5.0.0.csproj" />
   </ItemGroup>
+
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
     <ProjectReference Include="../../microsoft.extensions.dependencyinjection.abstractions/10.0.0/Microsoft.Extensions.DependencyInjection.Abstractions.10.0.0.csproj" />
     <ProjectReference Include="../../microsoft.extensions.primitives/10.0.0/Microsoft.Extensions.Primitives.10.0.0.csproj" />
