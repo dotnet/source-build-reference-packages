@@ -8,14 +8,13 @@
     <NoDefaultExcludes>true</NoDefaultExcludes>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
 
-    <!-- Don't warn on NU5125 - The 'licenseUrl' element will be deprecated. -->
-    <NoWarn>$(NoWarn);NU5125</NoWarn>
-    <!-- Disable NU5128: we have placeholders in TFMs with no implementations, normal in this context. -->
+    <!-- Disable NU5128: text-only packages declare TFMs that have no lib/ref content
+         (workload manifests, source-only packages, etc.). NuGet flags this even though
+         it's the intentional layout. -->
     <NoWarn>$(NoWarn);NU5128</NoWarn>
-    <!-- Disable NU5048: continue to use deprecated 'PackageIconUrl'/'iconUrl' for now. -->
+    <!-- Disable NU5048: continue to use deprecated 'PackageIconUrl'/'iconUrl' for now
+         (Microsoft.NETCore.Platforms text packages). -->
     <NoWarn>$(NoWarn);NU5048</NoWarn>
-    <!-- Disable NU5131: text-only packages with placeholders produce this warning -->
-    <NoWarn>$(NoWarn);NU5131</NoWarn>
   </PropertyGroup>
 
 </Project>
