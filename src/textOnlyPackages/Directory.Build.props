@@ -8,17 +8,6 @@
     <NoDefaultExcludes>true</NoDefaultExcludes>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
 
-    <!-- Centralized package metadata. Per-package values that used to live in each
-         hand-authored .nuspec are now embedded in the individual .csproj files; the
-         values below are the only ones that are constant across all text-only packages. -->
-    <Authors>Microsoft</Authors>
-    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
-    <!-- Override Arcade defaults: original NuGet packages predominantly do not require
-         license acceptance and ship without an icon. -->
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageIcon></PackageIcon>
-    <PackageIconFullPath></PackageIconFullPath>
-
     <!-- Don't warn on NU5125 - The 'licenseUrl' element will be deprecated. -->
     <NoWarn>$(NoWarn);NU5125</NoWarn>
     <!-- Disable NU5128: we have placeholders in TFMs with no implementations, normal in this context. -->
