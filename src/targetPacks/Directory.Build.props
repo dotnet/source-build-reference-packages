@@ -1,21 +1,38 @@
 <Project>
   <Import Project="..\..\Directory.Build.props" />
 
-  <ItemGroup>
-    <!-- Attributes for all Target Packages -->
-    <Compile Include="$(RepoRoot)src\SourceBuildAssemblyMetdata.cs" />
-  </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
     <NuGetAudit>false</NuGetAudit>
 
+    <!-- Targeting packs don't compile any source — they package the on-disk content
+         (assembled via ilasm) and accompanying nupkg metadata. The Build target is
+         overridden to no-op in Directory.Build.targets so the SDK doesn't attempt to
+         compile and reference netstandard2.0; Pack still runs because it just sees
+         Build complete successfully. -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+
     <RestoreIlTooling>true</RestoreIlTooling>
 
     <IsShippingPackage>false</IsShippingPackage>
     <ArtifactsNonShippingPackagesDir>$(ArtifactsReferenceOnlyPackagesDir)</ArtifactsNonShippingPackagesDir>
+
+    <!-- Centralized package metadata. Per-package values that used to live in each
+         hand-authored .nuspec are now embedded in the individual .csproj files; the
+         values below are the only ones that are constant across all targeting packs. -->
+    <Authors>Microsoft</Authors>
+    <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
+    <Serviceable>true</Serviceable>
+    <PackageProjectUrl>https://dot.net/</PackageProjectUrl>
+    <PackageReleaseNotes>https://go.microsoft.com/fwlink/?LinkID=799421</PackageReleaseNotes>
+    <!-- Override Arcade defaults: original NuGet packages predominantly do not require
+         license acceptance and ship without an icon. -->
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageIcon></PackageIcon>
+    <PackageIconFullPath></PackageIconFullPath>
 
     <!-- Disable NU5131: unclear warning caused by ref-only (https://github.com/NuGet/Home/issues/8684) -->
     <NoWarn>$(NoWarn);NU5131</NoWarn>

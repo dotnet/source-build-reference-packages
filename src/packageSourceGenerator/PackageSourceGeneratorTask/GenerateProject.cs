@@ -23,9 +23,8 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         private const string CentralizedServiceable = "true";
         private const string CentralizedCopyright = "© Microsoft Corporation. All rights reserved.";
 
-        // License URL rewrites that match the legacy fwlink URLs replaced by
-        // RewriteNuspec.cs. Kept in sync with that task so that values surfaced
-        // into the csproj match what the historical nuspec rewrite produced.
+        // License URL rewrites that match the legacy fwlink URLs replaced when the source
+        // generator surfaces a license URL into the csproj.
         private const string MicrosoftMitLicenseUrl = "https://microsoft.mit-license.org/";
         private static readonly (string From, string To)[] LicenseUrlRewrites =
         [
@@ -68,6 +67,12 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         /// </summary>
         [Required]
         public required string ReferencePackagesRoot { get; set; }
+
+        /// <summary>
+        /// The root directory that contains the text-only package projects. Used as a
+        /// fallback location when a dependency can't be found under <see cref="ReferencePackagesRoot"/>.
+        /// </summary>
+        public string? TextOnlyPackagesRoot { get; set; }
 
         /// <summary>
         /// The package's compile items, including target framework metadata.
@@ -158,7 +163,20 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                     }
                     else
                     {
-                        string dependencyProjectPath = Path.Combine(ReferencePackagesRoot, packageDependency.ItemSpec.ToLowerInvariant(), dependencyVersion, $"{packageDependency.ItemSpec}.{dependencyVersion}.csproj");
+                        // Default lookup is under the reference packages root, but a few
+                        // dependencies (e.g. Microsoft.NETCore.Platforms used by NETStandard.Library
+                        // target packs) live under the text-only packages root. Fall back to that
+                        // location when the reference-packages copy doesn't exist.
+                        string fileName = $"{packageDependency.ItemSpec}.{dependencyVersion}.csproj";
+                        string lowerId = packageDependency.ItemSpec.ToLowerInvariant();
+                        string dependencyProjectPath = Path.Combine(ReferencePackagesRoot, lowerId, dependencyVersion, fileName);
+                        if (!File.Exists(dependencyProjectPath) &&
+                            !string.IsNullOrEmpty(TextOnlyPackagesRoot))
+                        {
+                            string textOnlyPath = Path.Combine(TextOnlyPackagesRoot, lowerId, dependencyVersion, fileName);
+                            if (File.Exists(textOnlyPath))
+                                dependencyProjectPath = textOnlyPath;
+                        }
                         // Make sure that the path always uses forward slashes, even on Windows.
                         string dependencyProjectRelativePath = Path.GetRelativePath(projectDirectory, dependencyProjectPath).Replace('\\', '/');
 
@@ -250,10 +268,14 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
 
         private string BuildPackagingItems()
         {
-            // Only text-only packages require explicit packaging items. Reference and targeting packages
-            // produce their content via the build (assembly) plus optional placeholder targets.
-            if (!string.Equals(PackageType, "text", StringComparison.OrdinalIgnoreCase))
+            // Text-only and target packs both pack on-disk content via explicit <None> items.
+            // Reference packages produce their content via the build (assembly) plus optional
+            // placeholder targets, so we skip this step for them.
+            if (!string.Equals(PackageType, "text", StringComparison.OrdinalIgnoreCase) &&
+                !string.Equals(PackageType, "target", StringComparison.OrdinalIgnoreCase))
+            {
                 return string.Empty;
+            }
 
             string projectDirectory = Path.GetDirectoryName(TargetPath)!;
             string nuspecFileName = string.IsNullOrEmpty(PackageNuspecPath) ? string.Empty : Path.GetFileName(PackageNuspecPath);
@@ -273,6 +295,11 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                         continue;
                     }
                     if (rel.EndsWith(".csproj", StringComparison.OrdinalIgnoreCase))
+                        continue;
+                    // .il files are the source for ilasm; the assembled .dll output is added by
+                    // a separate target in src/targetPacks/Directory.Build.targets and should not
+                    // be confused with content to pack.
+                    if (rel.EndsWith(".il", StringComparison.OrdinalIgnoreCase))
                         continue;
                     if (!string.IsNullOrEmpty(nuspecFileName) &&
                         rel.Equals(nuspecFileName, StringComparison.OrdinalIgnoreCase))
@@ -500,15 +527,19 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
 
             // <icon>file</icon> bundles a file in the package. Translate to <PackageIcon>.
             // The matching content emission (<None Pack="true">) is added by BuildPackagingItems.
-            // For text-only packages the SBRP convention is to strip the icon (matching the
-            // historical RewriteNuspec.RemoveIcon behavior); the icon file itself is still
-            // packaged because BuildPackagingItems globs all on-disk files.
+            // For text-only packages the SBRP convention is to strip the icon; the icon file
+            // itself is still packaged because BuildPackagingItems globs all on-disk files.
             if (!string.Equals(PackageType, "text", StringComparison.OrdinalIgnoreCase))
             {
                 string? icon = ReadMetadataValue(nuspecReader, "icon");
                 if (!string.IsNullOrEmpty(icon))
                     AppendProperty(builder, "PackageIcon", icon);
             }
+
+            // <readme>file</readme> bundles a readme in the package; translate to <PackageReadmeFile>.
+            string? readme = ReadMetadataValue(nuspecReader, "readme");
+            if (!string.IsNullOrEmpty(readme))
+                AppendProperty(builder, "PackageReadmeFile", readme);
 
             // <packageTypes><packageType name="..." /></packageTypes>. NuGet supports a
             // semicolon-separated <PackageType> property: "Name1;Name2/Version2".
@@ -638,6 +669,8 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         private static readonly string[] s_knownMitLicenseUrls =
         [
             "https://github.com/dotnet/corefx/blob/master/LICENSE.TXT",
+            "https://github.com/dotnet/standard/blob/master/LICENSE.TXT",
+            "https://github.com/dotnet/core-setup/blob/master/LICENSE.TXT",
             "http://go.microsoft.com/fwlink/?LinkId=529443",
             "http://go.microsoft.com/fwlink/?LinkId=329770",
         ];

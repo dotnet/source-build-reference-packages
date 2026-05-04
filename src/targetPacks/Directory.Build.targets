@@ -1,24 +1,42 @@
 <Project>
 
   <Import Project="..\..\Directory.Build.targets" />
-  <Import Project="$(ManualNuspecTargets)" />
   <Import Project="$(RepositoryEngineeringDir)ILTooling.targets" />
 
-  <Target Name="BuildTargetingPackIlSrc" DependsOnTargets="ResolveIlToolPaths">
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Begin $(MSBuildProjectName) -> $(TFMPackTempOutputDir)..." />
-    <MakeDir Directories="@(TargetingPackSrc->'$(TFMPackTempOutputDir)%(RecursiveDir)')" />
+  <PropertyGroup>
+    <!-- Where the ilasm output lands. The DLLs are then surfaced as <None Pack="true">
+         items via _AddTargetingPackDllsToPack so MSBuild Pack picks them up at the
+         correct relative package path. -->
+    <_TargetingPackIlOutputDir>$(IntermediateOutputPath)pack-content\</_TargetingPackIlOutputDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <_TargetingPackIlSrc Include="$(MSBuildProjectDirectory)\**\*.il" />
+  </ItemGroup>
+  <ItemGroup>
+    <_TargetingPackIlSrc Update="@(_TargetingPackIlSrc)" OutputFile="$(_TargetingPackIlOutputDir)%(RecursiveDir)%(Filename).dll" />
+  </ItemGroup>
+
+  <Target Name="BuildTargetingPackIlSrc"
+          BeforeTargets="GenerateNuspec"
+          Inputs="@(_TargetingPackIlSrc)"
+          Outputs="@(_TargetingPackIlSrc->'%(OutputFile)')"
+          DependsOnTargets="ResolveIlToolPaths"
+          Condition="'@(_TargetingPackIlSrc)' != ''">
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] Begin $(MSBuildProjectName) -> $(_TargetingPackIlOutputDir)..." />
+    <MakeDir Directories="@(_TargetingPackIlSrc->'$(_TargetingPackIlOutputDir)%(RecursiveDir)')" />
 
     <ItemGroup>
-      <IndividualFileProject Include="$(MSBuildProjectFullPath)"
-        Properties="IlFile=%(TargetingPackSrc.Identity);OutputFile=$(TFMPackTempOutputDir)%(TargetingPackSrc.RelativeOutputAssemblyFile)" />
+      <_IndividualFileProject Include="$(MSBuildProjectFullPath)"
+                              Properties="IlFile=%(_TargetingPackIlSrc.Identity);OutputFile=%(_TargetingPackIlSrc.OutputFile)" />
     </ItemGroup>
 
-    <MSBuild Projects="@(IndividualFileProject)"
+    <MSBuild Projects="@(_IndividualFileProject)"
              Targets="BuildIlFile"
              BuildInParallel="true"
              StopOnFirstFailure="true" />
 
-    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] $(MSBuildProjectName) -> $(TFMPackTempOutputDir) DONE" />
+    <Message Importance="High" Text="[$([System.DateTime]::Now.ToString('HH:mm:ss.ff'))] $(MSBuildProjectName) -> $(_TargetingPackIlOutputDir) DONE" />
   </Target>
 
   <Target Name="BuildIlFile" DependsOnTargets="ResolveIlToolPaths">
@@ -27,8 +45,26 @@
     <Exec Command="$(IlasmPath) $(IlFile) -dll -quiet -nologo &quot;-output=$(OutputFile)&quot;"
           IgnoreStandardErrorWarningFormat="true"
           CustomErrorRegularExpression=": error : " />
-    </Target>
+  </Target>
 
-  <Target Name="Build" DependsOnTargets="GetProjectSrc;BuildTargetingPackIlSrc" />
+  <!-- Surface the assembled DLLs as <None Pack="true"> items at the same relative path
+       inside the package as their .il counterpart sits on disk (e.g. ref/net6.0/X.il
+       becomes ref/net6.0/X.dll in the package). -->
+  <Target Name="_AddTargetingPackDllsToPack"
+          BeforeTargets="_GetPackageFiles"
+          DependsOnTargets="BuildTargetingPackIlSrc"
+          Condition="'@(_TargetingPackIlSrc)' != ''">
+    <ItemGroup>
+      <None Include="@(_TargetingPackIlSrc->'%(OutputFile)')"
+            Pack="true"
+            PackagePath="%(_TargetingPackIlSrc.RecursiveDir)" />
+    </ItemGroup>
+  </Target>
+
+  <!-- Targeting packs don't have buildable source. Override the SDK Build target to a no-op
+       so Pack doesn't try to compile (and fail resolving netstandard2.0 references that
+       this project doesn't actually need). The IL→DLL assembly happens in
+       BuildTargetingPackIlSrc, hooked into BeforeTargets="GenerateNuspec". -->
+  <Target Name="Build" />
 
 </Project>

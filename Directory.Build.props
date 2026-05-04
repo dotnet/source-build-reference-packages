@@ -16,7 +16,6 @@
     <CustomizationsSourceFile>$(CustomizationsPrefix).cs</CustomizationsSourceFile>
 
     <ArtifactsReferenceOnlyPackagesDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsPackagesDir)','ReferenceOnly'))</ArtifactsReferenceOnlyPackagesDir>
-    <ManualNuspecTargets>$(RepositoryEngineeringDir)ManualNuspec.targets</ManualNuspecTargets>
 
     <LogVerbosity Condition="'$(LogVerbosity)' == ''">minimal</LogVerbosity>
 
