@@ -207,6 +207,14 @@ regenerate the older version to see what customizations to the generated code we
 
 > **Suggestion:** Open an [issue](https://github.com/dotnet/source-build-reference-packages/issues/new) that describes the packages to add and assign it to Copilot to do the work (example [issue](https://github.com/dotnet/source-build-reference-packages/issues/1324) and [resulting PR](https://github.com/dotnet/source-build-reference-packages/pull/1325)).
 
+> **Note on package metadata:** Reference and text-only packages do not carry hand-authored
+> `.nuspec` files. The package metadata (description, license, projectUrl, releaseNotes,
+> tags, etc.) is embedded in the generated `.csproj`, and MSBuild Pack produces the
+> nuspec dynamically. Constants like `Authors`/`Copyright` are centralized in
+> `src/referencePackages/Directory.Build.props` and `src/textOnlyPackages/Directory.Build.props`.
+> The generator picks up per-package metadata from the source nuspec when regenerating;
+> there is no need to author or edit nuspec files manually.
+
 #### Workflow
 
 1. Generate reference package and its depencencies running the `./generate.sh --package <package>,<version>` script.
