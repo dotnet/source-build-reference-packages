@@ -10,10 +10,8 @@
     <_TargetingPackIlOutputDir>$(IntermediateOutputPath)pack-content\</_TargetingPackIlOutputDir>
   </PropertyGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(UsingMicrosoftTraversalSdk)' != 'true'">
     <_TargetingPackIlSrc Include="$(MSBuildProjectDirectory)\**\*.il" />
-  </ItemGroup>
-  <ItemGroup>
     <_TargetingPackIlSrc Update="@(_TargetingPackIlSrc)" OutputFile="$(_TargetingPackIlOutputDir)%(RecursiveDir)%(Filename).dll" />
   </ItemGroup>
 
