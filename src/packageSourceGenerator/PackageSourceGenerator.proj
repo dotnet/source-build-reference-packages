@@ -383,7 +383,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-      <_GenerateProjectNuspecPath Condition="'$(PackageType)' == 'ref'">$(RestoredPackageNuspec)</_GenerateProjectNuspecPath>
+      <_GenerateProjectNuspecPath Condition="'$(PackageType)' == 'ref' or '$(PackageType)' == 'text'">$(RestoredPackageNuspec)</_GenerateProjectNuspecPath>
     </PropertyGroup>
 
     <GenerateProject PackageId="$(RealPackageId)"
@@ -397,7 +397,8 @@
                      FrameworkReferences="@(PackageFrameworkReference)"
                      PlaceholderFiles="@(PackagePlaceholderFile)"
                      AllowedPackageReference="@(AllowedPackageReference)"
-                     PackageNuspecPath="$(_GenerateProjectNuspecPath)" />
+                     PackageNuspecPath="$(_GenerateProjectNuspecPath)"
+                     PackageType="$(PackageType)" />
 
     <Message Text="$(MSBuildProjectName) -> $(PackageProjectTargetPath)"
              Importance="high" />
@@ -409,7 +410,7 @@
   <UsingTask TaskName="RewriteNuspec" AssemblyFile="$(PackageSourceGeneratorTaskAssembly)" TaskFactory="TaskHostFactory" />
   <UsingTask TaskName="AddFileListToNuspecs" AssemblyFile="$(PackageSourceGeneratorTaskAssembly)" TaskFactory="TaskHostFactory" />
   <Target Name="RewriteNuspec"
-          Condition="('@(PackageCompileItem)' != '' and '$(PackageType)' != 'ref') or '$(PackageType)' == 'text' or '$(PackageType)' == 'target'">
+          Condition="'$(PackageType)' == 'target'">
     <PropertyGroup>
       <NuspecTargetPath>$(PackageTargetDirectory)$([System.IO.Path]::GetFileName('$(RestoredPackageNuspec)'))</NuspecTargetPath>
       <!-- Target packs should keep icon and readme, other types should remove them -->

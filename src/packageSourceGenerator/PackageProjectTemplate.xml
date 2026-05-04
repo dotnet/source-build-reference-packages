@@ -7,4 +7,4 @@
     <AssemblyName>$$AssemblyName$$</AssemblyName>$$BuildOutputTargetFolderTag$$$$KeyFileTag$$$$ExtraProperties$$
   </PropertyGroup>
 
-$$References$$</Project>
+$$References$$$$Packaging$$</Project>

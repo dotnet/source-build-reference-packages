@@ -100,9 +100,17 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         /// <summary>
         /// Optional path to the source nuspec. When provided, per-package metadata (Description, license,
         /// repository, etc.) is extracted and emitted into the generated csproj instead of being copied into a
-        /// hand-authored nuspec. Used for reference packages; left empty for text-only and targeting packages.
+        /// hand-authored nuspec. Used for reference and text-only packages; left empty for targeting packages.
         /// </summary>
         public string? PackageNuspecPath { get; set; }
+
+        /// <summary>
+        /// Optional package type ("ref", "text", or "target"). Drives generator behaviors that differ between
+        /// reference, text-only, and targeting packages — e.g. text-only packages additionally emit a
+        /// packaging item group that picks up files in the project directory and surface
+        /// <c>&lt;PackageType&gt;</c>/<c>&lt;contentFiles&gt;</c> values from the source nuspec.
+        /// </summary>
+        public string? PackageType { get; set; }
 
         public override bool Execute()
         {
@@ -226,11 +234,141 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             string extraProperties = BuildNuspecMetadata() + BuildPlaceholderInPropertyGroup();
             projectContent = projectContent.Replace("$$ExtraProperties$$", extraProperties);
 
+            // Text-only packages need an extra <ItemGroup> that picks up the on-disk content
+            // (Sdk/, runtime.json, contentFiles/, ...) into the produced .nupkg via <None Pack="true">.
+            // Reference and targeting packages don't need this — their content is the produced assembly
+            // (handled by MSBuild Pack's default behavior) plus, for the placeholder TFMs, the centralized
+            // eng/_._ contributed via eng/placeholderpackaging.targets.
+            projectContent = projectContent.Replace("$$Packaging$$", BuildPackagingItems());
+
             // Generate the project file
             Directory.CreateDirectory(projectDirectory);
             File.WriteAllText(TargetPath, projectContent);
 
             return true;
+        }
+
+        private string BuildPackagingItems()
+        {
+            // Only text-only packages require explicit packaging items. Reference and targeting packages
+            // produce their content via the build (assembly) plus optional placeholder targets.
+            if (!string.Equals(PackageType, "text", StringComparison.OrdinalIgnoreCase))
+                return string.Empty;
+
+            string projectDirectory = Path.GetDirectoryName(TargetPath)!;
+            string nuspecFileName = string.IsNullOrEmpty(PackageNuspecPath) ? string.Empty : Path.GetFileName(PackageNuspecPath);
+
+            // Discover all packageable files on disk. The textOnlyPackages on-disk layout already
+            // matches the .nupkg layout (e.g. Sdk/Sdk.targets, contentFiles/cs/<tfm>/...), so a simple
+            // include-everything-except-{csproj,nuspec} works for all packages.
+            List<string> allFiles = new();
+            if (Directory.Exists(projectDirectory))
+            {
+                foreach (string f in Directory.EnumerateFiles(projectDirectory, "*", SearchOption.AllDirectories))
+                {
+                    string rel = Path.GetRelativePath(projectDirectory, f).Replace('\\', '/');
+                    if (rel.StartsWith("obj/", StringComparison.OrdinalIgnoreCase) ||
+                        rel.StartsWith("bin/", StringComparison.OrdinalIgnoreCase))
+                    {
+                        continue;
+                    }
+                    if (rel.EndsWith(".csproj", StringComparison.OrdinalIgnoreCase))
+                        continue;
+                    if (!string.IsNullOrEmpty(nuspecFileName) &&
+                        rel.Equals(nuspecFileName, StringComparison.OrdinalIgnoreCase))
+                    {
+                        continue;
+                    }
+                    allFiles.Add(rel);
+                }
+            }
+
+            if (allFiles.Count == 0)
+                return string.Empty;
+
+            // Read <contentFiles> from the source nuspec to know which files need explicit
+            // BuildAction/CopyToOutput metadata. NuGet auto-generates <contentFiles><files>
+            // entries from the file's PackagePath if BuildAction is left unspecified, so we only
+            // need to forward an explicit override when one is present.
+            Dictionary<string, ContentFileEntry> contentFileEntries = ReadContentFileEntries();
+
+            StringBuilder builder = new();
+            builder.AppendLine();
+            builder.AppendLine("  <ItemGroup>");
+            foreach (string rel in allFiles.OrderBy(f => f, StringComparer.OrdinalIgnoreCase))
+            {
+                contentFileEntries.TryGetValue(rel, out ContentFileEntry? entry);
+                EmitNoneItem(builder, rel, entry);
+            }
+            builder.Append("  </ItemGroup>");
+            builder.AppendLine();
+            return builder.ToString();
+        }
+
+        private sealed record ContentFileEntry(string? BuildAction, string? CopyToOutput, string? Flatten);
+
+        private Dictionary<string, ContentFileEntry> ReadContentFileEntries()
+        {
+            Dictionary<string, ContentFileEntry> map = new(StringComparer.OrdinalIgnoreCase);
+            if (string.IsNullOrEmpty(PackageNuspecPath) || !File.Exists(PackageNuspecPath))
+                return map;
+
+            try
+            {
+                System.Xml.Linq.XDocument doc = System.Xml.Linq.XDocument.Load(PackageNuspecPath);
+                System.Xml.Linq.XNamespace ns = doc.Root?.GetDefaultNamespace() ?? System.Xml.Linq.XNamespace.None;
+                System.Xml.Linq.XElement? contentFiles = doc.Root?
+                    .Element(ns + "metadata")?
+                    .Element(ns + "contentFiles");
+                if (contentFiles is null)
+                    return map;
+
+                foreach (System.Xml.Linq.XElement files in contentFiles.Elements(ns + "files"))
+                {
+                    string include = files.Attribute("include")?.Value ?? string.Empty;
+                    if (string.IsNullOrEmpty(include))
+                        continue;
+                    string normalized = include.Replace('\\', '/');
+                    string relPath = "contentFiles/" + normalized;
+                    map[relPath] = new ContentFileEntry(
+                        BuildAction: files.Attribute("buildAction")?.Value,
+                        CopyToOutput: files.Attribute("copyToOutput")?.Value,
+                        Flatten: files.Attribute("flatten")?.Value);
+                }
+            }
+            catch
+            {
+                // If the nuspec can't be parsed for contentFiles, fall back to no overrides; NuGet
+                // will use its default heuristics from PackagePath.
+            }
+            return map;
+        }
+
+        private static void EmitNoneItem(StringBuilder builder, string relPath, ContentFileEntry? entry)
+        {
+            // For PackagePath, use the directory portion only — NuGet places files using
+            // <Include's filename> appended to PackagePath. Setting PackagePath to the full file
+            // path (e.g. "LICENSE" without extension) causes NuGet to treat it as a folder and
+            // emit the file as "LICENSE/LICENSE", which breaks <PackageLicenseFile> validation
+            // (NU5030).
+            int lastSlash = relPath.LastIndexOf('/');
+            string packagePath = lastSlash >= 0 ? relPath.Substring(0, lastSlash) : string.Empty;
+
+            builder.Append("    <None Include=\"")
+                   .Append(relPath)
+                   .Append("\" Pack=\"true\" PackagePath=\"")
+                   .Append(packagePath)
+                   .Append('"');
+            if (entry is not null)
+            {
+                if (!string.IsNullOrEmpty(entry.BuildAction))
+                    builder.Append(" BuildAction=\"").Append(entry.BuildAction).Append('"');
+                if (!string.IsNullOrEmpty(entry.CopyToOutput))
+                    builder.Append(" CopyToOutput=\"").Append(entry.CopyToOutput).Append('"');
+                if (!string.IsNullOrEmpty(entry.Flatten))
+                    builder.Append(" Flatten=\"").Append(entry.Flatten).Append('"');
+            }
+            builder.AppendLine(" />");
         }
 
         private string BuildNuspecMetadata()
@@ -250,10 +388,17 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 AppendProperty(builder, "Authors", authors);
 
             string? serviceable = ReadMetadataValue(nuspecReader, "serviceable");
-            if (!string.IsNullOrEmpty(serviceable) &&
-                !string.Equals(serviceable, CentralizedServiceable, StringComparison.OrdinalIgnoreCase))
+            if (!string.IsNullOrEmpty(serviceable))
             {
-                AppendProperty(builder, "Serviceable", serviceable);
+                // For ref packages, Serviceable=true is centralized; only emit when value differs.
+                // For text packages and others, Directory.Build.props doesn't centralize Serviceable,
+                // so always emit when the source nuspec declares it.
+                bool isRefPackage = string.Equals(PackageType, "ref", StringComparison.OrdinalIgnoreCase);
+                if (!isRefPackage ||
+                    !string.Equals(serviceable, CentralizedServiceable, StringComparison.OrdinalIgnoreCase))
+                {
+                    AppendProperty(builder, "Serviceable", serviceable);
+                }
             }
 
             string copyright = nuspecReader.GetCopyright();
@@ -267,6 +412,9 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             string description = nuspecReader.GetDescription();
             if (!string.IsNullOrEmpty(description))
                 AppendProperty(builder, "Description", description);
+
+            // Note: <summary> and <language> are intentionally not emitted — NuGet's
+            // PackTask doesn't expose them as MSBuild properties (both are deprecated).
 
             string title = nuspecReader.GetTitle();
             if (!string.IsNullOrEmpty(title))
@@ -298,6 +446,10 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                         break;
                     case LicenseType.File:
                         AppendProperty(builder, "PackageLicenseFile", licenseMetadata.License);
+                        // Arcade ProjectDefaults.props sets PackageLicenseExpression=MIT by default;
+                        // clear it to avoid NU5033 (cannot specify both PackageLicenseExpression and
+                        // PackageLicenseFile).
+                        AppendProperty(builder, "PackageLicenseExpression", string.Empty);
                         break;
                 }
             }
@@ -346,7 +498,65 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             // Note: <owners> is intentionally not emitted — NuGet has deprecated it and
             // there is no MSBuild Pack property that maps to it.
 
+            // <icon>file</icon> bundles a file in the package. Translate to <PackageIcon>.
+            // The matching content emission (<None Pack="true">) is added by BuildPackagingItems.
+            // For text-only packages the SBRP convention is to strip the icon (matching the
+            // historical RewriteNuspec.RemoveIcon behavior); the icon file itself is still
+            // packaged because BuildPackagingItems globs all on-disk files.
+            if (!string.Equals(PackageType, "text", StringComparison.OrdinalIgnoreCase))
+            {
+                string? icon = ReadMetadataValue(nuspecReader, "icon");
+                if (!string.IsNullOrEmpty(icon))
+                    AppendProperty(builder, "PackageIcon", icon);
+            }
+
+            // <packageTypes><packageType name="..." /></packageTypes>. NuGet supports a
+            // semicolon-separated <PackageType> property: "Name1;Name2/Version2".
+            string packageTypesValue = GetPackageTypesProperty(nuspecReader);
+            if (!string.IsNullOrEmpty(packageTypesValue))
+                AppendProperty(builder, "PackageType", packageTypesValue);
+
+            // minClientVersion attribute on <metadata>.
+            string? minClientVersion = TryGetMinClientVersion(nuspecReader);
+            if (!string.IsNullOrEmpty(minClientVersion))
+                AppendProperty(builder, "MinClientVersion", minClientVersion);
+
             return builder.ToString();
+        }
+
+        private static string GetPackageTypesProperty(NuspecReader nuspecReader)
+        {
+            // PackageTypes is exposed via NuspecCoreReaderBase.GetPackageTypes() in NuGet.Packaging.
+            IReadOnlyList<global::NuGet.Packaging.Core.PackageType> types = nuspecReader.GetPackageTypes();
+            if (types is null || types.Count == 0)
+                return string.Empty;
+
+            // Skip the default "Dependency" type; NuGet implies it.
+            List<string> emitted = new();
+            foreach (global::NuGet.Packaging.Core.PackageType type in types)
+            {
+                if (string.Equals(type.Name, "Dependency", StringComparison.OrdinalIgnoreCase))
+                    continue;
+
+                string entry = type.Name;
+                if (type.Version is not null && type.Version != global::NuGet.Packaging.Core.PackageType.EmptyVersion)
+                    entry += "/" + type.Version;
+                emitted.Add(entry);
+            }
+            return string.Join(";", emitted);
+        }
+
+        private static string? TryGetMinClientVersion(NuspecReader nuspecReader)
+        {
+            try
+            {
+                global::NuGet.Versioning.NuGetVersion? min = nuspecReader.GetMinClientVersion();
+                return min?.ToString();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         private string[] GetPlaceholderTfms() => PlaceholderFiles
