@@ -11,6 +11,13 @@
     <Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <IsPackable>true</IsPackable>
+    <!-- Suppress Arcade's repo-wide license validation. SBRP republishes upstream packages
+         that may declare licenses other than MIT (Apache-2.0 for the NuGet client packages,
+         etc.). Arcade compares the repo's LICENSE.txt against each unique
+         PackageLicenseExpression value across all packable projects and errors when they
+         don't match — but a single SBRP repo legitimately produces packages under several
+         different upstream licenses, so the validation can't succeed for all of them. -->
+    <SuppressLicenseValidation>true</SuppressLicenseValidation>
     <!-- Override Arcade defaults: original NuGet packages predominantly do not require
          license acceptance and ship without an icon. -->
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
