@@ -401,10 +401,6 @@
       <PackageProjectTargetPath>$(PackageTargetDirectory)$(RealPackageId).$(PackageVersion).csproj</PackageProjectTargetPath>
     </PropertyGroup>
 
-    <PropertyGroup>
-      <_GenerateProjectNuspecPath Condition="'$(PackageType)' == 'ref' or '$(PackageType)' == 'text' or '$(PackageType)' == 'target'">$(RestoredPackageNuspec)</_GenerateProjectNuspecPath>
-    </PropertyGroup>
-
     <GenerateProject PackageId="$(RealPackageId)"
                      PackageVersion="$(PackageVersion)"
                      ProjectTemplate="$(PackageProjectTemplate)"
@@ -417,7 +413,7 @@
                      FrameworkReferences="@(PackageFrameworkReference)"
                      PlaceholderFiles="@(PackagePlaceholderFile)"
                      AllowedPackageReference="@(AllowedPackageReference)"
-                     PackageNuspecPath="$(_GenerateProjectNuspecPath)"
+                     PackageNuspecPath="$(RestoredPackageNuspec)"
                      PackageType="$(PackageType)" />
 
     <Message Text="$(MSBuildProjectName) -> $(PackageProjectTargetPath)"
