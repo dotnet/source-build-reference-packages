@@ -61,6 +61,41 @@
     </ItemGroup>
   </Target>
 
+  <!-- Stage the targeting pack content into $(BaseOutputPath)pack/ in its final package
+       layout. This is what `UseLocalTargetingPack` in src/referencePackages/Directory.Build.targets
+       reads via `<ResolvedTargetingPack Path="$(ArtifactsBinDir)<id>.<ver>/pack" />` so that
+       reference packages compile against the freshly-built local target packs instead of any
+       SDK-bundled ones. The historical eng/ManualNuspec.targets file populated the same
+       location; we replicate it here without going through a hand-authored nuspec. -->
+  <PropertyGroup>
+    <_TargetingPackLayoutDir>$(BaseOutputPath)pack\</_TargetingPackLayoutDir>
+  </PropertyGroup>
+
+  <Target Name="_StageTargetingPackLayout"
+          AfterTargets="Pack"
+          DependsOnTargets="BuildTargetingPackIlSrc"
+          Condition="'@(_TargetingPackIlSrc)' != ''">
+    <ItemGroup>
+      <!-- Static on-disk content (LICENSE.TXT, build/<tfm>/*.targets, data/*.xml, etc.). -->
+      <_TargetingPackStaticContent Include="$(MSBuildProjectDirectory)\**\*.*"
+                                   Exclude="$(MSBuildProjectDirectory)\**\*.il;
+                                            $(MSBuildProjectDirectory)\**\*.csproj;
+                                            $(MSBuildProjectDirectory)\**\$(CustomizationsPropsFile);
+                                            $(MSBuildProjectDirectory)\**\$(CustomizationsSourceFile)" />
+      <!-- Assembled DLLs from ilasm. Their on-disk RecursiveDir already mirrors the package
+           layout (e.g. ref/net6.0/, build/net461/lib/). -->
+      <_TargetingPackAssembledDll Include="$(_TargetingPackIlOutputDir)**\*.dll" />
+    </ItemGroup>
+
+    <Copy SourceFiles="@(_TargetingPackStaticContent)"
+          DestinationFiles="@(_TargetingPackStaticContent->'$(_TargetingPackLayoutDir)%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+
+    <Copy SourceFiles="@(_TargetingPackAssembledDll)"
+          DestinationFiles="@(_TargetingPackAssembledDll->'$(_TargetingPackLayoutDir)%(RecursiveDir)%(Filename)%(Extension)')"
+          SkipUnchangedFiles="true" />
+  </Target>
+
   <!-- Targeting packs don't have buildable source. Override the SDK Build target to a no-op
        so Pack doesn't try to compile (and fail resolving netstandard2.0 references that
        this project doesn't actually need). The IL→DLL assembly happens in
