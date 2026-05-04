@@ -17,7 +17,6 @@ This package was built from the source code at https://github.com/dotnet/aspnetc
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>aspnetcore targeting-pack</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageIcon>Icon.png</PackageIcon>
     <PackageType>DotnetPlatform</PackageType>
   </PropertyGroup>
 

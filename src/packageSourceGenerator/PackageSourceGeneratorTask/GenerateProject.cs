@@ -555,18 +555,11 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             // Note: <owners> is intentionally not emitted — NuGet has deprecated it and
             // there is no MSBuild Pack property that maps to it.
 
-            // <icon>file</icon> bundles a file in the package. Translate to <PackageIcon>.
-            // The matching content emission (<None Pack="true">) is added by BuildPackagingItems.
-            // Only target packs ship with an icon; reference and text-only packages strip the
-            // icon (matches the historical RewriteNuspec.RemoveIcon behavior). The icon file
-            // itself is still packaged for target packs because BuildPackagingItems globs all
-            // on-disk files.
-            if (string.Equals(PackageType, "target", StringComparison.OrdinalIgnoreCase))
-            {
-                string? icon = ReadMetadataValue(nuspecReader, "icon");
-                if (!string.IsNullOrEmpty(icon))
-                    AppendProperty(builder, "PackageIcon", icon);
-            }
+            // <icon>file</icon> bundles a file in the package. We intentionally do NOT translate
+            // it to <PackageIcon>: the historical RewriteNuspec behavior was to strip <icon> for
+            // ref/text packages, and unifying on "no PackageIcon" for target packs too keeps the
+            // generator simple. The icon file itself is still packaged for target packs because
+            // BuildPackagingItems globs all on-disk files.
 
             // <readme>file</readme> bundles a readme in the package; translate to <PackageReadmeFile>.
             // Only target packs ship with a readme; reference and text-only packages strip it
