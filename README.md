@@ -213,7 +213,9 @@ regenerate the older version to see what customizations to the generated code we
 > nuspec dynamically. Constants like `Authors`/`Copyright` are centralized in
 > `src/referencePackages/Directory.Build.props` and `src/textOnlyPackages/Directory.Build.props`.
 > The generator picks up per-package metadata from the source nuspec when regenerating;
-> there is no need to author or edit nuspec files manually.
+> there is no need to author or edit nuspec files manually. See
+> [docs/package_metadata.md](docs/package_metadata.md) for the complete element-by-element
+> mapping.
 
 #### Workflow
 
