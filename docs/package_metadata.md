@@ -17,7 +17,7 @@ each value comes from, and why some are intentionally dropped.
 | Reference packages | `src/referencePackages/Directory.Build.props` | `Serviceable=true` |
 | Text-only packages | `src/textOnlyPackages/Directory.Build.props` | (no metadata overrides — text-only originals don't consistently set Serviceable) |
 | Targeting packs | `src/targetPacks/Directory.Build.props` | `Serviceable=true`, `PackageProjectUrl=https://dot.net/`, `PackageReleaseNotes=https://go.microsoft.com/fwlink/?LinkID=799421` |
-| Per-package | each `.csproj` | All other fields the source nuspec carries — `Description`, `Title`, per-package `PackageProjectUrl`, `PackageReleaseNotes`, license, `PackageType`, `PackageIcon`, `PackageReadmeFile`, `MinClientVersion`, etc. |
+| Per-package | each `.csproj` | All other fields the source nuspec carries — `Description`, `Title`, per-package `PackageProjectUrl`, `PackageReleaseNotes`, license, `PackageType`, `MinClientVersion`, etc. |
 
 The package source generator
 (`src/packageSourceGenerator/PackageSourceGeneratorTask/GenerateProject.cs`)
@@ -42,9 +42,9 @@ carries true overrides.
 | `<licenseUrl>` | `<PackageLicenseUrl>` (legacy) or upgraded to `<PackageLicenseExpression>MIT</PackageLicenseExpression>` | When the URL is one of the known MIT URLs (`https://github.com/dotnet/{corefx,standard,core-setup}/blob/master/LICENSE.TXT` or the deprecated fwlink variants), the generator upgrades it to a structured MIT expression. Required by Arcade's `Workarounds.targets`, which errors if neither `PackageLicenseExpression` nor `PackageLicenseFile` is set. |
 | `<license type="expression">` | `<PackageLicenseExpression>` | Direct passthrough. |
 | `<license type="file">` | `<PackageLicenseFile>` | Direct passthrough. The generator also clears `<PackageLicenseExpression>` (Arcade defaults it to `MIT`) to avoid `NU5033` (cannot specify both). |
-| `<icon>` | `<PackageIcon>` (ref + target layers only) | Text-only packages intentionally drop the icon. The icon file itself is still packaged because `BuildPackagingItems` globs all on-disk files. |
+| `<icon>` | (dropped) | See "What is intentionally dropped" below. |
 | `<iconUrl>` | `<PackageIconUrl>` | Per-csproj. |
-| `<readme>` | `<PackageReadmeFile>` | Per-csproj. |
+| `<readme>` | (dropped) | See "What is intentionally dropped" below. |
 | `<requireLicenseAcceptance>` | `<PackageRequireLicenseAcceptance>` | Centralized to `false`. Per-csproj override only when `true` — NuGet's PackTask suppresses the element when value matches the default, so the produced nuspec naturally omits it. |
 | `<minClientVersion>` (attribute) | `<MinClientVersion>` | Per-csproj when present. |
 | `<packageTypes><packageType name="…" />` | `<PackageType>` (semicolon-separated `Name1;Name2/Version2`) | Per-csproj. The default `Dependency` type is omitted. |
@@ -63,7 +63,8 @@ carries true overrides.
 | `<frameworkAssemblies>` | Not used today | None of the current packages need them; would require generator extension. |
 | `<references>` | Not used today | None of the current packages need them; would require generator extension. |
 | `<dependencies>` for out-of-support TFMs | Filtered out | `ExcludeTargetFrameworks` (`monoandroid*;monotouch*;net20;net35;net4*;net5.0;netcore50;netcoreapp2.*;netcoreapp3.0;portable*;uap*;win8;win81;wp8;wpa81;xamarin*;netcoreapp3.1;netstandard1*`) drops dependency groups for TFMs that no longer matter for source-build. Most visible effect: NETStandard.Library 2.0.3 keeps only its `.NETStandard2.0` group. |
-| `<icon>` (text-only) | Dropped | Matches the historical `RewriteNuspec.RemoveIcon` behavior. |
+| `<icon>` (all package types) | Dropped | SBRP outputs intentionally don't ship a package icon. The generator never emits `<PackageIcon>`, the icon file referenced by the source nuspec's `<icon>` element is excluded from the on-disk content copy in `PackageSourceGenerator.proj`, and any stale icon left over from a previous regen is removed by the explicit `<Delete>` in `GenerateTargetPackageSource`. The path is read from the nuspec via `GetPackageItems.IconPath` so non-icon PNGs an upstream package legitimately ships are preserved. |
+| `<readme>` (all package types) | Dropped | Same treatment as `<icon>`: the generator never emits `<PackageReadmeFile>`, the readme file declared by the source nuspec is excluded from the on-disk content copy via `GetPackageItems.ReadmePath`, and stale readmes are explicitly deleted by `GenerateTargetPackageSource`. Non-readme markdown an upstream package ships is preserved. |
 | `Customizations.props` | No longer included in the produced package | Build-time customization that shouldn't be in the runtime package; baseline included it incidentally because the manual nuspec packaging didn't filter it. |
 
 ## Centralized-default override semantics
