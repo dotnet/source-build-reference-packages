@@ -12,7 +12,6 @@
     <PackageReleaseNotes>https://github.com/spectreconsole/wcwidth/releases</PackageReleaseNotes>
   </PropertyGroup>
 
-
   <ItemGroup>
     <None Include="contentFiles/cs/net6.0/External/Wcwidth/Extensions/IntegerExtensions.cs" Pack="true" PackagePath="contentFiles/cs/net6.0/External/Wcwidth/Extensions" />
     <None Include="contentFiles/cs/net6.0/External/Wcwidth/Tables/WideTable.cs" Pack="true" PackagePath="contentFiles/cs/net6.0/External/Wcwidth/Tables" />
@@ -43,4 +42,5 @@
     <None Include="contentFiles/cs/netstandard2.0/External/Wcwidth/Unicode.cs" Pack="true" PackagePath="contentFiles/cs/netstandard2.0/External/Wcwidth" />
     <None Include="contentFiles/cs/netstandard2.0/External/Wcwidth/UnicodeCalculator.cs" Pack="true" PackagePath="contentFiles/cs/netstandard2.0/External/Wcwidth" />
   </ItemGroup>
+
 </Project>

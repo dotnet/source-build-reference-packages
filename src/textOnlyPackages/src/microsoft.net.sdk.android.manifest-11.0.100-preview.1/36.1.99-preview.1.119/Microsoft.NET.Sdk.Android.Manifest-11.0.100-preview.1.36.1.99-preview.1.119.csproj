@@ -12,7 +12,6 @@
     <PackageType>DotnetPlatform</PackageType>
   </PropertyGroup>
 
-
   <ItemGroup>
     <None Include="data/WorkloadDependencies.json" Pack="true" PackagePath="data" />
     <None Include="data/WorkloadManifest.json" Pack="true" PackagePath="data" />
@@ -21,4 +20,5 @@
     <None Include="LICENSE.TXT" Pack="true" PackagePath="" />
     <None Include="THIRD-PARTY-NOTICES.TXT" Pack="true" PackagePath="" />
   </ItemGroup>
+
 </Project>

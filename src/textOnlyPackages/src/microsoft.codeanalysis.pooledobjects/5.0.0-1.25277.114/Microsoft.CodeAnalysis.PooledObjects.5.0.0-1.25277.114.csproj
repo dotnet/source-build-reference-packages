@@ -29,7 +29,6 @@
     <ProjectReference Include="../../../../referencePackages/src/system.runtime.compilerservices.unsafe/6.0.0/System.Runtime.CompilerServices.Unsafe.6.0.0.csproj" />
   </ItemGroup>
 
-
   <ItemGroup>
     <None Include="build/Microsoft.CodeAnalysis.PooledObjects.targets" Pack="true" PackagePath="build" />
     <None Include="contentFiles/cs/netstandard2.0/.editorconfig" Pack="true" PackagePath="contentFiles/cs/netstandard2.0" BuildAction="None" />
@@ -46,4 +45,5 @@
     <None Include="Icon.png" Pack="true" PackagePath="" />
     <None Include="ThirdPartyNotices.rtf" Pack="true" PackagePath="" />
   </ItemGroup>
+
 </Project>

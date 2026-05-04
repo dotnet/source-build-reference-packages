@@ -11,12 +11,13 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageTags>nuget protocol</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <ProjectReference Include="../../nuget.packaging/6.13.2/NuGet.Packaging.6.13.2.csproj" />
   </ItemGroup>
-
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <ProjectReference Include="../../nuget.packaging/6.13.2/NuGet.Packaging.6.13.2.csproj" />
     <ProjectReference Include="../../system.text.json/8.0.5/System.Text.Json.8.0.5.csproj" />

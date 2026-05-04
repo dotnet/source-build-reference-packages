@@ -17,6 +17,7 @@ System.Threading.Tasks.ValueTask&lt;TResult&gt;
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</PackageIconUrl>
     <PackageReleaseNotes>https://go.microsoft.com/fwlink/?LinkID=799421</PackageReleaseNotes>
+    <MinClientVersion>2.8.6</MinClientVersion>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">

@@ -16,7 +16,6 @@ When using NuGet 3.x this package requires at least version 3.4.</Description>
     <MinClientVersion>2.12</MinClientVersion>
   </PropertyGroup>
 
-
   <ItemGroup>
     <None Include="Icon.png" Pack="true" PackagePath="" />
     <None Include="lib/netstandard1.0/_._" Pack="true" PackagePath="lib/netstandard1.0" />
@@ -26,4 +25,5 @@ When using NuGet 3.x this package requires at least version 3.4.</Description>
     <None Include="useSharedDesignerContext.txt" Pack="true" PackagePath="" />
     <None Include="version.txt" Pack="true" PackagePath="" />
   </ItemGroup>
+
 </Project>

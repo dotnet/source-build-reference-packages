@@ -25,6 +25,7 @@ System.Numerics.Vector&lt;T&gt;
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIconUrl>http://go.microsoft.com/fwlink/?LinkID=288859</PackageIconUrl>
     <PackageReleaseNotes>https://go.microsoft.com/fwlink/?LinkID=799421</PackageReleaseNotes>
+    <MinClientVersion>2.8.6</MinClientVersion>
   </PropertyGroup>
 
 </Project>

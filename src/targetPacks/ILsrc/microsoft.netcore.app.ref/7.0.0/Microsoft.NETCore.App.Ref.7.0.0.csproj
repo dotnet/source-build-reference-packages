@@ -16,7 +16,6 @@ A set of .NET APIs that are included in the default .NET application model. Cont
     <PackageType>DotnetPlatform</PackageType>
   </PropertyGroup>
 
-
   <ItemGroup>
     <None Include="data/FrameworkList.xml" Pack="true" PackagePath="data" />
     <None Include="data/PackageOverrides.txt" Pack="true" PackagePath="data" />
@@ -26,4 +25,5 @@ A set of .NET APIs that are included in the default .NET application model. Cont
     <None Include="Microsoft.NETCore.App.versions.txt" Pack="true" PackagePath="" />
     <None Include="THIRD-PARTY-NOTICES.TXT" Pack="true" PackagePath="" />
   </ItemGroup>
+
 </Project>

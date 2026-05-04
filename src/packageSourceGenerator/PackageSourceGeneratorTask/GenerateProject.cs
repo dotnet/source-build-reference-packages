@@ -188,7 +188,7 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 {
                     referenceIncludes += $"  <ItemGroup Condition=\"'$(TargetFramework)' == '{targetFramework}'\">{Environment.NewLine}";
                     referenceIncludes += packageReferences + projectReferences;
-                    referenceIncludes += $"  </ItemGroup>{Environment.NewLine}{Environment.NewLine}";
+                    referenceIncludes += $"  </ItemGroup>{Environment.NewLine}";
                 }
 
                 // Retrieve the target framework's strong name data. For historical reasons,
@@ -259,11 +259,41 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             // eng/_._ contributed via eng/placeholderpackaging.targets.
             projectContent = projectContent.Replace("$$Packaging$$", BuildPackagingItems());
 
+            // Final formatting pass: ensure consistent spacing between top-level elements
+            //   * exactly one blank line between sibling <PropertyGroup>/<ItemGroup>
+            //   * exactly one blank line before the closing </Project>
+            //   * exactly one trailing newline at end-of-file
+            projectContent = NormalizeProjectWhitespace(projectContent);
+
             // Generate the project file
             Directory.CreateDirectory(projectDirectory);
             File.WriteAllText(TargetPath, projectContent);
 
             return true;
+        }
+
+        private static string NormalizeProjectWhitespace(string content)
+        {
+            string nl = Environment.NewLine;
+            // Collapse 2+ consecutive blank lines down to a single blank line (i.e. 3+ newlines → 2 newlines).
+            // Use a simple loop on the platform newline so we don't accidentally mix CR/LF styles.
+            string twoNewlines = nl + nl;
+            string threeNewlines = nl + nl + nl;
+            while (content.Contains(threeNewlines))
+            {
+                content = content.Replace(threeNewlines, twoNewlines);
+            }
+            // Ensure exactly one blank line before </Project>.
+            int closingIndex = content.LastIndexOf("</Project>", StringComparison.Ordinal);
+            if (closingIndex > 0)
+            {
+                string before = content.Substring(0, closingIndex).TrimEnd('\r', '\n');
+                string after = content.Substring(closingIndex);
+                content = before + nl + nl + after;
+            }
+            // Ensure exactly one trailing newline at end-of-file.
+            content = content.TrimEnd('\r', '\n') + nl;
+            return content;
         }
 
         private string BuildPackagingItems()

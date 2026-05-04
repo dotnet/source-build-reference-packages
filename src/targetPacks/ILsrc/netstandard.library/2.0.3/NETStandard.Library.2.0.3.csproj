@@ -22,11 +22,11 @@ When using NuGet 3.x this package requires at least version 3.4.</Description>
     <ProjectReference Include="../../../../textOnlyPackages/src/microsoft.netcore.platforms/1.1.0/Microsoft.NETCore.Platforms.1.1.0.csproj" />
   </ItemGroup>
 
-
   <ItemGroup>
     <None Include="build/netstandard2.0/NETStandard.Library.targets" Pack="true" PackagePath="build/netstandard2.0" />
     <None Include="lib/netstandard1.0/_._" Pack="true" PackagePath="lib/netstandard1.0" />
     <None Include="LICENSE.TXT" Pack="true" PackagePath="" />
     <None Include="THIRD-PARTY-NOTICES.TXT" Pack="true" PackagePath="" />
   </ItemGroup>
+
 </Project>

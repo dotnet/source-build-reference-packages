@@ -20,11 +20,11 @@ When using NuGet 3.x this package requires at least version 3.4.</Description>
     <MinClientVersion>2.12</MinClientVersion>
   </PropertyGroup>
 
-
   <ItemGroup>
     <None Include="data/FrameworkList.xml" Pack="true" PackagePath="data" />
     <None Include="data/PackageOverrides.txt" Pack="true" PackagePath="data" />
     <None Include="LICENSE.TXT" Pack="true" PackagePath="" />
     <None Include="THIRD-PARTY-NOTICES.TXT" Pack="true" PackagePath="" />
   </ItemGroup>
+
 </Project>

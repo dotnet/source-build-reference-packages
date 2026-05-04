@@ -12,7 +12,6 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
-
   <ItemGroup>
     <None Include="contentFiles/cs/netstandard1.0/shared/CommandLine/AnsiConsole.cs" Pack="true" PackagePath="contentFiles/cs/netstandard1.0/shared/CommandLine" BuildAction="Compile" />
     <None Include="contentFiles/cs/netstandard1.0/shared/CommandLine/CommandArgument.cs" Pack="true" PackagePath="contentFiles/cs/netstandard1.0/shared/CommandLine" BuildAction="Compile" />
@@ -23,4 +22,5 @@
     <None Include="contentFiles/cs/netstandard1.0/shared/Utilities/ArgumentEscaper.cs" Pack="true" PackagePath="contentFiles/cs/netstandard1.0/shared/Utilities" BuildAction="Compile" />
     <None Include="contentFiles/cs/netstandard1.0/shared/Utilities/DotNetMuxer.cs" Pack="true" PackagePath="contentFiles/cs/netstandard1.0/shared/Utilities" BuildAction="Compile" />
   </ItemGroup>
+
 </Project>

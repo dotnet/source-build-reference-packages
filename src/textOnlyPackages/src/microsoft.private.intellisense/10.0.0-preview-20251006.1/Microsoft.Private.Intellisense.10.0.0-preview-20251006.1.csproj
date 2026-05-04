@@ -8,7 +8,6 @@
     <Description>Private package used to transport intellisense files from Open Publishing System to build.</Description>
   </PropertyGroup>
 
-
   <ItemGroup>
     <None Include="IntellisenseFiles/net-10.0/1033/Microsoft.Bcl.Cryptography.xml" Pack="true" PackagePath="IntellisenseFiles/net-10.0/1033" />
     <None Include="IntellisenseFiles/net-10.0/1033/Microsoft.Bcl.TimeProvider.xml" Pack="true" PackagePath="IntellisenseFiles/net-10.0/1033" />
@@ -615,4 +614,5 @@
     <None Include="IntellisenseFiles/windowsdesktop/1033/WindowsBase.xml" Pack="true" PackagePath="IntellisenseFiles/windowsdesktop/1033" />
     <None Include="IntellisenseFiles/windowsdesktop/1033/WindowsFormsIntegration.xml" Pack="true" PackagePath="IntellisenseFiles/windowsdesktop/1033" />
   </ItemGroup>
+
 </Project>

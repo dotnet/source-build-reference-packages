@@ -17,7 +17,6 @@ When using NuGet 3.x this package requires at least version 3.4.</Description>
     <MinClientVersion>2.12</MinClientVersion>
   </PropertyGroup>
 
-
   <ItemGroup>
     <None Include="build/net461/NETStandard.Library.NETFramework.props" Pack="true" PackagePath="build/net461" />
     <None Include="build/net461/NETStandard.Library.NETFramework.targets" Pack="true" PackagePath="build/net461" />
@@ -33,4 +32,5 @@ When using NuGet 3.x this package requires at least version 3.4.</Description>
     <None Include="useSharedDesignerContext.txt" Pack="true" PackagePath="" />
     <None Include="version.txt" Pack="true" PackagePath="" />
   </ItemGroup>
+
 </Project>
