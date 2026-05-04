@@ -11,7 +11,6 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>dotnet-maui dotnet maui cross-platform ios android macos maccatalyst windows winui</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageType>DotnetPlatform</PackageType>
   </PropertyGroup>
 

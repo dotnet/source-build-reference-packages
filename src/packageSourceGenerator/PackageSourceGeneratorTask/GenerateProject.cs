@@ -561,15 +561,11 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             // generator simple. The icon file itself is still packaged for target packs because
             // BuildPackagingItems globs all on-disk files.
 
-            // <readme>file</readme> bundles a readme in the package; translate to <PackageReadmeFile>.
-            // Only target packs ship with a readme; reference and text-only packages strip it
-            // (matches the historical RewriteNuspec behavior where the readme file isn't packaged).
-            if (string.Equals(PackageType, "target", StringComparison.OrdinalIgnoreCase))
-            {
-                string? readme = ReadMetadataValue(nuspecReader, "readme");
-                if (!string.IsNullOrEmpty(readme))
-                    AppendProperty(builder, "PackageReadmeFile", readme);
-            }
+            // <readme>file</readme> bundles a readme in the package. We intentionally do NOT
+            // translate it to <PackageReadmeFile>: this matches the historical RewriteNuspec
+            // behavior of stripping <readme> for ref/text packages and keeps the generator
+            // uniform across all package types. Any readme file on disk is still bundled in
+            // text/target packages because BuildPackagingItems globs all on-disk files.
 
             // <packageTypes><packageType name="..." /></packageTypes>. NuGet supports a
             // semicolon-separated <PackageType> property: "Name1;Name2/Version2".
