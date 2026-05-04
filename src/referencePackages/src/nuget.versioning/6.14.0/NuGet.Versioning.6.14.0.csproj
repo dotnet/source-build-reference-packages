@@ -11,8 +11,6 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <PackageTags>semver semantic versioning</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageIcon>icon.png</PackageIcon>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
 </Project>

@@ -28,7 +28,8 @@
     <NoWarn>$(NoWarn);NU5131</NoWarn>
     <!-- Don't warn on NU5125 - The 'licenseUrl' element will be deprecated. -->
     <NoWarn>$(NoWarn);NU5125</NoWarn>
-    <!-- Disable NU5128: we have dirs like 'netcoreapp' that NuGet thinks are like '.NETCoreApp0.0'. -->
+    <!-- Disable NU5128: NETStandard.Library 2.0.3 has dependency groups for ancient TFMs that
+         are filtered out by ExcludeTargetFrameworks; NuGet then warns about the mismatch. -->
     <NoWarn>$(NoWarn);NU5128</NoWarn>
     <!-- Disable NU5048: continue to use deprecated 'PackageIconUrl'/'iconUrl' for now. -->
     <NoWarn>$(NoWarn);NU5048</NoWarn>

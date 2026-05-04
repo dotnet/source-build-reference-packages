@@ -15,7 +15,6 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>Roslyn CodeAnalysis Compiler CSharp VB VisualBasic Parser Scanner Lexer Emit CodeGeneration Metadata IL Compilation Scripting Syntax Semantics</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageIcon>Icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net7.0'">

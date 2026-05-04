@@ -557,9 +557,11 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
 
             // <icon>file</icon> bundles a file in the package. Translate to <PackageIcon>.
             // The matching content emission (<None Pack="true">) is added by BuildPackagingItems.
-            // For text-only packages the SBRP convention is to strip the icon; the icon file
-            // itself is still packaged because BuildPackagingItems globs all on-disk files.
-            if (!string.Equals(PackageType, "text", StringComparison.OrdinalIgnoreCase))
+            // Only target packs ship with an icon; reference and text-only packages strip the
+            // icon (matches the historical RewriteNuspec.RemoveIcon behavior). The icon file
+            // itself is still packaged for target packs because BuildPackagingItems globs all
+            // on-disk files.
+            if (string.Equals(PackageType, "target", StringComparison.OrdinalIgnoreCase))
             {
                 string? icon = ReadMetadataValue(nuspecReader, "icon");
                 if (!string.IsNullOrEmpty(icon))
@@ -567,9 +569,14 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             }
 
             // <readme>file</readme> bundles a readme in the package; translate to <PackageReadmeFile>.
-            string? readme = ReadMetadataValue(nuspecReader, "readme");
-            if (!string.IsNullOrEmpty(readme))
-                AppendProperty(builder, "PackageReadmeFile", readme);
+            // Only target packs ship with a readme; reference and text-only packages strip it
+            // (matches the historical RewriteNuspec behavior where the readme file isn't packaged).
+            if (string.Equals(PackageType, "target", StringComparison.OrdinalIgnoreCase))
+            {
+                string? readme = ReadMetadataValue(nuspecReader, "readme");
+                if (!string.IsNullOrEmpty(readme))
+                    AppendProperty(builder, "PackageReadmeFile", readme);
+            }
 
             // <packageTypes><packageType name="..." /></packageTypes>. NuGet supports a
             // semicolon-separated <PackageType> property: "Name1;Name2/Version2".
