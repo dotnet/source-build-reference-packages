@@ -43,7 +43,7 @@ carries true overrides.
 | `<license type="expression">` | `<PackageLicenseExpression>` | Direct passthrough. |
 | `<license type="file">` | `<PackageLicenseFile>` | Direct passthrough. The generator also clears `<PackageLicenseExpression>` (Arcade defaults it to `MIT`) to avoid `NU5033` (cannot specify both). |
 | `<icon>` | (dropped) | See "What is intentionally dropped" below. |
-| `<iconUrl>` | `<PackageIconUrl>` | Per-csproj. |
+| `<iconUrl>` | (dropped) | NuGet has deprecated `<iconUrl>` in favor of `<icon>`; SBRP outputs drop both, so the URL form is also intentionally not emitted. Avoids NU5048. |
 | `<readme>` | (dropped) | See "What is intentionally dropped" below. |
 | `<requireLicenseAcceptance>` | `<PackageRequireLicenseAcceptance>` | Centralized to `false`. Per-csproj override only when `true` — NuGet's PackTask suppresses the element when value matches the default, so the produced nuspec naturally omits it. |
 | `<minClientVersion>` (attribute) | `<MinClientVersion>` | Per-csproj when present. |

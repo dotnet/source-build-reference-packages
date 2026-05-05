@@ -3,20 +3,18 @@
   <Import Project="..\..\Directory.Build.props" />
 
   <PropertyGroup>
-    <!-- Common properties for all Reference Packages -->
+    <Configuration>Release</Configuration>
     <DebugType>None</DebugType>
     <DebugSymbols>false</DebugSymbols>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <Serviceable>true</Serviceable>
 
-    <SignAssembly>true</SignAssembly>
-    <PublicSign>true</PublicSign>
-    <FullAssemblySigningSupported Condition="('$(FullAssemblySigningSupported)' == '') and ('$(OS)' != 'Windows_NT')">false</FullAssemblySigningSupported>
-
+    <FullAssemblySigningSupported Condition="'$(FullAssemblySigningSupported)' == '' and '$(OS)' != 'Windows_NT'">false</FullAssemblySigningSupported>
     <StrongNameKeyId>Microsoft</StrongNameKeyId>
-
-    <SourceControlInformationFeatureSupported>false</SourceControlInformationFeatureSupported>
-    <Configuration>Release</Configuration>
     <EnableSourceLink>false</EnableSourceLink>
+    <SourceControlInformationFeatureSupported>false</SourceControlInformationFeatureSupported>
     <NuGetAudit>false</NuGetAudit>
 
     <NoStdLib>true</NoStdLib>
@@ -24,15 +22,8 @@
     <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
     <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
     <RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
-
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <WarningsAsErrors></WarningsAsErrors>
-    <CheckEolTargetFramework>false</CheckEolTargetFramework>
-    
-    <Nullable>Disable</Nullable>
-    <LangVersion>latest</LangVersion>
-    <Serviceable>true</Serviceable>
 
     <CommonSrc>$([MSBuild]::NormalizeDirectory('$(MSBuildThisFileDirectory)', 'common'))</CommonSrc>
 
@@ -73,8 +64,6 @@
 
     <!-- Disable NU5131: unclear warning caused by ref-only (https://github.com/NuGet/Home/issues/8684) -->
     <NoWarn>$(NoWarn);NU5131</NoWarn>
-    <!-- Disable NU5048: continue to use deprecated 'PackageIconUrl'/'iconUrl' for now. -->
-    <NoWarn>$(NoWarn);NU5048</NoWarn>
 
     <!--
       Don't warn on CS8632 - The annotation for nullable reference types should only be used in code within a ‘#nullable’ annotations context.

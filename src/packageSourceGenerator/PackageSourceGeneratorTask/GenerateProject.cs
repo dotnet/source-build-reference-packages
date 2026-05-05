@@ -536,9 +536,9 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 }
             }
 
-            string iconUrl = nuspecReader.GetIconUrl();
-            if (!string.IsNullOrEmpty(iconUrl))
-                AppendProperty(builder, "PackageIconUrl", iconUrl);
+            // <iconUrl>: NuGet has deprecated this in favor of <icon>; <icon> in turn is dropped
+            // for SBRP outputs (see GetPackageItems / PackageContentToCopy). Skip emission so
+            // produced packages don't carry a deprecated property + don't trigger NU5048.
 
             string releaseNotes = nuspecReader.GetReleaseNotes();
             if (!string.IsNullOrEmpty(releaseNotes))

@@ -9,7 +9,6 @@
     <Description>This package contains the Microsoft.NET.StringTools assembly which implements common string-related functionality such as weak interning.</Description>
     <PackageProjectUrl>http://go.microsoft.com/fwlink/?LinkId=624683</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIconUrl>https://go.microsoft.com/fwlink/?linkid=825694</PackageIconUrl>
     <PackageTags>MSBuild</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>

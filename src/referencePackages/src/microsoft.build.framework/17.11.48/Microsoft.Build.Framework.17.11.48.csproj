@@ -9,7 +9,6 @@
     <Description>This package contains the Microsoft.Build.Framework assembly which is a common assembly used by other MSBuild assemblies.</Description>
     <PackageProjectUrl>http://go.microsoft.com/fwlink/?LinkId=624683</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageIconUrl>https://go.microsoft.com/fwlink/?linkid=825694</PackageIconUrl>
     <PackageTags>MSBuild</PackageTags>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>

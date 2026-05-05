@@ -18,8 +18,6 @@
     <!-- Disable NU5128: NETStandard.Library 2.0.3 has dependency groups for ancient TFMs that
          are filtered out by ExcludeTargetFrameworks; NuGet then warns about the mismatch. -->
     <NoWarn>$(NoWarn);NU5128</NoWarn>
-    <!-- Disable NU5048: continue to use deprecated 'PackageIconUrl'/'iconUrl' for now. -->
-    <NoWarn>$(NoWarn);NU5048</NoWarn>
     <!-- Disable NU5129: NuGet expects build/*.props, doesn't seem to consider build/{tfm}/*.props.
          NETStandard.Library.NETFramework.2.0.1 only. -->
     <NoWarn>$(NoWarn);NU5129</NoWarn>

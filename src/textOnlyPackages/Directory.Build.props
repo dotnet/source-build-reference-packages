@@ -16,9 +16,6 @@
          (workload manifests, source-only packages, etc.). NuGet flags this even though
          it's the intentional layout. -->
     <NoWarn>$(NoWarn);NU5128</NoWarn>
-    <!-- Disable NU5048: continue to use deprecated 'PackageIconUrl'/'iconUrl' for now
-         (Microsoft.NETCore.Platforms text packages). -->
-    <NoWarn>$(NoWarn);NU5048</NoWarn>
   </PropertyGroup>
 
 </Project>

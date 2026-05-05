@@ -27,9 +27,9 @@
     <CustomizationsSourcePath>$(MSBuildProjectDirectory)\$(CustomizationsSourceFile)</CustomizationsSourcePath>
   </PropertyGroup>
 
-  <!-- The external packages subset produces Newtonsoft.Json with a specific version; align to avoid prebuilt. -->
+  <!-- The prebuilt payload has a Newtonsoft.Json with a specific version; align to avoid prebuilt. -->
   <ItemGroup>
-    <PackageReference Update="Newtonsoft.Json" Version="$(NewtonsoftJsonReleaseVersion)" />
+    <PackageReference Update="Newtonsoft.Json" Version="$(NewtonsoftJsonBootstrapVersion)" />
   </ItemGroup>
 
   <!-- Project references don't need to be copied to the output. That makes the build significantly faster. -->
