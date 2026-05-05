@@ -124,6 +124,19 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             string projectContent = File.ReadAllText(ProjectTemplate);
             string projectDirectory = Path.GetDirectoryName(TargetPath)!;
 
+            // Pick the appropriate MSBuild SDK for the package type:
+            //  - reference packages compile generated .cs sources, so they need Microsoft.NET.Sdk.
+            //  - text-only and targeting packages don't compile anything; they only pack on-disk
+            //    content (and in the targeting-pack case, ilasm output staged via custom targets).
+            //    Microsoft.Build.NoTargets is purpose-built for that and avoids the per-layer
+            //    workarounds we'd otherwise need (Build no-op, EnableDefaultCompileItems=false,
+            //    DisableImplicitFrameworkReferences=true, etc.).
+            string sdk = string.Equals(PackageType, "text", StringComparison.OrdinalIgnoreCase) ||
+                         string.Equals(PackageType, "target", StringComparison.OrdinalIgnoreCase)
+                ? "Microsoft.Build.NoTargets"
+                : "Microsoft.NET.Sdk";
+            projectContent = projectContent.Replace("$$Sdk$$", sdk);
+
             // Calculate the target frameworks based on the passed-in items. Placeholder TFMs are
             // included so that they appear in <TargetFrameworks> alongside the real TFMs.
             string[] targetFrameworks = CompileItems.Select(compileItem => compileItem.GetMetadata(SharedMetadata.TargetFrameworkMetadataName))

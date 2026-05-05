@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="$$Sdk$$">
 
   <PropertyGroup>
     <PackageId>$$PackageId$$</PackageId>

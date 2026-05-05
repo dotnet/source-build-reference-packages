@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.Build.NoTargets">
 
   <PropertyGroup>
     <PackageId>Microsoft.NET.Sdk.iOS.Manifest-11.0.100-preview.1</PackageId>

@@ -1,20 +1,9 @@
 <Project>
+
   <Import Project="..\..\Directory.Build.props" />
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <IncludeBuildOutput>false</IncludeBuildOutput>
-    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
     <NuGetAudit>false</NuGetAudit>
-
-    <!-- Targeting packs don't compile any source — they package the on-disk content
-         (assembled via ilasm) and accompanying nupkg metadata. The Build target is
-         overridden to no-op in Directory.Build.targets so the SDK doesn't attempt to
-         compile and reference netstandard2.0; Pack still runs because it just sees
-         Build complete successfully. -->
-    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-
     <RestoreIlTooling>true</RestoreIlTooling>
 
     <IsShippingPackage>false</IsShippingPackage>
