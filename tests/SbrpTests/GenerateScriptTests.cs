@@ -32,7 +32,7 @@ public class GenerateScriptTests
     public GenerateScriptTests(ITestOutputHelper output)
     {
         Output = output;
-        SandboxDirectory = Path.Combine(Environment.CurrentDirectory, $"GenerateTests-{DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString()}");
+        SandboxDirectory = Path.Combine(Environment.CurrentDirectory, $"GenerateTests-{Guid.NewGuid():N}");
         Directory.CreateDirectory(SandboxDirectory);
         PkgsSandboxDirectory = Path.Combine(SandboxDirectory, ".packages");
         Directory.CreateDirectory(PkgsSandboxDirectory);
