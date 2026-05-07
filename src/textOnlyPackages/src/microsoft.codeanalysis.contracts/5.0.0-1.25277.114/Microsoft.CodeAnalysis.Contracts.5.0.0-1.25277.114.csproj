@@ -99,6 +99,7 @@
     <None Include="contentFiles/cs/netstandard2.0/Range.cs" Pack="true" PackagePath="contentFiles/cs/netstandard2.0" BuildAction="Compile" />
     <None Include="contentFiles/cs/netstandard2.0/RequiredMemberAttribute.cs" Pack="true" PackagePath="contentFiles/cs/netstandard2.0" BuildAction="Compile" />
     <None Include="contentFiles/cs/netstandard2.0/SetsRequiredMembersAttribute.cs" Pack="true" PackagePath="contentFiles/cs/netstandard2.0" BuildAction="Compile" />
+    <None Include="Icon.png" Pack="true" PackagePath="" />
     <None Include="ThirdPartyNotices.rtf" Pack="true" PackagePath="" />
   </ItemGroup>
 

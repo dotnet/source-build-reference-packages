@@ -16,6 +16,7 @@
     <None Include="data/WorkloadDependencies.json" Pack="true" PackagePath="data" />
     <None Include="data/WorkloadManifest.json" Pack="true" PackagePath="data" />
     <None Include="data/WorkloadManifest.targets" Pack="true" PackagePath="data" />
+    <None Include="Icon.png" Pack="true" PackagePath="" />
     <None Include="LICENSE" Pack="true" PackagePath="" />
   </ItemGroup>
 
