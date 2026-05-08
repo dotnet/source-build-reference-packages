@@ -11,18 +11,6 @@
     dependencies on it are removed from the previous-source-built packages. -->
     <UsagePattern IdentityGlob="Newtonsoft.Json/13.0.1" />
 
-    <!-- NuGet 6.11.2 prebuilts needed to build 6.11.2 reference packages. -->
-    <UsagePattern IdentityGlob="NuGet.Common/6.11.2" />
-    <UsagePattern IdentityGlob="NuGet.Configuration/6.11.2" />
-    <UsagePattern IdentityGlob="NuGet.Credentials/6.11.2" />
-    <UsagePattern IdentityGlob="NuGet.DependencyResolver.Core/6.11.2" />
-    <UsagePattern IdentityGlob="NuGet.Frameworks/6.11.2" />
-    <UsagePattern IdentityGlob="NuGet.LibraryModel/6.11.2" />
-    <UsagePattern IdentityGlob="NuGet.Packaging/6.11.2" />
-    <UsagePattern IdentityGlob="NuGet.ProjectModel/6.11.2" />
-    <UsagePattern IdentityGlob="NuGet.Protocol/6.11.2" />
-    <UsagePattern IdentityGlob="NuGet.Versioning/6.11.2" />
-
   </IgnorePatterns>
   <Usages/>
 </UsageData>
