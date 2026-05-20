@@ -223,7 +223,17 @@ generated packages show changes when being regenerated.
     1. The generate tooling has changed since the last time this package was generated.
        The new changes should be considered better/correct and should be committed.
 
-1. Run build with the `./build.sh -sb` command.
+1. Run build with the `./build.sh -sb` command. This includes API compatibility validation
+   that compares the generated package against the official baseline from NuGet.
+
+1. If the build produces **API compatibility errors** (e.g., CP0001, CP0002, CP0008, CP0021):
+   - Determine whether the difference is a real API gap (fix the generated code) or a
+     generator limitation (the generator cannot perfectly reproduce certain metadata).
+   - For generator limitations, ensure there is a tracking issue in
+     [dotnet/sdk](https://github.com/dotnet/sdk/issues) with the `Area-GenAPI` label.
+   - Add a `CompatibilitySuppressions.xml` file in the package version directory.
+     You can auto-generate it by building with `/p:GenerateCompatibilitySuppressionFile=true`.
+   - Commit the suppression file as part of the package.
 
 1. If the compilation produces numerous compilation issue - run the `./build.sh --projects <path to .csproj file>`
    command for each generated reference package separately.
