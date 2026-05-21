@@ -28,6 +28,3 @@
 [submodule "opentelemetry-dotnet"]
 	path = src/externalPackages/src/opentelemetry-dotnet
 	url = https://github.com/open-telemetry/opentelemetry-dotnet
-[submodule "opentelemetry-dotnet-contrib"]
-	path = src/externalPackages/src/opentelemetry-dotnet-contrib
-	url = https://github.com/open-telemetry/opentelemetry-dotnet-contrib
