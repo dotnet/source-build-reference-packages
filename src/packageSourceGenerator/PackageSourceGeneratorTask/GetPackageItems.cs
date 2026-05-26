@@ -39,12 +39,12 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         /// <summary>
         /// Include only the package compile items and dependencies with a matching target framework.
         /// </summary>
-        public string? IncludeTargetFrameworks { get; set; }
+        public ITaskItem[]? IncludeTargetFrameworks { get; set; }
 
         /// <summary>
         /// Exclude package compile items and dependencies with a matching target framework.
         /// </summary>
-        public string? ExcludeTargetFrameworks { get; set; }
+        public ITaskItem[]? ExcludeTargetFrameworks { get; set; }
 
         /// <summary>
         /// The package's compile items, including target framework metadata.
@@ -96,8 +96,13 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
         public override bool Execute()
         {
             using PackageArchiveReader packageArchiveReader = new(PackagePath!);
-            TargetFrameworkRegexFilter targetFrameworkRegexFilter = new(IncludeTargetFrameworks,
-                ExcludeTargetFrameworks);
+            
+            // Convert ITaskItem[] to IEnumerable<string> - MSBuild task's responsibility
+            // Don't materialize to array here; let the filter do it in one efficient step
+            IEnumerable<string>? includeStrings = IncludeTargetFrameworks?.Select(i => i.ItemSpec);
+            IEnumerable<string>? excludeStrings = ExcludeTargetFrameworks?.Select(i => i.ItemSpec);
+            
+            TargetFrameworkRegexFilter targetFrameworkRegexFilter = new(includeStrings, excludeStrings);
 
             SetCompileItems(packageArchiveReader, targetFrameworkRegexFilter);
             SetPackageDependencies(packageArchiveReader, targetFrameworkRegexFilter);

@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.Build.NoTargets" InitialTargets="ValidateRestoreCsvContentProperties">
 
   <Import Project="$(RepositoryEngineeringDir)ILTooling.targets" />
-  <Import Project="$(RepositoryEngineeringDir)ExcludeTargetFrameworks.props" />
 
   <PropertyGroup>
     <TargetFramework>$(BundledNETCoreAppTargetFramework)</TargetFramework>
@@ -137,9 +136,14 @@
       <PackageNupkgPath>$(RestoredPackageDirectory)$(PackageName.ToLowerInvariant()).$(PackageVersion).nupkg</PackageNupkgPath>
     </PropertyGroup>
 
+    <!-- Convert PackageTargetFrameworks property to items if specified -->
+    <ItemGroup Condition="'$(PackageTargetFrameworks)' != ''">
+      <IncludedTargetFramework Include="$(PackageTargetFrameworks)" />
+    </ItemGroup>
+
     <GetPackageItems PackagePath="$(PackageNupkgPath)"
-                     IncludeTargetFrameworks="$(PackageTargetFrameworks)"
-                     ExcludeTargetFrameworks="$(ExcludeTargetFrameworks)">
+                     IncludeTargetFrameworks="@(IncludedTargetFramework)"
+                     ExcludeTargetFrameworks="@(ExcludedTargetFramework)">
       <Output TaskParameter="CompileItems" ItemName="PackageCompileItem" />
       <Output TaskParameter="PlaceholderFiles" ItemName="PackagePlaceholderFile" />
       <Output TaskParameter="PackageDependencies" ItemName="PackageDependency" />

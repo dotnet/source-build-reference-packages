@@ -2,7 +2,6 @@
 
   <Import Project="..\..\Directory.Build.targets" />
   <Import Project="$(RepositoryEngineeringDir)PackageValidation.targets" />
-  <Import Project="$(RepositoryEngineeringDir)ExcludeTargetFrameworks.props" />
 
   <!-- ==========================================================================
        API Compatibility suppressions for reference packages
@@ -18,8 +17,8 @@
 
   <!-- Ignore baseline TFMs that source-build doesn't support/include. Uses the same exclusion list as the
        package source generator. -->
-  <ItemGroup Condition="'$(EnablePackageValidation)' == 'true'">
-    <PackageValidationBaselineFrameworkToIgnore Include="$(ExcludeTargetFrameworksMSBuildEscaped)" />
+  <ItemGroup>
+    <PackageValidationBaselineFrameworkToIgnore Include="@(ExcludedTargetFramework)" />
   </ItemGroup>
 
   <!-- netstandard2.0's targeting packuses the old package reference model which doesn't support using a local layout.

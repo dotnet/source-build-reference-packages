@@ -3,7 +3,7 @@
   <!-- Package validation: compare built packages against their upstream NuGet baseline to ensure
        API surface compatibility. Disabled when building from the VMR since upstream feeds aren't
        available in that environment. -->
-  <PropertyGroup Condition="'$(DotNetBuildFromVMR)' != 'true' and '$(IsPackable)' != 'false' and '$(PackageVersion)' != ''">
+  <PropertyGroup Condition="'$(DotNetBuildFromVMR)' != 'true' and '$(IsPackable)' == 'true'">
     <EnablePackageValidation>true</EnablePackageValidation>
     <PackageValidationBaselineVersion>$(PackageVersion)</PackageValidationBaselineVersion>
     <EnableStrictModeForBaselineValidation>true</EnableStrictModeForBaselineValidation>
