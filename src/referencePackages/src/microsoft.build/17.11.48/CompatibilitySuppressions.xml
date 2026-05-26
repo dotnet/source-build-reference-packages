@@ -30,7 +30,7 @@
     <Right>ref/net8.0/Microsoft.Build.dll</Right>
     <IsBaselineSuppression>true</IsBaselineSuppression>
   </Suppression>
-  <!-- Missing [Serializable] attribute -->
+  <!-- Missing ITranslatable interface implementation -->
   <Suppression>
     <DiagnosticId>CP0008</DiagnosticId>
     <Target>T:Microsoft.Build.Evaluation.SubToolset</Target>
@@ -157,6 +157,7 @@
     <Right>ref/net8.0/Microsoft.Build.dll</Right>
     <IsBaselineSuppression>true</IsBaselineSuppression>
   </Suppression>
+  <!-- Missing IBuildCheckResult interface implementation -->
   <Suppression>
     <DiagnosticId>CP0008</DiagnosticId>
     <Target>T:Microsoft.Build.Experimental.BuildCheck.BuildCheckResult</Target>
