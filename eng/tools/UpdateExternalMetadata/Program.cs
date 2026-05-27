@@ -79,10 +79,10 @@ if (string.IsNullOrEmpty(releaseVersion))
 Console.WriteLine($"Found release version: {releaseVersion}");
 Console.WriteLine($"Downloading {validationPackage} {releaseVersion}...");
 
-var (revision, fileVersion, assemblyVersion, informationalVersion) = await GetPackageVersionMetadataAsync(
+var versionMetadata = await GetPackageVersionMetadataAsync(
     repoRoot, validationPackage, releaseVersion);
 
-if (revision is null && existingRevision is not null)
+if (versionMetadata.Revision is null && existingRevision is not null)
 {
     Console.Error.WriteLine($"Error: Unable to get FileVersion from {validationPackage} {releaseVersion}.");
     return 1;
@@ -90,35 +90,35 @@ if (revision is null && existingRevision is not null)
 
 if (existingRevision is not null)
 {
-    string revisionStr = revision!.Value.ToString();
+    string revisionStr = versionMetadata.Revision!.Value.ToString();
     projContent = UpdateXmlElement(projContent, "FileVersionRevision", revisionStr);
     Console.WriteLine($"Updated FileVersionRevision: {existingRevision} -> {revisionStr} " +
-        $"(from {validationPackage} {releaseVersion}, FileVersion: {fileVersion})");
+        $"(from {validationPackage} {releaseVersion}, FileVersion: {versionMetadata.FileVersion})");
 }
 
 if (existingAssemblyVersionOverride is not null)
 {
-    if (string.IsNullOrEmpty(assemblyVersion))
+    if (string.IsNullOrEmpty(versionMetadata.AssemblyVersion))
     {
         Console.Error.WriteLine($"Error: Unable to get AssemblyVersion from {validationPackage} {releaseVersion}.");
         return 1;
     }
 
-    projContent = UpdateXmlElement(projContent, "AssemblyVersionOverride", assemblyVersion);
-    Console.WriteLine($"Updated AssemblyVersionOverride: {existingAssemblyVersionOverride} -> {assemblyVersion} " +
+    projContent = UpdateXmlElement(projContent, "AssemblyVersionOverride", versionMetadata.AssemblyVersion);
+    Console.WriteLine($"Updated AssemblyVersionOverride: {existingAssemblyVersionOverride} -> {versionMetadata.AssemblyVersion} " +
         $"(from {validationPackage} {releaseVersion})");
 }
 
 if (existingInformationalVersionOverride is not null)
 {
-    if (string.IsNullOrEmpty(informationalVersion))
+    if (string.IsNullOrEmpty(versionMetadata.InformationalVersion))
     {
         Console.Error.WriteLine($"Error: Unable to get InformationalVersion from {validationPackage} {releaseVersion}.");
         return 1;
     }
 
-    projContent = UpdateXmlElement(projContent, "InformationalVersionOverride", informationalVersion);
-    Console.WriteLine($"Updated InformationalVersionOverride: {existingInformationalVersionOverride} -> {informationalVersion} " +
+    projContent = UpdateXmlElement(projContent, "InformationalVersionOverride", versionMetadata.InformationalVersion);
+    Console.WriteLine($"Updated InformationalVersionOverride: {existingInformationalVersionOverride} -> {versionMetadata.InformationalVersion} " +
         $"(from {validationPackage} {releaseVersion})");
 }
 

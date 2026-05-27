@@ -160,21 +160,21 @@ public class ExternalPackageTests
             }
 
             // Download the published package and read the FileVersion revision
-            var (revision, fileVersion) = await CommonUtilities.GetFileVersionRevisionAsync(
+            var fileVersionRevisionMetadata = await CommonUtilities.GetPackageVersionMetadataAsync(
                 repoRoot, packageId, releaseVersion);
 
-            if (revision is null)
+            if (fileVersionRevisionMetadata.Revision is null)
             {
                 errors.Add($"{componentName}.proj: Unable to download {packageId} {releaseVersion} to validate FileVersionRevision.");
                 checkedCount++;
                 continue;
             }
 
-            if (!int.TryParse(fileVersionRevision, out int expectedRevision) || expectedRevision != revision.Value)
+            if (!int.TryParse(fileVersionRevision, out int expectedRevision) || expectedRevision != fileVersionRevisionMetadata.Revision.Value)
             {
                 errors.Add($"{componentName}.proj: FileVersionRevision '{fileVersionRevision}' does not match " +
-                    $"actual revision '{revision}' from {packageId} {releaseVersion} " +
-                    $"(FileVersion: {fileVersion}).");
+                    $"actual revision '{fileVersionRevisionMetadata.Revision}' from {packageId} {releaseVersion} " +
+                    $"(FileVersion: {fileVersionRevisionMetadata.FileVersion}).");
             }
 
             checkedCount++;
@@ -203,14 +203,14 @@ public class ExternalPackageTests
         Assert.False(string.IsNullOrEmpty(expectedInformationalVersion), "Missing InformationalVersionOverride in vs-solutionpersistence.proj.");
         Assert.False(string.IsNullOrEmpty(releaseVersion), "Missing VsSolutionPersistenceReleaseVersion in eng/Versions.props.");
 
-        var (_, _, assemblyVersion, informationalVersion) = await CommonUtilities.GetPackageVersionMetadataAsync(
+        var versionMetadata = await CommonUtilities.GetPackageVersionMetadataAsync(
             repoRoot, packageId!, releaseVersion!);
 
-        Skip.If(string.IsNullOrEmpty(assemblyVersion) || string.IsNullOrEmpty(informationalVersion),
+        Skip.If(string.IsNullOrEmpty(versionMetadata.AssemblyVersion) || string.IsNullOrEmpty(versionMetadata.InformationalVersion),
             $"Unable to read version metadata from {packageId} {releaseVersion}.");
 
-        Assert.Equal(expectedAssemblyVersion, assemblyVersion);
-        Assert.Equal(expectedInformationalVersion, informationalVersion);
+        Assert.Equal(expectedAssemblyVersion, versionMetadata.AssemblyVersion);
+        Assert.Equal(expectedInformationalVersion, versionMetadata.InformationalVersion);
     }
 
     /// <summary>
