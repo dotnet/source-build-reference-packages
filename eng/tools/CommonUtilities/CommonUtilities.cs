@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -79,18 +80,17 @@ public static class CommonUtilities
     }
 
     /// <summary>
-    /// Downloads a NuGet package and returns the FileVersion revision from its first DLL.
+    /// Downloads a NuGet package and returns version metadata from its first DLL.
     /// Combines <see cref="DownloadPackageAsync"/> with DLL extraction and version reading.
-    /// Returns null if the package could not be downloaded or contains no DLL.
-    /// Also returns the full FileVersion string when successful.
+    /// Returns null values if the package could not be downloaded or contains no DLL.
     /// </summary>
-    public static async Task<(int? Revision, string? FileVersion)> GetFileVersionRevisionAsync(
+    public static async Task<(int? Revision, string? FileVersion, string? AssemblyVersion, string? InformationalVersion)> GetPackageVersionMetadataAsync(
         string settingsRoot, string packageId, string version, CancellationToken cancellationToken = default)
     {
         using MemoryStream? packageStream = await DownloadPackageAsync(settingsRoot, packageId, version, cancellationToken);
         if (packageStream is null)
         {
-            return (null, null);
+            return (null, null, null, null);
         }
 
         using PackageArchiveReader packageReader = new(packageStream);
@@ -100,7 +100,7 @@ public static class CommonUtilities
 
         if (dllItem is null)
         {
-            return (null, null);
+            return (null, null, null, null);
         }
 
         string tempDll = Path.Combine(Path.GetTempPath(), $"sbrp-{Guid.NewGuid():N}.dll");
@@ -113,7 +113,8 @@ public static class CommonUtilities
             }
 
             FileVersionInfo versionInfo = FileVersionInfo.GetVersionInfo(tempDll);
-            return (versionInfo.FilePrivatePart, versionInfo.FileVersion);
+            string? assemblyVersion = AssemblyName.GetAssemblyName(tempDll).Version?.ToString();
+            return (versionInfo.FilePrivatePart, versionInfo.FileVersion, assemblyVersion, versionInfo.ProductVersion);
         }
         finally
         {
@@ -125,5 +126,17 @@ public static class CommonUtilities
             {
             }
         }
+    }
+
+    /// <summary>
+    /// Downloads a NuGet package and returns the FileVersion revision from its first DLL.
+    /// Returns null if the package could not be downloaded or contains no DLL.
+    /// Also returns the full FileVersion string when successful.
+    /// </summary>
+    public static async Task<(int? Revision, string? FileVersion)> GetFileVersionRevisionAsync(
+        string settingsRoot, string packageId, string version, CancellationToken cancellationToken = default)
+    {
+        var (revision, fileVersion, _, _) = await GetPackageVersionMetadataAsync(settingsRoot, packageId, version, cancellationToken);
+        return (revision, fileVersion);
     }
 }

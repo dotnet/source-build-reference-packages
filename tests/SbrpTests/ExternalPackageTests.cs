@@ -185,6 +185,34 @@ public class ExternalPackageTests
             $"FileVersionRevision validation failed:{Environment.NewLine}{string.Join(Environment.NewLine, errors)}");
     }
 
+    [SkippableFact]
+    public async Task SolutionPersistenceVersionOverridesMatchPublishedPackage()
+    {
+        string repoRoot = PathUtilities.GetRepoRoot().TrimEnd(Path.DirectorySeparatorChar, Path.AltDirectorySeparatorChar);
+        string projPath = Path.Combine(repoRoot, "src", "externalPackages", "projects", "vs-solutionpersistence.proj");
+        string versionsPropsPath = Path.Combine(repoRoot, "eng", "Versions.props");
+
+        XDocument doc = XDocument.Load(projPath);
+        string? packageId = doc.Descendants("FileVersionValidationPackage").FirstOrDefault()?.Value;
+        string? expectedAssemblyVersion = doc.Descendants("AssemblyVersionOverride").FirstOrDefault()?.Value;
+        string? expectedInformationalVersion = doc.Descendants("InformationalVersionOverride").FirstOrDefault()?.Value;
+        string? releaseVersion = CommonUtilities.FindReleaseVersion(versionsPropsPath, "vs-solutionpersistence");
+
+        Assert.False(string.IsNullOrEmpty(packageId), "Missing FileVersionValidationPackage in vs-solutionpersistence.proj.");
+        Assert.False(string.IsNullOrEmpty(expectedAssemblyVersion), "Missing AssemblyVersionOverride in vs-solutionpersistence.proj.");
+        Assert.False(string.IsNullOrEmpty(expectedInformationalVersion), "Missing InformationalVersionOverride in vs-solutionpersistence.proj.");
+        Assert.False(string.IsNullOrEmpty(releaseVersion), "Missing VsSolutionPersistenceReleaseVersion in eng/Versions.props.");
+
+        var (_, _, assemblyVersion, informationalVersion) = await CommonUtilities.GetPackageVersionMetadataAsync(
+            repoRoot, packageId!, releaseVersion!);
+
+        Skip.If(string.IsNullOrEmpty(assemblyVersion) || string.IsNullOrEmpty(informationalVersion),
+            $"Unable to read version metadata from {packageId} {releaseVersion}.");
+
+        Assert.Equal(expectedAssemblyVersion, assemblyVersion);
+        Assert.Equal(expectedInformationalVersion, informationalVersion);
+    }
+
     /// <summary>
     /// Validates that the release version configured in eng/Versions.props for each external
     /// component matches the version of at least one NuGet package produced by that component.

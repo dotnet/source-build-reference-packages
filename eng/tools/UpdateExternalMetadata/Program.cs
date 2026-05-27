@@ -49,13 +49,18 @@ else
     Console.WriteLine("No SourceRevisionId property found - skipping.");
 }
 
-// --- 2. Update FileVersionRevision ---
+// --- 2. Update package-derived version metadata ---
 string? validationPackage = ReadXmlElement(projContent, "FileVersionValidationPackage");
 string? existingRevision = ReadXmlElement(projContent, "FileVersionRevision");
+string? existingAssemblyVersionOverride = ReadXmlElement(projContent, "AssemblyVersionOverride");
+string? existingInformationalVersionOverride = ReadXmlElement(projContent, "InformationalVersionOverride");
+bool hasMetadataProperties = existingRevision is not null
+    || existingAssemblyVersionOverride is not null
+    || existingInformationalVersionOverride is not null;
 
-if (string.IsNullOrEmpty(validationPackage) || existingRevision is null)
+if (string.IsNullOrEmpty(validationPackage) || !hasMetadataProperties)
 {
-    Console.WriteLine("No FileVersionValidationPackage/FileVersionRevision configured - skipping FileVersion update.");
+    Console.WriteLine("No package-derived version metadata configured - skipping metadata update.");
     File.WriteAllText(projFile, projContent);
     Console.WriteLine($"Saved changes to {componentName}.proj");
     return 0;
@@ -74,19 +79,48 @@ if (string.IsNullOrEmpty(releaseVersion))
 Console.WriteLine($"Found release version: {releaseVersion}");
 Console.WriteLine($"Downloading {validationPackage} {releaseVersion}...");
 
-var (revision, fileVersion) = await GetFileVersionRevisionAsync(
+var (revision, fileVersion, assemblyVersion, informationalVersion) = await GetPackageVersionMetadataAsync(
     repoRoot, validationPackage, releaseVersion);
 
-if (revision is null)
+if (revision is null && existingRevision is not null)
 {
     Console.Error.WriteLine($"Error: Unable to get FileVersion from {validationPackage} {releaseVersion}.");
     return 1;
 }
 
-string revisionStr = revision.Value.ToString();
-projContent = UpdateXmlElement(projContent, "FileVersionRevision", revisionStr);
-Console.WriteLine($"Updated FileVersionRevision: {existingRevision} -> {revisionStr} " +
-    $"(from {validationPackage} {releaseVersion}, FileVersion: {fileVersion})");
+if (existingRevision is not null)
+{
+    string revisionStr = revision!.Value.ToString();
+    projContent = UpdateXmlElement(projContent, "FileVersionRevision", revisionStr);
+    Console.WriteLine($"Updated FileVersionRevision: {existingRevision} -> {revisionStr} " +
+        $"(from {validationPackage} {releaseVersion}, FileVersion: {fileVersion})");
+}
+
+if (existingAssemblyVersionOverride is not null)
+{
+    if (string.IsNullOrEmpty(assemblyVersion))
+    {
+        Console.Error.WriteLine($"Error: Unable to get AssemblyVersion from {validationPackage} {releaseVersion}.");
+        return 1;
+    }
+
+    projContent = UpdateXmlElement(projContent, "AssemblyVersionOverride", assemblyVersion);
+    Console.WriteLine($"Updated AssemblyVersionOverride: {existingAssemblyVersionOverride} -> {assemblyVersion} " +
+        $"(from {validationPackage} {releaseVersion})");
+}
+
+if (existingInformationalVersionOverride is not null)
+{
+    if (string.IsNullOrEmpty(informationalVersion))
+    {
+        Console.Error.WriteLine($"Error: Unable to get InformationalVersion from {validationPackage} {releaseVersion}.");
+        return 1;
+    }
+
+    projContent = UpdateXmlElement(projContent, "InformationalVersionOverride", informationalVersion);
+    Console.WriteLine($"Updated InformationalVersionOverride: {existingInformationalVersionOverride} -> {informationalVersion} " +
+        $"(from {validationPackage} {releaseVersion})");
+}
 
 File.WriteAllText(projFile, projContent);
 Console.WriteLine($"Saved changes to {componentName}.proj");
