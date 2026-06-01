@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageId>System.Text.Encoding.CodePages</PackageId>
-    <TargetFrameworks>net6.0;net7.0;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>monoandroid10;monotouch10;net6.0;net7.0;netstandard2.0;xamarinios10;xamarinmac20;xamarintvos10;xamarinwatchos10</TargetFrameworks>
     <PackageVersion>7.0.0</PackageVersion>
     <AssemblyName>System.Text.Encoding.CodePages</AssemblyName>
     <Description>Provides support for code-page based encodings, including Windows-1252, Shift-JIS, and GB2312.
@@ -12,6 +12,7 @@ System.Text.CodePagesEncodingProvider</Description>
     <PackageProjectUrl>https://dot.net/</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReleaseNotes>https://go.microsoft.com/fwlink/?LinkID=799421</PackageReleaseNotes>
+    <PlaceholderTargetFrameworks>monoandroid10;monotouch10;xamarinios10;xamarinmac20;xamarintvos10;xamarinwatchos10</PlaceholderTargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">

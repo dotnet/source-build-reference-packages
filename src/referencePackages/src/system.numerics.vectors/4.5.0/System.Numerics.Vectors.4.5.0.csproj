@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageId>System.Numerics.Vectors</PackageId>
-    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>monoandroid10;monotouch10;netcoreapp2.0;netstandard2.0;uap10.0.16299;xamarinios10;xamarinmac20;xamarintvos10;xamarinwatchos10</TargetFrameworks>
     <PackageVersion>4.5.0</PackageVersion>
     <AssemblyName>System.Numerics.Vectors</AssemblyName>
     <BuildOutputTargetFolder>ref</BuildOutputTargetFolder>
@@ -25,6 +25,7 @@ System.Numerics.Vector&lt;T&gt;
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReleaseNotes>https://go.microsoft.com/fwlink/?LinkID=799421</PackageReleaseNotes>
     <MinClientVersion>2.8.6</MinClientVersion>
+    <PlaceholderTargetFrameworks>monoandroid10;monotouch10;netcoreapp2.0;uap10.0.16299;xamarinios10;xamarinmac20;xamarintvos10;xamarinwatchos10</PlaceholderTargetFrameworks>
   </PropertyGroup>
 
 </Project>
