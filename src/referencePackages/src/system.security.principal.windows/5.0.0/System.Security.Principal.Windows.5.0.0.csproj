@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageId>System.Security.Principal.Windows</PackageId>
-    <TargetFrameworks>netstandard2.0;uap10.0.16299</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <PackageVersion>5.0.0</PackageVersion>
     <AssemblyName>System.Security.Principal.Windows</AssemblyName>
     <BuildOutputTargetFolder>ref</BuildOutputTargetFolder>
@@ -24,7 +24,6 @@ When using NuGet 3.x this package requires at least version 3.4.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReleaseNotes>https://go.microsoft.com/fwlink/?LinkID=799421</PackageReleaseNotes>
     <MinClientVersion>2.12</MinClientVersion>
-    <PlaceholderTargetFrameworks>uap10.0.16299</PlaceholderTargetFrameworks>
   </PropertyGroup>
 
 </Project>
