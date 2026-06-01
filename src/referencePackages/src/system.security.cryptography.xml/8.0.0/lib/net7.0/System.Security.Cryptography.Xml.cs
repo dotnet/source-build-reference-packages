@@ -238,6 +238,7 @@ namespace System.Security.Cryptography.Xml
         public bool IsFixedSize { get { throw null; } }
         public bool IsReadOnly { get { throw null; } }
         public bool IsSynchronized { get { throw null; } }
+        [System.Runtime.CompilerServices.IndexerName("ItemOf")] // Adding attribute manually as GenAPI filters it out
         public EncryptionProperty this[int index] { get { throw null; } set { } }
         public object SyncRoot { get { throw null; } }
         object? Collections.IList.this[int index] { get { throw null; } set { } }
@@ -371,6 +372,7 @@ namespace System.Security.Cryptography.Xml
     {
         public int Count { get { throw null; } }
         public bool IsSynchronized { get { throw null; } }
+        [System.Runtime.CompilerServices.IndexerName("ItemOf")] // Adding attribute manually as GenAPI filters it out
         public EncryptedReference this[int index] { get { throw null; } set { } }
         public object SyncRoot { get { throw null; } }
         bool Collections.IList.IsFixedSize { get { throw null; } }
