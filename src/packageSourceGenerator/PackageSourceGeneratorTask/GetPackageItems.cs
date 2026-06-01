@@ -132,7 +132,6 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                 .Concat(contentItemCollection.FindItems(managedCodeConventions.Patterns.CompileLibAssemblies))
                 .Where(t => t.Properties.ContainsKey("tfm"))
                 .Select(t => (NuGetFramework)t.Properties["tfm"])
-                .Where(nugetFramework => targetFrameworkRegexFilter.IsIncludedAndNotExcluded(nugetFramework.GetShortFolderName()))
                 .Distinct()
                 .ToArray();
 
@@ -142,6 +141,13 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
             foreach (NuGetFramework packageFramework in packageFrameworks)
             {
                 string targetFramework = packageFramework.GetShortFolderName();
+
+                // Placeholder files (_._) must be preserved even for excluded / out-of-support target
+                // frameworks. A placeholder signals that the package intentionally provides no asset for
+                // that TFM, which prevents a consumer from incorrectly falling back to another TFM's
+                // assembly (e.g. System.Runtime.CompilerServices.Unsafe where the implementation was
+                // moved inbox). Therefore, only skip excluded target frameworks for non-placeholder items.
+                bool isIncludedTargetFramework = targetFrameworkRegexFilter.IsIncludedAndNotExcluded(targetFramework);
 
                 SelectionCriteria managedCriteria = managedCodeConventions.Criteria.ForFramework(packageFramework);
                 ContentItemGroup compileItems = contentItemCollection.FindBestItemGroup(managedCriteria,
@@ -153,6 +159,13 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
 
                 foreach (ContentItem compileItem in compileItems.Items)
                 {
+                    bool isPlaceholderFile = Path.GetFileName(compileItem.Path) == PlaceholderFile;
+
+                    // Skip non-placeholder assets for excluded / out-of-support target frameworks.
+                    // Placeholder files are always preserved (see comment above).
+                    if (!isIncludedTargetFramework && !isPlaceholderFile)
+                        continue;
+
                     // Skip duplicate compile items. That can happen when different target frameworks choose
                     // the same asset as best compatible. E.g. System.Runtime.CompilerServices.Unsafe/4.7.0
                     // netcoreapp2.0 and netstandard2.0 TFMs both choose the netstandard2.0 compile asset.
@@ -162,7 +175,6 @@ namespace Microsoft.DotNet.SourceBuild.Tasks
                     TaskItem compileTaskItem = new(compileItem.Path);
                     compileTaskItem.SetMetadata(SharedMetadata.TargetFrameworkMetadataName, targetFramework);
 
-                    bool isPlaceholderFile = Path.GetFileName(compileItem.Path) == PlaceholderFile;
                     if (isPlaceholderFile)
                     {
                         placeholderTaskItems.Add(compileTaskItem);
