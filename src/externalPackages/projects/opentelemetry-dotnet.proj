@@ -16,12 +16,9 @@
 
   <ItemGroup>
     <!-- Used by the update-external-metadata script and ExternalPackageTests to identify
-         the Microsoft-shipped package to validate against. Each *Property metadata names
-         the MSBuild property in this .proj that holds the corresponding override value. -->
-    <FileVersionValidationPackage Include="OpenTelemetry">
-      <FileVersionRevisionProperty>FileVersionRevision</FileVersionRevisionProperty>
-      <AssemblyVersionOverrideProperty>AssemblyVersionOverride</AssemblyVersionOverrideProperty>
-    </FileVersionValidationPackage>
+         the Microsoft-shipped package to validate against. The *Property metadata defaults
+         come from the sibling Directory.Build.props ItemDefinitionGroup. -->
+    <FileVersionValidationPackage Include="OpenTelemetry" />
   </ItemGroup>
 
   <Target Name="CustomRepoBuild">

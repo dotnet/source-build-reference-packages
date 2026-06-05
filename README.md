@@ -66,18 +66,23 @@ to .NET. The following sections describe how to add/upgrade the various types of
    include a `FileVersionRevision` property set to the revision from the Microsoft-shipped package
    and pass it via `/p:FileVersion` in the build command args.
    Also declare a `FileVersionValidationPackage` **item** naming a NuGet package produced by the
-   component so the metadata-update script and tests can validate the version. The `*Property`
-   metadata elements name the MSBuild properties in this .proj that hold each override value;
-   omit metadata for aspects you don't override. Each named property must exist in the .proj —
-   missing is an error.
+   component so the metadata-update script and tests can validate the version. The default
+   property name bindings (defined in `src/externalPackages/projects/Directory.Build.props` via
+   `<ItemDefinitionGroup>`) point at conventional property names — for the common case of one
+   item per project using those names, no per-item metadata is needed:
 
    ```xml
    <ItemGroup>
-     <FileVersionValidationPackage Include="Microsoft.MyPackage">
-       <FileVersionRevisionProperty>FileVersionRevision</FileVersionRevisionProperty>
-     </FileVersionValidationPackage>
+     <FileVersionValidationPackage Include="Microsoft.MyPackage" />
    </ItemGroup>
    ```
+
+   The defaults bind `FileVersionRevisionProperty=FileVersionRevision`,
+   `AssemblyVersionOverrideProperty=AssemblyVersionOverride`, and
+   `InformationalVersionOverrideProperty=InformationalVersionOverride`. Each aspect is validated
+   only if the named property is defined in the .proj — items don't need to opt out of aspects
+   they don't override. If an aspect's property name is overridden per-item, the named property
+   **must** exist in the .proj or the tool/test will error.
 
    When a single submodule produces multiple packages with different release versions or revisions
    (each from its own release tag), declare one item per package, each with its own per-package

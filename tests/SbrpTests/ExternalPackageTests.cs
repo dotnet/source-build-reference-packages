@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Xml.Linq;
+using Microsoft.Build.Evaluation;
 using SbrpUtilities;
 using Xunit;
 using Xunit.Abstractions;
@@ -45,7 +45,7 @@ public class ExternalPackageTests
         List<string> errors = new();
         int checkedCount = 0;
 
-        foreach ((string projFile, string packageName, XDocument doc) in LoadProjectFiles())
+        foreach ((string projFile, string packageName, Project project) in LoadProjectFiles())
         {
             string submoduleDir = Path.Combine(submodulesDir, packageName);
 
@@ -66,7 +66,7 @@ public class ExternalPackageTests
 
             string submoduleHash = result.StdOut.Trim();
 
-            string? sourceRevisionId = doc.Descendants("SourceRevisionId").FirstOrDefault()?.Value;
+            string? sourceRevisionId = CommonUtilities.ReadPropertyValue(project, "SourceRevisionId");
 
             if (string.IsNullOrEmpty(sourceRevisionId))
             {
@@ -88,7 +88,7 @@ public class ExternalPackageTests
     /// Validates that the property named by each &lt;FileVersionValidationPackage&gt; item's
     /// <c>FileVersionRevisionProperty</c> metadata matches the actual FileVersion revision
     /// from the Microsoft-shipped NuGet package named by the item's Include attribute.
-    /// Items that omit the metadata do not participate in this check.
+    /// Items that have no binding for this aspect do not participate in this check.
     /// See https://github.com/dotnet/source-build/issues/5509
     /// </summary>
     [SkippableFact]
@@ -96,37 +96,37 @@ public class ExternalPackageTests
     {
         await ValidateVersionOverrideAsync(
             "FileVersionRevision",
-            item => item.FileVersionRevisionPropertyName,
+            item => item.FileVersionRevision,
             metadata => metadata.Revision?.ToString());
     }
 
     /// <summary>
     /// Validates that the property named by each &lt;FileVersionValidationPackage&gt; item's
     /// <c>AssemblyVersionOverrideProperty</c> metadata matches the actual AssemblyVersion
-    /// from the Microsoft-shipped NuGet package. Items that omit the metadata do not
-    /// participate in this check.
+    /// from the Microsoft-shipped NuGet package. Items that have no binding for this aspect
+    /// do not participate in this check.
     /// </summary>
     [SkippableFact]
     public async Task AssemblyVersionOverrideMatchesPublishedPackage()
     {
         await ValidateVersionOverrideAsync(
             "AssemblyVersionOverride",
-            item => item.AssemblyVersionOverridePropertyName,
+            item => item.AssemblyVersionOverride,
             metadata => metadata.AssemblyVersion);
     }
 
     /// <summary>
     /// Validates that the property named by each &lt;FileVersionValidationPackage&gt; item's
     /// <c>InformationalVersionOverrideProperty</c> metadata matches the actual InformationalVersion
-    /// (ProductVersion) from the Microsoft-shipped NuGet package. Items that omit the metadata
-    /// do not participate in this check.
+    /// (ProductVersion) from the Microsoft-shipped NuGet package. Items that have no binding
+    /// for this aspect do not participate in this check.
     /// </summary>
     [SkippableFact]
     public async Task InformationalVersionOverrideMatchesPublishedPackage()
     {
         await ValidateVersionOverrideAsync(
             "InformationalVersionOverride",
-            item => item.InformationalVersionOverridePropertyName,
+            item => item.InformationalVersionOverride,
             metadata => metadata.InformationalVersion);
     }
 
@@ -143,11 +143,12 @@ public class ExternalPackageTests
     public void ReleaseVersionMatchesPackageOutput()
     {
         string artifactsObjDir = Path.Combine(RepoRoot, "artifacts", "obj");
+        Project versionsProject = CommonUtilities.LoadVersionsProps(VersionsPropsPath);
 
         List<string> errors = new();
         int checkedCount = 0;
 
-        foreach ((string projFile, string packageName, XDocument doc) in LoadProjectFiles())
+        foreach ((string projFile, string packageName, Project project) in LoadProjectFiles())
         {
             string componentObjDir = Path.Combine(artifactsObjDir, packageName);
             if (!Directory.Exists(componentObjDir))
@@ -163,12 +164,11 @@ public class ExternalPackageTests
                 continue;
             }
 
-            IReadOnlyList<ValidationPackageItem> items =
-                CommonUtilities.ParseValidationPackageItems(doc, Path.GetFileName(projFile));
+            IReadOnlyList<ValidationPackageItem> items = CommonUtilities.ParseValidationPackageItems(project);
 
             if (items.Count == 0)
             {
-                string? releaseVersion = CommonUtilities.FindReleaseVersion(VersionsPropsPath, packageName);
+                string? releaseVersion = CommonUtilities.FindReleaseVersion(versionsProject, packageName);
                 if (string.IsNullOrEmpty(releaseVersion))
                 {
                     continue;
@@ -190,7 +190,7 @@ public class ExternalPackageTests
 
             foreach (ValidationPackageItem item in items)
             {
-                string? releaseVersion = ResolveReleaseVersion(item, packageName);
+                string? releaseVersion = ResolveReleaseVersion(versionsProject, item, packageName);
                 if (string.IsNullOrEmpty(releaseVersion))
                 {
                     errors.Add($"{packageName}.proj: Could not resolve release version for validation package '{item.PackageId}' " +
@@ -219,9 +219,9 @@ public class ExternalPackageTests
 
     /// <summary>
     /// Loads all .proj files from the external packages projects directory,
-    /// returning the file path, component name, and parsed XML document.
+    /// returning the file path, component name, and MSBuild-evaluated project.
     /// </summary>
-    private static IEnumerable<(string ProjFile, string PackageName, XDocument Doc)> LoadProjectFiles()
+    private static IEnumerable<(string ProjFile, string PackageName, Project Project)> LoadProjectFiles()
     {
         string[] projFiles = Directory.GetFiles(ProjectsDir, "*.proj");
         Assert.True(projFiles.Length > 0, $"No .proj files found in {ProjectsDir}");
@@ -229,8 +229,8 @@ public class ExternalPackageTests
         foreach (string projFile in projFiles)
         {
             string packageName = Path.GetFileNameWithoutExtension(projFile);
-            XDocument doc = XDocument.Load(projFile);
-            yield return (projFile, packageName, doc);
+            Project project = CommonUtilities.LoadValidationProject(projFile);
+            yield return (projFile, packageName, project);
         }
     }
 
@@ -239,61 +239,69 @@ public class ExternalPackageTests
     /// <c>ReleaseVersionProperty</c> metadata when set, or by auto-derive from the .proj
     /// file name otherwise.
     /// </summary>
-    private static string? ResolveReleaseVersion(ValidationPackageItem item, string componentName)
+    private static string? ResolveReleaseVersion(Project versionsProject, ValidationPackageItem item, string componentName)
     {
         if (item.ReleaseVersionPropertyName is not null)
         {
-            return CommonUtilities.FindReleaseVersionByPropertyName(VersionsPropsPath, item.ReleaseVersionPropertyName);
+            return CommonUtilities.FindReleaseVersionByPropertyName(versionsProject, item.ReleaseVersionPropertyName);
         }
 
-        return CommonUtilities.FindReleaseVersion(VersionsPropsPath, componentName);
+        return CommonUtilities.FindReleaseVersion(versionsProject, componentName);
     }
 
     /// <summary>
     /// Validates one aspect of version overrides across every <c>&lt;FileVersionValidationPackage&gt;</c>
-    /// item in every external package .proj. The selectors pick which override property
-    /// (by item metadata) and which downloaded-package field to compare.
+    /// item in every external package .proj. The selectors pick which aspect binding to check and
+    /// which downloaded-package field to compare against.
     /// </summary>
     /// <param name="overrideAspectName">Friendly name for error/skip messages
     /// (e.g. <c>FileVersionRevision</c>).</param>
-    /// <param name="propertyNameSelector">Picks the resolved property name for the aspect being
-    /// validated; null means the item does not opt in to this aspect and is silently skipped.</param>
+    /// <param name="bindingSelector">Picks the AspectBinding for the aspect being validated;
+    /// null means the item has no binding for this aspect and is silently skipped.</param>
     /// <param name="actualValueSelector">Picks the corresponding field from the downloaded
     /// package's metadata.</param>
     private async Task ValidateVersionOverrideAsync(
         string overrideAspectName,
-        Func<ValidationPackageItem, string?> propertyNameSelector,
+        Func<ValidationPackageItem, AspectBinding?> bindingSelector,
         Func<PackageVersionMetadata, string?> actualValueSelector)
     {
+        Project versionsProject = CommonUtilities.LoadVersionsProps(VersionsPropsPath);
         List<string> errors = new();
         int checkedCount = 0;
 
         // Cache per (packageId, version) so multiple aspects/items don't re-download.
         Dictionary<string, PackageVersionMetadata> metadataCache = new();
 
-        foreach ((string projFile, string packageName, XDocument doc) in LoadProjectFiles())
+        foreach ((string projFile, string packageName, Project project) in LoadProjectFiles())
         {
-            IReadOnlyList<ValidationPackageItem> items =
-                CommonUtilities.ParseValidationPackageItems(doc, Path.GetFileName(projFile));
+            IReadOnlyList<ValidationPackageItem> items = CommonUtilities.ParseValidationPackageItems(project);
 
             foreach (ValidationPackageItem item in items)
             {
-                string? propertyName = propertyNameSelector(item);
-                if (propertyName is null)
+                AspectBinding? binding = bindingSelector(item);
+                if (binding is null)
                 {
                     continue;
                 }
 
-                string? expectedValue = CommonUtilities.ReadPropertyValue(doc, propertyName);
+                string? expectedValue = CommonUtilities.ReadPropertyValue(project, binding.PropertyName);
                 if (expectedValue is null)
                 {
-                    errors.Add($"{packageName}.proj: {overrideAspectName} item for package '{item.PackageId}' " +
-                        $"names property '{propertyName}' but no such property is defined.");
-                    checkedCount++;
+                    // Explicit binding to a non-existent property is always an error: the author
+                    // expressed intent to validate this aspect, so a missing target property is a
+                    // configuration bug. Defaulted bindings are "validate if present" — silently
+                    // skip when the target property is not defined, since the item didn't ask
+                    // for this aspect specifically.
+                    if (binding.IsExplicit)
+                    {
+                        errors.Add($"{packageName}.proj: {overrideAspectName} item for package '{item.PackageId}' " +
+                            $"names property '{binding.PropertyName}' but no such property is defined.");
+                        checkedCount++;
+                    }
                     continue;
                 }
 
-                string? releaseVersion = ResolveReleaseVersion(item, packageName);
+                string? releaseVersion = ResolveReleaseVersion(versionsProject, item, packageName);
                 if (string.IsNullOrEmpty(releaseVersion))
                 {
                     errors.Add($"{packageName}.proj: {overrideAspectName} item for package '{item.PackageId}': " +
@@ -324,7 +332,7 @@ public class ExternalPackageTests
 
                 if (expectedValue != actualValue)
                 {
-                    errors.Add($"{packageName}.proj: {propertyName} '{expectedValue}' does not match " +
+                    errors.Add($"{packageName}.proj: {binding.PropertyName} '{expectedValue}' does not match " +
                         $"actual '{actualValue}' from {item.PackageId} {releaseVersion}.");
                 }
 

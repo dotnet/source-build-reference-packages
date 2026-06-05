@@ -11,11 +11,11 @@
 
   <ItemGroup>
     <!-- Used by the update-external-metadata script and ExternalPackageTests to identify
-         the Microsoft-shipped package to validate against. Each *Property metadata names
-         the MSBuild property in this .proj that holds the corresponding override value. -->
-    <FileVersionValidationPackage Include="Microsoft.IdentityModel.Tokens">
-      <FileVersionRevisionProperty>FileVersionRevision</FileVersionRevisionProperty>
-    </FileVersionValidationPackage>
+         the Microsoft-shipped package to validate against. The *Property metadata defaults
+         (FileVersionRevisionProperty, AssemblyVersionOverrideProperty,
+         InformationalVersionOverrideProperty) come from the sibling Directory.Build.props
+         ItemDefinitionGroup. -->
+    <FileVersionValidationPackage Include="Microsoft.IdentityModel.Tokens" />
   </ItemGroup>
 
   <Target Name="CustomRepoBuild">
