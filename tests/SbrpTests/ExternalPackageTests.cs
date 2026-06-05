@@ -166,7 +166,7 @@ public class ExternalPackageTests
         List<string> errors = new();
         int checkedCount = 0;
 
-        foreach ((string projFile, string packageName, Project project) in LoadProjectFiles())
+        foreach ((_, string packageName, Project project) in LoadProjectFiles())
         {
             string componentObjDir = Path.Combine(artifactsObjDir, packageName);
             if (!Directory.Exists(componentObjDir))
