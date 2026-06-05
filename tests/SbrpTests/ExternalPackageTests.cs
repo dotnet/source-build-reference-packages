@@ -98,7 +98,7 @@ public class ExternalPackageTests
         return doc.Root?
             .Elements("PropertyGroup")
             .Elements("SourceRevisionId")
-            .FirstOrDefault()
+            .LastOrDefault()
             ?.Value;
     }
 
