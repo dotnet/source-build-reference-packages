@@ -1,25 +1,17 @@
 <Project Sdk="Microsoft.Build.NoTargets">
 
+  <!-- Per-component overrides (FileVersionRevision, AssemblyVersionOverride, etc.) and the
+       <FileVersionValidationPackage> item shared with the update-external-metadata tool
+       and ExternalPackageTests live in this sibling file. SourceRevisionId stays in the
+       .proj below — it's per-.proj source provenance, orthogonal to validation overrides. -->
+  <Import Project="$(MSBuildThisFileDirectory)$(MSBuildProjectName).props" />
+
   <PropertyGroup>
     <PackagesOutput>$(ProjectDirectory)pack</PackagesOutput>
     <CustomRepoBuild>true</CustomRepoBuild>
     <SourceRevisionId>d622e6c7c899527638b53a6b06919859f5752add</SourceRevisionId>
     <GlobalJsonFile>$(ProjectDirectory)global.json</GlobalJsonFile>
-    <!-- The upstream build uses MinVer to compute FileVersion/AssemblyVersion/ExposeExperimentalFeatures
-         from git tags, but MinVer is disabled here via /p:IntegrationBuild=true (see CommonBuildArgs).
-         Set them explicitly so the source-built packages match the Microsoft-shipped NuGet packages.
-         These must be updated when the submodule is updated. See https://github.com/dotnet/source-build/issues/5577 -->
-    <FileVersionRevision>2017</FileVersionRevision>
-    <!-- Microsoft-shipped OpenTelemetry packages use MinVer's default AssemblyVersion of Major.0.0.0. -->
-    <AssemblyVersionOverride>1.0.0.0</AssemblyVersionOverride>
   </PropertyGroup>
-
-  <ItemGroup>
-    <!-- Used by the update-external-metadata script and ExternalPackageTests to identify
-         the Microsoft-shipped package to validate against. The *Property metadata defaults
-         come from the sibling Directory.Build.props ItemDefinitionGroup. -->
-    <FileVersionValidationPackage Include="OpenTelemetry" />
-  </ItemGroup>
 
   <Target Name="CustomRepoBuild">
     <PropertyGroup>

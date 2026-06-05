@@ -1,5 +1,11 @@
 <Project Sdk="Microsoft.Build.NoTargets">
 
+  <!-- Per-component overrides (FileVersionRevision, AssemblyVersionOverride, etc.) and the
+       <FileVersionValidationPackage> item shared with the update-external-metadata tool
+       and ExternalPackageTests live in this sibling file. SourceRevisionId stays in the
+       .proj below — it's per-.proj source provenance, orthogonal to validation overrides. -->
+  <Import Project="$(MSBuildThisFileDirectory)$(MSBuildProjectName).props" />
+
   <PropertyGroup>
     <!-- Project Paths -->
     <SlnPersistenceKeyFilePath>$(KeysDir)vs-solutionpersistence.snk</SlnPersistenceKeyFilePath>
@@ -8,14 +14,6 @@
     <PackagesOutput>$(ProjectDirectory)bin/Packages/$(Configuration)/NuGet/</PackagesOutput>
 
     <GlobalJsonFile>$(ProjectDirectory)global.json</GlobalJsonFile>
-
-    <!-- The upstream build uses Nerdbank.GitVersioning to compute the FileVersion revision from git
-         commit height, which cannot work in the VMR context. Set it here to match the official NuGet
-         package. See https://github.com/dotnet/source-build/issues/5512 -->
-    <FileVersionRevision>6595</FileVersionRevision>
-    <!-- NBGV is disabled in source-build, so pin these to the official package values. -->
-    <AssemblyVersionOverride>1.0.0.0</AssemblyVersionOverride>
-    <InformationalVersionOverride>1.0.52+19c3ca7dc9.RR</InformationalVersionOverride>
 
     <DotNetToolArgs>$(DotNetToolArgs) /p:Configuration=$(Configuration)</DotNetToolArgs>
     <DotNetToolArgs>$(DotNetToolArgs) /p:TreatWarningsAsErrors=false</DotNetToolArgs>
@@ -38,11 +36,6 @@
 
     <!-- Flag to remove analyzers -->
     <EnvironmentVariables Include="SourceBuild=true" />
-
-    <!-- Used by the update-external-metadata script and ExternalPackageTests to identify
-         the Microsoft-shipped package to validate against. The *Property metadata defaults
-         come from the sibling Directory.Build.props ItemDefinitionGroup. -->
-    <FileVersionValidationPackage Include="Microsoft.VisualStudio.SolutionPersistence" />
   </ItemGroup>
 
 </Project>

@@ -12,7 +12,6 @@ using System.Xml;
 using System.Xml.Linq;
 using Microsoft.Build.Evaluation;
 using SbrpUtilities;
-using static SbrpUtilities.CommonUtilities;
 
 if (args.Length < 1)
 {
@@ -22,9 +21,8 @@ if (args.Length < 1)
 }
 
 string componentName = args[0];
-
-// Find repo root
 string repoRoot = RunGit("rev-parse --show-toplevel").Trim();
+string componentPropsPath = Path.Combine(repoRoot, "src", "externalPackages", "projects", $"{componentName}.props");
 string projFile = Path.Combine(repoRoot, "src", "externalPackages", "projects", $"{componentName}.proj");
 string submoduleDir = Path.Combine(repoRoot, "src", "externalPackages", "src", componentName);
 
@@ -40,50 +38,74 @@ if (!Directory.Exists(submoduleDir))
     return 1;
 }
 
-// Two views of the .proj coexist:
-//   (1) MSBuild evaluation — authoritative for which validation items exist, which property
-//       names they bind to (including ItemDefinitionGroup defaults), and the evaluated
-//       property values.
-//   (2) XDocument + line-buffer — used solely for surgical in-place updates that preserve
-//       formatting exactly. MSBuild's XML round-tripping reflows the file in ways we do
-//       not want (XML decl, attribute layout, whitespace), so writes go through the
-//       line buffer instead.
-Project project = LoadValidationProject(projFile);
+// XDocument + line-buffer view of the .proj is used for surgical in-place updates that
+// preserve formatting exactly. MSBuild's XML round-tripping reflows the file in ways we
+// do not want (XML decl, attribute layout, whitespace), so writes go through the line
+// buffer instead.
+FileEditBuffer projBuffer = FileEditBuffer.Load(projFile);
 
-string projContent = File.ReadAllText(projFile);
-string newline = projContent.Contains("\r\n") ? "\r\n" : "\n";
-List<string> lines = new(projContent.Split(new[] { newline }, StringSplitOptions.None));
-XDocument projDoc = XDocument.Parse(projContent, LoadOptions.PreserveWhitespace | LoadOptions.SetLineInfo);
-
-// --- 1. Update SourceRevisionId ---
+// --- 1. Update SourceRevisionId in the .proj file ---
+// This runs unconditionally for every component — even those that don't have a sibling
+// <component>.props (no validation overrides). SourceRevisionId is tied to the submodule's
+// HEAD commit and is orthogonal to validation overrides.
 string commitHash = RunGit($"-C \"{submoduleDir}\" rev-parse HEAD").Trim();
 
-XElement? sourceRevisionIdEl = FindPropertyElement(projDoc, "SourceRevisionId");
+XElement? sourceRevisionIdEl = projBuffer.Document.Root?
+    .Elements("PropertyGroup")
+    .Elements("SourceRevisionId")
+    .LastOrDefault();
 
 if (sourceRevisionIdEl is not null)
 {
     string oldValue = sourceRevisionIdEl.Value;
-    UpdatePropertyLine(lines, sourceRevisionIdEl, "SourceRevisionId", commitHash);
+    UpdatePropertyLine(projBuffer.Lines, sourceRevisionIdEl, "SourceRevisionId", commitHash);
     Console.WriteLine($"Updated SourceRevisionId: {oldValue} -> {commitHash}");
 }
 else
 {
-    Console.WriteLine("No SourceRevisionId property found - skipping.");
+    Console.WriteLine("No SourceRevisionId property found in .proj - skipping.");
 }
 
-// --- 2. Update package-derived version metadata for each <FileVersionValidationPackage> item ---
-IReadOnlyList<ValidationPackageItem> validationItems = ParseValidationPackageItems(project);
+// --- 2. Update package-derived version metadata in <component>.props ---
+// Validation overrides are optional per component: only components whose source-built
+// assemblies need their AssemblyVersion / FileVersion / InformationalVersion pinned to the
+// MSFT-shipped values have a sibling <component>.props. For everything else, save the
+// SourceRevisionId update and exit successfully.
+if (!File.Exists(componentPropsPath))
+{
+    projBuffer.Save();
+    Console.WriteLine($"No sibling {componentName}.props - skipping metadata update.");
+    Console.WriteLine($"Saved changes to {componentName}.proj");
+    return 0;
+}
+
+// Two views of <component>.props coexist:
+//   (1) MSBuild evaluation — authoritative for which validation items exist, which property
+//       names they bind to (including ItemDefinitionGroup defaults from the imported shared
+//       validation.props), and the evaluated property values.
+//   (2) XDocument + line-buffer — used for surgical in-place updates that preserve
+//       formatting exactly (same reason as for the .proj above).
+Project project = CommonUtilities.LoadProject(componentPropsPath);
+FileEditBuffer componentPropsBuffer = FileEditBuffer.Load(componentPropsPath);
+
+// All <PropertyGroup> elements in the per-component .props file are in scope — the file
+// is component-scoped so there's no component-discrimination needed at this level.
+List<XElement> componentPropertyGroups = componentPropsBuffer.Document.Root?
+    .Elements("PropertyGroup")
+    .ToList() ?? new List<XElement>();
+
+IReadOnlyList<ValidationPackageItem> validationItems = CommonUtilities.ParseValidationPackageItems(project);
 
 if (validationItems.Count == 0)
 {
     Console.WriteLine("No <FileVersionValidationPackage> items configured - skipping metadata update.");
-    File.WriteAllText(projFile, string.Join(newline, lines));
+    projBuffer.Save();
     Console.WriteLine($"Saved changes to {componentName}.proj");
     return 0;
 }
 
 string versionsPropsPath = Path.Combine(repoRoot, "eng", "Versions.props");
-Project versionsProject = LoadVersionsProps(versionsPropsPath);
+Project versionsProject = CommonUtilities.LoadProject(versionsPropsPath);
 
 // Cache downloads across items so multiple items sharing the same package id+version
 // (a legitimate scenario, e.g. when one package contributes several aspects) don't re-fetch.
@@ -92,8 +114,8 @@ Dictionary<string, PackageVersionMetadata> metadataCache = new();
 foreach (ValidationPackageItem item in validationItems)
 {
     string? releaseVersion = item.ReleaseVersionPropertyName is not null
-        ? FindReleaseVersionByPropertyName(versionsProject, item.ReleaseVersionPropertyName)
-        : FindReleaseVersion(versionsProject, componentName);
+        ? CommonUtilities.FindReleaseVersionByPropertyName(versionsProject, item.ReleaseVersionPropertyName)
+        : CommonUtilities.FindReleaseVersion(versionsProject, componentName);
 
     if (string.IsNullOrEmpty(releaseVersion))
     {
@@ -102,9 +124,9 @@ foreach (ValidationPackageItem item in validationItems)
         return 1;
     }
 
-    AspectUpdate? revUpdate = ResolveAspect(item.PackageId, item.FileVersionRevision, projDoc, "FileVersionRevisionProperty");
-    AspectUpdate? avoUpdate = ResolveAspect(item.PackageId, item.AssemblyVersionOverride, projDoc, "AssemblyVersionOverrideProperty");
-    AspectUpdate? ivoUpdate = ResolveAspect(item.PackageId, item.InformationalVersionOverride, projDoc, "InformationalVersionOverrideProperty");
+    AspectUpdate? revUpdate = ResolveAspect(item.PackageId, item.FileVersionRevision, componentPropertyGroups, "FileVersionRevisionProperty");
+    AspectUpdate? avoUpdate = ResolveAspect(item.PackageId, item.AssemblyVersionOverride, componentPropertyGroups, "AssemblyVersionOverrideProperty");
+    AspectUpdate? ivoUpdate = ResolveAspect(item.PackageId, item.InformationalVersionOverride, componentPropertyGroups, "InformationalVersionOverrideProperty");
 
     if (revUpdate is null && avoUpdate is null && ivoUpdate is null)
     {
@@ -116,7 +138,7 @@ foreach (ValidationPackageItem item in validationItems)
     if (!metadataCache.TryGetValue(cacheKey, out PackageVersionMetadata? versionMetadata))
     {
         Console.WriteLine($"Downloading {item.PackageId} {releaseVersion}...");
-        versionMetadata = await GetPackageVersionMetadataAsync(repoRoot, item.PackageId, releaseVersion);
+        versionMetadata = await CommonUtilities.GetPackageVersionMetadataAsync(repoRoot, item.PackageId, releaseVersion);
         metadataCache[cacheKey] = versionMetadata;
     }
 
@@ -130,7 +152,7 @@ foreach (ValidationPackageItem item in validationItems)
 
         string revisionStr = versionMetadata.Revision.Value.ToString();
         string oldValue = rev.Element.Value;
-        UpdatePropertyLine(lines, rev.Element, rev.PropertyName, revisionStr);
+        UpdatePropertyLine(componentPropsBuffer.Lines, rev.Element, rev.PropertyName, revisionStr);
         Console.WriteLine($"Updated {rev.PropertyName}: {oldValue} -> {revisionStr} " +
             $"(from {item.PackageId} {releaseVersion}, FileVersion: {versionMetadata.FileVersion})");
     }
@@ -144,7 +166,7 @@ foreach (ValidationPackageItem item in validationItems)
         }
 
         string oldValue = avo.Element.Value;
-        UpdatePropertyLine(lines, avo.Element, avo.PropertyName, versionMetadata.AssemblyVersion);
+        UpdatePropertyLine(componentPropsBuffer.Lines, avo.Element, avo.PropertyName, versionMetadata.AssemblyVersion);
         Console.WriteLine($"Updated {avo.PropertyName}: {oldValue} -> {versionMetadata.AssemblyVersion} " +
             $"(from {item.PackageId} {releaseVersion})");
     }
@@ -158,14 +180,15 @@ foreach (ValidationPackageItem item in validationItems)
         }
 
         string oldValue = ivo.Element.Value;
-        UpdatePropertyLine(lines, ivo.Element, ivo.PropertyName, versionMetadata.InformationalVersion);
+        UpdatePropertyLine(componentPropsBuffer.Lines, ivo.Element, ivo.PropertyName, versionMetadata.InformationalVersion);
         Console.WriteLine($"Updated {ivo.PropertyName}: {oldValue} -> {versionMetadata.InformationalVersion} " +
             $"(from {item.PackageId} {releaseVersion})");
     }
 }
 
-File.WriteAllText(projFile, string.Join(newline, lines));
-Console.WriteLine($"Saved changes to {componentName}.proj");
+projBuffer.Save();
+componentPropsBuffer.Save();
+Console.WriteLine($"Saved changes to {componentName}.proj and {componentName}.props");
 return 0;
 
 // --- Helper methods ---
@@ -198,27 +221,28 @@ static string RunGit(string arguments)
     return output;
 }
 
-// Looks up the XElement for an aspect's target property. Returns null when the binding is
-// null (item is not configured for this aspect) or when the binding came from an
-// ItemDefinitionGroup default and the named property is not actually present in the .proj
-// (defaulted bindings are "validate if present"). Throws when the binding was explicit on
-// the item itself and the named property is missing — that always signals a configuration
-// error.
-static AspectUpdate? ResolveAspect(string packageId, AspectBinding? binding, XDocument doc, string metadataName)
+// Looks up the XElement for an aspect's target property in the per-component .props
+// file. Returns null when the binding is null (item is not configured for this aspect)
+// or when the binding came from an ItemDefinitionGroup default and the named property
+// is not actually present (defaulted bindings are "validate if present"). Throws when
+// the binding was explicit on the item itself and the named property is missing —
+// that always signals a configuration error.
+static AspectUpdate? ResolveAspect(string packageId, AspectBinding? binding, List<XElement> componentPropertyGroups, string metadataName)
 {
     if (binding is null)
     {
         return null;
     }
 
-    XElement? element = FindPropertyElement(doc, binding.PropertyName);
+    XElement? element = FindPropertyElement(componentPropertyGroups, binding.PropertyName);
     if (element is null)
     {
         if (binding.IsExplicit)
         {
             throw new InvalidOperationException(
                 $"<FileVersionValidationPackage Include=\"{packageId}\"> {metadataName} names " +
-                $"property '{binding.PropertyName}' but no such property is defined in the .proj.");
+                $"property '{binding.PropertyName}' but no such property is defined in the component's " +
+                $".props file.");
         }
 
         return null;
@@ -227,11 +251,13 @@ static AspectUpdate? ResolveAspect(string packageId, AspectBinding? binding, XDo
     return new AspectUpdate(binding.PropertyName, element);
 }
 
-static XElement? FindPropertyElement(XDocument doc, string propertyName) =>
-    doc.Root?
-        .Elements("PropertyGroup")
+// MSBuild evaluates properties top-to-bottom and last-write-wins. Match that semantics when
+// the .props file accidentally contains duplicate declarations: target the last occurrence
+// so the rewrite affects the property MSBuild actually consumes.
+static XElement? FindPropertyElement(List<XElement> componentPropertyGroups, string propertyName) =>
+    componentPropertyGroups
         .Elements(propertyName)
-        .FirstOrDefault();
+        .LastOrDefault();
 
 // Surgically updates the on-disk line containing a property element to a new value.
 // Locates the line via the XElement's IXmlLineInfo, then runs a narrow regex on that

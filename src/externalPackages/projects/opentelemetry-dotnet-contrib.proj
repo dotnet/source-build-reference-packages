@@ -1,37 +1,21 @@
 <Project Sdk="Microsoft.Build.NoTargets">
 
+  <!-- Per-component overrides (FileVersionRevision, AssemblyVersionOverride, etc.) and the
+       <FileVersionValidationPackage> item shared with the update-external-metadata tool
+       and ExternalPackageTests live in this sibling file. SourceRevisionId stays in the
+       .proj below — it's per-.proj source provenance, orthogonal to validation overrides. -->
+  <Import Project="$(MSBuildThisFileDirectory)$(MSBuildProjectName).props" />
+
   <PropertyGroup>
     <PackagesOutput>$(ProjectDirectory)pack</PackagesOutput>
     <CustomRepoBuild>true</CustomRepoBuild>
     <SourceRevisionId>b89c765905dbc6db1421ff0a098127d44665c71f</SourceRevisionId>
     <GlobalJsonFile>$(ProjectDirectory)global.json</GlobalJsonFile>
-    <!-- The upstream build uses MinVer to compute FileVersion/AssemblyVersion from git tags, but MinVer
-         is disabled here via /p:IntegrationBuild=true (see CommonBuildArgs). The Microsoft-shipped contrib
-         packages each have AssemblyVersion = FileVersion = ReleaseVersion.BuildNumber, where BuildNumber is
-         the GitHub Actions run number from when that specific package's release tag was published. Each
-         contrib package is released independently, so the BuildNumber differs per package. These must be
-         updated when the submodule is updated. See https://github.com/dotnet/source-build/issues/5577 -->
-    <!-- BuildNumber from MSFT-shipped OpenTelemetry.Instrumentation.Http release (tag Instrumentation.Http-1.15.1). -->
-    <OpenTelemetryDotNetContribHttpFileVersionRevision>1025</OpenTelemetryDotNetContribHttpFileVersionRevision>
-    <!-- BuildNumber from MSFT-shipped OpenTelemetry.Instrumentation.Runtime release (tag Instrumentation.Runtime-1.15.1). -->
-    <OpenTelemetryDotNetContribRuntimeFileVersionRevision>1029</OpenTelemetryDotNetContribRuntimeFileVersionRevision>
   </PropertyGroup>
 
   <!-- This repo depends on packages built by opentelemetry-dotnet -->
   <ItemGroup>
     <RepositoryReference Include="opentelemetry-dotnet" />
-
-    <!-- Used by the update-external-metadata script and ExternalPackageTests. Each contrib
-         package is released independently with its own ReleaseVersion + FileVersion revision,
-         so each item names the specific properties to use. -->
-    <FileVersionValidationPackage Include="OpenTelemetry.Instrumentation.Http">
-      <FileVersionRevisionProperty>OpenTelemetryDotNetContribHttpFileVersionRevision</FileVersionRevisionProperty>
-      <ReleaseVersionProperty>OpenTelemetryDotNetContribHttpReleaseVersion</ReleaseVersionProperty>
-    </FileVersionValidationPackage>
-    <FileVersionValidationPackage Include="OpenTelemetry.Instrumentation.Runtime">
-      <FileVersionRevisionProperty>OpenTelemetryDotNetContribRuntimeFileVersionRevision</FileVersionRevisionProperty>
-      <ReleaseVersionProperty>OpenTelemetryDotNetContribRuntimeReleaseVersion</ReleaseVersionProperty>
-    </FileVersionValidationPackage>
   </ItemGroup>
 
   <Target Name="CustomRepoBuild">

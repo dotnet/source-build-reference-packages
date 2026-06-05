@@ -9,8 +9,6 @@ using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Xml.Linq;
-using Microsoft.Build.Construction;
 using Microsoft.Build.Evaluation;
 using NuGet.Common;
 using NuGet.Configuration;
@@ -64,82 +62,25 @@ public static class CommonUtilities
     private const string ReleaseVersionMetadataName = "ReleaseVersionProperty";
 
     /// <summary>
-    /// Loads an external package <c>.proj</c> file for read-only MSBuild evaluation. The .proj
-    /// uses an SDK and a chain of imports that is only resolvable after restore; to make
-    /// evaluation safe to run at any time (including before restore), this builds a synthetic
-    /// in-memory project that contains only the parts of the .proj relevant to validation —
-    /// <c>PropertyGroup</c>, <c>ItemGroup</c>, and <c>ItemDefinitionGroup</c> — with the
-    /// <c>Sdk</c> attribute removed and <c>Import</c>/<c>Target</c>/<c>UsingTask</c> stripped.
+    /// Loads a .props/.proj file for read-only MSBuild evaluation.
+    /// </summary>
+    /// <remarks>
     /// <para>
-    /// <c>ItemDefinitionGroup</c> blocks from a sibling <c>Directory.Build.props</c> (if any)
-    /// are prepended so that defaulted <c>FileVersionValidationPackage</c> metadata flows
-    /// through the standard MSBuild evaluation pipeline.
+    /// Each load uses its own <see cref="ProjectCollection"/> to avoid cross-call caching that
+    /// would otherwise return the same evaluated tree for repeated loads of the same path.
     /// </para>
-    /// </summary>
-    public static Project LoadValidationProject(string projFile)
-    {
-        XDocument projDoc = XDocument.Load(projFile);
-        XElement root = projDoc.Root
-            ?? throw new InvalidOperationException($"{projFile}: malformed XML, no root element.");
-
-        // Remove Sdk attribute (both forms: attribute on Project, or via <Sdk> child) so MSBuild
-        // does not try to resolve the SDK chain.
-        root.Attributes("Sdk").Remove();
-        root.Elements("Sdk").Remove();
-
-        // Strip elements that require SDK/task resolution to evaluate cleanly. We only keep
-        // PropertyGroup, ItemGroup, ItemDefinitionGroup, and Choose blocks.
-        root.Elements()
-            .Where(e => e.Name.LocalName is "Import" or "Target" or "UsingTask" or "ImportGroup")
-            .Remove();
-
-        // Pull in ItemDefinitionGroup blocks from sibling Directory.Build.props. We intentionally
-        // extract just those blocks rather than evaluating the full Directory.Build.props chain —
-        // that chain pulls in Arcade/SDK content that is not resolvable in a parser tool.
-        string projDir = Path.GetDirectoryName(Path.GetFullPath(projFile))
-            ?? throw new InvalidOperationException($"{projFile}: cannot resolve project directory.");
-        string siblingDirProps = Path.Combine(projDir, "Directory.Build.props");
-        if (File.Exists(siblingDirProps))
-        {
-            XDocument dirDoc = XDocument.Load(siblingDirProps);
-            if (dirDoc.Root is not null)
-            {
-                foreach (XElement idg in dirDoc.Root.Elements("ItemDefinitionGroup").Reverse())
-                {
-                    root.AddFirst(new XElement(idg));
-                }
-            }
-        }
-
-        return LoadProjectFromXDocument(projDoc, projFile);
-    }
-
-    /// <summary>
-    /// Loads <c>eng/Versions.props</c> for read-only MSBuild evaluation. Versions.props has no
-    /// SDK reference, so loading is a direct evaluation of the file as-is.
-    /// </summary>
-    public static Project LoadVersionsProps(string versionsPropsPath)
-    {
-        return LoadProjectFromFile(versionsPropsPath);
-    }
-
-    private static Project LoadProjectFromFile(string filePath)
+    /// <para>
+    /// The target file must not declare an <c>Sdk</c> and should not import files that do —
+    /// MSBuild SDK resolution requires either <c>MSBuildLocator.RegisterDefaults()</c> (which
+    /// cannot run inside the vstest test host, because the host preloads Microsoft.Build) or
+    /// running under the <c>dotnet</c> CLI host. Standalone <c>.props</c> files with no SDK and
+    /// no upward import chain load successfully in every host.
+    /// </para>
+    /// </remarks>
+    public static Project LoadProject(string filePath)
     {
         ProjectCollection collection = new();
-        ProjectRootElement root = ProjectRootElement.Open(filePath, collection)
-            ?? throw new InvalidOperationException($"{filePath}: failed to load project XML.");
-        return new Project(root, globalProperties: null, toolsVersion: null, collection);
-    }
-
-    private static Project LoadProjectFromXDocument(XDocument doc, string sourcePath)
-    {
-        ProjectCollection collection = new();
-        using System.Xml.XmlReader reader = doc.CreateReader();
-        ProjectRootElement root = ProjectRootElement.Create(reader, collection);
-        // Preserve the original path so that error messages and any path-relative property
-        // functions report the real .proj location, not a synthetic one.
-        root.FullPath = sourcePath;
-        return new Project(root, globalProperties: null, toolsVersion: null, collection);
+        return new Project(filePath, globalProperties: null, toolsVersion: null, collection);
     }
 
     /// <summary>

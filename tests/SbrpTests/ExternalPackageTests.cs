@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Microsoft.Build.Evaluation;
 using SbrpUtilities;
 using Xunit;
@@ -20,6 +21,9 @@ public class ExternalPackageTests
 
     private static readonly string ProjectsDir =
         Path.Combine(RepoRoot, "src", "externalPackages", "projects");
+
+    private static readonly string DefaultsPropsPath =
+        Path.Combine(ProjectsDir, "validation.props");
 
     private static readonly string VersionsPropsPath =
         Path.Combine(RepoRoot, "eng", "Versions.props");
@@ -45,8 +49,9 @@ public class ExternalPackageTests
         List<string> errors = new();
         int checkedCount = 0;
 
-        foreach ((string projFile, string packageName, Project project) in LoadProjectFiles())
+        foreach (string projFile in Directory.GetFiles(ProjectsDir, "*.proj"))
         {
+            string packageName = Path.GetFileNameWithoutExtension(projFile);
             string submoduleDir = Path.Combine(submodulesDir, packageName);
 
             // Skip packages that don't have a corresponding submodule
@@ -66,7 +71,10 @@ public class ExternalPackageTests
 
             string submoduleHash = result.StdOut.Trim();
 
-            string? sourceRevisionId = CommonUtilities.ReadPropertyValue(project, "SourceRevisionId");
+            // SourceRevisionId is a literal value declared in each .proj's <PropertyGroup>;
+            // read it directly via XDocument so this test doesn't depend on MSBuild evaluation
+            // (which would need SDK resolution / MSBuildLocator and can't run inside dotnet test).
+            string? sourceRevisionId = ReadSourceRevisionIdFromProj(projFile);
 
             if (string.IsNullOrEmpty(sourceRevisionId))
             {
@@ -82,6 +90,16 @@ public class ExternalPackageTests
 
         Assert.True(checkedCount > 0, "No external packages with initialized submodules were found to validate.");
         AssertNoErrors(errors, "SourceRevisionId");
+    }
+
+    private static string? ReadSourceRevisionIdFromProj(string projFile)
+    {
+        XDocument doc = XDocument.Load(projFile);
+        return doc.Root?
+            .Elements("PropertyGroup")
+            .Elements("SourceRevisionId")
+            .FirstOrDefault()
+            ?.Value;
     }
 
     /// <summary>
@@ -143,7 +161,7 @@ public class ExternalPackageTests
     public void ReleaseVersionMatchesPackageOutput()
     {
         string artifactsObjDir = Path.Combine(RepoRoot, "artifacts", "obj");
-        Project versionsProject = CommonUtilities.LoadVersionsProps(VersionsPropsPath);
+        Project versionsProject = CommonUtilities.LoadProject(VersionsPropsPath);
 
         List<string> errors = new();
         int checkedCount = 0;
@@ -218,8 +236,12 @@ public class ExternalPackageTests
     }
 
     /// <summary>
-    /// Loads all .proj files from the external packages projects directory,
-    /// returning the file path, component name, and MSBuild-evaluated project.
+    /// Loads validation metadata for each external package component. Discovers components by
+    /// listing the sibling .proj files (one per component) and then loading that component's
+    /// <c>&lt;component&gt;.props</c> file when present. Components without a sibling .props
+    /// have no validation overrides; the shared defaults file is loaded as a stand-in so the
+    /// returned <see cref="Project"/> is non-null and yields zero
+    /// <c>FileVersionValidationPackage</c> items via <see cref="CommonUtilities.ParseValidationPackageItems"/>.
     /// </summary>
     private static IEnumerable<(string ProjFile, string PackageName, Project Project)> LoadProjectFiles()
     {
@@ -229,7 +251,9 @@ public class ExternalPackageTests
         foreach (string projFile in projFiles)
         {
             string packageName = Path.GetFileNameWithoutExtension(projFile);
-            Project project = CommonUtilities.LoadValidationProject(projFile);
+            string componentPropsFile = Path.Combine(ProjectsDir, $"{packageName}.props");
+            string toLoad = File.Exists(componentPropsFile) ? componentPropsFile : DefaultsPropsPath;
+            Project project = CommonUtilities.LoadProject(toLoad);
             yield return (projFile, packageName, project);
         }
     }
@@ -265,7 +289,7 @@ public class ExternalPackageTests
         Func<ValidationPackageItem, AspectBinding?> bindingSelector,
         Func<PackageVersionMetadata, string?> actualValueSelector)
     {
-        Project versionsProject = CommonUtilities.LoadVersionsProps(VersionsPropsPath);
+        Project versionsProject = CommonUtilities.LoadProject(VersionsPropsPath);
         List<string> errors = new();
         int checkedCount = 0;
 

@@ -30,23 +30,6 @@
     <PatchToApply Include="$(PatchesDir)$(InnerRepoName)/*.patch" />
   </ItemGroup>
 
-  <!-- Default property-name bindings for <FileVersionValidationPackage> items declared in
-       individual .proj files. Items inherit these defaults unless they declare item-level
-       metadata that overrides them. Defaulted bindings are "validate if present": if the
-       named property is not actually defined in the .proj, that aspect is silently skipped
-       for the item — so a .proj that participates in only some aspects (e.g. just
-       FileVersionRevision) needs no per-item metadata. Explicit per-item metadata is still
-       required when (a) the property name differs from the default, or (b) a project has
-       multiple items that would otherwise collide on the same default property.
-       See eng/tools/CommonUtilities/CommonUtilities.cs for the parsing logic. -->
-  <ItemDefinitionGroup>
-    <FileVersionValidationPackage>
-      <FileVersionRevisionProperty>FileVersionRevision</FileVersionRevisionProperty>
-      <AssemblyVersionOverrideProperty>AssemblyVersionOverride</AssemblyVersionOverrideProperty>
-      <InformationalVersionOverrideProperty>InformationalVersionOverride</InformationalVersionOverrideProperty>
-    </FileVersionValidationPackage>
-  </ItemDefinitionGroup>
-
   <ItemGroup>
     <EnvironmentVariables Include="DotNetPackageVersionPropsPath=$(PackageVersionPropsPath)" />
     <EnvironmentVariables Include="DotNetRestorePackagesPath=$(PackagesDir)" />
