@@ -296,7 +296,7 @@ public class ExternalPackageTests
         // Cache per (packageId, version) so multiple aspects/items don't re-download.
         Dictionary<string, PackageVersionMetadata> metadataCache = new();
 
-        foreach ((string projFile, string packageName, Project project) in LoadProjectFiles())
+        foreach ((_, string packageName, Project project) in LoadProjectFiles())
         {
             IReadOnlyList<ValidationPackageItem> items = CommonUtilities.ParseValidationPackageItems(project);
 
