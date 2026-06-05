@@ -13,8 +13,6 @@
          commit height, which cannot work in the VMR context. Set it here to match the official NuGet
          package. See https://github.com/dotnet/source-build/issues/5512 -->
     <FileVersionRevision>6595</FileVersionRevision>
-    <!-- Used by the update-external-metadata script to determine the package to download. -->
-    <FileVersionValidationPackage>Microsoft.VisualStudio.SolutionPersistence</FileVersionValidationPackage>
     <!-- NBGV is disabled in source-build, so pin these to the official package values. -->
     <AssemblyVersionOverride>1.0.0.0</AssemblyVersionOverride>
     <InformationalVersionOverride>1.0.52+19c3ca7dc9.RR</InformationalVersionOverride>
@@ -40,6 +38,15 @@
 
     <!-- Flag to remove analyzers -->
     <EnvironmentVariables Include="SourceBuild=true" />
+
+    <!-- Used by the update-external-metadata script and ExternalPackageTests to identify
+         the Microsoft-shipped package to validate against. Each *Property metadata names
+         the MSBuild property in this .proj that holds the corresponding override value. -->
+    <FileVersionValidationPackage Include="Microsoft.VisualStudio.SolutionPersistence">
+      <FileVersionRevisionProperty>FileVersionRevision</FileVersionRevisionProperty>
+      <AssemblyVersionOverrideProperty>AssemblyVersionOverride</AssemblyVersionOverrideProperty>
+      <InformationalVersionOverrideProperty>InformationalVersionOverride</InformationalVersionOverrideProperty>
+    </FileVersionValidationPackage>
   </ItemGroup>
 
 </Project>

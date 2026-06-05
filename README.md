@@ -65,11 +65,43 @@ to .NET. The following sections describe how to add/upgrade the various types of
    If the component computes `FileVersion` from non-deterministic values (e.g., `DateTime.Now`),
    include a `FileVersionRevision` property set to the revision from the Microsoft-shipped package
    and pass it via `/p:FileVersion` in the build command args.
-   Also include a `FileVersionValidationPackage` property naming a NuGet package produced by the
-   component so that tests can validate the revision.
+   Also declare a `FileVersionValidationPackage` **item** naming a NuGet package produced by the
+   component so the metadata-update script and tests can validate the version. The `*Property`
+   metadata elements name the MSBuild properties in this .proj that hold each override value;
+   omit metadata for aspects you don't override. Each named property must exist in the .proj —
+   missing is an error.
+
+   ```xml
+   <ItemGroup>
+     <FileVersionValidationPackage Include="Microsoft.MyPackage">
+       <FileVersionRevisionProperty>FileVersionRevision</FileVersionRevisionProperty>
+     </FileVersionValidationPackage>
+   </ItemGroup>
+   ```
+
+   When a single submodule produces multiple packages with different release versions or revisions
+   (each from its own release tag), declare one item per package, each with its own per-package
+   property names so the items don't compete to write the same property:
+
+   ```xml
+   <ItemGroup>
+     <FileVersionValidationPackage Include="MyOrg.PackageA">
+       <FileVersionRevisionProperty>MyOrgPackageAFileVersionRevision</FileVersionRevisionProperty>
+       <ReleaseVersionProperty>MyOrgPackageAReleaseVersion</ReleaseVersionProperty>
+     </FileVersionValidationPackage>
+     <FileVersionValidationPackage Include="MyOrg.PackageB">
+       <FileVersionRevisionProperty>MyOrgPackageBFileVersionRevision</FileVersionRevisionProperty>
+       <ReleaseVersionProperty>MyOrgPackageBReleaseVersion</ReleaseVersionProperty>
+     </FileVersionValidationPackage>
+   </ItemGroup>
+   ```
+
+   By default the release version is auto-derived from the `.proj` filename
+   (e.g. `my-component.proj` &rarr; `<MyComponentReleaseVersion>` in `eng/Versions.props`).
+   Setting `ReleaseVersionProperty` overrides that lookup.
 
    After defining the project, run the metadata update script to automatically populate
-   `SourceRevisionId` and `FileVersionRevision` from the submodule and published package:
+   `SourceRevisionId` and the package-derived properties from the submodule and published package:
 
    ```bash
    # Linux/macOS

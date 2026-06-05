@@ -7,9 +7,16 @@
     <!-- The FileVersion revision from the Microsoft-shipped package. This must be updated
          when the submodule is updated. See https://github.com/dotnet/source-build/issues/5509 -->
     <FileVersionRevision>50722</FileVersionRevision>
-    <!-- Used by the update-external-metadata script to determine the package to download. -->
-    <FileVersionValidationPackage>Microsoft.IdentityModel.Tokens</FileVersionValidationPackage>
   </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Used by the update-external-metadata script and ExternalPackageTests to identify
+         the Microsoft-shipped package to validate against. Each *Property metadata names
+         the MSBuild property in this .proj that holds the corresponding override value. -->
+    <FileVersionValidationPackage Include="Microsoft.IdentityModel.Tokens">
+      <FileVersionRevisionProperty>FileVersionRevision</FileVersionRevisionProperty>
+    </FileVersionValidationPackage>
+  </ItemGroup>
 
   <Target Name="CustomRepoBuild">
     <PropertyGroup>

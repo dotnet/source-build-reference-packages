@@ -25,8 +25,39 @@ public record PackageVersionMetadata(
     string? AssemblyVersion,
     string? InformationalVersion);
 
+/// <summary>
+/// Describes one NuGet package referenced by a <c>FileVersionValidationPackage</c> item
+/// in an external package <c>.proj</c> file. Encapsulates which MSBuild property names hold
+/// the corresponding version override values, and which property in <c>eng/Versions.props</c>
+/// holds the package's release version.
+///
+/// The three aspect property names (FileVersionRevision / AssemblyVersionOverride /
+/// InformationalVersionOverride) are nullable: a null value means the item does not opt in to
+/// validating or auto-updating that aspect. A non-null value names a property that MUST exist
+/// in the .proj — missing is an error. This forces every .proj to declare its bindings
+/// explicitly, eliminating the multi-item collision class.
+/// </summary>
+/// <param name="PackageId">The NuGet package ID.</param>
+/// <param name="FileVersionRevisionPropertyName">The MSBuild property name holding the
+/// FileVersion 4th component, or null if this item does not bind to a FileVersion revision.</param>
+/// <param name="AssemblyVersionOverridePropertyName">The MSBuild property name holding the
+/// AssemblyVersion override, or null if this item does not bind to an AssemblyVersion override.</param>
+/// <param name="InformationalVersionOverridePropertyName">The MSBuild property name holding the
+/// InformationalVersion override, or null if this item does not bind to an InformationalVersion
+/// override.</param>
+/// <param name="ReleaseVersionPropertyName">If set, names the exact property in <c>eng/Versions.props</c>
+/// to look up the release version. If null, the release version is auto-derived from the .proj filename
+/// as a convenience for single-package projects (the common case).</param>
+public record ValidationPackageItem(
+    string PackageId,
+    string? FileVersionRevisionPropertyName,
+    string? AssemblyVersionOverridePropertyName,
+    string? InformationalVersionOverridePropertyName,
+    string? ReleaseVersionPropertyName);
+
 public static class CommonUtilities
 {
+
     /// <summary>
     /// Finds the release version for a component in eng/Versions.props by matching
     /// the normalized (hyphen-stripped, case-insensitive) component name against
@@ -42,6 +73,75 @@ public static class CommonUtilities
             .FirstOrDefault(e => e.Name.LocalName.EndsWith("ReleaseVersion", StringComparison.Ordinal)
                 && e.Name.LocalName.Replace("ReleaseVersion", "", StringComparison.Ordinal)
                     .Equals(normalizedName, StringComparison.OrdinalIgnoreCase))
+            ?.Value;
+    }
+
+    /// <summary>
+    /// Finds a release version in eng/Versions.props by exact property name match.
+    /// Used when a <c>FileVersionValidationPackage</c> item explicitly names a
+    /// <c>ReleaseVersionProperty</c>.
+    /// </summary>
+    public static string? FindReleaseVersionByPropertyName(string versionsPropsPath, string propertyName)
+    {
+        XDocument versionsProps = XDocument.Load(versionsPropsPath);
+        return versionsProps
+            .Descendants()
+            .FirstOrDefault(e => e.Name.LocalName.Equals(propertyName, StringComparison.Ordinal))
+            ?.Value;
+    }
+
+    /// <summary>
+    /// Parses the <c>FileVersionValidationPackage</c> items from an external package
+    /// <c>.proj</c> file.
+    /// </summary>
+    /// <param name="doc">Parsed .proj XML.</param>
+    /// <param name="projFileName">File name of the .proj (for error messages).</param>
+    /// <returns>An ordered list of validation items, empty if the project declares none.</returns>
+    /// <exception cref="InvalidOperationException">If an item is missing its <c>Include</c> attribute.</exception>
+    public static IReadOnlyList<ValidationPackageItem> ParseValidationPackageItems(
+        XDocument doc, string projFileName)
+    {
+        if (doc.Root is null)
+        {
+            return Array.Empty<ValidationPackageItem>();
+        }
+
+        List<ValidationPackageItem> results = new();
+        foreach (XElement item in doc.Root.Elements("ItemGroup").Elements("FileVersionValidationPackage"))
+        {
+            string? packageId = item.Attribute("Include")?.Value;
+            if (string.IsNullOrWhiteSpace(packageId))
+            {
+                throw new InvalidOperationException(
+                    $"{projFileName}: <FileVersionValidationPackage> item is missing a non-empty Include attribute.");
+            }
+
+            results.Add(new ValidationPackageItem(
+                packageId,
+                ReadOptionalMetadata(item, "FileVersionRevisionProperty"),
+                ReadOptionalMetadata(item, "AssemblyVersionOverrideProperty"),
+                ReadOptionalMetadata(item, "InformationalVersionOverrideProperty"),
+                ReadOptionalMetadata(item, "ReleaseVersionProperty")));
+        }
+
+        return results;
+    }
+
+    private static string? ReadOptionalMetadata(XElement item, string metadataName)
+    {
+        string? value = item.Element(metadataName)?.Value;
+        return string.IsNullOrWhiteSpace(value) ? null : value;
+    }
+
+    /// <summary>
+    /// Reads a property value from any top-level <c>PropertyGroup</c> by exact name.
+    /// </summary>
+    public static string? ReadPropertyValue(XDocument doc, string propertyName)
+    {
+        return doc.Root?
+            .Elements("PropertyGroup")
+            .Elements(propertyName)
+            .FirstOrDefault()
             ?.Value;
     }
 
