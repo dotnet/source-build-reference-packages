@@ -112,7 +112,7 @@ If `./build.sh -sb` produces API compatibility errors (CP0001, CP0002, CP0008, C
 
 | Diagnostic | Description | Tracking |
 |-----------|-------------|----------|
-| CP0008 | Missing interal interfaces from friend assemblies | https://github.com/dotnet/sdk/issues/54451 |
+| CP0008 | Missing internal interfaces from friend assemblies | https://github.com/dotnet/sdk/issues/54451 |
 
 ## Validation Checklist
 
