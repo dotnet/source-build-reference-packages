@@ -44,11 +44,11 @@
       <PackArgs>$(CommonBuildArgs) --output $(ProjectDirectory)pack</PackArgs>
 
       <!-- Per-package version args. Each contrib package has its own AssemblyVersion/FileVersion because
-           it was released independently from a package-specific git tag. -->
-      <HttpFileVersion>$(OpenTelemetryDotNetContribHttpReleaseVersion).$(OpenTelemetryDotNetContribHttpFileVersionRevision)</HttpFileVersion>
-      <HttpVersionArgs>/p:Version=$(OpenTelemetryDotNetContribHttpReleaseVersion) /p:AssemblyVersion=$(HttpFileVersion) /p:FileVersion=$(HttpFileVersion)</HttpVersionArgs>
-      <RuntimeFileVersion>$(OpenTelemetryDotNetContribRuntimeReleaseVersion).$(OpenTelemetryDotNetContribRuntimeFileVersionRevision)</RuntimeFileVersion>
-      <RuntimeVersionArgs>/p:Version=$(OpenTelemetryDotNetContribRuntimeReleaseVersion) /p:AssemblyVersion=$(RuntimeFileVersion) /p:FileVersion=$(RuntimeFileVersion)</RuntimeVersionArgs>
+           it was released independently from a package-specific git tag. AssemblyVersion and FileVersion
+           are sourced from separate properties in the .props so each is validated independently against
+           the MSFT-shipped package by ExternalPackageTests / UpdateExternalMetadata. -->
+      <HttpVersionArgs>/p:Version=$(OpenTelemetryDotNetContribHttpReleaseVersion) /p:AssemblyVersion=$(OpenTelemetryDotNetContribHttpAssemblyVersionOverride) /p:FileVersion=$(OpenTelemetryDotNetContribHttpReleaseVersion).$(OpenTelemetryDotNetContribHttpFileVersionRevision)</HttpVersionArgs>
+      <RuntimeVersionArgs>/p:Version=$(OpenTelemetryDotNetContribRuntimeReleaseVersion) /p:AssemblyVersion=$(OpenTelemetryDotNetContribRuntimeAssemblyVersionOverride) /p:FileVersion=$(OpenTelemetryDotNetContribRuntimeReleaseVersion).$(OpenTelemetryDotNetContribRuntimeFileVersionRevision)</RuntimeVersionArgs>
     </PropertyGroup>
 
     <!-- OpenTelemetry.Instrumentation.Http -->
