@@ -291,7 +291,11 @@ static void UpdatePropertyLine(List<string> lines, XElement element, string elem
             $"The property may span multiple lines.");
     }
 
-    lines[lineIndex] = Regex.Replace(originalLine, pattern, replacement);
+    // Use the MatchEvaluator overload (rather than the string-replacement overload) so that
+    // any '$' in newValue is treated literally instead of as a Regex substitution token
+    // (e.g. $1, $&, ${name}). XText escapes XML entities but not '$', so this matters for
+    // values such as InformationalVersion strings that may include SemVer build metadata.
+    lines[lineIndex] = Regex.Replace(originalLine, pattern, _ => replacement);
 }
 
 internal record AspectUpdate(string PropertyName, XElement Element);
