@@ -267,6 +267,16 @@ static XElement? FindPropertyElement(List<XElement> componentPropertyGroups, str
 // surface as an InvalidOperationException rather than silently no-op.
 static void UpdatePropertyLine(List<string> lines, XElement element, string elementName, string newValue)
 {
+    // Single-line replacement invariant: each edit must not change the file's line count,
+    // otherwise the IXmlLineInfo line numbers captured earlier from XDocument would drift
+    // for any subsequent UpdatePropertyLine call on the same buffer.
+    if (newValue.Contains('\n') || newValue.Contains('\r'))
+    {
+        throw new InvalidOperationException(
+            $"<{elementName}> replacement value contains a newline, which would break " +
+            $"line-number tracking for subsequent edits. Value: [{newValue}].");
+    }
+
     IXmlLineInfo info = element;
     int lineIndex = info.LineNumber - 1;
     if (lineIndex < 0 || lineIndex >= lines.Count)
