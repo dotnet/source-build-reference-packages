@@ -85,7 +85,7 @@ if (!File.Exists(componentPropsPath))
 //       validation.props), and the evaluated property values.
 //   (2) XDocument + line-buffer — used for surgical in-place updates that preserve
 //       formatting exactly (same reason as for the .proj above).
-Project project = CommonUtilities.LoadProject(componentPropsPath);
+Project project = new(componentPropsPath);
 FileEditBuffer componentPropsBuffer = FileEditBuffer.Load(componentPropsPath);
 
 // All <PropertyGroup> elements in the per-component .props file are in scope — the file
@@ -105,7 +105,7 @@ if (validationItems.Count == 0)
 }
 
 string versionsPropsPath = Path.Combine(repoRoot, "eng", "Versions.props");
-Project versionsProject = CommonUtilities.LoadProject(versionsPropsPath);
+Project versionsProject = new(versionsPropsPath);
 
 // Cache downloads across items so multiple items sharing the same package id+version
 // (a legitimate scenario, e.g. when one package contributes several aspects) don't re-fetch.

@@ -161,7 +161,8 @@ public class ExternalPackageTests
     public void ReleaseVersionMatchesPackageOutput()
     {
         string artifactsObjDir = Path.Combine(RepoRoot, "artifacts", "obj");
-        Project versionsProject = CommonUtilities.LoadProject(VersionsPropsPath);
+        using ProjectCollection versionsCollection = new();
+        Project versionsProject = versionsCollection.LoadProject(VersionsPropsPath);
 
         List<string> errors = new();
         int checkedCount = 0;
@@ -253,7 +254,11 @@ public class ExternalPackageTests
             string packageName = Path.GetFileNameWithoutExtension(projFile);
             string componentPropsFile = Path.Combine(ProjectsDir, $"{packageName}.props");
             string toLoad = File.Exists(componentPropsFile) ? componentPropsFile : DefaultsPropsPath;
-            Project project = CommonUtilities.LoadProject(toLoad);
+            // 'using' inside the iterator: the ProjectCollection is disposed when the consumer
+            // advances past this yield (or abandons the enumerator). Callers must not retain
+            // the yielded Project beyond their iteration body.
+            using ProjectCollection collection = new();
+            Project project = collection.LoadProject(toLoad);
             yield return (projFile, packageName, project);
         }
     }
@@ -289,7 +294,8 @@ public class ExternalPackageTests
         Func<ValidationPackageItem, AspectBinding?> bindingSelector,
         Func<PackageVersionMetadata, string?> actualValueSelector)
     {
-        Project versionsProject = CommonUtilities.LoadProject(VersionsPropsPath);
+        using ProjectCollection versionsCollection = new();
+        Project versionsProject = versionsCollection.LoadProject(VersionsPropsPath);
         List<string> errors = new();
         int checkedCount = 0;
 

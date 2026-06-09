@@ -62,28 +62,6 @@ public static class CommonUtilities
     private const string ReleaseVersionMetadataName = "ReleaseVersionProperty";
 
     /// <summary>
-    /// Loads a .props/.proj file for read-only MSBuild evaluation.
-    /// </summary>
-    /// <remarks>
-    /// <para>
-    /// Each load uses its own <see cref="ProjectCollection"/> to avoid cross-call caching that
-    /// would otherwise return the same evaluated tree for repeated loads of the same path.
-    /// </para>
-    /// <para>
-    /// The target file must not declare an <c>Sdk</c> and should not import files that do —
-    /// MSBuild SDK resolution requires either <c>MSBuildLocator.RegisterDefaults()</c> (which
-    /// cannot run inside the vstest test host, because the host preloads Microsoft.Build) or
-    /// running under the <c>dotnet</c> CLI host. Standalone <c>.props</c> files with no SDK and
-    /// no upward import chain load successfully in every host.
-    /// </para>
-    /// </remarks>
-    public static Project LoadProject(string filePath)
-    {
-        ProjectCollection collection = new();
-        return new Project(filePath, globalProperties: null, toolsVersion: null, collection);
-    }
-
-    /// <summary>
     /// Parses the <c>FileVersionValidationPackage</c> items from an evaluated MSBuild project.
     /// Item-level metadata wins; <c>ItemDefinitionGroup</c> defaults from imported files apply
     /// where the item itself does not specify the metadata.
