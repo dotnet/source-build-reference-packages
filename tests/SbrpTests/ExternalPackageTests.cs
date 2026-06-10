@@ -362,7 +362,7 @@ public class ExternalPackageTests
 
                 if (expectedValue != actualValue)
                 {
-                    errors.Add($"{packageName}.proj: {binding.PropertyName} '{expectedValue}' does not match " +
+                    errors.Add($"{packageName}.props: {binding.PropertyName} '{expectedValue}' does not match " +
                         $"actual '{actualValue}' from {item.PackageId} {releaseVersion}.");
                 }
 
