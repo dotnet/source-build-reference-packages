@@ -324,7 +324,7 @@ public class ExternalPackageTests
                     // for this aspect specifically.
                     if (binding.IsExplicit)
                     {
-                        errors.Add($"{packageName}.proj: {overrideAspectName} item for package '{item.PackageId}' " +
+                        errors.Add($"{packageName}.props: {overrideAspectName} item for package '{item.PackageId}' " +
                             $"names property '{binding.PropertyName}' but no such property is defined.");
                         checkedCount++;
                     }
@@ -334,7 +334,7 @@ public class ExternalPackageTests
                 string? releaseVersion = ResolveReleaseVersion(versionsProject, item, packageName);
                 if (string.IsNullOrEmpty(releaseVersion))
                 {
-                    errors.Add($"{packageName}.proj: {overrideAspectName} item for package '{item.PackageId}': " +
+                    errors.Add($"{packageName}.props: {overrideAspectName} item for package '{item.PackageId}': " +
                         $"could not resolve release version " +
                         $"({(item.ReleaseVersionPropertyName is null ? "auto-derive failed" : $"property '{item.ReleaseVersionPropertyName}' not in eng/Versions.props")}).");
                     checkedCount++;
@@ -352,7 +352,7 @@ public class ExternalPackageTests
                 string? actualValue = actualValueSelector(versionMetadata);
                 if (string.IsNullOrEmpty(actualValue))
                 {
-                    errors.Add($"{packageName}.proj: {overrideAspectName} item for package '{item.PackageId}': " +
+                    errors.Add($"{packageName}.props: {overrideAspectName} item for package '{item.PackageId}': " +
                         $"package {item.PackageId} {releaseVersion} was downloaded but did not expose a " +
                         $"{overrideAspectName} field. Either the package no longer ships this metadata, or the " +
                         $"download/extraction is broken — verify the published package contents.");
