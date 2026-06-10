@@ -212,7 +212,7 @@ public class ExternalPackageTests
                 string? releaseVersion = ResolveReleaseVersion(versionsProject, item, packageName);
                 if (string.IsNullOrEmpty(releaseVersion))
                 {
-                    errors.Add($"{packageName}.proj: Could not resolve release version for validation package '{item.PackageId}' " +
+                    errors.Add($"{packageName}.props: Could not resolve release version for validation package '{item.PackageId}' " +
                         $"({(item.ReleaseVersionPropertyName is null ? "auto-derived" : $"explicit ReleaseVersionProperty='{item.ReleaseVersionPropertyName}'")}).");
                     checkedCount++;
                     continue;
