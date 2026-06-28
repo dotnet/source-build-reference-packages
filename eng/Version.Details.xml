@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Dependencies>
-  <Source Uri="https://github.com/dotnet/dotnet" Mapping="source-build-assets" Sha="4ab952856bd677ea1054c1fa77a209a4700d3119" BarId="320383" />
+  <Source Uri="https://github.com/dotnet/dotnet" Mapping="source-build-assets" Sha="c63bb8f65f9fb372f8f608c944401d03d0479216" BarId="320484" />
   <ToolsetDependencies>
     <Dependency Name="Microsoft.Build" Version="18.0.11">
       <Uri>https://github.com/dotnet/dotnet</Uri>
-      <Sha>4ab952856bd677ea1054c1fa77a209a4700d3119</Sha>
+      <Sha>c63bb8f65f9fb372f8f608c944401d03d0479216</Sha>
     </Dependency>
     <Dependency Name="Microsoft.Build.Utilities.Core" Version="18.0.11">
       <Uri>https://github.com/dotnet/dotnet</Uri>
-      <Sha>4ab952856bd677ea1054c1fa77a209a4700d3119</Sha>
+      <Sha>c63bb8f65f9fb372f8f608c944401d03d0479216</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="10.0.0-beta.26326.102">
+    <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="10.0.0-beta.26326.123">
       <Uri>https://github.com/dotnet/dotnet</Uri>
-      <Sha>4ab952856bd677ea1054c1fa77a209a4700d3119</Sha>
+      <Sha>c63bb8f65f9fb372f8f608c944401d03d0479216</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.GenAPI.Task" Version="10.0.110-servicing.26326.102">
+    <Dependency Name="Microsoft.DotNet.GenAPI.Task" Version="10.0.110-servicing.26326.123">
       <Uri>https://github.com/dotnet/dotnet</Uri>
-      <Sha>4ab952856bd677ea1054c1fa77a209a4700d3119</Sha>
+      <Sha>c63bb8f65f9fb372f8f608c944401d03d0479216</Sha>
     </Dependency>
     <Dependency Name="Microsoft.NETCore.ILAsm" Version="10.0.10">
       <Uri>https://github.com/dotnet/dotnet</Uri>
-      <Sha>4ab952856bd677ea1054c1fa77a209a4700d3119</Sha>
+      <Sha>c63bb8f65f9fb372f8f608c944401d03d0479216</Sha>
     </Dependency>
     <Dependency Name="Microsoft.NETCore.ILDAsm" Version="10.0.10">
       <Uri>https://github.com/dotnet/dotnet</Uri>
-      <Sha>4ab952856bd677ea1054c1fa77a209a4700d3119</Sha>
+      <Sha>c63bb8f65f9fb372f8f608c944401d03d0479216</Sha>
     </Dependency>
   </ToolsetDependencies>
 </Dependencies>
