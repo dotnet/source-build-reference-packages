@@ -9,7 +9,7 @@
   <PropertyGroup>
     <PackagesOutput>$(ProjectDirectory)pack</PackagesOutput>
     <CustomRepoBuild>true</CustomRepoBuild>
-    <SourceRevisionId>b89c765905dbc6db1421ff0a098127d44665c71f</SourceRevisionId>
+    <SourceRevisionId>0f4a2340b6ea7e5cad83efe2d6d73574794d6388</SourceRevisionId>
     <GlobalJsonFile>$(ProjectDirectory)global.json</GlobalJsonFile>
   </PropertyGroup>
 
