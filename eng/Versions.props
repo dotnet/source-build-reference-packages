@@ -29,6 +29,8 @@
     <OpenTelemetryDotNetReleaseVersion>1.15.3</OpenTelemetryDotNetReleaseVersion>
     <OpenTelemetryDotNetContribHttpReleaseVersion>1.15.1</OpenTelemetryDotNetContribHttpReleaseVersion>
     <OpenTelemetryDotNetContribRuntimeReleaseVersion>1.15.1</OpenTelemetryDotNetContribRuntimeReleaseVersion>
+    <OpenTelemetryDotNetContribPersistentStorageAbstractionsReleaseVersion>1.0.3</OpenTelemetryDotNetContribPersistentStorageAbstractionsReleaseVersion>
+    <OpenTelemetryDotNetContribPersistentStorageFileSystemReleaseVersion>1.0.3</OpenTelemetryDotNetContribPersistentStorageFileSystemReleaseVersion>
   </PropertyGroup>
 
   <PropertyGroup>

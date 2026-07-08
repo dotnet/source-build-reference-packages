@@ -28,6 +28,18 @@
     <OpenTelemetryDotNetContribRuntimeFileVersionRevision>1029</OpenTelemetryDotNetContribRuntimeFileVersionRevision>
     <!-- AssemblyVersion of MSFT-shipped OpenTelemetry.Instrumentation.Runtime 1.15.1. -->
     <OpenTelemetryDotNetContribRuntimeAssemblyVersionOverride>1.15.1.1029</OpenTelemetryDotNetContribRuntimeAssemblyVersionOverride>
+    <!-- OpenTelemetry.PersistentStorage.Abstractions and OpenTelemetry.PersistentStorage.FileSystem are
+         released together from a single PersistentStorage-<version> tag, so they share a ReleaseVersion and
+         BuildNumber. The pinned submodule commit's PersistentStorage sources are identical to the
+         PersistentStorage-1.0.3 release (only CHANGELOG.md differs), so both build as 1.0.3. -->
+    <!-- BuildNumber from MSFT-shipped OpenTelemetry.PersistentStorage.Abstractions release (tag PersistentStorage-1.0.3). -->
+    <OpenTelemetryDotNetContribPersistentStorageAbstractionsFileVersionRevision>1043</OpenTelemetryDotNetContribPersistentStorageAbstractionsFileVersionRevision>
+    <!-- AssemblyVersion of MSFT-shipped OpenTelemetry.PersistentStorage.Abstractions 1.0.3. -->
+    <OpenTelemetryDotNetContribPersistentStorageAbstractionsAssemblyVersionOverride>1.0.3.1043</OpenTelemetryDotNetContribPersistentStorageAbstractionsAssemblyVersionOverride>
+    <!-- BuildNumber from MSFT-shipped OpenTelemetry.PersistentStorage.FileSystem release (tag PersistentStorage-1.0.3). -->
+    <OpenTelemetryDotNetContribPersistentStorageFileSystemFileVersionRevision>1043</OpenTelemetryDotNetContribPersistentStorageFileSystemFileVersionRevision>
+    <!-- AssemblyVersion of MSFT-shipped OpenTelemetry.PersistentStorage.FileSystem 1.0.3. -->
+    <OpenTelemetryDotNetContribPersistentStorageFileSystemAssemblyVersionOverride>1.0.3.1043</OpenTelemetryDotNetContribPersistentStorageFileSystemAssemblyVersionOverride>
   </PropertyGroup>
 
   <ItemGroup>
@@ -42,6 +54,16 @@
       <FileVersionRevisionProperty>OpenTelemetryDotNetContribRuntimeFileVersionRevision</FileVersionRevisionProperty>
       <AssemblyVersionOverrideProperty>OpenTelemetryDotNetContribRuntimeAssemblyVersionOverride</AssemblyVersionOverrideProperty>
       <ReleaseVersionProperty>OpenTelemetryDotNetContribRuntimeReleaseVersion</ReleaseVersionProperty>
+    </FileVersionValidationPackage>
+    <FileVersionValidationPackage Include="OpenTelemetry.PersistentStorage.Abstractions">
+      <FileVersionRevisionProperty>OpenTelemetryDotNetContribPersistentStorageAbstractionsFileVersionRevision</FileVersionRevisionProperty>
+      <AssemblyVersionOverrideProperty>OpenTelemetryDotNetContribPersistentStorageAbstractionsAssemblyVersionOverride</AssemblyVersionOverrideProperty>
+      <ReleaseVersionProperty>OpenTelemetryDotNetContribPersistentStorageAbstractionsReleaseVersion</ReleaseVersionProperty>
+    </FileVersionValidationPackage>
+    <FileVersionValidationPackage Include="OpenTelemetry.PersistentStorage.FileSystem">
+      <FileVersionRevisionProperty>OpenTelemetryDotNetContribPersistentStorageFileSystemFileVersionRevision</FileVersionRevisionProperty>
+      <AssemblyVersionOverrideProperty>OpenTelemetryDotNetContribPersistentStorageFileSystemAssemblyVersionOverride</AssemblyVersionOverrideProperty>
+      <ReleaseVersionProperty>OpenTelemetryDotNetContribPersistentStorageFileSystemReleaseVersion</ReleaseVersionProperty>
     </FileVersionValidationPackage>
   </ItemGroup>
 
