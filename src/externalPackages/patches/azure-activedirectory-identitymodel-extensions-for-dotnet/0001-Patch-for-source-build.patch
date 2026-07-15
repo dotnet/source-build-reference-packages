@@ -144,9 +144,8 @@ index ea8ba36e..f47465c7 100644
      <SystemDiagnosticSourceVersion>6.0.2</SystemDiagnosticSourceVersion>
      <SystemMemoryVersion>4.6.3</SystemMemoryVersion>
 -    <SystemSecurityCryptographyCngVersion>4.5.0</SystemSecurityCryptographyCngVersion>
--    <SystemTextJsonVersion>8.0.5</SystemTextJsonVersion>
 +    <SystemSecurityCryptographyCngVersion>5.0.0</SystemSecurityCryptographyCngVersion>
-+    <SystemTextJsonVersion>8.0.6</SystemTextJsonVersion>
+     <SystemTextJsonVersion>8.0.5</SystemTextJsonVersion>
    </PropertyGroup>
  
    <PropertyGroup Condition="'$(TargetNetNext)' == 'True'">
