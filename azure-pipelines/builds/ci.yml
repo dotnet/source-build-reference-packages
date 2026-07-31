@@ -41,9 +41,12 @@ extends:
       componentgovernance:
         # All of the SBRPs must be ignored because it is possible some of them are for vulnerable versions.
         # Because they are reference only packages they are not vulnerable themselves.
+        # External package submodules are copied to artifacts/obj and patched before being built. Scan those
+        # patched build inputs instead of the unmodified source copies.
         ignoreDirectories: |
           artifacts/sb,
-          src/referencePackages
+          src/referencePackages,
+          src/externalPackages/src
       policheck:
         enabled: true
       sourceAnalysisPool:
