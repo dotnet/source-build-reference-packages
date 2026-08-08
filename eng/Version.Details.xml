@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Dependencies>
-  <Source Uri="https://github.com/dotnet/dotnet" Mapping="source-build-assets" Sha="6c7fa710f4337334575f0c30f1691edc244518d1" BarId="326034" />
+  <Source Uri="https://github.com/dotnet/dotnet" Mapping="source-build-assets" Sha="10d231dd86555cc17a757c800d821ad8e0f459d5" BarId="326269" />
   <ToolsetDependencies>
-    <Dependency Name="Microsoft.Build" Version="18.11.0-1.26406.108">
+    <Dependency Name="Microsoft.Build" Version="18.11.0-1.26407.106">
       <Uri>https://github.com/dotnet/dotnet</Uri>
-      <Sha>6c7fa710f4337334575f0c30f1691edc244518d1</Sha>
+      <Sha>10d231dd86555cc17a757c800d821ad8e0f459d5</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.Build.Utilities.Core" Version="18.11.0-1.26406.108">
+    <Dependency Name="Microsoft.Build.Utilities.Core" Version="18.11.0-1.26407.106">
       <Uri>https://github.com/dotnet/dotnet</Uri>
-      <Sha>6c7fa710f4337334575f0c30f1691edc244518d1</Sha>
+      <Sha>10d231dd86555cc17a757c800d821ad8e0f459d5</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="11.0.0-beta.26406.108">
+    <Dependency Name="Microsoft.DotNet.Arcade.Sdk" Version="11.0.0-beta.26407.106">
       <Uri>https://github.com/dotnet/dotnet</Uri>
-      <Sha>6c7fa710f4337334575f0c30f1691edc244518d1</Sha>
+      <Sha>10d231dd86555cc17a757c800d821ad8e0f459d5</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.DotNet.GenAPI.Task" Version="11.0.100-rc.1.26406.108">
+    <Dependency Name="Microsoft.DotNet.GenAPI.Task" Version="11.0.100-rc.1.26407.106">
       <Uri>https://github.com/dotnet/dotnet</Uri>
-      <Sha>6c7fa710f4337334575f0c30f1691edc244518d1</Sha>
+      <Sha>10d231dd86555cc17a757c800d821ad8e0f459d5</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.NETCore.ILAsm" Version="11.0.0-rc.1.26406.108">
+    <Dependency Name="Microsoft.NETCore.ILAsm" Version="11.0.0-rc.1.26407.106">
       <Uri>https://github.com/dotnet/dotnet</Uri>
-      <Sha>6c7fa710f4337334575f0c30f1691edc244518d1</Sha>
+      <Sha>10d231dd86555cc17a757c800d821ad8e0f459d5</Sha>
     </Dependency>
-    <Dependency Name="Microsoft.NETCore.ILDAsm" Version="11.0.0-rc.1.26406.108">
+    <Dependency Name="Microsoft.NETCore.ILDAsm" Version="11.0.0-rc.1.26407.106">
       <Uri>https://github.com/dotnet/dotnet</Uri>
-      <Sha>6c7fa710f4337334575f0c30f1691edc244518d1</Sha>
+      <Sha>10d231dd86555cc17a757c800d821ad8e0f459d5</Sha>
     </Dependency>
   </ToolsetDependencies>
 </Dependencies>
