@@ -14,4 +14,4 @@ permissions:
 
 jobs:
   backport:
-    uses: dotnet/arcade/.github/workflows/backport-base.yml@3e821951b9a3cd0708c0b6e2a57aee68ea9f65c1 # main
+    uses: dotnet/arcade/.github/workflows/backport-base.yml@a1e2996a5c308f9ad515414927559b43f36f1cbc # main
